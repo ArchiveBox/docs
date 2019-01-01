@@ -1,4 +1,4 @@
-## Community
+### Community
 
  - https://github.com/iipc/awesome-web-archiving
  - https://www.archiveteam.org/
@@ -6,8 +6,6 @@
  - https://www.reddit.com/r/DataHoarder
  - https://www.reddit.com/r/DHExchange/
  - https://www.reddit.com/r/Archivists/
-
-## Links
 
 ### Similar Projects
 
