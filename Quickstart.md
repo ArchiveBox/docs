@@ -24,11 +24,15 @@ Follow the links here to find instructions for exporting a list of URLs from eac
 
 **2. Create your archive:**
 
+Create a folder to store your archive, and clone the ArchiveBox repo into it.
 ```bash
 git clone https://github.com/pirate/ArchiveBox
 cd ArchiveBox/
 ./setup                                         # install all dependencies
+```
 
+Import your list of links:
+```
 # add a list of links from a file
 ./archive ~/Downloads/bookmark_export.html      # replace with the path to your export file or URL from step 1
 
@@ -43,13 +47,15 @@ cd ArchiveBox/
 ./archive   # at any point if you just want to continue archiving where you left off, without adding any new links
 ```
 
-**3. Done!**
+---
+
+**Done!**
 
 You can open `output/index.html` to view your archive.  (favicons will appear next to each title once it has finished downloading)
 
 If you want to host your archive somewhere to share it with other people, see the [Publishing Your Archive](#publishing-your-archive) section below.
 
-**4. (Optional) Schedule it to run every day**
+**Next Steps: Schedule it to run every day (Optional)**
 
 You can import links from any local file path or feed url by changing the second argument to `archive.py`.
 ArchiveBox will ignore links that are imported multiple times, it will keep the earliest version that it's seen.
@@ -63,7 +69,7 @@ This example archives a pocket RSS feed and an export file every 24 hours, and s
 ```
 (Add the above lines to `/etc/crontab`)
 
-**Next Steps**  
+---
   
 If you have any trouble, see the [Troubleshooting](#troubleshooting) section at the bottom.  
 If you'd like to customize options, see the [Configuration](#configuration) section.  
