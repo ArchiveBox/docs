@@ -1,4 +1,4 @@
-## Quickstart
+Using ArchiveBox involves installing the ArchiveBox dependencies, creating a folder to store your archive data, and then importing a list of links to the archive by running the `./archive` binary.
 
 **1. Get your list of URLs:**
 
