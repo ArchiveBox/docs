@@ -36,6 +36,7 @@ Follow the instruction links above in the "Quickstart" section to download your 
 **3. Run the archive script:**
 
 1. Clone this repo `git clone https://github.com/pirate/ArchiveBox`
+2. Optionally clone the documentation locally as well `git clone https://github.com/pirate/ArchiveBox.wiki.git`
 3. `cd ArchiveBox/`
 4. `./archive ~/Downloads/bookmarks_export.html`
 
