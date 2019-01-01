@@ -6,4 +6,4 @@
   <pre>"Your own personal Way-Back Machine"</pre>
 </p>
 
-[Wiki Home](https://github.com/pirate/ArchiveBox/wiki/Home) | [Github](https://github.com/pirate/ArchiveBox) | [Website](https://pirate.github.io/ArchiveBox) | [Documentation](https://github.com/pirate/ArchiveBox/wiki) | [Demo](https://archive.sweeting.me)
+[Wiki Home](https://github.com/pirate/ArchiveBox/wiki/Home) | [Github](https://github.com/pirate/ArchiveBox) | [Website](http://archivebox.io/) | [Documentation](https://github.com/pirate/ArchiveBox/wiki) | [Demo](https://archive.sweeting.me)
