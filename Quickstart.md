@@ -9,6 +9,8 @@ cd ArchiveBox/
 ./setup   # installs all dependencies
 ```
 
+To follow manual setup instructions instead of using the `./setup` script, see the [[Install]] page.
+
 ## 2. Get your list of URLs to archive
 
 Follow the links here to find instructions for exporting a list of URLs from each service.
