@@ -1,1 +1,9 @@
-[Wiki Home](https://github.com/pirate/ArchiveBox/wiki/Home) | [Github](https://github.com/pirate/ArchiveBox) | [Website](https://pirate.github.io/ArchiveBox) | [Documentation](https://github.com/pirate/ArchiveBox/wiki) | [Demo](https://archive.sweeting.me) | [![](https://img.shields.io/badge/Donate-Patreon-%23DD5D76.svg)](https://www.patreon.com/theSquashSH)
+[Wiki Home](https://github.com/pirate/ArchiveBox/wiki/Home) | [Github](https://github.com/pirate/ArchiveBox) | [Website](https://pirate.github.io/ArchiveBox) | [Documentation](https://github.com/pirate/ArchiveBox/wiki) | [Demo](https://archive.sweeting.me)
+
+---
+
+<center>
+
+[![](https://img.shields.io/badge/Donate-Patreon-%23DD5D76.svg)](https://www.patreon.com/theSquashSH)
+
+</center>
