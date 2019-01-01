@@ -1,6 +1,15 @@
 Using ArchiveBox involves installing the ArchiveBox dependencies, creating a folder to store your archive data, and then importing a list of links to the archive by running the `./archive` binary.
 
-**1. Get your list of URLs:**
+## 1. Create your archive
+
+Create a folder to store your archive, and clone the ArchiveBox repo into it.
+```bash
+git clone https://github.com/pirate/ArchiveBox
+cd ArchiveBox/
+./setup                                         # install all dependencies
+```
+
+## 2. Get your list of URLs to archive
 
 Follow the links here to find instructions for exporting a list of URLs from each service.
 
@@ -22,28 +31,26 @@ Follow the links here to find instructions for exporting a list of URLs from eac
 
  (If any of these links are broken, please submit an issue and I'll fix it)
 
-**2. Create your archive:**
+## 3. Archive your list of URLs
 
-Create a folder to store your archive, and clone the ArchiveBox repo into it.
+To add a list of links from a file:
 ```bash
-git clone https://github.com/pirate/ArchiveBox
-cd ArchiveBox/
-./setup                                         # install all dependencies
-```
-
-Import your list of links:
-```
-# add a list of links from a file
 ./archive ~/Downloads/bookmark_export.html      # replace with the path to your export file or URL from step 1
+```
 
-# OR add a list of links from remote URL
+To add a list of links from remote URL:
+```bash
 ./archive "https://getpocket.com/users/yourusername/feed/all"  # url to an RSS, html, or json links file
+```
 
-# OR add all the links from your browser history
+To add all the links from your browser history:
+```bash
 ./bin/archivebox-export-browser-history --chrome           # works with --firefox as well, can take path to SQLite history db
 ./archive output/sources/chrome_history.json
+```
 
-# OR just continue archiving the existing links in the index
+Or to just continue archiving the existing links in the index:
+```bash
 ./archive   # at any point if you just want to continue archiving where you left off, without adding any new links
 ```
 
