@@ -1,3 +1,5 @@
+## Intro
+
 Configuration is done through environment variables.  You can pass in settings using all the usual environment variable methods: e.g. by using the `env` command, settings variables in your shell profile, or sourcing a `.env` file before running the command.
 
 You can also modify the defaults in `archiver/config.py` directly, but that's not recommended as your custom settings will be erased whenever you update ArchiveBox.
@@ -6,17 +8,20 @@ Example configuration using `env` command:
 ```bash
 env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./archive ~/Downloads/bookmarks_export.html
 ```
+---
 
-**Shell Options:**
+## Environment Variables
+
+### Shell Options
  - colorize console ouput: `USE_COLOR` value: [`True`]/`False`
  - show progress bar: `SHOW_PROGRESS` value: [`True`]/`False`
  - archive permissions: `OUTPUT_PERMISSIONS` values: [`755`]/`644`/`...`
 
-**Dependency Options:**
+### Dependency Options
  - path to Chrome: `CHROME_BINARY` values: [`chromium-browser`]/`/usr/local/bin/google-chrome`/`...`
  - path to wget: `WGET_BINARY` values: [`wget`]/`/usr/local/bin/wget`/`...`
 
-**Archive Options:**
+### Archive Options
  - maximum allowed download time per link: `TIMEOUT` values: [`60`]/`30`/`...`
  - import only new links: `ONLY_NEW` values `True`/[`False`]
  - archive methods (values: [`True`]/`False`):
