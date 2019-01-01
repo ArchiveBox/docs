@@ -1,6 +1,6 @@
 ## Donations
 
-https://www.patreon.com/theSquashSH [![](https://img.shields.io/badge/Donate-Patreon-%23DD5D76.svg)](https://www.patreon.com/theSquashSH)  
+Patreon: https://www.patreon.com/theSquashSH [![](https://img.shields.io/badge/Donate-Patreon-%23DD5D76.svg)](https://www.patreon.com/theSquashSH)  
 
 Paypal: paypal.me/NicholasSweeting/25
  
