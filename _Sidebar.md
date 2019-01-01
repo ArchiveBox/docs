@@ -7,7 +7,6 @@
 # Documentation
 
  - [[Configuration]]
- - [[Manual Setup]]
  - [[Chromium Install]]
  - [[Publishing Your Archive]]
  - [[Troubleshooting]]
