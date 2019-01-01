@@ -6,7 +6,7 @@ Create a folder to store your archive, and clone the ArchiveBox repo into it.
 ```bash
 git clone https://github.com/pirate/ArchiveBox
 cd ArchiveBox/
-./setup                                         # install all dependencies
+./setup   # installs all dependencies
 ```
 
 ## 2. Get your list of URLs to archive
