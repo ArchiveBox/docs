@@ -1,5 +1,7 @@
 Configuration is done through environment variables.  You can pass in settings using all the usual environment variable methods: e.g. by using the `env` command, settings variables in your shell profile, or sourcing a `.env` file before running the command.
 
+You can also modify the defaults in `archiver/config.py` directly, but that's not recommended as your custom settings will be erased whenever you update ArchiveBox.
+
 Example configuration using `env` command:
 ```bash
 env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./archive ~/Downloads/bookmarks_export.html
