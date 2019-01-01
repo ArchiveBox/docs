@@ -8,6 +8,19 @@ Example configuration using `env` command:
 ```bash
 env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./archive ~/Downloads/bookmarks_export.html
 ```
+
+One way to have persistent config is to create a `~/.ArchiveBox.conf` file, and put your options inside it like so:
+
+```bash
+CHROME_BINARY=google-chrome-stable
+RESOLUTION=1440,900
+FETCH_PDF=False
+```
+
+Then source it when you run the archive script:
+
+```bash
+export $(grep -v '^#' ~/.ArchiveBox.conf | xargs); ./archive https://example.com/rss/feed.xml
 ---
 
 ## Environment Variables
