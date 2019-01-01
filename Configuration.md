@@ -9,18 +9,6 @@ Example configuration using `env` command:
 env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./archive ~/Downloads/bookmarks_export.html
 ```
 
-One way to have persistent config is to create a `~/.ArchiveBox.conf` file, and put your options inside it like so:
-
-```bash
-CHROME_BINARY=google-chrome-stable
-RESOLUTION=1440,900
-FETCH_PDF=False
-```
-
-Then source it when you run the archive script:
-
-```bash
-export $(grep -v '^#' ~/.ArchiveBox.conf | xargs); ./archive https://example.com/rss/feed.xml
 ---
 
 ## Environment Variables
@@ -56,3 +44,22 @@ export $(grep -v '^#' ~/.ArchiveBox.conf | xargs); ./archive https://example.com
 To tweak the outputted html index file's look and feel, just edit the HTML files in `archiver/templates/`.
 
 The chrome/chromium dependency is _optional_ and only required for screenshots, PDF, and DOM dump output, it can be safely ignored if those three methods are disabled.
+
+## Creating a Config File
+
+
+One way to have persistent config is to create a `~/.ArchiveBox.conf` file, and put your options inside it like so:
+
+```bash
+CHROME_BINARY=google-chrome-stable
+RESOLUTION=1440,900
+FETCH_PDF=False
+```
+
+Then source it when you run the archive script:
+
+```bash
+export $(grep -v '^#' ~/.ArchiveBox.conf | xargs); ./archive https://example.com/rss/feed.xml
+```
+
+Improving this process is on the roadmap, in future versions you'll be able to pass a config file directly to the archive command.
