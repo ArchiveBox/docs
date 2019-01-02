@@ -31,7 +31,7 @@ chromium-browser --version && which wget && which python3 && which curl && echo 
 
 **2. Get your bookmark export file:**
 
-Follow the instruction links above in the "Quickstart" section to download your bookmarks export file.
+Follow the instruction in the "Quickstart" section to download your bookmarks export file containing a list of links to archive.
 
 **3. Run the archive script:**
 
