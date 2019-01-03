@@ -1,8 +1,8 @@
 ## Donations
 
-Patreon: https://www.patreon.com/theSquashSH [![](https://img.shields.io/badge/Donate-Patreon-%23DD5D76.svg)](https://www.patreon.com/theSquashSH)  
+**Patreon:** https://www.patreon.com/theSquashSH [![](https://img.shields.io/badge/Donate-Patreon-%23DD5D76.svg)](https://www.patreon.com/theSquashSH)  
 
-Paypal: paypal.me/NicholasSweeting/25
+**Paypal:** https://paypal.me/NicholasSweeting/25
  
 If you want to help sponsor this project long-term or just say thanks or suggest changes, contact me at bookmark-archiver@sweeting.me.
   
