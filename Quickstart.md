@@ -1,6 +1,6 @@
 Using ArchiveBox involves installing the ArchiveBox dependencies, creating a folder to store your archive data, and then importing a list of links to the archive by running the `./archive` binary.
 
-ArchiveBox officially supports Ubuntu, FreeBSD, and macOS, but likely runs on many other systems.  You can also use Docker to run it on any system that supports Docker, including Windows.  See [here]() for docker instructions.
+ArchiveBox officially supports Ubuntu, FreeBSD, and macOS, but likely runs on many other systems.  You can run it on any system that supports Docker, including Windows.  See [here]() for docker instructions.
 
 ## 1. Create your archive
 
