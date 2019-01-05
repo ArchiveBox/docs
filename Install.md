@@ -2,6 +2,22 @@
 
 Run `./bin/setup` to install all dependencies automatically.
 
+## Docker Setup
+
+You can use the new official docker image for ArchiveBox like so:
+
+```bash
+docker build github.com/pirate/ArchiveBox -t ArchiveBox
+docker volume create archivebox-data
+docker run -v archivebox-data:/home/chromeuser/app/archivebox/output ArchiveBox 'https://example.com/some/rss/feed.xml'
+```
+
+It's not perfect yet, I still have to make the ergonomics better for passing in link files to parse, right now you have to put them in the output volume and then reference them by their path inside the container to get ArchiveBox to find them:
+
+```bash
+docker run -v archivebox-data:/home/chromeuser/app/archiver/output ArchiveBox /home/chromeuser/app/archivebox/output/downloads/path-to-links.json
+```
+
 ## Manual Setup
 
 If you don't like running random setup scripts off the internet (:+1:), you can follow these manual setup instructions.
