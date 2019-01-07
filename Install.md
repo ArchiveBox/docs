@@ -13,7 +13,9 @@ The most important dependency is Chrome headless, so if you can figure out how t
 
 ## Automatic Setup
 
-Run `./bin/setup` to install all dependencies automatically on Linux or macOS.  BSD and Windows users should follow the manual setup and Docker instructions respectively.
+Run `./bin/setup` to install all dependencies automatically on Linux (with `apt`) or macOS (with `brew`).
+
+BSD and Windows users should follow the manual setup and Docker instructions respectively.
 
 ## Docker Setup
 
