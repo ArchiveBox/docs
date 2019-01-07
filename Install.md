@@ -1,6 +1,19 @@
+## System Support
+
+ArchiveBox officially supports the following operating systems:
+
+* Linux: e.g. Ubuntu, Debian, etc
+* BSD: FreeBSD, OpenBSD, NetBSD etc
+* macOS
+
+You can run it on Windows and other systems via Docker containers or Vagrant VMs if they have support for those technologies.
+
+
+The most important dependency is Chrome headless, so if you can figure out how to get Chrome headless and Python 3 running on your system, then ArchiveBox is likely to work just fine.
+
 ## Automatic Setup
 
-Run `./bin/setup` to install all dependencies automatically.
+Run `./bin/setup` to install all dependencies automatically on Linux or macOS.  BSD and Windows users should follow the manual setup and Docker instructions respectively.
 
 ## Docker Setup
 
