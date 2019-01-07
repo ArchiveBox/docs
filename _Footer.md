@@ -1,2 +1,2 @@
 <pre>"Your own personal Way-Back Machine"</pre>
-[Wiki Home](https://github.com/pirate/ArchiveBox/wiki/Home) | [Github](https://github.com/pirate/ArchiveBox) | [Website](http://archivebox.io/) | [Documentation](https://github.com/pirate/ArchiveBox/wiki) | [Demo](https://archive.sweeting.me)
+[Website](http://archivebox.io/) | [Github](https://github.com/pirate/ArchiveBox) | [Wiki Home](https://github.com/pirate/ArchiveBox/wiki/Home) | [Documentation](https://github.com/pirate/ArchiveBox/wiki) | [Demo](https://archive.sweeting.me)
