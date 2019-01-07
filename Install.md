@@ -12,7 +12,9 @@ The most important dependency is Chrome headless, so if you can figure out how t
 
 ## Automatic Setup
 
-Run `./bin/setup` to install all dependencies automatically on Linux (with `apt`) or macOS (with `brew`).
+If you're on Linux with `apt`, or macOS with `brew`:
+
+Run `./bin/setup` to install all dependencies and set up ArchiveBox automatically.
 
 BSD and Windows users should follow the manual setup and Docker instructions respectively.
 
