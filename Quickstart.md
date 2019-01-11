@@ -13,7 +13,7 @@ cd ArchiveBox/
 ./setup   # installs all dependencies
 ```
 
-For more install instructions, including the manual setup and docker instructions, see the [[Install]] page.
+For more detail, including the manual setup and docker instructions, see the [[Install]] page.
 
 ## 2. Get your list of URLs to archive
 
