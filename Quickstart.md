@@ -1,4 +1,4 @@
-*It only takes 5 minutes to get up and running.*
+▶️ *It only takes 5 minutes to get up and running.*
 
 ArchiveBox officially supports **Ubuntu**, **FreeBSD**, and **macOS**, but likely runs on many other systems.  You can run it on any system that supports **Docker**, including Windows.
 
@@ -44,47 +44,46 @@ To add a list of links from a file:
 ./archive ~/Downloads/bookmark_export.html      # replace with the path to your export file or URL from step 1
 ```
 
-To add a list of links from remote URL:
-```bash
-./archive "https://getpocket.com/users/yourusername/feed/all"  # url to an RSS, html, or json links file
-```
-
-To add all the links from your browser history:
-```bash
-./bin/archivebox-export-browser-history --chrome           # works with --firefox as well, can take path to SQLite history db
-./archive output/sources/chrome_history.json
-```
-
-Or to just continue archiving the existing links in the index:
-```bash
-./archive   # at any point if you just want to continue archiving where you left off, without adding any new links
-```
-
----
-
-**Done!**
+## ✅ Done!
 
 You can open `output/index.html` to view your archive.  (favicons will appear next to each title once it has finished downloading)
 
 If you want to host your archive somewhere to share it with other people, see the [Publishing Your Archive](#publishing-your-archive) section below.
 
-**Next Steps: Schedule it to run every day (Optional)**
+</div>
+<br/><br/>
 
-You can import links from any local file path or feed url by changing the second argument to `archive.py`.
-ArchiveBox will ignore links that are imported multiple times, it will keep the earliest version that it's seen.
-This means you can add multiple cron jobs to pull links from several different feeds or files each day,
-it will keep the index up-to-date without duplicate links.
+---
+*Some alternatives that also work:*
 
-This example archives a pocket RSS feed and an export file every 24 hours, and saves the output to a logfile.
+Add a list of links from remote URL:
 ```bash
-0 24 * * * yourusername /opt/ArchiveBox/archive https://getpocket.com/users/yourusername/feed/all > /var/log/archivebox_rss.log
-0 24 * * * yourusername /opt/ArchiveBox/archive /home/darth-vader/Desktop/bookmarks.html > /var/log/archivebox_firefox.log
+./archive "https://getpocket.com/users/yourusername/feed/all"  # url to an RSS, html, or json links file
 ```
-(Add the above lines to `/etc/crontab`)
+
+Add all the links from your browser history:
+```bash
+./bin/archivebox-export-browser-history --chrome           # works with --firefox as well, can take path to SQLite history db
+./archive output/sources/chrome_history.json
+```
+
+Or update the archive without adding new links:
+```bash
+./archive
+```
+
+---
+
+
+**Next Steps: Schedule it to run with cron or supervisord**
+
+ArchiveBox ignores links that are imported multiple times (keeping the earliest version that it's seen).
+This means you can add cron jobs that regularly poll the same file or URL for new links, adding only new
+ones as necessary.
+
+For examples, see the `etc/cron.d` and `etc/supervisord` folders.
 
 ---
   
 If you have any trouble, see the [Troubleshooting](https://github.com/pirate/ArchiveBox/wiki/Troubleshooting) section at the bottom.  
 If you'd like to customize options, see the [Configuration](https://github.com/pirate/ArchiveBox/wiki/Configuration) section.  
-
-If you want something easier than running programs in the command-line, take a look at [Pocket Premium](https://getpocket.com/premium) (yay Mozilla!) and [Pinboard Pro](https://pinboard.in/upgrade/) (yay independent developer!).  Both offer easy-to-use bookmark archiving with full-text-search and other features.
