@@ -8,8 +8,6 @@ ArchiveBox officially supports the following operating systems:
 
 You can run it on Windows and other systems via Docker containers or Vagrant VMs if they have support for those technologies.  I haven't tested it on distros like Fedora, SUSE, Arch, CentOS, etc but you can probably get it working on those as well.
 
-The most important dependency is Chrome headless, so if you can figure out how to get Chrome headless and Python 3 running on your system, then ArchiveBox is likely to work just fine.
-
 ## Automatic Setup
 
 If you're on Linux with `apt`, or macOS with `brew`:
