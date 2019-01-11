@@ -4,9 +4,6 @@
 
 **Paypal:** https://paypal.me/NicholasSweeting
  
-I develop an manage this project solely in my spare. If you want to help me keep this project alive, donate to support more development!
-
-With more engineering power this can become a distributed archive service with a nice UI,
-like the Way-Back machine but hosted by everyone!
+I develop this project solely in my spare time right now. If you want to help me keep it alive and flourishing, donate to support more development!
 
 If you have any questions or want to partner with this project, contact me at: archivebox-hello@sweeting.me
