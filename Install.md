@@ -16,23 +16,6 @@ Run `./bin/setup` to install all dependencies and set up ArchiveBox automaticall
 
 BSD and Windows users should follow the manual setup and Docker instructions respectively.
 
-## Docker Setup
-
-Docker support for ArchiveBox is in beta, I'll update it as we improve the ergonomics and add an example `docker-compose.yml` file for serving the archive with nginx.
-
-Currently, you can run ArchiveBox with Docker like this:
-
-```bash
-docker build github.com/pirate/ArchiveBox -t ArchiveBox
-docker volume create archivebox-data
-docker run -v archivebox-data:/home/chromeuser/app/archivebox/output ArchiveBox 'https://example.com/some/rss/feed.xml'
-```
-
-It's not perfect yet, I still have to improve the system for passing in link files to parse, right now you have to put them in the data volume and then reference them by their path inside the container to get ArchiveBox to find them:
-
-```bash
-docker run -v archivebox-data:/home/chromeuser/app/archiver/output ArchiveBox /home/chromeuser/app/archivebox/output/downloads/path-to-links.json
-```
 
 ## Manual Setup
 
@@ -74,3 +57,22 @@ Follow the instruction in the "Quickstart" section to download your bookmarks ex
 You may optionally specify a second argument to `archive.py export.html 153242424324` to resume the archive update at a specific timestamp.
 
 If you have any trouble, see the [Troubleshooting](#troubleshooting) section at the bottom.
+
+
+## Docker Setup
+
+Docker support for ArchiveBox is in beta, I'll update it as we improve the ergonomics and add an example `docker-compose.yml` file for serving the archive with nginx.
+
+Currently, you can run ArchiveBox with Docker like this:
+
+```bash
+docker build github.com/pirate/ArchiveBox -t ArchiveBox
+docker volume create archivebox-data
+docker run -v archivebox-data:/home/chromeuser/app/archivebox/output ArchiveBox 'https://example.com/some/rss/feed.xml'
+```
+
+It's not perfect yet, I still have to improve the system for passing in link files to parse, right now you have to put them in the data volume and then reference them by their path inside the container to get ArchiveBox to find them:
+
+```bash
+docker run -v archivebox-data:/home/chromeuser/app/archiver/output ArchiveBox /home/chromeuser/app/archivebox/output/downloads/path-to-links.json
+```
