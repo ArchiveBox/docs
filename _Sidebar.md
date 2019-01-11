@@ -3,8 +3,8 @@
 # Getting Started
 
  - [[Home]]
+ - [[Install]]
  - [[Quickstart]]
- - [Install]]
  - [[Web Archiving Community]]
 
 # Documentation
