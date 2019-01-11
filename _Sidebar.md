@@ -4,7 +4,7 @@
 
  - [[Home]]
  - [[Quickstart]]
- - [[Install]]
+ - [Install]]
  - [[Web Archiving Community]]
 
 # Documentation
