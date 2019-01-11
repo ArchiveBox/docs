@@ -1,4 +1,4 @@
-## ArchiveBox Documentation
+## 🗃ArchiveBox Documentation
 
 ### (Recently [renamed](https://github.com/pirate/ArchiveBox/issues/108) from `Bookmark Archiver`)
 
