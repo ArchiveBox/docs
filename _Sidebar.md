@@ -9,6 +9,7 @@
 # Documentation
 
  - [[Configuration]]
+ - [Supported Sources](https://github.com/pirate/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive)
  - [[Chromium Install]]
  - [[Publishing Your Archive]]
  - [[Troubleshooting]]
