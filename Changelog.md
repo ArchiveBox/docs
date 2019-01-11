@@ -1,5 +1,5 @@
  - v0.2.1 released with new logo
- - ability to load any plain text list of links (also the new fallback for all parses)
+ - ability to import plain lists of links and almost all other raw filetypes
  - WARC file saving via wget
  - Git repository downloading with git clone
  - Media downloading with youtube-dl (video, audio, subtitles, description, playlist, etc)
