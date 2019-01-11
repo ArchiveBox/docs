@@ -5,6 +5,7 @@
  - [[Home]]
  - [[Quickstart]]
  - [[Install]]
+ - [[Web Archiving Community]]
 
 # Documentation
 
@@ -20,7 +21,6 @@
  - [[Roadmap]]
  - [[Changelog]]
  - [[Donations]]
- - [[Web Archiving Community]]
 
 ---
 
