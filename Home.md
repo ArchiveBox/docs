@@ -4,7 +4,7 @@
 
 
 
-ArchiveBox saves an archived copy of the websites you visit (the actual *content* of each site, not just the list of links).  It can archive your entire browsing history, or import links from bookmarks managers, rss, text files and more.
+ArchiveBox saves an archived copy of the websites you visit into a local browsable folder (the actual *content* of each site, not just the list of links).  It can archive your entire browsing history, or import links from bookmarks managers, rss, text files and more.
 
 ArchiveBox can import links from:
 
@@ -17,9 +17,12 @@ ArchiveBox can import links from:
 For each site, it outputs (configurable):
 
 - Browsable static HTML archive (wget)
+- WARC archive (wget warc)
 - PDF (Chrome headless)
 - Screenshot (Chrome headless)
-- HTML after 2s of JS running (Chrome headless)
+- HTML DUMP after 2s of JS running in Chrome headless
+- Git repo download (git clone)
+- Media download (youtube-dl: video, audio, subtitles, including playlists)
 - Favicon
 - Submits URL to archive.org
 - Index summary pages: index.html & index.json
