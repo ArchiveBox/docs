@@ -14,8 +14,9 @@ If you're on Linux with `apt`, or macOS with `brew`:
 
 Run `./bin/setup` to install all dependencies and set up ArchiveBox automatically.
 
-BSD and Windows users should follow the manual setup and Docker instructions respectively.
+Then continue with the [[Quickstart]]...
 
+BSD and Windows users should follow the manual setup and Docker instructions respectively.
 
 ## Manual Setup
 
