@@ -1,13 +1,10 @@
 ## 🗃ArchiveBox Documentation
 
-### (Recently [renamed](https://github.com/pirate/ArchiveBox/issues/108) from `Bookmark Archiver`)
+*(Recently [renamed](https://github.com/pirate/ArchiveBox/issues/108) from `Bookmark Archiver`)*
 
 
-    "Your own personal Way-Back Machine"
 
----
-
-Save an archived copy of the websites you visit (the actual *content* of each site, not just the list of links).  Can archive entire browsing history, or just links matching a filter or bookmarks list.
+ArchiveBox saves an archived copy of the websites you visit (the actual *content* of each site, not just the list of links).  It can archive your entire browsing history, or import links from bookmarks managers, rss, text files and more.
 
 ArchiveBox can import links from:
 
