@@ -1,6 +1,6 @@
  - v0.2.1 released with new logo
  - ability to import plain lists of links and almost all other raw filetypes
- - WARC file saving via wget
+ - WARC saving support via wget
  - Git repository downloading with git clone
  - Media downloading with youtube-dl (video, audio, subtitles, description, playlist, etc)
 
