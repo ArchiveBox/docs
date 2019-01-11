@@ -9,4 +9,4 @@ I develop an manage this project solely in my spare. If you want to help me keep
 With more engineering power this can become a distributed archive service with a nice UI,
 like the Way-Back machine but hosted by everyone!
 
-If you have any questions or want to partner with project, contact me at: archivebox-hello@sweeting.me
+If you have any questions or want to partner with this project, contact me at: archivebox-hello@sweeting.me
