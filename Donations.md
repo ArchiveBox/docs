@@ -4,15 +4,9 @@
 
 **Paypal:** https://paypal.me/NicholasSweeting
  
-If you want to help sponsor this project long-term or just say thanks or suggest changes, contact me at bookmark-archiver@sweeting.me.
-  
-Right now I'm working on this project in my spare time and accepting the occational PR,
-if you want me to dedicate more time to it, donate to support development!
+I develop an manage this project solely in my spare. If you want to help me keep this project alive, donate to support more development!
 
-The eventual goal is to support one or two developers full-time on this project via donations.
 With more engineering power this can become a distributed archive service with a nice UI,
 like the Way-Back machine but hosted by everyone!
 
-If you have any questions or want to sponsor this project long-term, contact me at:
-
-archivebox-hello@sweeting.me
+If you have any questions or want to partner with project, contact me at: archivebox-hello@sweeting.me
