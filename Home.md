@@ -6,7 +6,7 @@
 
 ArchiveBox saves an archived copy of the websites you visit into a local browsable folder (the actual *content* of each site, not just the list of links).  It can archive your entire browsing history, or import links from bookmarks managers, rss, text files and more.
 
-## Supports importing links:
+### Can import links from:
 
  - <img src="https://nicksweeting.com/images/bookmarks.png" height="22px"/> Browser history or bookmarks (Chrome, Firefox, Safari, IE, Opera)
  - <img src="https://getpocket.com/favicon.ico" height="22px"/> Pocket
@@ -16,14 +16,14 @@ ArchiveBox saves an archived copy of the websites you visit into a local browsab
 
 ### Can save these things for each site:
 
+- Favicon
 - Browsable static HTML archive (wget)
-- WARC archive (wget warc)
 - PDF (Chrome headless)
 - Screenshot (Chrome headless)
 - HTML DUMP after 2s of JS running in Chrome headless
 - Git repo download (git clone)
 - Media download (youtube-dl: video, audio, subtitles, including playlists)
-- Favicon
+- WARC archive (wget warc)
 - Submits URL to archive.org
 - Index summary pages: index.html & index.json
 
@@ -38,7 +38,7 @@ All the saved content is static and indexed with JSON files, so it lives forever
 
 ## Details
 
-`archive.py` is a script that takes a [Pocket-format](https://getpocket.com/export), [JSON-format](https://pinboard.in/export/), [Netscape-format](https://msdn.microsoft.com/en-us/library/aa753582(v=vs.85).aspx), or RSS-formatted list of links, and downloads a clone of each linked website to turn into a browsable archive that you can store locally or host online.
+`ArchiveBox/archive` is the script that takes a [Pocket-format](https://getpocket.com/export), [JSON-format](https://pinboard.in/export/), [Netscape-format](https://msdn.microsoft.com/en-us/library/aa753582(v=vs.85).aspx), RSS, or plan-text-formatted list of links, and downloads a clone of each linked website to turn into a browsable archive that you can store locally or host online.
 
 The archiver produces an output folder `output/` containing an `index.html`, `index.json`, and archived copies of all the sites,
 organized by timestamp bookmarked.  It's Powered by [headless](https://developers.google.com/web/updates/2017/04/headless-chrome) Chromium and good 'ol `wget`.
