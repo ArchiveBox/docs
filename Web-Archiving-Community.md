@@ -1,13 +1,23 @@
-▶️ *If you need help or have a question, you can open an [issue](https://github.com/pirate/ArchiveBox/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or reach out on [Twitter](https://github.com/theSquashSH).*
+▶️ *Want to learn more about why Web Archiving is important? Check out [this article](https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/).*
+
+Start with the master list: the [Awesome Web Archiving List](https://github.com/iipc/awesome-web-archiving).
 
 ### Community
 
- - https://github.com/iipc/awesome-web-archiving
  - https://www.archiveteam.org/
  - https://reddit.com/r/ArchiveTeam
  - https://www.reddit.com/r/DataHoarder
  - https://www.reddit.com/r/DHExchange/
  - https://www.reddit.com/r/Archivists/
+
+
+### ArchiveBox Discussions
+
+ - [Hacker News Discussion](https://news.ycombinator.com/item?id=14272133)
+ - [Reddit r/selfhosted Discussion](https://www.reddit.com/r/selfhosted/comments/69eoi3/pocket_stream_archive_your_own_personal_wayback/)
+ - [Reddit r/datahoarder Discussion #1](https://www.reddit.com/r/DataHoarder/comments/69e6i9/archive_a_browseable_copy_of_your_saved_pocket/)
+ - [Reddit r/datahoarder Discussion #2](https://www.reddit.com/r/DataHoarder/comments/6kepv6/bookmarkarchiver_now_supports_archiving_all_major/)
+
 
 ### Similar Projects
 
@@ -20,13 +30,6 @@
  - [Webrecorder.io](https://webrecorder.io/) Save full browsing sessions and archive all the content
  - [Wallabag](https://wallabag.org) Save articles you read locally or on your phone
  - [Archivematica](https://github.com/artefactual/archivematica) web GUI for institutional long-term archiving of web and other content
-
-### Discussions
-
- - [Hacker News Discussion](https://news.ycombinator.com/item?id=14272133)
- - [Reddit r/selfhosted Discussion](https://www.reddit.com/r/selfhosted/comments/69eoi3/pocket_stream_archive_your_own_personal_wayback/)
- - [Reddit r/datahoarder Discussion #1](https://www.reddit.com/r/DataHoarder/comments/69e6i9/archive_a_browseable_copy_of_your_saved_pocket/)
- - [Reddit r/datahoarder Discussion #2](https://www.reddit.com/r/DataHoarder/comments/6kepv6/bookmarkarchiver_now_supports_archiving_all_major/)
 
 
 ### Tools/Other
