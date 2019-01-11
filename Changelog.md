@@ -1,5 +1,7 @@
 ▶️ *Thanks to 30+ contributors!*
 
+---
+
  - v0.2.1 released with new logo
  - ability to import plain lists of links and almost all other raw filetypes
  - WARC saving support via wget
