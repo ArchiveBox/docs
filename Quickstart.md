@@ -1,6 +1,6 @@
 *It only takes 5 minutes to get up and running.*
 
-ArchiveBox officially supports **Ubuntu**, **FreeBSD**, and **macOS**, but likely runs on many other systems.  You can run it on any system that supports **Docker**, including Windows.  See [here](https://github.com/pirate/ArchiveBox/wiki/Install#docker-setup) for docker instructions.
+ArchiveBox officially supports **Ubuntu**, **FreeBSD**, and **macOS**, but likely runs on many other systems.  You can run it on any system that supports **Docker**, including Windows.
 
 First, we install the ArchiveBox dependencies, then we create a folder to store the archive data, and finally we import the list of links to the archive by running `./archive <links_file>`.
 
@@ -13,7 +13,7 @@ cd ArchiveBox/
 ./setup   # installs all dependencies
 ```
 
-To follow manual setup instructions instead of using the `./setup` script, see the [[Install]] page.
+For more install instructions, including the manual setup guide and docker instructions, see the [[Install]] page.
 
 ## 2. Get your list of URLs to archive
 
