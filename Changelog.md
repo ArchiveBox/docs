@@ -1,4 +1,8 @@
-▶️ *Thanks to 30+ contributors!*
+▶️ *If you're having an issue with a breaking change, or migrating your data between versions, open an [issue](https://github.com/pirate/ArchiveBox/issues) to get help.*
+
+<br/>
+
+<div align="center">🍰 Thank you to ArchiveBox's 30+ contributors and everyone in the web archiving community! 🏛</div>
 
 ---
 
