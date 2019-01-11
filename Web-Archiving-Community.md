@@ -32,7 +32,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - [Archivematica](https://github.com/artefactual/archivematica) web GUI for institutional long-term archiving of web and other content
 
 
-### Tools/Other
+### Tools
 
  - https://github.com/ikreymer/webarchiveplayer#auto-load-warcs
  - [Sheetsee-Pocket](http://jlord.us/sheetsee-pocket/) project that provides a pretty auto-updating index of your Pocket links (without archiving them)
