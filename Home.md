@@ -28,7 +28,7 @@ For each site, it outputs (configurable):
 - Index summary pages: index.html & index.json
 
 The archiving is additive, so you can schedule `./archive` to run regularly and pull new links into the index.
-All the saved content is static and indexed with json files, so it lives forever & is easily parseable, it requires no always-running backend.
+All the saved content is static and indexed with JSON files, so it lives forever & is easily parseable, it requires no always-running backend.
 
 [DEMO: archive.sweeting.me](https://archive.sweeting.me)
 
@@ -50,8 +50,9 @@ For each sites it saves:
  - `screenshot.png` 1440x900 screenshot of site using headless chrome
  - `output.html` DOM Dump of the HTML after rendering using headless chrome
  - `archive.org.txt` A link to the saved site on archive.org
- - `audio/` and `video/` for sites like youtube, soundcloud, etc. (using youtube-dl) (WIP)
- - `code/` clone of any repository for github, bitbucket, or gitlab links (WIP)
+ - `warc/` for the html + gzipped warc file <timestamp>.gz
+ - `media/` for sites like youtube, soundcloud, etc. (using youtube-dl)
+ - `git/` clone of any repository for github, bitbucket, or gitlab links)
  - `index.json` JSON index containing link info and archive details
  - `index.html` HTML index containing link info and archive details (optional fancy or simple index)
 
@@ -79,11 +80,11 @@ which are already in the index.
 ## Info & Motivation
 
 This is basically an open-source version of [Pocket Premium](https://getpocket.com/premium) (which you should consider paying for!).
-I got tired of sites I saved going offline or changing their URLS, so I started
+I got tired of sites I saved going offline or changing their URLs, so I started
 archiving a copy of them locally now, similar to The Way-Back Machine provided
-by [archive.org](https://archive.org).  Self hosting your own archive allows you to save
-PDFs & Screenshots of dynamic sites in addition to static html, something archive.org doesn't do.
+by [archive.org](https://archive.org).  Self-hosting your own archive allows you to save
+PDFs & Screenshots of dynamic sites in addition to static HTML, something archive.org doesn't do.
 
-Now I can rest soundly knowing important articles and resources I like wont dissapear off the internet.
+Now I can rest soundly knowing important articles and resources I like won't disappear off the internet.
 
 My published archive as an example: [archive.sweeting.me](https://archive.sweeting.me).
