@@ -1,4 +1,4 @@
-![](https://i.imgur.com/PVO88AZ.png)
+[![](https://i.imgur.com/PVO88AZ.png)](Home)
 
 # Getting Started
 
