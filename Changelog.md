@@ -1,8 +1,8 @@
  - v0.2.1 released with new logo
  - ability to load any plain text list of links (also the new fallback for all parses)
- - WARC file saving via wget: FETCH_WARC=True
- - Git repository downloading with git clone: FETCH_GIT=True GIT_DOMAINS=github.com,gitlab.com,bitbucket.org
- - Media downloading with youtube-dl: FETCH_MEDIA=True MEDIA_TIMEOUT=36000
+ - WARC file saving via wget
+ - Git repository downloading with git clone
+ - Media downloading with youtube-dl (video, audio, subtitles, description, playlist, etc)
 
 ---
  - v0.2.0 released with new name
