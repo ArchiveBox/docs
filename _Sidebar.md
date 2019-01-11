@@ -10,6 +10,7 @@
 
  - [[Configuration]]
  - [Supported Sources](https://github.com/pirate/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive)
+ - [Supported Outputs](https://github.com/pirate/ArchiveBox/wiki#can-save-these-things-for-each-site)
  - [[Chromium Install]]
  - [[Publishing Your Archive]]
  - [[Troubleshooting]]
