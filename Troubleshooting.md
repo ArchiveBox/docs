@@ -1,13 +1,17 @@
 ▶️ *If you need help or have a question, you can open an [issue](https://github.com/pirate/ArchiveBox/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or reach out on [Twitter](https://github.com/theSquashSH).*
 
-- [Dependencies](#Dependencies)
+What are you having an issue with?:
+
+- [Installing](#Dependencies)
 - [Configuration](https://github.com/pirate/ArchiveBox/wiki/Configuration)
-- [Archiving](#Archiving)
+- [Archiving Process](#Archiving)
 - [Hosting the Archive](#Hosting-the-Archive)
 
 ---
 
-### Dependencies
+### Installing
+
+Make sure you've followed the Manual Setup guide in the [[Install]] instructions first.  Then check here for help depending on what component you need help with:
 
 **Python:**
 
