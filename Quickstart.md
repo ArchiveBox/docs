@@ -66,6 +66,13 @@ Add a list of links from remote URL:
 ./archive "https://getpocket.com/users/yourusername/feed/all"  # url to an RSS, html, or json links file
 ```
 
+Add a single URL or list of URLs to archive via stdin:
+```bash
+cat ./urls_to_archive.txt | ./archive
+# or
+echo 'https://example.com' | ./archive
+```
+
 Add all the links from your browser history:
 ```bash
 ./bin/archivebox-export-browser-history --chrome           # works with --firefox as well, can take path to SQLite history db
