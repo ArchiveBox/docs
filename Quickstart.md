@@ -44,6 +44,11 @@ To add a list of links from a file:
 ./archive ~/Downloads/bookmark_export.html      # replace with the path to your export file or URL from step 1
 ```
 
+Or you can pass in URLs to archive via stdin:
+```bash
+echo 'https://example.com' | ./archive
+```
+
 ## ✅ Done!
 
 You can open `output/index.html` to view your archive.  (favicons will appear next to each title once it has finished downloading)
