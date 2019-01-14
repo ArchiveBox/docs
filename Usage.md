@@ -11,7 +11,7 @@ echo 'https://example.com' | ./archive
 ./archive < urls_to_archive.txt
 ```
 
-## Import a list of links export from browser bookmarks or a bookmark service
+## Import links exported from browser bookmarks or another service
 ```bash
 ./archive ~/Downloads/bookmarks_export.html
 # or
