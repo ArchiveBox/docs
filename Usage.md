@@ -17,6 +17,8 @@ echo 'https://example.com' | ./archive
 ```
 
 ## Archive URLs from a remote RSS feed or file
+ArchiveBox will download the URL to a local file in `output/sources/` attempt to autodetect the format and import any URLs found. Currently, Netscape HTML, JSON, RSS, and plain text links lists are supported.
+
 ```bash
 ./archive https://example.com/feed.rss
 # or
