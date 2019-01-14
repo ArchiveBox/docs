@@ -1,5 +1,9 @@
 # CLI Usage
 
+`./archive` refers to the binary in the root of the project, but you can also call ArchiveBox via `./bin/archivebox`.
+
+Make sure to run `./setup` or follow the [[Install]] instructions before archiving anything.
+
 ## Import a single URL or list of URLs via stdin
 ```bash
 echo 'https://example.com' | ./archive
