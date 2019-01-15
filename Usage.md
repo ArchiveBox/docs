@@ -15,11 +15,11 @@ echo 'https://example.com' | ./archive
 
 ## Import links exported from browser or another service
 ```bash
-./archive ~/Downloads/bookmarks_export.html
+./archive ~/Downloads/browser_bookmarks_export.html
 # or
-./archive ~/Downloads/bookmarks.json
+./archive ~/Downloads/pinboard_bookmarks.json
 # or
-./archive ~/Downloads/links.txt
+./archive ~/Downloads/other_links.txt
 ```
 
 ## Archive URLs from a remote RSS feed or file
