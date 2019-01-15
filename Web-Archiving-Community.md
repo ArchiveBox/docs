@@ -35,6 +35,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
 
 ### Tools
 
+ - https://github.com/chfoo/warcat for merging, extracting, and verifying WARC files
  - https://github.com/ikreymer/webarchiveplayer#auto-load-warcs
  - [Sheetsee-Pocket](http://jlord.us/sheetsee-pocket/) project that provides a pretty auto-updating index of your Pocket links (without archiving them)
  - [Pocket -> IFTTT -> Dropbox](https://christopher.su/2013/saving-pocket-links-file-day-dropbox-ifttt-launchd/) Post by Christopher Su on his Pocket saving IFTTT recipie
