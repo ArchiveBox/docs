@@ -1,6 +1,6 @@
 # CLI Usage
 
-`./archive` refers to the executable shortcut in the root of the project, but you can also call ArchiveBox via `./bin/archivebox`.
+`./archive` refers to the executable shortcut in the root of the project, but you can also call ArchiveBox via `./bin/archivebox`.  If you add `/path/to/ArchiveBox/bin` to your shell `$PATH` then you can call `archivebox` from anywhere on your system.
 
 Make sure to run `./setup` or follow the [[Install]] instructions before archiving anything.
 
