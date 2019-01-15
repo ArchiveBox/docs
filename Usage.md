@@ -4,6 +4,8 @@
 
 Make sure to run `./setup` or follow the [[Install]] instructions before archiving anything.
 
+For instructions on how to configure ArchiveBox settings, see the [[Configuration]] page.
+
 ## Import a single URL or list of URLs via stdin
 ```bash
 echo 'https://example.com' | ./archive
