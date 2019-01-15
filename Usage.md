@@ -30,3 +30,11 @@ ArchiveBox will download the URL to a local file in `output/sources/` attempt to
 # or
 ./archive https://example.com/links.txt
 ```
+
+# UI Usage
+
+To access your archive, open `output/index.html` in a browser.  You should see something [like this](https://archive.sweeting.me).
+
+You can sort by column, search using the box in the upper right, and see the total number of links at the bottom.
+
+Click the Favicon under the "Files" column to go to the details page for each link. 
