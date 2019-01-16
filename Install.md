@@ -88,4 +88,6 @@ docker run -v archivebox-data:/home/chromeuser/app/archivebox/output archivebox 
 To add a single link or a list of links from a file, pipe them in via stdin.
 ```bash
 echo 'https://example.com' | docker run -i -v archivebox-data:/home/chromeuser/app/archivebox/output archivebox
+# or
+cat bookmarks.html | docker run -i -v archivebox-data:/home/chromeuser/app/archivebox/output archivebox
 ```
