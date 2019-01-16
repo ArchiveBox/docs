@@ -4,9 +4,39 @@ If you don't already have docker installed, follow the official install instruct
 
 # Docker Compose
 
+Here's an example `docker-compose.yml` config:
+
+```yml
+version: '3'
+
+services:
+    archivebox:
+        build: .
+        stdin_open: true
+        tty: true
+        environment:
+            - FETCH_SCREENSHOT=False
+            - FETCH_PDF=False
+            - FETCH_DOM=False
+            - FETCH_MEDIA=False
+            - USE_COLOR=False
+            - SHOW_PROGRESS=False
+        volumes:
+            - ./data:/data
+        command: bash -c 'echo "https://example.com" | /usr/bin/archive; tail -f /dev/null'
+
+    nginx:
+        image: 'nginx'
+        ports:
+            - '8098:80'
+        volumes:
+            - ./etc/nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./data:/var/www
+```
+
 ```bash
 cd /path/to/ArchiveBox
-docker compose up -d
+docker-compose up -d
 ```
 
 To add new URLs to your archive:
