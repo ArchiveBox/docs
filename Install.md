@@ -64,16 +64,27 @@ If you have any trouble, see the [Troubleshooting](#troubleshooting) section at 
 
 Docker support for ArchiveBox is in beta, I'll update it as we improve the ergonomics and add an example `docker-compose.yml` file for serving the archive with nginx.
 
-Currently, you can run ArchiveBox with Docker like this:
+1. Make sure you have Docker installed and set up:
+Follow their install instructions for Linux, macOS, or Windows https://docs.docker.com/install/#supported-platforms.
 
+2. Fetch and build the ArchiveBox Docker image:
 ```bash
 docker build github.com/pirate/ArchiveBox -t ArchiveBox
+```
+
+3. Create a volume to hold your ArchiveBox data:
+```bash
 docker volume create archivebox-data
+```
+
+4. Run ArchiveBox with `docker run` to add links to your archive:
+
+To add a list of pages via URL of a feed.
+```bash
 docker run -v archivebox-data:/home/chromeuser/app/archivebox/output ArchiveBox 'https://example.com/some/rss/feed.xml'
 ```
 
-It's not perfect yet, I still have to improve the system for passing in link files to parse, right now you have to put them in the data volume and then reference them by their path inside the container to get ArchiveBox to find them:
-
+To add a single link or a list of links from a file, pipe them in via stdin.
 ```bash
-docker run -v archivebox-data:/home/chromeuser/app/archiver/output ArchiveBox /home/chromeuser/app/archivebox/output/downloads/path-to-links.json
+echo 'https://example.com' | docker run -i -v archivebox-data:/home/chromeuser/app/archivebox/output ArchiveBox
 ```
