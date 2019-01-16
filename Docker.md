@@ -4,37 +4,8 @@ If you don't already have docker installed, follow the official install instruct
 
 # Docker Compose
 
-Here's an example `docker-compose.yml` config:
+An example `docker-compose.yml` config is included in the project root.  You can edit it as you see fit, or just run the default setup with archivebox + nginx as it comes out of the box:
 
-```yml
-version: '3'
-
-services:
-    archivebox:
-        build: .
-        stdin_open: true
-        tty: true
-        environment:
-            - FETCH_SCREENSHOT=False
-            - FETCH_PDF=False
-            - FETCH_DOM=False
-            - FETCH_MEDIA=False
-            - USE_COLOR=False
-            - SHOW_PROGRESS=False
-        volumes:
-            - ./data:/data
-        command: bash -c 'echo "https://example.com" | /usr/bin/archive; tail -f /dev/null'
-
-    nginx:
-        image: 'nginx'
-        ports:
-            - '8098:80'
-        volumes:
-            - ./etc/nginx/nginx.conf:/etc/nginx/nginx.conf
-            - ./data:/var/www
-```
-
-The above example is already included in the repo, so you can run it easily straight from the git directory:
 ```bash
 cd /path/to/ArchiveBox
 docker-compose up -d
