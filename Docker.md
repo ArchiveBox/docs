@@ -11,10 +11,12 @@ docker compose up -d
 
 To add new URLs to your archive:
 ```bash
-echo bookmarks.html | docker-compose exec archivebox archive
+echo bookmarks.html | docker-compose exec -T archivebox archive
 ```
 
 Then open https://127.0.0.1:8098 to view the archive.
+
+To set environment variables for configuring ArchiveBox, edit `docker-compose.yml` or create a `.env` file in the project root.
 
 # Docker
 
@@ -40,4 +42,9 @@ To add a single link or a list of links from a file, pipe them in via stdin.
 echo 'https://example.com' | docker run -i -v archivebox-data:/data archivebox
 # or
 cat bookmarks.html | docker run -i -v archivebox-data:/data archivebox
+```
+
+To pass configuration parameters, you can use the env command.
+```bash
+echo 'https://example.com' | docker run -i -v archivebox-data:/data env FETCH_SCREENSHOT=False archivebox
 ```
