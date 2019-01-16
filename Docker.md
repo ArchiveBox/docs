@@ -49,5 +49,10 @@ cat bookmarks.html | docker run -i -v archivebox-data:/data archivebox
 
 To pass configuration parameters, you can use the env command.
 ```bash
-echo 'https://example.com' | docker run -i -v archivebox-data:/data env FETCH_SCREENSHOT=False archivebox
+echo 'https://example.com' | docker run -i -v archivebox-data:/data archivebox env FETCH_SCREENSHOT=False archive
+```
+
+Or you can define an `ArchiveBox.env` file and pass it in like so:
+```bash
+docker run -i -v --env-file=ArchiveBox.env archivebox archive ...
 ```
