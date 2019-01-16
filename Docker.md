@@ -5,8 +5,16 @@ If you don't already have docker installed, follow the official install instruct
 # Docker Compose
 
 ```bash
-docker compose up
+cd /path/to/ArchiveBox
+docker compose up -d
 ```
+
+To add new URLs to your archive:
+```bash
+echo bookmarks.html | docker-compose exec archivebox archive
+```
+
+Then open https://127.0.0.1:8098 to view the archive.
 
 # Docker
 
