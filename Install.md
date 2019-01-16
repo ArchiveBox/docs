@@ -65,7 +65,8 @@ If you have any trouble, see the [Troubleshooting](#troubleshooting) section at 
 Docker support for ArchiveBox is in beta, I'll update it as we improve the ergonomics and add an example `docker-compose.yml` file for serving the archive with nginx.
 
 1. Make sure you have Docker installed and set up:
-Follow their install instructions for Linux, macOS, or Windows https://docs.docker.com/install/#supported-platforms.
+
+If you don't already have docker installed, follow the official install instructions for Linux, macOS, or Windows https://docs.docker.com/install/#supported-platforms.
 
 2. Fetch and build the ArchiveBox Docker image:
 ```bash
