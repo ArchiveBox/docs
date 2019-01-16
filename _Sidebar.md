@@ -3,9 +3,9 @@
 # Getting Started
 
  - [[Home]]
- - [[Install]]
  - [[Quickstart]]
- - [[Web Archiving Community]]
+ - [[Install]]
+ - [[Docker]]
 
 # Documentation
 
@@ -22,6 +22,7 @@
  - [[Roadmap]]
  - [[Changelog]]
  - [[Donations]]
+ - [[Web Archiving Community]]
 
 ---
 
