@@ -34,6 +34,7 @@ services:
             - ./data:/var/www
 ```
 
+The above example is already included in the repo, so you can run it easily straight from the git directory:
 ```bash
 cd /path/to/ArchiveBox
 docker-compose up -d
