@@ -70,7 +70,7 @@ If you don't already have docker installed, follow the official install instruct
 
 2. Fetch and build the ArchiveBox Docker image:
 ```bash
-docker build github.com/pirate/ArchiveBox -t ArchiveBox
+docker build github.com/pirate/ArchiveBox -t archivebox
 ```
 
 3. Create a volume to hold your ArchiveBox data:
@@ -82,10 +82,10 @@ docker volume create archivebox-data
 
 To add a list of pages via URL of a feed.
 ```bash
-docker run -v archivebox-data:/home/chromeuser/app/archivebox/output ArchiveBox 'https://example.com/some/rss/feed.xml'
+docker run -v archivebox-data:/home/chromeuser/app/archivebox/output archivebox 'https://example.com/some/rss/feed.xml'
 ```
 
 To add a single link or a list of links from a file, pipe them in via stdin.
 ```bash
-echo 'https://example.com' | docker run -i -v archivebox-data:/home/chromeuser/app/archivebox/output ArchiveBox
+echo 'https://example.com' | docker run -i -v archivebox-data:/home/chromeuser/app/archivebox/output archivebox
 ```
