@@ -82,12 +82,12 @@ docker volume create archivebox-data
 
 To add a list of pages via URL of a feed.
 ```bash
-docker run -v archivebox-data:/home/chromeuser/app/archivebox/output archivebox 'https://example.com/some/rss/feed.xml'
+docker run -v archivebox-data:/data archivebox 'https://example.com/some/rss/feed.xml'
 ```
 
 To add a single link or a list of links from a file, pipe them in via stdin.
 ```bash
-echo 'https://example.com' | docker run -i -v archivebox-data:/home/chromeuser/app/archivebox/output archivebox
+echo 'https://example.com' | docker run -i -v archivebox-data:/data archivebox
 # or
-cat bookmarks.html | docker run -i -v archivebox-data:/home/chromeuser/app/archivebox/output archivebox
+cat bookmarks.html | docker run -i -v archivebox-data:/data archivebox
 ```
