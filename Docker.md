@@ -16,7 +16,8 @@ echo bookmarks.html | docker-compose exec -T archivebox archive
 
 Then open https://127.0.0.1:8098 to view the archive.
 
-To set environment variables for configuring ArchiveBox, edit `docker-compose.yml` or create a `.env` file in the project root.
+To pass in environment variables for configuring ArchiveBox,  
+edit `docker-compose.yml` or create a `.env` file in the project root.
 
 # Docker
 
