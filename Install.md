@@ -62,4 +62,7 @@ If you have any trouble, see the [Troubleshooting](#troubleshooting) section at 
 
 ## Docker Setup
 
-See the [[Docker]] page.
+First if you don't already have docker installed, follow the official install instructions for Linux, macOS, or Windows https://docs.docker.com/install/#supported-platforms.
+
+
+Then see the [[Docker]] page for next steps.
