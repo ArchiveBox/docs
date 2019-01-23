@@ -11,9 +11,17 @@ cd /path/to/ArchiveBox
 docker-compose up -d
 ```
 
-To add new URLs to your archive:
+Usage via docker-compose similar to the normal CLI usage of `./archive`.  To add new URLs to your archive:
 ```bash
-echo bookmarks.html | docker-compose exec -T archivebox archive
+# pass links to archive via stdin
+echo "https://example.com" | docker-compose exec -T archivebox archive
+
+# or pass the URL of a feed to import links from
+docker-compose exec archivebox /bin/archive https://example.com/some/feed.rss
+
+# or import a file by putting it in your data folder so docker can access it
+mv ~/Downloads/bookmarks.html data/sources/bookmarks.html
+docker-compose exec archivebox /bin/archive /data/sources/bookmarks.html
 ```
 
 Then open https://127.0.0.1:8098 to view the archive.
@@ -49,10 +57,10 @@ cat bookmarks.html | docker run -i -v archivebox-data:/data archivebox
 
 To pass configuration parameters, you can use the env command.
 ```bash
-echo 'https://example.com' | docker run -i -v archivebox-data:/data archivebox env FETCH_SCREENSHOT=False archive
+echo 'https://example.com' | docker run -i -v archivebox-data:/data archivebox env FETCH_SCREENSHOT=False /bin/archive
 ```
 
 Or you can define an `ArchiveBox.env` file and pass it in like so:
 ```bash
-docker run -i -v --env-file=ArchiveBox.env archivebox archive ...
+docker run -i -v --env-file=ArchiveBox.env archivebox /bin/archive ...
 ```
