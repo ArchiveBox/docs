@@ -67,6 +67,9 @@ FETCH_PDF=False
 Then source it when you run the archive script:
 
 ```bash
+env $(cat ~/.ArchiveBox.conf) ./archive https://example.com/rss/feed.xml
+
+# or if you have comments in your env file:
 export $(grep -v '^#' ~/.ArchiveBox.conf | xargs); ./archive https://example.com/rss/feed.xml
 ```
 
