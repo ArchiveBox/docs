@@ -22,13 +22,22 @@ cat urls_to_archive.txt | ./archive
 ./archive ~/Downloads/other_links.txt
 ```
 
-## Archive URLs from a remote RSS feed or file
+## Import URLs from a remote RSS feed or file
 ArchiveBox will download the URL to a local file in `output/sources/` and attempt to autodetect the format and import any URLs found. Currently, Netscape HTML, JSON, RSS, and plain text links lists are supported.
 
 ```bash
 ./archive https://example.com/feed.rss
 # or
 ./archive https://example.com/links.txt
+```
+
+## Import links from browser history
+```bash
+./bin/archivebox-export-browser-history --chrome
+./archive output/sources/chrome_history.json
+# or
+./bin/archivebox-export-browser-history --firefox
+./archive output/sources/firefox_history.json
 ```
 
 # UI Usage
@@ -39,32 +48,10 @@ You can sort by column, search using the box in the upper right, and see the tot
 
 Click the Favicon under the "Files" column to go to the details page for each link. 
 
----
 
-*Some alternatives that also work:*
+# More
 
-Add a list of links from remote URL:
-```bash
-./archive "https://getpocket.com/users/yourusername/feed/all"  # url to an RSS, html, or json links file
-```
-
-Add a single URL or list of URLs to archive via stdin:
-```bash
-cat ./urls_to_archive.txt | ./archive
-# or
-echo 'https://example.com' | ./archive
-```
-
-Add all the links from your browser history:
-```bash
-./bin/archivebox-export-browser-history --chrome           # works with --firefox as well, can take path to SQLite history db
-./archive output/sources/chrome_history.json
-```
-
-Or update the archive without adding new links:
-```bash
-./archive
-```
-
----
-
+ - Read [[Configuration]] to learn about the various archive method options
+ - Read [[Scheduled Archiving]] to learn how to set up automatic daily archiving
+ - Read [[Publishing Your Archive]] if you want to host your archive for others to access online
+ - Read [[Troubleshooting]] if you encounter any problems
