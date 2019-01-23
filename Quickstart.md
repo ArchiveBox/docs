@@ -57,7 +57,7 @@ You can open `output/index.html` to view your archive.  (favicons will appear ne
 
  - Read [[Configuration]] to learn about the various archive method options
  - Read [[Scheduled Archiving]] to learn how to set up automatic daily archiving
- - Read [[Publishing Your Archiving]] if you want to host your archive for others to access online
+ - Read [[Publishing Your Archive]] if you want to host your archive for others to access online
 
 ---
   
