@@ -1,4 +1,4 @@
-## Schedule importing new links into your archive
+## Schedule regular importing of new links into your archive
 
 To schedule regular archiving you can use any task scheduler like `cron`, `at`, `sytsemd`, etc.
 
