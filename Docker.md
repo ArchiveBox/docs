@@ -10,8 +10,9 @@ An example `docker-compose.yml` config is included in the project root.  You can
 cd /path/to/ArchiveBox
 docker-compose up -d
 ```
+Then open https://127.0.0.1:8098 to view the archive.
 
-Usage via docker-compose similar to the normal CLI usage of `./archive`.  To add new URLs to your archive:
+To add new URLs to your archive, you can use docker-compose just like the normal `./archive` CLI: 
 ```bash
 # pass links to archive via stdin
 echo "https://example.com" | docker-compose exec -T archivebox archive
@@ -23,8 +24,6 @@ docker-compose exec archivebox /bin/archive https://example.com/some/feed.rss
 mv ~/Downloads/bookmarks.html data/sources/bookmarks.html
 docker-compose exec archivebox /bin/archive /data/sources/bookmarks.html
 ```
-
-Then open https://127.0.0.1:8098 to view the archive.
 
 To pass in environment variables for configuring ArchiveBox,  
 edit `docker-compose.yml` or create a `.env` file in the project root.
