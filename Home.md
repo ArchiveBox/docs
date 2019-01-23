@@ -2,38 +2,36 @@
 
 *(Recently [renamed](https://github.com/pirate/ArchiveBox/issues/108) from `Bookmark Archiver`)*
 
+Use the sidebar on the right to browse documentation topics ->
 
-
-ArchiveBox saves an archived copy of the websites you visit into a local browsable folder (the actual *content* of each site, not just the list of links).  It can archive your entire browsing history, or import links from bookmarks managers, rss, text files and more.
+---
 
 ### Can import links from:
 
  - <img src="https://nicksweeting.com/images/bookmarks.png" height="22px"/> Browser history or bookmarks (Chrome, Firefox, Safari, IE, Opera)
- - <img src="https://getpocket.com/favicon.ico" height="22px"/> Pocket
- - <img src="https://pinboard.in/favicon.ico" height="22px"/> Pinboard
  - <img src="https://nicksweeting.com/images/rss.svg" height="22px"/> RSS or plain text lists
- - Shaarli, Delicious, Instapaper, Reddit Saved Posts, Wallabag, Unmark.it, and more!
+ - <img src="https://getpocket.com/favicon.ico" height="22px"/> Pocket, Pinboard, Instapaper
+ - *Shaarli, Delicious, Reddit Saved Posts, Wallabag, Unmark.it, and any other text with links in it!*
 
 ### Can save these things for each site:
 
  - `favicon.ico` favicon of the site
- - `en.wikipedia.org/wiki/Example.html` wget clone of the site, with .html appended if not present
+ - `example.com/page-name.html` wget clone of the site, with .html appended if not present
  - `output.pdf` Printed PDF of site using headless chrome
  - `screenshot.png` 1440x900 screenshot of site using headless chrome
  - `output.html` DOM Dump of the HTML after rendering using headless chrome
  - `archive.org.txt` A link to the saved site on archive.org
  - `warc/` for the html + gzipped warc file <timestamp>.gz
- - `media/` for sites like youtube, soundcloud, etc. (using youtube-dl)
- - `git/` clone of any repository for github, bitbucket, or gitlab links)
- - `index.json` JSON index containing link info and archive details
- - `index.html` HTML index containing link info and archive details (optional fancy or simple index)
+ - `media/` any mp4, mp3, subtitles, and metadata found using youtube-dl
+ - `git/` clone of any repository for github, bitbucket, or gitlab links
+ - `index.html` & `index.json` HTML and JSON index files containing metadata and details
+
+ By default it does everything, visit the [Configuration](https://github.com/pirate/ArchiveBox/wiki/Configuration) page for details on how to disable or fine-tune certain methods.
 
 The archiving is additive, so you can schedule `./archive` to run regularly and pull new links into the index.
 All the saved content is static and indexed with JSON files, so it lives forever & is easily parseable, it requires no always-running backend.
 
 [DEMO: archive.sweeting.me](https://archive.sweeting.me)
-
-[![](https://img.shields.io/badge/Donate-Patreon-%23DD5D76.svg)](https://www.patreon.com/theSquashSH)
 
 <img src="https://i.imgur.com/q3Oz9wN.png" width="75%" alt="Desktop Screenshot" align="top"><img src="https://i.imgur.com/TG0fGVo.png" width="25%" alt="Mobile Screenshot" align="top"><br/>
 
@@ -64,3 +62,11 @@ If you already imported a huge list of bookmarks and want to import only new
 bookmarks, you can use the `ONLY_NEW` environment variable. This is useful if
 you want to import a bookmark dump periodically and want to skip broken links
 which are already in the index.
+
+---
+
+<div align="center">
+
+[![](https://img.shields.io/badge/Donate-Patreon-%23DD5D76.svg)](https://www.patreon.com/theSquashSH)
+
+</div>
