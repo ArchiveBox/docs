@@ -53,10 +53,13 @@ echo 'https://example.com' | ./archive
 
 You can open `output/index.html` to view your archive.  (favicons will appear next to each title once it has finished downloading)
 
-If you want to host your archive somewhere to share it with other people, see the [Publishing Your Archive](#publishing-your-archive) section below.
+**Next Steps:**
 
-</div>
-<br/><br/>
+ - Read [[Configuration]] to learn about the various archive method options
+ - Read [[Scheduled Archiving]] to learn how to set up automatic daily archiving
+ - Read [[Publishing Your Archiving]] if you want to host your archive for others to access online
+
+---
   
 If you have any trouble, see the [Troubleshooting](https://github.com/pirate/ArchiveBox/wiki/Troubleshooting) section at the bottom.  
 If you'd like to customize options, see the [Configuration](https://github.com/pirate/ArchiveBox/wiki/Configuration) section.  
