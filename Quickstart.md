@@ -57,45 +57,6 @@ If you want to host your archive somewhere to share it with other people, see th
 
 </div>
 <br/><br/>
-
----
-*Some alternatives that also work:*
-
-Add a list of links from remote URL:
-```bash
-./archive "https://getpocket.com/users/yourusername/feed/all"  # url to an RSS, html, or json links file
-```
-
-Add a single URL or list of URLs to archive via stdin:
-```bash
-cat ./urls_to_archive.txt | ./archive
-# or
-echo 'https://example.com' | ./archive
-```
-
-Add all the links from your browser history:
-```bash
-./bin/archivebox-export-browser-history --chrome           # works with --firefox as well, can take path to SQLite history db
-./archive output/sources/chrome_history.json
-```
-
-Or update the archive without adding new links:
-```bash
-./archive
-```
-
----
-
-
-**Next Steps: Schedule it to run with cron or supervisord**
-
-ArchiveBox ignores links that are imported multiple times (keeping the earliest version that it's seen).
-This means you can add cron jobs that regularly poll the same file or URL for new links, adding only new
-ones as necessary.
-
-For examples, see the `etc/cron.d` and `etc/supervisord` folders.
-
----
   
 If you have any trouble, see the [Troubleshooting](https://github.com/pirate/ArchiveBox/wiki/Troubleshooting) section at the bottom.  
 If you'd like to customize options, see the [Configuration](https://github.com/pirate/ArchiveBox/wiki/Configuration) section.  
