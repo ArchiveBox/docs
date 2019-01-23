@@ -5,6 +5,8 @@
 Make sure to run `./setup` or follow the [[Install]] instructions before archiving anything.
 
 ## Run ArchiveBox with configuration options
+You can set environment variables in your shell profile, a config file, or by using the `env` command.  See [[Configuration]] for more details. 
+
 ```bash
 env FETCH_MEDIA=True MEDIA_TIMEOUT=500 ./archive ...
 ```
