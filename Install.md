@@ -8,11 +8,22 @@ ArchiveBox officially supports the following operating systems:
 
 You can run it on Windows and other systems via Docker containers or Vagrant VMs if they have support for those technologies.  I haven't tested it on distros like Fedora, SUSE, Arch, CentOS, etc but you can probably get it working on those as well.
 
+## Dependencies
+
+Not all the dependencies are required for all modes. If you disable some archive methods you can avoid those dependencies, for example, if you set `FETCH_MEDIA=False` you don't need to install `youtube-dl`, and if you set `FETCH_[PDF,SCREENSHOT,DOM]=False` you don't need `chromium`.
+
+ - `python3 >= 3.5`
+ - `chromium >= 59` (`google-chrome >= v59` works fine as well)
+ - `wget >= 1.16`
+ - `curl`
+ - `youtube-dl`
+ - `git`
+
 ## Automatic Setup
 
 If you're on Linux with `apt`, or macOS with `brew`:
 
-Run `./bin/setup` to install all dependencies and set up ArchiveBox automatically.
+Run `./bin/setup`, it will prompt you to install all dependencies and set up ArchiveBox automatically.
 
 Then continue with the [[Quickstart]]...
 
@@ -22,28 +33,28 @@ BSD and Windows users should follow the manual setup and Docker instructions res
 
 If you don't like running random setup scripts off the internet (:+1:), you can follow these manual setup instructions.
 
-**1. Install dependencies:** `chromium >= 59`,` wget >= 1.16`, `python3 >= 3.5`  (`google-chrome >= v59` works fine as well)
+**1. Install dependencies:** 
 
-If you already have Google Chrome installed, or wish to use that instead of Chromium, follow the [Google Chrome Instructions](#google-chrome-instructions).
+```bash
+# On Ubuntu/Debian:
+apt install chromium-browser python3 wget curl youtube-dl git
+```
 
 ```bash
 # On Mac:
 brew cask install chromium  # If you already have Google Chrome/Chromium in /Applications/, skip this command
-brew install wget python3
+brew install python3 wget curl youtube-dl git
 
-echo -e '#!/bin/bash\n/Applications/Chromium.app/Contents/MacOS/Chromium "$@"' > /usr/local/bin/chromium-browser  # see instructions for google-chrome below
+echo -e '#!/bin/bash\n/Applications/Chromium.app/Contents/MacOS/Chromium "$@"' > /usr/local/bin/chromium-browser
 chmod +x /usr/local/bin/chromium-browser
 ```
 
 ```bash
-# On Ubuntu/Debian:
-apt install chromium-browser python3 wget
-```
-
-```bash
-# Check that everything worked:
+# Check that everything worked and the versions are high enough:
 chromium-browser --version && which wget && which python3 && which curl && echo "[√] All dependencies installed."
 ```
+
+If you have issues setting up Chromium / Google Chrome, see the [[Chromium Install]] page for more detailed setup instructions.
 
 **2. Get your bookmark export file:**
 
