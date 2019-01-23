@@ -47,7 +47,7 @@ chromium-browser --version && which wget && which python3 && which curl && echo 
 
 **2. Get your bookmark export file:**
 
-Follow the instruction in the "Quickstart" section to download your bookmarks export file containing a list of links to archive.
+Follow the [[Quickstart]] guide to download your bookmarks export file containing a list of links to archive.
 
 **3. Run the archive script:**
 
@@ -57,12 +57,17 @@ Follow the instruction in the "Quickstart" section to download your bookmarks ex
 
 You may optionally specify a second argument to `archive.py export.html 153242424324` to resume the archive update at a specific timestamp.
 
-If you have any trouble, see the [Troubleshooting](#troubleshooting) section at the bottom.
+**Next Steps:**
+
+ - Read [[Configuration]] to learn about the various archive method options
+ - Read [[Scheduled Archiving]] to learn how to set up automatic daily archiving
+ - Read [[Publishing Your Archive]] if you want to host your archive for others to access online
+ - Read [[Troubleshooting]] if you encounter any problems
 
 
 ## Docker Setup
 
-First if you don't already have docker installed, follow the official install instructions for Linux, macOS, or Windows https://docs.docker.com/install/#supported-platforms.
+First, if you don't already have docker installed, follow the official install instructions for Linux, macOS, or Windows https://docs.docker.com/install/#supported-platforms.
 
 
 Then see the [[Docker]] page for next steps.
