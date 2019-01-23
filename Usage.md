@@ -4,7 +4,7 @@
 
 Make sure to run `./setup` or follow the [[Install]] instructions before archiving anything.
 
-## Set configuration options
+## Run ArchiveBox with configuration options
 ```bash
 env FETCH_MEDIA=True MEDIA_TIMEOUT=500 ./archive ...
 ```
