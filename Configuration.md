@@ -13,7 +13,7 @@ env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./arc
 
 ## Environment Variables
 
-As defined in `archivebox/config.py`.
+As defined in `archivebox/config.py` and `etc/ArchiveBox.conf.default`.
 
 ### Shell Options
  - colorize console ouput: `USE_COLOR` value: [`True`]/`False`
