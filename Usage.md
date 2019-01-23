@@ -4,7 +4,10 @@
 
 Make sure to run `./setup` or follow the [[Install]] instructions before archiving anything.
 
-For instructions on how to configure ArchiveBox settings, see the [[Configuration]] page.
+## Set configuration options
+```bash
+env FETCH_MEDIA=True MEDIA_TIMEOUT=500 ./archive ...
+```
 
 ## Import a single URL or list of URLs via stdin
 ```bash
