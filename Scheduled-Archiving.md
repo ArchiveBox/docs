@@ -26,7 +26,7 @@ cd /opt/ArchiveBox
 0 24 * * * www-data /opt/ArchiveBox/bin/firefox_custom.sh
 ```
 
-## Example: Import Pocket RSS feed every 24 hours
+## Example: Import an RSS feed from Pocket every 12 hours
 
 This example imports your Pocket bookmark feed and archives any new links once a day:
 
@@ -40,7 +40,7 @@ cd /opt/ArchiveBox
 ./bin/archivebox https://getpocket.com/users/yourusernamegoeshere/feed/all  >> /var/log/ArchiveBox.log
 ```
 
-**Then create a new file `/etc/cron.d/ArchiveBox-Pocket` to tell cron to run your script every 24 hours:**
+**Then create a new file `/etc/cron.d/ArchiveBox-Pocket` to tell cron to run your script every 12 hours:**
 ```bash
-0 24 * * * www-data /opt/ArchiveBox/bin/pocket_custom.sh
+0 12 * * * www-data /opt/ArchiveBox/bin/pocket_custom.sh
 ```
