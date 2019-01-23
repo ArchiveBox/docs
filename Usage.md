@@ -10,7 +10,7 @@ For instructions on how to configure ArchiveBox settings, see the [[Configuratio
 ```bash
 echo 'https://example.com' | ./archive
 # or
-./archive < urls_to_archive.txt
+cat urls_to_archive.txt | ./archive
 ```
 
 ## Import links exported from browser or another service
