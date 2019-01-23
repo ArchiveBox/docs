@@ -38,3 +38,33 @@ To access your archive, open `output/index.html` in a browser.  You should see s
 You can sort by column, search using the box in the upper right, and see the total number of links at the bottom.
 
 Click the Favicon under the "Files" column to go to the details page for each link. 
+
+---
+
+*Some alternatives that also work:*
+
+Add a list of links from remote URL:
+```bash
+./archive "https://getpocket.com/users/yourusername/feed/all"  # url to an RSS, html, or json links file
+```
+
+Add a single URL or list of URLs to archive via stdin:
+```bash
+cat ./urls_to_archive.txt | ./archive
+# or
+echo 'https://example.com' | ./archive
+```
+
+Add all the links from your browser history:
+```bash
+./bin/archivebox-export-browser-history --chrome           # works with --firefox as well, can take path to SQLite history db
+./archive output/sources/chrome_history.json
+```
+
+Or update the archive without adding new links:
+```bash
+./archive
+```
+
+---
+
