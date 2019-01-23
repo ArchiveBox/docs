@@ -16,16 +16,17 @@ ArchiveBox saves an archived copy of the websites you visit into a local browsab
 
 ### Can save these things for each site:
 
-- Favicon
-- Browsable static HTML archive (wget)
-- PDF (Chrome headless)
-- Screenshot (Chrome headless)
-- HTML DUMP after 2s of JS running in Chrome headless
-- Git repo download (git clone)
-- Media download (youtube-dl: video, audio, subtitles, including playlists)
-- WARC archive (wget warc)
-- Submits URL to archive.org
-- Index summary pages: index.html & index.json
+ - `favicon.ico` favicon of the site
+ - `en.wikipedia.org/wiki/Example.html` wget clone of the site, with .html appended if not present
+ - `output.pdf` Printed PDF of site using headless chrome
+ - `screenshot.png` 1440x900 screenshot of site using headless chrome
+ - `output.html` DOM Dump of the HTML after rendering using headless chrome
+ - `archive.org.txt` A link to the saved site on archive.org
+ - `warc/` for the html + gzipped warc file <timestamp>.gz
+ - `media/` for sites like youtube, soundcloud, etc. (using youtube-dl)
+ - `git/` clone of any repository for github, bitbucket, or gitlab links)
+ - `index.json` JSON index containing link info and archive details
+ - `index.html` HTML index containing link info and archive details (optional fancy or simple index)
 
 The archiving is additive, so you can schedule `./archive` to run regularly and pull new links into the index.
 All the saved content is static and indexed with JSON files, so it lives forever & is easily parseable, it requires no always-running backend.
@@ -42,19 +43,6 @@ All the saved content is static and indexed with JSON files, so it lives forever
 
 The archiver produces an output folder `output/` containing an `index.html`, `index.json`, and archived copies of all the sites,
 organized by timestamp bookmarked.  It's Powered by [headless](https://developers.google.com/web/updates/2017/04/headless-chrome) Chromium and good 'ol `wget`.
-
-For each sites it saves:
-
- - wget of site, e.g. `en.wikipedia.org/wiki/Example.html` with .html appended if not present
- - `output.pdf` Printed PDF of site using headless chrome
- - `screenshot.png` 1440x900 screenshot of site using headless chrome
- - `output.html` DOM Dump of the HTML after rendering using headless chrome
- - `archive.org.txt` A link to the saved site on archive.org
- - `warc/` for the html + gzipped warc file <timestamp>.gz
- - `media/` for sites like youtube, soundcloud, etc. (using youtube-dl)
- - `git/` clone of any repository for github, bitbucket, or gitlab links)
- - `index.json` JSON index containing link info and archive details
- - `index.html` HTML index containing link info and archive details (optional fancy or simple index)
 
 Wget doesn't work on sites you need to be logged into, but chrome headless does, see the [Configuration](#configuration)* section for `CHROME_USER_DATA_DIR`.
 
@@ -76,15 +64,3 @@ If you already imported a huge list of bookmarks and want to import only new
 bookmarks, you can use the `ONLY_NEW` environment variable. This is useful if
 you want to import a bookmark dump periodically and want to skip broken links
 which are already in the index.
-
-## Info & Motivation
-
-This is basically an open-source version of [Pocket Premium](https://getpocket.com/premium) (which you should consider paying for!).
-I got tired of sites I saved going offline or changing their URLs, so I started
-archiving a copy of them locally now, similar to The Way-Back Machine provided
-by [archive.org](https://archive.org).  Self-hosting your own archive allows you to save
-PDFs & Screenshots of dynamic sites in addition to static HTML, something archive.org doesn't do.
-
-Now I can rest soundly knowing important articles and resources I like won't disappear off the internet.
-
-My published archive as an example: [archive.sweeting.me](https://archive.sweeting.me).
