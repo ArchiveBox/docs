@@ -55,22 +55,23 @@ The chrome/chromium dependency is _optional_ and only required for screenshots, 
 
 ## Creating a Config File
 
+To set up a persistent config:
 
-One way to have persistent config is to create a `~/.ArchiveBox.conf` file, and put your options inside it like so:
+1. Copy `etc/ArchiveBox.conf.default` to `~/.ArchiveBox.conf`
+```bash
+cp ArchiveBox/etc/ArchiveBox.conf.default ~/.ArchiveBox.conf
+```
 
+2. Edit your options inside `~/.ArchiveBox.conf`, e.g.:
 ```bash
 CHROME_BINARY=google-chrome-stable
 RESOLUTION=1440,900
 FETCH_PDF=False
 ```
 
-Then source it when you run the archive script:
-
+3. Source your config file when you run your archive script:
 ```bash
-env $(cat ~/.ArchiveBox.conf) ./archive https://example.com/rss/feed.xml
-
-# or if you have comments in your env file:
-export $(grep -v '^#' ~/.ArchiveBox.conf | xargs); ./archive https://example.com/rss/feed.xml
+export "$(grep -v '^#' ~/.ArchiveBox.conf | xargs)"; ./archive https://example.com/rss/feed.xml
 ```
 
 Improving this process is on the roadmap, in future versions you'll be able to pass a config file directly to the archive command.
