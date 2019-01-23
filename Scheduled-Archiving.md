@@ -12,7 +12,7 @@ For some example configs, see the `etc/cron.d` and `etc/supervisord` folders.
 
 This example exports your browser history and archives it once a day:
 
-**Create `/opt/ArchiveBox/bin/custom.sh`:**
+**Create `/opt/ArchiveBox/bin/firefox_custom.sh`:**
 ```bash
 #!/bin/bash
 
@@ -21,7 +21,26 @@ cd /opt/ArchiveBox
 ./bin/archivebox ./output/sources/firefox_history.json  >> /var/log/ArchiveBox.log
 ```
 
-**Then create a new file `/etc/cron.d/Archivebox` to tell cron to run your script every 24 hours:**
+**Then create a new file `/etc/cron.d/ArchiveBox-Firefox` to tell cron to run your script every 24 hours:**
 ```bash
-0 24 * * * www-data /opt/ArchiveBox/bin/custom.sh
+0 24 * * * www-data /opt/ArchiveBox/bin/firefox_custom.sh
+```
+
+## Example: Import Pocket RSS feed every 24 hours
+
+This example imports your Pocket bookmark feed and archives any new links once a day:
+
+First, set your Pocket RSS feed to "public" under https://getpocket.com/privacy_controls.
+
+**Create `/opt/ArchiveBox/bin/pocket_custom.sh`:**
+```bash
+#!/bin/bash
+
+cd /opt/ArchiveBox
+./bin/archivebox https://getpocket.com/users/yourusernamegoeshere/feed/all  >> /var/log/ArchiveBox.log
+```
+
+**Then create a new file `/etc/cron.d/ArchiveBox-Pocket` to tell cron to run your script every 24 hours:**
+```bash
+0 24 * * * www-data /opt/ArchiveBox/bin/pocket_custom.sh
 ```
