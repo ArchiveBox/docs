@@ -12,7 +12,7 @@ docker-compose up -d
 ```
 Then open https://127.0.0.1:8098 to view the archive.
 
-To add new URLs to your archive, you can use docker-compose just like the normal `./archive` CLI: 
+To add new URLs, you can use docker-compose just like the normal `./archive` CLI: 
 ```bash
 # pass links to archive via stdin
 echo "https://example.com" | docker-compose exec -T archivebox archive
