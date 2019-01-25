@@ -8,6 +8,7 @@ An example `docker-compose.yml` config is included in the project root.  You can
 
 ```bash
 cd /path/to/ArchiveBox
+mkdir data && chmod 777 data
 docker-compose up -d
 ```
 Then open https://127.0.0.1:8098 to view the archive.
