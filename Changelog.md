@@ -2,7 +2,7 @@
 
 <br/>
 
-<div align="center">🍰 Thank you to ArchiveBox's 30+ contributors and everyone in the web archiving community! 🏛</div>
+<div align="center">🍰 Thank's to our 30+ contributors and everyone in the web archiving community! 🏛</div>
 
 ---
 
