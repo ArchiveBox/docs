@@ -1,8 +1,14 @@
-## 🗃ArchiveBox Documentation
+<div align="center">
+
+<img src="https://i.imgur.com/4nkFjdv.png" height="35px"/>
+
+<h2>ArchiveBox Documentation</h2>
 
 *(Recently [renamed](https://github.com/pirate/ArchiveBox/issues/108) from `Bookmark Archiver`)*
 
 Use the sidebar on the right to browse documentation topics ->
+
+</div>
 
 ---
 
