@@ -10,7 +10,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - https://www.reddit.com/r/DHExchange/
  - https://www.reddit.com/r/Archivists/
 
-### ArchiveBox Public Discussions
+### ArchiveBox in the News
 
  - [ProductHunt](https://www.producthunt.com/posts/archivebox)
  - [Hacker News Discussion](https://news.ycombinator.com/item?id=14272133)
