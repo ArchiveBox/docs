@@ -12,6 +12,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
 
 ### ArchiveBox Public Discussions
 
+ - [ProductHunt](https://www.producthunt.com/posts/archivebox)
  - [Hacker News Discussion](https://news.ycombinator.com/item?id=14272133)
  - [Reddit r/selfhosted Discussion](https://www.reddit.com/r/selfhosted/comments/69eoi3/pocket_stream_archive_your_own_personal_wayback/)
  - [Reddit r/datahoarder Discussion #1](https://www.reddit.com/r/DataHoarder/comments/69e6i9/archive_a_browseable_copy_of_your_saved_pocket/)
