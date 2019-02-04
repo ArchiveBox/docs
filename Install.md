@@ -19,6 +19,8 @@ Not all the dependencies are required for all modes. If you disable some archive
  - `curl` (usually already on most systems)
  - `git` (usually already on most systems)
 
+For help installing specific dependencies, see the [[Troubleshooting]] page.
+
 ## Automatic Setup
 
 If you're on Linux with `apt`, or macOS with `brew`:
