@@ -19,6 +19,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - [Reddit r/datahoarder Discussion #1](https://www.reddit.com/r/DataHoarder/comments/69e6i9/archive_a_browseable_copy_of_your_saved_pocket/)
  - [Reddit r/datahoarder Discussion #2](https://www.reddit.com/r/DataHoarder/comments/6kepv6/bookmarkarchiver_now_supports_archiving_all_major/)
  - [Recurse Center: The Joy of Computing](https://joy.recurse.com/posts/26-bookmark-archiver-your-own-self-hosted-way-back-machine)
+ - [Python Trending Twiter](https://twitter.com/pythontrending/status/1092492387182628865)
 
 ### Similar Projects
 
