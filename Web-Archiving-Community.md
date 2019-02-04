@@ -46,6 +46,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - [Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content
  - [Perkeep](https://perkeep.org/) "Perkeep lets you permanently keep your stuff, for life."
  - [Fetching.io](http://fetching.io/) A personal search engine/archiver that lets you search through all archived websites that you've bookmarked
+ - [Fossilo](https://www.fossilo.com/) A commercial archiving solution that appears to be very similar to ArchiveBox
  - [Archivematica](https://github.com/artefactual/archivematica) web GUI for institutional long-term archiving of web and other content
  - [Headless Chrome Crawler](https://github.com/yujiosaka/headless-chrome-crawler) distributed web crawler built on puppeteer with screenshots
 
