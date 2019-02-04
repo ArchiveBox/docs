@@ -36,6 +36,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - [Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla
  - [Pinboard](https://pinboard.in) Bookmarking tool that provides archiving in a paid version, run by a single independent developer
  - https://archive.org, https://archive.is, https://archive.today, https://archive.st, https://archive-it.org, https://timetravel.mementoweb.org/, https://freezepage.com/, https://webcitation.org/archive
+ - Google, Bing, DuckDuckGo, and other search engine caches
 
 #### ArchiveBox alternatives
 
