@@ -13,11 +13,11 @@ You can run it on Windows and other systems via Docker containers or Vagrant VMs
 Not all the dependencies are required for all modes. If you disable some archive methods you can avoid those dependencies, for example, if you set `FETCH_MEDIA=False` you don't need to install `youtube-dl`, and if you set `FETCH_[PDF,SCREENSHOT,DOM]=False` you don't need `chromium`.
 
  - `python3 >= 3.5`
- - `chromium >= 59` (`google-chrome >= v59` works fine as well)
  - `wget >= 1.16`
- - `curl`
+ - `chromium >= 59` (`google-chrome >= v59` works fine as well)
  - `youtube-dl`
- - `git`
+ - `curl` (usually already on most systems)
+ - `git` (usually already on most systems)
 
 ## Automatic Setup
 
