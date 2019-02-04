@@ -57,6 +57,7 @@ You can open `output/index.html` to view your archive.  (favicons will appear ne
 
 **Next Steps:**
 
+ - Read [[Usage]] to learn about the various CLI and web UI functions
  - Read [[Configuration]] to learn about the various archive method options
  - Read [[Scheduled Archiving]] to learn how to set up automatic daily archiving
  - Read [[Publishing Your Archive]] if you want to host your archive for others to access online
