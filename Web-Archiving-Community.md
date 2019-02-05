@@ -24,19 +24,30 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
 ### Similar Projects
 
 #### From the archive.org team
+ - [Brozzler](https://github.com/internetarchive/brozzler) chrome headless crawler + WARC archiver maintained by Archive.org
+ - [WarcProx](https://github.com/internetarchive/warcprox) warc proxy recording and playback utility
+ - [WarcTools](https://github.com/internetarchive/warctools) utilities for dealing with WARCs
+ - [Archive.it](https://archive-it.org) commercial Wayback-Machine solution
 
+#### From the Webrecorder team
  - [pywb](https://github.com/webrecorder/pywb) The python wayback machine, the codebase that archive.org uses to save websites
  - [ipwb](https://github.com/oduwsdl/ipwb) A distributed web archiving solution using pywb with ipfs for storage
  - [Webrecorder.io](https://webrecorder.io/) An open-source personal archiving server that uses pywb under the hood
- - [Brozzler](https://github.com/internetarchive/brozzler) chrome headless crawler + WARC archiver maintained by Archive.org
-
 
 #### Mass market / commercial archiving solutions
 
  - [Wallabag](https://wallabag.org) / [Wallabag.it](https://wallabag.it) Self-hostable web archiving server that can import via RSS
+ - [Shaarli](https://github.com/shaarli/Shaarli) Self-hostable bookmark tagging, archiving, and sharing service
  - [Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla
  - [Pinboard](https://pinboard.in) Bookmarking tool that provides archiving in a paid version, run by a single independent developer
- - https://archive.org, https://archive.is, https://archive.today, https://archive.st, https://archive-it.org, https://timetravel.mementoweb.org/, https://freezepage.com/, https://webcitation.org/archive
+ - https://archive.org
+ - https://archive-it.org
+ - https://archive.is
+ - https://archive.today
+ - https://archive.st
+ - https://timetravel.mementoweb.org/
+ - https://freezepage.com/
+ - https://webcitation.org/archive
  - Google, Bing, DuckDuckGo, and other search engine caches
 
 #### ArchiveBox alternatives
