@@ -11,19 +11,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - https://www.reddit.com/r/Archivists/
  - https://the-eye.eu
 
-### ArchiveBox in the News
-
- - [ProductHunt](https://www.producthunt.com/posts/archivebox)
- - [AlternativeTo](https://alternativeto.net/software/archivebox/)
- - [Hacker News Discussion](https://news.ycombinator.com/item?id=14272133)
- - [Reddit r/selfhosted Discussion #1](https://www.reddit.com/r/selfhosted/comments/69eoi3/pocket_stream_archive_your_own_personal_wayback/)
- - [Reddit r/selfhosted Discussion #2](https://www.reddit.com/r/selfhosted/comments/an2368/archivebox_the_opensource_selfhosted_web_archive/)
- - [Reddit r/datahoarder Discussion #1](https://www.reddit.com/r/DataHoarder/comments/69e6i9/archive_a_browseable_copy_of_your_saved_pocket/)
- - [Reddit r/datahoarder Discussion #2](https://www.reddit.com/r/DataHoarder/comments/6kepv6/bookmarkarchiver_now_supports_archiving_all_major/)
- - [Recurse Center: The Joy of Computing](https://joy.recurse.com/posts/26-bookmark-archiver-your-own-self-hosted-way-back-machine)
- - [Python Trending Twiter](https://twitter.com/pythontrending/status/1092492387182628865)
-
-### Similar Projects
+### Related Projects
 
 #### From the Archive.org & Archive-It teams
  - [Archive.org](https://archive.org) The O.G. wayback machine provided publicly by the Internet Archive (Archive.org)
@@ -82,3 +70,15 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - https://lwn.net/Articles/766374/
  - https://en.wikipedia.org/wiki/List_of_Web_archiving_initiatives
  - https://medium.com/@giovannidamiola/making-the-internet-archives-full-text-search-faster-30fb11574ea9
+
+## ArchiveBox in the News
+
+ - [ProductHunt](https://www.producthunt.com/posts/archivebox)
+ - [AlternativeTo](https://alternativeto.net/software/archivebox/)
+ - [Hacker News Discussion](https://news.ycombinator.com/item?id=14272133)
+ - [Reddit r/selfhosted Discussion #1](https://www.reddit.com/r/selfhosted/comments/69eoi3/pocket_stream_archive_your_own_personal_wayback/)
+ - [Reddit r/selfhosted Discussion #2](https://www.reddit.com/r/selfhosted/comments/an2368/archivebox_the_opensource_selfhosted_web_archive/)
+ - [Reddit r/datahoarder Discussion #1](https://www.reddit.com/r/DataHoarder/comments/69e6i9/archive_a_browseable_copy_of_your_saved_pocket/)
+ - [Reddit r/datahoarder Discussion #2](https://www.reddit.com/r/DataHoarder/comments/6kepv6/bookmarkarchiver_now_supports_archiving_all_major/)
+ - [Recurse Center: The Joy of Computing](https://joy.recurse.com/posts/26-bookmark-archiver-your-own-self-hosted-way-back-machine)
+ - [Python Trending Twiter](https://twitter.com/pythontrending/status/1092492387182628865)
