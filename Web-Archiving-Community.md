@@ -34,6 +34,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - [Webrecorder.io](https://webrecorder.io/) An open-source personal archiving server that uses pywb under the hood
  - [pywb](https://github.com/webrecorder/pywb) The python wayback machine, the codebase forked off archive.org that powers webrecorder
  - [ipwb](https://github.com/oduwsdl/ipwb) A distributed web archiving solution using pywb with ipfs for storage
+ - [warcit](https://github.com/webrecorder/warcit) Create a warc file out of a folder full of assets
 
 #### Bookmarking + Archiving
  - [Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla
