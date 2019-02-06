@@ -9,6 +9,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - https://www.reddit.com/r/DataHoarder
  - https://www.reddit.com/r/DHExchange/
  - https://www.reddit.com/r/Archivists/
+ - https://the-eye.eu
 
 ### ArchiveBox in the News
 
@@ -53,11 +54,11 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
 
 #### ArchiveBox alternatives
 
+ - [Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline
+ - [Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content
  - [Reminiscence](https://github.com/kanishka-linux/reminiscence/) extremely similar to ArchiveBox, uses a Django backend + UI and provides auto tagging and summary features with NLTK
  - [Shaarchiver](https://github.com/nodiscc/shaarchiver) very similar project that archives Firefox, Shaarli, or Delicious bookmarks and all linked media, generating a markdown/HTML index
  - [Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a browser extension that saves all your history and does full-text search
- - [Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline
- - [Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content
  - [Perkeep](https://perkeep.org/) "Perkeep lets you permanently keep your stuff, for life."
  - [Fetching.io](http://fetching.io/) A personal search engine/archiver that lets you search through all archived websites that you've bookmarked
  - [Fossilo](https://www.fossilo.com/) A commercial archiving solution that appears to be very similar to ArchiveBox
@@ -71,3 +72,12 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - https://github.com/ikreymer/webarchiveplayer#auto-load-warcs
  - [Sheetsee-Pocket](http://jlord.us/sheetsee-pocket/) project that provides a pretty auto-updating index of your Pocket links (without archiving them)
  - [Pocket -> IFTTT -> Dropbox](https://christopher.su/2013/saving-pocket-links-file-day-dropbox-ifttt-launchd/) Post by Christopher Su on his Pocket saving IFTTT recipie
+
+## Reading List
+
+ - https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/
+ - https://www.gwern.net/Archiving-URLs
+ - http://brewster.kahle.org/2015/08/11/locking-the-web-open-a-call-for-a-distributed-web-2/
+ - https://lwn.net/Articles/766374/
+ - https://en.wikipedia.org/wiki/List_of_Web_archiving_initiatives
+ - https://medium.com/@giovannidamiola/making-the-internet-archives-full-text-search-faster-30fb11574ea9
