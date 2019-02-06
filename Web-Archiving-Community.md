@@ -60,6 +60,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - [WWWofle](http://www.gedanken.org.uk/software/wwwoffle/) old proxying recorder software similar to ArchiveBox
  - [Erised](https://github.com/marvelm/erised) Super simple CLI utility to bookmark and archive webpages
  - [Zotero](https://www.zotero.org/) collect, organize, cite, and share research (mainly for technical/scientific papers & citations)
+
 #### Smaller Utilities
 
  - https://github.com/chfoo/warcat for merging, extracting, and verifying WARC files
@@ -85,6 +86,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - https://www.gwern.net/docs/linkrot/2011-muflax-backup.pdf
  - https://thoughtstreams.io/higgins/permalinking-vs-transience/
 
+If any of these links are dead, you can find an archived version on https://archive.sweeting.me.
 
 ## ArchiveBox in the News
 
