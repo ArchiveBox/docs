@@ -4,7 +4,9 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
 
 ### Community Forums
 
+ - http://netpreserve.org/ (IIPC)
  - https://www.archiveteam.org/
+ - https://www.archiveteam.org/index.php?title=URLTeam
  - https://reddit.com/r/ArchiveTeam
  - https://www.reddit.com/r/DataHoarder
  - https://www.reddit.com/r/DHExchange/
@@ -33,12 +35,13 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - [Shaarli](https://github.com/shaarli/Shaarli) Self-hostable bookmark tagging, archiving, and sharing service
 
 #### Other Public Archiving Services
- - https://archive.is
- - https://archive.today
+ - https://archive.is / https://archive.today
  - https://archive.st
  - https://timetravel.mementoweb.org/
  - https://freezepage.com/
  - https://webcitation.org/archive
+ - https://archiveofourown.org/
+ - https://megalodon.jp/
  - Google, Bing, DuckDuckGo, and other search engine caches
 
 #### ArchiveBox alternatives
@@ -54,13 +57,20 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - [Archivematica](https://github.com/artefactual/archivematica) web GUI for institutional long-term archiving of web and other content
  - [Headless Chrome Crawler](https://github.com/yujiosaka/headless-chrome-crawler) distributed web crawler built on puppeteer with screenshots
  - [ZeroNet](https://github.com/HelloZeroNet/ZeroNet) a replacement p2p internet powered by namecoin and a cryptocurrency for hosting
-
+ - [WWWofle](http://www.gedanken.org.uk/software/wwwoffle/) old proxying recorder software similar to ArchiveBox
+ - [Erised](https://github.com/marvelm/erised) Super simple CLI utility to bookmark and archive webpages
+ - [Zotero](https://www.zotero.org/) collect, organize, cite, and share research (mainly for technical/scientific papers & citations)
 #### Smaller Utilities
 
  - https://github.com/chfoo/warcat for merging, extracting, and verifying WARC files
  - https://github.com/ikreymer/webarchiveplayer#auto-load-warcs
  - [Sheetsee-Pocket](http://jlord.us/sheetsee-pocket/) project that provides a pretty auto-updating index of your Pocket links (without archiving them)
  - [Pocket -> IFTTT -> Dropbox](https://christopher.su/2013/saving-pocket-links-file-day-dropbox-ifttt-launchd/) Post by Christopher Su on his Pocket saving IFTTT recipie
+ - http://squidman.net/squidman/index.html
+ - https://wordpress.org/plugins/broken-link-checker/
+ - https://github.com/ArchiveTeam/wpull
+ - http://freedup.org/
+ - https://en.wikipedia.org/wiki/Furl
 
 ## Reading List
 
@@ -70,6 +80,11 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - https://lwn.net/Articles/766374/
  - https://en.wikipedia.org/wiki/List_of_Web_archiving_initiatives
  - https://medium.com/@giovannidamiola/making-the-internet-archives-full-text-search-faster-30fb11574ea9
+ - https://xkcd.com/1909/
+ - https://samsaffron.com/archive/2012/06/07/testing-3-million-hyperlinks-lessons-learned#comment-31366
+ - https://www.gwern.net/docs/linkrot/2011-muflax-backup.pdf
+ - https://thoughtstreams.io/higgins/permalinking-vs-transience/
+
 
 ## ArchiveBox in the News
 
