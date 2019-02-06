@@ -56,12 +56,14 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - [Reminiscence](https://github.com/kanishka-linux/reminiscence/) extremely similar to ArchiveBox, uses a Django backend + UI and provides auto tagging and summary features with NLTK
  - [Shaarchiver](https://github.com/nodiscc/shaarchiver) very similar project that archives Firefox, Shaarli, or Delicious bookmarks and all linked media, generating a markdown/HTML index
  - [Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a browser extension that saves all your history and does full-text search
+ - [Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline
  - [Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content
  - [Perkeep](https://perkeep.org/) "Perkeep lets you permanently keep your stuff, for life."
  - [Fetching.io](http://fetching.io/) A personal search engine/archiver that lets you search through all archived websites that you've bookmarked
  - [Fossilo](https://www.fossilo.com/) A commercial archiving solution that appears to be very similar to ArchiveBox
  - [Archivematica](https://github.com/artefactual/archivematica) web GUI for institutional long-term archiving of web and other content
  - [Headless Chrome Crawler](https://github.com/yujiosaka/headless-chrome-crawler) distributed web crawler built on puppeteer with screenshots
+ - [ZeroNet](https://github.com/HelloZeroNet/ZeroNet) a replacement p2p internet powered by namecoin and a cryptocurrency for hosting
 
 #### Smaller Utilities
 
