@@ -26,7 +26,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
 ### Similar Projects
 
 #### From the Archive.org & Archive-It teams
- - [Archive.org](https://archive.org) The O.G. wayback machine provided publicly by the Internet Archive (Archive.org) team.
+ - [Archive.org](https://archive.org) The O.G. wayback machine provided publicly by the Internet Archive (Archive.org)
  - [Archive.it](https://archive-it.org) commercial Wayback-Machine solution
  - [Brozzler](https://github.com/internetarchive/brozzler) chrome headless crawler + WARC archiver maintained by Archive.org
  - [WarcProx](https://github.com/internetarchive/warcprox) warc proxy recording and playback utility
