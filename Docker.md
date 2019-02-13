@@ -60,7 +60,7 @@ To pass configuration parameters, you can use the env command.
 echo 'https://example.com' | docker run -i -v archivebox-data:/data archivebox env FETCH_SCREENSHOT=False /bin/archive
 ```
 
-Or you can define an `ArchiveBox.env` file and pass it in like so:
+Or you can create an `ArchiveBox.env` file (copy from the default `etc/ArchiveBox.conf.default`) and pass it in like so:
 ```bash
 docker run -i -v --env-file=ArchiveBox.env archivebox /bin/archive ...
 ```
