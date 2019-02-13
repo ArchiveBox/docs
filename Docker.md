@@ -50,9 +50,9 @@ docker run -v archivebox-data:/data archivebox /bin/archive 'https://example.com
 
 To add a single link or a list of links from a file, pipe them in via stdin.
 ```bash
-echo 'https://example.com' | docker run -i -v archivebox-data:/data archivebox
+echo 'https://example.com' | docker run -i -v archivebox-data:/data archivebox /bin/archive
 # or
-cat bookmarks.html | docker run -i -v archivebox-data:/data archivebox
+cat bookmarks.html | docker run -i -v archivebox-data:/data archivebox /bin/archive
 ```
 
 To pass configuration parameters, you can use the env command.
