@@ -45,7 +45,7 @@ docker volume create archivebox-data
 
 To add a list of pages via URL of a feed.
 ```bash
-docker run -v archivebox-data:/data archivebox 'https://example.com/some/rss/feed.xml'
+docker run -v archivebox-data:/data archivebox /bin/archive 'https://example.com/some/rss/feed.xml'
 ```
 
 To add a single link or a list of links from a file, pipe them in via stdin.
