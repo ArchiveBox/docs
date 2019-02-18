@@ -64,6 +64,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
 
 #### Smaller Utilities
 
+ - https://github.com/oduwsdl/archivenow for pushing a url into multiple online archive services like Archive.is and Archive.org
  - https://github.com/chfoo/warcat for merging, extracting, and verifying WARC files
  - https://github.com/ikreymer/webarchiveplayer#auto-load-warcs
  - [Sheetsee-Pocket](http://jlord.us/sheetsee-pocket/) project that provides a pretty auto-updating index of your Pocket links (without archiving them)
