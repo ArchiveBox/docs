@@ -15,6 +15,12 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
 
 ### Related Projects
 
+#### Big Name Bookmarking + Archiving Services
+ - [Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla
+ - [Pinboard](https://pinboard.in) Bookmarking tool that provides archiving in a paid version, run by a single independent developer
+ - [Wallabag](https://wallabag.org) / [Wallabag.it](https://wallabag.it) Self-hostable web archiving server that can import via RSS
+ - [Shaarli](https://github.com/shaarli/Shaarli) Self-hostable bookmark tagging, archiving, and sharing service
+
 #### From the Archive.org & Archive-It teams
  - [Archive.org](https://archive.org) The O.G. wayback machine provided publicly by the Internet Archive (Archive.org)
  - [Archive.it](https://archive-it.org) commercial Wayback-Machine solution
@@ -25,14 +31,15 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
 #### From the Webrecorder team
  - [Webrecorder.io](https://webrecorder.io/) An open-source personal archiving server that uses pywb under the hood
  - [pywb](https://github.com/webrecorder/pywb) The python wayback machine, the codebase forked off archive.org that powers webrecorder
- - [ipwb](https://github.com/oduwsdl/ipwb) A distributed web archiving solution using pywb with ipfs for storage
  - [warcit](https://github.com/webrecorder/warcit) Create a warc file out of a folder full of assets
+ - [WebArchivePlayer](https://github.com/ikreymer/webarchiveplayer#auto-load-warcs) A tool for replaying web archives
+ - [warcio](https://github.com/webrecorder/warcio) fast streaming asynchronous WARC reader and writer
 
-#### Bookmarking + Archiving
- - [Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla
- - [Pinboard](https://pinboard.in) Bookmarking tool that provides archiving in a paid version, run by a single independent developer
- - [Wallabag](https://wallabag.org) / [Wallabag.it](https://wallabag.it) Self-hostable web archiving server that can import via RSS
- - [Shaarli](https://github.com/shaarli/Shaarli) Self-hostable bookmark tagging, archiving, and sharing service
+#### From the Old Dominion University: Web Science Team
+ - [ipwb](https://github.com/oduwsdl/ipwb) A distributed web archiving solution using pywb with ipfs for storage
+ - [archivenow](https://github.com/oduwsdl/archivenow) tool that pushes urls into all the online archive services like Archive.is and Archive.org
+ - [WAIL](https://github.com/n0tan3rd/wail) Electron app version of the original [wail](https://github.com/machawk1/wail) for creating and interacting with web archives
+ - [warcreate](https://github.com/machawk1/warcreate) a Chrome extension for creating WARCs from any webpage
 
 #### Other Public Archiving Services
  - https://archive.is / https://archive.today
@@ -45,7 +52,6 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - Google, Bing, DuckDuckGo, and other search engine caches
 
 #### ArchiveBox alternatives
-
  - [Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline
  - [Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content
  - [Reminiscence](https://github.com/kanishka-linux/reminiscence/) extremely similar to ArchiveBox, uses a Django backend + UI and provides auto tagging and summary features with NLTK
@@ -64,9 +70,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
 
 #### Smaller Utilities
 
- - https://github.com/oduwsdl/archivenow for pushing a url into multiple online archive services like Archive.is and Archive.org
  - https://github.com/chfoo/warcat for merging, extracting, and verifying WARC files
- - https://github.com/ikreymer/webarchiveplayer#auto-load-warcs
  - [Sheetsee-Pocket](http://jlord.us/sheetsee-pocket/) project that provides a pretty auto-updating index of your Pocket links (without archiving them)
  - [Pocket -> IFTTT -> Dropbox](https://christopher.su/2013/saving-pocket-links-file-day-dropbox-ifttt-launchd/) Post by Christopher Su on his Pocket saving IFTTT recipie
  - http://squidman.net/squidman/index.html
