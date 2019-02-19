@@ -6,6 +6,31 @@
 
 ---
 
+ - v0.2.3 released
+ - fixed issues with parsing titles including trailing tags
+ - fixed issues with titles defaulting to URLs instead of attempting to fetch
+ - fixed issue where bookmark timestamps from RSS would be ignored and current ts used instead
+ - fixed issue where ONLY_NEW would overwrite existing links in archive with only new ones
+ - fixed lots of issues with URL parsing by using `urllib.parse` instead of hand-written lambdas
+ - ignore robots.txt when using wget (ssshhh don't tell anyone 😁)
+ - fix RSS parser bailing out when there's whitespace around XML tags
+ - fix issue with browser history export trying to run ls on wrong directory
+
+---
+
+ - v0.2.2 released
+ - Shaarli RSS export support
+ - Fix issues with plain text link parsing including quotes, whitespace, and closing tags in URLs
+ - add USER_AGENT to archive.org submissions so they can track archivebox usage
+ - remove all icons similar to archive.org branding from archive UI
+ - hide some of the noisier youtubedl and wget errors
+ - set permissions on youtubedl media folder
+ - fix chrome data dir incorrect path and quoting
+ - better chrome binary finding
+ - show which parser is used when importing links, show progress when fetching titles
+
+---
+
  - v0.2.1 released with new logo
  - ability to import plain lists of links and almost all other raw filetypes
  - WARC saving support via wget
