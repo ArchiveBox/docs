@@ -8,7 +8,7 @@
  - [List of Web Archiving Initiatives](https://en.wikipedia.org/wiki/List_of_Web_archiving_initiatives) (Wikipedia.org)
  - [Directory of Archiving Organizations](https://www2.archivists.org/assoc-orgs) (American Society of Archivists)
 
-## Related Projects
+## Web Archiving Projects
 
 ### Big Name Bookmarking + Archiving Services
  - [Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla
