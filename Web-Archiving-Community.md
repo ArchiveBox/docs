@@ -1,4 +1,4 @@
-▶️ *Want to learn more about why Web Archiving is important? Check out [this article](https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/).*
+▶️ *Just getting started and want to learn more about why Web Archiving is important? Check out [this article](https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/).*
 
 ## The Master Lists
 
