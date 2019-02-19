@@ -105,7 +105,7 @@ A collection of blog posts and articles about internet archiving, contact me / o
  - https://blog.archive.org/2014/10/28/building-libraries-together/
  - https://ianmilligan.ca/2018/03/27/ethics-and-the-archived-web-presentation-the-ethics-of-studying-geocities/
  - https://ianmilligan.ca/2018/05/22/new-article-if-these-crawls-could-talk-studying-and-documenting-web-archives-provenance/
- - https://ws-dl.blogspot.com/
+ - https://ws-dl.blogspot.com/2019/02/2019-02-08-google-is-being-shuttered.html
 
 If any of these links are dead, you can find an archived version on https://archive.sweeting.me.
 
@@ -124,17 +124,19 @@ If any of these links are dead, you can find an archived version on https://arch
 ## Communities
 
 ### Most Active Communities
+
  - [The Internet Archive (Archive.org)](https://archive.org/iathreads/forums.php) (USA)
  - [International Internet Preservation Consortium (IIPC)](http://netpreserve.org/)
  - [The Archive Team](https://www.archiveteam.org/), [URL Team](https://www.archiveteam.org/index.php?title=URLTeam), [r/ArchiveTeam](https://reddit.com/r/ArchiveTeam) (International)
  - [r/DataHoarder](https://www.reddit.com/r/DataHoarder), [r/Archivists](https://www.reddit.com/r/Archivists/), [r/DHExchange](https://www.reddit.com/r/DHExchange/) (International)
  - [The Eye](https://the-eye.eu) Non-profit website dedicated towards content archival and long-term preservation. (Europe)
+ - [Digital Preservation Coalition](https://www.dpconline.org/about) & [Community Owned Digital Preservation Tool Registry (COPTR)](http://coptr.digipres.org/Main_Page) (UK & Wales)
+ - [Archives Unleashed Project](https://archivesunleashed.org/about-project/) and [UAP Github](https://github.com/archivesunleashed) (Canada)
+ - [Old Dominion University: Web Science and Digital Libraries Research Group (WS-DL @ ODU)](https://ws-dl.cs.odu.edu) (Virginia, USA)
 
 ### Web Archiving Communities
- - [Old Dominion University: Web Science and Digital Libraries Research Group (WS-DL @ ODU)](https://ws-dl.cs.odu.edu) (Virginia, USA)
- - [Digital Preservation Coalition](https://www.dpconline.org/about) & [Community Owned digital Preservation Tool Registry](http://coptr.digipres.org/Main_Page) (UK & Wales)
+
  - [Canadian Web Archiving Coalition](https://www.carl-abrc.ca/advancing-research/digital-preservation/cwac/) (Canada)
- - [Archives Unleashed Project](https://archivesunleashed.org/about-project/) and [UAP Github](https://github.com/archivesunleashed) (Canada)
  - [Web Archives for Historical Research Group](https://uwaterloo.ca/web-archive-group/about) (Canada)
  - [Smithsonian Institution Archives: Digital Curation](https://siarchives.si.edu/what-we-do/digital-curation) (Washington D.C., USA)
  - [National Digital Stewardship Alliance](http://www.digitalpreservation.gov/ndsa/NDSAtoDLF.html) (USA)
