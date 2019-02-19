@@ -27,6 +27,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - [Brozzler](https://github.com/internetarchive/brozzler) chrome headless crawler + WARC archiver maintained by Archive.org
  - [WarcProx](https://github.com/internetarchive/warcprox) warc proxy recording and playback utility
  - [WarcTools](https://github.com/internetarchive/warctools) utilities for dealing with WARCs
+ - [More on their Github...](https://github.com/internetarchive)
 
 #### From the Webrecorder team
  - [Webrecorder.io](https://webrecorder.io/) An open-source personal archiving server that uses pywb under the hood
@@ -34,12 +35,14 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - [warcit](https://github.com/webrecorder/warcit) Create a warc file out of a folder full of assets
  - [WebArchivePlayer](https://github.com/ikreymer/webarchiveplayer#auto-load-warcs) A tool for replaying web archives
  - [warcio](https://github.com/webrecorder/warcio) fast streaming asynchronous WARC reader and writer
+ - [More on their Github...](https://github.com/webrecorder)
 
 #### From the Old Dominion University: Web Science Team
  - [ipwb](https://github.com/oduwsdl/ipwb) A distributed web archiving solution using pywb with ipfs for storage
  - [archivenow](https://github.com/oduwsdl/archivenow) tool that pushes urls into all the online archive services like Archive.is and Archive.org
  - [WAIL](https://github.com/n0tan3rd/wail) Electron app version of the original [wail](https://github.com/machawk1/wail) for creating and interacting with web archives
  - [warcreate](https://github.com/machawk1/warcreate) a Chrome extension for creating WARCs from any webpage
+ - [More on their Github...](https://github.com/oduwsdl)
 
 #### Other Public Archiving Services
  - https://archive.is / https://archive.today
