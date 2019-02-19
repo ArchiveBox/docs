@@ -15,7 +15,7 @@
  - [r/DataHoarder](https://www.reddit.com/r/DataHoarder), [r/Archivists](https://www.reddit.com/r/Archivists/), [r/DHExchange](https://www.reddit.com/r/DHExchange/) (International)
  - [The Eye](https://the-eye.eu) Non-profit website dedicated towards content archival and long-term preservation. (Europe)
 
-#### Foundations, Institutes, and Universities
+#### Foundations, Coalitions, Initiatives, Institutes, and Universities
  - [Old Dominion University: Web Science and Digital Libraries Research Group (WS-DL @ ODU)](https://ws-dl.cs.odu.edu) (Virginia, USA)
  - [Digital Preservation Coalition](https://www.dpconline.org/about) & [Community Owned digital Preservation Tool Registry](http://coptr.digipres.org/Main_Page) (UK & Wales)
  - [Canadian Web Archiving Coalition](https://www.carl-abrc.ca/advancing-research/digital-preservation/cwac/) (Canada)
@@ -28,7 +28,27 @@
  - [Open Preservation Foundation (OPF)](https://openpreservation.org/about/organisation/) (UK & Europe)
  - [Professional Development Institutes for Digital Preservation (POWRR)](https://digitalpowrr.niu.edu/) (USA)
  - [Institute of Museum and Library Services (IMLS)](https://www.imls.gov/about/mission) (USA)
- - 
+ - [Archives Unleashed Project](https://archivesunleashed.org/about-project/) and [UAP Github](https://github.com/archivesunleashed) (Canada)
+ - [Web Archives for Historical Research Group](https://uwaterloo.ca/web-archive-group/about) (Canada)
+ - [Stanford Libraries Web Archiving](https://library.stanford.edu/projects/web-archiving) (USA)
+ - [Software Preservation Network](https://www.softwarepreservationnetwork.org/about/) (International)
+ - [BitCurator Consortium (BCC)](https://bitcuratorconsortium.org/mission) (USA)
+ - [ITHAKA](https://www.ithaka.org/content/our-mission), [Portico](https://www.portico.org/why-portico/), [JSTOR](https://www.jstor.org/), [ARTSTOR](http://www.artstor.org/), [S+R](https://sr.ithaka.org/our-work/collections-and-preservation/) (USA)
+ - [Society of American Archivists: Electronic Records](https://www2.archivists.org/groups/electronic-records-section) (USA)
+ [Archives and Records Association](https://www2.archivists.org/assoc-orgs/archives-and-records-association-united-kingdom-ireland) (UK & Ireland)
+ [Arkivrådet AAS](https://www2.archivists.org/assoc-orgs/arkivradet-aas) (Sweden)
+ [Asociación Española de Archiveros, Bibliotecarios, Museologos y Documentalistas (ANABAD)](https://www2.archivists.org/assoc-orgs/asociaci%C3%B3n-espa%C3%B1ola-de-archiveros-bibliotecarios-museologos-y-documentalistas-anabad) (Spain)
+ [Associação dos Arquivistas Brasileiros (AAB)](https://www2.archivists.org/assoc-orgs/associacao-dos-arquivistas-brasileiros-aab) (Brazil)
+ [Associação Portuguesa de Bibliotecários, Archivistas e Documentalistas (BAD)](https://www2.archivists.org/assoc-orgs/associacao-portuguesa-de-bibliotecarios-archivistas-e-documentalistas-bad) (Portugal)
+ [Association des archivistes français (AAF)](https://www2.archivists.org/assoc-orgs/association-des-archivistes-francais-aaf) (France)
+ [Associazione Nazionale Archivistica Italiana (ANAI)](https://www2.archivists.org/assoc-orgs/associazione-nazionale-archivistica-italiana-anai) (Italy)
+ [Australian Society of Archivists Inc.](https://www2.archivists.org/assoc-orgs/australian-society-of-archivists-inc) (Australia)
+ [International Council on Archives (ICA)](https://www2.archivists.org/assoc-orgs/international-council-on-archives-ica) 
+ [International Records Management Trust (IRMT)](https://www2.archivists.org/assoc-orgs/international-records-management-trust-irmt) 
+ [Irish Society for Archives](https://www2.archivists.org/assoc-orgs/irish-society-for-archives) (Ireland)
+ [Koninklijke Vereniging van Archivarissen in Nederland](https://www2.archivists.org/assoc-orgs/koninklijke-vereniging-van-archivarissen-in-nederland) (Netherlands)
+ [State Archives Administration of the People's Republic of China](https://www2.archivists.org/assoc-orgs/state-archives-administration-of-the-peoples-republic-of-china) (China)
+ - [For more, see the Wiki List of Web Archiving Initiatives...](https://en.wikipedia.org/wiki/List_of_Web_archiving_initiatives)
 
 ### Related Projects
 
@@ -117,6 +137,11 @@ A collection of blog posts and articles about internet archiving, contact me / o
  - https://samsaffron.com/archive/2012/06/07/testing-3-million-hyperlinks-lessons-learned#comment-31366
  - https://www.gwern.net/docs/linkrot/2011-muflax-backup.pdf
  - https://thoughtstreams.io/higgins/permalinking-vs-transience/
+ - http://ait.blog.archive.org/files/2014/04/archiveit_life_cycle_model.pdf
+ - https://blog.archive.org/2016/05/26/web-archiving-with-national-libraries/
+ - https://blog.archive.org/2014/10/28/building-libraries-together/
+ - https://ianmilligan.ca/2018/03/27/ethics-and-the-archived-web-presentation-the-ethics-of-studying-geocities/
+ - https://ianmilligan.ca/2018/05/22/new-article-if-these-crawls-could-talk-studying-and-documenting-web-archives-provenance/
  - https://ws-dl.blogspot.com/
 
 If any of these links are dead, you can find an archived version on https://archive.sweeting.me.
