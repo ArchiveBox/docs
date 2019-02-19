@@ -11,6 +11,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - https://www.reddit.com/r/DataHoarder
  - https://www.reddit.com/r/DHExchange/
  - https://www.reddit.com/r/Archivists/
+ - https://ws-dl.cs.odu.edu
  - https://the-eye.eu
 
 ### Related Projects
@@ -98,6 +99,7 @@ A collection of blog posts and articles about internet archiving, contact me / o
  - https://samsaffron.com/archive/2012/06/07/testing-3-million-hyperlinks-lessons-learned#comment-31366
  - https://www.gwern.net/docs/linkrot/2011-muflax-backup.pdf
  - https://thoughtstreams.io/higgins/permalinking-vs-transience/
+ - https://ws-dl.blogspot.com/
 
 If any of these links are dead, you can find an archived version on https://archive.sweeting.me.
 
