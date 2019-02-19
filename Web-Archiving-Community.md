@@ -5,8 +5,8 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
 ### Communities
 
  - [International Internet Preservation Consortium](http://netpreserve.org/) (aka IIPC)
- - [Archive Team](https://www.archiveteam.org/), [URL Team](https://www.archiveteam.org/index.php?title=URLTeam), [Reddit](https://reddit.com/r/ArchiveTeam) (International)
- - [r/DataHoarder](https://www.reddit.com/r/DataHoarder) [r/Archivists](https://www.reddit.com/r/Archivists/) [r/DHExchange](https://www.reddit.com/r/DHExchange/) (International)
+ - [Archive Team](https://www.archiveteam.org/), [URL Team](https://www.archiveteam.org/index.php?title=URLTeam), [r/ArchiveTeam](https://reddit.com/r/ArchiveTeam) (International)
+ - [r/DataHoarder](https://www.reddit.com/r/DataHoarder), [r/Archivists](https://www.reddit.com/r/Archivists/), [r/DHExchange](https://www.reddit.com/r/DHExchange/) (International)
  - [Old Dominion University: Web Science and Digital Libraries Research Group (WS-DL @ ODU)](https://ws-dl.cs.odu.edu) (Virginia, USA)
  - [The Eye](https://the-eye.eu) Non-profit website dedicated towards content archival and long-term preservation. (Europe)
  - [Canadian Web Archiving Coalition](https://www.carl-abrc.ca/advancing-research/digital-preservation/cwac/) (Canada)
