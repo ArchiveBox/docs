@@ -4,20 +4,22 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
 
 ### Communities
 
- - http://netpreserve.org/ (IIPC)
- - https://www.archiveteam.org/
- - https://www.archiveteam.org/index.php?title=URLTeam
- - https://reddit.com/r/ArchiveTeam
- - https://www.reddit.com/r/DataHoarder
- - https://www.reddit.com/r/DHExchange/
- - https://www.reddit.com/r/Archivists/
- - https://ws-dl.cs.odu.edu
- - https://the-eye.eu
- - http://www.carl-abrc.ca/advancing-research/digital-preservation/cwac/
- - https://www.dpconline.org/
- - https://www.communityarchives.org.uk/content/about/history-and-purpose
- - http://coptr.digipres.org/Main_Page
- - https://siarchives.si.edu/what-we-do/digital-curation
+ - [International Internet Preservation Consortium](http://netpreserve.org/) (aka IIPC)
+ - [Archive Team](https://www.archiveteam.org/), [URL Team](https://www.archiveteam.org/index.php?title=URLTeam), [Reddit](https://reddit.com/r/ArchiveTeam) (International)
+ - [r/DataHoarder](https://www.reddit.com/r/DataHoarder) [r/Archivists](https://www.reddit.com/r/Archivists/) [r/DHExchange](https://www.reddit.com/r/DHExchange/) (International)
+ - [Old Dominion University: Web Science and Digital Libraries Research Group (WS-DL @ ODU)](https://ws-dl.cs.odu.edu) (Virginia, USA)
+ - [The Eye](https://the-eye.eu) Non-profit website dedicated towards content archival and long-term preservation. (Europe)
+ - [Canadian Web Archiving Coalition](https://www.carl-abrc.ca/advancing-research/digital-preservation/cwac/) (Canada)
+ - [Digital Preservation Coalition](https://www.dpconline.org/about) & [Community Owned digital Preservation Tool Registry](http://coptr.digipres.org/Main_Page) (UK & Wales)
+ - [Community Archives and Heritage Group](https://www.communityarchives.org.uk/content/about/history-and-purpose) (UK & Ireland)
+ - [Smithsonian Institution Archives: Digital Curation](https://siarchives.si.edu/what-we-do/digital-curation) (Washington D.C., USA)
+ - [National Digital Stewardship Alliance](http://www.digitalpreservation.gov/ndsa/NDSAtoDLF.html) (USA)
+ - [Digital Library Federation (DLF)](https://www.diglib.org/about/) [Council on Library and Information Resources (CLIR)](http://www.clir.org/about) (USA)
+ - [Digital Curation Centre](http://www.dcc.ac.uk/about-us) (UK)
+ - [ArchiveMatica](https://www.archivematica.org/en/) and [Community Wiki](https://wiki.archivematica.org/Community) (International)
+ - [Open Preservation Foundation (OPF)](https://openpreservation.org/about/organisation/) (UK & Europe)
+ - [Professional Development Institutes for Digital Preservation (POWRR)](https://digitalpowrr.niu.edu/) (USA)
+ - [Institute of Museum and Library Services (IMLS)](https://www.imls.gov/about/mission) (USA)
 
 ### Related Projects
 
