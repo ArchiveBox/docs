@@ -88,6 +88,19 @@ Random helpful utiltities for web archiving, WARC creation and replay, and more.
 
 A collection of blog posts and articles about internet archiving, contact me / open an issue if you want to add a link here!
 
+### Blogs
+ - https://blog.archive.org
+ - https://netpreserveblog.wordpress.com
+ - https://ws-dl.blogspot.com
+ - https://siarchives.si.edu/blog
+ - https://parameters.ssrc.org
+ - https://sr.ithaka.org/publications
+ - https://ait.blog.archive.org
+ - https://brewster.kahle.org
+ - https://ianmilligan.ca
+ - https://medium.com/@giovannidamiola
+
+### Articles
  - https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/
  - https://sr.ithaka.org/publications/the-state-of-digital-preservation-in-2018/
  - https://siarchives.si.edu/blog/we-are-not-alone-progress-digital-preservation-community
