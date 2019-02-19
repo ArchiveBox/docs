@@ -1,16 +1,24 @@
 ▶️ *Want to learn more about why Web Archiving is important? Check out [this article](https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/).*
 
-Start with the master list: the [Awesome Web Archiving List](https://github.com/iipc/awesome-web-archiving).
+### The Master Lists
+ - [The Awesome Web Archiving List](https://github.com/iipc/awesome-web-archiving) (IIPC)
+ - [Wiki of Web Archiving Tools](http://coptr.digipres.org/Category:Tools) (COPTR)
+ - [ArchiveTeam's List of Software](https://www.archiveteam.org/index.php?title=Software) (ArchiveTeam.org)
+ - [List of Web Archiving Initiatives](https://en.wikipedia.org/wiki/List_of_Web_archiving_initiatives) (Wikipedia.org)
 
 ### Communities
 
- - [International Internet Preservation Consortium](http://netpreserve.org/) (aka IIPC)
- - [Archive Team](https://www.archiveteam.org/), [URL Team](https://www.archiveteam.org/index.php?title=URLTeam), [r/ArchiveTeam](https://reddit.com/r/ArchiveTeam) (International)
+#### Most Active Communities
+ - [The Internet Archive (Archive.org)](https://archive.org/iathreads/forums.php) (USA)
+ - [International Internet Preservation Consortium (IIPC)](http://netpreserve.org/)
+ - [The Archive Team](https://www.archiveteam.org/), [URL Team](https://www.archiveteam.org/index.php?title=URLTeam), [r/ArchiveTeam](https://reddit.com/r/ArchiveTeam) (International)
  - [r/DataHoarder](https://www.reddit.com/r/DataHoarder), [r/Archivists](https://www.reddit.com/r/Archivists/), [r/DHExchange](https://www.reddit.com/r/DHExchange/) (International)
- - [Old Dominion University: Web Science and Digital Libraries Research Group (WS-DL @ ODU)](https://ws-dl.cs.odu.edu) (Virginia, USA)
  - [The Eye](https://the-eye.eu) Non-profit website dedicated towards content archival and long-term preservation. (Europe)
- - [Canadian Web Archiving Coalition](https://www.carl-abrc.ca/advancing-research/digital-preservation/cwac/) (Canada)
+
+#### Foundations, Institutes, and Universities
+ - [Old Dominion University: Web Science and Digital Libraries Research Group (WS-DL @ ODU)](https://ws-dl.cs.odu.edu) (Virginia, USA)
  - [Digital Preservation Coalition](https://www.dpconline.org/about) & [Community Owned digital Preservation Tool Registry](http://coptr.digipres.org/Main_Page) (UK & Wales)
+ - [Canadian Web Archiving Coalition](https://www.carl-abrc.ca/advancing-research/digital-preservation/cwac/) (Canada)
  - [Community Archives and Heritage Group](https://www.communityarchives.org.uk/content/about/history-and-purpose) (UK & Ireland)
  - [Smithsonian Institution Archives: Digital Curation](https://siarchives.si.edu/what-we-do/digital-curation) (Washington D.C., USA)
  - [National Digital Stewardship Alliance](http://www.digitalpreservation.gov/ndsa/NDSAtoDLF.html) (USA)
@@ -20,6 +28,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - [Open Preservation Foundation (OPF)](https://openpreservation.org/about/organisation/) (UK & Europe)
  - [Professional Development Institutes for Digital Preservation (POWRR)](https://digitalpowrr.niu.edu/) (USA)
  - [Institute of Museum and Library Services (IMLS)](https://www.imls.gov/about/mission) (USA)
+ - 
 
 ### Related Projects
 
