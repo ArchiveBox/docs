@@ -54,7 +54,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - https://megalodon.jp/
  - Google, Bing, DuckDuckGo, and other search engine caches
 
-#### ArchiveBox alternatives
+#### Other ArchiveBox alternatives
  - [Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline
  - [Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content
  - [Reminiscence](https://github.com/kanishka-linux/reminiscence/) extremely similar to ArchiveBox, uses a Django backend + UI and provides auto tagging and summary features with NLTK
@@ -73,6 +73,8 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
 
 #### Smaller Utilities
 
+Random helpful utiltities for web archiving, WARC creation and replay, and more...
+
  - https://github.com/chfoo/warcat for merging, extracting, and verifying WARC files
  - [Sheetsee-Pocket](http://jlord.us/sheetsee-pocket/) project that provides a pretty auto-updating index of your Pocket links (without archiving them)
  - [Pocket -> IFTTT -> Dropbox](https://christopher.su/2013/saving-pocket-links-file-day-dropbox-ifttt-launchd/) Post by Christopher Su on his Pocket saving IFTTT recipie
@@ -83,6 +85,8 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - https://en.wikipedia.org/wiki/Furl
 
 ## Reading List
+
+A collection of blog posts and articles about internet archiving, contact me / open an issue if you want to add a link here!
 
  - https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/
  - https://www.gwern.net/Archiving-URLs
@@ -97,7 +101,7 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
 
 If any of these links are dead, you can find an archived version on https://archive.sweeting.me.
 
-## ArchiveBox in the News
+## ArchiveBox Discussions in News & Social Media
 
  - [ProductHunt](https://www.producthunt.com/posts/archivebox)
  - [AlternativeTo](https://alternativeto.net/software/archivebox/)
