@@ -2,7 +2,7 @@
 
 Start with the master list: the [Awesome Web Archiving List](https://github.com/iipc/awesome-web-archiving).
 
-### Community Forums
+### Communities
 
  - http://netpreserve.org/ (IIPC)
  - https://www.archiveteam.org/
@@ -13,6 +13,11 @@ Start with the master list: the [Awesome Web Archiving List](https://github.com/
  - https://www.reddit.com/r/Archivists/
  - https://ws-dl.cs.odu.edu
  - https://the-eye.eu
+ - http://www.carl-abrc.ca/advancing-research/digital-preservation/cwac/
+ - https://www.dpconline.org/
+ - https://www.communityarchives.org.uk/content/about/history-and-purpose
+ - http://coptr.digipres.org/Main_Page
+ - https://siarchives.si.edu/what-we-do/digital-curation
 
 ### Related Projects
 
@@ -90,6 +95,8 @@ Random helpful utiltities for web archiving, WARC creation and replay, and more.
 A collection of blog posts and articles about internet archiving, contact me / open an issue if you want to add a link here!
 
  - https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/
+ - https://sr.ithaka.org/publications/the-state-of-digital-preservation-in-2018/
+ - https://siarchives.si.edu/blog/we-are-not-alone-progress-digital-preservation-community
  - https://www.gwern.net/Archiving-URLs
  - http://brewster.kahle.org/2015/08/11/locking-the-web-open-a-call-for-a-distributed-web-2/
  - https://lwn.net/Articles/766374/
