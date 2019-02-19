@@ -1,8 +1,10 @@
 ▶️ *If you're having an issue with a breaking change, or migrating your data between versions, open an [issue](https://github.com/pirate/ArchiveBox/issues) to get help.*
 
+**`ArchiveBox` was previously named `Bookmark Archiver`, and `Pocket Archive Stream` before that.**
+
 <br/>
 
-<div align="center">🍰 Thank's to our 30+ contributors and everyone in the web archiving community! 🏛</div>
+<div align="center">🍰 Many thanks to our 30+ contributors and everyone in the web archiving community! 🏛</div>
 
 ---
 
