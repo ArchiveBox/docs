@@ -83,6 +83,7 @@ Random helpful utiltities for web archiving, WARC creation and replay, and more.
  - https://github.com/ArchiveTeam/wpull
  - http://freedup.org/
  - https://en.wikipedia.org/wiki/Furl
+ - [And many more on the other lists...](#the-master-lists)
 
 ## Reading List
 
