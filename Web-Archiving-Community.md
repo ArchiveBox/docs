@@ -152,14 +152,14 @@ If any of these links are dead, you can find an archived version on https://arch
  - [Canadian Web Archiving Coalition](https://www.carl-abrc.ca/advancing-research/digital-preservation/cwac/) (Canada)
  - [Web Archives for Historical Research Group](https://uwaterloo.ca/web-archive-group/about) (Canada)
  - [Smithsonian Institution Archives: Digital Curation](https://siarchives.si.edu/what-we-do/digital-curation) (Washington D.C., USA)
- - [National Digital Stewardship Alliance](http://www.digitalpreservation.gov/ndsa/NDSAtoDLF.html) (USA)
+ - [National Digital Stewardship Alliance (NDSA)](http://www.digitalpreservation.gov/ndsa/NDSAtoDLF.html) (USA)
  - [Digital Library Federation (DLF)](https://www.diglib.org/about/) [Council on Library and Information Resources (CLIR)](http://www.clir.org/about) (USA)
- - [Digital Curation Centre](http://www.dcc.ac.uk/about-us) (UK)
+ - [Digital Curation Centre (DCC)](http://www.dcc.ac.uk/about-us) (UK)
  - [ArchiveMatica](https://www.archivematica.org/en/) and [Community Wiki](https://wiki.archivematica.org/Community) (International)
  - [Professional Development Institutes for Digital Preservation (POWRR)](https://digitalpowrr.niu.edu/) (USA)
  - [Institute of Museum and Library Services (IMLS)](https://www.imls.gov/about/mission) (USA)
  - [Stanford Libraries Web Archiving](https://library.stanford.edu/projects/web-archiving) (USA)
- - [Society of American Archivists: Electronic Records](https://www2.archivists.org/groups/electronic-records-section) (USA)
+ - [Society of American Archivists: Electronic Records (SAA)](https://www2.archivists.org/groups/electronic-records-section) (USA)
  - [BitCurator Consortium (BCC)](https://bitcuratorconsortium.org/mission) (USA)
 
 ### General Archiving Foundations, Coalitions, Initiatives, Institutes, and Universities
