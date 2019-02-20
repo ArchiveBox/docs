@@ -208,6 +208,9 @@ If any of these links are dead, you can find an archived version on https://arch
  - [Council of Nova Scotia Archives](https://www2.archivists.org/assoc-orgs/council-of-nova-scotia-archives) 
  - [Réseau des services d'archives du Québec](https://www2.archivists.org/assoc-orgs/reseau-des-services-darchives-du-quebec) 
  - [Saskatchewan Council for Archives and Archivists](https://www2.archivists.org/assoc-orgs/saskatchewan-council-for-archives-and-archivists)
- - [For more, see the Wiki List of Web Archiving Initiatives...](https://en.wikipedia.org/wiki/List_of_Web_archiving_initiatives)
- - [For USA & Canada based organizations see the this list...](https://www2.archivists.org/assoc-orgs/directory)
- - [For international organizations see the this list...](https://www2.archivists.org/assoc-orgs/i_a_o)
+
+You can find more organizations and initiatives on these other lists:
+
+ - [Wikipedia.org List of Web Archiving Initiatives](https://en.wikipedia.org/wiki/List_of_Web_archiving_initiatives)
+ - [SAA List of USA & Canada Based Archiving Organizations](https://www2.archivists.org/assoc-orgs/directory)
+ - [SAA List of International Archiving Organizations](https://www2.archivists.org/assoc-orgs/i_a_o)
