@@ -139,10 +139,10 @@ If any of these links are dead, you can find an archived version on https://arch
 ### Most Active Communities
 
  - [The Internet Archive (Archive.org)](https://archive.org/iathreads/forums.php) (USA)
- - [International Internet Preservation Consortium (IIPC)](http://netpreserve.org/)
+ - [International Internet Preservation Consortium (IIPC)](http://netpreserve.org/) (International)
  - [The Archive Team](https://www.archiveteam.org/), [URL Team](https://www.archiveteam.org/index.php?title=URLTeam), [r/ArchiveTeam](https://reddit.com/r/ArchiveTeam) (International)
  - [r/DataHoarder](https://www.reddit.com/r/DataHoarder), [r/Archivists](https://www.reddit.com/r/Archivists/), [r/DHExchange](https://www.reddit.com/r/DHExchange/) (International)
- - [The Eye](https://the-eye.eu) Non-profit website dedicated towards content archival and long-term preservation. (Europe)
+ - [The Eye](https://the-eye.eu) Non-profit working on content archival and long-term preservation (Europe)
  - [Digital Preservation Coalition](https://www.dpconline.org/about) & [Community Owned Digital Preservation Tool Registry (COPTR)](http://coptr.digipres.org/Main_Page) (UK & Wales)
  - [Archives Unleashed Project](https://archivesunleashed.org/about-project/) and [UAP Github](https://github.com/archivesunleashed) (Canada)
  - [Old Dominion University: Web Science and Digital Libraries Research Group (WS-DL @ ODU)](https://ws-dl.cs.odu.edu) (Virginia, USA)
