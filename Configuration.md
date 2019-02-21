@@ -12,8 +12,6 @@ env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./arc
 All the available environment variables are defined in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config.py) and [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).
 
 ---
----
----
 
 ## Shell Options
 
@@ -27,7 +25,6 @@ Colorize console ouput. Defaults to `True` if stdin is a TTY (interactive sessio
 **Possible Values:** [`True`]/`False`  
 Show real-time progress bar in console output. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
 
----
 ---
 
 ## Dependency Options
