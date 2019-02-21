@@ -1,5 +1,3 @@
-## Intro
-
 Configuration is done through environment variables.  You can pass in settings using all the usual environment variable methods: e.g. by using the `env` command, settings variables in your shell profile, or sourcing a `.env` file before running the command.
 
 You can also modify the defaults in `archivebox/config.py` directly, but that's not recommended as your custom settings will be erased whenever you update ArchiveBox.
@@ -19,7 +17,6 @@ Configuration:
  - [Archive Method Options](#archive-method-options)
  - [Shell Options](#shell-options)
  - [Dependency Options](#dependency-options)
-
 
 ---
 
