@@ -2,14 +2,12 @@
 
 Configuration is done through environment variables.  You can pass in settings using all the usual environment variable methods: e.g. by using the `env` command, settings variables in your shell profile, or sourcing a `.env` file before running the command.
 
-You can also modify the defaults in `archivebox/config.py` directly, but that's not recommended as your custom settings will be erased whenever you update ArchiveBox.
-
 Example configuration using `env` command:
 ```bash
 env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./archive ~/Downloads/bookmarks_export.html
 ```
 
-All the available environment variables are defined in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config.py) and [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).
+All the available environment variables are defined below, but also in [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default). The code that load the config is in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config.py), but don't modify the defaults in `archivebox/config.py` directly, as your changes there will be erased whenever you update ArchiveBox.
 
 To create a persistent config file, see the [Creating a Config File](#creating-a-config-file) section.
 
