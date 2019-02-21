@@ -13,65 +13,17 @@ All the available environment variables are defined in [`archivebox/config.py`](
 
 To create a persistent config file, see the [Creating a Config File](#creating-a-config-file) section.
 
----
+Configuration:
+ - [General Settings](#general-settings)
+ - [Archive Method Toggles](#archive-method-toggles)
+ - [Archive Method Options](#archive-method-options)
+ - [Shell Options](#shell-options)
+ - [Dependency Options](#dependency-options)
 
-## Shell Options
-
----
-#### `USE_COLOR`
-**Possible Values:** [`True`]/`False`  
-Colorize console ouput. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
-
----
-#### `SHOW_PROGRESS`
-**Possible Values:** [`True`]/`False`  
-Show real-time progress bar in console output. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
 
 ---
 
-## Dependency Options
-
----
-#### `CHROME_BINARY`
-**Possible Values:** [`chromium-browser`]/`/usr/local/bin/google-chrome`/...  
-Path or name of the Google Chrome / Chromium binary to use for all the headless browser archive methods.
-
-Without setting this environment variable, ArchiveBox by default look for the following binaries in `$PATH` in this order:
- - `chromium-browser`
- - `chromium`
- - `google-chrome`
- - `google-chrome-stable`
- - `google-chrome-unstable`
- - `google-chrome-beta`
- - `google-chrome-canary`
- - `google-chrome-dev`
-
-You can override the default behavior to search for any available bin by setting the environment variable to your preferred Chrome binary name or path.
-
-The chrome/chromium dependency is _optional_ and only required for screenshots, PDF, and DOM dump output, it can be safely ignored if those three methods are disabled.
-
-*Related options:*  
-[`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom)
-
----
-#### `WGET_BINARY`
-**Possible Values:** [`wget`]/`/usr/local/bin/wget`/...  
-Path or name of the wget binary to use.
-
-*Related options:*  
-[`FETCH_WGET`](#fetch_wget), [`FETCH_WARC`](#fetch_warc)
-
----
-#### `YOUTUBEDL_BINARY`
-**Possible Values:** [`youtube-dl`]/`/usr/local/bin/youtube-dl`/...  
-Path or name of the [youtube-dl](https://github.com/rg3/youtube-dl) binary to use.
-
-*Related options:*  
-[`FETCH_MEDIA`](#fetch_media)
-
----
-
-## Archive Settings
+## General Settings
 
 ---
 #### `OUTPUT_DIR`
@@ -260,6 +212,62 @@ Path to a chrome user profile directory.  To capture sites that require a user t
 
 *Related options:*  
 [`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_BINARY`](#chrome_binary)
+
+---
+
+## Shell Options
+
+---
+#### `USE_COLOR`
+**Possible Values:** [`True`]/`False`  
+Colorize console ouput. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
+
+---
+#### `SHOW_PROGRESS`
+**Possible Values:** [`True`]/`False`  
+Show real-time progress bar in console output. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
+
+---
+
+## Dependency Options
+
+---
+#### `CHROME_BINARY`
+**Possible Values:** [`chromium-browser`]/`/usr/local/bin/google-chrome`/...  
+Path or name of the Google Chrome / Chromium binary to use for all the headless browser archive methods.
+
+Without setting this environment variable, ArchiveBox by default look for the following binaries in `$PATH` in this order:
+ - `chromium-browser`
+ - `chromium`
+ - `google-chrome`
+ - `google-chrome-stable`
+ - `google-chrome-unstable`
+ - `google-chrome-beta`
+ - `google-chrome-canary`
+ - `google-chrome-dev`
+
+You can override the default behavior to search for any available bin by setting the environment variable to your preferred Chrome binary name or path.
+
+The chrome/chromium dependency is _optional_ and only required for screenshots, PDF, and DOM dump output, it can be safely ignored if those three methods are disabled.
+
+*Related options:*  
+[`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom)
+
+---
+#### `WGET_BINARY`
+**Possible Values:** [`wget`]/`/usr/local/bin/wget`/...  
+Path or name of the wget binary to use.
+
+*Related options:*  
+[`FETCH_WGET`](#fetch_wget), [`FETCH_WARC`](#fetch_warc)
+
+---
+#### `YOUTUBEDL_BINARY`
+**Possible Values:** [`youtube-dl`]/`/usr/local/bin/youtube-dl`/...  
+Path or name of the [youtube-dl](https://github.com/rg3/youtube-dl) binary to use.
+
+*Related options:*  
+[`FETCH_MEDIA`](#fetch_media)
 
 ---
 ---
