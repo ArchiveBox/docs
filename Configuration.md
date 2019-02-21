@@ -19,6 +19,11 @@ As defined in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob
  - description of setting: `ENVIRONMENT_VARIABLE_NAME`: [`default value`]/`example value`/...
 
 ### Shell Options
+
+#### `USE_COLOR`
+Colorize console ouput.
+[`True`]/`False`
+
  - colorize console ouput: `USE_COLOR`=[`True`]/`False`
  - show progress bar: `SHOW_PROGRESS` value: [`True`]/`False`
  - archive permissions: `OUTPUT_PERMISSIONS` values: [`755`]/`644`/`...`
