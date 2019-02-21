@@ -11,6 +11,8 @@ env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./arc
 
 All the available environment variables are defined in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config.py) and [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).
 
+To create a persistent config file, see the [Creating a Config File](#creating-a-config-file) section.
+
 ---
 
 ## Shell Options
@@ -68,7 +70,6 @@ Path or name of the [youtube-dl](https://github.com/rg3/youtube-dl) binary to us
 [`FETCH_MEDIA`](#fetch_media)
 
 ---
----
 
 ## Archive Settings
 
@@ -122,7 +123,6 @@ Some text to display in the footer of the archive index.  Useful for providing s
 *Related options:*  
 [`TEMPLATES_DIR`](#templates_dir)
 
----
 ---
 
 ## Archive Method Toggles
@@ -205,7 +205,6 @@ Submit the page's URL to be archived on Archive.org. (The Internet Archive)
 [`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
 
 ---
----
 
 ## Archive Method Options
 
@@ -262,7 +261,6 @@ Path to a chrome user profile directory.  To capture sites that require a user t
 *Related options:*  
 [`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_BINARY`](#chrome_binary)
 
----
 ---
 ---
 
