@@ -58,7 +58,7 @@ The chrome/chromium dependency is _optional_ and only required for screenshots, 
 
 ## Creating a Config File
 
-*Note: if using docker-compose you should set the config in the `docker-compose.yml` file instead.*
+*Note: if using Docker Compose you should set the config in the `docker-compose.yml` file or a `.env` file instead.*
 
 To set up a persistent config:
 
