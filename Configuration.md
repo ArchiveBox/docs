@@ -23,6 +23,8 @@ Configuration:
 
 ## General Settings
 
+General options around the archiving process, output format, and timing.
+
 ---
 #### `OUTPUT_DIR`
 **Possible Values:** [`$REPO_DIR/output`]/`/srv/www/bookmarks`/...  
@@ -77,10 +79,12 @@ Some text to display in the footer of the archive index.  Useful for providing s
 
 ## Archive Method Toggles
 
+High-level on/off switches for all the various methods used to archive URLs.
+
 ---
 #### `FETCH_TITLE`
 **Possible Values:** [`True`]/`False`  
-Fetch the page HTML and attempt to parse the links' title from any `<title></title>` tag in the response.  May cause significanly slower link parsing when importing many links, so you can set this to `FALSE` on the first run just to get the index updated quickly, then set it on `TRUE` on later runs to go back and fetch the titles for the links already in the index.
+Fetch the page HTML and attempt to parse the link's title from any `<title></title>` tag in the response.  May cause significanly slower link parsing when importing many links, so you can set this to `FALSE` on the first run just to get the index updated quickly, then set it on `TRUE` on later runs to go back and fetch the titles for the links already in the index.
 
 ---
 #### `FETCH_FAVICON`
@@ -158,6 +162,8 @@ Submit the page's URL to be archived on Archive.org. (The Internet Archive)
 
 ## Archive Method Options
 
+Specific options for individual archive methods above.  Some of these are shared between multiple archive methods, others are specific to a single method.
+
 ---
 #### `CHECK_SSL_VALIDITY`
 **Possible Values:** [`True`]/`False`  
@@ -215,6 +221,8 @@ Path to a chrome user profile directory.  To capture sites that require a user t
 
 ## Shell Options
 
+Options around the format of the CLI output.
+
 ---
 #### `USE_COLOR`
 **Possible Values:** [`True`]/`False`  
@@ -228,6 +236,8 @@ Show real-time progress bar in console output. Defaults to `True` if stdin is a 
 ---
 
 ## Dependency Options
+
+Options for defining which binaries to use for the various archive method dependencies.
 
 ---
 #### `CHROME_BINARY`
