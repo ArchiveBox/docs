@@ -85,13 +85,16 @@ Some text to display in the footer of the archive index.  Useful for providing s
 **Possible Values:** [`True`]/`False`  
 Fetch the page HTML and attempt to parse the links title from any `<title></title>` tag in the response.  May cause significanly slower link parsing when importing many links, so you can set this to `FALSE` on the first run just to get the index updated quickly, then set it on `TRUE` on later runs to go back and fetch the titles for the links already in the index.
 
+*Related options:*  
+[`ONLY_NEW`](#only_new), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
+
 ---
 #### `FETCH_FAVICON`
 **Possible Values:** [`True`]/`False`  
 Fetch and save favicon for the URL from Google's public favicon service: `https://www.google.com/s2/favicons?domain={domain}`.  Set this to `FALSE` if you don't need favicons, but be aware all the links may show with spinners next to them in the index as the favicon is used as the status icon to confirm the archive process is complete for that URL.
 
 *Related options:*  
-[`TEMPLATES_DIR`](#templates_dir), [`CURL_BINARY`](#curl_binary)
+[`TEMPLATES_DIR`](#templates_dir), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CURL_BINARY`](#curl_binary)
 
 ---
 #### `FETCH_WGET`
