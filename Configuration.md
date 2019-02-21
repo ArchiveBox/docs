@@ -39,12 +39,15 @@ As defined in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob
    - fetch all audio and video on the page: `FETCH_MEDIA`
    - fetch a DOM dump of the page: `FETCH_DOM`
    - fetch a favicon for the page: `FETCH_FAVICON`
+   - fetch and parse the title tag from html: `FETCH_TITLE`
    - submit the page to archive.org: `SUBMIT_ARCHIVE_DOT_ORG` 
  - screenshot: `RESOLUTION` values: [`1440,900`]/`1024,768`/`...`
  - user agent: `WGET_USER_AGENT` values: [`Wget/1.19.1`]/`"Mozilla/5.0 ..."`/`...`
  - git domains: `GIT_DOMAINS` values: [`github.com,bitbucket.org,gitlab.com`]/`git.example.com`/`...`
+ - cookies file: `COOKIES_FILE` values: [None]/`/path/to/cookies.txt`/`...`
+    To capture sites that require a user to be logged in, you can specify a path to a netscape-format cookies.txt file for wget to use.  You can generate this file by using a browser extension to export your cookies in this format, or by using wget with `--save-cookies`.
  - chrome profile: `CHROME_USER_DATA_DIR` values: [`~/Library/Application\ Support/Google/Chrome/Default`]/`/tmp/chrome-profile`/`...`
-    To capture sites that require a user to be logged in, you must specify a path to a chrome profile (which loads the cookies needed for the user to be logged in).  If you don't have an existing chrome profile, create one with `chromium-browser --disable-gpu --user-data-dir=/tmp/chrome-profile`, and log into the sites you need.  Then set `CHROME_USER_DATA_DIR=/tmp/chrome-profile` to make ArchiveBox use that profile.
+    To capture sites that require a user to be logged in, you can specify a path to a chrome user profile (which loads the cookies needed for the user to be logged in).  If you don't have an existing chrome profile, create one with `chromium-browser --disable-gpu --user-data-dir=/tmp/chrome-profile`, and log into the sites you need.  Then set `CHROME_USER_DATA_DIR=/tmp/chrome-profile` to make ArchiveBox use that profile.
  - output directory: `OUTPUT_DIR` values: [`$REPO_DIR/output`]/`/srv/www/bookmarks`/`...` Optionally output the archives to an alternative directory.
 
  (See defaults & more at the top of `config.py`)
