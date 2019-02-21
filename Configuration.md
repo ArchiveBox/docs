@@ -2,12 +2,14 @@
 
 Configuration is done through environment variables.  You can pass in settings using all the usual environment variable methods: e.g. by using the `env` command, settings variables in your shell profile, or sourcing a `.env` file before running the command.
 
+You can also modify the defaults in `archivebox/config.py` directly, but that's not recommended as your custom settings will be erased whenever you update ArchiveBox.
+
 Example configuration using `env` command:
 ```bash
 env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./archive ~/Downloads/bookmarks_export.html
 ```
 
-All the available config options are defined in this document below, but can also be found along with examples in [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default). The code that load the config is in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config.py), but don't modify the defaults in `config.py` directly, as your changes there will be erased whenever you update ArchiveBox.
+All the available environment variables are defined in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config.py) and [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).
 
 To create a persistent config file, see the [Creating a Config File](#creating-a-config-file) section.
 
@@ -23,7 +25,7 @@ Configuration:
 
 ## General Settings
 
-General options around the archiving process, output format, and timing.
+*General options around the archiving process, output format, and timing.*
 
 ---
 #### `OUTPUT_DIR`
@@ -79,12 +81,12 @@ Some text to display in the footer of the archive index.  Useful for providing s
 
 ## Archive Method Toggles
 
-High-level on/off switches for all the various methods used to archive URLs.
+*High-level on/off switches for all the various methods used to archive URLs.*
 
 ---
 #### `FETCH_TITLE`
 **Possible Values:** [`True`]/`False`  
-Fetch the page HTML and attempt to parse the link's title from any `<title></title>` tag in the response.  May cause significanly slower link parsing when importing many links, so you can set this to `FALSE` on the first run just to get the index updated quickly, then set it on `TRUE` on later runs to go back and fetch the titles for the links already in the index.
+Fetch the page HTML and attempt to parse the links title from any `<title></title>` tag in the response.  May cause significanly slower link parsing when importing many links, so you can set this to `FALSE` on the first run just to get the index updated quickly, then set it on `TRUE` on later runs to go back and fetch the titles for the links already in the index.
 
 ---
 #### `FETCH_FAVICON`
@@ -92,7 +94,7 @@ Fetch the page HTML and attempt to parse the link's title from any `<title></tit
 Fetch and save favicon for the URL from Google's public favicon service: `https://www.google.com/s2/favicons?domain={domain}`.  Set this to `FALSE` if you don't need favicons, but be aware all the links may show with spinners next to them in the index as the favicon is used as the status icon to confirm the archive process is complete for that URL.
 
 *Related options:*  
-[`TEMPLATES_DIR`](#templates_dir)
+[`TEMPLATES_DIR`](#templates_dir), [`CURL_BINARY`](#curl_binary)
 
 ---
 #### `FETCH_WGET`
@@ -140,7 +142,7 @@ Fetch a DOM dump of the page.
 Fetch any git repositories on the page.
 
 *Related options:*  
-[`TIMEOUT`](#timeout), [`GIT_DOMAINS`](#git_domains), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
+[`TIMEOUT`](#timeout), [`GIT_DOMAINS`](#git_domains), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`GIT_BINARY`](#git_binary)
 
 ---
 #### `FETCH_MEDIA`
@@ -156,13 +158,13 @@ Fetch all audio, video, annotations, and media metadata on the page using `youtu
 Submit the page's URL to be archived on Archive.org. (The Internet Archive) 
 
 *Related options:*  
-[`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
+[`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CURL_BINARY`](#curl_binary)
 
 ---
 
 ## Archive Method Options
 
-Specific options for individual archive methods above.  Some of these are shared between multiple archive methods, others are specific to a single method.
+*Specific options for individual archive methods above. Some of these are shared between multiple archive methods, others are specific to a single method.*
 
 ---
 #### `CHECK_SSL_VALIDITY`
@@ -221,7 +223,7 @@ Path to a chrome user profile directory.  To capture sites that require a user t
 
 ## Shell Options
 
-Options around the format of the CLI output.
+*Options around the format of the CLI output.*
 
 ---
 #### `USE_COLOR`
@@ -237,7 +239,7 @@ Show real-time progress bar in console output. Defaults to `True` if stdin is a 
 
 ## Dependency Options
 
-Options for defining which binaries to use for the various archive method dependencies.
+*Options for defining which binaries to use for the various archive method dependencies.*
 
 ---
 #### `CHROME_BINARY`
@@ -276,6 +278,22 @@ Path or name of the [youtube-dl](https://github.com/rg3/youtube-dl) binary to us
 
 *Related options:*  
 [`FETCH_MEDIA`](#fetch_media)
+
+---
+#### `GIT_BINARY`
+**Possible Values:** [`git`]/`/usr/local/bin/git`/...  
+Path or name of the git binary to use.
+
+*Related options:*  
+[`FETCH_GIT`](#fetch_git)
+
+---
+#### `CURL_BINARY`
+**Possible Values:** [`curl`]/`/usr/local/bin/curl`/...  
+Path or name of the curl binary to use.
+
+*Related options:*  
+[`FETCH_FAVICON`](#fetch_favicon), [`SUBMIT_ARCHIVE_DOT_ORG`](#submit_archive_dot_org)
 
 ---
 ---
