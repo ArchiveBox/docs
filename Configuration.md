@@ -18,12 +18,12 @@ As defined in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob
 ### Shell Options
 
 #### `USE_COLOR`
-`USE_COLOR=`[`True`]/`False`  
-Colorize console ouput.
+[`True`]/`False`  
+Colorize console ouput. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
 
 #### `SHOW_PROGRESS`
 [`True`]/`False`  
-Show real-time progress bar in console output.
+Show real-time progress bar in console output. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
 
 ### Dependency Options
 
@@ -45,9 +45,22 @@ You can override the default behavior to search for any available bin by setting
 
 The chrome/chromium dependency is _optional_ and only required for screenshots, PDF, and DOM dump output, it can be safely ignored if those three methods are disabled.
 
+Related options:  
+[`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom)
+
 #### `WGET_BINARY`
 [`wget`]/`/usr/local/bin/wget`/...  
 Path or name of the wget binary to use.
+
+Related options:  
+[`FETCH_WGET`](#fetch_wget), [`FETCH_WARC`](#fetch_warc)
+
+#### `YOUTUBEDL_BINARY`
+[`youtube-dl`]/`/usr/local/bin/youtube-dl`/...  
+Path or name of the [youtube-dl](https://github.com/rg3/youtube-dl) binary to use.
+
+Related options:  
+[`FETCH_MEDIA`](#fetch_media)
 
 ### Archive Settings
 
@@ -71,6 +84,9 @@ Maximum allowed download time per archive method for each link in seconds.  If y
 [`3600`]/`120`/...  
 Maximum allowed download time for fetching media when `FETCH_MEDIA=True` in seconds.  This timeout is separate and usually much longer than `TIMEOUT` because media downloaded with `youtube-dl` can often be quite large and take many minutes/hours to download.  Tweak this setting based on your network speed and maximum media file size you plan on downloading.
 
+Related options:  
+[`FETCH_MEDIA`](#fetch_media)
+
 #### `TEMPLATES_DIR`
 [`$REPO_DIR/archivebox/templates`]/`/path/to/custom/templates`/...   
 Path to a directory containing custom index html templates for themeing your archive output.  Folder at specified path must contain the following files:
@@ -81,9 +97,15 @@ Path to a directory containing custom index html templates for themeing your arc
 
 You can copy the files in `archivebox/templates` into your own directory to start developing a custom theme, then edit `TEMPLATES_DIR` to point to your new custom templates directory.
 
+Related options:  
+[`FOOTER_INFO`](#footer_info)
+
 #### `FOOTER_INFO`
 [`Content is hosted for personal archiving purposes only.  Contact server owner for any takedown requests.`]/`Operated by ACME Co.`/...  
 Some text to display in the footer of the archive index.  Useful for providing server admin contact info to respond to takedown requests.
+
+Related options:  
+[`TEMPLATES_DIR`](#templates_dir)
 
 ### Archive Method Toggles
 
@@ -95,39 +117,64 @@ Fetch the page HTML and attempt to parse the links' title from any `<title></tit
 [`True`]/`False`  
 Fetch and save favicon for the URL from Google's public favicon service: `https://www.google.com/s2/favicons?domain={domain}`.  Set this to `FALSE` if you don't need favicons, but be aware all the links may show with spinners next to them in the index as the favicon is used as the status icon to confirm the archive process is complete for that URL.
 
+Related options:  
+[`TEMPLATES_DIR`](#templates_dir)
+
 #### `FETCH_WGET`
 [`True`]/`False`  
 Fetch page with wget, and save responses into folders for each domain, e.g. `example.com/index.html`, with `.html` appended if not present.  For a full list of options used during the `wget` download process, see the `archivebox/archive_methods.py:fetch_wget(...)` function.
 
-Related options: [`TIMEOUT`](#timeout), [`FETCH_WGET_REQUISITES`](#fetch_wget_requisites), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`COOKIES_FILE`](#coookies_file), [`WGET_USER_AGENT`](#wget_user_agent), 
+Related options:  
+[`TIMEOUT`](#timeout), [`FETCH_WGET_REQUISITES`](#fetch_wget_requisites), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`COOKIES_FILE`](#coookies_file), [`WGET_USER_AGENT`](#wget_user_agent), [`FETCH_WARC`](#fetch_warc), [`WGET_BINARY`](#wget_binary)
 
 #### `FETCH_WARC`
 [`True`]/`False`  
 Save a timestamped WARC archive of all the page requests and responses during the wget archive process.
 
+Related options:  
+[`TIMEOUT`](#timeout), [`FETCH_WGET_REQUISITES`](#fetch_wget_requisites), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`COOKIES_FILE`](#cookies_file), [`WGET_USER_AGENT`](#wget_user_agent), [`FETCH_WGET`](#fetch_wget), [`WGET_BINARY`](#wget_binary)
+
 #### `FETCH_PDF`
 [`True`]/`False`  
 Print page as PDF.
+
+Related options:  
+[`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary)
 
 #### `FETCH_SCREENSHOT`
 [`True`]/`False`  
 Fetch a screenshot of the page.
 
+Related options:  
+[`RESOLUTION`](#resolution), [`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary)
+
 #### `FETCH_DOM`
 [`True`]/`False`  
 Fetch a DOM dump of the page.
+
+Related options:  
+[`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary)
 
 #### `FETCH_GIT`
 [`True`]/`False`  
 Fetch any git repositories on the page.
 
+Related options:  
+[`TIMEOUT`](#timeout), [`GIT_DOMAINS`](#git_domains), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
+
 #### `FETCH_MEDIA`
 [`True`]/`False`  
 Fetch all audio, video, annotations, and media metadata on the page using `youtube-dl`.  Warning, this can use up *a lot* of storage very quickly.
 
+Related options:  
+[`MEDIA_TIMEOUT`](#media_timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`YOUTUBEDL_BINARY`](#youtubedl_binary)
+
 #### `SUBMIT_ARCHIVE_DOT_ORG`
 [`True`]/`False`  
 Submit the page's URL to be archived on Archive.org. (The Internet Archive) 
+
+Related options:  
+[`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
 
 ### Archive Method Options
 
@@ -138,26 +185,43 @@ Whether to enforce HTTPS certificate and HSTS chain of trust when archiving site
 #### `FETCH_WGET_REQUISITES`
 Fetch images/css/js with wget. (True is highly recommended, otherwise your wont download many critical assets to render the page, like images, js, css, etc.)
 
+Related options:  
+[`TIMEOUT`](#timeout), [`FETCH_WGET`](#fetch_wget), [`FETCH_WARC`](#fetch_warc), [`WGET_BINARY`](#wget_binary)
+
 #### `RESOLUTION`
 [`1440,900`]/`1024,768`/...  
 Screenshot resolution in pixels width,height.
+
+Related options:  
+[`FETCH_SCREENSHOT`](#fetch_screenshot)
 
 #### `WGET_USER_AGENT`
 [`Wget/1.19.1`]/`"Mozilla/5.0 ..."`/...
 User agent to use during wget downloads.  You can set this to impersonate a more common browser like Chrome or Firefox if you're experiences pages blocking unknown user agents.
 
+Related options:  
+[`FETCH_WGET`](#fetch_wget), [`FETCH_WARC`](#fetch_warc), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`WGET_BINARY`](#wget_binary)
+
 ####  `GIT_DOMAINS`
 [`github.com,bitbucket.org,gitlab.com`]/`git.example.com`/...
 Domains to attempt download of git repositories on using `git clone`.
+
+Related options:  
+[`FETCH_GIT`](#fetch_git), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
 
 ####  `COOKIES_FILE`
 [`None`]/`/path/to/cookies.txt`/...  
 Cookies file to pass to wget.  To capture sites that require a user to be logged in, you can specify a path to a [netscape-format](http://www.cookiecentral.com/faq/#3.5) `cookies.txt` file for wget to use.  You can generate this file by using a browser extension to export your cookies in this format, or by using wget with `--save-cookies`.
 
+Related options:  
+[`FETCH_WGET`](#fetch_wget), [`FETCH_WARC`](#fetch_warc), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`WGET_BINARY`](#wget_binary)
+
 #### `CHROME_USER_DATA_DIR`
 [`~/Library/Application Support/Google/Chrome/Default`]/`/tmp/chrome-profile`/...  
 Path to a chrome user profile directory.  To capture sites that require a user to be logged in, you can specify a path to a chrome user profile (which loads the cookies needed for the user to be logged in).  If you don't have an existing chrome profile, create one with `chromium-browser --user-data-dir=/tmp/chrome-profile`, and log into the sites you need.  Then set `CHROME_USER_DATA_DIR=/tmp/chrome-profile` to make ArchiveBox use that profile.
 
+Related options:  
+[`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_BINARY`](#chrome_binary)
 
 ## Creating a Config File
 
