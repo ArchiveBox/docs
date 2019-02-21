@@ -15,23 +15,27 @@ env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./arc
 
 As defined in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config.py) and [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).
 
+===
+
 ### Shell Options
 
 ---
 #### `USE_COLOR`
-[`True`]/`False`  
+**Possible Values:** [`True`]/`False`  
 Colorize console ouput. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
 
 ---
 #### `SHOW_PROGRESS`
-[`True`]/`False`  
+**Possible Values:** [`True`]/`False`  
 Show real-time progress bar in console output. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
+
+===
 
 ### Dependency Options
 
 ---
 #### `CHROME_BINARY`
-[`chromium-browser`]/`/usr/local/bin/google-chrome`/...  
+**Possible Values:** [`chromium-browser`]/`/usr/local/bin/google-chrome`/...  
 Path or name of the Google Chrome / Chromium binary to use for all the headless browser archive methods.
 
 Without setting this environment variable, ArchiveBox by default look for the following binaries in `$PATH` in this order:
@@ -53,7 +57,7 @@ The chrome/chromium dependency is _optional_ and only required for screenshots, 
 
 ---
 #### `WGET_BINARY`
-[`wget`]/`/usr/local/bin/wget`/...  
+**Possible Values:** [`wget`]/`/usr/local/bin/wget`/...  
 Path or name of the wget binary to use.
 
 *Related options:*  
@@ -61,37 +65,39 @@ Path or name of the wget binary to use.
 
 ---
 #### `YOUTUBEDL_BINARY`
-[`youtube-dl`]/`/usr/local/bin/youtube-dl`/...  
+**Possible Values:** [`youtube-dl`]/`/usr/local/bin/youtube-dl`/...  
 Path or name of the [youtube-dl](https://github.com/rg3/youtube-dl) binary to use.
 
 *Related options:*  
 [`FETCH_MEDIA`](#fetch_media)
 
+===
+
 ### Archive Settings
 
 ---
 #### `OUTPUT_DIR`
-[`$REPO_DIR/output`]/`/srv/www/bookmarks`/...  
+**Possible Values:** [`$REPO_DIR/output`]/`/srv/www/bookmarks`/...  
 Path to an output folder to store the archive in.  Defaults to `output/` in the root directory of the repository.
 
 ---
 #### `OUTPUT_PERMISSIONS`
-[`755`]/`644`/...  
+**Possible Values:** [`755`]/`644`/...  
 Permissions to set the output directory and file contents to.
 
 ---
 #### `ONLY_NEW`
-[`False`]/`True`  
+**Possible Values:** [`False`]/`True`  
 Download files for only newly added links when running the `./archive` command. By default ArchiveBox will go through all links in the index and download any missing files on every run, set this to `True` to only archive the fresh links added during this run without attempting to also update older archived links.
 
 ---
 #### `TIMEOUT`
-[`60`]/`30`/...  
+**Possible Values:** [`60`]/`30`/...  
 Maximum allowed download time per archive method for each link in seconds.  If you have a slow network connection or are seeing frequent timeout errors, you can raise this value.
 
 ---
 #### `MEDIA_TIMEOUT`
-[`3600`]/`120`/...  
+**Possible Values:** [`3600`]/`120`/...  
 Maximum allowed download time for fetching media when `FETCH_MEDIA=True` in seconds.  This timeout is separate and usually much longer than `TIMEOUT` because media downloaded with `youtube-dl` can often be quite large and take many minutes/hours to download.  Tweak this setting based on your network speed and maximum media file size you plan on downloading.
 
 *Related options:*  
@@ -99,7 +105,7 @@ Maximum allowed download time for fetching media when `FETCH_MEDIA=True` in seco
 
 ---
 #### `TEMPLATES_DIR`
-[`$REPO_DIR/archivebox/templates`]/`/path/to/custom/templates`/...   
+**Possible Values:** [`$REPO_DIR/archivebox/templates`]/`/path/to/custom/templates`/...  
 Path to a directory containing custom index html templates for themeing your archive output.  Folder at specified path must contain the following files:
  - `static/`
  - `index.html`
@@ -113,22 +119,24 @@ You can copy the files in `archivebox/templates` into your own directory to star
 
 ---
 #### `FOOTER_INFO`
-[`Content is hosted for personal archiving purposes only.  Contact server owner for any takedown requests.`]/`Operated by ACME Co.`/...  
+**Possible Values:** [`Content is hosted for personal archiving purposes only.  Contact server owner for any takedown requests.`]/`Operated by ACME Co.`/...  
 Some text to display in the footer of the archive index.  Useful for providing server admin contact info to respond to takedown requests.
 
 *Related options:*  
 [`TEMPLATES_DIR`](#templates_dir)
 
+===
+
 ### Archive Method Toggles
 
 ---
 #### `FETCH_TITLE`
-[`True`]/`False`  
+**Possible Values:** [`True`]/`False`  
 Fetch the page HTML and attempt to parse the links' title from any `<title></title>` tag in the response.  May cause significanly slower link parsing when importing many links, so you can set this to `FALSE` on the first run just to get the index updated quickly, then set it on `TRUE` on later runs to go back and fetch the titles for the links already in the index.
 
 ---
 #### `FETCH_FAVICON`
-[`True`]/`False`  
+**Possible Values:** [`True`]/`False`  
 Fetch and save favicon for the URL from Google's public favicon service: `https://www.google.com/s2/favicons?domain={domain}`.  Set this to `FALSE` if you don't need favicons, but be aware all the links may show with spinners next to them in the index as the favicon is used as the status icon to confirm the archive process is complete for that URL.
 
 *Related options:*  
@@ -136,7 +144,7 @@ Fetch and save favicon for the URL from Google's public favicon service: `https:
 
 ---
 #### `FETCH_WGET`
-[`True`]/`False`  
+**Possible Values:** [`True`]/`False`  
 Fetch page with wget, and save responses into folders for each domain, e.g. `example.com/index.html`, with `.html` appended if not present.  For a full list of options used during the `wget` download process, see the `archivebox/archive_methods.py:fetch_wget(...)` function.
 
 *Related options:*  
@@ -144,7 +152,7 @@ Fetch page with wget, and save responses into folders for each domain, e.g. `exa
 
 ---
 #### `FETCH_WARC`
-[`True`]/`False`  
+**Possible Values:** [`True`]/`False`  
 Save a timestamped WARC archive of all the page requests and responses during the wget archive process.
 
 *Related options:*  
@@ -152,7 +160,7 @@ Save a timestamped WARC archive of all the page requests and responses during th
 
 ---
 #### `FETCH_PDF`
-[`True`]/`False`  
+**Possible Values:** [`True`]/`False`  
 Print page as PDF.
 
 *Related options:*  
@@ -160,7 +168,7 @@ Print page as PDF.
 
 ---
 #### `FETCH_SCREENSHOT`
-[`True`]/`False`  
+**Possible Values:** [`True`]/`False`  
 Fetch a screenshot of the page.
 
 *Related options:*  
@@ -168,7 +176,7 @@ Fetch a screenshot of the page.
 
 ---
 #### `FETCH_DOM`
-[`True`]/`False`  
+**Possible Values:** [`True`]/`False`  
 Fetch a DOM dump of the page.
 
 *Related options:*  
@@ -176,7 +184,7 @@ Fetch a DOM dump of the page.
 
 ---
 #### `FETCH_GIT`
-[`True`]/`False`  
+**Possible Values:** [`True`]/`False`  
 Fetch any git repositories on the page.
 
 *Related options:*  
@@ -184,7 +192,7 @@ Fetch any git repositories on the page.
 
 ---
 #### `FETCH_MEDIA`
-[`True`]/`False`  
+**Possible Values:** [`True`]/`False`  
 Fetch all audio, video, annotations, and media metadata on the page using `youtube-dl`.  Warning, this can use up *a lot* of storage very quickly.
 
 *Related options:*  
@@ -192,21 +200,24 @@ Fetch all audio, video, annotations, and media metadata on the page using `youtu
 
 ---
 #### `SUBMIT_ARCHIVE_DOT_ORG`
-[`True`]/`False`  
+**Possible Values:** [`True`]/`False`  
 Submit the page's URL to be archived on Archive.org. (The Internet Archive) 
 
 *Related options:*  
 [`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
 
+===
+
 ### Archive Method Options
 
 ---
 #### `CHECK_SSL_VALIDITY`
-[`True`]/`False`  
+**Possible Values:** [`True`]/`False`  
 Whether to enforce HTTPS certificate and HSTS chain of trust when archiving sites.  Set this to `False` if you want to archive pages even if they have expired or invalid certificates.  Be aware that when `False` you cannot guarantee that you have not been man-in-the-middle'd while archiving content, so the content cannot be verified to be what's on the original site.
 
 ---
 #### `FETCH_WGET_REQUISITES`
+**Possible Values:** [`True`]/`False`  
 Fetch images/css/js with wget. (True is highly recommended, otherwise your wont download many critical assets to render the page, like images, js, css, etc.)
 
 *Related options:*  
@@ -214,15 +225,15 @@ Fetch images/css/js with wget. (True is highly recommended, otherwise your wont 
 
 ---
 #### `RESOLUTION`
-[`1440,900`]/`1024,768`/...  
-Screenshot resolution in pixels width,height.
+**Possible Values:** [`1440,900`]/`1024,768`/...  
+Screenshot resolution in pixels width,height.  
 
 *Related options:*  
 [`FETCH_SCREENSHOT`](#fetch_screenshot)
 
 ---
 #### `WGET_USER_AGENT`
-[`Wget/1.19.1`]/`"Mozilla/5.0 ..."`/...
+**Possible Values:** [`Wget/1.19.1`]/`"Mozilla/5.0 ..."`/...  
 User agent to use during wget downloads.  You can set this to impersonate a more common browser like Chrome or Firefox if you're experiences pages blocking unknown user agents.
 
 *Related options:*  
@@ -230,7 +241,7 @@ User agent to use during wget downloads.  You can set this to impersonate a more
 
 ---
 ####  `GIT_DOMAINS`
-[`github.com,bitbucket.org,gitlab.com`]/`git.example.com`/...
+**Possible Values:** [`github.com,bitbucket.org,gitlab.com`]/`git.example.com`/...  
 Domains to attempt download of git repositories on using `git clone`.
 
 *Related options:*  
@@ -238,7 +249,7 @@ Domains to attempt download of git repositories on using `git clone`.
 
 ---
 ####  `COOKIES_FILE`
-[`None`]/`/path/to/cookies.txt`/...  
+**Possible Values:** [`None`]/`/path/to/cookies.txt`/...  
 Cookies file to pass to wget.  To capture sites that require a user to be logged in, you can specify a path to a [netscape-format](http://www.cookiecentral.com/faq/#3.5) `cookies.txt` file for wget to use.  You can generate this file by using a browser extension to export your cookies in this format, or by using wget with `--save-cookies`.
 
 *Related options:*  
@@ -246,7 +257,7 @@ Cookies file to pass to wget.  To capture sites that require a user to be logged
 
 ---
 #### `CHROME_USER_DATA_DIR`
-[`~/Library/Application Support/Google/Chrome/Default`]/`/tmp/chrome-profile`/...  
+**Possible Values:** [`~/Library/Application Support/Google/Chrome/Default`]/`/tmp/chrome-profile`/...  
 Path to a chrome user profile directory.  To capture sites that require a user to be logged in, you can specify a path to a chrome user profile (which loads the cookies needed for the user to be logged in).  If you don't have an existing chrome profile, create one with `chromium-browser --user-data-dir=/tmp/chrome-profile`, and log into the sites you need.  Then set `CHROME_USER_DATA_DIR=/tmp/chrome-profile` to make ArchiveBox use that profile.
 
 *Related options:*  
