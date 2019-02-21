@@ -24,11 +24,15 @@ As defined in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob
  - path to Chrome: `CHROME_BINARY` values: [`chromium-browser`]/`/usr/local/bin/google-chrome`/`...`
  - path to wget: `WGET_BINARY` values: [`wget`]/`/usr/local/bin/wget`/`...`
 
-### Archive Options
+### Archive Settings
+ - output directory: `OUTPUT_DIR` values: [`$REPO_DIR/output`]/`/srv/www/bookmarks`/`...` Optionally output the archives to an alternative directory.
  - maximum allowed download time per link: `TIMEOUT` values: [`60`]/`30`/`...`
  - maximum allowed download time per media file: `MEDIA_TIMEOUT` values: [`3600`]/`120`/`...`
  - import only new links: `ONLY_NEW` values `True`/[`False`]
- - archive methods (values: [`True`]/`False`):
+
+### Archive Method Toggles
+Possible values: [`True`]/`False`
+
    - fetch page with wget: `FETCH_WGET`
    - fetch images/css/js with wget: `FETCH_WGET_REQUISITES` (True is highly recommended)
    - print page as PDF: `FETCH_PDF`
@@ -41,6 +45,8 @@ As defined in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob
    - fetch a favicon for the page: `FETCH_FAVICON`
    - fetch and parse the title tag from html: `FETCH_TITLE`
    - submit the page to archive.org: `SUBMIT_ARCHIVE_DOT_ORG` 
+
+### Archive Method Options
  - screenshot: `RESOLUTION` values: [`1440,900`]/`1024,768`/`...`
  - user agent: `WGET_USER_AGENT` values: [`Wget/1.19.1`]/`"Mozilla/5.0 ..."`/`...`
  - git domains: `GIT_DOMAINS` values: [`github.com,bitbucket.org,gitlab.com`]/`git.example.com`/`...`
@@ -48,7 +54,6 @@ As defined in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob
     To capture sites that require a user to be logged in, you can specify a path to a [netscape-format](http://www.cookiecentral.com/faq/#3.5) `cookies.txt` file for wget to use.  You can generate this file by using a browser extension to export your cookies in this format, or by using wget with `--save-cookies`.
  - chrome profile: `CHROME_USER_DATA_DIR` values: [`~/Library/Application\ Support/Google/Chrome/Default`]/`/tmp/chrome-profile`/`...`
     To capture sites that require a user to be logged in, you can specify a path to a chrome user profile (which loads the cookies needed for the user to be logged in).  If you don't have an existing chrome profile, create one with `chromium-browser --disable-gpu --user-data-dir=/tmp/chrome-profile`, and log into the sites you need.  Then set `CHROME_USER_DATA_DIR=/tmp/chrome-profile` to make ArchiveBox use that profile.
- - output directory: `OUTPUT_DIR` values: [`$REPO_DIR/output`]/`/srv/www/bookmarks`/`...` Optionally output the archives to an alternative directory.
 
  (See defaults & more at the top of `config.py`)
 
