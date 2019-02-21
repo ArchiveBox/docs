@@ -15,7 +15,8 @@ env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./arc
 
 As defined in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config.py) and [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).
 
-===
+---
+---
 
 ### Shell Options
 
