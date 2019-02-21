@@ -9,16 +9,13 @@ Example configuration using `env` command:
 env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./archive ~/Downloads/bookmarks_export.html
 ```
 
----
-
-## Environment Variables
-
-As defined in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config.py) and [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).
+All the available environment variables are defined in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config.py) and [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).
 
 ---
 ---
+---
 
-### Shell Options
+## Shell Options
 
 ---
 #### `USE_COLOR`
@@ -30,9 +27,10 @@ Colorize console ouput. Defaults to `True` if stdin is a TTY (interactive sessio
 **Possible Values:** [`True`]/`False`  
 Show real-time progress bar in console output. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
 
-===
+---
+---
 
-### Dependency Options
+## Dependency Options
 
 ---
 #### `CHROME_BINARY`
@@ -72,9 +70,10 @@ Path or name of the [youtube-dl](https://github.com/rg3/youtube-dl) binary to us
 *Related options:*  
 [`FETCH_MEDIA`](#fetch_media)
 
-===
+---
+---
 
-### Archive Settings
+## Archive Settings
 
 ---
 #### `OUTPUT_DIR`
@@ -126,9 +125,10 @@ Some text to display in the footer of the archive index.  Useful for providing s
 *Related options:*  
 [`TEMPLATES_DIR`](#templates_dir)
 
-===
+---
+---
 
-### Archive Method Toggles
+## Archive Method Toggles
 
 ---
 #### `FETCH_TITLE`
@@ -207,9 +207,10 @@ Submit the page's URL to be archived on Archive.org. (The Internet Archive)
 *Related options:*  
 [`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
 
-===
+---
+---
 
-### Archive Method Options
+## Archive Method Options
 
 ---
 #### `CHECK_SSL_VALIDITY`
@@ -264,7 +265,11 @@ Path to a chrome user profile directory.  To capture sites that require a user t
 *Related options:*  
 [`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_BINARY`](#chrome_binary)
 
-## Creating a Config File
+---
+---
+---
+
+# Creating a Config File
 
 *Note: if using Docker Compose you should set the config in the `docker-compose.yml` file or a `.env` file instead.*
 
