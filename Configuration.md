@@ -18,7 +18,7 @@ As defined in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob
 ### Shell Options
 
 #### `USE_COLOR`
-[`USE_COLOR=True`]/`False`  
+`USE_COLOR=`[`True`]/`False`  
 Colorize console ouput.
 
 #### `SHOW_PROGRESS`
