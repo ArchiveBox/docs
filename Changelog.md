@@ -4,7 +4,12 @@
 
 <br/>
 
-<div align="center">🍰 Many thanks to our 30+ contributors and everyone in the web archiving community! 🏛</div>
+<div align="center">
+
+See the [releases](https://github.com/pirate/ArchiveBox/releases) page for versioned source downloads & changelog.  
+🍰 Many thanks to our 30+ contributors and everyone in the web archiving community! 🏛
+
+</div>
 
 ---
 
