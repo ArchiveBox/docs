@@ -8,6 +8,17 @@
 
 ---
 
+ - v0.2.4 released
+ - better archive corruption guards (check structure invariants on every parse & save)
+ - remove title prefetching in favor of new FETCH_TITLE archive method
+ - slightly improved CLI output for parsing and remote url downloading
+ - re-save index after archiving completes to update titles and urls
+ - remove redundant derivable data from link json schema
+ - markdown link parsing support
+ - faster link parsing and better symbol handling using a new compiled URL_REGEX
+
+---
+
  - v0.2.3 released
  - fixed issues with parsing titles including trailing tags
  - fixed issues with titles defaulting to URLs instead of attempting to fetch
