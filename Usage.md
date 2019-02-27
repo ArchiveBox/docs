@@ -23,7 +23,7 @@ cat urls_to_archive.txt | ./archive
 ```
 You can also pipe in RSS, XML, Netscape, or any of the other supported import formats via stdin.
 
-## Import a list of links exported from browser or another service
+## Import list of links exported from browser or another service
 
 ```bash
 ./archive ~/Downloads/browser_bookmarks_export.html
@@ -32,6 +32,8 @@ You can also pipe in RSS, XML, Netscape, or any of the other supported import fo
 # or
 ./archive ~/Downloads/other_links.txt
 ```
+
+Passing a file as an argument here does not archive the file, it parses it as a list of URLs and archives the links *inside of it*, so only use it for *lists of links* to archive, not HTML files or other content you want added directy to the archive.
 
 ## Import list of URLs from a remote RSS feed or file
 ArchiveBox will download the URL to a local file in `output/sources/` and attempt to autodetect the format and import any URLs found. Currently, Netscape HTML, JSON, RSS, and plain text links lists are supported.
