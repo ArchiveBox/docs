@@ -9,8 +9,7 @@ ArchiveBox officially supports the following operating systems:
 Other systems that are not officially supported but probably work to varying degrees:
 
  * Windows: Via [[Docker]] or WSL
- * Fedora, SUSE, Arch, CentOS
- * Other Linux distros
+ * Other Linux distros: Fedora, SUSE, Arch, CentOS, etc.
 
 Platforms other than Linux, BSD, and macOS are untested, but you can probably get it working on them without too much effort.
 
