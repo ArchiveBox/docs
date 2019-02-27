@@ -47,10 +47,11 @@ mv ~/Downloads/bookmarks.html data/sources/bookmarks.html
 docker-compose exec archivebox /bin/archive /data/sources/bookmarks.html
 ```
 
-To pull in links from a feed or list of links, pass the URL or path to the feed as an argument.  Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links *inside* of it, so only use it for RSS feeds or other *lists of links* you want to add.  To add an individual link you want to archive use the instruction above and pass via stdin instead of by argument.
+To pull in links from a feed or list of links, pass the URL or path to the feed as an argument.
 ```bash
 docker-compose exec archivebox /bin/archive https://example.com/some/feed.rss
 ```
+Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links *inside* of it, so only use it for RSS feeds or other *lists of links* you want to add.  To add an individual link you want to archive use the instruction above and pass via stdin instead of by argument.
 
 ## Accessing the data
 
