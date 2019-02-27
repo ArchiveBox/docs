@@ -59,7 +59,7 @@ cat bookmarks.html | docker run -i -v archivebox-data:/data archivebox /bin/arch
 Add a list of pages via feed URL or path. Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links *inside* of it, so only use it for RSS feeds or other *lists of links* you want to add.  To add an individual link use the instruction above and pass via stdin instead of by argument.
 ```bash
 docker run -v archivebox-data:/data archivebox /bin/archive 'https://example.com/some/rss/feed.xml'
-``
+```
 
 ### Accessing the data
 If you used the named docker volume `archivebox-data` as shown in the examples above, you can access the data here:  
