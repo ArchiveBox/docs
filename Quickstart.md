@@ -2,7 +2,7 @@
 
 ArchiveBox officially supports **Ubuntu**, **FreeBSD**, and **macOS**, but likely runs on many other systems.  You can run it on any system that supports **Docker**, including Windows.
 
-If you want to use Docker or Docker Compose to run ArchiveBox, go to the [[Docker]] instructions instead.
+If you want to use Docker or Docker Compose to run ArchiveBox, see the [[Docker]] instructions instead.
 
 First, we install the ArchiveBox dependencies, then we create a folder to store the archive data, and finally we import the list of links to the archive by running `./archive <links_file>`.
 
