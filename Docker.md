@@ -61,7 +61,9 @@ To access your archive, you can open `data/index.html` directly, or you can use 
 
 There are a number of easy ways to pass in environment variables for configuring ArchiveBox.
 
-You can edit the `environment:` section in `docker-compose.yml` directly or you can add a `env_file: ./path/to/ArchiveBox.conf` line before `environment:` to import variables from an env file. You can also specify an env file via CLI when running compose using `docker-compose --env-file=/path/to/config.env ...` although you must specify the variables in the `environment:` section that you want to have passed down to the ArchiveBox container from the passed env file.
+You can edit the `environment:` section in `docker-compose.yml` directly or you can add a `env_file: ./path/to/ArchiveBox.conf` line before `environment:` to import variables from an env file.
+
+You can also specify an env file via CLI when running compose using `docker-compose --env-file=/path/to/config.env ...` although you must specify the variables in the `environment:` section that you want to have passed down to the ArchiveBox container from the passed env file.
 
 If you want to access your archive server with HTTPS, put a reverse proxy like Nginx or Caddy in front of `127.0.0.1:8098` to do SSL termination.
 
