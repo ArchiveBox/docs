@@ -18,7 +18,7 @@ If you don't already have docker installed, follow the official install instruct
 
 # Docker Compose
 
-An example `docker-compose.yml` config is included in the project root.  You can edit it as you see fit, or just run the default setup with archivebox + nginx as it comes out of the box:
+An example [`docker-compose.yml`](https://github.com/pirate/ArchiveBox/blob/master/docker-compose.yml) config is included in the project root.  You can edit it as you see fit, or just run the default setup with archivebox + nginx as it comes out of the box:
 
 ## Setup
 
