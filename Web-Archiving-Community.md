@@ -4,19 +4,19 @@
 
  - [The Master Lists](#The-Master-Lists)
  - [Web Archiving Software](#Web-Archiving-Projects)
-   + Mass-Market Archiving Services
-   + Well-Known Open Source Projects
-   + Public Archiving Services
-   + ArchiveBox Alternatives
-   + Smaller Utilities
+   + [Mass-Market Archiving Services](#big-name-bookmarking--archiving-services)
+   + [Well-Known Open Source Projects](#from-the-archiveorg--archive-it-teams)
+   + [Public Archiving Services](#other-public-archiving-services)
+   + [ArchiveBox Alternatives](#other-archivebox-alternatives)
+   + [Smaller Utilities](#smaller-utilities)
  - [Reading List](#Reading-List)
-   + Blogs
-   + Articles
-   + ArchiveBox Discussions in News & Social Media
+   + [Blogs](#Blogs)
+   + [Articles](#Articles)
+   + [ArchiveBox Discussions in News & Social Media](#archivebox-discussions-in-news--social-media)
  - [Communities](#Communities)
-   + Most Active Web-Archiving Communities
-   + Other Web Archiving Communities
-   + General Archiving Foundations, Coalitions, Initiatives, and Institutes
+   + [Most Active Web-Archiving Communities](#most-active-communities)
+   + [Other Web Archiving Communities](#web-archiving-communities)
+   + [General Archiving Foundations, Coalitions, Initiatives, and Institutes](#general-archiving-foundations-coalitions-initiatives-and-institutes)
 
 ## The Master Lists
 
@@ -221,6 +221,8 @@ If any of these links are dead, you can find an archived version on https://arch
  - [Archives Unleashed Project](https://archivesunleashed.org/about-project/) and [UAP Github](https://github.com/archivesunleashed) (Canada)
  - [Old Dominion University: Web Science and Digital Libraries (WS-DL @ ODU)](https://ws-dl.cs.odu.edu) (Virginia, USA)
 
+---
+
 ### Web Archiving Communities
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Noun_project_community_icon_986427_cc.svg/2000px-Noun_project_community_icon_986427_cc.svg.png" width="230px" align="right">
@@ -238,6 +240,8 @@ If any of these links are dead, you can find an archived version on https://arch
  - [Stanford Libraries Web Archiving](https://library.stanford.edu/projects/web-archiving) (USA)
  - [Society of American Archivists: Electronic Records (SAA)](https://www2.archivists.org/groups/electronic-records-section) (USA)
  - [BitCurator Consortium (BCC)](https://bitcuratorconsortium.org/mission) (USA)
+
+---
 
 ### General Archiving Foundations, Coalitions, Initiatives, and Institutes
 
