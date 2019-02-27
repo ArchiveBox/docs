@@ -106,7 +106,9 @@ docker run -v archivebox-data:/data archivebox /bin/archive 'https://example.com
 If you used the named docker volume `archivebox-data` as shown in the examples above, you can access the data here:  
 `/var/lib/docker/volumes/archivebox-data/_data`
 
-If you want to use a local folder for data instead of using a named docker volume, replace the `-v archivebox-data:/data` flag in the commands above with `--mount type=bind,source=/your/data/folder/on/host,target=/data`.
+If you want to use a local folder for data instead of using a named docker volume, replace the named volume mount flag in the commands above with a directory bind mount.  
+Replace this: `-v archivebox-data:/data`  
+With this: `--mount type=bind,source=/your/data/folder/on/host,target=/data`.
 
 ## Configuration
 To pass configuration parameters, you can use the env command.
