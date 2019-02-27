@@ -12,7 +12,7 @@ Create a folder to store your archive, and clone the ArchiveBox repo into it.
 ```bash
 git clone https://github.com/pirate/ArchiveBox
 cd ArchiveBox/
-./setup   # installs all dependencies
+./setup          # setup script will prompt for confirmation before making any system changes
 ```
 
 For more detail, including the manual setup and docker instructions, see the [[Install]] page.
