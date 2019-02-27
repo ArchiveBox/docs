@@ -132,6 +132,7 @@ If any of these links are dead, you can find an archived version on https://arch
  - [Reddit r/selfhosted Discussion #2](https://www.reddit.com/r/selfhosted/comments/an2368/archivebox_the_opensource_selfhosted_web_archive/)
  - [Reddit r/datahoarder Discussion #1](https://www.reddit.com/r/DataHoarder/comments/69e6i9/archive_a_browseable_copy_of_your_saved_pocket/)
  - [Reddit r/datahoarder Discussion #2](https://www.reddit.com/r/DataHoarder/comments/6kepv6/bookmarkarchiver_now_supports_archiving_all_major/)
+ - [Reddit r/datahoarder Discussion #3](https://www.reddit.com/r/DataHoarder/comments/apnud4/continually_archive_websites_and_keep_the_older/)
  - [Recurse Center: The Joy of Computing](https://joy.recurse.com/posts/26-bookmark-archiver-your-own-self-hosted-way-back-machine)
  - [Python Trending Twiter](https://twitter.com/pythontrending/status/1092492387182628865)
 
