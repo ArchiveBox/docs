@@ -25,7 +25,7 @@ Not all the dependencies are required for all modes. If you disable some archive
  - `git` (usually already on most systems)
 
 **More info:**
- - To manually specify specific binaries, see the [Configuration: Dependencies](Configuration#dependency-options) page.
+ - To manually use specific binaries for dependencies, see the [Configuration: Dependencies](Configuration#dependency-options) page.
  - To disable specific dependencies, see the [Configuration: Archive Method Toggles](Configuration#archive-method-toggles) page.  
  - For help installing dependencies, see the [[Troubleshooting]] and [[Chromium Install]] pages.
 
