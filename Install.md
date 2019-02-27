@@ -27,17 +27,17 @@ Not all the dependencies are required for all modes. If you disable some archive
 **More info:**
  - To manually specify specific binaries, see the [Configuration: Dependencies](Configuration#dependency-options) page.
  - To disable specific dependencies, see the [Configuration: Archive Method Toggles](Configuration#archive-method-toggles) page.  
- - For help installing/troubleshooting specific dependencies, see the [[Troubleshooting]] page.
+ - For help installing/troubleshooting dependencies, see the [[Troubleshooting]] and [[Chromium Install]] pages.
 
 ## Automatic Setup
 
-If you're on Linux with `apt`, or macOS with `brew`:
+If you're on Linux with `apt`, or macOS with `brew` there is an automatic setup script provided to install all the dependencies.
 
-Run `./bin/setup`, it will prompt you to install all dependencies and set up ArchiveBox automatically.
+Run `./bin/setup`, it will explain what it installs and will prompt you to continue before doing anything.
 
-Then continue with the [[Quickstart]]...
+After running it, continue with the [[Quickstart]] guide...
 
-BSD and Windows users should follow the manual setup and Docker instructions respectively.
+BSD, Windows, and other users should follow the [Manual Setup](#manual-setup) or [[Docker]] instructions.
 
 ## Manual Setup
 
