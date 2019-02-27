@@ -55,7 +55,7 @@ Passing a URL as an argument here does not archive the specified URL, it downloa
 
 ## Accessing the data
 
-The outputted archive data is stored in `data/` (relative to the project root), or whatever folder path you specified in the `docker-compose.yml` `volumes:` section.  Make sure the `data/` folder has permissions initially  set to `777` so that the ArchiveBox command is able to set it to the specified `OUTPUT_PERMISSIONS` config setting on the first run.
+The outputted archive data is stored in `data/` (relative to the project root), or whatever folder path you specified in the `docker-compose.yml` `volumes:` section.  Make sure the `data/` folder on the host has permissions initially  set to `777` so that the ArchiveBox command is able to set it to the specified `OUTPUT_PERMISSIONS` config setting on the first run.
 
 To access your archive, you can open `data/index.html` directly, or you can use the provided Nginx server running inside docker on [`http://127.0.0.1:8098`](http://127.0.0.1:8098).
 
@@ -110,7 +110,7 @@ Passing a URL as an argument here does not archive the specified URL, it downloa
 If you want to use a local folder for data instead of using a named docker volume, replace the named volume mount flag in the commands above with a directory bind mount.  
 Replace this: `-v archivebox-data:/data`  
 With this: `--mount type=bind,source=/your/data/folder/on/host,target=/data`  
-Make sure the `data/` folder has permissions initially  set to `777` so that the ArchiveBox command is able to set it to the specified `OUTPUT_PERMISSIONS` config setting on the first run.
+Make sure the `data` folder you specify on the host has permissions initially  set to `777` so that the ArchiveBox command is able to set it to the specified `OUTPUT_PERMISSIONS` config setting on the first run.
 
 If you used the named docker volume `archivebox-data` as shown in the examples above, you can mount the volume using any standard docker tools, or access the data folder directly here:  
 `/var/lib/docker/volumes/archivebox-data/_data` (on most systems)
