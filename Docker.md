@@ -48,17 +48,17 @@ You can also mount a local directory in later steps instead of using a named Doc
 
 ### Usage
 
-To add a list of pages via URL of a feed. Passing a URL as an argument does not archive the specified url, it downloads it and archives the links *inside* of it, so only use it for RSS feeds or other *lists of links* you want to add.
-```bash
-docker run -v archivebox-data:/data archivebox /bin/archive 'https://example.com/some/rss/feed.xml'
-```
-
 To add a single URL to the archive or a list of links from a file, pipe them in via stdin.  This will archive each link passed in.
 ```bash
 echo 'https://example.com' | docker run -i -v archivebox-data:/data archivebox /bin/archive
 # or
 cat bookmarks.html | docker run -i -v archivebox-data:/data archivebox /bin/archive
 ```
+
+Add a list of pages via feed URL or path. Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links *inside* of it, so only use it for RSS feeds or other *lists of links* you want to add.  To add an individual link use the instruction above and pass via stdin instead of by argument.
+```bash
+docker run -v archivebox-data:/data archivebox /bin/archive 'https://example.com/some/rss/feed.xml'
+``
 
 ### Accessing the data
 If you used the named docker volume `archivebox-data` as shown in the examples above, you can access the data here:  
