@@ -1,8 +1,8 @@
 # Overview
 
-Make sure you have Docker installed and set up on your machine before following these instructions.
+Running ArchiveBox with Docker allows you to manage it in a container without exposing it to the rest of your system.  Usage with Docker is similar to usage of ArchiveBox normally, with a few small differences.
 
-If you don't already have Docker installed, follow the official install instructions for Linux, macOS, or Windows here: https://docs.docker.com/install/#supported-platforms.
+Make sure you have Docker installed and set up on your machine before following these instructions.  If you don't already have Docker installed, follow the official install instructions for Linux, macOS, or Windows here: https://docs.docker.com/install/#supported-platforms.
 
 - [Overview](#)
 - [Docker Compose](#docker-compose) (recommended way)
