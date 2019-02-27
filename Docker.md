@@ -18,7 +18,7 @@ Make sure you have Docker installed and set up on your machine before following 
 
 # Docker Compose
 
-An example [`docker-compose.yml`](https://github.com/pirate/ArchiveBox/blob/master/docker-compose.yml) config is included in the project root.  You can edit it as you see fit, or just run the default setup with ArchiveBox + Nginx as it comes out of the box.
+An example [`docker-compose.yml`](https://github.com/pirate/ArchiveBox/blob/master/docker-compose.yml) config with ArchiveBox and an Nginx server to serve the archive is included in the project root.  You can edit it as you see fit, or just run it as it comes out-of-the-box.
 
 ## Setup
 
