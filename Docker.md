@@ -32,6 +32,8 @@ Then open [`http://127.0.0.1:8098`](http://127.0.0.1:8098) to view the archive (
 
 ## Usage
 
+First make sure you're `cd`'ed into the same folder as your `docker-compose.yml` file (e.g. the project root) and that your containers have been started with `docker-compose up -d`.
+
 To add new URLs, you can use docker-compose just like the normal `./archive` CLI.
 
 To add an individual link or list of links, pass in URLs via stdin.
