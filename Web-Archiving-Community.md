@@ -22,7 +22,7 @@
 
 <img src="https://i.pinimg.com/originals/5d/8f/ae/5d8fae9a42210eb0320960b23e3fe236.jpg" width="230px" align="right">
 
-Lists of great archiving institutions and software maintained by other people.
+Indexes of archiving institutions and software maintained by other people.
 
  - **[The Awesome Web Archiving List](https://github.com/iipc/awesome-web-archiving) (IIPC)**  
  - **[Wiki of Web Archiving Tools](http://coptr.digipres.org/Category:Tools) (COPTR)**  
