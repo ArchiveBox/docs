@@ -38,13 +38,13 @@ Passing a file as an argument here does not archive the file, it parses it as a 
 ## Import list of URLs from a remote RSS feed or file
 ArchiveBox will download the URL to a local file in `output/sources/` and attempt to autodetect the format and import any URLs found. Currently, Netscape HTML, JSON, RSS, and plain text links lists are supported.
 
-Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links *inside* of it, so only use it for RSS feeds or other *lists of links* you want to add.  To add an individual link use the instruction above and pass the URL via stdin instead of as an argument.
-
 ```bash
 ./archive https://example.com/feed.rss
 # or
 ./archive https://example.com/links.txt
 ```
+
+Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links *inside* of it, so only use it for RSS feeds or other *lists of links* you want to add.  To add an individual link use the instruction above and pass the URL via stdin instead of as an argument.
 
 ## Import list of links from browser history
 ```bash
