@@ -45,12 +45,11 @@ To pull in links from a feed or list of links, pass the URL or path to the feed 
 ```bash
 docker-compose exec archivebox /bin/archive https://example.com/some/feed.rss
 ```
-To import links from a file you have to first move it into your data folder so that ArchiveBox can access it from within the container.
+To import links from a file you can either `cat` the file and pass it via stdin like above, or move it into your data folder so that ArchiveBox can access it from within the container.
 ```bash
 mv ~/Downloads/bookmarks.html data/sources/bookmarks.html
 docker-compose exec archivebox /bin/archive /data/sources/bookmarks.html
 ```
-This is equivalent to passing the file in via stdin `cat bookmarks.html | docker-compose exec -T archivebox /bin/archive` above.
 
 ## Accessing the data
 
