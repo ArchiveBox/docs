@@ -6,26 +6,41 @@ If you don't already have docker installed, follow the official install instruct
 
 An example `docker-compose.yml` config is included in the project root.  You can edit it as you see fit, or just run the default setup with archivebox + nginx as it comes out of the box:
 
+## Setup
+
 ```bash
 cd /path/to/ArchiveBox
 mkdir data && chmod 777 data
 docker-compose up -d
 ```
+
 Then open [`http://127.0.0.1:8098`](http://127.0.0.1:8098) to view the archive (HTTP, not HTTPS).
 
-To add new URLs, you can use docker-compose just like the normal `./archive` CLI: 
-```bash
-# pass links to archive via stdin
-echo "https://example.com" | docker-compose exec -T archivebox /bin/archive
+## Usage
 
-# or pass the URL of a feed to import links from
+To add new URLs, you can use docker-compose just like the normal `./archive` CLI.
+
+To add an individual link or list of links, pass in URLs via stdin.
+```bash
+echo "https://example.com" | docker-compose exec -T archivebox /bin/archive
+```
+
+To pull in links from a feed or list of links, pass the URL or path to the feed as an argument.
+```bash
 docker-compose exec archivebox /bin/archive https://example.com/some/feed.rss
 
-# or import a file by putting it in your data folder so docker can access it
+# you can also import a bookmarks file or feed by putting it in your data folder so archivebox can access it from within the container
 mv ~/Downloads/bookmarks.html data/sources/bookmarks.html
 docker-compose exec archivebox /bin/archive /data/sources/bookmarks.html
 ```
 
+## Accessing your data
+
+The outputted archive data is stored in `data/` (relative to the project root), or whatever folder path you specified in `docker-compose.yml`.
+
+To access your archive, you can open `data/index.html` directly, or you can use the provided nginx server running inside docker on [`http://127.0.0.1:8098`](http://127.0.0.1:8098).
+
+## Configuration
 To pass in environment variables for configuring ArchiveBox, edit `docker-compose.yml`, create a `.env` file in the project root, or specify an env file when running compose using `docker-compose --env-file=/path/to/config.env ...`.
 
 If you want to access your archive server with HTTPS, put a reverse proxy like Nginx or Caddy in front of `127.0.0.1:8098` to do SSL termination.
