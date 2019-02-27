@@ -12,7 +12,7 @@ You can set environment variables in your shell profile, a config file, or by us
 ```bash
 env FETCH_MEDIA=True MEDIA_TIMEOUT=500 ./archive ...
 ```
-See [[Configuration]] for more details (and the Configuration sections on the [[Docker]] page if you're using Docker).
+See [[Configuration]] for more details. If you're using Docker, also make sure to read the Configuration section on the [[Docker]] page.
 
 ## Import a single URL or list of URLs via stdin
 ```bash
