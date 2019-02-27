@@ -1,6 +1,6 @@
 # Overview
 
-Make sure you have Docker installed and set up:
+Make sure you have Docker installed and set up on your machine before following these instructions.
 
 If you don't already have docker installed, follow the official install instructions for Linux, macOS, or Windows https://docs.docker.com/install/#supported-platforms.
 
