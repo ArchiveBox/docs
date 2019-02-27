@@ -301,7 +301,7 @@ Path or name of the curl binary to use.
 
 # Creating a Config File
 
-*Note: if using Docker Compose you should set the config in the `docker-compose.yml` file or a `.env` file instead.*
+*Note: If you're using Docker, see the [[Docker]] page for configuration instructions.*
 
 To set up a persistent config:
 
