@@ -4,18 +4,25 @@
 
 <img src="https://i.imgur.com/duS8Lm7.png" width="200px" align="right"/>
 
- - [The Master Lists](#The-Master-Lists)
- - [Web Archiving Software](#Web-Archiving-Projects)
+ - [The Master Lists](#The-Master-Lists)  
+   *Community-maintained indexes of web archiving tools and groups.*
+
+ - [Web Archiving Software](#Web-Archiving-Projects)  
+   *Open source tools and projects in the internet archiving space.*
    + [Mass-Market Archiving Services](#big-name-bookmarking--archiving-services)
    + [Well-Known Open Source Projects](#from-the-archiveorg--archive-it-teams)
    + [Public Archiving Services](#other-public-archiving-services)
    + [ArchiveBox Alternatives](#other-archivebox-alternatives)
    + [Smaller Utilities](#smaller-utilities)
- - [Reading List](#Reading-List)
+
+ - [Reading List](#Reading-List)  
+   *Articles, posts, and blogs relevant to ArchiveBox and web archiving in general.*
    + [Blogs](#Blogs)
    + [Articles](#Articles)
    + [ArchiveBox Discussions in News & Social Media](#archivebox-discussions-in-news--social-media)
- - [Communities](#Communities)
+
+ - [Communities](#Communities)  
+   *A collection of the most active internet archiving communities and initiatives.*
    + [Most Active Web-Archiving Communities](#most-active-communities)
    + [Other Web Archiving Communities](#web-archiving-communities)
    + [General Archiving Foundations, Coalitions, Initiatives, and Institutes](#general-archiving-foundations-coalitions-initiatives-and-institutes)
@@ -26,7 +33,7 @@
 
 <img src="https://i.pinimg.com/originals/5d/8f/ae/5d8fae9a42210eb0320960b23e3fe236.jpg" width="230px" align="right">
 
-Indexes of archiving institutions and software maintained by other people.
+Indexes of archiving institutions and software maintained by other people.  If there's anything archivists love doing, it's making lists.
 
  - **[The Awesome Web Archiving List](https://github.com/iipc/awesome-web-archiving) (IIPC)**  
  - **[Wiki of Web Archiving Tools](http://coptr.digipres.org/Category:Tools) (COPTR)**  
@@ -315,5 +322,6 @@ You can find more organizations and initiatives on these other lists:
 
 [![](https://img.shields.io/badge/Donate-ArchiveBox.io-%23DD5D76.svg)](https://www.patreon.com/theSquashSH)
 [![](https://img.shields.io/badge/Donate-Archive.org-%23115D76.svg)](https://archive.org/donate/)
-
+<br/><br/>
+<small><a href="#contents">^ &nbsp; Back to Top &nbsp; ^</small></a>
 </div>
