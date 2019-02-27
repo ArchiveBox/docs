@@ -2,11 +2,14 @@
 
 ## The Master Lists
 
- - [The Awesome Web Archiving List](https://github.com/iipc/awesome-web-archiving) (IIPC)
- - [Wiki of Web Archiving Tools](http://coptr.digipres.org/Category:Tools) (COPTR)
- - [ArchiveTeam's List of Software](https://www.archiveteam.org/index.php?title=Software) (ArchiveTeam.org)
- - [List of Web Archiving Initiatives](https://en.wikipedia.org/wiki/List_of_Web_archiving_initiatives) (Wikipedia.org)
- - [Directory of Archiving Organizations](https://www2.archivists.org/assoc-orgs) (American Society of Archivists)
+<img src="https://i.pinimg.com/originals/5d/8f/ae/5d8fae9a42210eb0320960b23e3fe236.jpg" width="230px" align="right">
+
+ - [The Awesome Web Archiving List](https://github.com/iipc/awesome-web-archiving) (IIPC)  
+ - [Wiki of Web Archiving Tools](http://coptr.digipres.org/Category:Tools) (COPTR)  
+ - [ArchiveTeam's List of Software](https://www.archiveteam.org/index.php?title=Software) (ArchiveTeam.org)  
+ - [List of Web Archiving Initiatives](https://en.wikipedia.org/wiki/List_of_Web_archiving_initiatives) (Wikipedia.org)  
+ - [Directory of Archiving Organizations](https://www2.archivists.org/assoc-orgs) (American Society of Archivists)  
+
 
 ## Web Archiving Projects
 
