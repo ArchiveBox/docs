@@ -11,7 +11,7 @@ cd /path/to/ArchiveBox
 mkdir data && chmod 777 data
 docker-compose up -d
 ```
-Then open `http://127.0.0.1:8098` to view the archive (HTTP, not HTTPS).
+Then open [`http://127.0.0.1:8098`](http://127.0.0.1:8098) to view the archive (HTTP, not HTTPS).
 
 To add new URLs, you can use docker-compose just like the normal `./archive` CLI: 
 ```bash
