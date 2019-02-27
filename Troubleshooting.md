@@ -24,6 +24,8 @@ If you still need help, [the official Python docs](https://docs.python.org/3.6/u
 
 **Chromium/Google Chrome:**
 
+For more info, see the [[Chromium Install]] page.
+
 `archive.py` depends on being able to access a `chromium-browser`/`google-chrome` executable.  The executable used
 defaults to `chromium-browser` but can be manually specified with the environment variable `CHROME_BINARY`:
 
