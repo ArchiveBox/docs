@@ -18,7 +18,7 @@ If you don't already have Docker installed, follow the official install instruct
 
 # Docker Compose
 
-An example [`docker-compose.yml`](https://github.com/pirate/ArchiveBox/blob/master/docker-compose.yml) config is included in the project root.  You can edit it as you see fit, or just run the default setup with ArchiveBox + Nginx as it comes out of the box:
+An example [`docker-compose.yml`](https://github.com/pirate/ArchiveBox/blob/master/docker-compose.yml) config is included in the project root.  You can edit it as you see fit, or just run the default setup with ArchiveBox + Nginx as it comes out of the box.
 
 ## Setup
 
@@ -58,7 +58,10 @@ The outputted archive data is stored in `data/` (relative to the project root), 
 To access your archive, you can open `data/index.html` directly, or you can use the provided nginx server running inside docker on [`http://127.0.0.1:8098`](http://127.0.0.1:8098).
 
 ## Configuration
-To pass in environment variables for configuring ArchiveBox, edit `docker-compose.yml`, create a `.env` file in the project root, or specify an env file when running compose using `docker-compose --env-file=/path/to/config.env ...`.
+
+There are a number of easy ways to pass in environment variables for configuring ArchiveBox.
+
+You can edit the `environment:` section in `docker-compose.yml` directly or you can add a `env_file: ./path/to/ArchiveBox.conf` line before `environment:` to import variables from an env file. You can also specify an env file via CLI when running compose using `docker-compose --env-file=/path/to/config.env ...` although you must specify the variables in the `environment:` section that you want to have passed down to the ArchiveBox container from the passed env file.
 
 If you want to access your archive server with HTTPS, put a reverse proxy like Nginx or Caddy in front of `127.0.0.1:8098` to do SSL termination.
 
