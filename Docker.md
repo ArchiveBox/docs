@@ -44,11 +44,13 @@ echo "https://example.com" | docker-compose exec -T archivebox /bin/archive
 To pull in links from a feed or list of links, pass the URL or path to the feed as an argument.
 ```bash
 docker-compose exec archivebox /bin/archive https://example.com/some/feed.rss
-
-# you can also import a bookmarks file or feed by putting it in your data folder so archivebox can access it from within the container
+```
+To import links from a file you have to first move it into your data folder so that ArchiveBox can access it from within the container.
+```bash
 mv ~/Downloads/bookmarks.html data/sources/bookmarks.html
 docker-compose exec archivebox /bin/archive /data/sources/bookmarks.html
 ```
+This is equivalent to passing the file in via stdin `cat bookmarks.html | docker-compose exec -T archivebox /bin/archive` above.
 
 ## Accessing the data
 
