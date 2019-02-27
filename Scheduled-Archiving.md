@@ -6,7 +6,7 @@ ArchiveBox ignores links that are imported multiple times (keeping the earliest 
 This means you can add cron jobs that regularly poll the same file or URL for new links, adding only new
 ones as necessary.
 
-For some example configs, see the `etc/cron.d` and `etc/supervisord` folders.
+For some example configs, see the [`etc/cron.d`](https://github.com/pirate/ArchiveBox/blob/master/etc/cron.d) and [`etc/supervisord`](https://github.com/pirate/ArchiveBox/blob/master/etc/supervisord) folders.
 
 ## Example: Import Firefox browser history every 24 hours
 
