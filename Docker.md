@@ -11,7 +11,7 @@ cd /path/to/ArchiveBox
 mkdir data && chmod 777 data
 docker-compose up -d
 ```
-Then open `http://127.0.0.1:8098` (HTTP, not HTTPS) to view the archive.  If you want HTTPS, put a reverse proxy link nginx or caddy in front of `127.0.0.1:8098`.
+Then open `http://127.0.0.1:8098` (HTTP, not HTTPS) to view the archive.
 
 To add new URLs, you can use docker-compose just like the normal `./archive` CLI: 
 ```bash
@@ -27,6 +27,8 @@ docker-compose exec archivebox /bin/archive /data/sources/bookmarks.html
 ```
 
 To pass in environment variables for configuring ArchiveBox, edit `docker-compose.yml`, create a `.env` file in the project root, or specify an env file when running compose using `docker-compose --env-file=/path/to/config.env ...`.
+
+If you want to access your archive server with HTTPS, put a reverse proxy like Nginx or Caddy in front of `127.0.0.1:8098` to do SSL termination.
 
 # Docker
 
