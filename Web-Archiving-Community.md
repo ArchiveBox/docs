@@ -2,6 +2,8 @@
 
 ## Contents
 
+<img src="https://i.imgur.com/duS8Lm7.png" width="200px" align="right"/>
+
  - [The Master Lists](#The-Master-Lists)
  - [Web Archiving Software](#Web-Archiving-Projects)
    + [Mass-Market Archiving Services](#big-name-bookmarking--archiving-services)
