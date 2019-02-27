@@ -6,7 +6,12 @@ ArchiveBox officially supports the following operating systems:
 * BSD: FreeBSD, OpenBSD, NetBSD etc (with pkg)
 * macOS (with homebrew)
 
-You can run it on Windows and other systems via Docker containers or Vagrant VMs if they have support for those technologies.  I haven't tested it on distros like Fedora, SUSE, Arch, CentOS, etc but you can probably get it working on those as well.
+Other systems that are not fully supported but probably work to varying degrees:
+
+ * Windows: Via [[Docker]] or WSL
+ * Fedora, SUSE, Arch, CentOS, other linux distros, etc
+
+Platforms other than Linux, BSD, and macOS are untested, but you can probably get it working on them without too much effort.
 
 ## Dependencies
 
