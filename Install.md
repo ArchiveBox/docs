@@ -2,9 +2,9 @@
 
 ArchiveBox officially supports the following operating systems:
 
-* Linux: Ubuntu, Debian, etc (with apt)
-* BSD: FreeBSD, OpenBSD, NetBSD etc (with pkg)
-* macOS: >=10.12 (with homebrew)
+* **Linux:** Ubuntu, Debian, etc (with apt)
+* **BSD:** FreeBSD, OpenBSD, NetBSD etc (with pkg)
+* **macOS:** >=10.12 (with homebrew)
 
 Other systems that are not officially supported but probably work to varying degrees:
 
