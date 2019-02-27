@@ -75,16 +75,16 @@ If you want to continue and use raw docker (below) instead of docker-compose (ab
 
 ## Setup
 
-1. Fetch and build the ArchiveBox Docker image:
+1. Fetch and build the ArchiveBox Docker image.
 ```bash
 docker build github.com/pirate/ArchiveBox -t archivebox
 ```
 
-2. Create a volume to hold your ArchiveBox data:
+2. Create a volume to hold your ArchiveBox data (optional).
 ```bash
 docker volume create archivebox-data
 ```
-You can also mount a local directory in later steps instead of using a named Docker volume.
+You can also mount a local directory in later steps instead of using a named Docker volume (see the [Accessing the data](#) section for details).
 
 3. Run ArchiveBox with `docker run` to add links to your archive.  See the Usage section below for details depending on how you want to add links.
 
