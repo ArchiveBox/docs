@@ -33,8 +33,6 @@ Indexes of archiving institutions and software maintained by other people.
 
 ## Web Archiving Projects
 
----
-
 <div align="center">
 <img src="https://alternative.me/icons/pocket.jpg" width="50px"/> &nbsp; &nbsp;
 <img src="https://assets.ifttt.com/images/channels/23/icons/large.png" width="50px"/> &nbsp; &nbsp;
