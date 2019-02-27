@@ -20,6 +20,8 @@
    + [Other Web Archiving Communities](#web-archiving-communities)
    + [General Archiving Foundations, Coalitions, Initiatives, and Institutes](#general-archiving-foundations-coalitions-initiatives-and-institutes)
 
+---
+
 ## The Master Lists
 
 <img src="https://i.pinimg.com/originals/5d/8f/ae/5d8fae9a42210eb0320960b23e3fe236.jpg" width="230px" align="right">
@@ -32,6 +34,7 @@ Indexes of archiving institutions and software maintained by other people.
  - [List of Web Archiving Initiatives](https://en.wikipedia.org/wiki/List_of_Web_archiving_initiatives) (Wikipedia.org)  
  - [Directory of Archiving Organizations](https://www2.archivists.org/assoc-orgs) (American Society of Archivists)  
 
+---
 
 ## Web Archiving Projects
 
@@ -154,6 +157,8 @@ Random helpful utiltities for web archiving, WARC creation and replay, and more.
 
 A collection of blog posts and articles about internet archiving, contact me / open an issue if you want to add a link here!
 
+---
+
 ### Blogs
 
 <img src="https://media.npr.org/assets/img/2017/06/28/istock-506236357-5961b1f611e5136a7cd3fd5f74d97f4575f48c66-s800-c85.jpg" width="350px" align="right">
@@ -168,6 +173,8 @@ A collection of blog posts and articles about internet archiving, contact me / o
  - https://brewster.kahle.org
  - https://ianmilligan.ca
  - https://medium.com/@giovannidamiola
+
+---
 
 ### Articles
  - https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/
@@ -190,6 +197,8 @@ A collection of blog posts and articles about internet archiving, contact me / o
  - https://ws-dl.blogspot.com/2019/02/2019-02-08-google-is-being-shuttered.html
 
 If any of these links are dead, you can find an archived version on https://archive.sweeting.me.
+
+---
 
 ### ArchiveBox Discussions in News & Social Media
 
@@ -299,3 +308,12 @@ You can find more organizations and initiatives on these other lists:
  - [SAA List of USA & Canada Based Archiving Organizations](https://www2.archivists.org/assoc-orgs/directory)
  - [SAA List of International Archiving Organizations](https://www2.archivists.org/assoc-orgs/i_a_o)
  - [Digital Preservation Coalition's Member List](https://www.dpconline.org/about/members)
+
+---
+
+<div align="center">
+
+[![](https://img.shields.io/badge/Donate-ArchiveBox.io-%23DD5D76.svg)](https://www.patreon.com/theSquashSH)
+[![](https://img.shields.io/badge/Donate-Archive.org-%23115D76.svg)](https://archive.org/donate/)
+
+</div>
