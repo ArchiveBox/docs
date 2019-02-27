@@ -53,7 +53,7 @@ docker-compose exec archivebox /bin/archive /data/sources/bookmarks.html
 
 ## Accessing the data
 
-The outputted archive data is stored in `data/` (relative to the project root), or whatever folder path you specified in `docker-compose.yml`.
+The outputted archive data is stored in `data/` (relative to the project root), or whatever folder path you specified in the `docker-compose.yml` `volumes:` section.
 
 To access your archive, you can open `data/index.html` directly, or you can use the provided nginx server running inside docker on [`http://127.0.0.1:8098`](http://127.0.0.1:8098).
 
