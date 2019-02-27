@@ -26,7 +26,7 @@ Not all the dependencies are required for all modes. If you disable some archive
 
 **More info:**
  - To use specific binaries for dependencies, see the [Configuration: Dependencies](Configuration#dependency-options) page.
- - To disable specific dependencies, see the [Configuration: Archive Method Toggles](Configuration#archive-method-toggles) page.  
+ - To disable unused dependencies, see the [Configuration: Archive Method Toggles](Configuration#archive-method-toggles) page.  
  - For help installing dependencies, see the [[Troubleshooting]] and [[Chromium Install]] pages.
 
 ## Automatic Setup
