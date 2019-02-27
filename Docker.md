@@ -26,8 +26,7 @@ mv ~/Downloads/bookmarks.html data/sources/bookmarks.html
 docker-compose exec archivebox /bin/archive /data/sources/bookmarks.html
 ```
 
-To pass in environment variables for configuring ArchiveBox,  
-edit `docker-compose.yml` or create a `.env` file in the project root.
+To pass in environment variables for configuring ArchiveBox, edit `docker-compose.yml`, create a `.env` file in the project root, or specify an env file when running compose using `docker-compose --env-file=/path/to/config.env ...`.
 
 # Docker
 
