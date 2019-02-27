@@ -1,11 +1,31 @@
 ▶️ *Just getting started and want to learn more about why Web Archiving is important? <br/> Check out this article: [On the Importance of Web Archiving](https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/).*
 
+## Contents
+
+ - [The Master Lists](#The-Master-Lists)
+ - [Web Archiving Software](#Web-Archiving-Projects)
+   + Bookmarking+archiving services
+   + Software maintained by well known Archiving institutions
+   + Public Archiving Services
+   + ArchiveBox Alternatives
+   + Smaller Utilities
+ - [Reading List](#Reading-List)
+   + Blogs
+   + Articles
+   + ArchiveBox Discussions in News & Social Media
+ - [Communities](#Communities)
+   + Most Active Communities
+   + Web Archiving Communities
+   + General Archiving Foundations, Coalitions, Initiatives, and Institutes
+
 ## The Master Lists
 
 <img src="https://i.pinimg.com/originals/5d/8f/ae/5d8fae9a42210eb0320960b23e3fe236.jpg" width="230px" align="right">
 
- - [The Awesome Web Archiving List](https://github.com/iipc/awesome-web-archiving) (IIPC)  
- - [Wiki of Web Archiving Tools](http://coptr.digipres.org/Category:Tools) (COPTR)  
+Lists of great archiving institutions and software maintained by other people.
+
+ - **[The Awesome Web Archiving List](https://github.com/iipc/awesome-web-archiving) (IIPC)**  
+ - **[Wiki of Web Archiving Tools](http://coptr.digipres.org/Category:Tools) (COPTR)**  
  - [ArchiveTeam's List of Software](https://www.archiveteam.org/index.php?title=Software) (ArchiveTeam.org)  
  - [List of Web Archiving Initiatives](https://en.wikipedia.org/wiki/List_of_Web_archiving_initiatives) (Wikipedia.org)  
  - [Directory of Archiving Organizations](https://www2.archivists.org/assoc-orgs) (American Society of Archivists)  
@@ -13,41 +33,77 @@
 
 ## Web Archiving Projects
 
+---
+
+<div align="center">
+<img src="https://alternative.me/icons/pocket.jpg" width="50px"/> &nbsp; &nbsp;
+<img src="https://assets.ifttt.com/images/channels/23/icons/large.png" width="50px"/> &nbsp; &nbsp;
+<img src="https://avatars1.githubusercontent.com/u/8275533?s=400&v=4" width="50px"/> &nbsp; &nbsp;
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Logo-wallabag-svg.svg/2000px-Logo-wallabag-svg.svg.png" width="50px"/>
+</div>
+
 ### Big Name Bookmarking + Archiving Services
- - [Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla
- - [Pinboard](https://pinboard.in) Bookmarking tool that provides archiving in a paid version, run by a single independent developer
+
+ - **[Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla**
+ - **[Pinboard](https://pinboard.in) Bookmarking tool that provides archiving in a paid version, run by a single independent developer**
  - [Wallabag](https://wallabag.org) / [Wallabag.it](https://wallabag.it) Self-hostable web archiving server that can import via RSS
  - [Shaarli](https://github.com/shaarli/Shaarli) Self-hostable bookmark tagging, archiving, and sharing service
 
+---
+
 ### From the Archive.org & Archive-It teams
- - [Archive.org](https://archive.org) The O.G. wayback machine provided publicly by the Internet Archive (Archive.org)
- - [Archive.it](https://archive-it.org) commercial Wayback-Machine solution
- - [Brozzler](https://github.com/internetarchive/brozzler) chrome headless crawler + WARC archiver maintained by Archive.org
+
+<img src="https://library.gwu.edu/sites/default/files/events/Archive-It.png" width="115px" align="right"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Internet_Archive_logo_and_wordmark.svg/250px-Internet_Archive_logo_and_wordmark.svg.png" width="100px" align="right"/>
+
+ - **[Archive.org](https://archive.org) The O.G. wayback machine provided publicly by the Internet Archive (Archive.org)**
+ - **[Archive.it](https://archive-it.org) commercial Wayback-Machine solution**
+ - **[Brozzler](https://github.com/internetarchive/brozzler) chrome headless crawler + WARC archiver maintained by Archive.org**
  - [WarcProx](https://github.com/internetarchive/warcprox) warc proxy recording and playback utility
  - [WarcTools](https://github.com/internetarchive/warctools) utilities for dealing with WARCs
  - [More on their Github...](https://github.com/internetarchive)
 
+---
+
 ### From the Webrecorder team
- - [Webrecorder.io](https://webrecorder.io/) An open-source personal archiving server that uses pywb under the hood
- - [pywb](https://github.com/webrecorder/pywb) The python wayback machine, the codebase forked off archive.org that powers webrecorder
+
+<img src="https://quintagroup.com/cms/python/images/webrecorder.jpeg" width="150px" align="right"/>
+
+ - **[Webrecorder.io](https://webrecorder.io/) An open-source personal archiving server that uses pywb under the hood**
+ - **[pywb](https://github.com/webrecorder/pywb) The python wayback machine, the codebase forked off archive.org that powers webrecorder**
  - [warcit](https://github.com/webrecorder/warcit) Create a warc file out of a folder full of assets
  - [WebArchivePlayer](https://github.com/ikreymer/webarchiveplayer#auto-load-warcs) A tool for replaying web archives
  - [warcio](https://github.com/webrecorder/warcio) fast streaming asynchronous WARC reader and writer
  - [More on their Github...](https://github.com/webrecorder)
 
+---
+
 ### From the Old Dominion University: Web Science Team
- - [ipwb](https://github.com/oduwsdl/ipwb) A distributed web archiving solution using pywb with ipfs for storage
- - [archivenow](https://github.com/oduwsdl/archivenow) tool that pushes urls into all the online archive services like Archive.is and Archive.org
+<img src="https://avatars2.githubusercontent.com/u/4416806?s=280&v=4" width="130px" align="right"/>
+
+ - **[ipwb](https://github.com/oduwsdl/ipwb) A distributed web archiving solution using pywb with ipfs for storage**
+ - **[archivenow](https://github.com/oduwsdl/archivenow) tool that pushes urls into all the online archive services like Archive.is and Archive.org**
  - [WAIL](https://github.com/n0tan3rd/wail) Electron app version of the original [wail](https://github.com/machawk1/wail) for creating and interacting with web archives
- - [warcreate](https://github.com/machawk1/warcreate) a Chrome extension for creating WARCs from any webpage
+ - **[warcreate](https://github.com/machawk1/warcreate) a Chrome extension for creating WARCs from any webpage**
  - [More on their Github...](https://github.com/oduwsdl)
 
+---
+
 ### From the Archives Unleashed Team
+
+<img src="https://archivesunleashed.org/images/hairball-roboto.png" width="220px" align="right"/>
+
  - [AUT](https://github.com/archivesunleashed/aut) Archives Unleashed Toolkit for analyzing web archives (formerly WarcBase) 
  - [Warclight](https://github.com/archivesunleashed/warclight) A Rails engine for finding and searching web archives
  - [More on their Github...](https://github.com/archivesunleashed)
 
+---
+
 ### Other Public Archiving Services
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Archive.is.jpg/250px-Archive.is.jpg" width="150px" align="right"/>
+
+
  - https://archive.is / https://archive.today
  - https://archive.st
  - https://timetravel.mementoweb.org/
@@ -57,11 +113,13 @@
  - https://megalodon.jp/
  - Google, Bing, DuckDuckGo, and other search engine caches
 
-### Other ArchiveBox alternatives
- - [Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline
- - [Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content
- - [Reminiscence](https://github.com/kanishka-linux/reminiscence/) extremely similar to ArchiveBox, uses a Django backend + UI and provides auto tagging and summary features with NLTK
- - [Shaarchiver](https://github.com/nodiscc/shaarchiver) very similar project that archives Firefox, Shaarli, or Delicious bookmarks and all linked media, generating a markdown/HTML index
+---
+
+### Other ArchiveBox Alternatives
+ - **[Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline**
+ - **[Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content**
+ - **[Reminiscence](https://github.com/kanishka-linux/reminiscence/) extremely similar to ArchiveBox, uses a Django backend + UI and provides auto tagging and summary features with NLTK**
+ - **[Shaarchiver](https://github.com/nodiscc/shaarchiver) very similar project that archives Firefox, Shaarli, or Delicious bookmarks and all linked media, generating a markdown/HTML index**
  - [ReadableWebProxy](https://github.com/fake-name/ReadableWebProxy) A proxying archiver that downloads content from sites and can snapshot multiple versions of sites over time
  - [Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a browser extension that saves all your history and does full-text search
  - [Perkeep](https://perkeep.org/) "Perkeep lets you permanently keep your stuff, for life."
@@ -73,6 +131,8 @@
  - [WWWofle](http://www.gedanken.org.uk/software/wwwoffle/) old proxying recorder software similar to ArchiveBox
  - [Erised](https://github.com/marvelm/erised) Super simple CLI utility to bookmark and archive webpages
  - [Zotero](https://www.zotero.org/) collect, organize, cite, and share research (mainly for technical/scientific papers & citations)
+
+---
 
 ### Smaller Utilities
 
@@ -88,11 +148,16 @@ Random helpful utiltities for web archiving, WARC creation and replay, and more.
  - https://en.wikipedia.org/wiki/Furl
  - [And many more on the other lists...](#the-master-lists)
 
+---
+
 ## Reading List
 
 A collection of blog posts and articles about internet archiving, contact me / open an issue if you want to add a link here!
 
 ### Blogs
+
+<img src="https://media.npr.org/assets/img/2017/06/28/istock-506236357-5961b1f611e5136a7cd3fd5f74d97f4575f48c66-s800-c85.jpg" width="350px" align="right">
+
  - https://blog.archive.org
  - https://netpreserveblog.wordpress.com
  - https://ws-dl.blogspot.com
@@ -126,10 +191,12 @@ A collection of blog posts and articles about internet archiving, contact me / o
 
 If any of these links are dead, you can find an archived version on https://archive.sweeting.me.
 
-## ArchiveBox Discussions in News & Social Media
+### ArchiveBox Discussions in News & Social Media
 
- - [ProductHunt](https://www.producthunt.com/posts/archivebox)
- - [AlternativeTo](https://alternativeto.net/software/archivebox/)
+<img src="https://cdn.dribbble.com/users/896843/screenshots/2560608/news_media_icons-07.png" width="380px" align="right">
+
+ - **[ProductHunt](https://www.producthunt.com/posts/archivebox)**
+ - **[AlternativeTo](https://alternativeto.net/software/archivebox/)**
  - [Hacker News Discussion](https://news.ycombinator.com/item?id=14272133)
  - [Reddit r/selfhosted Discussion #1](https://www.reddit.com/r/selfhosted/comments/69eoi3/pocket_stream_archive_your_own_personal_wayback/)
  - [Reddit r/selfhosted Discussion #2](https://www.reddit.com/r/selfhosted/comments/an2368/archivebox_the_opensource_selfhosted_web_archive/)
@@ -139,20 +206,26 @@ If any of these links are dead, you can find an archived version on https://arch
  - [Recurse Center: The Joy of Computing](https://joy.recurse.com/posts/26-bookmark-archiver-your-own-self-hosted-way-back-machine)
  - [Python Trending Twiter](https://twitter.com/pythontrending/status/1092492387182628865)
 
+---
+
 ## Communities
 
 ### Most Active Communities
 
- - [The Internet Archive (Archive.org)](https://archive.org/iathreads/forums.php) (USA)
- - [International Internet Preservation Consortium (IIPC)](http://netpreserve.org/) (International)
- - [The Archive Team](https://www.archiveteam.org/), [URL Team](https://www.archiveteam.org/index.php?title=URLTeam), [r/ArchiveTeam](https://reddit.com/r/ArchiveTeam) (International)
- - [r/DataHoarder](https://www.reddit.com/r/DataHoarder), [r/Archivists](https://www.reddit.com/r/Archivists/), [r/DHExchange](https://www.reddit.com/r/DHExchange/) (International)
+<img src="https://www.archiveteam.org/images/f/f3/Archive_team.png" width="230px" align="right">
+
+ - **[The Internet Archive (Archive.org)](https://archive.org/iathreads/forums.php)** (USA)
+ - **[International Internet Preservation Consortium (IIPC)](http://netpreserve.org/)** (International)
+ - **[The Archive Team](https://www.archiveteam.org/), [URL Team](https://www.archiveteam.org/index.php?title=URLTeam), [r/ArchiveTeam](https://reddit.com/r/ArchiveTeam)** (International)
+ - **[r/DataHoarder](https://www.reddit.com/r/DataHoarder), [r/Archivists](https://www.reddit.com/r/Archivists/), [r/DHExchange](https://www.reddit.com/r/DHExchange/)** (International)
  - [The Eye](https://the-eye.eu) Non-profit working on content archival and long-term preservation (Europe)
  - [Digital Preservation Coalition](https://www.dpconline.org/about) & their [Software Tool Registry (COPTR)](http://coptr.digipres.org/Main_Page) (UK & Wales)
  - [Archives Unleashed Project](https://archivesunleashed.org/about-project/) and [UAP Github](https://github.com/archivesunleashed) (Canada)
  - [Old Dominion University: Web Science and Digital Libraries (WS-DL @ ODU)](https://ws-dl.cs.odu.edu) (Virginia, USA)
 
 ### Web Archiving Communities
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Noun_project_community_icon_986427_cc.svg/2000px-Noun_project_community_icon_986427_cc.svg.png" width="230px" align="right">
 
  - [Canadian Web Archiving Coalition](https://www.carl-abrc.ca/advancing-research/digital-preservation/cwac/) (Canada)
  - [Web Archives for Historical Research Group](https://uwaterloo.ca/web-archive-group/about) (Canada)
@@ -169,6 +242,8 @@ If any of these links are dead, you can find an archived version on https://arch
  - [BitCurator Consortium (BCC)](https://bitcuratorconsortium.org/mission) (USA)
 
 ### General Archiving Foundations, Coalitions, Initiatives, and Institutes
+
+<img src="https://us.123rf.com/450wm/drvector/drvector1510/drvector151000331/45755355-government-icons.jpg?ver=6" width="230px" align="right">
 
  - [Community Archives and Heritage Group](https://www.communityarchives.org.uk/content/about/history-and-purpose) (UK & Ireland)
  - [Open Preservation Foundation (OPF)](https://openpreservation.org/about/organisation/) (UK & Europe)
