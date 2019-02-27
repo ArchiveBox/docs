@@ -20,7 +20,7 @@ echo 'https://example.com' | ./archive
 cat urls_to_archive.txt | ./archive
 ```
 
-## Import links exported from browser or another service
+## Import list of links exported from browser or another service
 ```bash
 ./archive ~/Downloads/browser_bookmarks_export.html
 # or
@@ -29,7 +29,7 @@ cat urls_to_archive.txt | ./archive
 ./archive ~/Downloads/other_links.txt
 ```
 
-## Import URLs from a remote RSS feed or file
+## Import list of URLs from a remote RSS feed or file
 ArchiveBox will download the URL to a local file in `output/sources/` and attempt to autodetect the format and import any URLs found. Currently, Netscape HTML, JSON, RSS, and plain text links lists are supported.
 
 ```bash
@@ -38,7 +38,7 @@ ArchiveBox will download the URL to a local file in `output/sources/` and attemp
 ./archive https://example.com/links.txt
 ```
 
-## Import links from browser history
+## Import list of links from browser history
 ```bash
 ./bin/archivebox-export-browser-history --chrome
 ./archive output/sources/chrome_history.json
