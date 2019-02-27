@@ -1,6 +1,6 @@
 ▶️ *If you're having an issue with a breaking change, or migrating your data between versions, open an [issue](https://github.com/pirate/ArchiveBox/issues) to get help.*
 
-**`ArchiveBox` was previously named `Bookmark Archiver`, and `Pocket Archive Stream` before that.**
+**`ArchiveBox` was previously named `Pocket Archive Stream` and then `Bookmark Archiver`**
 
 <br/>
 
