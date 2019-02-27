@@ -4,8 +4,8 @@
 
  - [The Master Lists](#The-Master-Lists)
  - [Web Archiving Software](#Web-Archiving-Projects)
-   + Bookmarking+archiving services
-   + Software maintained by well known Archiving institutions
+   + Mass-Market Archiving Services
+   + Well-Known Open Source Projects
    + Public Archiving Services
    + ArchiveBox Alternatives
    + Smaller Utilities
