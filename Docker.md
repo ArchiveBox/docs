@@ -2,16 +2,16 @@ Make sure you have Docker installed and set up:
 
 If you don't already have docker installed, follow the official install instructions for Linux, macOS, or Windows https://docs.docker.com/install/#supported-platforms.
 
-- [Docker Compose]
-  + [Setup]
-  + [Usage]
-  + [Accessing the data]
-  + [Configuration]
-- [Plain Docker]
-  + [Setup]
-  + [Usage]
-  + [Accessing the data]
-  + [Configuration]
+- [Docker Compose](#)
+  + [Setup](#)
+  + [Usage](#)
+  + [Accessing the data](#)
+  + [Configuration](#)
+- [Plain Docker](#)
+  + [Setup](#)
+  + [Usage](#)
+  + [Accessing the data](#)
+  + [Configuration](#)
 
 # Docker Compose
 
