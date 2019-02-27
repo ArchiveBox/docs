@@ -24,7 +24,7 @@ Not all the dependencies are required for all modes. If you disable some archive
  - `curl` (usually already on most systems)
  - `git` (usually already on most systems)
 
-More info:
+**More info:**
  - To manually specify specific binaries, see the [Configuration: Dependencies](Configuration#dependency-options) page.
  - To disable specific dependencies, see the [Configuration: Archive Method Toggles](Configuration#archive-method-toggles) page.  
  - For help installing/troubleshooting specific dependencies, see the [[Troubleshooting]] page.
