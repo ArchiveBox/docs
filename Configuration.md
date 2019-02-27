@@ -19,6 +19,8 @@ Configuration:
 
 ---
 
+Example config in: [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).
+
 ## General Settings
 
 *General options around the archiving process, output format, and timing.*
