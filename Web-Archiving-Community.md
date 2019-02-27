@@ -14,8 +14,8 @@
    + Articles
    + ArchiveBox Discussions in News & Social Media
  - [Communities](#Communities)
-   + Most Active Communities
-   + Web Archiving Communities
+   + Most Active Web-Archiving Communities
+   + Other Web Archiving Communities
    + General Archiving Foundations, Coalitions, Initiatives, and Institutes
 
 ## The Master Lists
