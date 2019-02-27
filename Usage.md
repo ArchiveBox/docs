@@ -7,11 +7,12 @@ Make sure to run `./setup` or follow the [[Install]] instructions before archivi
 If you're using Docker, the CLI interface is similar but needs to be prefixed by `docker-compose exec ...` or `docker run ...`, for examples see the [[Docker]] page.
 
 ## Run ArchiveBox with configuration options
-You can set environment variables in your shell profile, a config file, or by using the `env` command.  See [[Configuration]] for more details. 
+You can set environment variables in your shell profile, a config file, or by using the `env` command.
 
 ```bash
 env FETCH_MEDIA=True MEDIA_TIMEOUT=500 ./archive ...
 ```
+See [[Configuration]] for more details (and the Configuration sections on the [[Docker]] page if you're using Docker).
 
 ## Import a single URL or list of URLs via stdin
 ```bash
