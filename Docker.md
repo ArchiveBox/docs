@@ -1,9 +1,10 @@
-## Overview
+# Overview
 
 Make sure you have Docker installed and set up:
 
 If you don't already have docker installed, follow the official install instructions for Linux, macOS, or Windows https://docs.docker.com/install/#supported-platforms.
 
+- [Overview](#)
 - [Docker Compose](#)
   + [Setup](#)
   + [Usage](#)
