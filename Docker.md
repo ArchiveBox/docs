@@ -11,10 +11,10 @@ If you don't already have Docker installed, follow the official install instruct
   + [Accessing the data](#accessing-the-data)
   + [Configuration](#configuration)
 - [Plain Docker](#docker)
-  + [Setup](#)
-  + [Usage](#)
-  + [Accessing the data](#)
-  + [Configuration](#)
+  + [Setup](#setup-1)
+  + [Usage](#usage-1)
+  + [Accessing the data](#accessing-the-data-1)
+  + [Configuration](#configuration-1)
 
 # Docker Compose
 
