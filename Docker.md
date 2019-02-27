@@ -31,7 +31,9 @@ edit `docker-compose.yml` or create a `.env` file in the project root.
 
 # Docker
 
-Docker-compose is the recommended way to run ArchiveBox with docker, as it's a much easier CLI interface and more of the setup is taken care of by docker-compose using the single yaml config file as opposed to CLI flags.  If you want to use raw docker without docker-compose though, continue following the steps below.
+Docker-compose is the recommended way to run ArchiveBox with docker, as it's a much easier CLI interface and more of the setup is taken care of by docker-compose using the single yaml config file as opposed to CLI flags.  The docker-compose setup also provides an nginx webserver to serve the archive right out of the box, whereas you have to set that up manually if you use plain docker.
+
+If you want to continue and use raw docker (below) instead of docker-compose (above), follow these steps.
 
 1. Fetch and build the ArchiveBox Docker image:
 ```bash
