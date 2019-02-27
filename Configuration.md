@@ -7,7 +7,7 @@ env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./arc
 
 All the available config options are defined in this document below, but can also be found along with examples in [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default). The code that loads the config is in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config.py), but don't modify the defaults in `config.py` directly, as your changes there will be erased whenever you update ArchiveBox.
 
-To create a persistent config file, see the [Creating a Config File](#creating-a-config-file) section.
+To create a persistent config file, see the [Creating a Config File](#creating-a-config-file) section.  
 To see details on how to do configuration when using Docker, see the [[Docker]] page.
 
 Configuration:
