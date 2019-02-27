@@ -84,7 +84,7 @@ docker build github.com/pirate/ArchiveBox -t archivebox
 ```bash
 docker volume create archivebox-data
 ```
-You can also mount a local directory in later steps instead of using a named Docker volume (see the [Accessing the data](#) section for details).
+You can also mount a local directory in later steps instead of using a named Docker volume (see the [Accessing the data](#accessing-the-data-1) section for details).
 
 3. Run ArchiveBox with `docker run` to add links to your archive.  See the Usage section below for details depending on how you want to add links.
 
