@@ -2,7 +2,7 @@
 
 The archive produced by `./archive` is suitable for serving on any provider that can host static html (e.g. github pages!).
 
-You can also serve it from a home server or VPS by uploading the outputted `output` folder to your web directory, e.g. `/var/www/ArchiveBox` and configuring your webserver.
+You can also serve it from a home server or VPS by uploading the outputted `output` folder to your web directory, e.g. `/var/www/ArchiveBox` and configuring your webserver.  If you're using docker-compose, an Nginx server serving the archive via HTTP is provided right out of the box! See the [[Docker]] page for details.
 
 Here's a sample nginx configuration that works to serve archive folders:
 
