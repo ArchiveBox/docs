@@ -36,18 +36,18 @@ First, make sure you're `cd`'ed into the same folder as your `docker-compose.yml
 
 To add new URLs, you can use docker-compose just like the normal `./archive` CLI.
 
-To add an individual link or list of links, pass in URLs via stdin.
+**To add an individual link or list of links**, pass in URLs via stdin.
 ```bash
 echo "https://example.com" | docker-compose exec -T archivebox /bin/archive
 ```
 
-To import links from a file you can either `cat` the file and pass it via stdin like above, or move it into your data folder so that ArchiveBox can access it from within the container.
+**To import links from a file** you can either `cat` the file and pass it via stdin like above, or move it into your data folder so that ArchiveBox can access it from within the container.
 ```bash
 mv ~/Downloads/bookmarks.html data/sources/bookmarks.html
 docker-compose exec archivebox /bin/archive /data/sources/bookmarks.html
 ```
 
-To pull in links from a feed or list of links, pass the URL or path to the feed as an argument.
+**To pull in links from a feed or remote file**, pass the URL or path to the feed as an argument.
 ```bash
 docker-compose exec archivebox /bin/archive https://example.com/some/feed.rss
 ```
@@ -92,17 +92,18 @@ You can also mount a local directory in later steps instead of using a named Doc
 
 ## Usage
 
-To add a single URL to the archive or a list of links from a file, pipe them in via stdin.  This will archive each link passed in.
+**To add a single URL to the archive** or a list of links from a file, pipe them in via stdin.  This will archive each link passed in.
 ```bash
 echo 'https://example.com' | docker run -i -v archivebox-data:/data archivebox /bin/archive
 # or
 cat bookmarks.html | docker run -i -v archivebox-data:/data archivebox /bin/archive
 ```
 
-Add a list of pages via feed URL or path. Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links *inside* of it, so only use it for RSS feeds or other *lists of links* you want to add.  To add an individual link use the instruction above and pass via stdin instead of by argument.
+**To add a list of pages via feed URL or remote file,** pass the URL of the feed as an argument.
 ```bash
 docker run -v archivebox-data:/data archivebox /bin/archive 'https://example.com/some/rss/feed.xml'
 ```
+Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links *inside* of it, so only use it for RSS feeds or other *lists of links* you want to add.  To add an individual link use the instruction above and pass via stdin instead of by argument.
 
 ## Accessing the data
 
