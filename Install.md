@@ -33,7 +33,7 @@ Not all the dependencies are required for all modes. If you disable some archive
 
 If you're on Linux with `apt`, or macOS with `brew` there is an automatic setup script `./bin/setup` provided to install all the dependencies.
 
-Running it will explain what it installs and will prompt you to continue before doing anything.
+Running it will explain what it installs and will prompt you to continue before making any changes to your system.
 
 After running `./bin/setup`, continue with the [[Quickstart]] guide...
 
