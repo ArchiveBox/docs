@@ -23,7 +23,7 @@ An example `docker-compose.yml` config is included in the project root.  You can
 ## Setup
 
 ```bash
-cd /path/to/ArchiveBox
+git clone https://github.com/pirate/ArchiveBox && cd ArchiveBox
 mkdir data && chmod 777 data
 docker-compose up -d
 ```
