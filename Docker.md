@@ -5,12 +5,12 @@ Make sure you have Docker installed and set up on your machine before following 
 If you don't already have Docker installed, follow the official install instructions for Linux, macOS, or Windows here: https://docs.docker.com/install/#supported-platforms.
 
 - [Overview](#)
-- [Docker Compose](#)
+- [Docker Compose](#docker-compose)
   + [Setup](#)
   + [Usage](#)
   + [Accessing the data](#)
   + [Configuration](#)
-- [Plain Docker](#)
+- [Plain Docker](#docker)
   + [Setup](#)
   + [Usage](#)
   + [Accessing the data](#)
