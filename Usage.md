@@ -20,7 +20,10 @@ echo 'https://example.com' | ./archive
 cat urls_to_archive.txt | ./archive
 ```
 
-## Import list of links exported from browser or another service
+## Import a list of links or a feed exported from browser or another service
+
+Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links *inside* of it, so only use it for RSS feeds or other *lists of links* you want to add.  To add an individual link use the instruction above and pass the URL via stdin instead of as an argument.
+
 ```bash
 ./archive ~/Downloads/browser_bookmarks_export.html
 # or
