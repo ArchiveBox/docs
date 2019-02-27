@@ -19,8 +19,9 @@ echo 'https://example.com' | ./archive
 # or
 cat urls_to_archive.txt | ./archive
 ```
+You can also pipe in RSS, XML, Netscape, or any of the other supported import formats via stdin.
 
-## Import a list of links or a feed exported from browser or another service
+## Import a list of links exported from browser or another service
 
 ```bash
 ./archive ~/Downloads/browser_bookmarks_export.html
