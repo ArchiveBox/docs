@@ -31,11 +31,11 @@ Not all the dependencies are required for all modes. If you disable some archive
 
 ## Automatic Setup
 
-If you're on Linux with `apt`, or macOS with `brew` there is an automatic setup script provided to install all the dependencies.
+If you're on Linux with `apt`, or macOS with `brew` there is an automatic setup script `./bin/setup` provided to install all the dependencies.
 
-Run `./bin/setup`, it will explain what it installs and will prompt you to continue before doing anything.
+Running it will explain what it installs and will prompt you to continue before doing anything.
 
-After running it, continue with the [[Quickstart]] guide...
+After running `./bin/setup`, continue with the [[Quickstart]] guide...
 
 BSD, Windows, and other users should follow the [Manual Setup](#manual-setup) or [[Docker]] instructions.
 
