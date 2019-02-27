@@ -4,7 +4,7 @@
 
 Make sure to run `./setup` or follow the [[Install]] instructions before archiving anything.
 
-If you're using Docker, the CLI interface is similar but needs to be prefixed by `docker-compose exec -T archivebox` for examples see the [[Docker]] page.
+If you're using Docker, the CLI interface is similar but needs to be prefixed by `docker-compose exec ...` or `docker run ...`, for examples see the [[Docker]] page.
 
 ## Run ArchiveBox with configuration options
 You can set environment variables in your shell profile, a config file, or by using the `env` command.  See [[Configuration]] for more details. 
