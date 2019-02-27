@@ -4,7 +4,7 @@ ArchiveBox [officially supports](./Install#system-support) **Ubuntu**, **FreeBSD
 
 If you want to use Docker or Docker Compose to run ArchiveBox, see the [[Docker]] instructions instead.
 
-First, we install the ArchiveBox dependencies, then we create a folder to store the archive data, and finally we import the list of links to the archive by running `./archive <links_file>`.
+First, we install the ArchiveBox [dependencies](./Install#dependencies), then we create a folder to store the archive data, and finally, we import the list of links to the archive by running `./archive <links_file>`.
 
 ## 1. Create your archive
 
