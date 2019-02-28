@@ -20,7 +20,7 @@ Make sure you have Docker installed and set up on your machine before following 
 
 ---
 
-<img src="https://visualpharm.com/assets/400/Star-595b40b85ba036ed117da787.svg" height="40px" align="right">
+<img src="https://i.imgur.com/knwOtky.png" height="40px" align="right">
 
 # Docker Compose 
 
