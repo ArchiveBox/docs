@@ -18,6 +18,8 @@ Make sure you have Docker installed and set up on your machine before following 
   + [Accessing the data](#accessing-the-data-1)
   + [Configuration](#configuration-1)
 
+---
+
 # Docker Compose
 
 An example [`docker-compose.yml`](https://github.com/pirate/ArchiveBox/blob/master/docker-compose.yml) config with ArchiveBox and an Nginx server to serve the archive is included in the project root.  You can edit it as you see fit, or just run it as it comes out-of-the-box.
@@ -70,6 +72,8 @@ The recommended way is to edit the `environment:` section in `docker-compose.yml
 You can also specify an env file via CLI when running compose using `docker-compose --env-file=/path/to/config.env ...` although you must specify the variables in the `environment:` section that you want to have passed down to the ArchiveBox container from the passed env file.
 
 If you want to access your archive server with HTTPS, put a reverse proxy like Nginx or Caddy in front of `http://127.0.0.1:8098` to do SSL termination.  You can find many instructions to do this online if you search "SSL reverse proxy".
+
+---
 
 # Docker
 
