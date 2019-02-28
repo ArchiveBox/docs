@@ -84,7 +84,7 @@ Some text to display in the footer of the archive index.  Useful for providing s
 ---
 #### `FETCH_TITLE`
 **Possible Values:** [`True`]/`False`  
-Fetch the page HTML and attempt to parse the links title from any `<title></title>` tag in the response.  May cause significanly slower link parsing when importing many links, so you can set this to `FALSE` on the first run just to get the index updated quickly, then set it on `TRUE` on later runs to go back and fetch the titles for the links already in the index.
+By default ArchiveBox uses the title provided by the import file, but not all types of imports provide titles (e.g. Plain texts lists of URLs).  When this is True, ArchiveBox downloads the page (and follows all redirects), then it attempts to parse the link's title from the first `<title></title>` tag found in the response.  It may be buggy or not work for certain sites that use JS to set the title, disabling it will lead to links imported without a title showing up with their URL as the title in the UI.
 
 *Related options:*  
 [`ONLY_NEW`](#only_new), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
