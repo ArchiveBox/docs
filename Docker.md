@@ -77,6 +77,22 @@ ArchiveBox running with docker-compose accepts all the same environment variable
 
 The recommended way to pass in config variables is to edit the `environment:` section in `docker-compose.yml` directly or add an `env_file: ./path/to/ArchiveBox.conf` line before `environment:` to import variables from an env file.
 
+Example of adding config options to `docker-compose.yml`:
+```yml
+...
+
+services:
+    archivebox:
+        ...
+        environment:
+            - USE_COLOR=False
+            - SHOW_PROGRESS=False
+            - CHECK_SSL_VALIDITY=False
+            - RESOLUTION=1900,1820
+            - MEDIA_TIMEOUT=512000
+        ...
+```
+
 You can also specify an env file via CLI when running compose using `docker-compose --env-file=/path/to/config.env ...` although you must specify the variables in the `environment:` section that you want to have passed down to the ArchiveBox container from the passed env file.
 
 If you want to access your archive server with HTTPS, put a reverse proxy like Nginx or Caddy in front of `http://127.0.0.1:8098` to do SSL termination.  You can find many instructions to do this online if you search "SSL reverse proxy".
