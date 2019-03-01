@@ -11,6 +11,7 @@ If you feel like contributing a PR, some of these tasks are pretty easy.  Feel f
  - switch to sha256 of URL as unique link ID
  - support storing multiple snapshots of pages over time
  - support customer user puppeteer scripts to run while archiving (e.g. for expanding reddit threads, scrolling thread on twitter, etc)
+ - support sharing archived assets via DHT + torrent / ipfs / other distributed file sharing system
 
 ### Minor upcoming changes
  - support pushing pages to multiple 3rd party services using ArchiveNow instead of just archive.org
