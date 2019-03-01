@@ -4,7 +4,7 @@
 
 If you feel like contributing a PR, some of these tasks are pretty easy.  Feel free to open an issue if you need help getting started in any way!
 
-### Major upcoming changes
+### Major long-term changes
  - switch to django + sqlite db with migrations system & json/html export for managing archive schema changes and persistence
  - finalize python packaging to allow installing via pip and importing individual components
  - add an optional web GUI for managing sources, adding new links, and viewing the archive
@@ -14,7 +14,7 @@ If you feel like contributing a PR, some of these tasks are pretty easy.  Feel f
  - support named collections of archived content with different user access permissions
  - support sharing archived assets via DHT + torrent / ipfs / other distributed file sharing system
 
-### Minor upcoming changes
+### Smaller planned features
  - support pushing pages to multiple 3rd party services using ArchiveNow instead of just archive.org
  - body text extraction to markdown (using [fathom](https://hacks.mozilla.org/2017/04/fathom-a-framework-for-understanding-web-pages/)?)
  - featured image / thumbnail extraction
