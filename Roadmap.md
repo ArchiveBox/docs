@@ -6,17 +6,15 @@ If you feel like contributing a PR, some of these tasks are pretty easy.  Feel f
 
 **Major upcoming changes:**
 
- - finalize python packaging to allow installing via pip and importing individual componenets
+ - finalize python packaging to allow installing via pip and importing individual components
  - add an optional web GUI for managing sources, adding new links, and viewing the archive
 
 **Minor upcoming changes:**
- - download closed-captions text from youtube videos
  - body text extraction using [fathom](https://hacks.mozilla.org/2017/04/fathom-a-framework-for-understanding-web-pages/)
  - auto-tagging based on important extracted words
- - audio & video archiving with `youtube-dl`
  - full-text indexing with elasticsearch/elasticlunr/ag
  - video closed-caption downloading on Youtube for full-text indexing of video content
  - automatic text summaries of article with nlp summarization library
  - featured image extraction
- - http support (from my https-only domain)
  - try wgetting dead sites from archive.org (https://github.com/hartator/wayback-machine-downloader)
+ - And more in the [issues list](https://github.com/pirate/ArchiveBox/issues/)...
