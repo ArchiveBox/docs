@@ -63,6 +63,9 @@ You can sort by column, search using the box in the upper right, and see the tot
 
 Click the Favicon under the "Files" column to go to the details page for each link. 
 
+<img src="https://i.imgur.com/52RjhUM.png" width="45%">
+<img src="https://i.imgur.com/Gg9sTyq.png" width="45%">
+
 
 # More
 
