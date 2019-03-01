@@ -73,9 +73,9 @@ To access your archive, you can open `data/index.html` directly, or you can use 
 
 ## Configuration
 
-There are a number of easy ways to pass in environment variables for configuring ArchiveBox.
+ArchiveBox running with docker-compose accepts all the same environment variables as normal, see the full list on the [[Configuration]] page.
 
-The recommended way is to edit the `environment:` section in `docker-compose.yml` directly or add an `env_file: ./path/to/ArchiveBox.conf` line before `environment:` to import variables from an env file.
+The recommended way to pass in config variables is to edit the `environment:` section in `docker-compose.yml` directly or add an `env_file: ./path/to/ArchiveBox.conf` line before `environment:` to import variables from an env file.
 
 You can also specify an env file via CLI when running compose using `docker-compose --env-file=/path/to/config.env ...` although you must specify the variables in the `environment:` section that you want to have passed down to the ArchiveBox container from the passed env file.
 
@@ -137,7 +137,10 @@ cd /var/lib/docker/volumes/archivebox-data/_data
 It's recommended to bind a local directory on Mac rather than use a named volume so that you don't have to enter the Linux VM to access your archive output.
 
 ## Configuration
-To pass configuration parameters, you can use the env command.
+
+ArchiveBox in Docker accepts all the same environment variables as normal, see the list on the [[Configuration]] page.
+
+To pass environment variables when running, you can use the env command.
 ```bash
 echo 'https://example.com' | docker run -i -v archivebox-data:/data archivebox env FETCH_SCREENSHOT=False /bin/archive
 ```
