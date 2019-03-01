@@ -14,11 +14,11 @@ If you feel like contributing a PR, some of these tasks are pretty easy.  Feel f
 
 ### Minor upcoming changes
  - support pushing pages to multiple 3rd party services using ArchiveNow instead of just archive.org
- - body text extraction using [fathom](https://hacks.mozilla.org/2017/04/fathom-a-framework-for-understanding-web-pages/)
- - auto-tagging based on important extracted words
- - full-text indexing with elasticsearch/elasticlunr/ag
- - video closed-caption downloading on Youtube for full-text indexing of video content
- - automatic text summaries of article with nlp summarization library
- - featured image extraction
- - try wgetting dead sites from archive.org (https://github.com/hartator/wayback-machine-downloader)
+ - body text extraction to markdown (using [fathom](https://hacks.mozilla.org/2017/04/fathom-a-framework-for-understanding-web-pages/)?)
+ - featured image / thumbnail extraction
+ - auto-tagging links based on important/frequent keywords in extracted text (like pocket)
+ - automatic article summary paragraphs from extracted text with nlp summarization library
+ - full-text search of extracted text with elasticsearch/elasticlunr/ag
+ - download closed-caption subtitles from Youtube and other video sites for full-text indexing of video content
+ - try pulling dead sites from archive.org and other sources if original is down (https://github.com/hartator/wayback-machine-downloader)
  - And more in the [issues list](https://github.com/pirate/ArchiveBox/issues/)...
