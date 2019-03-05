@@ -16,7 +16,7 @@ If you feel like contributing a PR, some of these tasks are pretty easy.  Feel f
  - support storing multiple snapshots of pages over time
  - support customer user puppeteer scripts to run while archiving (e.g. for expanding reddit threads, scrolling thread on twitter, etc)
  - support named collections of archived content with different user access permissions
- - support sharing archived assets via DHT + torrent / ipfs / other distributed file sharing system
+ - support sharing archived assets via DHT + torrent / ipfs / ZeroNet / other sharing system
 
 ### Smaller planned features
  - support pushing pages to multiple 3rd party services using ArchiveNow instead of just archive.org
