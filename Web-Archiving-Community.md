@@ -191,6 +191,7 @@ A collection of blog posts and articles about internet archiving, contact me / o
 ### Articles
  - https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/
  - https://sr.ithaka.org/publications/the-state-of-digital-preservation-in-2018/
+ - https://gizmodo.com/delete-never-the-digital-hoarders-who-collect-tumblrs-1832900423
  - https://siarchives.si.edu/blog/we-are-not-alone-progress-digital-preservation-community
  - https://www.gwern.net/Archiving-URLs
  - http://brewster.kahle.org/2015/08/11/locking-the-web-open-a-call-for-a-distributed-web-2/
