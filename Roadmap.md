@@ -4,7 +4,7 @@
 
 If you feel like contributing a PR, some of these tasks are pretty easy.  Feel free to open an issue if you need help getting started in any way!
 
-**IMPORTANT**: *Please don't work on any of these major long-term tasks without consulting me first, work is already in progress for many of these, and I may have to reject your PR if it doesn't align with the existing work!*
+**IMPORTANT**: *Please don't work on any of these major long-term tasks without [contacting me first](https://nicksweeting.com/blog#Contact-Me), work is already in progress for many of these, and I may have to reject your PR if it doesn't align with the existing work!*
 
 ---
 
