@@ -53,7 +53,7 @@ organized by timestamp bookmarked.  It's Powered by [headless](https://developer
 
 Wget doesn't work on sites you need to be logged into, but chrome headless does, see the [Configuration](#configuration)* section for `CHROME_USER_DATA_DIR`.
 
-### Large Exports
+### Large Archives
 
 I've found it takes about an hour to download 1000 articles, and they'll take up roughly 1GB.  
 Those numbers are from running it single-threaded on my i5 machine with 50mbps down.  YMMV.  
