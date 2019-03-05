@@ -122,6 +122,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - https://webcitation.org/archive
  - https://archiveofourown.org/
  - https://megalodon.jp/
+ - https://github.com/HelloZeroNet/ZeroNet (super cool project)
  - Google, Bing, DuckDuckGo, and other search engine caches
 
 ---
@@ -138,7 +139,6 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - [Fossilo](https://www.fossilo.com/) A commercial archiving solution that appears to be very similar to ArchiveBox
  - [Archivematica](https://github.com/artefactual/archivematica) web GUI for institutional long-term archiving of web and other content
  - [Headless Chrome Crawler](https://github.com/yujiosaka/headless-chrome-crawler) distributed web crawler built on puppeteer with screenshots
- - [ZeroNet](https://github.com/HelloZeroNet/ZeroNet) a replacement p2p internet powered by namecoin and a cryptocurrency for hosting
  - [WWWofle](http://www.gedanken.org.uk/software/wwwoffle/) old proxying recorder software similar to ArchiveBox
  - [Erised](https://github.com/marvelm/erised) Super simple CLI utility to bookmark and archive webpages
  - [Zotero](https://www.zotero.org/) collect, organize, cite, and share research (mainly for technical/scientific papers & citations)
@@ -147,8 +147,12 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ### Smaller Utilities
 
-Random helpful utiltities for web archiving, WARC creation and replay, and more...
+Random helpful utilities for web archiving, WARC creation and replay, and more...
 
+ - https://github.com/jsvine/waybackpack command-line tool that lets you download the entire Wayback Machine archive for a given URL
+ - https://github.com/hartator/wayback-machine-downloader Download an entire website from the Internet Archive Wayback Machine.
+ - https://en.archivarix.com download an archived page or entire site from the Wayback Machine
+ - https://proofofexistence.com prove that a certain file existed at a given time using the blockchain
  - https://github.com/chfoo/warcat for merging, extracting, and verifying WARC files
  - [Sheetsee-Pocket](http://jlord.us/sheetsee-pocket/) project that provides a pretty auto-updating index of your Pocket links (without archiving them)
  - [Pocket -> IFTTT -> Dropbox](https://christopher.su/2013/saving-pocket-links-file-day-dropbox-ifttt-launchd/) Post by Christopher Su on his Pocket saving IFTTT recipie
