@@ -4,6 +4,8 @@
 
 If you feel like contributing a PR, some of these tasks are pretty easy.  Feel free to open an issue if you need help getting started in any way!
 
+**Please don't work on any of the major long-term tasks without consulting me first, work is already in progress for many of these, and I may have to reject your PR if it doesn't align with the existing work!**
+
 ### Major long-term changes
  - switch to django + sqlite db with migrations system & json/html export for managing archive schema changes and persistence
  - finalize python packaging to allow installing via pip and importing individual components
