@@ -9,7 +9,7 @@
 
  - [Web Archiving Software](#Web-Archiving-Projects)  
    *Open source tools and projects in the internet archiving space.*
-   + [Mass-Market Archiving Services](#big-name-bookmarking--archiving-services)
+   + [Bookmarking Services](#bookmarking-services)
    + [Well-Known Open Source Projects](#from-the-archiveorg--archive-it-teams)
    + [Public Archiving Services](#other-public-archiving-services)
    + [ArchiveBox Alternatives](#other-archivebox-alternatives)
@@ -52,10 +52,11 @@ Indexes of archiving institutions and software maintained by other people.  If t
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Logo-wallabag-svg.svg/2000px-Logo-wallabag-svg.svg.png" width="50px"/>
 </div>
 
-### Big Name Bookmarking + Archiving Services
+### Bookmarking Services
 
  - **[Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla**
  - **[Pinboard](https://pinboard.in) Bookmarking tool that provides archiving in a paid version, run by a single independent developer**
+ - [Instapaper](https://www.instapaper.com) Bookmarking alternative to Pocket/Pinboard (with no archiving)
  - [Wallabag](https://wallabag.org) / [Wallabag.it](https://wallabag.it) Self-hostable web archiving server that can import via RSS
  - [Shaarli](https://github.com/shaarli/Shaarli) Self-hostable bookmark tagging, archiving, and sharing service
 
