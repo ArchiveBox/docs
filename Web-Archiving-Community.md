@@ -6,6 +6,7 @@
 
  - [The Master Lists](#The-Master-Lists)  
    *Community-maintained indexes of web archiving tools and groups.*
+   IIPC, COPTR, ArchiveTeam, Wikipedia, ASA
 
  - [Web Archiving Software](#Web-Archiving-Projects)  
    *Open source tools and projects in the internet archiving space.*
