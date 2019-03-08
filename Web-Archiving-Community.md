@@ -5,7 +5,7 @@
 <img src="https://i.imgur.com/duS8Lm7.png" width="200px" align="right"/>
 
  - [The Master Lists](#The-Master-Lists)  
-   *Community-maintained indexes of web archiving tools and groups.*
+   *Community-maintained indexes of web archiving tools and groups.*  
    IIPC, COPTR, ArchiveTeam, Wikipedia, ASA
 
  - [Web Archiving Software](#Web-Archiving-Projects)  
