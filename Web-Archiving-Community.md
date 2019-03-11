@@ -5,8 +5,7 @@
 <img src="https://i.imgur.com/duS8Lm7.png" width="200px" align="right"/>
 
  - [The Master Lists](#The-Master-Lists)  
-   *Community-maintained indexes of web archiving tools and groups.*  
-   IIPC, COPTR, ArchiveTeam, Wikipedia, ASA
+   *Community-maintained indexes of web archiving tools and groups by IIPC, COPTR, ArchiveTeam, Wikipedia, & the ASA.* 
 
  - [Web Archiving Software](#Web-Archiving-Projects)  
    *Open source tools and projects in the internet archiving space.*
