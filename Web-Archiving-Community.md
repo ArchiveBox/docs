@@ -131,10 +131,10 @@ Indexes of archiving institutions and software maintained by other people.  If t
 ---
 
 ### Other ArchiveBox Alternatives
- - **[Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline**
- - **[Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content**
  - **[Reminiscence](https://github.com/kanishka-linux/reminiscence/) extremely similar to ArchiveBox, uses a Django backend + UI and provides auto tagging and summary features with NLTK**
  - **[Shaarchiver](https://github.com/nodiscc/shaarchiver) very similar project that archives Firefox, Shaarli, or Delicious bookmarks and all linked media, generating a markdown/HTML index**
+ - **[Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline**
+ - **[Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content**
  - [ReadableWebProxy](https://github.com/fake-name/ReadableWebProxy) A proxying archiver that downloads content from sites and can snapshot multiple versions of sites over time
  - [Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a browser extension that saves all your history and does full-text search
  - [Perkeep](https://perkeep.org/) "Perkeep lets you permanently keep your stuff, for life."
