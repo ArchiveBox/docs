@@ -9,13 +9,13 @@ If you feel like contributing a PR, some of these tasks are pretty easy.  Feel f
 ---
 
 ### Major long-term changes
- - release `pip`, `apt`, and `brew` packaged distributions for installing ArchiveBox
- - switch to django + sqlite db with migrations system & json/html export for managing archive schema changes and persistence
- - finalize python packaging to allow installing via pip and importing individual components
- - add an optional web GUI for managing sources, adding new links, and viewing the archive
+ - release **`pip`, `apt`, and `brew` packaged distributions** for installing ArchiveBox
+ - add an **optional web GUI** for managing sources, adding new links, and viewing the archive
+ - switch to django + **sqlite db with migrations system** & json/html export for managing archive schema changes and persistence
+ - modularize internals to allow importing individual components
  - switch to sha256 of URL as unique link ID
- - support storing multiple snapshots of pages over time
- - support customer user puppeteer scripts to run while archiving (e.g. for expanding reddit threads, scrolling thread on twitter, etc)
+ - support **storing multiple snapshots** of pages over time
+ - support **custom user puppeteer scripts to run while archiving** (e.g. for expanding reddit threads, scrolling thread on twitter, etc)
  - support named collections of archived content with different user access permissions
  - support sharing archived assets via DHT + torrent / ipfs / ZeroNet / other sharing system
 
