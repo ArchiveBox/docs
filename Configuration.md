@@ -103,7 +103,7 @@ Fetch and save favicon for the URL from Google's public favicon service: `https:
 Fetch page with wget, and save responses into folders for each domain, e.g. `example.com/index.html`, with `.html` appended if not present.  For a full list of options used during the `wget` download process, see the `archivebox/archive_methods.py:fetch_wget(...)` function.
 
 *Related options:*  
-[`TIMEOUT`](#timeout), [`FETCH_WGET_REQUISITES`](#fetch_wget_requisites), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`COOKIES_FILE`](#coookies_file), [`WGET_USER_AGENT`](#wget_user_agent), [`FETCH_WARC`](#fetch_warc), [`WGET_BINARY`](#wget_binary)
+[`TIMEOUT`](#timeout), [`FETCH_WGET_REQUISITES`](#fetch_wget_requisites), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`COOKIES_FILE`](#cookies_file), [`WGET_USER_AGENT`](#wget_user_agent), [`FETCH_WARC`](#fetch_warc), [`WGET_BINARY`](#wget_binary)
 
 ---
 #### `FETCH_WARC`
