@@ -221,7 +221,10 @@ If any of these links are dead, you can find an archived version on https://arch
 
  - **[ProductHunt](https://www.producthunt.com/posts/archivebox)**
  - **[AlternativeTo](https://alternativeto.net/software/archivebox/)**
- - [Hacker News Discussion](https://news.ycombinator.com/item?id=14272133)
+ - [Hacker News Discussion #1](https://news.ycombinator.com/item?id=14272133)
+ - [Hacker News Discussion #2](https://news.ycombinator.com/item?id=18728546)
+ - [Hacker News Discussion #3](https://news.ycombinator.com/item?id=18876685)
+ - **[Hacker News Discussion #4](https://news.ycombinator.com/item?id=19346985)**
  - [Reddit r/selfhosted Discussion #1](https://www.reddit.com/r/selfhosted/comments/69eoi3/pocket_stream_archive_your_own_personal_wayback/)
  - [Reddit r/selfhosted Discussion #2](https://www.reddit.com/r/selfhosted/comments/an2368/archivebox_the_opensource_selfhosted_web_archive/)
  - [Reddit r/datahoarder Discussion #1](https://www.reddit.com/r/DataHoarder/comments/69e6i9/archive_a_browseable_copy_of_your_saved_pocket/)
