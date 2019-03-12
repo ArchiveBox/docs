@@ -25,6 +25,8 @@ To see details on how to do configuration when using Docker, see the [[Docker]] 
 
 ---
 
+<img src="https://i.imgur.com/Peqj6fd.png" width="100%"/>
+
 Example config in: [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).
 
 ## General Settings
@@ -319,7 +321,11 @@ Path or name of the curl binary to use.
 [`FETCH_FAVICON`](#fetch_favicon), [`SUBMIT_ARCHIVE_DOT_ORG`](#submit_archive_dot_org)
 
 ---
+
+<img src="https://i.imgur.com/Peqj6fd.png" width="100%"/>
+
 ---
+
 
 # Creating a Config File
 
