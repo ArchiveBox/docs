@@ -12,7 +12,7 @@ Create a folder to store your archive, and clone the ArchiveBox repo into it.
 ```bash
 git clone https://github.com/pirate/ArchiveBox
 cd ArchiveBox/
-./setup       # setup script will prompt for confirmation before making any system changes
+./bin/archivebox-setup  # script prompts for user confirmation before installing anything
 ```
 
 <img src="https://i.imgur.com/VMTzm0G.png" width="99%"/>
