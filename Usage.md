@@ -27,7 +27,6 @@ If you're using Docker, the CLI interface is similar but needs to be prefixed by
  - [Import list of links exported from browser or another service](#Import-list-of-links-exported-from-browser-or-another-service)
  - [Import list of URLs from a remote RSS feed or file](#Import-list-of-URLs-from-a-remote-RSS-feed-or-file)
  - [Import list of links from browser history](#Import-list-of-links-from-browser-history)
- - [UI Usage](#UI-Usage)
 
 ---
 
