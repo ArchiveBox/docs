@@ -1,5 +1,7 @@
 ▶️ *Just getting started and want to learn more about why Web Archiving is important? <br/> Check out this article: [On the Importance of Web Archiving](https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/).*
 
+Whether you want learn which organizations are the big players in the web archiving space, want to find a specific open source tool for your web archiving need, or just want to see where archivists hang out online, this page is my attempt at an index of the broader web archiving community.
+
 ## Contents
 
 <img src="https://i.imgur.com/duS8Lm7.png" width="200px" align="right"/>
