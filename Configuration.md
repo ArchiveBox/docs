@@ -23,11 +23,11 @@ All the available config options are described in this document below, but can a
 To create a persistent config file, see the [Creating a Config File](#creating-a-config-file) section.  
 To see details on how to do configuration when using Docker, see the [[Docker]] page.
 
-Example config in: [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).
-
 ---
 
-<img src="https://i.imgur.com/Peqj6fd.png" width="100%"/>
+<img src="https://i.imgur.com/v4UqCgu.png" width="100%"/>
+
+▶️ *The default config file can be found here: [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).*
 
 
 ## General Settings
@@ -322,7 +322,7 @@ Path or name of the curl binary to use.
 [`FETCH_FAVICON`](#fetch_favicon), [`SUBMIT_ARCHIVE_DOT_ORG`](#submit_archive_dot_org)
 
 
-<img src="https://i.imgur.com/Peqj6fd.png" width="100%"/>
+<img src="https://i.imgur.com/v4UqCgu.png" width="100%"/>
 
 ---
 
