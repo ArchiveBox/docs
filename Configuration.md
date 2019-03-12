@@ -28,7 +28,7 @@ To see details on how to do configuration when using Docker, see the [[Docker]] 
 
 ---
 
-<img src="https://i.imgur.com/almAbwK.png" width="100%"/>
+<img src="https://i.imgur.com/iTYT7Ip.png" width="100%"/>
 
 
 ## General Settings
@@ -323,7 +323,7 @@ Path or name of the curl binary to use.
 [`FETCH_FAVICON`](#fetch_favicon), [`SUBMIT_ARCHIVE_DOT_ORG`](#submit_archive_dot_org)
 
 
-<img src="https://i.imgur.com/v4UqCgu.png" width="100%"/>
+<img src="https://i.imgur.com/almAbwK.png" width="100%"/>
 
 ---
 
