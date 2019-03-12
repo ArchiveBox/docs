@@ -1,8 +1,8 @@
+▶️ *Make sure you have all the ArchiveBox [dependencies installed](https://github.com/pirate/ArchiveBox/wiki/Install) before running any of the commands below.*
+
 # CLI Usage
 
 `./archive` refers to the executable shortcut in the root of the project, but you can also call ArchiveBox via `./bin/archivebox`.  If you add `/path/to/ArchiveBox/bin` to your shell `$PATH` then you can call `archivebox` from anywhere on your system.
-
-Make sure to run `./setup` or follow the [[Install]] instructions before archiving anything.
 
 If you're using Docker, the CLI interface is similar but needs to be prefixed by `docker-compose exec ...` or `docker run ...`, for examples see the [[Docker]] page.
 
