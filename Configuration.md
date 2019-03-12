@@ -13,11 +13,11 @@ env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./arc
 <img src="https://i.imgur.com/EUeQbiZ.png" width="200px" align="right"/>
 
 **Available Configuration Options:**
- - [General Settings](#general-settings): Options around the archiving process, output format, and timing.
- - [Archive Method Toggles](#archive-method-toggles): On/off switches for all the methods used to archive URLs.
- - [Archive Method Options](#archive-method-options): Specific options for individual archive methods.
- - [Shell Options](#shell-options): Options around the format of the CLI output.
- - [Dependency Options](#dependency-options): Options for defining which dependency binaries to use. 
+ - [General Settings:](#general-settings): Archiving process, output format, and timing.
+ - [Archive Method Toggles:](#archive-method-toggles) On/off switches for individual methods.
+ - [Archive Method Options:](#archive-method-options) Method tunables and parameters.
+ - [Shell Options:](#shell-options) Format & behavior of CLI output.
+ - [Dependency Options:](#dependency-options) Force use of specific dependency binaries. 
 
 <br/>
 
