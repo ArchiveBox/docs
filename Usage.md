@@ -3,14 +3,19 @@
 **Contents:**
 
  - [CLI Usage](#CLI-Usage)
+   Instructions and examples for the ArchiveBox command line interface.
+
  - [UI Usage](#UI-Usage)
- - More...
-   + Read [[Docker]] to learn about ArchiveBox usage with Docker and Docker Compose
-   + Read [[Configuration]] to learn about the various archive method options
-   + Read [[Scheduled Archiving]] to learn how to set up automatic daily archiving
-   + Read [[Publishing Your Archive]] if you want to host your archive for others to access online
-   + Read [[Troubleshooting]] if you encounter any problems
-   + View [Screenshots](https://github.com/pirate/ArchiveBox#Screenshots) of the CLI and outputted HTML
+   Diagrams and documentation for the outputted HTML archive interface.
+
+**Related:***
+ - Read [[Docker]] to learn about ArchiveBox usage with Docker and Docker Compose
+ - Read [[Configuration]] to learn about the various archive method options
+ - Read [[Scheduled Archiving]] to learn how to set up automatic daily archiving
+ - Read [[Publishing Your Archive]] if you want to host your archive for others to access online
+ - Read [[Troubleshooting]] if you encounter any problems
+ - View [Screenshots](https://github.com/pirate/ArchiveBox#Screenshots) of the CLI and outputted HTML
+
 
 ## CLI Usage
 
