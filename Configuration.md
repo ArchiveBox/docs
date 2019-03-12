@@ -17,7 +17,7 @@ env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./arc
  - [Archive Method Toggles:](#archive-method-toggles) On/off switches for methods.
  - [Archive Method Options:](#archive-method-options) Method tunables and parameters.
  - [Shell Options:](#shell-options) Format & behavior of CLI output.
- - [Dependency Options:](#dependency-options) Force use of specific dependency binaries. 
+ - [Dependency Options:](#dependency-options) Specify exact paths to dependencies. 
 
 <br/>
 
