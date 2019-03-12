@@ -37,6 +37,8 @@ Platforms other than Linux, BSD, and macOS are untested, but you can probably ge
 
 Not all the dependencies are required for all modes. If you disable some archive methods you can avoid those dependencies, for example, if you set `FETCH_MEDIA=False` you don't need to install `youtube-dl`, and if you set `FETCH_[PDF,SCREENSHOT,DOM]=False` you don't need `chromium`.
 
+<img src="https://avatars0.githubusercontent.com/u/1503512?s=200&v=4" width="10%" align="right"/>
+
  - `python3 >= 3.5`
  - `wget >= 1.16`
  - `chromium >= 59` (`google-chrome >= v59` works fine as well)
