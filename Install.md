@@ -63,7 +63,7 @@ cd ArchiveBox/
 
 The script explains what it installs beforehand, and will prompt for user confirmation before making any changes to your system.
 
-<img src="https://i.imgur.com/F5iqD0f.png" width="99%">
+<img src="https://i.imgur.com/VMTzm0G.png" width="99%">
 
 After running the setup script, continue with the [[Quickstart]] guide...
 
