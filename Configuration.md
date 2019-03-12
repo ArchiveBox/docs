@@ -217,8 +217,18 @@ Cookies file to pass to wget.  To capture sites that require a user to be logged
 **Possible Values:** [`~/Library/Application Support/Google/Chrome/Default`]/`/tmp/chrome-profile`/...  
 Path to a chrome user profile directory.  To capture sites that require a user to be logged in, you can specify a path to a chrome user profile (which loads the cookies needed for the user to be logged in).  If you don't have an existing chrome profile, create one with `chromium-browser --user-data-dir=/tmp/chrome-profile`, and log into the sites you need.  Then set `CHROME_USER_DATA_DIR=/tmp/chrome-profile` to make ArchiveBox use that profile.
 
+https://chromium.googlesource.com/chromium/src/+/HEAD/docs/user_data_dir.md
+
 *Related options:*  
 [`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_BINARY`](#chrome_binary)
+
+---
+#### `CHROME_HEADLESS`
+**Possible Values:** [`True`]/`False`
+Whether or not to use Chrome/Chromium in `--headless` mode (no browser UI displayed).  When set to `False`, the full Chrome UI will be launched each time it's used to archive a page, which greatly slows down the process but allows you to watch in real-time as it saves each page.
+
+*Related options:*  
+[`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary)
 
 ---
 
