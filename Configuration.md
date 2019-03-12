@@ -5,9 +5,9 @@ Example configuration using `env` command:
 env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./archive ~/Downloads/bookmarks_export.html
 ```
 
-<img src="https://i.imgur.com/EUeQbiZ.png" width="200px" align="right"/>
-
 <br/>
+
+<img src="https://i.imgur.com/EUeQbiZ.png" width="200px" align="right"/>
 
 **Configuration Options:**
  - [General Settings](#general-settings)
