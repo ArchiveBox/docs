@@ -240,12 +240,18 @@ Whether or not to use Chrome/Chromium in `--headless` mode (no browser UI displa
 ---
 #### `USE_COLOR`
 **Possible Values:** [`True`]/`False`  
-Colorize console ouput. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
+Colorize console output. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
+
+<img src="https://i.imgur.com/BDPfWxk.png" width="45%"/>
+<img src="https://i.imgur.com/kIL8zSD.png" width="45%"/>
 
 ---
 #### `SHOW_PROGRESS`
 **Possible Values:** [`True`]/`False`  
 Show real-time progress bar in console output. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
+
+<img src="https://i.imgur.com/XY2E7AR.png" width="50%"/><br/>
+<img src="https://i.imgur.com/F8yAcQ2.png" width="50%"/>
 
 ---
 
