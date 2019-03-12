@@ -67,16 +67,13 @@ If you don't like running random setup scripts off the internet (:+1:), you can 
 
 ```bash
 # On Ubuntu/Debian:
-apt install chromium-browser python3 wget curl youtube-dl git
+apt install python3 python3-pip git wget curl chromium-browser youtube-dl
 ```
 
 ```bash
 # On Mac:
-brew cask install chromium  # If you already have Google Chrome/Chromium in /Applications/, skip this command
-brew install python3 wget curl youtube-dl git
-
-echo -e '#!/bin/bash\n/Applications/Chromium.app/Contents/MacOS/Chromium "$@"' > /usr/local/bin/chromium-browser
-chmod +x /usr/local/bin/chromium-browser
+brew cask install chromium  # Skip this if you already have Google Chrome/Chromium installed in /Applications/
+brew install python3 python3-pip git wget curl youtube-dl
 ```
 
 ```bash
