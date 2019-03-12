@@ -1,10 +1,16 @@
 ▶️ *Make sure you have ArchiveBox [fully installed](https://github.com/pirate/ArchiveBox/wiki/Install) before running any of the commands below.*
 
+**Contents:**
+
  - [CLI Usage](#CLI-Usage)
  - [UI Usage](#UI-Usage)
- - [Usage in Docker](https://github.com/pirate/ArchiveBox/wiki/Docker)
- - [More](#More)
-
+ - More...
+   + Read [[Docker]] to learn about ArchiveBox usage with Docker and Docker Compose
+   + Read [[Configuration]] to learn about the various archive method options
+   + Read [[Scheduled Archiving]] to learn how to set up automatic daily archiving
+   + Read [[Publishing Your Archive]] if you want to host your archive for others to access online
+   + Read [[Troubleshooting]] if you encounter any problems
+   + View [Screenshots](https://github.com/pirate/ArchiveBox#Screenshots) of the CLI and outputted HTML
 
 ## CLI Usage
 
@@ -75,12 +81,3 @@ Click the Favicon under the "Files" column to go to the details page for each li
 
 <img src="https://i.imgur.com/52RjhUM.png" width="45%">
 <img src="https://i.imgur.com/Gg9sTyq.png" width="45%">
-
-## More
-
- - Read [[Docker]] to learn about ArchiveBox usage with Docker and Docker Compose
- - Read [[Configuration]] to learn about the various archive method options
- - Read [[Scheduled Archiving]] to learn how to set up automatic daily archiving
- - Read [[Publishing Your Archive]] if you want to host your archive for others to access online
- - Read [[Troubleshooting]] if you encounter any problems
- - View [Screenshots](https://github.com/pirate/ArchiveBox#Screenshots) of the CLI and outputted HTML
