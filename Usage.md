@@ -1,4 +1,4 @@
-▶️ *Make sure you have all the ArchiveBox [dependencies installed](https://github.com/pirate/ArchiveBox/wiki/Install) before running any of the commands below.*
+▶️ *Make sure you have all the ArchiveBox [installed](https://github.com/pirate/ArchiveBox/wiki/Install) before running any of the commands below.*
 
 # CLI Usage
 
