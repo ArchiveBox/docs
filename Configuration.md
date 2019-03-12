@@ -42,7 +42,7 @@ Download files for only newly added links when running the `./archive` command. 
 
 ---
 #### `TIMEOUT`
-**Possible Values:** [`60`]/`30`/...  
+**Possible Values:** [`60`]/`120`/...  
 Maximum allowed download time per archive method for each link in seconds.  If you have a slow network connection or are seeing frequent timeout errors, you can raise this value.
 
 ---
