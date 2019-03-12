@@ -18,6 +18,8 @@ Make sure you have Docker installed and set up on your machine before following 
   + [Accessing the data](#accessing-the-data-1)
   + [Configuration](#configuration-1)
 
+Don't be scared by the length / complexity of these instructions.  I tend to write overly verbose documentation unless scolded by someone who knows better.  ArchiveBox tries to follow most Docker standards, so if you've worked with other Docker projects the setup should feel familiar.
+
 ---
 
 <img src="https://i.imgur.com/knwOtky.png" height="40px" align="right">
