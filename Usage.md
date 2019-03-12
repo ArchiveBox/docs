@@ -21,6 +21,15 @@
 
 If you're using Docker, the CLI interface is similar but needs to be prefixed by `docker-compose exec ...` or `docker run ...`, for examples see the [[Docker]] page.
 
+ - [Run ArchiveBox with configuration options](#Run-ArchiveBox-with-configuration-options)
+ - [Import a single URL or list of URLs via stdin](#Import-a-single-URL-or-list-of-URLs-via-stdin)
+ - [Import list of links exported from browser or another service](#Import-list-of-links-exported-from-browser-or-another-service)
+ - [Import list of URLs from a remote RSS feed or file](#Import-list-of-URLs-from-a-remote-RSS-feed-or-file)
+ - [Import list of links from browser history](#Import-list-of-links-from-browser-history)
+ - [UI Usage](#UI-Usage)
+
+---
+
 ### Run ArchiveBox with configuration options
 You can set environment variables in your shell profile, a config file, or by using the `env` command.
 
@@ -30,6 +39,8 @@ env FETCH_MEDIA=True MEDIA_TIMEOUT=500 ./archive ...
 See [[Configuration]] page for more details about the available options and ways to pass config.  
 If you're using Docker, also make sure to read the Configuration section on the [[Docker]] page.
 
+---
+
 ### Import a single URL or list of URLs via stdin
 ```bash
 echo 'https://example.com' | ./archive
@@ -37,6 +48,8 @@ echo 'https://example.com' | ./archive
 cat urls_to_archive.txt | ./archive
 ```
 You can also pipe in RSS, XML, Netscape, or any of the other supported import formats via stdin.
+
+---
 
 ### Import list of links exported from browser or another service
 
@@ -50,6 +63,8 @@ You can also pipe in RSS, XML, Netscape, or any of the other supported import fo
 
 Passing a file as an argument here does not archive the file, it parses it as a list of URLs and archives the links *inside of it*, so only use it for *lists of links* to archive, not HTML files or other content you want added directy to the archive.
 
+---
+
 ### Import list of URLs from a remote RSS feed or file
 ArchiveBox will download the URL to a local file in `output/sources/` and attempt to autodetect the format and import any URLs found. Currently, Netscape HTML, JSON, RSS, and plain text links lists are supported.
 
@@ -61,6 +76,8 @@ ArchiveBox will download the URL to a local file in `output/sources/` and attemp
 
 Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links *inside* of it, so only use it for RSS feeds or other *lists of links* you want to add.  To add an individual link use the instruction above and pass the URL via stdin instead of as an argument.
 
+---
+
 ### Import list of links from browser history
 ```bash
 ./bin/archivebox-export-browser-history --chrome
@@ -69,6 +86,8 @@ Passing a URL as an argument here does not archive the specified URL, it downloa
 ./bin/archivebox-export-browser-history --firefox
 ./archive output/sources/firefox_history.json
 ```
+
+---
 
 ### UI Usage
 
