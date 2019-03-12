@@ -71,22 +71,22 @@ After running the setup script, continue with the [[Quickstart]] guide...
 
 If you don't like running random setup scripts off the internet (:+1:), you can follow these manual setup instructions.
 
-**1. Install dependencies:** 
+### 1. Install dependencies
 
+#### Ubuntu/Debian
 ```bash
-# On Ubuntu/Debian:
 apt install python3 python3-pip python3-distutils git wget curl youtube-dl
 apt install chromium-browser  # Skip this if you already have Google Chrome/Chromium installed
 ```
 
+#### macOS
 ```bash
-# On Mac:
 brew install python3 git wget curl youtube-dl
 brew cask install chromium  # Skip this if you already have Google Chrome/Chromium installed in /Applications/
 ```
 
+#### Check that everything worked and the versions are high enough.
 ```bash
-# Check that everything worked and the versions are high enough:
 python3 --version | head -n 1 && 
 git --version | head -n 1 && 
 wget --version | head -n 1 && 
@@ -97,11 +97,11 @@ echo "[√] All dependencies installed."
 
 If you have issues setting up Chromium / Google Chrome, see the [[Chromium Install]] page for more detailed setup instructions.
 
-**2. Get your bookmark export file:**
+### 2. Get your bookmark export file
 
 Follow the [[Quickstart]] guide to download your bookmarks export file containing a list of links to archive.
 
-**3. Run the archive script:**
+### 3. Run the archive script
 
 1. Clone this repo `git clone https://github.com/pirate/ArchiveBox`
 2. `cd ArchiveBox/`
@@ -109,7 +109,7 @@ Follow the [[Quickstart]] guide to download your bookmarks export file containin
 
 You may optionally specify a second argument to `archive.py export.html 153242424324` to resume the archive update at a specific timestamp.
 
-**Next Steps:**
+### Next Steps
 
  - Read [[Configuration]] to learn about the various archive method options
  - Read [[Scheduled Archiving]] to learn how to set up automatic daily archiving
