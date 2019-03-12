@@ -8,7 +8,7 @@
  - [UI Usage](#UI-Usage)
    Diagrams and documentation for the outputted HTML archive interface.
 
-**Related:***
+**Related:**
  - Read [[Docker]] to learn about ArchiveBox usage with Docker and Docker Compose
  - Read [[Configuration]] to learn about the various archive method options
  - Read [[Scheduled Archiving]] to learn how to set up automatic daily archiving
