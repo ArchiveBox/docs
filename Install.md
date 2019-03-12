@@ -1,3 +1,11 @@
+Installing ArchiveBox is a relatively straightforward process, with only a few main dependencies apart from `python3`.
+
+ - [System Support](#system-support)
+ - [Dependencies](#dependencies)
+ - [Automatic Setup](#automatic-setup)
+ - [Manual Setup](#manual-setup)
+ - [Docker Setup](#docker-setup)
+
 ## System Support
 
 ArchiveBox officially supports the following operating systems:
