@@ -23,11 +23,13 @@ All the available config options are described in this document below, but can a
 To create a persistent config file, see the [Creating a Config File](#creating-a-config-file) section.  
 To see details on how to do configuration when using Docker, see the [[Docker]] page.
 
+Example config in: [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).
+
 ---
 
 <img src="https://i.imgur.com/Peqj6fd.png" width="100%"/>
 
-Example config in: [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).
+---
 
 ## General Settings
 
