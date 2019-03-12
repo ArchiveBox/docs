@@ -9,7 +9,7 @@ env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./arc
 
 <img src="https://i.imgur.com/EUeQbiZ.png" width="200px" align="right"/>
 
-**Configuration Options:**
+**Available Configuration Options:**
  - [General Settings](#general-settings)
  - [Archive Method Toggles](#archive-method-toggles)
  - [Archive Method Options](#archive-method-options)
