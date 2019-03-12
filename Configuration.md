@@ -7,6 +7,8 @@ env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./arc
 
 <img src="https://i.imgur.com/EUeQbiZ.png" width="200px" align="right"/>
 
+<br/>
+
 **Configuration Options:**
  - [General Settings](#general-settings)
  - [Archive Method Toggles](#archive-method-toggles)
@@ -14,7 +16,7 @@ env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./arc
  - [Shell Options](#shell-options)
  - [Dependency Options](#dependency-options)
 
-<br/><br/>
+<br/>
 
 All the available config options are described in this document below, but can also be found along with examples in [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default). The code that loads the config is in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config.py), but don't modify the defaults in `config.py` directly, as your changes there will be erased whenever you update ArchiveBox.
 
