@@ -1,4 +1,4 @@
-▶️ *Make sure you have ArchiveBox [fully installed](https://github.com/pirate/ArchiveBox/wiki/Install) before running any of the commands below.*
+▶️ *Make sure all dependencies are [fully installed](https://github.com/pirate/ArchiveBox/wiki/Install) before running ArchiveBox commands.*
 
 **ArchiveBox API Reference:**
 
