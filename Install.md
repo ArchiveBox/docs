@@ -53,11 +53,11 @@ Not all the dependencies are required for all modes. If you disable some archive
 
 ## Automatic Setup
 
-If you're on Linux with `apt`, or macOS with `brew` there is an automatic setup script `./bin/setup` provided to install all the dependencies.
+If you're on Linux with `apt`, or macOS with `brew` there is an automatic setup script provided to install all the dependencies:   `./bin/archivebox-setup` 
 
 Running it will explain what it installs and will prompt you to continue before making any changes to your system.
 
-After running `./bin/setup`, continue with the [[Quickstart]] guide...
+After running the setup script, continue with the [[Quickstart]] guide...
 
 BSD, Windows, and other users should follow the [Manual Setup](#manual-setup) or [[Docker]] instructions.
 
