@@ -28,7 +28,7 @@ To see details on how to do configuration when using Docker, see the [[Docker]] 
 
 ---
 
-<img src="https://i.imgur.com/v4UqCgu.png" width="100%"/>
+<img src="https://i.imgur.com/almAbwK.png" width="100%"/>
 
 
 ## General Settings
