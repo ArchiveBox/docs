@@ -75,19 +75,24 @@ If you don't like running random setup scripts off the internet (:+1:), you can 
 
 ```bash
 # On Ubuntu/Debian:
+apt install python3 python3-pip python3-distutils git wget curl youtube-dl
 apt install chromium-browser  # Skip this if you already have Google Chrome/Chromium installed
-apt install python3 python3-pip git wget curl youtube-dl
 ```
 
 ```bash
 # On Mac:
+brew install python3 git wget curl youtube-dl
 brew cask install chromium  # Skip this if you already have Google Chrome/Chromium installed in /Applications/
-brew install python3 python3-pip git wget curl youtube-dl
 ```
 
 ```bash
 # Check that everything worked and the versions are high enough:
-chromium-browser --version && which wget && which python3 && which curl && echo "[√] All dependencies installed."
+python3 --version | head -n 1 && 
+git --version | head -n 1 && 
+wget --version | head -n 1 && 
+curl --version | head -n 1 && 
+youtube-dl --version | head -n 1 && 
+echo "[√] All dependencies installed."
 ```
 
 If you have issues setting up Chromium / Google Chrome, see the [[Chromium Install]] page for more detailed setup instructions.
