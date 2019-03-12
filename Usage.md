@@ -2,6 +2,7 @@
 
 **ArchiveBox API Reference:**
 
+ - [Overview](#Overview): Program structure and outline of basic archiving process.
  - [CLI Usage](#CLI-Usage): Instructions and examples for the ArchiveBox command line interface.
  - [UI Usage](#UI-Usage): Diagrams and documentation for the outputted HTML archive interface.
  - [Disk Layout](#Disk-Layout): Description of the archive folder structure and contents.
@@ -13,6 +14,13 @@
  - [[Publishing Your Archive]]: Learn how to host your archive for others to access
  - [[Troubleshooting]]: Resources if you encounter any problems
  - [Screenshots](https://github.com/pirate/ArchiveBox#Screenshots): See what the CLI and outputted HTML look like
+
+## Overview
+
+The `./archive` binary is a shortcut to `bin/archivebox`.  Running it allows you to import a [Pocket-format](https://getpocket.com/export), [JSON-format](https://pinboard.in/export/), [Netscape-format](https://msdn.microsoft.com/en-us/library/aa753582(v=vs.85).aspx), RSS, or plan-text-formatted list of links, and download a clone of each linked website to turn into a browsable archive stored locally.
+
+The archiver produces an output folder `output/` containing an `index.html`, `index.json`, and archived copies of all the sites,
+organized by timestamp bookmarked.  It's Powered by [headless](https://developers.google.com/web/updates/2017/04/headless-chrome) Chromium and good 'ol `wget`, and a few other common unix tools.
 
 ## CLI Usage
 
@@ -130,3 +138,24 @@ The `output/` folder containing the UI HTML and archived data has the structure 
    - static/              # Staticfiles for the archive UI
    - robots.txt
 ```
+
+### Large Archives
+
+I've found it takes about an hour to download 1000 articles, and they'll take up roughly 1GB.  
+Those numbers are from running it single-threaded on my i5 machine with 50mbps down.  YMMV.  
+
+Storage requirements go up immensely if you're using `FETCH_MEDIA=True` and are archiving many pages with audio & video.
+
+You can run it in parallel by using the `resume` feature, or by manually splitting export.html into multiple files:
+```bash
+./archive export.html 1498800000 &  # second argument is timestamp to resume downloading from
+./archive export.html 1498810000 &
+./archive export.html 1498820000 &
+./archive export.html 1498830000 &
+```
+Users have reported running it with 50k+ bookmarks with success (though it will take more RAM while running).
+
+If you already imported a huge list of bookmarks and want to import only new
+bookmarks, you can use the `ONLY_NEW` environment variable. This is useful if
+you want to import a bookmark dump periodically and want to skip broken links
+which are already in the index.
