@@ -43,21 +43,22 @@ Follow the links here to find instructions for exporting a list of URLs from eac
 
  (If any of these links are broken, please submit an issue and I'll fix it)
 
-## 3. Archive your list of URLs
+## 3. Add your URLs to the archive
 
-To add a list of links from a file:
-```bash
-./archive ~/Downloads/bookmark_export.html      # replace with the path to your export file or URL from step 1
-```
-
-Or you can pass in URLs to archive via stdin:
+Pass in URLs to archive via stdin:
 ```bash
 echo 'https://example.com' | ./archive
 ```
 
+Or import a list of links from a file or feed URL:
+```bash
+./archive ~/Downloads/example_bookmarks_export.html
+./archive https://getpocket.com/users/example/feed/all
+```
+
 ## ✅ Done!
 
-You can open `output/index.html` to view your archive.  (favicons will appear next to each title once it has finished downloading)
+Open `output/index.html` to view your archive.  (favicons will appear next to each title once they have finished downloading)
 
 ---
 
