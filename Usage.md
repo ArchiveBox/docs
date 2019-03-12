@@ -1,10 +1,9 @@
 ▶️ *Make sure you have ArchiveBox [fully installed](https://github.com/pirate/ArchiveBox/wiki/Install) before running any of the commands below.*
 
-**Contents:**
+**ArchiveBox Usage Reference:**
 
  - [CLI Usage](#CLI-Usage)
    Instructions and examples for the ArchiveBox command line interface.
-
  - [UI Usage](#UI-Usage)
    Diagrams and documentation for the outputted HTML archive interface.
 
