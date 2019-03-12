@@ -1,4 +1,4 @@
-ArchiveBox only has a few main dependencies apart from `python3`, and they can all be installed using your normal package manager.
+ArchiveBox only has a few main dependencies apart from `python3`, and they can all be installed using your normal package manager.  It usually takes 1min to get up and running if you use the [Automatic Script](#automatic-setup), or about 5min if you install everything [manually](#manual-setup).
 
 <img src="https://lh4.googleusercontent.com/KWaqSJ_J9nSaGZugZWGR_mC18xxbGj2pVScriSzP8hX7KiUSw6L3VVL8rhDxQKIwxaCsfSFUO1B2pipEM4h7L-HJOGXo7yZK8a3DBVERwqfEZ8GxpeHPwh8P4LSkqVjPGRx5XYs" width="20%" align="right"/>
 
