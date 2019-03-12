@@ -10,7 +10,7 @@ First, we install the ArchiveBox [dependencies](./Install#dependencies), then we
 
 ## 1. Set up ArchiveBox
 
-Create a folder to store your archive, and clone the ArchiveBox repo into it.
+Clone the ArchiveBox repo and install its dependencies.
 ```bash
 git clone https://github.com/pirate/ArchiveBox
 cd ArchiveBox/
