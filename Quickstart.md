@@ -6,7 +6,7 @@ If you want to use Docker or Docker Compose to run ArchiveBox, see the [[Docker]
 
 First, we install the ArchiveBox [dependencies](./Install#dependencies), then we create a folder to store the archive data, and finally, we import the list of links to the archive by running `./archive <links_file>`.
 
-## 1. Create your archive
+## 1. Set up ArchiveBox
 
 Create a folder to store your archive, and clone the ArchiveBox repo into it.
 ```bash
@@ -14,6 +14,8 @@ git clone https://github.com/pirate/ArchiveBox
 cd ArchiveBox/
 ./setup       # setup script will prompt for confirmation before making any system changes
 ```
+
+<img src="https://i.imgur.com/VMTzm0G.png" width="99%"/>
 
 For more detail, including the manual setup and docker instructions, see the [[Install]] page.
 
