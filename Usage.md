@@ -89,13 +89,42 @@ Passing a URL as an argument here does not archive the specified URL, it downloa
 
 ---
 
-### UI Usage
+## UI Usage
 
 To access your archive, open `output/index.html` in a browser.  You should see something [like this](https://archive.sweeting.me).
 
 You can sort by column, search using the box in the upper right, and see the total number of links at the bottom.
 
 Click the Favicon under the "Files" column to go to the details page for each link. 
+
+### Output Structure
+
+The `output/` folder containing the UI HTML and archived data has the structure outlined here.
+
+```yaml
+ - output/
+   - index.json           # Main index of all archived URLs
+   - index.html
+
+   - archive/
+      - 155243135/        # Archived links are stored in folders by timestamp
+         - index.json     # Index/details page for individual archived link
+         - index.html
+
+         # Archive method outputs:
+         - warc/          
+         - output.pdf
+         - screenshot.png
+         ...
+
+   - sources/
+      - getpocket.com-1552432264.txt
+      - stdin-1552291774.txt
+      ...
+
+   - static/              # Staticfiles for the archive UI
+   - robots.txt
+```
 
 <img src="https://i.imgur.com/52RjhUM.png" width="45%">
 <img src="https://i.imgur.com/Gg9sTyq.png" width="45%">
