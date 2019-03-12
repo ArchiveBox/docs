@@ -4,6 +4,7 @@
 
  - [CLI Usage](#CLI-Usage): Instructions and examples for the ArchiveBox command line interface.
  - [UI Usage](#UI-Usage): Diagrams and documentation for the outputted HTML archive interface.
+ - [Disk Layout](#Disk-Layout): Description of the archive folder structure and contents.
 
 **Related:**
  - [[Docker]]: Learn about ArchiveBox usage with Docker and Docker Compose
@@ -97,7 +98,12 @@ You can sort by column, search using the box in the upper right, and see the tot
 
 Click the Favicon under the "Files" column to go to the details page for each link. 
 
-### Output Structure
+<div align="center">
+<img src="https://i.imgur.com/52RjhUM.png" width="45%">
+<img src="https://i.imgur.com/Gg9sTyq.png" width="45%">
+</div>
+
+## Disk Layout
 
 The `output/` folder containing the UI HTML and archived data has the structure outlined here.
 
@@ -125,6 +131,3 @@ The `output/` folder containing the UI HTML and archived data has the structure 
    - static/              # Staticfiles for the archive UI
    - robots.txt
 ```
-
-<img src="https://i.imgur.com/52RjhUM.png" width="45%">
-<img src="https://i.imgur.com/Gg9sTyq.png" width="45%">
