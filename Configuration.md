@@ -29,7 +29,6 @@ Example config in: [`etc/ArchiveBox.conf.default`](https://github.com/pirate/Arc
 
 <img src="https://i.imgur.com/Peqj6fd.png" width="100%"/>
 
----
 
 ## General Settings
 
@@ -322,7 +321,6 @@ Path or name of the curl binary to use.
 *Related options:*  
 [`FETCH_FAVICON`](#fetch_favicon), [`SUBMIT_ARCHIVE_DOT_ORG`](#submit_archive_dot_org)
 
----
 
 <img src="https://i.imgur.com/Peqj6fd.png" width="100%"/>
 
