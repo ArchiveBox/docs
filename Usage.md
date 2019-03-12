@@ -15,7 +15,7 @@
 
 ## CLI Usage
 
-<img src="https://i.imgur.com/biVfFYr.png" width="40%" align="right">
+<img src="https://i.imgur.com/biVfFYr.png" width="30%" align="right">
 
 `./archive` refers to the executable shortcut in the root of the project, but you can also call ArchiveBox via `./bin/archivebox`.  If you add `/path/to/ArchiveBox/bin` to your shell `$PATH` then you can call `archivebox` from anywhere on your system.
 
