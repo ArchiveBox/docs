@@ -69,7 +69,8 @@ If you don't like running random setup scripts off the internet (:+1:), you can 
 
 ```bash
 # On Ubuntu/Debian:
-apt install python3 python3-pip git wget curl chromium-browser youtube-dl
+apt install chromium-browser  # Skip this if you already have Google Chrome/Chromium installed
+apt install python3 python3-pip git wget curl youtube-dl
 ```
 
 ```bash
