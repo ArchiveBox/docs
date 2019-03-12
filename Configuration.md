@@ -1,7 +1,7 @@
 ▶️ *The default ArchiveBox config file can be found here: [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).*
 
 
-Configuration is done through environment variables.  You can pass in settings using all the usual environment variable methods: e.g. by using the `env` command, settings variables in your shell profile, or sourcing a `.env` file before running the command.
+Configuration is done through environment variables.  You can pass in settings using all the usual environment variable methods: e.g. by using the `env` command, exporting variables in your shell profile, or sourcing a `.env` file before running the command.
 
 *Example of passing configuration using `env` command:*
 ```bash
