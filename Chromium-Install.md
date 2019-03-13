@@ -1,4 +1,4 @@
-By default, ArchiveBox looks for any existing installed version of Chrome/Chromium and uses it if found.  You can optionally install a specific version and set the environment variable `CHROME_BINARY` to force ArchiveBox to use that one (e.g. `CHROME_BINARY=google-chrome-beta`).
+<img src="https://i.imgur.com/FxFoIMH.jpg" width="15%" align="right"/> By default, ArchiveBox looks for any existing installed version of Chrome/Chromium and uses it if found.  You can optionally install a specific version and set the environment variable `CHROME_BINARY` to force ArchiveBox to use that one (e.g. `CHROME_BINARY=google-chrome-beta`).
 
 If you don't already have Chrome installed, I recommend installing Chromium instead of Google Chrome, as it's the open-source fork of Chrome that doesn't send as much tracking data to Google.
 
