@@ -9,7 +9,7 @@ If you feel like contributing a PR, some of these tasks are pretty easy.  Feel f
 ---
 
 ### Major long-term changes
- - release **`pip`, `apt`, and `brew` packaged distributions** for installing ArchiveBox
+ - release **`pip`, `apt`, `pkg`, and `brew` packaged distributions** for installing ArchiveBox
  - add an **optional web GUI** for managing sources, adding new links, and viewing the archive
  - switch to django + **sqlite db with migrations system** & json/html export for managing archive schema changes and persistence
  - modularize internals to allow importing individual components
