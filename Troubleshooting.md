@@ -13,7 +13,7 @@ What are you having an issue with?:
 
 Make sure you've followed the Manual Setup guide in the [[Install]] instructions first.  Then check here for help depending on what component you need help with:
 
-**Python:**
+#### Python
 
 On some Linux distributions the python3 package might not be recent enough.
 If this is the case for you, resort to installing a recent enough version manually.
@@ -22,7 +22,7 @@ add-apt-repository ppa:fkrull/deadsnakes && apt update && apt install python3.6
 ```
 If you still need help, [the official Python docs](https://docs.python.org/3.6/using/unix.html) are a good place to start.
 
-**Chromium/Google Chrome:**
+#### Chromium/Google Chrome
 
 For more info, see the [[Chromium Install]] page.
 
@@ -62,7 +62,7 @@ env CHROME_BINARY=/path/from/step/1/chromium-browser ./archive bookmarks_export.
 ```
 
 
-**Wget & Curl:**
+#### Wget & Curl
 
 If you're missing `wget` or `curl`, simply install them using `apt` or your package manager of choice.
 See the "Manual Setup" instructions for more details.
@@ -73,12 +73,12 @@ a bug in versions `<=1.19.1_1` that caused wget to fail for perfectly valid site
 
 ### Archiving
 
-**No links parsed from export file:**
+#### No links parsed from export file
 
 Please open an [issue](https://github.com/pirate/ArchiveBox/issues) with a description of where you got the export, and
 preferrably your export file attached (you can redact the links).  We'll fix the parser to support your format.
 
-**Lots of skipped sites:**
+#### Lots of skipped sites
 
 If you ran the archiver once, it wont re-download sites subsequent times, it will only download new links.
 If you haven't already run it, make sure you have a working internet connection and that the parsed URLs look correct.
@@ -86,18 +86,18 @@ You can check the `archive.py` output or `index.html` to see what links it's dow
 
 If you're still having issues, try deleting or moving the `output/archive` folder (back it up first!) and running `./archive` again.
 
-**Lots of errors:**
+#### Lots of errors
 
 Make sure you have all the dependencies installed and that you're able to visit the links from your browser normally.
 Open an [issue](https://github.com/pirate/ArchiveBox/issues) with a description of the errors if you're still having problems.
 
-**Lots of broken links from the index:**
+#### Lots of broken links from the index
 
 Not all sites can be effectively archived with each method, that's why it's best to use a combination of `wget`, PDFs, and screenshots.
 If it seems like more than 10-20% of sites in the archive are broken, open an [issue](https://github.com/pirate/ArchiveBox/issues)
 with some of the URLs that failed to be archived and I'll investigate.
 
-**Removing unwanted links from the index:**
+#### Removing unwanted links from the index
 
 If you accidentally added lots of unwanted links into index and they slow down your archiving, you can use the `bin/purge` script to remove them from your index, which removes everything matching python regexes you pass into it. E.g: `bin/purge -r 'amazon\.com' -r 'google\.com'`. It would prompt before removing links from index, but for extra safety you might want to back up `index.json` first (or put in undex version control).
 
