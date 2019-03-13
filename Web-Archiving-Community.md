@@ -119,6 +119,17 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ---
 
+<img src="https://i.imgur.com/iaFQa9S.png" width="220px" align="right"/>
+
+### From the IIPC team
+
+ - **[awesome-web-archiving](https://github.com/iipc/awesome-web-archiving) Large list of archiving projects and orgs**
+ - [OpenWayback](https://github.com/iipc/openwayback/wiki) Toolkit of major open-source wayback-machine components
+ - [JWARC](https://github.com/iipc/jwarc) A Java library for reading and writing WARC files.
+ - [More on their Github...](https://github.com/iipc)
+
+---
+
 ### Other Public Archiving Services
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Archive.is.jpg/250px-Archive.is.jpg" width="150px" align="right"/>
