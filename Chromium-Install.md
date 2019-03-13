@@ -1,7 +1,6 @@
-I recommend Chromium instead of Google Chrome, since it's open source and doesn't send your data to Google.
-Chromium may have some issues rendering some sites though, so you're welcome to try Google-chrome instead.
-
 By default, ArchiveBox looks for any existing installed version of Chrome/Chromium and uses it if found, but you can optionally install a specific version and set the environment variable `CHROME_BINARY` to force ArchiveBox to that one (e.g. `CHROME_BINARY=google-chrome-beta`).
+
+If you don't already have Chrome installed, I recommend installing Chromium instead of Google Chrome, as it's the open-source fork of Chrome that doesn't send as much tracking data to Google.
 
 #### Check for existing Chrome install
 ```bash
