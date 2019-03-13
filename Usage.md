@@ -5,8 +5,8 @@
 <img src="https://i.imgur.com/aQZZcku.png" width="20%" align="right"/> 
 
  - [Overview](#Overview): Program structure and outline of basic archiving process.
- - [CLI Usage](#CLI-Usage): Instructions and examples for the ArchiveBox command line interface.
- - [UI Usage](#UI-Usage): Diagrams and documentation for the outputted HTML archive interface.
+ - [CLI Usage](#CLI-Usage): Docs and examples for the ArchiveBox command line interface.
+ - [UI Usage](#UI-Usage): Docs and screenshots for the outputted HTML archive interface.
  - [Disk Layout](#Disk-Layout): Description of the archive folder structure and contents.
 
 **Related:**
@@ -22,7 +22,7 @@
 The `./archive` binary is a shortcut to `bin/archivebox`.  Running it allows you to import a [Pocket-format](https://getpocket.com/export), [JSON-format](https://pinboard.in/export/), [Netscape-format](https://msdn.microsoft.com/en-us/library/aa753582(v=vs.85).aspx), RSS, or plan-text-formatted list of links, and download a clone of each linked website to turn into a browsable archive stored locally.
 
 The archiver produces an output folder `output/` containing an `index.html`, `index.json`, and archived copies of all the sites,
-organized by timestamp bookmarked.  It's Powered by [headless](https://developers.google.com/web/updates/2017/04/headless-chrome) Chromium and good 'ol `wget`, and a few other common unix tools.
+organized by timestamp bookmarked.  It's Powered by [headless](https://developers.google.com/web/updates/2017/04/headless-chrome) Chromium and good 'ol `wget`, and a few other common Unix tools.
 
 ## CLI Usage
 
