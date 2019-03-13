@@ -33,6 +33,8 @@ Other systems that are not officially supported but probably work to varying deg
 
 Platforms other than Linux, BSD, and macOS are untested, but you can probably get it working on them without too much effort.
 
+It's recommended to use a filesystem with compression and/or deduplication abilities (e.g. ZFS or BTRFS) for maximum archive storage efficiency.
+
 ## Dependencies
 
 Not all the dependencies are required for all modes. If you disable some archive methods you can avoid those dependencies, for example, if you set `FETCH_MEDIA=False` you don't need to install `youtube-dl`, and if you set `FETCH_[PDF,SCREENSHOT,DOM]=False` you don't need `chromium`.
