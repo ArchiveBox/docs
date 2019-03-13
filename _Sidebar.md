@@ -2,7 +2,6 @@
 
 # Getting Started
 
- - [[Home]]
  - [[Quickstart]]
  - [[Install]]
  - [[Docker]]
