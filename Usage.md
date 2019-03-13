@@ -2,6 +2,8 @@
 
 **ArchiveBox API Reference:**
 
+<img src="https://i.imgur.com/aQZZcku.png" width="20%" align="right"/> 
+
  - [Overview](#Overview): Program structure and outline of basic archiving process.
  - [CLI Usage](#CLI-Usage): Instructions and examples for the ArchiveBox command line interface.
  - [UI Usage](#UI-Usage): Diagrams and documentation for the outputted HTML archive interface.
