@@ -290,6 +290,7 @@ If any of these links are dead, you can find an archived version on https://arch
  - [Stanford Libraries Web Archiving](https://library.stanford.edu/projects/web-archiving) (USA)
  - [Society of American Archivists: Electronic Records (SAA)](https://www2.archivists.org/groups/electronic-records-section) (USA)
  - [BitCurator Consortium (BCC)](https://bitcuratorconsortium.org/mission) (USA)
+ - [Ethics & Archiving the Web Conference (Rhizome/Webrecorder.io)](https://eaw.rhizome.org/) (USA)
 
 ---
 
