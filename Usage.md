@@ -130,7 +130,7 @@ The `output/` folder containing the UI HTML and archived data has the structure 
          - screenshot.png
          ...
 
-   - sources/
+   - sources/             # Each imported URL list is saved as a copy here
       - getpocket.com-1552432264.txt
       - stdin-1552291774.txt
       ...
