@@ -77,6 +77,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - [WarcProx](https://github.com/internetarchive/warcprox) warc proxy recording and playback utility
  - [WarcTools](https://github.com/internetarchive/warctools) utilities for dealing with WARCs
  - [Grab-Site](https://github.com/ArchiveTeam/grab-site) An easy preconfigured web crawler designed for backing up websites
+ - [WPull](https://github.com/ArchiveTeam/wpull) A pure python implementation of wget with WARC saving
  - [More on their Github...](https://github.com/internetarchive)
 
 ---
