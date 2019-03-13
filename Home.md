@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="https://i.imgur.com/4nkFjdv.png" width="150px"/>
+<img src="https://i.imgur.com/4nkFjdv.png" width="100px"/>
 
 <h1>ArchiveBox Documentation</h1>
 
@@ -12,6 +12,16 @@
 **Use the sidebar on the right to browse documentation topics ->**
 
 </div>
+
+---
+
+### Jump To
+
+ - [Project Home](https://github.com/pirate/ArchiveBox)
+ - [[Install]]
+ - [[Quickstart]]
+ - [[Usage]]
+ - [[Web Archiving Community]]
 
 ---
 
