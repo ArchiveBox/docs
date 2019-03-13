@@ -22,6 +22,7 @@
  - [[Roadmap]]
  - [[Changelog]]
  - [[Donations]]
+ - [Background & Motivation](https://github.com/pirate/ArchiveBox#background--motivation)
  - [[Web Archiving Community]]
 
 ---
