@@ -2,7 +2,8 @@
 
 <img src="https://i.imgur.com/es97GGV.png" width="20%" align="right"/>
 
-▶️ *Comment here to discuss the contribution roadmap: [Official Roadmap Discussion](https://github.com/pirate/ArchiveBox/issues/120).*
+▶️ *Comment here to discuss the contribution roadmap:  
+[Official Roadmap Discussion](https://github.com/pirate/ArchiveBox/issues/120).*
 
 If you feel like contributing a PR, some of these tasks are pretty easy.  Feel free to open an issue if you need help getting started in any way!
 
