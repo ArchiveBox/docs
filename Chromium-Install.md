@@ -1,4 +1,5 @@
 By default, ArchiveBox looks for any existing installed version of Chrome/Chromium and uses it if found.  You can optionally install a specific version and set the environment variable `CHROME_BINARY` to force ArchiveBox to use that one, e.g.:  
+
     - `CHROME_BINARY=google-chrome-beta`
     - `CHROME_BINARY=/usr/bin/chromium-browser`
     - `CHROME_BINARY='/Applications/Chromium.app/Contents/MacOS/Chromium'`
