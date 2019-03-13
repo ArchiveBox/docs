@@ -4,14 +4,14 @@ By default, ArchiveBox looks for any existing installed version of Chrome/Chromi
 
 If you don't already have Chrome installed, I recommend installing Chromium instead of Google Chrome, as it's the open-source fork of Chrome that doesn't send as much tracking data to Google.
 
+#### Check for existing Chrome/Chromium install
+
 <img src="https://i.imgur.com/FxFoIMH.jpg" width="25%" align="right"/> 
 
-#### Check for existing Chrome install
 ```bash
-google-chrome --version
+google-chrome --version | chromium-browser --version
 Google Chrome 73.0.3683.75 beta     # should be >v59
 ```
-(Replace `google-chrome` with `chromium-browser` or path to your preferred binary)
 
 ## Installing Chromium
 
