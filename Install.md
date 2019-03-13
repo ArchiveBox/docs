@@ -16,9 +16,9 @@ ArchiveBox officially supports the following operating systems:
 <img src="https://assets.ubuntu.com/v1/c5cb0f8e-picto-ubuntu.svg" width="5%" align="right"/>
 <img src="https://i.imgur.com/Ue9BI7n.png" width="5%" align="right"/>
 
-* **macOS:** >=10.12 (with homebrew)
-* **Linux:** Ubuntu, Debian, etc (with apt)
-* **BSD:** FreeBSD, OpenBSD, NetBSD etc (with pkg)
+* [**macOS:**](#macos) >=10.12 (with homebrew)
+* [**Linux:**](#Ubuntu-Debian) Ubuntu, Debian, etc (with apt)
+* [**BSD:**](#BSD) FreeBSD, OpenBSD, NetBSD etc (with pkg)
 
 Other systems that are not officially supported but probably work to varying degrees:
 
@@ -83,6 +83,12 @@ apt install chromium-browser  # Skip this if you already have Google Chrome/Chro
 ```bash
 brew install python3 git wget curl youtube-dl
 brew cask install chromium  # Skip this if you already have Google Chrome/Chromium installed in /Applications/
+```
+
+#### BSD
+```bash
+pkg install python3 git wget curl youtube-dl 
+pkg install chromium-browser  # Skip this if you already have Google Chrome/Chromium installed
 ```
 
 #### Check that everything worked and the versions are high enough.
