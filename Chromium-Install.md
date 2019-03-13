@@ -12,7 +12,7 @@ Google Chrome 73.0.3683.75 beta     # should be >v59
 ## Installing Chromium
 
 ### macOS
-If you already have Chromium installed at `/Applications/Chromium.app`, you don't need to run this.
+If you already have `/Applications/Chromium.app`, you don't need to run this.
 ```bash
 brew cask install chromium-browser
 ```
@@ -27,7 +27,7 @@ apt install chromium-browser
 ## Installing Google Chrome
 
 ### macOS
-If you already have Google Chrome installed at `/Applications/Google Chrome.app`, you don't need to run this.
+If you already have `/Applications/Google Chrome.app`, you don't need to run this.
 ```bash
 brew cask install google-chrome
 ```
