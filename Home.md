@@ -6,8 +6,6 @@
 
 <h1>ArchiveBox Documentation</h1>
 
-*(Previously [named](https://github.com/pirate/ArchiveBox/issues/108) `Bookmark Archiver`)*
-
 ▶️ *If you need help or have a question, you can open an [issue](https://github.com/pirate/ArchiveBox/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or reach out on [Twitter](https://github.com/theSquashSH).*
 
 
