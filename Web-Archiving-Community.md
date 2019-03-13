@@ -73,6 +73,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - **[Archive.it](https://archive-it.org) commercial Wayback-Machine solution**
  - **[Heretrix](https://github.com/internetarchive/heritrix3) The king of internet archiving crawlers, powers the Wayback Machine**
  - **[Brozzler](https://github.com/internetarchive/brozzler) chrome headless crawler + WARC archiver maintained by Archive.org**
+ - [OpenWayback](https://github.com/iipc/openwayback/wiki) Toolkit of major open-source wayback-machine components
  - [WarcProx](https://github.com/internetarchive/warcprox) warc proxy recording and playback utility
  - [WarcTools](https://github.com/internetarchive/warctools) utilities for dealing with WARCs
  - [Grab-Site](https://github.com/ArchiveTeam/grab-site) An easy preconfigured web crawler designed for backing up websites
