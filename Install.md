@@ -2,13 +2,13 @@ ArchiveBox only has a few main dependencies apart from `python3`, and they can a
 
 <img src="https://lh4.googleusercontent.com/KWaqSJ_J9nSaGZugZWGR_mC18xxbGj2pVScriSzP8hX7KiUSw6L3VVL8rhDxQKIwxaCsfSFUO1B2pipEM4h7L-HJOGXo7yZK8a3DBVERwqfEZ8GxpeHPwh8P4LSkqVjPGRx5XYs" width="20%" align="right"/>
 
- - [System Support](#system-support)
+ - [Supported Systems](#supported-systems)
  - [Dependencies](#dependencies)
  - [Automatic Setup](#automatic-setup)
  - [Manual Setup](#manual-setup)
  - [Docker Setup](#docker-setup)
 
-## System Support
+## Supported Systems
 
 ArchiveBox officially supports the following operating systems:
 
