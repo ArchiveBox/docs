@@ -1,6 +1,6 @@
 ## Roadmap
 
-<img src="https://i.imgur.com/es97GGV.png" width="25%" align="right"/>
+<img src="https://i.imgur.com/es97GGV.png" width="20%" align="right"/>
 
 ▶️ *Comment here to discuss the contribution roadmap: [Official Roadmap Discussion](https://github.com/pirate/ArchiveBox/issues/120).*
 
