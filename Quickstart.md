@@ -1,8 +1,8 @@
-▶️ *It only takes 5 minutes to get up and running.*
-
 <div align="center">
 <img src="https://i.imgur.com/ZbHpEf8.jpg" width="40%"/>
 </div>
+
+▶️ *It only takes about 5 minutes to get up and running with ArchiveBox.*
 
 ArchiveBox [officially supports](https://github.com/pirate/ArchiveBox/wiki/Install#supported-systems) **macOS**, **Ubuntu/Debian**, and **BSD**, but likely runs on many other systems.  You can run it on any system that supports **Docker**, including Windows.
 
