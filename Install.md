@@ -73,16 +73,16 @@ If you don't like running random setup scripts off the internet (:+1:), you can 
 
 ### 1. Install dependencies
 
-#### Ubuntu/Debian
-```bash
-apt install python3 python3-pip python3-distutils git wget curl youtube-dl
-apt install chromium-browser  # Skip this if you already have Google Chrome/Chromium installed
-```
-
 #### macOS
 ```bash
 brew install python3 git wget curl youtube-dl
 brew cask install chromium  # Skip this if you already have Google Chrome/Chromium installed in /Applications/
+```
+
+#### Ubuntu/Debian
+```bash
+apt install python3 python3-pip python3-distutils git wget curl youtube-dl
+apt install chromium-browser  # Skip this if you already have Google Chrome/Chromium installed
 ```
 
 #### BSD
