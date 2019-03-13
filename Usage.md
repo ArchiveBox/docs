@@ -127,8 +127,8 @@ The `output/` folder containing the UI HTML and archived data has the structure 
 
          # Archive method outputs:
          - warc/          
-         - output.pdf
-         - screenshot.png
+         - media/
+         - git/
          ...
 
    - sources/             # Each imported URL list is saved as a copy here
