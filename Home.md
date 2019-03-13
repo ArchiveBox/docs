@@ -1,8 +1,6 @@
-<br/>
-
 <div align="center">
 
-<img src="https://i.imgur.com/4nkFjdv.png" width="100px"/>
+<img src="https://i.imgur.com/4nkFjdv.png" width="80px"/>
 
 <h1>ArchiveBox Documentation</h1>
 
