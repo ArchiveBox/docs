@@ -42,4 +42,4 @@ apt install google-chrome-beta
 
 ## Troubleshooting
 
-If you encounter problems setting up Google Chrome or Chromium, see the [[Troubleshooting]] page.
+If you encounter problems setting up Google Chrome or Chromium, see the [[Troubleshooting#chromiumgoogle-chrome]] page.
