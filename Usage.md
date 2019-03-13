@@ -19,10 +19,9 @@
 
 ## Overview
 
-The `./archive` binary is a shortcut to `bin/archivebox`.  Running it allows you to import a [Pocket-format](https://getpocket.com/export), [JSON-format](https://pinboard.in/export/), [Netscape-format](https://msdn.microsoft.com/en-us/library/aa753582(v=vs.85).aspx), RSS, or plan-text-formatted list of links, and download a clone of each linked website to turn into a browsable archive stored locally.
+The `./archive` binary is a shortcut to `bin/archivebox`.  Piping RSS, JSON, [Netscape](https://msdn.microsoft.com/en-us/library/aa753582(v=vs.85).aspx), or TXT lists of links into the `./archive` command will add them to your archive folder, and create a locally-stored browsable archive for each new URL.
 
-The archiver produces an output folder `output/` containing an `index.html`, `index.json`, and archived copies of all the sites,
-organized by timestamp bookmarked.  It's Powered by [headless](https://developers.google.com/web/updates/2017/04/headless-chrome) Chromium and good 'ol `wget`, and a few other common Unix tools.
+The archiver produces an [output folder](#Disk-Layout) `output/` containing `index.html`, `index.json`, and archived copies of all the sites organized by timestamp bookmarked.  It's powered by [Chrome headless](https://developers.google.com/web/updates/2017/04/headless-chrome), good 'ol `wget`, and a few other common Unix tools.
 
 ## CLI Usage
 
