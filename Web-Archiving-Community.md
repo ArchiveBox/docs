@@ -252,8 +252,9 @@ If any of these links are dead, you can find an archived version on https://arch
  - [Reddit r/datahoarder Discussion #2](https://www.reddit.com/r/DataHoarder/comments/6kepv6/bookmarkarchiver_now_supports_archiving_all_major/)
  - [Reddit r/datahoarder Discussion #3](https://www.reddit.com/r/DataHoarder/comments/apnud4/continually_archive_websites_and_keep_the_older/)
  - [Reddit r/datahoarder Discussion #4](https://www.reddit.com/r/DataHoarder/comments/azdhd9/archivebox_open_source_selfhosted_web_archive/)
- - [Python Trending on Twitter](https://twitter.com/pythontrending/status/1092492387182628865)
  - [Recurse Center: The Joy of Computing](https://joy.recurse.com/posts/26-bookmark-archiver-your-own-self-hosted-way-back-machine)
+ - [Korben.info Article](https://korben.info/archivebox-un-clone-darchive-org-et-de-la-wayback-machine-a-auto-heberger.html)
+ - Twitter: [Python Trending](https://twitter.com/pythontrending/status/1092492387182628865), [PyCoder's Weekly](https://twitter.com/pycoders/status/1105803699799105536)
  - More on [Reddit](https://www.reddit.com/search?q=archivebox&sort=new&t=all), [HN](https://www.google.com/search?q=%22archivebox%22+site%3Anews.ycombinator.com), [Google](https://www.google.com/search?q=%22archivebox.io%22+OR+%22pirate%2FArchiveBox%22+OR+%22ArchiveBox%22+-site%3Areddit.com+-site%3Anews.ycombinator.com)...
 
 ---
