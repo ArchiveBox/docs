@@ -152,15 +152,14 @@ Then use the flag:
 -v archivebox-data:/data
 ```
 
-If you used the named docker volume `archivebox-data`, you can mount the volume using any standard docker tools, or access the data folder directly here:  
-`/var/lib/docker/volumes/archivebox-data/_data` (on most systems)
+You can mount your data volume using standard docker tools, or access the contents directly here:  
+`/var/lib/docker/volumes/archivebox-data/_data` (on most Linux systems)
 
-If you're using a named volume on a Mac host you'll have to enter the base Docker Linux VM first to access the volume data:
+On a Mac you'll have to enter the base Docker Linux VM first to access the volume data:
 ```bash
 screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty
 cd /var/lib/docker/volumes/archivebox-data/_data
 ```
-It's recommended to bind a local directory on Mac rather than use a named volume so that you don't have to enter the Linux VM to access your archive output.
 
 ## Configuration
 
