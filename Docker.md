@@ -18,7 +18,7 @@ Make sure you have Docker installed and set up on your machine before following 
   + [Accessing the data](#accessing-the-data-1)
   + [Configuration](#configuration-1)
 
-**Quickstart:**
+**Usage:**
 ```bash
 echo 'https://example.com' | docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox
 ```
