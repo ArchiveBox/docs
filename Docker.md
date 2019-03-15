@@ -18,7 +18,7 @@ Make sure you have Docker installed and set up on your machine before following 
   + [Accessing the data](#accessing-the-data-1)
   + [Configuration](#configuration-1)
 
-**Official Docker Hub image:**
+**Official Docker Hub image:**  
 https://hub.docker.com/r/nikisweeting/archivebox
 
 **Usage:**
