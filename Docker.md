@@ -115,6 +115,8 @@ echo 'https://example.com' | docker run -i -v ~/ArchiveBox:/data nikisweeting/ar
 
 Replace `~/ArchiveBox` in the command above with the full path to a folder to use to store your archive on the host, or name of a Docker data volume.
 
+Make sure the data folder you use host is either a new, uncreated path, or if it already exists make sure it has permissions initially set to `777` so that the ArchiveBox command is able to set it to the specified `OUTPUT_PERMISSIONS` config setting on the first run.
+
 ## Usage
 
 **To add a single URL to the archive** or a list of links from a file, pipe them in via stdin.  This will archive each link passed in.
@@ -131,8 +133,6 @@ docker run -v -v ~/ArchiveBox:/data nikisweeting/archivebox /bin/archive 'https:
 Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links *inside* of it, so only use it for RSS feeds or other *lists of links* you want to add.  To add an individual link use the instruction above and pass via stdin instead of by argument.
 
 ## Accessing the data
-
-Make sure the data folder you use host is either a new, uncreated path, or if it already exists make sure it has permissions initially set to `777` so that the ArchiveBox command is able to set it to the specified `OUTPUT_PERMISSIONS` config setting on the first run.
 
 ### Using a bind folder
 
