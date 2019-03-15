@@ -103,48 +103,53 @@ If you want to access your archive server with HTTPS, put a reverse proxy like N
 
 # Docker
 
-Docker-compose (above) is the recommended way to run ArchiveBox with docker, as it's a much easier CLI interface and more of the setup is taken care of by docker-compose using the single yaml config file as opposed to CLI flags.  The docker-compose setup also provides an Nginx webserver to serve the archive right out of the box, whereas you have to set that up manually if you use plain Docker.
-
-If you want to continue and use raw docker (below) instead of docker-compose (above), follow these steps.
-
 ## Setup
 
-1. Fetch and build the ArchiveBox Docker image.
+Fetch and run the ArchiveBox Docker image to create your initial archive.
 ```bash
-docker build github.com/pirate/ArchiveBox -t archivebox
+echo 'https://example.com' | docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox
 ```
 
-2. Create a volume to hold your ArchiveBox data (optional).
-```bash
-docker volume create archivebox-data
-```
-You can also mount a local directory in later steps instead of using a named Docker volume (see the [Accessing the data](#accessing-the-data-1) section for details).
-
-3. Run ArchiveBox with `docker run` to add links to your archive.  See the Usage section below for details depending on how you want to add links.
+Replace `~/ArchiveBox` in the command above with the full path to a folder to use to store your archive on the host, or name of a Docker data volume.
 
 ## Usage
 
 **To add a single URL to the archive** or a list of links from a file, pipe them in via stdin.  This will archive each link passed in.
 ```bash
-echo 'https://example.com' | docker run -i -v archivebox-data:/data archivebox /bin/archive
+echo 'https://example.com' | docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox
 # or
-cat bookmarks.html | docker run -i -v archivebox-data:/data archivebox /bin/archive
+cat bookmarks.html | docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox
 ```
 
 **To add a list of pages via feed URL or remote file,** pass the URL of the feed as an argument.
 ```bash
-docker run -v archivebox-data:/data archivebox /bin/archive 'https://example.com/some/rss/feed.xml'
+docker run -v -v ~/ArchiveBox:/data nikisweeting/archivebox /bin/archive 'https://example.com/some/rss/feed.xml'
 ```
 Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links *inside* of it, so only use it for RSS feeds or other *lists of links* you want to add.  To add an individual link use the instruction above and pass via stdin instead of by argument.
 
 ## Accessing the data
 
-If you want to use a local folder for data instead of using a named docker volume, replace the named volume mount flag in the commands above with a directory bind mount.  
-Replace this: `-v archivebox-data:/data`  
-With this: `--mount type=bind,source=/your/data/folder/on/host,target=/data`  
-Make sure the `data` folder you specify on the host has permissions initially  set to `777` so that the ArchiveBox command is able to set it to the specified `OUTPUT_PERMISSIONS` config setting on the first run.
+Make sure the data folder you use host is either a new, uncreated path, or if it already exists make sure it has permissions initially set to `777` so that the ArchiveBox command is able to set it to the specified `OUTPUT_PERMISSIONS` config setting on the first run.
 
-If you used the named docker volume `archivebox-data` as shown in the examples above, you can mount the volume using any standard docker tools, or access the data folder directly here:  
+### Using a bind folder
+
+Use the flag:
+```bash
+-v /full/path/to/folder/on/host:/data
+```
+This will use the folder `/full/path/to/folder/on/host` on your host to store the ArchiveBox output.
+
+### Using a named Docker data volume 
+
+```bash
+docker volume create archivebox-data
+```
+Then use the flag:
+```bash
+-v archivebox-data:/data
+```
+
+If you used the named docker volume `archivebox-data`, you can mount the volume using any standard docker tools, or access the data folder directly here:  
 `/var/lib/docker/volumes/archivebox-data/_data` (on most systems)
 
 If you're using a named volume on a Mac host you'll have to enter the base Docker Linux VM first to access the volume data:
@@ -160,10 +165,10 @@ ArchiveBox in Docker accepts all the same environment variables as normal, see t
 
 To pass environment variables when running, you can use the env command.
 ```bash
-echo 'https://example.com' | docker run -i -v archivebox-data:/data archivebox env FETCH_SCREENSHOT=False /bin/archive
+echo 'https://example.com' | docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox env FETCH_SCREENSHOT=False /bin/archive
 ```
 
 Or you can create an `ArchiveBox.env` file (copy from the default `etc/ArchiveBox.conf.default`) and pass it in like so:
 ```bash
-docker run -i -v --env-file=ArchiveBox.env archivebox /bin/archive ...
+docker run -i -v --env-file=ArchiveBox.env nikisweeting/archivebox
 ```
