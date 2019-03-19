@@ -14,12 +14,12 @@ If you're importing private links or authenticated content, you definitely don't
 
 #### Extra Private Mode
 
-Turn off the two trusted 3rd-party API endpoints that are hit during normal archiving:
+If you are not comfortable using 3rd-party endpoints during archiving, you should turn off the two trusted 3rd-party API endpoints that are hit during normal archiving:
 
  - `https://www.google.com/s2/favicons?domain={domain}` when [`FETCH_FAVICON`](https://github.com/pirate/ArchiveBox/wiki/Configuration#fetch_favicon) is `True`, the domains for each link are shared in order to get the favicon, but not the full URL
  - `https://web.archive.org/save/{url}` when [`SUBMIT_ARCHIVE_DOT_ORG`](https://github.com/pirate/ArchiveBox/wiki/Configuration#submit_archive_dot_org) is `True`, full URLs are submitted to the Wayback Machine for archiving, but no cookies or content from the local authenticated archive are shared
 
-If you are not comfortable using 3rd-party endpoints during archiving, you should disable the archive methods above.  Disabling these are highly recommended if you plan on archiving sites that use unique slugs access private content, e.g. Google docs, codimd notepads, etc.
+Disabling these are highly recommended if you plan on archiving sites that use unique slugs access private content, e.g. Google docs, codimd notepads, etc.
 
 
 ## Output Folder
