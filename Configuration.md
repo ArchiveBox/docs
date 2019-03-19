@@ -242,6 +242,20 @@ Whether or not to use Chrome/Chromium in `--headless` mode (no browser UI displa
 [`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary)
 
 ---
+#### `CHROME_SANDBOX`
+**Possible Values:** [`True`]/`False  
+Whether or not to use the Chrome sandbox when archiving.  
+If are running ArchiveBox inside Docker or if you see this error, you may need to set this to `False`:
+```bash
+:ERROR:zygote_host_impl_linux.cc(89)] Running as root without --no-sandbox is not supported. See https://crbug.com/638180
+```
+This is a security-critical setting, do not set it to `False` unless you know what you're doing!  
+
+*Related options:*  
+[`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_BINARY`](#chrome_binary)
+
+
+---
 
 ## Shell Options
 
