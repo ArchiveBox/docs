@@ -22,12 +22,18 @@ Two 3rd-party API endpoints are hit during normal archiving:
 If you are not comfortable using 3rd-party endpoints during archiving, you should disable the archive methods above.  Disabling these are highly recommended if you plan on archiving sites that use unique slugs access private content, e.g. Google docs, codimd notepads, etc.
 
 
-## Archive Data Storage
+## Output Folder
 
-How much are you planning to archive?  Only a few bookmarked articles, or thousands of pages of browsing history a day?  If it's only 1-50 pages a day, you can probably just stick it in a normal folder on your hard drive, but if you want to go over 100 pages a day, you will likely want to put your archive on a compressed/deduplicated filesystem like ZFS or inside a compressed disk image.
+### Permissions
 
 What are the permissions on the archive folder? Limit access to the fewest possible users by checking folder ownership and setting [`OUTPUT_PERMISSIONS`](https://github.com/pirate/ArchiveBox/wiki/Configuration#OUTPUT_PERMISSIONS) accordingly.
 
+### Filesystem
+
+How much are you planning to archive?  Only a few bookmarked articles, or thousands of pages of browsing history a day?  If it's only 1-50 pages a day, you can probably just stick it in a normal folder on your hard drive, but if you want to go over 100 pages a day, you will likely want to put your archive on a compressed/deduplicated/encrypted disk image or filesystem like ZFS.
+
+### Publishing
+
 Are you publishing your archive? If so, make sure you're only serving it as HTML and not accidentally running it as php or cgi, and put it on its own domain not shared with other services.  This is done in order to avoid cookies leaking between your main domain and domains hosting content you don't control.  Many companies put user provided files on separate domains like googleusercontent.com and github.io to avoid this problem.
 
-### Are the URLs private, the content, or both??
+Published archives automatically include a `robots.txt` `Dissallow: /` to block search engines from indexing them. You may still wish to publish your contact info in the index footer though using [`FOOTER_INFO`](https://github.com/pirate/ArchiveBox/wiki/Configuration#FOOTER_INFO) so that you can respond to any DMCA and copyright takedown notices if you accidentally rehost copyrighted content.
