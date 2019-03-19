@@ -55,12 +55,14 @@ Download files for only newly added links when running the `./archive` command. 
 **Possible Values:** [`60`]/`120`/...  
 Maximum allowed download time per archive method for each link in seconds.  If you have a slow network connection or are seeing frequent timeout errors, you can raise this value.
 
+*Note: Do not set this to anything less than `15` seconds as it will cause Chrome to hang indefinitely and many sites to fail completely.*
+
 ---
 #### `MEDIA_TIMEOUT`
 **Possible Values:** [`3600`]/`120`/...  
 Maximum allowed download time for fetching media when `FETCH_MEDIA=True` in seconds.  This timeout is separate and usually much longer than `TIMEOUT` because media downloaded with `youtube-dl` can often be quite large and take many minutes/hours to download.  Tweak this setting based on your network speed and maximum media file size you plan on downloading.
 
-*Note: Do not set this to anything less than `15` seconds as it will cause Chrome to hang indefinitely and many sites to fail completely.*
+*Note: Do not set this to anything less than `10` seconds as it can often take 5-10 seconds for `youtube-dl` just to parse the page before it starts downloading media files.*
 
 *Related options:*  
 [`FETCH_MEDIA`](#fetch_media)
