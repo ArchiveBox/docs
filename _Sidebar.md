@@ -15,6 +15,7 @@
  - [[Scheduled Archiving]]
  - [[Publishing Your Archive]]
  - [[Chromium Install]]
+ - [[Security Overview]]
  - [[Troubleshooting]]
 
 # More Info
