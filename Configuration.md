@@ -60,6 +60,8 @@ Maximum allowed download time per archive method for each link in seconds.  If y
 **Possible Values:** [`3600`]/`120`/...  
 Maximum allowed download time for fetching media when `FETCH_MEDIA=True` in seconds.  This timeout is separate and usually much longer than `TIMEOUT` because media downloaded with `youtube-dl` can often be quite large and take many minutes/hours to download.  Tweak this setting based on your network speed and maximum media file size you plan on downloading.
 
+*Note: Do not set this to anything less than `15` seconds as it will cause Chrome to hang indefinitely and many sites to fail completely.*
+
 *Related options:*  
 [`FETCH_MEDIA`](#fetch_media)
 
