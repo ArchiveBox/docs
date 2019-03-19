@@ -14,7 +14,7 @@ If you're importing private links or authenticated content, you definitely don't
 
 #### Extra Private Mode
 
-Two 3rd-party API endpoints are hit during normal archiving:
+Turn off the two trusted 3rd-party API endpoints that are hit during normal archiving:
 
  - `https://www.google.com/s2/favicons?domain={domain}` when [`FETCH_FAVICON`](https://github.com/pirate/ArchiveBox/wiki/Configuration#fetch_favicon) is `True`, the domains for each link are shared in order to get the favicon, but not the full URL
  - `https://web.archive.org/save/{url}` when [`SUBMIT_ARCHIVE_DOT_ORG`](https://github.com/pirate/ArchiveBox/wiki/Configuration#submit_archive_dot_org) is `True`, full URLs are submitted to the Wayback Machine for archiving, but no cookies or content from the local authenticated archive are shared
