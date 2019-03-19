@@ -82,7 +82,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ---
 
-### From the Webrecorder team
+### From the WebRecorder.io team
 
 <img src="https://quintagroup.com/cms/python/images/webrecorder.jpeg" width="150px" align="right"/>
 
@@ -92,7 +92,6 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - [WebArchivePlayer](https://github.com/ikreymer/webarchiveplayer#auto-load-warcs) A tool for replaying web archives
  - [warcio](https://github.com/webrecorder/warcio) fast streaming asynchronous WARC reader and writer
  - [node-warc](https://github.com/N0taN3rd/node-warc) Parse And Create Web ARChive (WARC) files with node.js
- - [warcreate](https://github.com/machawk1/warcreate) Chrome extension to "Create WARC files from any webpage"
  - [WAIL](https://machawk1.github.io/wail/) Web archiver GUI using Heritrix and OpenWayback
  - [squidwarc](https://github.com/N0taN3rd/Squidwarc) User-scriptable, archival crawler using Chrome
  - [More on their Github...](https://github.com/webrecorder)
