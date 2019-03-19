@@ -10,16 +10,18 @@ This mode should not be used for archiving entire browser history or authenticat
 
 #### Private Mode
 
-If you're importing private links or authenticated content, you definitely don't want to share your archive folder publicly on a webserver.  You can set [`CHROME_USER_DATA_DIR`](https://github.com/pirate/ArchiveBox/wiki/Configuration#chrome_user_data_dir) and [`COOKIES_FILE`](https://github.com/pirate/ArchiveBox/wiki/Configuration#COOKIES_FILE) to enable authenticated Chrome and wget archiving respectively, and then point ArchiveBox to a safe output folder with conservative permissions.  You may also wish to encrypt the archive using an encrypted disk image or filesystem like ZFS as it will contain all requests and response data, including session keys, user data, usernames, etc.
+ArchiveBox is designed to be able to archive content that requires authentication or cookies.  This includes paywalled content, private forums, LAN-only content, etc.
+
+To get started, set [`CHROME_USER_DATA_DIR`](https://github.com/pirate/ArchiveBox/wiki/Configuration#chrome_user_data_dir) and [`COOKIES_FILE`](https://github.com/pirate/ArchiveBox/wiki/Configuration#COOKIES_FILE) to point to a Chrome user folder that has your sessions and a wget `cookies.txt` file respectively.
+
+If you're importing private links or authenticated content, you probably don't want to share your archive folder publicly on a webserver, so don't follow the [[Publishing Your Archive]] instructions unless you are only serving it on a trusted LAN or have some sort of authentication in front of it.  Make sure to point ArchiveBox to an output folder with conservative permissions, as it may contain archived content with secret session tokens or pieces of your user data.  You may also wish to encrypt the archive using an encrypted disk image or filesystem like ZFS as it will contain all requests and response data, including session keys, user data, usernames, etc.
 
 #### Stealth Mode
 
-If you are not comfortable using 3rd-party endpoints during archiving, you should turn off the two trusted 3rd-party API endpoints that are hit during normal archiving:
+If you want ArchiveBox to be less noisy and avoid leaking URLs to 3rd-party APIs during archiving, you disable the use of the two trusted 3rd-party archive APIs that are hit by default.  Disabling these are recommended if you plan on archiving any sites that use secret tokens in the URL to grant access to private content without authentication, e.g. Google Docs, CodiDM notepads, etc.
 
- - `https://www.google.com/s2/favicons?domain={domain}` when [`FETCH_FAVICON`](https://github.com/pirate/ArchiveBox/wiki/Configuration#fetch_favicon) is `True`, the domains for each link are shared in order to get the favicon, but not the full URL
  - `https://web.archive.org/save/{url}` when [`SUBMIT_ARCHIVE_DOT_ORG`](https://github.com/pirate/ArchiveBox/wiki/Configuration#submit_archive_dot_org) is `True`, full URLs are submitted to the Wayback Machine for archiving, but no cookies or content from the local authenticated archive are shared
-
-Disabling these are highly recommended if you plan on archiving any sites that use secret tokens in the URL to grant access to private content without authentication, e.g. Google docs, codimd notepads, etc.
+ - `https://www.google.com/s2/favicons?domain={domain}` when [`FETCH_FAVICON`](https://github.com/pirate/ArchiveBox/wiki/Configuration#fetch_favicon) is `True`, the domains for each link are shared in order to get the favicon, but not the full URL
 
 ## Output Folder
 
