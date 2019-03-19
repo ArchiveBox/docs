@@ -10,7 +10,7 @@ This mode should not be used for archiving entire browser history or authenticat
 
 #### Private Mode
 
-If you're importing private links or authenticated content, you definitely don't want to share your archive folder publicly on a webserver.  You can set [`CHROME_USER_DATA_DIR`](https://github.com/pirate/ArchiveBox/wiki/Configuration#chrome_user_data_dir) and [`COOKIES_FILE`](https://github.com/pirate/ArchiveBox/wiki/Configuration#COOKIES_FILE) to enable authenticated Chrome and wget archiving respectively.
+If you're importing private links or authenticated content, you definitely don't want to share your archive folder publicly on a webserver.  You can set [`CHROME_USER_DATA_DIR`](https://github.com/pirate/ArchiveBox/wiki/Configuration#chrome_user_data_dir) and [`COOKIES_FILE`](https://github.com/pirate/ArchiveBox/wiki/Configuration#COOKIES_FILE) to enable authenticated Chrome and wget archiving respectively, and then point ArchiveBox to a safe output folder with conservative permissions.  You may also wish to encrypt the archive using an encrypted disk image or filesystem like ZFS as it will contain all requests and response data, including session keys, user data, usernames, etc.
 
 #### Extra Private Mode
 
