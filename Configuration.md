@@ -38,17 +38,27 @@ To see details on how to do configuration when using Docker, see the [[Docker]] 
 ---
 #### `OUTPUT_DIR`
 **Possible Values:** [`$REPO_DIR/output`]/`/srv/www/bookmarks`/...  
-Path to an output folder to store the archive in.  Defaults to `output/` in the root directory of the repository.
+Path to an output folder to store the archive in.  
+
+Defaults to `output/` in the root directory of the repository folder.
+
+*Note: ArchiveBox will create this folder if missing. If it already exists, make sure ArchiveBox has permission to write to it.*
 
 ---
 #### `OUTPUT_PERMISSIONS`
 **Possible Values:** [`755`]/`644`/...  
-Permissions to set the output directory and file contents to.
+Permissions to set the output directory and file contents to.  
+
+This is useful when running ArchiveBox inside Docker as root and you need to explicitly set the permissions to something that the users on the host can access.
 
 ---
 #### `ONLY_NEW`
 **Possible Values:** [`False`]/`True`  
-Download files for only newly added links when running the `./archive` command. By default ArchiveBox will go through all links in the index and download any missing files on every run, set this to `True` to only archive the fresh links added during this run without attempting to also update older archived links.
+Download files for only newly added links when running the `./archive` command.  
+
+By default, ArchiveBox will go through all links in the index and download any missing files on every run, set this to `True` to only archive the most recently added batch of links without attempting to also update older archived links.
+
+*Note: Regardless of how this is set, ArchiveBox will never re-download sites that have already succeeded previously. When this is `False` it only attempts to fix previous pages have missing archives, it does not re-archive pages that have already been archived. Set it to `True` only if you wish to skip repairing missing older archives on every run.*
 
 ---
 #### `TIMEOUT`
