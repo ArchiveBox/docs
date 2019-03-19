@@ -302,7 +302,7 @@ You can override the default behavior to search for any available bin by setting
 The chrome/chromium dependency is _optional_ and only required for screenshots, PDF, and DOM dump output, it can be safely ignored if those three methods are disabled.
 
 *Related options:*  
-[`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom)
+[`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_SANDBOX`](#chrome_sandbox)
 
 ---
 #### `WGET_BINARY`
