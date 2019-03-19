@@ -19,8 +19,7 @@ If you are not comfortable using 3rd-party endpoints during archiving, you shoul
  - `https://www.google.com/s2/favicons?domain={domain}` when [`FETCH_FAVICON`](https://github.com/pirate/ArchiveBox/wiki/Configuration#fetch_favicon) is `True`, the domains for each link are shared in order to get the favicon, but not the full URL
  - `https://web.archive.org/save/{url}` when [`SUBMIT_ARCHIVE_DOT_ORG`](https://github.com/pirate/ArchiveBox/wiki/Configuration#submit_archive_dot_org) is `True`, full URLs are submitted to the Wayback Machine for archiving, but no cookies or content from the local authenticated archive are shared
 
-Disabling these are highly recommended if you plan on archiving sites that use unique slugs access private content, e.g. Google docs, codimd notepads, etc.
-
+Disabling these are highly recommended if you plan on archiving any sites that use secret tokens in the URL to grant access to private content without authentication, e.g. Google docs, codimd notepads, etc.
 
 ## Output Folder
 
