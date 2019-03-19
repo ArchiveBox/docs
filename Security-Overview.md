@@ -1,6 +1,6 @@
 ## Security Model
 
-ArchiveBox has three common usage modes.
+ArchiveBox has three common usage modes outlined below.
 
 #### Public Mode [Default]
 
