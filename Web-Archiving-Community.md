@@ -1,6 +1,6 @@
 ▶️ *Just getting started and want to learn more about why Web Archiving is important? <br/> Check out this article: [On the Importance of Web Archiving](https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/).*
 
-Whether you want learn which organizations are the big players in the web archiving space, want to find a specific open source tool for your web archiving need, or just want to see where archivists hang out online, this page is my attempt at an index of the broader web archiving community.
+Whether you want to learn which organizations are the big players in the web archiving space, want to find a specific open source tool for your web archiving need, or just want to see where archivists hang out online, this page is my attempt at an index of the broader web archiving community.
 
 ## Contents
 
@@ -252,6 +252,7 @@ If any of these links are dead, you can find an archived version on https://arch
  - [Reddit r/datahoarder Discussion #2](https://www.reddit.com/r/DataHoarder/comments/6kepv6/bookmarkarchiver_now_supports_archiving_all_major/)
  - [Reddit r/datahoarder Discussion #3](https://www.reddit.com/r/DataHoarder/comments/apnud4/continually_archive_websites_and_keep_the_older/)
  - [Reddit r/datahoarder Discussion #4](https://www.reddit.com/r/DataHoarder/comments/azdhd9/archivebox_open_source_selfhosted_web_archive/)
+ - [Reddit r/datahoarder Discussion #5](https://www.reddit.com/r/DataHoarder/comments/b0o10h/archivebox_self_hosting_clone_of_archiveorg/)
  - [Recurse Center: The Joy of Computing](https://joy.recurse.com/posts/26-bookmark-archiver-your-own-self-hosted-way-back-machine)
  - [Korben.info Article](https://korben.info/archivebox-un-clone-darchive-org-et-de-la-wayback-machine-a-auto-heberger.html)
  - Twitter: [Python Trending](https://twitter.com/pythontrending/status/1092492387182628865), [PyCoder's Weekly](https://twitter.com/pycoders/status/1105803699799105536)
