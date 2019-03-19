@@ -215,10 +215,20 @@ Screenshot resolution in pixels width,height.
 ---
 #### `WGET_USER_AGENT`
 **Possible Values:** [`Wget/1.19.1`]/`"Mozilla/5.0 ..."`/...  
-User agent to use during wget downloads.  You can set this to impersonate a more common browser like Chrome or Firefox if you're experiences pages blocking unknown user agents.
+This is the user agent to use during wget archiving.  You can set this to impersonate a more common browser like Chrome or Firefox if you're getting blocked by servers for having an unknown/blacklisted user agent.
 
 *Related options:*  
-[`FETCH_WGET`](#fetch_wget), [`FETCH_WARC`](#fetch_warc), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`WGET_BINARY`](#wget_binary)
+[`FETCH_WGET`](#fetch_wget), [`FETCH_WARC`](#fetch_warc), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`WGET_BINARY`](#wget_binary), [`CHROME_USER_AGENT`](#chrome_user_agent)
+
+---
+#### `CHROME_USER_AGENT`
+**Possible Values:** [`"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/73.0.3683.75 Safari/537.36"`]/`"Mozilla/5.0 ..."`/...  
+
+This is the user agent to use during Chrome headless archiving.  If you're experiencing being blocked by many sites, you can set this to hide the `Headless` string that reveals to servers that you're using a headless browser.
+
+*Related options:*  
+[`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_BINARY`](#chrome_binary), [`WGET_USER_AGENT`](#wget_user_agent)
+
 
 ---
 ####  `GIT_DOMAINS`
