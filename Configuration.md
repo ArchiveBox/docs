@@ -116,7 +116,7 @@ By default ArchiveBox uses the title provided by the import file, but not all ty
 ---
 #### `FETCH_FAVICON`
 **Possible Values:** [`True`]/`False`  
-Fetch and save favicon for the URL from Google's public favicon service: `https://www.google.com/s2/favicons?domain={domain}`.  Set this to `FALSE` if you don't need favicons, but be aware all the links may show with spinners next to them in the index as the favicon is used as the status icon to confirm the archive process is complete for that URL.
+Fetch and save favicon for the URL from Google's public favicon service: `https://www.google.com/s2/favicons?domain={domain}`.  Set this to `FALSE` if you don't need favicons.
 
 *Related options:*  
 [`TEMPLATES_DIR`](#templates_dir), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CURL_BINARY`](#curl_binary)
