@@ -175,6 +175,8 @@ Random helpful utilities for web archiving, WARC creation and replay, and more..
  - https://en.archivarix.com download an archived page or entire site from the Wayback Machine
  - https://proofofexistence.com prove that a certain file existed at a given time using the blockchain
  - https://github.com/chfoo/warcat for merging, extracting, and verifying WARC files
+ - https://github.com/mozilla/readability tool for extracting article contents and text
+ - https://github.com/mholt/timeliner All your digital life on a single timeline, stored locally
  - [Sheetsee-Pocket](http://jlord.us/sheetsee-pocket/) project that provides a pretty auto-updating index of your Pocket links (without archiving them)
  - [Pocket -> IFTTT -> Dropbox](https://christopher.su/2013/saving-pocket-links-file-day-dropbox-ifttt-launchd/) Post by Christopher Su on his Pocket saving IFTTT recipie
  - http://squidman.net/squidman/index.html
