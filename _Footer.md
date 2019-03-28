@@ -1,5 +1,9 @@
 <div align="center">
 
+[✏️ Edit this page...](https://github.com/pirate/ArchiveBox/issues/new?assignees=&labels=&template=documentation_change.md&title=)
+
+<hr/>
+
 [Website](http://archivebox.io/) | [Github](https://github.com/pirate/ArchiveBox) | [Documentation (Github Wiki)](https://github.com/pirate/ArchiveBox/wiki) | [Demo](https://archive.sweeting.me)
 
 </div>
