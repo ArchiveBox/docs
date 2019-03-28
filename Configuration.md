@@ -387,7 +387,7 @@ FETCH_PDF=False
 
 3. Source your config file when you run your archive script:
 ```bash
-export "$(grep -v '^#' ~/.ArchiveBox.conf | xargs)"; ./archive https://example.com/rss/feed.xml
+export $(grep -v '^#' ~/.ArchiveBox.conf | xargs); ./archive https://example.com/rss/feed.xml
 ```
 
 Improving this process is on the roadmap, in future versions you'll be able to pass a config file directly to the archive command.
