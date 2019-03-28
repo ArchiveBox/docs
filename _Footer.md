@@ -1,6 +1,6 @@
 <div align="center">
 
-[✏️ Help improve our documentation...](https://github.com/pirate/ArchiveBox/issues/new?assignees=&labels=&template=documentation_change.md&title=) | [👨‍💻 Get Support](https://twitter.com/theSquashSH)
+[✏️ Help improve our documentation...](https://github.com/pirate/ArchiveBox/issues/new?assignees=&labels=&template=documentation_change.md&title=)
 
 </div>
 
