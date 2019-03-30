@@ -5,7 +5,10 @@
 <h1>ArchiveBox Documentation</h1>
 
 
-▶ **Join out our [community chat](http://webchat.freenode.net?channels=ArchiveBox&uio=d4) hosted on IRC freenode.net:`#ArchiveBox`!**
+💬 **Join out our [community chat](http://webchat.freenode.net?channels=ArchiveBox&uio=d4) hosted on IRC freenode.net:`#ArchiveBox`!**
+
+💡 **Check out our [community wiki](https://github.com/pirate/ArchiveBox/wiki/Web-Archiving-Community) to learn about other internet archiving software, initiatives, and organizations.**
+
 
 **Use the sidebar on the right to browse documentation topics ->**
 
