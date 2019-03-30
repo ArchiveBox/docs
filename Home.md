@@ -7,12 +7,16 @@
 
 ▶ **Join out our [community chat](http://webchat.freenode.net?channels=ArchiveBox&uio=d4) hosted on IRC freenode.net:`#ArchiveBox`!**
 
-If you need help or have a question, you can ask via IRC using the link above, open an [issue](https://github.com/pirate/ArchiveBox/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc), or reach out to me on [Twitter](https://github.com/theSquashSH).
-
-
 **Use the sidebar on the right to browse documentation topics ->**
 
 </div>
+
+---
+
+**If you need help or have a question, you can:**
+ - ask our community by joining the chat room using the link above
+ - open an [issue](https://github.com/pirate/ArchiveBox/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
+ - reach out to me on [Twitter](https://github.com/theSquashSH)
 
 ---
 
