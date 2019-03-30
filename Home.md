@@ -14,7 +14,7 @@
 ---
 
 **If you need help or have a question, you can:**
- - ask our community by joining the chat room using the link above
+ - ask our community by joining the ArchiveBox IRC [chat room](http://webchat.freenode.net?channels=ArchiveBox&uio=d4)
  - open an [issue](https://github.com/pirate/ArchiveBox/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
  - reach out to me on [Twitter](https://github.com/theSquashSH)
 
