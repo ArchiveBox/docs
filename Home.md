@@ -4,15 +4,16 @@
 
 <h1>ArchiveBox Documentation</h1>
 
+</div>
+
+---
 
 💬 **Join out our [community chat](http://webchat.freenode.net?channels=ArchiveBox&uio=d4) hosted on IRC freenode.net:`#ArchiveBox`!**
 
 💡 **See the [community wiki](https://github.com/pirate/ArchiveBox/wiki/Web-Archiving-Community) to learn about other archiving software and groups.**
 
 
-**Use the sidebar on the right to browse documentation topics ->**
-
-</div>
+📖 **Use the sidebar on the right to browse documentation topics ->**
 
 ---
 
