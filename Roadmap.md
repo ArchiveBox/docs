@@ -40,7 +40,7 @@ If you feel like contributing a PR, some of these tasks are pretty easy.  Feel f
 
 ArchiveBox is going to migrate towards this design spec over the next 6 months bit by bit as functionality gets implemented and refactors are released.
 
-**CLI:**
+**API:**
  - [`pip install archivebox`](#-pip-install-archivebox)
  - [`archivebox --version`](#-archivebox-version--version)
  - [`archivebox --help`](#-archivebox-help-h--help)
@@ -52,6 +52,8 @@ ArchiveBox is going to migrate towards this design spec over the next 6 months b
  - [`archivebox oneshot`](#-archivebox-oneshot)
  - [`archivebox server`](#-archivebox-server)
  - [`archivebox proxy`](#-archivebox-proxy)
+ - [`from archivebox import ...`](#api-for-normal-archivebox-usage)
+ - [`from archivebox.component import ...`](#api-for-all-useful-subcomponents)
 
 **Design:**
  - [Overview](#design)
@@ -259,14 +261,6 @@ Resume the update process from a specific URL timestamp.
 
 
 ### `$ archivebox server [--bind=0.0.0.0:8000]`
-```bash
-# WIP
-```
-
-## Experimental / Unfinished
-
-### `$ archivebox stats`
-Saves a `stats/` output folder containing a bunch of interesting information about the archive.  Everything from counters and success percentages, to a graph of all the relationships between urls.
 ```bash
 # WIP
 ```
