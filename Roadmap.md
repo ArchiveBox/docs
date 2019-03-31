@@ -11,31 +11,6 @@ If you feel like contributing a PR, some of these tasks are pretty easy.  Feel f
 
 ---
 
-### Major long-term changes
- - release **`pip`, `apt`, `pkg`, and `brew` packaged distributions** for installing ArchiveBox
- - add an **optional web GUI** for managing sources, adding new links, and viewing the archive
- - switch to django + **sqlite db with migrations system** & json/html export for managing archive schema changes and persistence
- - modularize internals to allow importing individual components
- - switch to sha256 of URL as unique link ID
- - support **storing multiple snapshots** of pages over time
- - support **custom user puppeteer scripts to run while archiving** (e.g. for expanding reddit threads, scrolling thread on twitter, etc)
- - support named collections of archived content with different user access permissions
- - support sharing archived assets via DHT + torrent / ipfs / ZeroNet / other sharing system
-
-### Smaller planned features
- - support pushing pages to multiple 3rd party services using ArchiveNow instead of just archive.org
- - body text extraction to markdown (using [fathom](https://hacks.mozilla.org/2017/04/fathom-a-framework-for-understanding-web-pages/)?)
- - featured image / thumbnail extraction
- - auto-tagging links based on important/frequent keywords in extracted text (like pocket)
- - automatic article summary paragraphs from extracted text with nlp summarization library
- - full-text search of extracted text with elasticsearch/elasticlunr/ag
- - download closed-caption subtitles from Youtube and other video sites for full-text indexing of video content
- - try pulling dead sites from archive.org and other sources if original is down (https://github.com/hartator/wayback-machine-downloader)
- - And more in the [issues list](https://github.com/pirate/ArchiveBox/issues/)...
-
-
-----
-
 # Planned Specification
 
 ArchiveBox is going to migrate towards this design spec over the next 6 months bit by bit as functionality gets implemented and refactors are released.
@@ -309,6 +284,8 @@ assets = media.extract('https://youtube.com/watch?v=example')
 oneshot('https://example.com', depth=2, out_dir='~/Desktop/example.com_archive')
 ```
 
+---
+
 ## Design
 
 The new design is based on a django app with management commands that perform each function above.  To an end user, it will appear to be a single cli application, and none of the django complexity will be exposed.  Django is used primarily because it allows for safe migrations of a sqlite database. As the schema gets updated in the future I don't want to break people's archives with every new version.  It also allows us to have the GUI server start with many safe defaults and share much of the same codebase with the CLI and library components, including maintaining the archive database and managing a worker pool.
@@ -424,3 +401,31 @@ services:
         volumes:
             - ./data/:/data
 ```
+
+---
+
+### Major long-term changes
+ - release **`pip`, `apt`, `pkg`, and `brew` packaged distributions** for installing ArchiveBox
+ - add an **optional web GUI** for managing sources, adding new links, and viewing the archive
+ - switch to django + **sqlite db with migrations system** & json/html export for managing archive schema changes and persistence
+ - modularize internals to allow importing individual components
+ - switch to sha256 of URL as unique link ID
+ - support **storing multiple snapshots** of pages over time
+ - support **custom user puppeteer scripts to run while archiving** (e.g. for expanding reddit threads, scrolling thread on twitter, etc)
+ - support named collections of archived content with different user access permissions
+ - support sharing archived assets via DHT + torrent / ipfs / ZeroNet / other sharing system
+
+### Smaller planned features
+ - support pushing pages to multiple 3rd party services using ArchiveNow instead of just archive.org
+ - body text extraction to markdown (using [fathom](https://hacks.mozilla.org/2017/04/fathom-a-framework-for-understanding-web-pages/)?)
+ - featured image / thumbnail extraction
+ - auto-tagging links based on important/frequent keywords in extracted text (like pocket)
+ - automatic article summary paragraphs from extracted text with nlp summarization library
+ - full-text search of extracted text with elasticsearch/elasticlunr/ag
+ - download closed-caption subtitles from Youtube and other video sites for full-text indexing of video content
+ - try pulling dead sites from archive.org and other sources if original is down (https://github.com/hartator/wayback-machine-downloader)
+ - And more in the [issues list](https://github.com/pirate/ArchiveBox/issues/)...
+
+---
+
+**IMPORTANT**: *Please don't work on any of these major long-term tasks without [contacting me first](https://nicksweeting.com/blog#Contact-Me), work is already in progress for many of these, and I may have to reject your PR if it doesn't align with the existing work!*
