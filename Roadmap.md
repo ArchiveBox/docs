@@ -40,9 +40,7 @@ If you feel like contributing a PR, some of these tasks are pretty easy.  Feel f
 
 ArchiveBox is going to migrate towards this design spec over the next 6 months bit by bit as functionality gets implemented and refactors are released.
 
-## CLI Usage
-
-**Reference:**
+**CLI:**
  - [`pip install archivebox`](#-pip-install-archivebox)
  - [`archivebox --version`](#-archivebox-version--version)
  - [`archivebox --help`](#-archivebox-help-h--help)
@@ -54,6 +52,16 @@ ArchiveBox is going to migrate towards this design spec over the next 6 months b
  - [`archivebox oneshot`](#-archivebox-oneshot)
  - [`archivebox server`](#-archivebox-server)
  - [`archivebox proxy`](#-archivebox-proxy)
+
+**Design:**
+ - [Overview](#design)
+ - [Dependencies](#dependencies)
+ - [Dependencies](#dependencies)
+ - [Code Layout](#code-folder-layout)
+ - [Data Layout](#collection-data-folder-layout)
+ - [Export Layout](#exported-folder-layout)
+
+## CLI Usage
 
 ### `$ pip install archivebox`
 ```bash
