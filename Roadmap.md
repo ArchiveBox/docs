@@ -42,6 +42,19 @@ ArchiveBox is going to migrate towards this design spec over the next 6 months b
 
 ## CLI Usage
 
+**Reference:**
+ - [`pip install archivebox`](#-pip-install-archivebox)
+ - [`archivebox --version`](#-archivebox-version--version)
+ - [`archivebox --help`](#-archivebox-help-h--help)
+ - [`archivebox init`](#-archivebox-init)
+ - [`archivebox add`](#-archivebox-add)
+ - [`archivebox subscribe`](#-archivebox-subscribe)
+ - [`archivebox config`](#-archivebox-config)
+ - [`archivebox update`](#-archivebox-update)
+ - [`archivebox oneshot`](#-archivebox-oneshot)
+ - [`archivebox server`](#-archivebox-server)
+ - [`archivebox proxy`](#-archivebox-proxy)
+
 ### `$ pip install archivebox`
 ```bash
 ...
