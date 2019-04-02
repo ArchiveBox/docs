@@ -27,6 +27,7 @@ ArchiveBox is going to migrate towards this design spec over the next 6 months b
  - [`archivebox oneshot`](#-archivebox-oneshot)
  - [`archivebox server`](#-archivebox-server)
  - [`archivebox proxy`](#-archivebox-proxy)
+ - [`archivebox shell`](#-archivebox-shell)
  - [`from archivebox import ...`](#api-for-normal-archivebox-usage)
  - [`from archivebox.component import ...`](#api-for-all-useful-subcomponents)
 
@@ -252,6 +253,19 @@ Save all traffic visited through the proxy to the archive.
 
 #### `--replay`
 Attempt to serve all pages visited through the proxy from the archive.
+
+### `$ archivebox shell`
+
+Drop into an ArchiveBox Django shell with access to all models and data.
+
+```bash
+$ archivebox shell                                                                                                                                                          
+Loaded archive data folder ~/example_collection...
+Python 3.7.2 (default, Feb 12 2019, 08:15:36)
+
+In [1]: url_to_archive = Link.objects.filter(is_archived=True).values_list('url', flat=True)
+...
+```
 
 ### `$ archivebox oneshot`
 Create a single URL archive folder with an index.json and index.html, and all the archive method outputs.  You can run this to archive single pages without needing to create a whole collection with `archivebox init`.
