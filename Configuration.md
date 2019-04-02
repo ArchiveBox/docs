@@ -100,6 +100,15 @@ Some text to display in the footer of the archive index.  Useful for providing s
 [`TEMPLATES_DIR`](#templates_dir)
 
 ---
+#### `URL_BLACKLIST`
+**Possible Values:** [`None`]/`".*\.exe$"`/`"((.+\.)?youtube\.com)|(amazon\.com)'...  
+
+A regex expression used to exclude certain URLs from the archive.  You can use if there are certain domains, extensions, or other URL patterns that you want to ignore whenever they get imported.  Blacklisted URLs wont be included in the index, and their page content wont be archived.
+
+*Related options:*  
+[`FETCH_MEDIA`](#FETCH_MEDIA), [`FETCH_GIT`](#FETCH_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
+
+---
 
 ## Archive Method Toggles
 
