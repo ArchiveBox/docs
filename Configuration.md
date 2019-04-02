@@ -101,9 +101,18 @@ Some text to display in the footer of the archive index.  Useful for providing s
 
 ---
 #### `URL_BLACKLIST`
-**Possible Values:** [`None`]/`.*\.exe$`/`(youtube\.com)|(amazon\.com)'`/...  
+**Possible Values:** [`None`]/`.+\.exe$`/`http(s)?:\/\/(.+)?(ebay\.com)|(amazon\.com)\/.*'`/...  
 
 A regex expression used to exclude certain URLs from the archive.  You can use if there are certain domains, extensions, or other URL patterns that you want to ignore whenever they get imported.  Blacklisted URLs wont be included in the index, and their page content wont be archived.
+
+When building your blacklist, you can check whether a given URL matches your regex expression like so:
+```python
+>>>import re
+>>>URL_BLACKLIST = r'http(s)?:\/\/(.+)?(youtube\.com)|(amazon\.com)\/.*'  # replace this with your regex to test
+>>>test_url = 'https://test.youtube.com/example.php?abc=123'
+>>>bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match(test_url))
+True
+```
 
 *Related options:*  
 [`FETCH_MEDIA`](#FETCH_MEDIA), [`FETCH_GIT`](#FETCH_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
