@@ -101,7 +101,7 @@ Some text to display in the footer of the archive index.  Useful for providing s
 
 ---
 #### `URL_BLACKLIST`
-**Possible Values:** [`None`]/`.+\.exe$`/`http(s)?:\/\/(.+)?(ebay\.com)|(amazon\.com)\/.*'`/...  
+**Possible Values:** [`None`]/`.+\.exe$`/`http(s)?:\/\/(.+)?example.com\/.*'`/...  
 
 A regex expression used to exclude certain URLs from the archive.  You can use if there are certain domains, extensions, or other URL patterns that you want to ignore whenever they get imported.  Blacklisted URLs wont be included in the index, and their page content wont be archived.
 
