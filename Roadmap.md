@@ -280,7 +280,11 @@ timestamp,url
 1554263415.2,https://archivebox.io
 ```
 
-### `$ archivebox server [--bind=0.0.0.0:8000]`
+### `$ archivebox server`
+
+#### `--bind=[ip:port]`
+The address:port combo to run the server on, defaults to `127.0.0.1:8012`.
+
 ```bash
 # WIP
 ```
