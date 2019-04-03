@@ -246,15 +246,15 @@ Resume the update process from a specific URL timestamp.
 
 Print the output in CSV format, with the specified columns, e.g. `--csv=timestamp,base_url,is_archived`
 
-### `--json`
+#### `--json`
 
 Print the output in JSON format (with all the link attributes included in the JSON output).
 
-### `--filter=REGEX`
+#### `--filter=REGEX`
 
 Print only URLs matching a specified regex, e.g. `--filter='.*github.com.*'`
 
-### `--before=TIMESTAMP` / `--after=TIMESTAMP`
+#### `--before=TIMESTAMP` / `--after=TIMESTAMP`
 
 Print only URLs before or after a given timestamp, e.g. `--before=1554263415.2` or `--after=1554260000`
 
