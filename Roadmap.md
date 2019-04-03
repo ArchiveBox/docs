@@ -236,7 +236,7 @@ Resume the update process from a specific URL timestamp.
 #### `--snapshot`
 [TODO] by default ArchiveBox never re-archives pages after the first successful archive, if you want to take a new snapshot of every page even if there's an existing version, pass this option.
 
-### `$ archivebox list [--csv=COLUMNS] [--json] [--filter=REGEX] [--before=TIMESTAMP] [--after=TIMESTAMP]`
+### `$ archivebox list`
 
 #### `--csv=COLUMNS`
 
