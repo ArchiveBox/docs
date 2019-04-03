@@ -269,6 +269,8 @@ Cookies file to pass to wget.  To capture sites that require a user to be logged
 **Possible Values:** [`~/.config/google-chrome`]/`/tmp/chrome-profile`/...  
 Path to a Chrome user profile directory.  To capture sites that require a user to be logged in, you can specify a path to a chrome user profile (which loads the cookies needed for the user to be logged in).  If you don't have an existing Chrome profile, create one with `chromium-browser --user-data-dir=/tmp/chrome-profile`, and log into the sites you need.  Then set `CHROME_USER_DATA_DIR=/tmp/chrome-profile` to make ArchiveBox use that profile.  
 
+*Note: Make sure the path does not have `Default` at the end (it should the the parent folder of `Default`), e.g. set it to `CHROME_USER_DATA_DIR=~/.config/chromium` and not `CHROME_USER_DATA_DIR=~/.config/chromium/Default`.* 
+
 By default when set to `None`, ArchiveBox tries all the following User Data Dir paths in order:  
 https://chromium.googlesource.com/chromium/src/+/HEAD/docs/user_data_dir.md
 
