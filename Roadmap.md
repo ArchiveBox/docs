@@ -17,8 +17,8 @@ ArchiveBox is going to migrate towards this design spec over the next 6 months b
 
 **API:**
  - [`pip install archivebox`](#-pip-install-archivebox)
- - [`archivebox --version`](#-archivebox-version--version)
- - [`archivebox --help`](#-archivebox-help-h--help)
+ - [`archivebox version`](#-archivebox-version--version)
+ - [`archivebox help`](#-archivebox-help-h--help)
  - [`archivebox init`](#-archivebox-init)
  - [`archivebox add`](#-archivebox-add)
  - [`archivebox subscribe`](#-archivebox-subscribe)
