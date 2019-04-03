@@ -24,6 +24,7 @@ ArchiveBox is going to migrate towards this design spec over the next 6 months b
  - [`archivebox subscribe`](#-archivebox-subscribe)
  - [`archivebox config`](#-archivebox-config)
  - [`archivebox update`](#-archivebox-update)
+ - [`archivebox list`](#-archivebox-list)
  - [`archivebox oneshot`](#-archivebox-oneshot)
  - [`archivebox server`](#-archivebox-server)
  - [`archivebox proxy`](#-archivebox-proxy)
