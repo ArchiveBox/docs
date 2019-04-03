@@ -130,8 +130,8 @@ Initialize a new "collection" folder, aka a complete archive containing an Archi
 
 ### `$ archivebox add`
 
-#### `--skip=[existing|none]`
-Controls whether to skip links that have been previously archived. To re-archive links and take a new snapshot every time they're added, pass `none`.
+#### `--only-new`
+Controls whether to only add new links or also retry previously failed/skipped links.
 
 #### `--mirror`
 Archive an entire site (finding all linked pages below it on the same domain)
@@ -226,8 +226,8 @@ USE_CHROME=False
 #### `(no args)`
 Update the index and go through each page, retrying any that failed previously.
 
-#### `--skip=[none|existing]`
-By default it always retries previously failed pages, set this to `existing` to only archive newly added links.
+#### `--only-new`
+By default it always retries previously failed/skipped pages, pass this flag to only archive newly added links without going through the whole archive and attempting to fix previously failed links.
 
 #### `--resume=[timestamp]`
 Resume the update process from a specific URL timestamp.
@@ -235,6 +235,49 @@ Resume the update process from a specific URL timestamp.
 #### `--snapshot`
 [TODO] by default ArchiveBox never re-archives pages after the first successful archive, if you want to take a new snapshot of every page even if there's an existing version, pass this option.
 
+### `$ archivebox list [--csv=COLUMNS] [--json] [--filter=REGEX] [--before=TIMESTAMP] [--after=TIMESTAMP]`
+
+#### `--csv=COLUMNS`
+
+Print the output in CSV format, with the specified columns, e.g. `--csv=timestamp,base_url,is_archived`
+
+### `--json`
+
+Print the output in JSON format (with all the link attributes included in the JSON output).
+
+### `--filter=REGEX`
+
+Print only URLs matching a specified regex, e.g. `--filter='.*github.com.*'`
+
+### `--before=TIMESTAMP` / `--after=TIMESTAMP`
+
+Print only URLs before or after a given timestamp, e.g. `--before=1554263415.2` or `--after=1554260000`
+
+```bash
+$ archivebox list --sort=timestamp
+http://www.iana.org/domains/example
+https://github.com/pirate/ArchiveBox/wiki
+https://github.com/pirate/ArchiveBox/commit/0.4.0
+https://github.com/pirate/ArchiveBox
+https://archivebox.io
+```
+```bash
+$ archivebox list --sort=timestamp --csv=timestamp,url
+timestamp,url
+1554260947,http://www.iana.org/domains/example
+1554263415,https://github.com/pirate/ArchiveBox/wiki
+1554263415.0,https://github.com/pirate/ArchiveBox/commit/0.4.0
+1554263415.1,https://github.com/pirate/ArchiveBox
+1554263415.2,https://archivebox.io
+```
+```bash
+$ archivebox list --sort=timestamp --csv=timestamp,url --after=1554263415.0
+timestamp,url
+1554263415,https://github.com/pirate/ArchiveBox/wiki
+1554263415.0,https://github.com/pirate/ArchiveBox/commit/0.4.0
+1554263415.1,https://github.com/pirate/ArchiveBox
+1554263415.2,https://archivebox.io
+```
 
 ### `$ archivebox server [--bind=0.0.0.0:8000]`
 ```bash
