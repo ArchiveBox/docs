@@ -1,8 +1,8 @@
 [![](https://i.imgur.com/PVO88AZ.png)](Home)
 
-<p align="center">
+<!--<p align="center">
 <a href="http://webchat.freenode.net?channels=ArchiveBox&uio=d4"><img src="https://img.shields.io/badge/Community_Chat-IRC-%2328A745.svg"/></a>
-</p>
+</p>-->
 
 # Getting Started
 
