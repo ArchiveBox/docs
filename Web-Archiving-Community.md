@@ -1,6 +1,6 @@
 <div align="center">
 
-💬 **Join the [`#ArchiveBox` channel](http://webchat.freenode.net?channels=ArchiveBox&uio=d4) via IRC on [FreeNode.net](http://webchat.freenode.net?channels=ArchiveBox&uio=d4) to chat with us!**
+<!--💬 **Join the [`#ArchiveBox` channel](http://webchat.freenode.net?channels=ArchiveBox&uio=d4) via IRC on [FreeNode.net](http://webchat.freenode.net?channels=ArchiveBox&uio=d4) to chat with us!**-->
 
 🔢 **Just getting started and want to learn more about why Web Archiving is important? <br/> Check out this article: [On the Importance of Web Archiving](https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/).**
 
