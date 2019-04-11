@@ -284,6 +284,57 @@ timestamp,url
 1554263415.2,https://archivebox.io
 ```
 
+### `$ archivebox remove`
+
+#### `--yes`
+
+Proceed with removal without prompting the user for confirmation.
+
+#### `--delete`
+
+Also delete all the matching links snapshot data folders and content files.
+
+#### `--filter-type`
+
+Defaults to `exact`, but can be set to any of `exact`, `substring`, `domain`, or `regex`.
+
+#### `pattern`
+
+The filter pattern used to match links in the index.  Matching links are removed.
+
+#### `--before=TIMESTAMP` / `--after=TIMESTAMP`
+
+Remove any URLs bookmarked before/after the given timestamp, e.g. `--before=1554263415.2` or `--after=1554260000`.
+
+```bash
+$ archivebox remove --delete --filter-type=regex 'http(s)?:\\/\\/(.+)?(demo\\.dev|example\\.com)\\/?.*'
+[*] Finding links in the archive index matching these regex patterns:
+    http(s)?:\/\/(.+)?(youtube\.com|example\.com)\/?.*
+
+---------------------------------------------------------------------------------------------------
+timestamp        | is_archived      | num_outputs      | url
+"1554984695"     | true             | 7                | "https://example.com"
+---------------------------------------------------------------------------------------------------
+
+[i] Found 1 matching URLs to remove.
+    1 Links will be de-listed from the main index, and their archived content folders will be deleted from disk.
+    (1 data folders with 7 archived files will be deleted!)
+
+[?] Do you want to proceed with removing these 1 links?
+    y/[n]: y
+
+[*] [2019-04-11 08:11:57] Saving main index files...
+    √ /opt/ArchiveBox/data/index.json
+    √ /opt/ArchiveBox/data/index.html
+
+[√] Removed 1 out of 1 links from the archive index.
+    Index now contains 0 links.
+```
+```bash
+$ archivebox remove --yes --delete --filter-type=domain example.com
+...
+```
+
 ### `$ archivebox server`
 
 #### `--bind=[ip:port]`
