@@ -25,6 +25,7 @@ To see how much of this spec is scheduled / implemented / released so far, read 
  - [`archivebox help`](#-archivebox-help-h--help)
  - [`archivebox init`](#-archivebox-init)
  - [`archivebox add`](#-archivebox-add)
+ - [`archivebox remove`](#-archivebox-remove)
  - [`archivebox subscribe`](#-archivebox-subscribe)
  - [`archivebox config`](#-archivebox-config)
  - [`archivebox update`](#-archivebox-update)
