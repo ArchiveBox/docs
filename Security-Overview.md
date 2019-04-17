@@ -34,7 +34,7 @@ If you want ArchiveBox to be less noisy and avoid leaking any URLs to 3rd-party 
 <img src="https://i.imgur.com/yDqJc4I.jpg" width="150px" align="right">
 
 Do not run ArchiveBox as root for a number of reasons:
- - Chrome will execute as root and fail to run because Chrome sandboxing is not supported as root for good reason (do not set `CHROME_SANDBOX=False` just to bypass that error!)
+ - Chrome will execute as root and fail immediately because Chrome sandboxing is pointless when the data directory is opened as root (do not set `CHROME_SANDBOX=False` just to bypass that error!)
  - All dependencies will be run as root, if any of them have a vulnerability that's exploited by sites you're archiving you're opening yourself up to full system compromise
  - ArchiveBox does lots of HTML parsing, filesystem access, and shell command execution.  A bug in any one of those subsystems could potentially lead to deleted/damaged data on your hard drive, or full system compromise unless restricted to a user that only has permissions to access the directories needed
  - Do you really trust a project created by a Github user called `@pirate` 😉? Why give a random program off the internet root access to your entire system? (I don't have malicious intent, I'm just saying in principle you should not be running random Github projects as root)
