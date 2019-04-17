@@ -163,6 +163,8 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - **[Shaarchiver](https://github.com/nodiscc/shaarchiver) very similar project that archives Firefox, Shaarli, or Delicious bookmarks and all linked media, generating a markdown/HTML index**
  - **[Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline**
  - **[Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content**
+ - **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support**
+ - 
  - [ReadableWebProxy](https://github.com/fake-name/ReadableWebProxy) A proxying archiver that downloads content from sites and can snapshot multiple versions of sites over time
  - [Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a browser extension that saves all your history and does full-text search
  - [Perkeep](https://perkeep.org/) "Perkeep lets you permanently keep your stuff, for life."
@@ -224,6 +226,7 @@ A collection of blog posts and articles about internet archiving, contact me / o
 
 ### Articles
  - https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/
+ - http://www.bbc.com/future/story/20190401-why-theres-so-little-left-of-the-early-internet
  - https://sr.ithaka.org/publications/the-state-of-digital-preservation-in-2018/
  - https://gizmodo.com/delete-never-the-digital-hoarders-who-collect-tumblrs-1832900423
  - https://siarchives.si.edu/blog/we-are-not-alone-progress-digital-preservation-community
