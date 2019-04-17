@@ -49,6 +49,8 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
  - **[The Awesome Web Archiving List](https://github.com/iipc/awesome-web-archiving) (IIPC)**  
  - **[Wiki of Web Archiving Tools](http://coptr.digipres.org/Category:Tools) (COPTR)**  
+ - [Awesome Web Crawling Tools](https://github.com/BruceDone/awesome-crawler)
+ - [Awesome Web Scraping Tools](https://github.com/duyetdev/awesome-web-scraper)
  - [ArchiveTeam's List of Software](https://www.archiveteam.org/index.php?title=Software) (ArchiveTeam.org)  
  - [List of Web Archiving Initiatives](https://en.wikipedia.org/wiki/List_of_Web_archiving_initiatives) (Wikipedia.org)  
  - [Directory of Archiving Organizations](https://www2.archivists.org/assoc-orgs) (American Society of Archivists)  
