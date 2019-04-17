@@ -159,9 +159,9 @@ Indexes of archiving institutions and software maintained by other people.  If t
 ---
 
 ### Other ArchiveBox Alternatives
- - **[Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a browser extension that archives all history with full-text search, annotation support, and more**
+ - **[Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a beautiful, user-friendly browser extension that archives all history with full-text search, annotation support, and more**
  - **[Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content**
- - **[Reminiscence](https://github.com/kanishka-linux/reminiscence/) extremely similar to ArchiveBox, uses a Django backend + UI and provides auto tagging and summary features with NLTK**
+ - **[Reminiscence](https://github.com/kanishka-linux/reminiscence/) extremely similar to ArchiveBox, uses a Django backend + UI and provides auto-tagging and summary features with NLTK**
  - **[Shaarchiver](https://github.com/nodiscc/shaarchiver) very similar project that archives Firefox, Shaarli, or Delicious bookmarks and all linked media, generating a markdown/HTML index**
  - **[Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline**
  - **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support**
@@ -189,7 +189,7 @@ Random helpful utilities for web archiving, WARC creation and replay, and more..
  - https://github.com/mozilla/readability tool for extracting article contents and text
  - https://github.com/mholt/timeliner All your digital life on a single timeline, stored locally
  - [Sheetsee-Pocket](http://jlord.us/sheetsee-pocket/) project that provides a pretty auto-updating index of your Pocket links (without archiving them)
- - [Pocket -> IFTTT -> Dropbox](https://christopher.su/2013/saving-pocket-links-file-day-dropbox-ifttt-launchd/) Post by Christopher Su on his Pocket saving IFTTT recipie
+ - [Pocket -> IFTTT -> Dropbox](https://christopher.su/2013/saving-pocket-links-file-day-dropbox-ifttt-launchd/) Post by Christopher Su on his Pocket saving IFTTT recipe
  - http://squidman.net/squidman/index.html
  - https://wordpress.org/plugins/broken-link-checker/
  - https://github.com/ArchiveTeam/wpull
