@@ -190,6 +190,7 @@ Random helpful utilities for web archiving, WARC creation and replay, and more..
  - https://github.com/chfoo/warcat for merging, extracting, and verifying WARC files
  - https://github.com/mozilla/readability tool for extracting article contents and text
  - https://github.com/mholt/timeliner All your digital life on a single timeline, stored locally
+ - https://github.com/wkhtmltopdf/wkhtmltopdf Webkit HTML to PDF archiver/saver
  - [Sheetsee-Pocket](http://jlord.us/sheetsee-pocket/) project that provides a pretty auto-updating index of your Pocket links (without archiving them)
  - [Pocket -> IFTTT -> Dropbox](https://christopher.su/2013/saving-pocket-links-file-day-dropbox-ifttt-launchd/) Post by Christopher Su on his Pocket saving IFTTT recipe
  - http://squidman.net/squidman/index.html
@@ -258,7 +259,7 @@ If any of these links are dead, you can find an archived version on https://arch
  - **Aggregators:**  
    **[ProductHunt](https://www.producthunt.com/posts/archivebox)**, **[AlternativeTo](https://alternativeto.net/software/archivebox/)**, [SteemHunt](https://steemhunt.com/@adnan556644/archivebox-the-open-source-self-hosted-internet-archiving-solution), [Recurse Center: The Joy of Computing](https://joy.recurse.com/posts/224-archivebox), [Github Changelog](https://changelog.com/news/archivebox-opensource-selfhosted-web-archive-6D0d), [Dev.To Ultra List](https://dev.to/teamxenox/-ultra-list-one-list-to-rule-them-all-march-19-4p4f), [O'Reilly 4 Short Links](https://www.oreilly.com/ideas/four-short-links-15-april-2019), [JaxEnter](https://jaxenter.com/github-trending-march-2019-157470.html)
  - **Blog Posts & Podcasts:**  
-   [Korben.info](https://korben.info/archivebox-un-clone-darchive-org-et-de-la-wayback-machine-a-auto-heberger.html), [Defining Desktop Linux Podcast (0:53:00)](https://linuxunplugged.com/296), [Schrankmonster.de](https://www.schrankmonster.de/2019/04/10/archive-your-slice-of-the-web/), [La Ferme Du Web](https://www.lafermeduweb.net/veille/archivebox-archivez-des-copies-de-sites-en-local-avec-tous-les-medias-lies)
+   [Korben.info](https://korben.info/archivebox-un-clone-darchive-org-et-de-la-wayback-machine-a-auto-heberger.html), [Defining Desktop Linux Podcast (0:55:00)](https://linuxunplugged.com/296), [Schrankmonster.de](https://www.schrankmonster.de/2019/04/10/archive-your-slice-of-the-web/), [La Ferme Du Web](https://www.lafermeduweb.net/veille/archivebox-archivez-des-copies-de-sites-en-local-avec-tous-les-medias-lies)
  - **Hacker News:**  
    [#1](https://news.ycombinator.com/item?id=14272133), [#2](https://news.ycombinator.com/item?id=18728546), [#3](https://news.ycombinator.com/item?id=18876685), **[#4](https://news.ycombinator.com/item?id=19346985)**
  - **Reddit r/DataHoarder**:  
