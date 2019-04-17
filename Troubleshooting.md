@@ -2,7 +2,7 @@
 
 What are you having an issue with?:
 
-- [Installing](#Dependencies)
+- [Installing](#Installing)
 - [Configuration](https://github.com/pirate/ArchiveBox/wiki/Configuration)
 - [Archiving Process](#Archiving)
 - [Hosting the Archive](#Hosting-the-Archive)
