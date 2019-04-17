@@ -47,8 +47,8 @@ Whether you want to learn which organizations are the big players in the web arc
 
 Indexes of archiving institutions and software maintained by other people.  If there's anything archivists love doing, it's making lists.
 
- - **[The Awesome Web Archiving List](https://github.com/iipc/awesome-web-archiving) (IIPC)**  
- - **[Wiki of Web Archiving Tools](http://coptr.digipres.org/Category:Tools) (COPTR)**  
+ - **[COPTR Wiki of Web Archiving Tools](http://coptr.digipres.org/Category:Tools) (COPTR)**  
+ - **[Awesome Web Archiving Tools](https://github.com/iipc/awesome-web-archiving) (IIPC)**  
  - [Awesome Web Crawling Tools](https://github.com/BruceDone/awesome-crawler)
  - [Awesome Web Scraping Tools](https://github.com/duyetdev/awesome-web-scraper)
  - [ArchiveTeam's List of Software](https://www.archiveteam.org/index.php?title=Software) (ArchiveTeam.org)  
