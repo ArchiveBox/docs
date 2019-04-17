@@ -23,13 +23,8 @@ If you want ArchiveBox to be less noisy and avoid leaking any URLs to 3rd-party 
  - `https://web.archive.org/save/{url}` when [`SUBMIT_ARCHIVE_DOT_ORG`](https://github.com/pirate/ArchiveBox/wiki/Configuration#submit_archive_dot_org) is `True`, full URLs are submitted to the Wayback Machine for archiving, but no cookies or content from the local authenticated archive are shared
  - `https://www.google.com/s2/favicons?domain={domain}` when [`FETCH_FAVICON`](https://github.com/pirate/ArchiveBox/wiki/Configuration#fetch_favicon) is `True`, the domains for each link are shared in order to get the favicon, but not the full URL
 
-## Output Folder
+### Do not run as root
 
-### Permissions
-
-What are the permissions on the archive folder? Limit access to the fewest possible users by checking folder ownership and setting [`OUTPUT_PERMISSIONS`](https://github.com/pirate/ArchiveBox/wiki/Configuration#OUTPUT_PERMISSIONS) accordingly.
-
-#### Do not run as root
 Do not run ArchiveBox as root for a number of reasons:
  - Chrome will execute as root and fail to run because Chrome sandboxing is not supported as root for good reason (do not set `CHROME_SANDBOX=False` just to bypass that error!)
  - All dependencies will be run as root, if any of them have a vulnerability that's exploited by sites you're archiving you're opening yourself up to full system compromise
@@ -44,6 +39,12 @@ chown -R archivebox:archivebox /home/archivebox
 ...
 sudo -u archivebox ./archive ...
 ```
+
+## Output Folder
+
+### Permissions
+
+What are the permissions on the archive folder? Limit access to the fewest possible users by checking folder ownership and setting [`OUTPUT_PERMISSIONS`](https://github.com/pirate/ArchiveBox/wiki/Configuration#OUTPUT_PERMISSIONS) accordingly.
 
 ### Filesystem
 
