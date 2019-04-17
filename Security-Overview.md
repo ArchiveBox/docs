@@ -1,12 +1,18 @@
+<img src="https://i.imgur.com/ca1he6I.png" width="50px" align="right"/>
+
 ## Security Model
 
 ArchiveBox has three common usage modes outlined below.
+
+<img src="https://i.imgur.com/K3dZcjG.png" width="50px" align="right"/>
 
 #### Public Mode [Default]
 
 This is the default (lax) mode, intended for archiving public (non-secret) URLs without authenticating the headless browser.  This is the mode used if you're archiving news articles, audio, video, etc. browser bookmarks to a folder published on your webserver. This allows you to access and link to content on `http://your.archive.com/archive...` after the originals go down.
 
 This mode should not be used for archiving entire browser history or authenticated private content like Google Docs, paywalled content, invite-only subreddits, etc.
+
+<img src="https://i.imgur.com/xg6TxoK.png" width="50px" align="right"/>
 
 #### Private Mode
 
@@ -15,6 +21,8 @@ ArchiveBox is designed to be able to archive content that requires authenticatio
 To get started, set [`CHROME_USER_DATA_DIR`](https://github.com/pirate/ArchiveBox/wiki/Configuration#chrome_user_data_dir) and [`COOKIES_FILE`](https://github.com/pirate/ArchiveBox/wiki/Configuration#COOKIES_FILE) to point to a Chrome user folder that has your sessions and a wget `cookies.txt` file respectively.
 
 If you're importing private links or authenticated content, you probably don't want to share your archive folder publicly on a webserver, so don't follow the [[Publishing Your Archive]] instructions unless you are only serving it on a trusted LAN or have some sort of authentication in front of it.  Make sure to point ArchiveBox to an output folder with conservative permissions, as it may contain archived content with secret session tokens or pieces of your user data.  You may also wish to encrypt the archive using an encrypted disk image or filesystem like ZFS as it will contain all requests and response data, including session keys, user data, usernames, etc.
+
+<img src="https://i.imgur.com/DfyQUDV.png" width="50px" align="right"/>
 
 #### Stealth Mode
 
