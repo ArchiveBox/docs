@@ -225,7 +225,7 @@ A collection of blog posts and articles about internet archiving, contact me / o
 
 ### Articles
  - https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/
- - http://www.bbc.com/future/story/20190401-why-theres-so-little-left-of-the-early-internet
+ - https://www.bbc.com/future/story/20190401-why-theres-so-little-left-of-the-early-internet
  - https://sr.ithaka.org/publications/the-state-of-digital-preservation-in-2018/
  - https://gizmodo.com/delete-never-the-digital-hoarders-who-collect-tumblrs-1832900423
  - https://siarchives.si.edu/blog/we-are-not-alone-progress-digital-preservation-community
