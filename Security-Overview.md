@@ -33,8 +33,17 @@ What are the permissions on the archive folder? Limit access to the fewest possi
 Do not run ArchiveBox as root for a number of reasons:
  - Chrome will execute as root and fail to run because Chrome sandboxing is not supported as root for good reason (do not set `CHROME_SANDBOX=False` just to bypass that error!)
  - All dependencies will be run as root, if any of them have a vulnerability that's exploited by sites you're archiving you're opening yourself up to full system compromise
- - ArchiveBox does lots of HTML parsing, filesystem access, and shell command execution.  A bug in any one of those subsystems could potentially lead to full system compromise unless restricted to a user that only has permissions to access the directories needed
+ - ArchiveBox does lots of HTML parsing, filesystem access, and shell command execution.  A bug in any one of those subsystems could potentially lead to deleted/damaged data on your hard drive, or full system compromise unless restricted to a user that only has permissions to access the directories needed
  - Do you really trust a project created by a Github user called `@pirate` 😉? Why give a random program off the internet root access to your entire system? (I don't have malicious intent, I'm just saying in principle you should not be running random Github projects as root)
+
+**Instead, you should run ArchiveBox as your normal user, or create a user with less privileged access:**
+```bash
+useradd -r -g archivebox -G audio,video archivebox
+mkdir -p /home/archivebox/data
+chown -R archivebox:archivebox /home/archivebox
+...
+sudo -u archivebox ./archive ...
+```
 
 ### Filesystem
 
