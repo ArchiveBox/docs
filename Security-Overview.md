@@ -1,5 +1,3 @@
-<img src="https://i.imgur.com/ca1he6I.png" width="40px" align="right"/>
-
 ## Usage Modes
 
 ArchiveBox has three common usage modes outlined below.
@@ -49,6 +47,8 @@ chown -R archivebox:archivebox /home/archivebox
 ...
 sudo -u archivebox ./archive ...
 ```
+
+<img src="https://i.imgur.com/ca1he6I.png" width="40px" align="right"/>
 
 ## Output Folder
 
