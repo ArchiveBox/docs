@@ -23,7 +23,7 @@ If you want ArchiveBox to be less noisy and avoid leaking any URLs to 3rd-party 
  - `https://web.archive.org/save/{url}` when [`SUBMIT_ARCHIVE_DOT_ORG`](https://github.com/pirate/ArchiveBox/wiki/Configuration#submit_archive_dot_org) is `True`, full URLs are submitted to the Wayback Machine for archiving, but no cookies or content from the local authenticated archive are shared
  - `https://www.google.com/s2/favicons?domain={domain}` when [`FETCH_FAVICON`](https://github.com/pirate/ArchiveBox/wiki/Configuration#fetch_favicon) is `True`, the domains for each link are shared in order to get the favicon, but not the full URL
 
-### Do not run as root
+## Do not run as root
 
 Do not run ArchiveBox as root for a number of reasons:
  - Chrome will execute as root and fail to run because Chrome sandboxing is not supported as root for good reason (do not set `CHROME_SANDBOX=False` just to bypass that error!)
