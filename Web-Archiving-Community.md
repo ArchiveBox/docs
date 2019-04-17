@@ -159,13 +159,13 @@ Indexes of archiving institutions and software maintained by other people.  If t
 ---
 
 ### Other ArchiveBox Alternatives
+ - **[Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a browser extension that archives all history with full-text search, annotation support, and more**
+ - **[Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content**
  - **[Reminiscence](https://github.com/kanishka-linux/reminiscence/) extremely similar to ArchiveBox, uses a Django backend + UI and provides auto tagging and summary features with NLTK**
  - **[Shaarchiver](https://github.com/nodiscc/shaarchiver) very similar project that archives Firefox, Shaarli, or Delicious bookmarks and all linked media, generating a markdown/HTML index**
  - **[Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline**
- - **[Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content**
  - **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support**
  - [ReadableWebProxy](https://github.com/fake-name/ReadableWebProxy) A proxying archiver that downloads content from sites and can snapshot multiple versions of sites over time
- - [Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a browser extension that saves all your history and does full-text search
  - [Perkeep](https://perkeep.org/) "Perkeep lets you permanently keep your stuff, for life."
  - [Fetching.io](http://fetching.io/) A personal search engine/archiver that lets you search through all archived websites that you've bookmarked
  - [Fossilo](https://www.fossilo.com/) A commercial archiving solution that appears to be very similar to ArchiveBox
