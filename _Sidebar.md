@@ -28,6 +28,7 @@
  - [[Changelog]]
  - [[Donations]]
  - [Background & Motivation](https://github.com/pirate/ArchiveBox#background--motivation)
+ - [Comparison to Other Tools](https://github.com/pirate/ArchiveBox#comparison-to-other-projects)
  - [[Web Archiving Community]]
 
 ---
