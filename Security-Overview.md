@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/ca1he6I.png" width="50px" align="right"/>
+<img src="https://i.imgur.com/ca1he6I.png" width="40px" align="right"/>
 
 ## Usage Modes
 
