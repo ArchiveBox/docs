@@ -406,12 +406,12 @@ oneshot('https://example.com', depth=2, out_dir='~/Desktop/example.com_archive')
 
 ## Design
 
-The new design is based on a django app with management commands that perform each function above.  To an end user, it will appear to be a single cli application, and none of the django complexity will be exposed.  Django is used primarily because it allows for safe migrations of a sqlite database. As the schema gets updated in the future I don't want to break people's archives with every new version.  It also allows us to have the GUI server start with many safe defaults and share much of the same codebase with the CLI and library components, including maintaining the archive database and managing a worker pool.
+As of v0.4.0 ArchiveBox also writes the index to a `sqlite3` file using the Django ORM (in addition to the usual `json` and `html` formats, those aren't going away).  To an end user, it will still appear to be a single CLI application, and none of the django complexity will be exposed.  Django is used primarily because it allows for safe migrations of a sqlite database. As the schema gets updated in the future I don't want to break people's archives with every new version.  It also allows us to have the GUI server start with many safe defaults and share much of the same codebase with the CLI and library components, including maintaining the archive database and managing a worker pool.
 
 There will be 3 primary use cases for archivebox, and all three will be served by the pip package:
 
  - simple CLI operation:
-   `archivebox add --depth=1 ./path/to/export.html` (similar to current `archivebox` CLI)
+   `archivebox.cli import add --depth=1 ./path/to/export.html` (similar to current `archivebox` CLI)
  - use of individual components as a library: 
   `from archivebox.extract import screenshot` or `archivebox oneshot --screenshot ...`
  - usage in server mode with a GUI to add/remove links and create exports:
