@@ -26,7 +26,7 @@ To see how much of this spec is scheduled / implemented / released so far, read 
  - [`archivebox init`](#-archivebox-init)
  - [`archivebox add`](#-archivebox-add)
  - [`archivebox remove`](#-archivebox-remove)
- - [`archivebox subscribe`](#-archivebox-subscribe)
+ - [`archivebox schedule`](#-archivebox-schedule)
  - [`archivebox config`](#-archivebox-config)
  - [`archivebox update`](#-archivebox-update)
  - [`archivebox list`](#-archivebox-list)
@@ -126,10 +126,8 @@ To get started, you can add individual pages or import lists or feeds of URLs:
    archivebox add --depth=1 ~/Downloads/firefox_bookmarks.html
    archivebox add --depth=1 https://blog.example.com/some/rss/feed.xml
 
-You can also watch certain file files or URLs and import add links automatically on every update:
-   archivebox subscribe https://getpocket.com/users/example/feed/all
-   archivebox subscribe ~/Documents/my_favorite_sites.txt
-   archivebox update
+You can also watch certain files or URLs and import add links automatically on every update:
+   archivebox schedule --every=day https://getpocket.com/users/example/feed/all
 ```
 
 Initialize a new "collection" folder, aka a complete archive containing an ArchiveBox.conf config file, an index of all the archived pages, and the archived content for each page.
@@ -180,21 +178,58 @@ $ archivebox add --depth=1 https://example.com
         /Users/example/ArchiveBox/index.html
 ```
 
-### `$ archivebox subscribe`
-Download a remote feed or check a remote file path for new links every time
-`archivebox update` is run.
+### `$ archivebox schedule`
+Use `python-crontab` to add, remove, and edit regularly scheduled archive update jobs.
 
-#### `path`
+#### `--run-all`
+
+Run all the scheduled jobs once immediately, independent of their configured schedules
+
+#### `--foreground`
+
+Launch ArchiveBox as a long-running foreground task instead of using cron.
+
+#### `--show`
+
+Print a list of currently active ArchiveBox cron jobs
+
+#### `--clear`
+
+Stop all ArchiveBox scheduled runs, clear it completely from cron
+
+#### `--add`
+
+Add a new scheduled ArchiveBox update job to cron
+
+#### `--quiet`
+
+Don't warn about many jobs potentially using up storage space.
+
+#### `--every=[schedule]`
+
+The schedule to run the command can be either: 
+ - `minute`/`hour`/`day`/`week`/`month`/`year`
+ - or a cron-formatted schedule like `"0/2 * * * *"`/`"* 0/10 * * * *"`/...
+
+#### `import_path`
 Specify the path as the path to a local file or remote URL to check for new links.
 
-```bash
-[+] Adding new subscription: https://getpocket.com/users/example/feed/all
-    > data/subscriptions.txt
 
-[√] New subscription added.
-    Check your subscribed local paths and remote feeds
-    for any new links, and archive them by running:
-        archivebox update
+```bash
+$ archivebox schedule --show
+@hourly cd /optArchiveBox/data && /opt/ArchiveBox/.venv/bin/archivebox add "https://getpocket.com/users/nikisweeting/feed/all" 2>&1 > /opt/ArchiveBox/data/logs/archivebox.log # archivebox_schedule
+```
+```bash
+$ archivebox schedule --add --every=hour https://getpocket.com/users/nikisweeting/feed/all
+
+[√] Scheduled new ArchiveBox cron job for user: squash (1 jobs are active).
+  > @hourly cd /Users/squash/Documents/Code/ArchiveBox/data && /Users/squash/Documents/Code/ArchiveBox/.venv/bin/archivebox add "https://getpocket.com/users/nikisweeting/feed/all" 2>&1 > /Users/squash/Documents/Code/ArchiveBox/data/logs/archivebox.log # archivebox_schedule
+
+[!] With the current cron config, ArchiveBox is estimated to run >365 times per year.
+    Congrats on being an enthusiastic internet archiver! 👌
+
+    Make sure you have enough storage space available to hold all the data.
+    Using a compressed/deduped filesystem like ZFS is recommended if you plan on archiving a lot.
 ```
 
 ### `$ archivebox config`
