@@ -58,22 +58,28 @@ Successfully installed archivebox-0.3.0+03047e428
 
 ### `$ archivebox [version|--version]`
 ```bash
-ArchiveBox v0.3.0+03047e428
+ArchiveBox v0.4.0
 
-[√] CURL:      /usr/bin/curl --version
-               curl 7.54.0 (x86_64-apple-darwin18.0) libcurl/7.54.0 LibreSSL/2.6.5 zlib/1.2.11 nghttp2/1.24.1
+[i] Dependency versions:
+ √  PYTHON_BINARY            /optArchiveBox/.venv/bin/python3.7            v3.7            valid
+ √  DJANGO_BINARY            /optArchiveBox/.venv/lib/python3.7/site-packages/django/bin/django-admin.py v2.2.0          valid
+ √  CURL_BINARY              /usr/bin/curl                                                          v7.54.0         valid
+ √  WGET_BINARY              /usr/local/bin/wget                                                    v1.20.1         valid
+ √  GIT_BINARY               /usr/local/bin/git                                                     v2.20.1         valid
+ √  YOUTUBEDL_BINARY         /optArchiveBox/.venv/bin/youtube-dl           v2019.04.17     valid
+ √  CHROME_BINARY            /Applications/Google Chrome.app/Contents/MacOS/Google Chrome           v74.0.3729.91   valid
 
-[√] GIT:       /usr/local/bin/git --version
-               git version 2.20.1
-
-[√] WGET:      /usr/local/bin/wget --version
-               GNU Wget 1.20.1 built on darwin18.2.0.
-
-[√] YOUTUBEDL: /usr/local/bin/youtube-dl --version
-               2019.03.09
-
-[√] CHROME:    /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --version
-               Google Chrome 74.0.3729.40 beta
+[i] Folder locations:
+ √  REPO_DIR                 /optArchiveBox                                28 files        valid
+ √  PYTHON_DIR               /optArchiveBox/archivebox                     14 files        valid
+ √  LEGACY_DIR               /optArchiveBox/archivebox/legacy              15 files        valid
+ √  TEMPLATES_DIR            /optArchiveBox/archivebox/legacy/templates    7 files         valid
+ √  OUTPUT_DIR               /optArchiveBox/archivebox/data                10 files        valid
+ √  SOURCES_DIR              /optArchiveBox/archivebox/data/sources        1 files         valid
+ √  LOGS_DIR                 /optArchiveBox/archivebox/data/logs           0 files         valid
+ √  ARCHIVE_DIR              /optArchiveBox/archivebox/data/archive        2 files         valid
+ √  CHROME_USER_DATA_DIR     /Users/squash/Library/Application Support/Chromium                     2 files         valid
+ -  COOKIES_FILE                                                                                    -               disabled                                                                                   -               disabled
 ```
 
 ### `$ archivebox [help|-h|--help]`
