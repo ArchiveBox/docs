@@ -24,6 +24,7 @@ To see how much of this spec is scheduled / implemented / released so far, read 
  - [`archivebox version`](#-archivebox-version--version)
  - [`archivebox help`](#-archivebox-help-h--help)
  - [`archivebox init`](#-archivebox-init)
+ - [`archivebox info`](#-archivebox-info)
  - [`archivebox add`](#-archivebox-add)
  - [`archivebox remove`](#-archivebox-remove)
  - [`archivebox schedule`](#-archivebox-schedule)
@@ -131,6 +132,26 @@ You can also watch certain files or URLs and import add links automatically on e
 ```
 
 Initialize a new "collection" folder, aka a complete archive containing an ArchiveBox.conf config file, an index of all the archived pages, and the archived content for each page.
+
+### `$ archivebox info`
+
+Print out some info and statistics about the archive collection.
+
+```bash
+$ archivebox info
+*] Scanning archive collection main index with 1 links:
+    /Users/squash/Documents/Code/ArchiveBox/archivebox/data
+    > Index Size: 190.0KB across 6 files
+
+[*] Scanning archive collection data directory with 1 entries:
+    /Users/squash/Documents/Code/ArchiveBox/archivebox/data/archive
+    > Total Size: 2.3MB across 26 files in 15 directories
+
+    > 1 valid archive data directories (valid directories matched to links in the index)
+    > 0 missing data directories (directories missing for links in the index)
+    > 0 invalid data directories (directories present that don't contain an index file)
+    > 0 orphaned data directories (directories present for links that don't exist in the index)
+```
 
 ### `$ archivebox add`
 
