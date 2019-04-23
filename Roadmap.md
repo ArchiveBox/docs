@@ -49,6 +49,13 @@ To see how much of this spec is scheduled / implemented / released so far, read 
 
 ## CLI Usage
 
+*Note, these ways to run ArchiveBox are all equivalent:*
+
+ - `archivebox [subcommand] [...args]`
+ - `python3 -m archivebox [subcommand] [...args]`
+ - `python3 archivebox/__main__.py [subcommand] [...args]`
+ - `python3 archivebox/manage.py archivebox [subcommand] [...args]`
+
 ### `$ pip install archivebox`
 ```bash
 ...
