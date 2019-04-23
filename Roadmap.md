@@ -35,6 +35,7 @@ To see how much of this spec is scheduled / implemented / released so far, read 
  - [`archivebox server`](#-archivebox-server)
  - [`archivebox proxy`](#-archivebox-proxy)
  - [`archivebox shell`](#-archivebox-shell)
+ - [`archivebox manage`](#-archivebox-manage)
  - [`from archivebox import ...`](#api-for-normal-archivebox-usage)
  - [`from archivebox.component import ...`](#api-for-all-useful-subcomponents)
 
@@ -398,13 +399,48 @@ $ archivebox remove --yes --delete --filter-type=domain example.com
 ...
 ```
 
-### `$ archivebox server`
+### `$ archivebox manage`
 
-#### `--bind=[ip:port]`
-The address:port combo to run the server on, defaults to `127.0.0.1:8012`.
+Run a Django management command in the context of the current archivebox data directory.
+
+#### `[command] [...args]`
+The name of the management command to run, e.g.: `help`, `migrate`, `changepassword`, `createsuperuser`, etc.
 
 ```bash
-# WIP
+$ archivebox manage help
+Type 'archivebox manage help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[auth]
+    changepassword
+    createsuperuser
+
+[contenttypes]
+    remove_stale_contenttypes
+
+[core]
+    archivebox
+
+...
+```
+
+### `$ archivebox server`
+
+#### `[ip:port]`
+The address:port combo to run the server on, defaults to `127.0.0.1:8000`.
+
+```bash
+$ archivebox server
+[+] Starting ArchiveBox webserver...
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 23, 2019 - 01:40:52
+Django version 2.2, using settings 'core.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
 ```
 
 ### `$ archivebox proxy`
