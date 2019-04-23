@@ -115,39 +115,38 @@ CLI Usage:
 
 ### `$ archivebox init`
 
-#### `(no args)`
-With no arguments, it interactively prompts the user to set up the collection, similar to `npm init`.
-
-####  `< stdin`
-You can optionally pipe in config as `KEY=VALUE` pairs in python/.env format to setup the project (if you don't want to use the interactive prompt)
+Initialize a new "collection" folder, aka a complete archive containing an ArchiveBox.conf config file, an index of all the archived pages, and the archived content for each page.
 
 ```bash
-$ mkdir ~/my_archive; cd ~/my_archive
+$ mkdir ~/new/data/folder && cd ~/new/data/folder
 $ archivebox init
-Welcome to ArchiveBox v0.30+03047e428!
-[+] Creating a new archive collection in the current folder...
-    > ~/Documents/my_collection
+[+] Initializing new archive directory: /Users/squash/Documents/Code/ArchiveBox/archivebox/data
+----------------------------------------------------------------
+    > /Users/squash/Documents/Code/ArchiveBox/archivebox/data/sources
+    > /Users/squash/Documents/Code/ArchiveBox/archivebox/data/archive
+    > /Users/squash/Documents/Code/ArchiveBox/archivebox/data/logs
 
-[1/3] What do you want to call this collection? [main]: main
-[2/3] Do you want to retry previously failed pages after checking for new pages to add? [y]/n: y
-[3/3] Do you want to automatically submit added URLs to archive.org and other online services? [y]/n: y 
+[+] Running Django migrations...
+    /Users/squash/Documents/Code/ArchiveBox/archivebox/data/index.sqlite3
+No changes detected
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, core, sessions
+Running migrations:
+  ...
 
-[√] Done! Your archive collection has been created.
-    > ./ArchiveBox.conf contains your configuration
+[*] [2019-04-23 01:53:41] Updating 0 links in main index...
+    √ /Users/squash/Documents/Code/ArchiveBox/archivebox/data/index.sqlite3
+    √ /Users/squash/Documents/Code/ArchiveBox/archivebox/data/index.json
+    √ /Users/squash/Documents/Code/ArchiveBox/archivebox/data/index.html
 
-Visit https://ArchiveBox.io to see documentation, or run:
-   archivebox help
+----------------------------------------------------------------
+[√] Done. ArchiveBox collection is set up in the current folder.
+    To add new links, you can run:
+        archivebox add 'https://example.com'
 
-To get started, you can add individual pages or import lists or feeds of URLs:
-   archivebox add https://example.com
-   archivebox add --depth=1 ~/Downloads/firefox_bookmarks.html
-   archivebox add --depth=1 https://blog.example.com/some/rss/feed.xml
-
-You can also watch certain files or URLs and import add links automatically on every update:
-   archivebox schedule --every=day https://getpocket.com/users/example/feed/all
+    For more usage and examples, run:
+        archivebox help
 ```
-
-Initialize a new "collection" folder, aka a complete archive containing an ArchiveBox.conf config file, an index of all the archived pages, and the archived content for each page.
 
 ### `$ archivebox info`
 
