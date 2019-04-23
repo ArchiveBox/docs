@@ -61,8 +61,10 @@ To see how much of this spec is scheduled / implemented / released so far, read 
 ...
 Installing collected packages: archivebox
   Running setup.py install for archivebox ... done
-Successfully installed archivebox-0.3.0+03047e428
+Successfully installed archivebox-0.4.0
 ```
+
+Developers who are working on the ArchiveBox codebase should install the project in "linked" mode for development using: `pipenv install; pip install -e .`.
 
 ### `$ archivebox [version|--version]`
 ```bash
