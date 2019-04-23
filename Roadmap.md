@@ -157,15 +157,19 @@ Print out some info and statistics about the archive collection.
 
 ```bash
 $ archivebox info
-*] Scanning archive collection main index with 1 links:
-    /Users/squash/Documents/Code/ArchiveBox/archivebox/data
-    > Index Size: 190.0KB across 6 files
+[*] Scanning archive collection main index with 31 links:
+    ~/my-archivebox-archive
+    > Index Size: 340.8KB across 6 files
 
-[*] Scanning archive collection data directory with 1 entries:
-    /Users/squash/Documents/Code/ArchiveBox/archivebox/data/archive
-    > Total Size: 2.3MB across 26 files in 15 directories
+    > 1 admin users: squash
+    > 31 pages in SQL database index.sqlite3
+    > 31 pages in JSON database index.json
 
-    > 1 valid archive data directories (valid directories matched to links in the index)
+[*] Scanning archive collection data directory with 31 entries:
+    ~/my-archivebox-archive/archive
+    > Total Size: 23.6MB across 338 files in 165 directories
+
+    > 31 valid archive data directories (valid directories matched to links in the index)
     > 0 missing data directories (directories missing for links in the index)
     > 0 invalid data directories (directories present that don't contain an index file)
     > 0 orphaned data directories (directories present for links that don't exist in the index)
