@@ -120,24 +120,27 @@ Initialize a new "collection" folder, aka a complete archive containing an Archi
 ```bash
 $ mkdir ~/new/data/folder && cd ~/new/data/folder
 $ archivebox init
-[+] Initializing new archive directory: /Users/squash/Documents/Code/ArchiveBox/archivebox/data
+[+] Initializing new archive directory: ~/new/data/folder
 ----------------------------------------------------------------
-    > /Users/squash/Documents/Code/ArchiveBox/archivebox/data/sources
-    > /Users/squash/Documents/Code/ArchiveBox/archivebox/data/archive
-    > /Users/squash/Documents/Code/ArchiveBox/archivebox/data/logs
+    > ~/new/data/folder/sources
+    > ~/new/data/folder/archive
+    > ~/new/data/folder/logs
 
 [+] Running Django migrations...
-    /Users/squash/Documents/Code/ArchiveBox/archivebox/data/index.sqlite3
+    ~/new/data/folder/index.sqlite3
 No changes detected
 Operations to perform:
   Apply all migrations: admin, auth, contenttypes, core, sessions
 Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
   ...
 
 [*] [2019-04-23 01:53:41] Updating 0 links in main index...
-    √ /Users/squash/Documents/Code/ArchiveBox/archivebox/data/index.sqlite3
-    √ /Users/squash/Documents/Code/ArchiveBox/archivebox/data/index.json
-    √ /Users/squash/Documents/Code/ArchiveBox/archivebox/data/index.html
+    √ ~/new/data/folder/index.sqlite3
+    √ ~/new/data/folder/index.json
+    √ ~/new/data/folder/index.html
 
 ----------------------------------------------------------------
 [√] Done. ArchiveBox collection is set up in the current folder.
