@@ -212,6 +212,9 @@ $ archivebox info
 #### `--only-new`
 Controls whether to only add new links or also retry previously failed/skipped links.
 
+#### `--index-only`
+Pass this to only add the links to the main index without archiving them.
+
 #### `--mirror`
 Archive an entire site (finding all linked pages below it on the same domain)
 
