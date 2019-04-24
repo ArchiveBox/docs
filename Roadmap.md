@@ -118,32 +118,56 @@ CLI Usage:
 Initialize a new "collection" folder, aka a complete archive containing an ArchiveBox.conf config file, an index of all the archived pages, and the archived content for each page.
 
 ```bash
-$ mkdir ~/new/data/folder && cd ~/new/data/folder
+$ mkdir ~/my-archive && ~/my-archive
 $ archivebox init
-[+] Initializing new archive directory: ~/new/data/folder
-----------------------------------------------------------------
-    > ~/new/data/folder/sources
-    > ~/new/data/folder/archive
-    > ~/new/data/folder/logs
+[+] Initializing a new ArchiveBox collection in this folder...
+    ~/my-archive
+------------------------------------------------------------------
 
-[+] Running Django migrations...
-    ~/new/data/folder/index.sqlite3
-No changes detected
-Operations to perform:
-  Apply all migrations: admin, auth, contenttypes, core, sessions
-Running migrations:
-  Applying contenttypes.0001_initial... OK
-  Applying auth.0001_initial... OK
-  Applying admin.0001_initial... OK
-  ...
+[+] Building archive folder structure...
+    √ ~/my-archive/sources
+    √ ~/my-archive/archive
+    √ ~/my-archive/logs
 
-[*] [2019-04-23 01:53:41] Updating 0 links in main index...
-    √ ~/new/data/folder/index.sqlite3
-    √ ~/new/data/folder/index.json
-    √ ~/new/data/folder/index.html
+[+] Building main SQL index and running migrations...
+    √ ~/my-archive/index.sqlite3
 
-----------------------------------------------------------------
-[√] Done. ArchiveBox collection is set up in the current folder.
+    Operations to perform:
+      Apply all migrations: admin, auth, contenttypes, core, sessions
+    Running migrations:
+    Applying contenttypes.0001_initial... OK
+    Applying auth.0001_initial... OK
+    Applying admin.0001_initial... OK
+    Applying admin.0002_logentry_remove_auto_add... OK
+    Applying admin.0003_logentry_add_action_flag_choices... OK
+    Applying contenttypes.0002_remove_content_type_name... OK
+    Applying auth.0002_alter_permission_name_max_length... OK
+    Applying auth.0003_alter_user_email_max_length... OK
+    Applying auth.0004_alter_user_username_opts... OK
+    Applying auth.0005_alter_user_last_login_null... OK
+    Applying auth.0006_require_contenttypes_0002... OK
+    Applying auth.0007_alter_validators_add_error_messages... OK
+    Applying auth.0008_alter_user_username_max_length... OK
+    Applying auth.0009_alter_user_last_name_max_length... OK
+    Applying auth.0010_alter_group_name_max_length... OK
+    Applying auth.0011_update_proxy_permissions... OK
+    Applying core.0001_initial... OK
+    Applying core.0002_auto_20190417_0739... OK
+    Applying sessions.0001_initial... OK
+
+[*] Collecting links from any existing index or archive folders...
+
+[*] [2019-04-24 15:41:11] Writing 0 links to main index...
+    √ ~/my-archive/index.sqlite3
+    √ ~/my-archive/index.json
+    √ ~/my-archive/index.html
+
+------------------------------------------------------------------
+[√] Done. A new ArchiveBox collection was initialized (0 links).
+
+    To view your archive index, open:
+        ~/my-archive/index.html
+
     To add new links, you can run:
         archivebox add 'https://example.com'
 
