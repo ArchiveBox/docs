@@ -138,22 +138,7 @@ $ archivebox init
     Applying contenttypes.0001_initial... OK
     Applying auth.0001_initial... OK
     Applying admin.0001_initial... OK
-    Applying admin.0002_logentry_remove_auto_add... OK
-    Applying admin.0003_logentry_add_action_flag_choices... OK
-    Applying contenttypes.0002_remove_content_type_name... OK
-    Applying auth.0002_alter_permission_name_max_length... OK
-    Applying auth.0003_alter_user_email_max_length... OK
-    Applying auth.0004_alter_user_username_opts... OK
-    Applying auth.0005_alter_user_last_login_null... OK
-    Applying auth.0006_require_contenttypes_0002... OK
-    Applying auth.0007_alter_validators_add_error_messages... OK
-    Applying auth.0008_alter_user_username_max_length... OK
-    Applying auth.0009_alter_user_last_name_max_length... OK
-    Applying auth.0010_alter_group_name_max_length... OK
-    Applying auth.0011_update_proxy_permissions... OK
-    Applying core.0001_initial... OK
-    Applying core.0002_auto_20190417_0739... OK
-    Applying sessions.0001_initial... OK
+    ...
 
 [*] Collecting links from any existing index or archive folders...
 
@@ -181,22 +166,34 @@ Print out some info and statistics about the archive collection.
 
 ```bash
 $ archivebox info
-[*] Scanning archive collection main index with 31 links:
-    ~/my-archivebox-archive
-    > Index Size: 340.8KB across 6 files
+[*] Scanning archive collection main index...
+    /Users/squash/Documents/Code/ArchiveBox/data/*
+    Size: 154.5KB across 3 files
 
-    > 1 admin users: squash
-    > 31 pages in SQL database index.sqlite3
-    > 31 pages in JSON database index.json
+    > JSON Main Index: 0 links       (found in index.json)
+    > SQL Main Index: 0 links        (found in index.sqlite3)
+    > HTML Main Index: 0 links       (found in index.html)
+    > JSON Link Details: 0 links     (found in archive/*/index.json)
+    > Admin: 0 users                 (found in index.sqlite3)
 
-[*] Scanning archive collection data directory with 31 entries:
-    ~/my-archivebox-archive/archive
-    > Total Size: 23.6MB across 338 files in 165 directories
+    Hint: You can create an admin user by running:
+        archivebox manage createsuperuser
 
-    > 31 valid archive data directories (valid directories matched to links in the index)
-    > 0 missing data directories (directories missing for links in the index)
-    > 0 invalid data directories (directories present that don't contain an index file)
-    > 0 orphaned data directories (directories present for links that don't exist in the index)
+[*] Scanning archive collection link data directories...
+    /Users/squash/Documents/Code/ArchiveBox/data/archive/*
+    Size: 0.0Bytes across 0 files in 0 directories
+
+    > indexed: 0                     (indexed links without checking archive status or data directory validity)
+      > archived: 0                  (indexed links that are archived with a valid data directory)
+      > unarchived: 0                (indexed links that are unarchived with no data directory or an empty data directory)
+
+    > present: 0                     (dirs that are expected to exist based on the main index)
+      > valid: 0                     (dirs with a valid index matched to the main index and archived content)
+      > invalid: 0                   (dirs that are invalid for any reason: corrupted/duplicate/orphaned/unrecognized)
+        > duplicate: 0               (dirs that conflict with other directories that have the same link URL or timestamp)
+        > orphaned: 0                (dirs that contain a valid index but aren't listed in the main index)
+        > corrupted: 0               (dirs that don't contain a valid index and aren't listed in the main index)
+        > unrecognized: 0            (dirs that don't contain recognizable archive data and aren't listed in the main index)
 ```
 
 ### `$ archivebox add`
