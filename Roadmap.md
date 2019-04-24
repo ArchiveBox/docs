@@ -141,14 +141,22 @@ $ archivebox init
     ...
 
 [*] Collecting links from any existing index or archive folders...
+    √ Loaded 30 links from existing main index...
+    ! Skipped adding 2 orphaned link data directories that would have overwritten existing data.
+    ! Skipped adding 2 corrupted/unrecognized link data directories that could not be read.
+        For more information about the link data directories that were skipped, run:
+            archivebox info
+            archivebox list --status=invalid
+            archivebox list --status=orphaned
+            archivebox list --status=duplicate
 
-[*] [2019-04-24 15:41:11] Writing 0 links to main index...
+[*] [2019-04-24 15:41:11] Writing 30 links to main index...
     √ ~/my-archive/index.sqlite3
     √ ~/my-archive/index.json
     √ ~/my-archive/index.html
 
 ------------------------------------------------------------------
-[√] Done. A new ArchiveBox collection was initialized (0 links).
+[√] Done. A new ArchiveBox collection was initialized (30 links).
 
     To view your archive index, open:
         ~/my-archive/index.html
