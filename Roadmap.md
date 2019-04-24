@@ -176,12 +176,12 @@ Print out some info and statistics about the archive collection.
 $ archivebox info
 [*] Scanning archive collection main index...
     /Users/squash/Documents/Code/ArchiveBox/data/*
-    Size: 154.5KB across 3 files
+    Size: 209.3 KB across 3 files
 
-    > JSON Main Index: 0 links       (found in index.json)
-    > SQL Main Index: 0 links        (found in index.sqlite3)
-    > HTML Main Index: 0 links       (found in index.html)
-    > JSON Link Details: 0 links     (found in archive/*/index.json)
+    > JSON Main Index: 30 links      (found in index.json)
+    > SQL Main Index: 30 links       (found in index.sqlite3)
+    > HTML Main Index: 30 links      (found in index.html)
+    > JSON Link Details: 1 links     (found in archive/*/index.json)
     > Admin: 0 users                 (found in index.sqlite3)
 
     Hint: You can create an admin user by running:
@@ -189,19 +189,22 @@ $ archivebox info
 
 [*] Scanning archive collection link data directories...
     /Users/squash/Documents/Code/ArchiveBox/data/archive/*
-    Size: 0.0Bytes across 0 files in 0 directories
+    Size: 1.6 MB across 46 files in 50 directories
 
-    > indexed: 0                     (indexed links without checking archive status or data directory validity)
-      > archived: 0                  (indexed links that are archived with a valid data directory)
-      > unarchived: 0                (indexed links that are unarchived with no data directory or an empty data directory)
+    > indexed: 30                    (indexed links without checking archive status or data directory validity)
+      > archived: 1                  (indexed links that are archived with a valid data directory)
+      > unarchived: 29               (indexed links that are unarchived with no data directory or an empty data directory)
 
-    > present: 0                     (dirs that are expected to exist based on the main index)
-      > valid: 0                     (dirs with a valid index matched to the main index and archived content)
+    > present: 1                     (dirs that are expected to exist based on the main index)
+      > valid: 1                     (dirs with a valid index matched to the main index and archived content)
       > invalid: 0                   (dirs that are invalid for any reason: corrupted/duplicate/orphaned/unrecognized)
         > duplicate: 0               (dirs that conflict with other directories that have the same link URL or timestamp)
         > orphaned: 0                (dirs that contain a valid index but aren't listed in the main index)
         > corrupted: 0               (dirs that don't contain a valid index and aren't listed in the main index)
         > unrecognized: 0            (dirs that don't contain recognizable archive data and aren't listed in the main index)
+
+    Hint: You can list link data directories by status like so:
+        archivebox list --status=<status>  (e.g. indexed, corrupted, archived, etc.)
 ```
 
 ### `$ archivebox add`
