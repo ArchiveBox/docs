@@ -88,7 +88,7 @@ ArchiveBox running with docker-compose accepts all the same environment variable
 The recommended way to pass in config variables is to edit the `environment:` section in `docker-compose.yml` directly or add an `env_file: ./path/to/ArchiveBox.conf` line before `environment:` to import variables from an env file.
 
 Example of adding config options to `docker-compose.yml`:
-```yml
+```yaml
 ...
 
 services:

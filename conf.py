@@ -36,6 +36,7 @@ copyright = '2019, Nick Sweeting'
 author = 'Nick Sweeting'
 github_url = 'https://github.com/pirate/ArchiveBox'
 github_doc_root = 'https://github.com/pirate/ArchiveBox/wiki'
+language = 'en'
 
 # The full version, including alpha/beta/rc tags
 release = VERSION
@@ -50,8 +51,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',
-    # 'sphinxcontrib.blockdiag'
-    'recommonmark'
+    'recommonmark',
 ]
 
 source_suffix = {
@@ -91,7 +91,12 @@ exclude_patterns = [
 #
 html_logo = 'logo.png'
 html_theme = 'sphinx_rtd_theme'
-html_theme_options = {}
+html_theme_options = {
+    'navigation_depth': 5,
+    'collapse_navigation': False,
+    'sticky_navigation': True,
+}
+html_show_sphinx = False
 
 texinfo_documents = [
     (master_doc, 'archivebox', 'archivebox Documentation',
@@ -99,7 +104,12 @@ texinfo_documents = [
      'Miscellaneous'),
 ]
 
-pygments_style = 'friendly'
+autodoc_default_flags = ['members']
+autodoc_member_order = 'bysource'
+extensions += ['sphinx.ext.autosummary',]
+autosummary_gerenerate = True
+
+pygments_style = 'sphinx'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -119,6 +129,6 @@ man_pages = [
 def setup(app):
     app.add_config_value('recommonmark_config', {
             # 'url_resolver': lambda url: github_doc_root + url,
-            'auto_toc_tree_section': 'ArchiveBox Documentation',
+            'auto_toc_tree_section': 'Documentation',
             }, True)
     app.add_transform(AutoStructify)
