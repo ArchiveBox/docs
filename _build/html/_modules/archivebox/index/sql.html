@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>archivebox.index.sql &mdash; ArchiveBox 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> ArchiveBox
+          
+
+          
+            
+            <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">How does it work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html#quickstart">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html#overview">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html#documentation">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html#screenshots">Screenshots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Donations.html">Donations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web-Archiving-Community.html">Web Archiving Community</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Docker.html">Docker</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Security-Overview.html">Security Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Publishing-Your-Archive.html">Publishing Your Archive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scheduled-Archiving.html">Scheduled Archiving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Chromium-Install.html">Chromium Install</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ArchiveBox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../index.html">archivebox.index</a> &raquo;</li>
+        
+      <li>archivebox.index.sql</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for archivebox.index.sql</h1><div class="highlight"><pre>
+<span></span><span class="n">__package__</span> <span class="o">=</span> <span class="s1">&#39;archivebox.index&#39;</span>
+
+<span class="kn">from</span> <span class="nn">io</span> <span class="k">import</span> <span class="n">StringIO</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Iterator</span>
+
+<span class="kn">from</span> <span class="nn">.schema</span> <span class="k">import</span> <span class="n">Link</span>
+<span class="kn">from</span> <span class="nn">..util</span> <span class="k">import</span> <span class="n">enforce_types</span>
+<span class="kn">from</span> <span class="nn">..config</span> <span class="k">import</span> <span class="n">setup_django</span><span class="p">,</span> <span class="n">OUTPUT_DIR</span>
+
+
+<span class="c1">### Main Links Index</span>
+
+<div class="viewcode-block" id="parse_sql_main_index"><a class="viewcode-back" href="../../../archivebox.index.html#archivebox.index.sql.parse_sql_main_index">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">parse_sql_main_index</span><span class="p">(</span><span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Link</span><span class="p">]:</span>
+    <span class="n">setup_django</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">check_db</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">core.models</span> <span class="k">import</span> <span class="n">Page</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">Link</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">as_json</span><span class="p">(</span><span class="o">*</span><span class="n">Page</span><span class="o">.</span><span class="n">keys</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">Page</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="p">)</span></div>
+
+<div class="viewcode-block" id="write_sql_main_index"><a class="viewcode-back" href="../../../archivebox.index.html#archivebox.index.sql.write_sql_main_index">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">write_sql_main_index</span><span class="p">(</span><span class="n">links</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Link</span><span class="p">],</span> <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">setup_django</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">check_db</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">core.models</span> <span class="k">import</span> <span class="n">Page</span>
+
+    <span class="n">all_urls</span> <span class="o">=</span> <span class="p">{</span><span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">:</span> <span class="n">link</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">Page</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">page</span><span class="o">.</span><span class="n">url</span> <span class="ow">in</span> <span class="n">all_urls</span><span class="p">:</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">all_urls</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">_asdict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">Page</span><span class="o">.</span><span class="n">keys</span><span class="p">}</span>
+            <span class="n">Page</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">info</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">page</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">url</span><span class="p">,</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">all_urls</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">link</span><span class="o">.</span><span class="n">_asdict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">Page</span><span class="o">.</span><span class="n">keys</span><span class="p">}</span>
+        <span class="n">Page</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">update_or_create</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">defaults</span><span class="o">=</span><span class="n">info</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="list_migrations"><a class="viewcode-back" href="../../../archivebox.index.html#archivebox.index.sql.list_migrations">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">list_migrations</span><span class="p">(</span><span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+    <span class="n">setup_django</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">check_db</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">django.core.management</span> <span class="k">import</span> <span class="n">call_command</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
+    <span class="n">call_command</span><span class="p">(</span><span class="s2">&quot;showmigrations&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">migrations</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">out</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="s1">&#39;]&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+            <span class="n">status_str</span><span class="p">,</span> <span class="n">name_str</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">is_applied</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span> <span class="ow">in</span> <span class="n">status_str</span>
+            <span class="n">migration_name</span> <span class="o">=</span> <span class="n">name_str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">migrations</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">is_applied</span><span class="p">,</span> <span class="n">migration_name</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">migrations</span></div>
+
+<div class="viewcode-block" id="apply_migrations"><a class="viewcode-back" href="../../../archivebox.index.html#archivebox.index.sql.apply_migrations">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">apply_migrations</span><span class="p">(</span><span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="n">setup_django</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">check_db</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">django.core.management</span> <span class="k">import</span> <span class="n">call_command</span>
+    <span class="n">null</span><span class="p">,</span> <span class="n">out</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(),</span> <span class="n">StringIO</span><span class="p">()</span>
+    <span class="n">call_command</span><span class="p">(</span><span class="s2">&quot;makemigrations&quot;</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">null</span><span class="p">)</span>
+    <span class="n">call_command</span><span class="p">(</span><span class="s2">&quot;migrate&quot;</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">out</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span></div>
+
+<div class="viewcode-block" id="get_admins"><a class="viewcode-back" href="../../../archivebox.index.html#archivebox.index.sql.get_admins">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">get_admins</span><span class="p">(</span><span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="n">setup_django</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">check_db</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="k">import</span> <span class="n">User</span>
+    <span class="k">return</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">is_superuser</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nick Sweeting
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

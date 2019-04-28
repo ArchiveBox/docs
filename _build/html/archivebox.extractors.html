@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>archivebox.extractors package &mdash; ArchiveBox 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ArchiveBox
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">archivebox.extractors package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-archivebox.extractors.archive_org">archivebox.extractors.archive_org module</a></li>
+<li><a class="reference internal" href="#module-archivebox.extractors.dom">archivebox.extractors.dom module</a></li>
+<li><a class="reference internal" href="#module-archivebox.extractors.favicon">archivebox.extractors.favicon module</a></li>
+<li><a class="reference internal" href="#module-archivebox.extractors.git">archivebox.extractors.git module</a></li>
+<li><a class="reference internal" href="#module-archivebox.extractors.media">archivebox.extractors.media module</a></li>
+<li><a class="reference internal" href="#module-archivebox.extractors.pdf">archivebox.extractors.pdf module</a></li>
+<li><a class="reference internal" href="#module-archivebox.extractors.screenshot">archivebox.extractors.screenshot module</a></li>
+<li><a class="reference internal" href="#module-archivebox.extractors.title">archivebox.extractors.title module</a></li>
+<li><a class="reference internal" href="#module-archivebox.extractors.wget">archivebox.extractors.wget module</a></li>
+<li><a class="reference internal" href="#module-archivebox.extractors">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ArchiveBox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>archivebox.extractors package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/archivebox.extractors.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="archivebox-extractors-package">
+<h1>archivebox.extractors package<a class="headerlink" href="#archivebox-extractors-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-archivebox.extractors.archive_org">
+<span id="archivebox-extractors-archive-org-module"></span><h2>archivebox.extractors.archive_org module<a class="headerlink" href="#module-archivebox.extractors.archive_org" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.extractors.archive_org.parse_archive_dot_org_response">
+<code class="descclassname">archivebox.extractors.archive_org.</code><code class="descname">parse_archive_dot_org_response</code><span class="sig-paren">(</span><em>response: bytes</em><span class="sig-paren">)</span> &#x2192; Tuple[List[str], List[str]]<a class="reference internal" href="_modules/archivebox/extractors/archive_org.html#parse_archive_dot_org_response"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.archive_org.parse_archive_dot_org_response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="archivebox.extractors.archive_org.save_archive_dot_org">
+<code class="descclassname">archivebox.extractors.archive_org.</code><code class="descname">save_archive_dot_org</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em>, <em>timeout: int = 60</em><span class="sig-paren">)</span> &#x2192; archivebox.index.schema.ArchiveResult<a class="reference internal" href="_modules/archivebox/extractors/archive_org.html#save_archive_dot_org"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.archive_org.save_archive_dot_org" title="Permalink to this definition">¶</a></dt>
+<dd><p>submit site to archive.org for archiving via their service, save returned archive url</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="archivebox.extractors.archive_org.should_save_archive_dot_org">
+<code class="descclassname">archivebox.extractors.archive_org.</code><code class="descname">should_save_archive_dot_org</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/archivebox/extractors/archive_org.html#should_save_archive_dot_org"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.archive_org.should_save_archive_dot_org" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.extractors.dom">
+<span id="archivebox-extractors-dom-module"></span><h2>archivebox.extractors.dom module<a class="headerlink" href="#module-archivebox.extractors.dom" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.extractors.dom.save_dom">
+<code class="descclassname">archivebox.extractors.dom.</code><code class="descname">save_dom</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em>, <em>timeout: int = 60</em><span class="sig-paren">)</span> &#x2192; archivebox.index.schema.ArchiveResult<a class="reference internal" href="_modules/archivebox/extractors/dom.html#save_dom"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.dom.save_dom" title="Permalink to this definition">¶</a></dt>
+<dd><p>print HTML of site to file using chrome –dump-html</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="archivebox.extractors.dom.should_save_dom">
+<code class="descclassname">archivebox.extractors.dom.</code><code class="descname">should_save_dom</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/archivebox/extractors/dom.html#should_save_dom"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.dom.should_save_dom" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.extractors.favicon">
+<span id="archivebox-extractors-favicon-module"></span><h2>archivebox.extractors.favicon module<a class="headerlink" href="#module-archivebox.extractors.favicon" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.extractors.favicon.save_favicon">
+<code class="descclassname">archivebox.extractors.favicon.</code><code class="descname">save_favicon</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em>, <em>timeout: int = 60</em><span class="sig-paren">)</span> &#x2192; archivebox.index.schema.ArchiveResult<a class="reference internal" href="_modules/archivebox/extractors/favicon.html#save_favicon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.favicon.save_favicon" title="Permalink to this definition">¶</a></dt>
+<dd><p>download site favicon from google’s favicon api</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="archivebox.extractors.favicon.should_save_favicon">
+<code class="descclassname">archivebox.extractors.favicon.</code><code class="descname">should_save_favicon</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/archivebox/extractors/favicon.html#should_save_favicon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.favicon.should_save_favicon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.extractors.git">
+<span id="archivebox-extractors-git-module"></span><h2>archivebox.extractors.git module<a class="headerlink" href="#module-archivebox.extractors.git" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.extractors.git.save_git">
+<code class="descclassname">archivebox.extractors.git.</code><code class="descname">save_git</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em>, <em>timeout: int = 60</em><span class="sig-paren">)</span> &#x2192; archivebox.index.schema.ArchiveResult<a class="reference internal" href="_modules/archivebox/extractors/git.html#save_git"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.git.save_git" title="Permalink to this definition">¶</a></dt>
+<dd><p>download full site using git</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="archivebox.extractors.git.should_save_git">
+<code class="descclassname">archivebox.extractors.git.</code><code class="descname">should_save_git</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/archivebox/extractors/git.html#should_save_git"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.git.should_save_git" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.extractors.media">
+<span id="archivebox-extractors-media-module"></span><h2>archivebox.extractors.media module<a class="headerlink" href="#module-archivebox.extractors.media" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.extractors.media.save_media">
+<code class="descclassname">archivebox.extractors.media.</code><code class="descname">save_media</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em>, <em>timeout: int = 3600</em><span class="sig-paren">)</span> &#x2192; archivebox.index.schema.ArchiveResult<a class="reference internal" href="_modules/archivebox/extractors/media.html#save_media"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.media.save_media" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download playlists or individual video, audio, and subtitles using youtube-dl</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="archivebox.extractors.media.should_save_media">
+<code class="descclassname">archivebox.extractors.media.</code><code class="descname">should_save_media</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/archivebox/extractors/media.html#should_save_media"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.media.should_save_media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.extractors.pdf">
+<span id="archivebox-extractors-pdf-module"></span><h2>archivebox.extractors.pdf module<a class="headerlink" href="#module-archivebox.extractors.pdf" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.extractors.pdf.save_pdf">
+<code class="descclassname">archivebox.extractors.pdf.</code><code class="descname">save_pdf</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em>, <em>timeout: int = 60</em><span class="sig-paren">)</span> &#x2192; archivebox.index.schema.ArchiveResult<a class="reference internal" href="_modules/archivebox/extractors/pdf.html#save_pdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.pdf.save_pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>print PDF of site to file using chrome –headless</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="archivebox.extractors.pdf.should_save_pdf">
+<code class="descclassname">archivebox.extractors.pdf.</code><code class="descname">should_save_pdf</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/archivebox/extractors/pdf.html#should_save_pdf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.pdf.should_save_pdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.extractors.screenshot">
+<span id="archivebox-extractors-screenshot-module"></span><h2>archivebox.extractors.screenshot module<a class="headerlink" href="#module-archivebox.extractors.screenshot" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.extractors.screenshot.save_screenshot">
+<code class="descclassname">archivebox.extractors.screenshot.</code><code class="descname">save_screenshot</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em>, <em>timeout: int = 60</em><span class="sig-paren">)</span> &#x2192; archivebox.index.schema.ArchiveResult<a class="reference internal" href="_modules/archivebox/extractors/screenshot.html#save_screenshot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.screenshot.save_screenshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>take screenshot of site using chrome –headless</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="archivebox.extractors.screenshot.should_save_screenshot">
+<code class="descclassname">archivebox.extractors.screenshot.</code><code class="descname">should_save_screenshot</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/archivebox/extractors/screenshot.html#should_save_screenshot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.screenshot.should_save_screenshot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.extractors.title">
+<span id="archivebox-extractors-title-module"></span><h2>archivebox.extractors.title module<a class="headerlink" href="#module-archivebox.extractors.title" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.extractors.title.save_title">
+<code class="descclassname">archivebox.extractors.title.</code><code class="descname">save_title</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em>, <em>timeout: int = 60</em><span class="sig-paren">)</span> &#x2192; archivebox.index.schema.ArchiveResult<a class="reference internal" href="_modules/archivebox/extractors/title.html#save_title"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.title.save_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>try to guess the page’s title from its content</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="archivebox.extractors.title.should_save_title">
+<code class="descclassname">archivebox.extractors.title.</code><code class="descname">should_save_title</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/archivebox/extractors/title.html#should_save_title"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.title.should_save_title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.extractors.wget">
+<span id="archivebox-extractors-wget-module"></span><h2>archivebox.extractors.wget module<a class="headerlink" href="#module-archivebox.extractors.wget" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.extractors.wget.save_wget">
+<code class="descclassname">archivebox.extractors.wget.</code><code class="descname">save_wget</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em>, <em>timeout: int = 60</em><span class="sig-paren">)</span> &#x2192; archivebox.index.schema.ArchiveResult<a class="reference internal" href="_modules/archivebox/extractors/wget.html#save_wget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.wget.save_wget" title="Permalink to this definition">¶</a></dt>
+<dd><p>download full site using wget</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="archivebox.extractors.wget.should_save_wget">
+<code class="descclassname">archivebox.extractors.wget.</code><code class="descname">should_save_wget</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>out_dir: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/archivebox/extractors/wget.html#should_save_wget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.wget.should_save_wget" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.extractors">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-archivebox.extractors" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.extractors.archive_link">
+<code class="descclassname">archivebox.extractors.</code><code class="descname">archive_link</code><span class="sig-paren">(</span><em>link: archivebox.index.schema.Link</em>, <em>overwrite: bool = False</em>, <em>out_dir: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; archivebox.index.schema.Link<a class="reference internal" href="_modules/archivebox/extractors.html#archive_link"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.extractors.archive_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>download the DOM, PDF, and a screenshot into a folder named after the link’s timestamp</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nick Sweeting
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

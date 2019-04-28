@@ -1,0 +1,1043 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Roadmap &mdash; ArchiveBox 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ArchiveBox
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Roadmap</a><ul>
+<li><a class="reference internal" href="#planned-specification">Planned Specification</a></li>
+<li><a class="reference internal" href="#cli-usage">CLI Usage</a><ul>
+<li><a class="reference internal" href="#pip-install-archivebox"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">archivebox</span></code></a></li>
+<li><a class="reference internal" href="#archivebox-version-version"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">[version|--version]</span></code></a></li>
+<li><a class="reference internal" href="#archivebox-help-h-help"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">[help|-h|--help]</span></code></a></li>
+<li><a class="reference internal" href="#archivebox-init"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">init</span></code></a></li>
+<li><a class="reference internal" href="#archivebox-info"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">info</span></code></a></li>
+<li><a class="reference internal" href="#archivebox-add"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">add</span></code></a><ul>
+<li><a class="reference internal" href="#only-new"><code class="docutils literal notranslate"><span class="pre">--only-new</span></code></a></li>
+<li><a class="reference internal" href="#index-only"><code class="docutils literal notranslate"><span class="pre">--index-only</span></code></a></li>
+<li><a class="reference internal" href="#mirror"><code class="docutils literal notranslate"><span class="pre">--mirror</span></code></a></li>
+<li><a class="reference internal" href="#depth"><code class="docutils literal notranslate"><span class="pre">--depth</span></code></a></li>
+<li><a class="reference internal" href="#crawler-type"><code class="docutils literal notranslate"><span class="pre">--crawler=[type]</span></code></a></li>
+<li><a class="reference internal" href="#url"><code class="docutils literal notranslate"><span class="pre">url</span></code></a></li>
+<li><a class="reference internal" href="#stdin"><code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">stdin</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#archivebox-schedule"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">schedule</span></code></a><ul>
+<li><a class="reference internal" href="#run-all"><code class="docutils literal notranslate"><span class="pre">--run-all</span></code></a></li>
+<li><a class="reference internal" href="#foreground"><code class="docutils literal notranslate"><span class="pre">--foreground</span></code></a></li>
+<li><a class="reference internal" href="#show"><code class="docutils literal notranslate"><span class="pre">--show</span></code></a></li>
+<li><a class="reference internal" href="#clear"><code class="docutils literal notranslate"><span class="pre">--clear</span></code></a></li>
+<li><a class="reference internal" href="#add"><code class="docutils literal notranslate"><span class="pre">--add</span></code></a></li>
+<li><a class="reference internal" href="#quiet"><code class="docutils literal notranslate"><span class="pre">--quiet</span></code></a></li>
+<li><a class="reference internal" href="#every-schedule"><code class="docutils literal notranslate"><span class="pre">--every=[schedule]</span></code></a></li>
+<li><a class="reference internal" href="#import-path"><code class="docutils literal notranslate"><span class="pre">import_path</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#archivebox-config"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">config</span></code></a><ul>
+<li><a class="reference internal" href="#no-args"><code class="docutils literal notranslate"><span class="pre">(no</span> <span class="pre">args)</span></code></a></li>
+<li><a class="reference internal" href="#get-key"><code class="docutils literal notranslate"><span class="pre">--get</span> <span class="pre">KEY</span></code></a></li>
+<li><a class="reference internal" href="#set-key-value"><code class="docutils literal notranslate"><span class="pre">--set</span> <span class="pre">KEY=VALUE</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">stdin</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#archivebox-update"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">update</span></code></a><ul>
+<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">(no</span> <span class="pre">args)</span></code></a></li>
+<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">--only-new</span></code></a></li>
+<li><a class="reference internal" href="#resume-timestamp"><code class="docutils literal notranslate"><span class="pre">--resume=[timestamp]</span></code></a></li>
+<li><a class="reference internal" href="#snapshot"><code class="docutils literal notranslate"><span class="pre">--snapshot</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#archivebox-list"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">list</span></code></a><ul>
+<li><a class="reference internal" href="#csv-columns"><code class="docutils literal notranslate"><span class="pre">--csv=COLUMNS</span></code></a></li>
+<li><a class="reference internal" href="#json"><code class="docutils literal notranslate"><span class="pre">--json</span></code></a></li>
+<li><a class="reference internal" href="#filter-regex"><code class="docutils literal notranslate"><span class="pre">--filter=REGEX</span></code></a></li>
+<li><a class="reference internal" href="#before-timestamp-after-timestamp"><code class="docutils literal notranslate"><span class="pre">--before=TIMESTAMP</span></code> / <code class="docutils literal notranslate"><span class="pre">--after=TIMESTAMP</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#archivebox-remove"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">remove</span></code></a><ul>
+<li><a class="reference internal" href="#yes"><code class="docutils literal notranslate"><span class="pre">--yes</span></code></a></li>
+<li><a class="reference internal" href="#delete"><code class="docutils literal notranslate"><span class="pre">--delete</span></code></a></li>
+<li><a class="reference internal" href="#filter-type"><code class="docutils literal notranslate"><span class="pre">--filter-type</span></code></a></li>
+<li><a class="reference internal" href="#pattern"><code class="docutils literal notranslate"><span class="pre">pattern</span></code></a></li>
+<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">--before=TIMESTAMP</span></code> / <code class="docutils literal notranslate"><span class="pre">--after=TIMESTAMP</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#archivebox-manage"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">manage</span></code></a><ul>
+<li><a class="reference internal" href="#command-args"><code class="docutils literal notranslate"><span class="pre">[command]</span> <span class="pre">[...args]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#archivebox-server"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">server</span></code></a><ul>
+<li><a class="reference internal" href="#ip-port"><code class="docutils literal notranslate"><span class="pre">[ip:port]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#archivebox-proxy"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">proxy</span></code></a><ul>
+<li><a class="reference internal" href="#bind-ip-port"><code class="docutils literal notranslate"><span class="pre">--bind=[ip:port]</span></code></a></li>
+<li><a class="reference internal" href="#record"><code class="docutils literal notranslate"><span class="pre">--record</span></code></a></li>
+<li><a class="reference internal" href="#replay"><code class="docutils literal notranslate"><span class="pre">--replay</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#archivebox-shell"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">shell</span></code></a></li>
+<li><a class="reference internal" href="#archivebox-oneshot"><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">oneshot</span></code></a><ul>
+<li><a class="reference internal" href="#out-dir-path"><code class="docutils literal notranslate"><span class="pre">--out-dir=[path]</span></code></a></li>
+<li><a class="reference internal" href="#all-media-wget"><code class="docutils literal notranslate"><span class="pre">[--all|--media|--wget|...]</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#python-usage">Python Usage</a><ul>
+<li><a class="reference internal" href="#api-for-normal-archivebox-usage">API for normal ArchiveBox usage</a></li>
+<li><a class="reference internal" href="#api-for-all-useful-subcomponents">API for All Useful Subcomponents</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#design">Design</a></li>
+<li><a class="reference internal" href="#dependencies">Dependencies:</a></li>
+<li><a class="reference internal" href="#code-folder-layout">Code Folder Layout</a></li>
+<li><a class="reference internal" href="#collection-data-folder-layout">Collection Data Folder Layout</a></li>
+<li><a class="reference internal" href="#exported-folder-layout">Exported Folder Layout</a><ul>
+<li><a class="reference internal" href="#major-long-term-changes">Major long-term changes</a></li>
+<li><a class="reference internal" href="#smaller-planned-features">Smaller planned features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ArchiveBox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Roadmap</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Roadmap.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="roadmap">
+<h1>Roadmap<a class="headerlink" href="#roadmap" title="Permalink to this headline">¶</a></h1>
+<img src="https://i.imgur.com/es97GGV.png" width="20%" align="right"/><p>▶️ <em>Comment here to discuss the contribution roadmap:<a class="reference external" href="https://github.com/pirate/ArchiveBox/issues/120">Official Roadmap Discussion</a>.</em></p>
+<p>If you feel like contributing a PR, some of these tasks are pretty easy.  Feel free to open an issue if you need help getting started in any way!</p>
+<p><strong>IMPORTANT</strong>: <em>Please don’t work on any of these major long-term tasks without <a class="reference external" href="https://nicksweeting.com/blog#Contact-Me">contacting me first</a>, work is already in progress for many of these, and I may have to reject your PR if it doesn’t align with the existing work!</em></p>
+<hr class="docutils" />
+<div class="section" id="planned-specification">
+<h2>Planned Specification<a class="headerlink" href="#planned-specification" title="Permalink to this headline">¶</a></h2>
+<p>ArchiveBox is going to migrate towards this design spec over the next 3 months bit by bit as functionality gets implemented and refactors are released.</p>
+<p>To see how much of this spec is scheduled / implemented / released so far, read these pull requests:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/pirate/ArchiveBox/pull/197">v0.3.0</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pirate/ArchiveBox/pull/207">v0.4.0</a></p></li>
+</ul>
+<p><strong>API:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="#-pip-install-archivebox"><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">archivebox</span></code></a></p></li>
+<li><p><a class="reference external" href="#-archivebox-version--version"><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">version</span></code></a></p></li>
+<li><p><a class="reference external" href="#-archivebox-help-h--help"><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">help</span></code></a></p></li>
+<li><p><a class="reference external" href="#-archivebox-init"><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">init</span></code></a></p></li>
+<li><p><a class="reference external" href="#-archivebox-info"><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">info</span></code></a></p></li>
+<li><p><a class="reference external" href="#-archivebox-add"><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">add</span></code></a></p></li>
+<li><p><a class="reference external" href="#-archivebox-remove"><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">remove</span></code></a></p></li>
+<li><p><a class="reference external" href="#-archivebox-schedule"><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">schedule</span></code></a></p></li>
+<li><p><a class="reference external" href="#-archivebox-config"><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">config</span></code></a></p></li>
+<li><p><a class="reference external" href="#-archivebox-update"><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">update</span></code></a></p></li>
+<li><p><a class="reference external" href="#-archivebox-list"><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">list</span></code></a></p></li>
+<li><p><a class="reference external" href="#-archivebox-oneshot"><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">oneshot</span></code></a></p></li>
+<li><p><a class="reference external" href="#-archivebox-server"><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">server</span></code></a></p></li>
+<li><p><a class="reference external" href="#-archivebox-proxy"><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">proxy</span></code></a></p></li>
+<li><p><a class="reference external" href="#-archivebox-shell"><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">shell</span></code></a></p></li>
+<li><p><a class="reference external" href="#-archivebox-manage"><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">manage</span></code></a></p></li>
+<li><p><a class="reference external" href="#api-for-normal-archivebox-usage"><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">archivebox</span> <span class="pre">import</span> <span class="pre">...</span></code></a></p></li>
+<li><p><a class="reference external" href="#api-for-all-useful-subcomponents"><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">archivebox.component</span> <span class="pre">import</span> <span class="pre">...</span></code></a></p></li>
+</ul>
+<p><strong>Design:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="#design">Overview</a></p></li>
+<li><p><a class="reference external" href="#dependencies">Dependencies</a></p></li>
+<li><p><a class="reference external" href="#dependencies">Dependencies</a></p></li>
+<li><p><a class="reference external" href="#code-folder-layout">Code Layout</a></p></li>
+<li><p><a class="reference external" href="#collection-data-folder-layout">Data Layout</a></p></li>
+<li><p><a class="reference external" href="#exported-folder-layout">Export Layout</a></p></li>
+</ul>
+</div>
+<div class="section" id="cli-usage">
+<h2>CLI Usage<a class="headerlink" href="#cli-usage" title="Permalink to this headline">¶</a></h2>
+<p><em>Note, these ways to run ArchiveBox are all equivalent:</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">[subcommand]</span> <span class="pre">[...args]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">archivebox</span> <span class="pre">[subcommand]</span> <span class="pre">[...args]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">archivebox/__main__.py</span> <span class="pre">[subcommand]</span> <span class="pre">[...args]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">archivebox/manage.py</span> <span class="pre">archivebox</span> <span class="pre">[subcommand]</span> <span class="pre">[...args]</span></code></p></li>
+</ul>
+<div class="section" id="pip-install-archivebox">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">archivebox</span></code><a class="headerlink" href="#pip-install-archivebox" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>...
+Installing collected packages: archivebox
+  Running setup.py install <span class="k">for</span> archivebox ... <span class="k">done</span>
+Successfully installed archivebox-0.4.0
+</pre></div>
+</div>
+<p>Developers who are working on the ArchiveBox codebase should install the project in “linked” mode for development using: <code class="docutils literal notranslate"><span class="pre">pipenv</span> <span class="pre">install;</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code>.</p>
+</div>
+<div class="section" id="archivebox-version-version">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">[version|--version]</span></code><a class="headerlink" href="#archivebox-version-version" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ArchiveBox v0.4.0
+
+<span class="o">[</span>i<span class="o">]</span> Dependency versions:
+ √  PYTHON_BINARY            /optArchiveBox/.venv/bin/python3.7            v3.7            valid
+ √  DJANGO_BINARY            /optArchiveBox/.venv/lib/python3.7/site-packages/django/bin/django-admin.py v2.2.0          valid
+ √  CURL_BINARY              /usr/bin/curl                                                          v7.54.0         valid
+ √  WGET_BINARY              /usr/local/bin/wget                                                    v1.20.1         valid
+ √  GIT_BINARY               /usr/local/bin/git                                                     v2.20.1         valid
+ √  YOUTUBEDL_BINARY         /optArchiveBox/.venv/bin/youtube-dl           v2019.04.17     valid
+ √  CHROME_BINARY            /Applications/Google Chrome.app/Contents/MacOS/Google Chrome           v74.0.3729.91   valid
+
+<span class="o">[</span>i<span class="o">]</span> Folder locations:
+ √  REPO_DIR                 /optArchiveBox                                <span class="m">28</span> files        valid
+ √  PYTHON_DIR               /optArchiveBox/archivebox                     <span class="m">14</span> files        valid
+ √  LEGACY_DIR               /optArchiveBox/archivebox/legacy              <span class="m">15</span> files        valid
+ √  TEMPLATES_DIR            /optArchiveBox/archivebox/legacy/templates    <span class="m">7</span> files         valid
+ √  OUTPUT_DIR               /optArchiveBox/archivebox/data                <span class="m">10</span> files        valid
+ √  SOURCES_DIR              /optArchiveBox/archivebox/data/sources        <span class="m">1</span> files         valid
+ √  LOGS_DIR                 /optArchiveBox/archivebox/data/logs           <span class="m">0</span> files         valid
+ √  ARCHIVE_DIR              /optArchiveBox/archivebox/data/archive        <span class="m">2</span> files         valid
+ √  CHROME_USER_DATA_DIR     /Users/squash/Library/Application Support/Chromium                     <span class="m">2</span> files         valid
+ -  COOKIES_FILE                                                                                    -               disabled                                                                                   -               disabled
+</pre></div>
+</div>
+</div>
+<div class="section" id="archivebox-help-h-help">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">[help|-h|--help]</span></code><a class="headerlink" href="#archivebox-help-h-help" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ArchiveBox: The self-hosted internet archive.
+
+Documentation:
+    https://github.com/pirate/ArchiveBox/wiki
+
+UI Usage:
+    Open output/index.html to view your archive.
+
+CLI Usage:
+    mkdir data<span class="p">;</span> <span class="nb">cd</span> data/
+    archivebox init
+
+    <span class="nb">echo</span> <span class="s1">&#39;https://example.com/some/page&#39;</span> <span class="p">|</span> archivebox add
+    archivebox add https://example.com/some/other/page
+    archivebox add --depth<span class="o">=</span><span class="m">1</span> ~/Downloads/bookmarks_export.html
+    archivebox add --depth<span class="o">=</span><span class="m">1</span> https://example.com/feed.rss
+    archivebox update --resume<span class="o">=</span><span class="m">15109948213</span>.123
+</pre></div>
+</div>
+</div>
+<div class="section" id="archivebox-init">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">init</span></code><a class="headerlink" href="#archivebox-init" title="Permalink to this headline">¶</a></h3>
+<p>Initialize a new “collection” folder, aka a complete archive containing an ArchiveBox.conf config file, an index of all the archived pages, and the archived content for each page.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir ~/my-archive <span class="o">&amp;&amp;</span> ~/my-archive
+$ archivebox init
+<span class="o">[</span>+<span class="o">]</span> Initializing a new ArchiveBox collection in this folder...
+    ~/my-archive
+------------------------------------------------------------------
+
+<span class="o">[</span>+<span class="o">]</span> Building archive folder structure...
+    √ ~/my-archive/sources
+    √ ~/my-archive/archive
+    √ ~/my-archive/logs
+
+<span class="o">[</span>+<span class="o">]</span> Building main SQL index and running migrations...
+    √ ~/my-archive/index.sqlite3
+
+    Operations to perform:
+      Apply all migrations: admin, auth, contenttypes, core, sessions
+    Running migrations:
+    Applying contenttypes.0001_initial... OK
+    Applying auth.0001_initial... OK
+    Applying admin.0001_initial... OK
+    ...
+
+<span class="o">[</span>*<span class="o">]</span> Collecting links from any existing index or archive folders...
+    √ Loaded <span class="m">30</span> links from existing main index...
+    ! Skipped adding <span class="m">2</span> orphaned link data directories that would have overwritten existing data.
+    ! Skipped adding <span class="m">2</span> corrupted/unrecognized link data directories that could not be read.
+        For more information about the link data directories that were skipped, run:
+            archivebox info
+            archivebox list --status<span class="o">=</span>invalid
+            archivebox list --status<span class="o">=</span>orphaned
+            archivebox list --status<span class="o">=</span>duplicate
+
+<span class="o">[</span>*<span class="o">]</span> <span class="o">[</span><span class="m">2019</span>-04-24 <span class="m">15</span>:41:11<span class="o">]</span> Writing <span class="m">30</span> links to main index...
+    √ ~/my-archive/index.sqlite3
+    √ ~/my-archive/index.json
+    √ ~/my-archive/index.html
+
+------------------------------------------------------------------
+<span class="o">[</span>√<span class="o">]</span> Done. A new ArchiveBox collection was initialized <span class="o">(</span><span class="m">30</span> links<span class="o">)</span>.
+
+    To view your archive index, open:
+        ~/my-archive/index.html
+
+    To add new links, you can run:
+        archivebox add <span class="s1">&#39;https://example.com&#39;</span>
+
+    For more usage and examples, run:
+        archivebox <span class="nb">help</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="archivebox-info">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">info</span></code><a class="headerlink" href="#archivebox-info" title="Permalink to this headline">¶</a></h3>
+<p>Print out some info and statistics about the archive collection.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ archivebox info
+[*] Scanning archive collection main index...
+    /Users/squash/Documents/Code/ArchiveBox/data/*
+    Size: 209.3 KB across 3 files
+
+    &gt; JSON Main Index: 30 links      (found in index.json)
+    &gt; SQL Main Index: 30 links       (found in index.sqlite3)
+    &gt; HTML Main Index: 30 links      (found in index.html)
+    &gt; JSON Link Details: 1 links     (found in archive/*/index.json)
+    &gt; Admin: 0 users                 (found in index.sqlite3)
+
+    Hint: You can create an admin user by running:
+        archivebox manage createsuperuser
+
+[*] Scanning archive collection link data directories...
+    /Users/squash/Documents/Code/ArchiveBox/data/archive/*
+    Size: 1.6 MB across 46 files in 50 directories
+
+    &gt; indexed: 30                    (indexed links without checking archive status or data directory validity)
+      &gt; archived: 1                  (indexed links that are archived with a valid data directory)
+      &gt; unarchived: 29               (indexed links that are unarchived with no data directory or an empty data directory)
+
+    &gt; present: 1                     (dirs that are expected to exist based on the main index)
+      &gt; valid: 1                     (dirs with a valid index matched to the main index and archived content)
+      &gt; invalid: 0                   (dirs that are invalid for any reason: corrupted/duplicate/orphaned/unrecognized)
+        &gt; duplicate: 0               (dirs that conflict with other directories that have the same link URL or timestamp)
+        &gt; orphaned: 0                (dirs that contain a valid index but aren&#39;t listed in the main index)
+        &gt; corrupted: 0               (dirs that don&#39;t contain a valid index and aren&#39;t listed in the main index)
+        &gt; unrecognized: 0            (dirs that don&#39;t contain recognizable archive data and aren&#39;t listed in the main index)
+
+    Hint: You can list link data directories by status like so:
+        archivebox list --status=&lt;status&gt;  (e.g. indexed, corrupted, archived, etc.)
+</pre></div>
+</div>
+</div>
+<div class="section" id="archivebox-add">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">add</span></code><a class="headerlink" href="#archivebox-add" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="only-new">
+<h4><code class="docutils literal notranslate"><span class="pre">--only-new</span></code><a class="headerlink" href="#only-new" title="Permalink to this headline">¶</a></h4>
+<p>Controls whether to only add new links or also retry previously failed/skipped links.</p>
+</div>
+<div class="section" id="index-only">
+<h4><code class="docutils literal notranslate"><span class="pre">--index-only</span></code><a class="headerlink" href="#index-only" title="Permalink to this headline">¶</a></h4>
+<p>Pass this to only add the links to the main index without archiving them.</p>
+</div>
+<div class="section" id="mirror">
+<h4><code class="docutils literal notranslate"><span class="pre">--mirror</span></code><a class="headerlink" href="#mirror" title="Permalink to this headline">¶</a></h4>
+<p>Archive an entire site (finding all linked pages below it on the same domain)</p>
+</div>
+<div class="section" id="depth">
+<h4><code class="docutils literal notranslate"><span class="pre">--depth</span></code><a class="headerlink" href="#depth" title="Permalink to this headline">¶</a></h4>
+<p>Controls how far to follow links from the given url. <code class="docutils literal notranslate"><span class="pre">0</span></code> sets it to only archive the page, and not follow any outlinks. <code class="docutils literal notranslate"><span class="pre">1</span></code> sets it to archive the page and follow one link outwards and archive those pages. <code class="docutils literal notranslate"><span class="pre">2</span></code> sets it to follow a maximum of two hops outwards, and so on…</p>
+</div>
+<div class="section" id="crawler-type">
+<h4><code class="docutils literal notranslate"><span class="pre">--crawler=[type]</span></code><a class="headerlink" href="#crawler-type" title="Permalink to this headline">¶</a></h4>
+<p>Controls which crawler to use in order to find outlinks in a given page.</p>
+</div>
+<div class="section" id="url">
+<h4><code class="docutils literal notranslate"><span class="pre">url</span></code><a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h4>
+<p>Is the page you want to archive</p>
+</div>
+<div class="section" id="stdin">
+<h4><code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">stdin</span></code><a class="headerlink" href="#stdin" title="Permalink to this headline">¶</a></h4>
+<p>URLs to be added can also be piped in via stdin instead of passed as an argument</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ archivebox add --depth<span class="o">=</span><span class="m">1</span> https://example.com
+<span class="o">[</span>+<span class="o">]</span> <span class="o">[</span><span class="m">2019</span>-03-30 <span class="m">18</span>:36:41<span class="o">]</span> Adding <span class="m">1</span> new url and all pages <span class="m">1</span> hop out: https://example.com
+<span class="o">[</span>*<span class="o">]</span> <span class="o">[</span><span class="m">2019</span>-03-30 <span class="m">18</span>:36:42<span class="o">]</span> Saving main index files...
+    √ ./index.json
+    √ ./index.html
+<span class="o">[</span>▶<span class="o">]</span> <span class="o">[</span><span class="m">2019</span>-03-30 <span class="m">18</span>:36:42<span class="o">]</span> Updating archive content...
+<span class="o">[</span>+<span class="o">]</span> <span class="o">[</span><span class="m">2019</span>-03-30 <span class="m">18</span>:36:42<span class="o">]</span> <span class="s2">&quot;Using Geolocation Data to Understand Consumer Behavior During Severe Weather Events&quot;</span>
+    https://orbitalinsight.com/using-geolocation-data-understand-consumer-behavior-severe-weather-events
+    &gt; ./archive/1553789823
+        &gt; wget
+        &gt; warc
+        &gt; media
+        &gt; screenshot
+<span class="o">[</span>√<span class="o">]</span> <span class="o">[</span><span class="m">2019</span>-03-30 <span class="m">18</span>:39:00<span class="o">]</span> Update of <span class="m">37</span> pages <span class="nb">complete</span> <span class="o">(</span><span class="m">2</span>.08 sec<span class="o">)</span>
+    - <span class="m">35</span> links skipped
+    - <span class="m">0</span> links updated
+    - <span class="m">2</span> links had errors
+<span class="o">[</span>*<span class="o">]</span> <span class="o">[</span><span class="m">2019</span>-03-30 <span class="m">18</span>:39:00<span class="o">]</span> Saving main index files...
+    √ ./index.json
+    √ ./index.html
+
+    To view your archive, open:
+        /Users/example/ArchiveBox/index.html
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="archivebox-schedule">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">schedule</span></code><a class="headerlink" href="#archivebox-schedule" title="Permalink to this headline">¶</a></h3>
+<p>Use <code class="docutils literal notranslate"><span class="pre">python-crontab</span></code> to add, remove, and edit regularly scheduled archive update jobs.</p>
+<div class="section" id="run-all">
+<h4><code class="docutils literal notranslate"><span class="pre">--run-all</span></code><a class="headerlink" href="#run-all" title="Permalink to this headline">¶</a></h4>
+<p>Run all the scheduled jobs once immediately, independent of their configured schedules</p>
+</div>
+<div class="section" id="foreground">
+<h4><code class="docutils literal notranslate"><span class="pre">--foreground</span></code><a class="headerlink" href="#foreground" title="Permalink to this headline">¶</a></h4>
+<p>Launch ArchiveBox as a long-running foreground task instead of using cron.</p>
+</div>
+<div class="section" id="show">
+<h4><code class="docutils literal notranslate"><span class="pre">--show</span></code><a class="headerlink" href="#show" title="Permalink to this headline">¶</a></h4>
+<p>Print a list of currently active ArchiveBox cron jobs</p>
+</div>
+<div class="section" id="clear">
+<h4><code class="docutils literal notranslate"><span class="pre">--clear</span></code><a class="headerlink" href="#clear" title="Permalink to this headline">¶</a></h4>
+<p>Stop all ArchiveBox scheduled runs, clear it completely from cron</p>
+</div>
+<div class="section" id="add">
+<h4><code class="docutils literal notranslate"><span class="pre">--add</span></code><a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h4>
+<p>Add a new scheduled ArchiveBox update job to cron</p>
+</div>
+<div class="section" id="quiet">
+<h4><code class="docutils literal notranslate"><span class="pre">--quiet</span></code><a class="headerlink" href="#quiet" title="Permalink to this headline">¶</a></h4>
+<p>Don’t warn about many jobs potentially using up storage space.</p>
+</div>
+<div class="section" id="every-schedule">
+<h4><code class="docutils literal notranslate"><span class="pre">--every=[schedule]</span></code><a class="headerlink" href="#every-schedule" title="Permalink to this headline">¶</a></h4>
+<p>The schedule to run the command can be either:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">minute</span></code>/<code class="docutils literal notranslate"><span class="pre">hour</span></code>/<code class="docutils literal notranslate"><span class="pre">day</span></code>/<code class="docutils literal notranslate"><span class="pre">week</span></code>/<code class="docutils literal notranslate"><span class="pre">month</span></code>/<code class="docutils literal notranslate"><span class="pre">year</span></code></p></li>
+<li><p>or a cron-formatted schedule like <code class="docutils literal notranslate"><span class="pre">&quot;0/2</span> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">*&quot;</span></code>/<code class="docutils literal notranslate"><span class="pre">&quot;*</span> <span class="pre">0/10</span> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">*&quot;</span></code>/…</p></li>
+</ul>
+</div>
+<div class="section" id="import-path">
+<h4><code class="docutils literal notranslate"><span class="pre">import_path</span></code><a class="headerlink" href="#import-path" title="Permalink to this headline">¶</a></h4>
+<p>Specify the path as the path to a local file or remote URL to check for new links.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ archivebox schedule --show
+@hourly <span class="nb">cd</span> /optArchiveBox/data <span class="o">&amp;&amp;</span> /opt/ArchiveBox/.venv/bin/archivebox add <span class="s2">&quot;https://getpocket.com/users/nikisweeting/feed/all&quot;</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; /opt/ArchiveBox/data/logs/archivebox.log <span class="c1"># archivebox_schedule</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ archivebox schedule --add --every<span class="o">=</span>hour https://getpocket.com/users/nikisweeting/feed/all
+
+<span class="o">[</span>√<span class="o">]</span> Scheduled new ArchiveBox cron job <span class="k">for</span> user: squash <span class="o">(</span><span class="m">1</span> <span class="nb">jobs</span> are active<span class="o">)</span>.
+  &gt; @hourly <span class="nb">cd</span> /Users/squash/Documents/Code/ArchiveBox/data <span class="o">&amp;&amp;</span> /Users/squash/Documents/Code/ArchiveBox/.venv/bin/archivebox add <span class="s2">&quot;https://getpocket.com/users/nikisweeting/feed/all&quot;</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; /Users/squash/Documents/Code/ArchiveBox/data/logs/archivebox.log <span class="c1"># archivebox_schedule</span>
+
+<span class="o">[</span>!<span class="o">]</span> With the current cron config, ArchiveBox is estimated to run &gt;365 <span class="nb">times</span> per year.
+    Congrats on being an enthusiastic internet archiver! 👌
+
+    Make sure you have enough storage space available to hold all the data.
+    Using a compressed/deduped filesystem like ZFS is recommended <span class="k">if</span> you plan on archiving a lot.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="archivebox-config">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">config</span></code><a class="headerlink" href="#archivebox-config" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="no-args">
+<h4><code class="docutils literal notranslate"><span class="pre">(no</span> <span class="pre">args)</span></code><a class="headerlink" href="#no-args" title="Permalink to this headline">¶</a></h4>
+<p>Print the entire config to stdout.</p>
+</div>
+<div class="section" id="get-key">
+<h4><code class="docutils literal notranslate"><span class="pre">--get</span> <span class="pre">KEY</span></code><a class="headerlink" href="#get-key" title="Permalink to this headline">¶</a></h4>
+<p>Get the given config key:value and print it to stdout.</p>
+</div>
+<div class="section" id="set-key-value">
+<h4><code class="docutils literal notranslate"><span class="pre">--set</span> <span class="pre">KEY=VALUE</span></code><a class="headerlink" href="#set-key-value" title="Permalink to this headline">¶</a></h4>
+<p>Set the given config key:value in the current collection’s config file.</p>
+</div>
+<div class="section" id="id1">
+<h4><code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">stdin</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ archviebox config
+<span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="s2">&quot;output&quot;</span>
+<span class="nv">OUTPUT_PERMISSIONS</span><span class="o">=</span><span class="m">755</span>
+<span class="nv">ONLY_NEW</span><span class="o">=</span>False
+...
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ archviebox --get CHROME_VERSION
+Google Chrome <span class="m">74</span>.0.3729.40 beta
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ archviebox --set <span class="nv">USE_CHROME</span><span class="o">=</span>False
+<span class="nv">USE_CHROME</span><span class="o">=</span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="archivebox-update">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">update</span></code><a class="headerlink" href="#archivebox-update" title="Permalink to this headline">¶</a></h3>
+<p><strong>Check all subscribed feeds for new links, archive them and retry any previously failed pages.</strong></p>
+<div class="section" id="id2">
+<h4><code class="docutils literal notranslate"><span class="pre">(no</span> <span class="pre">args)</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>Update the index and go through each page, retrying any that failed previously.</p>
+</div>
+<div class="section" id="id3">
+<h4><code class="docutils literal notranslate"><span class="pre">--only-new</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>By default it always retries previously failed/skipped pages, pass this flag to only archive newly added links without going through the whole archive and attempting to fix previously failed links.</p>
+</div>
+<div class="section" id="resume-timestamp">
+<h4><code class="docutils literal notranslate"><span class="pre">--resume=[timestamp]</span></code><a class="headerlink" href="#resume-timestamp" title="Permalink to this headline">¶</a></h4>
+<p>Resume the update process from a specific URL timestamp.</p>
+</div>
+<div class="section" id="snapshot">
+<h4><code class="docutils literal notranslate"><span class="pre">--snapshot</span></code><a class="headerlink" href="#snapshot" title="Permalink to this headline">¶</a></h4>
+<p>[TODO] by default ArchiveBox never re-archives pages after the first successful archive, if you want to take a new snapshot of every page even if there’s an existing version, pass this option.</p>
+</div>
+</div>
+<div class="section" id="archivebox-list">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">list</span></code><a class="headerlink" href="#archivebox-list" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="csv-columns">
+<h4><code class="docutils literal notranslate"><span class="pre">--csv=COLUMNS</span></code><a class="headerlink" href="#csv-columns" title="Permalink to this headline">¶</a></h4>
+<p>Print the output in CSV format, with the specified columns, e.g. <code class="docutils literal notranslate"><span class="pre">--csv=timestamp,base_url,is_archived</span></code></p>
+</div>
+<div class="section" id="json">
+<h4><code class="docutils literal notranslate"><span class="pre">--json</span></code><a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h4>
+<p>Print the output in JSON format (with all the link attributes included in the JSON output).</p>
+</div>
+<div class="section" id="filter-regex">
+<h4><code class="docutils literal notranslate"><span class="pre">--filter=REGEX</span></code><a class="headerlink" href="#filter-regex" title="Permalink to this headline">¶</a></h4>
+<p>Print only URLs matching a specified regex, e.g. <code class="docutils literal notranslate"><span class="pre">--filter='.*github.com.*'</span></code></p>
+</div>
+<div class="section" id="before-timestamp-after-timestamp">
+<h4><code class="docutils literal notranslate"><span class="pre">--before=TIMESTAMP</span></code> / <code class="docutils literal notranslate"><span class="pre">--after=TIMESTAMP</span></code><a class="headerlink" href="#before-timestamp-after-timestamp" title="Permalink to this headline">¶</a></h4>
+<p>Print only URLs before or after a given timestamp, e.g. <code class="docutils literal notranslate"><span class="pre">--before=1554263415.2</span></code> or <code class="docutils literal notranslate"><span class="pre">--after=1554260000</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ archivebox list --sort<span class="o">=</span>timestamp
+http://www.iana.org/domains/example
+https://github.com/pirate/ArchiveBox/wiki
+https://github.com/pirate/ArchiveBox/commit/0.4.0
+https://github.com/pirate/ArchiveBox
+https://archivebox.io
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ archivebox list --sort<span class="o">=</span>timestamp --csv<span class="o">=</span>timestamp,url
+timestamp,url
+<span class="m">1554260947</span>,http://www.iana.org/domains/example
+<span class="m">1554263415</span>,https://github.com/pirate/ArchiveBox/wiki
+<span class="m">1554263415</span>.0,https://github.com/pirate/ArchiveBox/commit/0.4.0
+<span class="m">1554263415</span>.1,https://github.com/pirate/ArchiveBox
+<span class="m">1554263415</span>.2,https://archivebox.io
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ archivebox list --sort<span class="o">=</span>timestamp --csv<span class="o">=</span>timestamp,url --after<span class="o">=</span><span class="m">1554263415</span>.0
+timestamp,url
+<span class="m">1554263415</span>,https://github.com/pirate/ArchiveBox/wiki
+<span class="m">1554263415</span>.0,https://github.com/pirate/ArchiveBox/commit/0.4.0
+<span class="m">1554263415</span>.1,https://github.com/pirate/ArchiveBox
+<span class="m">1554263415</span>.2,https://archivebox.io
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="archivebox-remove">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">remove</span></code><a class="headerlink" href="#archivebox-remove" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="yes">
+<h4><code class="docutils literal notranslate"><span class="pre">--yes</span></code><a class="headerlink" href="#yes" title="Permalink to this headline">¶</a></h4>
+<p>Proceed with removal without prompting the user for confirmation.</p>
+</div>
+<div class="section" id="delete">
+<h4><code class="docutils literal notranslate"><span class="pre">--delete</span></code><a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h4>
+<p>Also delete all the matching links snapshot data folders and content files.</p>
+</div>
+<div class="section" id="filter-type">
+<h4><code class="docutils literal notranslate"><span class="pre">--filter-type</span></code><a class="headerlink" href="#filter-type" title="Permalink to this headline">¶</a></h4>
+<p>Defaults to <code class="docutils literal notranslate"><span class="pre">exact</span></code>, but can be set to any of <code class="docutils literal notranslate"><span class="pre">exact</span></code>, <code class="docutils literal notranslate"><span class="pre">substring</span></code>, <code class="docutils literal notranslate"><span class="pre">domain</span></code>, or <code class="docutils literal notranslate"><span class="pre">regex</span></code>.</p>
+</div>
+<div class="section" id="pattern">
+<h4><code class="docutils literal notranslate"><span class="pre">pattern</span></code><a class="headerlink" href="#pattern" title="Permalink to this headline">¶</a></h4>
+<p>The filter pattern used to match links in the index.  Matching links are removed.</p>
+</div>
+<div class="section" id="id4">
+<h4><code class="docutils literal notranslate"><span class="pre">--before=TIMESTAMP</span></code> / <code class="docutils literal notranslate"><span class="pre">--after=TIMESTAMP</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>Remove any URLs bookmarked before/after the given timestamp, e.g. <code class="docutils literal notranslate"><span class="pre">--before=1554263415.2</span></code> or <code class="docutils literal notranslate"><span class="pre">--after=1554260000</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ archivebox remove --delete --filter-type<span class="o">=</span>regex <span class="s1">&#39;http(s)?:\\/\\/(.+)?(demo\\.dev|example\\.com)\\/?.*&#39;</span>
+<span class="o">[</span>*<span class="o">]</span> Finding links in the archive index matching these regex patterns:
+    http<span class="o">(</span>s<span class="o">)</span>?:<span class="se">\/\/</span><span class="o">(</span>.+<span class="o">)</span>?<span class="o">(</span>youtube<span class="se">\.</span>com<span class="p">|</span>example<span class="se">\.</span>com<span class="o">)</span><span class="se">\/</span>?.*
+
+---------------------------------------------------------------------------------------------------
+timestamp        <span class="p">|</span> is_archived      <span class="p">|</span> num_outputs      <span class="p">|</span> url
+<span class="s2">&quot;1554984695&quot;</span>     <span class="p">|</span> <span class="nb">true</span>             <span class="p">|</span> <span class="m">7</span>                <span class="p">|</span> <span class="s2">&quot;https://example.com&quot;</span>
+---------------------------------------------------------------------------------------------------
+
+<span class="o">[</span>i<span class="o">]</span> Found <span class="m">1</span> matching URLs to remove.
+    <span class="m">1</span> Links will be de-listed from the main index, and their archived content folders will be deleted from disk.
+    <span class="o">(</span><span class="m">1</span> data folders with <span class="m">7</span> archived files will be deleted!<span class="o">)</span>
+
+<span class="o">[</span>?<span class="o">]</span> Do you want to proceed with removing these <span class="m">1</span> links?
+    y/<span class="o">[</span>n<span class="o">]</span>: y
+
+<span class="o">[</span>*<span class="o">]</span> <span class="o">[</span><span class="m">2019</span>-04-11 <span class="m">08</span>:11:57<span class="o">]</span> Saving main index files...
+    √ /opt/ArchiveBox/data/index.json
+    √ /opt/ArchiveBox/data/index.html
+
+<span class="o">[</span>√<span class="o">]</span> Removed <span class="m">1</span> out of <span class="m">1</span> links from the archive index.
+    Index now contains <span class="m">0</span> links.
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ archivebox remove --yes --delete --filter-type<span class="o">=</span>domain example.com
+...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="archivebox-manage">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">manage</span></code><a class="headerlink" href="#archivebox-manage" title="Permalink to this headline">¶</a></h3>
+<p>Run a Django management command in the context of the current archivebox data directory.</p>
+<div class="section" id="command-args">
+<h4><code class="docutils literal notranslate"><span class="pre">[command]</span> <span class="pre">[...args]</span></code><a class="headerlink" href="#command-args" title="Permalink to this headline">¶</a></h4>
+<p>The name of the management command to run, e.g.: <code class="docutils literal notranslate"><span class="pre">help</span></code>, <code class="docutils literal notranslate"><span class="pre">migrate</span></code>, <code class="docutils literal notranslate"><span class="pre">changepassword</span></code>, <code class="docutils literal notranslate"><span class="pre">createsuperuser</span></code>, etc.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ archivebox manage <span class="nb">help</span>
+Type <span class="s1">&#39;archivebox manage help &lt;subcommand&gt;&#39;</span> <span class="k">for</span> <span class="nb">help</span> on a specific subcommand.
+
+Available subcommands:
+
+<span class="o">[</span>auth<span class="o">]</span>
+    changepassword
+    createsuperuser
+
+<span class="o">[</span>contenttypes<span class="o">]</span>
+    remove_stale_contenttypes
+
+<span class="o">[</span>core<span class="o">]</span>
+    archivebox
+
+...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="archivebox-server">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">server</span></code><a class="headerlink" href="#archivebox-server" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ip-port">
+<h4><code class="docutils literal notranslate"><span class="pre">[ip:port]</span></code><a class="headerlink" href="#ip-port" title="Permalink to this headline">¶</a></h4>
+<p>The address:port combo to run the server on, defaults to <code class="docutils literal notranslate"><span class="pre">127.0.0.1:8000</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ archivebox server
+<span class="o">[</span>+<span class="o">]</span> Starting ArchiveBox webserver...
+Watching <span class="k">for</span> file changes with StatReloader
+Performing system checks...
+
+System check identified no issues <span class="o">(</span><span class="m">0</span> silenced<span class="o">)</span>.
+April <span class="m">23</span>, <span class="m">2019</span> - <span class="m">01</span>:40:52
+Django version <span class="m">2</span>.2, using settings <span class="s1">&#39;core.settings&#39;</span>
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="archivebox-proxy">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">proxy</span></code><a class="headerlink" href="#archivebox-proxy" title="Permalink to this headline">¶</a></h3>
+<p>Run a live HTTP/HTTPS proxy for recording and replaying WARCs using pywb.</p>
+<div class="section" id="bind-ip-port">
+<h4><code class="docutils literal notranslate"><span class="pre">--bind=[ip:port]</span></code><a class="headerlink" href="#bind-ip-port" title="Permalink to this headline">¶</a></h4>
+<p>The address:port combo to run the proxy on, defaults to <code class="docutils literal notranslate"><span class="pre">127.0.0.1:8010</span></code>.</p>
+</div>
+<div class="section" id="record">
+<h4><code class="docutils literal notranslate"><span class="pre">--record</span></code><a class="headerlink" href="#record" title="Permalink to this headline">¶</a></h4>
+<p>Save all traffic visited through the proxy to the archive.</p>
+</div>
+<div class="section" id="replay">
+<h4><code class="docutils literal notranslate"><span class="pre">--replay</span></code><a class="headerlink" href="#replay" title="Permalink to this headline">¶</a></h4>
+<p>Attempt to serve all pages visited through the proxy from the archive.</p>
+</div>
+</div>
+<div class="section" id="archivebox-shell">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">shell</span></code><a class="headerlink" href="#archivebox-shell" title="Permalink to this headline">¶</a></h3>
+<p>Drop into an ArchiveBox Django shell with access to all models and data.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ archivebox shell                                                                                                                                                          
+Loaded archive data folder ~/example_collection...
+Python <span class="m">3</span>.7.2 <span class="o">(</span>default, Feb <span class="m">12</span> <span class="m">2019</span>, <span class="m">08</span>:15:36<span class="o">)</span>
+
+In <span class="o">[</span><span class="m">1</span><span class="o">]</span>: <span class="nv">url_to_archive</span> <span class="o">=</span> Link.objects.filter<span class="o">(</span><span class="nv">is_archived</span><span class="o">=</span>True<span class="o">)</span>.values_list<span class="o">(</span><span class="s1">&#39;url&#39;</span>, <span class="nv">flat</span><span class="o">=</span>True<span class="o">)</span>
+...
+</pre></div>
+</div>
+</div>
+<div class="section" id="archivebox-oneshot">
+<h3><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">archivebox</span> <span class="pre">oneshot</span></code><a class="headerlink" href="#archivebox-oneshot" title="Permalink to this headline">¶</a></h3>
+<p>Create a single URL archive folder with an index.json and index.html, and all the archive method outputs.  You can run this to archive single pages without needing to create a whole collection with <code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">init</span></code>.</p>
+<div class="section" id="out-dir-path">
+<h4><code class="docutils literal notranslate"><span class="pre">--out-dir=[path]</span></code><a class="headerlink" href="#out-dir-path" title="Permalink to this headline">¶</a></h4>
+<p>Path to save the single archive folder to, e.g. <code class="docutils literal notranslate"><span class="pre">./example.com_archive</span></code>.</p>
+</div>
+<div class="section" id="all-media-wget">
+<h4><code class="docutils literal notranslate"><span class="pre">[--all|--media|--wget|...]</span></code><a class="headerlink" href="#all-media-wget" title="Permalink to this headline">¶</a></h4>
+<p>Which archive methods to use when saving the URL.</p>
+</div>
+</div>
+</div>
+<div class="section" id="python-usage">
+<h2>Python Usage<a class="headerlink" href="#python-usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="api-for-normal-archivebox-usage">
+<h3>API for normal ArchiveBox usage<a class="headerlink" href="#api-for-normal-archivebox-usage" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">archivebox</span> <span class="kn">import</span> <span class="n">add</span><span class="p">,</span> <span class="n">subscribe</span><span class="p">,</span> <span class="n">update</span>
+
+<span class="n">add</span><span class="p">(</span><span class="s1">&#39;https://example.com&#39;</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">subscribe</span><span class="p">(</span><span class="s1">&#39;https://example.com/some/feed.rss&#39;</span><span class="p">)</span>
+<span class="n">update</span><span class="p">(</span><span class="n">only_new</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="api-for-all-useful-subcomponents">
+<h3>API for All Useful Subcomponents<a class="headerlink" href="#api-for-all-useful-subcomponents" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">archivebox</span> <span class="kn">import</span> <span class="n">oneshot</span>
+<span class="kn">from</span> <span class="nn">archivebox.crawl</span> <span class="kn">import</span> <span class="n">rss</span>
+<span class="kn">from</span> <span class="nn">archivebox.extract</span> <span class="kn">import</span> <span class="n">media</span>
+
+<span class="n">links</span> <span class="o">=</span> <span class="n">crawl_rss</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;feed.rss&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="n">assets</span> <span class="o">=</span> <span class="n">media</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">&#39;https://youtube.com/watch?v=example&#39;</span><span class="p">)</span>
+<span class="n">oneshot</span><span class="p">(</span><span class="s1">&#39;https://example.com&#39;</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="s1">&#39;~/Desktop/example.com_archive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="design">
+<h2>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h2>
+<p>As of v0.4.0 ArchiveBox also writes the index to a <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> file using the Django ORM (in addition to the usual <code class="docutils literal notranslate"><span class="pre">json</span></code> and <code class="docutils literal notranslate"><span class="pre">html</span></code> formats, those aren’t going away).  To an end user, it will still appear to be a single CLI application, and none of the django complexity will be exposed.  Django is used primarily because it allows for safe migrations of a sqlite database. As the schema gets updated in the future I don’t want to break people’s archives with every new version.  It also allows us to have the GUI server start with many safe defaults and share much of the same codebase with the CLI and library components, including maintaining the archive database and managing a worker pool.</p>
+<p>There will be 3 primary use cases for archivebox, and all three will be served by the pip package:</p>
+<ul class="simple">
+<li><p>simple CLI operation:
+<code class="docutils literal notranslate"><span class="pre">archivebox.cli</span> <span class="pre">import</span> <span class="pre">add</span> <span class="pre">--depth=1</span> <span class="pre">./path/to/export.html</span></code> (similar to current <code class="docutils literal notranslate"><span class="pre">archivebox</span></code> CLI)</p></li>
+<li><p>use of individual components as a library:
+<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">archivebox.extract</span> <span class="pre">import</span> <span class="pre">screenshot</span></code> or <code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">oneshot</span> <span class="pre">--screenshot</span> <span class="pre">...</span></code></p></li>
+<li><p>usage in server mode with a GUI to add/remove links and create exports:
+<code class="docutils literal notranslate"><span class="pre">archivebox</span> <span class="pre">server</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="dependencies">
+<h2>Dependencies:<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>django (required)</p></li>
+<li><p>sqlite (required)</p></li>
+<li><p>headless chrome (required)</p></li>
+<li><p>wget (required)</p></li>
+<li><p>redis (optional, for web GUI only)</p></li>
+<li><p>dramatiq (optinal, for web GUI only)</p></li>
+</ul>
+<p>When launched in webserver mode, archivebox will automatically spawn a pool of workers (dramatiq) as big as the number of CPUs available to use for crawling, archiving, and publishing.</p>
+<p>When launched in CLI mode it will use normal subprocesses to do multithreading without redis/dramatiq.</p>
+</div>
+<div class="section" id="code-folder-layout">
+<h2>Code Folder Layout<a class="headerlink" href="#code-folder-layout" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>archivebox/</p>
+<ul>
+<li><p>core/</p>
+<ul>
+<li><p>models.py
+Archive = Dict[Page, Dict[Archiver, List[Asset]]]   # A collection of archived pages
+Crawl = List[Page]                                                      # list of links to add to an archive
+Page                                                   # an archived page with unique url
+Asset                                              # a file archived from a page</p></li>
+<li><p>util.py</p></li>
+<li><p>settings.py</p></li>
+</ul>
+</li>
+<li><p>crawl/
+impl:
+detect_crawlable(Import) -&gt; bool
+crawl(Import) -&gt; List[Page]</p>
+<ul>
+<li><p>txt.py</p></li>
+<li><p>rss.py</p></li>
+<li><p>netscape.py</p></li>
+<li><p>pocket.py</p></li>
+<li><p>pinboard.py</p></li>
+<li><p>html.py</p></li>
+</ul>
+</li>
+<li><p>extract/
+impl:
+detect_extractable(Page) -&gt; bool
+extract(Page) -&gt; List[Asset]</p>
+<ul>
+<li><p>wget.py</p></li>
+<li><p>screenshot.py</p></li>
+<li><p>pdf.py</p></li>
+<li><p>dom.py</p></li>
+<li><p>youtubedl.py</p></li>
+<li><p>waybackmachine.py</p></li>
+<li><p>solana.py</p></li>
+</ul>
+</li>
+<li><p>publish/
+impl:
+publish(Archive, output_format)</p>
+<ul>
+<li><p>html.py</p></li>
+<li><p>json.py</p></li>
+<li><p>csv.py</p></li>
+<li><p>sql.py</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="collection-data-folder-layout">
+<h2>Collection Data Folder Layout<a class="headerlink" href="#collection-data-folder-layout" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>ArchiveBox.conf</p></li>
+<li><p>database/</p>
+<ul>
+<li><p>sqlite.db</p></li>
+</ul>
+</li>
+<li><p>archive</p>
+<ul>
+<li><p>assets/&lt;hash&gt;/</p></li>
+</ul>
+</li>
+<li><p>logs/</p>
+<ul>
+<li><p>server.log</p></li>
+<li><p>crawl.log</p></li>
+<li><p>archive.log</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="exported-folder-layout">
+<h2>Exported Folder Layout<a class="headerlink" href="#exported-folder-layout" title="Permalink to this headline">¶</a></h2>
+<p>For publishing the archive as static html/json/csv/sql.</p>
+<ul class="simple">
+<li><p>index.html,json,csv,sql</p></li>
+<li><p>archive/</p>
+<ul>
+<li><p>&lt;timestamp&gt;/</p>
+<ul>
+<li><p>index.html</p></li>
+<li><p>&lt;url&gt;/</p>
+<ul>
+<li><p>index.html,json,csv,sql</p></li>
+</ul>
+</li>
+<li><p>assets/</p>
+<ul>
+<li><p>hash.mp4</p></li>
+<li><p>hash.txt</p></li>
+<li><p>hash.mp3</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p>The server will be runnable with docker / docker-compose as well:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span> <span class="s">&#39;3&#39;</span>
+
+<span class="nt">services</span><span class="p">:</span>
+    <span class="nt">archivebox</span><span class="p">:</span>
+        <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">archivebox</span>
+        <span class="nt">ports</span><span class="p">:</span>
+            <span class="p p-Indicator">-</span> <span class="s">&#39;8098:80&#39;</span>
+        <span class="nt">volumes</span><span class="p">:</span>
+            <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">./data/:/data</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="major-long-term-changes">
+<h3>Major long-term changes<a class="headerlink" href="#major-long-term-changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>release <strong><code class="docutils literal notranslate"><span class="pre">pip</span></code>, <code class="docutils literal notranslate"><span class="pre">apt</span></code>, <code class="docutils literal notranslate"><span class="pre">pkg</span></code>, and <code class="docutils literal notranslate"><span class="pre">brew</span></code> packaged distributions</strong> for installing ArchiveBox</p></li>
+<li><p>add an <strong>optional web GUI</strong> for managing sources, adding new links, and viewing the archive</p></li>
+<li><p>switch to django + <strong>sqlite db with migrations system</strong> &amp; json/html export for managing archive schema changes and persistence</p></li>
+<li><p>modularize internals to allow importing individual components</p></li>
+<li><p>switch to sha256 of URL as unique link ID</p></li>
+<li><p>support <strong>storing multiple snapshots</strong> of pages over time</p></li>
+<li><p>support <strong>custom user puppeteer scripts to run while archiving</strong> (e.g. for expanding reddit threads, scrolling thread on twitter, etc)</p></li>
+<li><p>support named collections of archived content with different user access permissions</p></li>
+<li><p>support sharing archived assets via DHT + torrent / ipfs / ZeroNet / other sharing system</p></li>
+</ul>
+</div>
+<div class="section" id="smaller-planned-features">
+<h3>Smaller planned features<a class="headerlink" href="#smaller-planned-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>support pushing pages to multiple 3rd party services using ArchiveNow instead of just archive.org</p></li>
+<li><p>body text extraction to markdown (using <a class="reference external" href="https://hacks.mozilla.org/2017/04/fathom-a-framework-for-understanding-web-pages/">fathom</a>?)</p></li>
+<li><p>featured image / thumbnail extraction</p></li>
+<li><p>auto-tagging links based on important/frequent keywords in extracted text (like pocket)</p></li>
+<li><p>automatic article summary paragraphs from extracted text with nlp summarization library</p></li>
+<li><p>full-text search of extracted text with elasticsearch/elasticlunr/ag</p></li>
+<li><p>download closed-caption subtitles from Youtube and other video sites for full-text indexing of video content</p></li>
+<li><p>try pulling dead sites from archive.org and other sources if original is down (https://github.com/hartator/wayback-machine-downloader)</p></li>
+<li><p>And more in the <a class="reference external" href="https://github.com/pirate/ArchiveBox/issues/">issues list</a>…</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>IMPORTANT</strong>: <em>Please don’t work on any of these major long-term tasks without <a class="reference external" href="https://nicksweeting.com/blog#Contact-Me">contacting me first</a>, work is already in progress for many of these, and I may have to reject your PR if it doesn’t align with the existing work!</em></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nick Sweeting
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

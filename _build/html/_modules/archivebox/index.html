@@ -1,0 +1,804 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>archivebox.index &mdash; ArchiveBox 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> ArchiveBox
+          
+
+          
+            
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">How does it work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#quickstart">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#overview">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#documentation">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#screenshots">Screenshots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Donations.html">Donations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web-Archiving-Community.html">Web Archiving Community</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Docker.html">Docker</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Security-Overview.html">Security Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Publishing-Your-Archive.html">Publishing Your Archive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scheduled-Archiving.html">Scheduled Archiving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Chromium-Install.html">Chromium Install</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ArchiveBox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>archivebox.index</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for archivebox.index</h1><div class="highlight"><pre>
+<span></span><span class="n">__package__</span> <span class="o">=</span> <span class="s1">&#39;archivebox.index&#39;</span>
+
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">json</span> <span class="k">as</span> <span class="nn">pyjson</span>
+
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">chain</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Iterable</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">contextlib</span> <span class="k">import</span> <span class="n">contextmanager</span>
+
+<span class="kn">from</span> <span class="nn">..parsers</span> <span class="k">import</span> <span class="n">parse_links</span>
+<span class="kn">from</span> <span class="nn">..util</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">scheme</span><span class="p">,</span>
+    <span class="n">enforce_types</span><span class="p">,</span>
+    <span class="n">TimedProgress</span><span class="p">,</span>
+    <span class="n">atomic_write</span><span class="p">,</span>
+    <span class="n">ExtendedEncoder</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">..config</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">ARCHIVE_DIR_NAME</span><span class="p">,</span>
+    <span class="n">SQL_INDEX_FILENAME</span><span class="p">,</span>
+    <span class="n">JSON_INDEX_FILENAME</span><span class="p">,</span>
+    <span class="n">HTML_INDEX_FILENAME</span><span class="p">,</span>
+    <span class="n">OUTPUT_DIR</span><span class="p">,</span>
+    <span class="n">TIMEOUT</span><span class="p">,</span>
+    <span class="n">URL_BLACKLIST_PTN</span><span class="p">,</span>
+    <span class="n">ANSI</span><span class="p">,</span>
+    <span class="n">stderr</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">..cli.logging</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">log_indexing_process_started</span><span class="p">,</span>
+    <span class="n">log_indexing_process_finished</span><span class="p">,</span>
+    <span class="n">log_indexing_started</span><span class="p">,</span>
+    <span class="n">log_indexing_finished</span><span class="p">,</span>
+    <span class="n">log_parsing_started</span><span class="p">,</span>
+    <span class="n">log_parsing_finished</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">.schema</span> <span class="k">import</span> <span class="n">Link</span><span class="p">,</span> <span class="n">ArchiveResult</span>
+<span class="kn">from</span> <span class="nn">.html</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">write_html_main_index</span><span class="p">,</span>
+    <span class="n">write_html_link_details</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.json</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">parse_json_main_index</span><span class="p">,</span>
+    <span class="n">write_json_main_index</span><span class="p">,</span>
+    <span class="n">parse_json_link_details</span><span class="p">,</span> 
+    <span class="n">write_json_link_details</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.sql</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">write_sql_main_index</span><span class="p">,</span>
+    <span class="n">parse_sql_main_index</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1">### Link filtering and checking</span>
+
+<div class="viewcode-block" id="merge_links"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.merge_links">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">merge_links</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Link</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Link</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Link</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;deterministially merge two links, favoring longer field values over shorter,</span>
+<span class="sd">    and &quot;cleaner&quot; values over worse ones.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">a</span><span class="o">.</span><span class="n">base_url</span> <span class="o">==</span> <span class="n">b</span><span class="o">.</span><span class="n">base_url</span><span class="p">,</span> <span class="s1">&#39;Cannot merge two links with different URLs&#39;</span>
+
+    <span class="c1"># longest url wins (because a fuzzy url will always be shorter)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">url</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">url</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">url</span><span class="p">)</span> <span class="k">else</span> <span class="n">b</span><span class="o">.</span><span class="n">url</span>
+
+    <span class="c1"># best title based on length and quality</span>
+    <span class="n">possible_titles</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">title</span>
+        <span class="k">for</span> <span class="n">title</span> <span class="ow">in</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">title</span> <span class="ow">and</span> <span class="n">title</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">and</span> <span class="s1">&#39;://&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">title</span>
+    <span class="p">]</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">possible_titles</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">possible_titles</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">possible_titles</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">possible_titles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># earliest valid timestamp</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">timestamp</span>
+        <span class="k">if</span> <span class="nb">float</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">timestamp</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">float</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">timestamp</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span> <span class="k">else</span>
+        <span class="n">b</span><span class="o">.</span><span class="n">timestamp</span>
+    <span class="p">)</span>
+
+    <span class="c1"># all unique, truthy tags</span>
+    <span class="n">tags_set</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="nb">set</span><span class="p">(</span><span class="n">tag</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">tags</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>
+        <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="n">tag</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">tags</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tags_set</span><span class="p">)</span> <span class="ow">or</span> <span class="kc">None</span>
+
+    <span class="c1"># all unique source entries</span>
+    <span class="n">sources</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">sources</span> <span class="o">+</span> <span class="n">b</span><span class="o">.</span><span class="n">sources</span><span class="p">))</span>
+
+    <span class="c1"># all unique history entries for the combined archive methods</span>
+    <span class="n">all_methods</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="n">history</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">method</span><span class="p">:</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">method</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[])</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">method</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[])</span>
+        <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">all_methods</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">all_methods</span><span class="p">:</span>
+        <span class="n">deduped_jsons</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">pyjson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">ExtendedEncoder</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">history</span><span class="p">[</span><span class="n">method</span><span class="p">]</span>
+        <span class="p">}</span>
+        <span class="n">history</span><span class="p">[</span><span class="n">method</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">ArchiveResult</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">pyjson</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">))</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">deduped_jsons</span><span class="p">),</span>
+            <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">start_ts</span><span class="p">,</span>
+        <span class="p">)))</span>
+
+    <span class="k">return</span> <span class="n">Link</span><span class="p">(</span>
+        <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+        <span class="n">timestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
+        <span class="n">tags</span><span class="o">=</span><span class="n">tags</span><span class="p">,</span>
+        <span class="n">sources</span><span class="o">=</span><span class="n">sources</span><span class="p">,</span>
+        <span class="n">history</span><span class="o">=</span><span class="n">history</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="validate_links"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.validate_links">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">validate_links</span><span class="p">(</span><span class="n">links</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Link</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Link</span><span class="p">]:</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="n">archivable_links</span><span class="p">(</span><span class="n">links</span><span class="p">)</span>  <span class="c1"># remove chrome://, about:, mailto: etc.</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="n">sorted_links</span><span class="p">(</span><span class="n">links</span><span class="p">)</span>      <span class="c1"># deterministically sort the links based on timstamp, url</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="n">uniquefied_links</span><span class="p">(</span><span class="n">links</span><span class="p">)</span>  <span class="c1"># merge/dedupe duplicate timestamps &amp; urls</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">links</span><span class="p">:</span>
+        <span class="n">stderr</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{red}</span><span class="s1">[X] No links found in index.</span><span class="si">{reset}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">ANSI</span><span class="p">))</span>
+        <span class="n">stderr</span><span class="p">(</span><span class="s1">&#39;    To add a link to your archive, run:&#39;</span><span class="p">)</span>
+        <span class="n">stderr</span><span class="p">(</span><span class="s2">&quot;        archivebox add &#39;https://example.com&#39;&quot;</span><span class="p">)</span>
+        <span class="n">stderr</span><span class="p">()</span>
+        <span class="n">stderr</span><span class="p">(</span><span class="s1">&#39;    For more usage and examples, run:&#39;</span><span class="p">)</span>
+        <span class="n">stderr</span><span class="p">(</span><span class="s1">&#39;        archivebox help&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">links</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="archivable_links"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.archivable_links">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">archivable_links</span><span class="p">(</span><span class="n">links</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Link</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Link</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;remove chrome://, about:// or other schemed links that cant be archived&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+        <span class="n">scheme_is_valid</span> <span class="o">=</span> <span class="n">scheme</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="s1">&#39;ftp&#39;</span><span class="p">)</span>
+        <span class="n">not_blacklisted</span> <span class="o">=</span> <span class="p">(</span><span class="ow">not</span> <span class="n">URL_BLACKLIST_PTN</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">))</span> <span class="k">if</span> <span class="n">URL_BLACKLIST_PTN</span> <span class="k">else</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">scheme_is_valid</span> <span class="ow">and</span> <span class="n">not_blacklisted</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">link</span></div>
+
+
+<div class="viewcode-block" id="uniquefied_links"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.uniquefied_links">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">uniquefied_links</span><span class="p">(</span><span class="n">sorted_links</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Link</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Link</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ensures that all non-duplicate links have monotonically increasing timestamps</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">unique_urls</span><span class="p">:</span> <span class="n">OrderedDict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Link</span><span class="p">]</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">sorted_links</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">link</span><span class="o">.</span><span class="n">base_url</span> <span class="ow">in</span> <span class="n">unique_urls</span><span class="p">:</span>
+            <span class="c1"># merge with any other links that share the same url</span>
+            <span class="n">link</span> <span class="o">=</span> <span class="n">merge_links</span><span class="p">(</span><span class="n">unique_urls</span><span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">base_url</span><span class="p">],</span> <span class="n">link</span><span class="p">)</span>
+        <span class="n">unique_urls</span><span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">base_url</span><span class="p">]</span> <span class="o">=</span> <span class="n">link</span>
+
+    <span class="n">unique_timestamps</span><span class="p">:</span> <span class="n">OrderedDict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Link</span><span class="p">]</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">unique_urls</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="n">new_link</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">overwrite</span><span class="p">(</span>
+            <span class="n">timestamp</span><span class="o">=</span><span class="n">lowest_uniq_timestamp</span><span class="p">(</span><span class="n">unique_timestamps</span><span class="p">,</span> <span class="n">link</span><span class="o">.</span><span class="n">timestamp</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="n">unique_timestamps</span><span class="p">[</span><span class="n">new_link</span><span class="o">.</span><span class="n">timestamp</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_link</span>
+
+    <span class="k">return</span> <span class="n">unique_timestamps</span><span class="o">.</span><span class="n">values</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="sorted_links"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.sorted_links">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">sorted_links</span><span class="p">(</span><span class="n">links</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Link</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Link</span><span class="p">]:</span>
+    <span class="n">sort_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">link</span><span class="p">:</span> <span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">timestamp</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">sort_func</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="links_after_timestamp"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.links_after_timestamp">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">links_after_timestamp</span><span class="p">(</span><span class="n">links</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Link</span><span class="p">],</span> <span class="n">resume</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Link</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">resume</span><span class="p">:</span>
+        <span class="k">yield from</span> <span class="n">links</span>
+        <span class="k">return</span>
+
+    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">float</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">timestamp</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">resume</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">link</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Resume value and all timestamp values must be valid numbers.&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="lowest_uniq_timestamp"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.lowest_uniq_timestamp">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">lowest_uniq_timestamp</span><span class="p">(</span><span class="n">used_timestamps</span><span class="p">:</span> <span class="n">OrderedDict</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;resolve duplicate timestamps by appending a decimal 1234, 1234 -&gt; 1234.1, 1234.2&quot;&quot;&quot;</span>
+
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">timestamp</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">nonce</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># first try 152323423 before 152323423.0</span>
+    <span class="k">if</span> <span class="n">timestamp</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">used_timestamps</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">timestamp</span>
+
+    <span class="n">new_timestamp</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">nonce</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">new_timestamp</span> <span class="ow">in</span> <span class="n">used_timestamps</span><span class="p">:</span>
+        <span class="n">nonce</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">new_timestamp</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">nonce</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">new_timestamp</span></div>
+
+
+
+<span class="c1">### Main Links Index</span>
+
+<div class="viewcode-block" id="timed_index_update"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.timed_index_update">[docs]</a><span class="nd">@contextmanager</span>
+<span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">timed_index_update</span><span class="p">(</span><span class="n">out_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">log_indexing_started</span><span class="p">(</span><span class="n">out_path</span><span class="p">)</span>
+    <span class="n">timer</span> <span class="o">=</span> <span class="n">TimedProgress</span><span class="p">(</span><span class="n">TIMEOUT</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;      &#39;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">yield</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">timer</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+
+    <span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">out_path</span><span class="p">),</span> <span class="n">f</span><span class="s1">&#39;Failed to write index file: </span><span class="si">{out_path}</span><span class="s1">&#39;</span>
+    <span class="n">log_indexing_finished</span><span class="p">(</span><span class="n">out_path</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="write_main_index"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.write_main_index">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">write_main_index</span><span class="p">(</span><span class="n">links</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Link</span><span class="p">],</span> <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">,</span> <span class="n">finished</span><span class="p">:</span> <span class="nb">bool</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;create index.html file for a given list of links&quot;&quot;&quot;</span>
+
+    <span class="n">log_indexing_process_started</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">links</span><span class="p">))</span>
+
+    <span class="k">with</span> <span class="n">timed_index_update</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">SQL_INDEX_FILENAME</span><span class="p">)):</span>
+        <span class="n">write_sql_main_index</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="n">out_dir</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">timed_index_update</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">JSON_INDEX_FILENAME</span><span class="p">)):</span>
+        <span class="n">write_json_main_index</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="n">out_dir</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">timed_index_update</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">HTML_INDEX_FILENAME</span><span class="p">)):</span>
+        <span class="n">write_html_main_index</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">finished</span><span class="o">=</span><span class="n">finished</span><span class="p">)</span>
+
+    <span class="n">log_indexing_process_finished</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="load_main_index"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.load_main_index">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">load_main_index</span><span class="p">(</span><span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">,</span> <span class="n">warn</span><span class="p">:</span> <span class="nb">bool</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Link</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;parse and load existing index with any new links from import_path merged in&quot;&quot;&quot;</span>
+
+    <span class="n">all_links</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Link</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">all_links</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">parse_json_main_index</span><span class="p">(</span><span class="n">out_dir</span><span class="p">))</span>
+    <span class="n">links_from_sql</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">parse_sql_main_index</span><span class="p">(</span><span class="n">out_dir</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">warn</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">set</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">url</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">all_links</span><span class="p">)</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">url</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">links_from_sql</span><span class="p">):</span>
+        <span class="n">stderr</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{red}</span><span class="s1">[!] Warning: SQL index does not match JSON index!</span><span class="si">{reset}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">ANSI</span><span class="p">))</span>
+        <span class="n">stderr</span><span class="p">(</span><span class="s1">&#39;    To repair the index and re-import any orphaned links run:&#39;</span><span class="p">)</span>
+        <span class="n">stderr</span><span class="p">(</span><span class="s1">&#39;        archivebox init&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">all_links</span></div>
+
+<div class="viewcode-block" id="load_main_index_meta"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.load_main_index_meta">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">load_main_index_meta</span><span class="p">(</span><span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+    <span class="n">index_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">JSON_INDEX_FILENAME</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">index_path</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">index_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">meta_dict</span> <span class="o">=</span> <span class="n">pyjson</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="n">meta_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;links&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">meta_dict</span>
+
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="import_new_links"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.import_new_links">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">import_new_links</span><span class="p">(</span><span class="n">existing_links</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Link</span><span class="p">],</span>
+                     <span class="n">import_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                     <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Link</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Link</span><span class="p">]]:</span>
+
+    <span class="n">new_links</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Link</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># parse and validate the import file</span>
+    <span class="n">log_parsing_started</span><span class="p">(</span><span class="n">import_path</span><span class="p">)</span>
+    <span class="n">raw_links</span><span class="p">,</span> <span class="n">parser_name</span> <span class="o">=</span> <span class="n">parse_links</span><span class="p">(</span><span class="n">import_path</span><span class="p">)</span>
+    <span class="n">new_links</span> <span class="o">=</span> <span class="n">validate_links</span><span class="p">(</span><span class="n">raw_links</span><span class="p">)</span>
+
+    <span class="c1"># merge existing links in out_dir and new links</span>
+    <span class="n">all_links</span> <span class="o">=</span> <span class="n">validate_links</span><span class="p">(</span><span class="n">existing_links</span> <span class="o">+</span> <span class="n">new_links</span><span class="p">)</span>
+    <span class="n">all_link_urls</span> <span class="o">=</span> <span class="p">{</span><span class="n">link</span><span class="o">.</span><span class="n">url</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">existing_links</span><span class="p">}</span>
+
+    <span class="n">new_links</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">link</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">new_links</span>
+        <span class="k">if</span> <span class="n">link</span><span class="o">.</span><span class="n">url</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_link_urls</span>
+    <span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">parser_name</span><span class="p">:</span>
+        <span class="n">num_parsed</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_links</span><span class="p">)</span>
+        <span class="n">num_new_links</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_links</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">existing_links</span><span class="p">)</span>
+        <span class="n">log_parsing_finished</span><span class="p">(</span><span class="n">num_parsed</span><span class="p">,</span> <span class="n">num_new_links</span><span class="p">,</span> <span class="n">parser_name</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">all_links</span><span class="p">,</span> <span class="n">new_links</span></div>
+
+
+<div class="viewcode-block" id="patch_main_index"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.patch_main_index">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">patch_main_index</span><span class="p">(</span><span class="n">link</span><span class="p">:</span> <span class="n">Link</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;hack to in-place update one row&#39;s info in the generated index files&quot;&quot;&quot;</span>
+
+    <span class="c1"># TODO: remove this ASAP, it&#39;s ugly, error-prone, and potentially dangerous</span>
+
+    <span class="n">title</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">title</span> <span class="ow">or</span> <span class="n">link</span><span class="o">.</span><span class="n">latest_outputs</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;succeeded&#39;</span><span class="p">)[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
+    <span class="n">successful</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">num_outputs</span>
+
+    <span class="c1"># Patch JSON main index</span>
+    <span class="n">json_file_links</span> <span class="o">=</span> <span class="n">parse_json_main_index</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
+    <span class="n">patched_links</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">saved_link</span> <span class="ow">in</span> <span class="n">json_file_links</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">saved_link</span><span class="o">.</span><span class="n">url</span> <span class="o">==</span> <span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">:</span>
+            <span class="n">patched_links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">saved_link</span><span class="o">.</span><span class="n">overwrite</span><span class="p">(</span>
+                <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
+                <span class="n">history</span><span class="o">=</span><span class="n">link</span><span class="o">.</span><span class="n">history</span><span class="p">,</span>
+                <span class="n">updated</span><span class="o">=</span><span class="n">link</span><span class="o">.</span><span class="n">updated</span><span class="p">,</span>
+            <span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">patched_links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">saved_link</span><span class="p">)</span>
+    
+    <span class="n">write_json_main_index</span><span class="p">(</span><span class="n">patched_links</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="n">out_dir</span><span class="p">)</span>
+
+    <span class="c1"># Patch HTML main index</span>
+    <span class="n">html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s1">&#39;index.html&#39;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">title</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;&lt;span data-title-for=&quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">)</span> <span class="ow">in</span> <span class="n">line</span><span class="p">):</span>
+            <span class="n">html</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&lt;span&gt;</span><span class="si">{}</span><span class="s1">&lt;/span&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">successful</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;&lt;span data-number-for=&quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">)</span> <span class="ow">in</span> <span class="n">line</span><span class="p">):</span>
+            <span class="n">html</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&lt;span&gt;</span><span class="si">{}</span><span class="s1">&lt;/span&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">successful</span><span class="p">)</span>
+            <span class="k">break</span>
+
+    <span class="n">atomic_write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html</span><span class="p">),</span> <span class="n">html_path</span><span class="p">)</span></div>
+
+
+<span class="c1">### Link Details Index</span>
+
+<div class="viewcode-block" id="write_link_details"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.write_link_details">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">write_link_details</span><span class="p">(</span><span class="n">link</span><span class="p">:</span> <span class="n">Link</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">out_dir</span> <span class="o">=</span> <span class="n">out_dir</span> <span class="ow">or</span> <span class="n">link</span><span class="o">.</span><span class="n">link_dir</span>
+
+    <span class="n">write_json_link_details</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="n">out_dir</span><span class="p">)</span>
+    <span class="n">write_html_link_details</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="n">out_dir</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="load_link_details"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.load_link_details">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">load_link_details</span><span class="p">(</span><span class="n">link</span><span class="p">:</span> <span class="n">Link</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Link</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;check for an existing link archive in the given directory, </span>
+<span class="sd">       and load+merge it into the given link dict</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">out_dir</span> <span class="o">=</span> <span class="n">out_dir</span> <span class="ow">or</span> <span class="n">link</span><span class="o">.</span><span class="n">link_dir</span>
+
+    <span class="n">existing_link</span> <span class="o">=</span> <span class="n">parse_json_link_details</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">existing_link</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">merge_links</span><span class="p">(</span><span class="n">existing_link</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">link</span></div>
+
+
+
+<span class="n">LINK_FILTERS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;exact&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">link</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">url</span> <span class="o">==</span> <span class="n">pattern</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">base_url</span> <span class="o">==</span> <span class="n">pattern</span><span class="p">),</span>
+    <span class="s1">&#39;substring&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">link</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+    <span class="s1">&#39;regex&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">link</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">)),</span>
+    <span class="s1">&#39;domain&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">link</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="n">link</span><span class="o">.</span><span class="n">domain</span> <span class="o">==</span> <span class="n">pattern</span><span class="p">,</span>
+<span class="p">}</span>
+
+<div class="viewcode-block" id="link_matches_filter"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.link_matches_filter">[docs]</a><span class="nd">@enforce_types</span>
+<span class="k">def</span> <span class="nf">link_matches_filter</span><span class="p">(</span><span class="n">link</span><span class="p">:</span> <span class="n">Link</span><span class="p">,</span> <span class="n">filter_patterns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">filter_type</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">filter_patterns</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">LINK_FILTERS</span><span class="p">[</span><span class="n">filter_type</span><span class="p">](</span><span class="n">link</span><span class="p">,</span> <span class="n">pattern</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="n">stderr</span><span class="p">()</span>
+            <span class="n">stderr</span><span class="p">(</span>
+                <span class="n">f</span><span class="s1">&#39;[X] Got invalid pattern for --filter-type=</span><span class="si">{filter_type}</span><span class="s1">:&#39;</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">stderr</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;    </span><span class="si">{pattern}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="get_indexed_folders"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.get_indexed_folders">[docs]</a><span class="k">def</span> <span class="nf">get_indexed_folders</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Link</span><span class="p">]]:</span>
+    <span class="sd">&quot;&quot;&quot;indexed links without checking archive status or data directory validity&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">link</span><span class="o">.</span><span class="n">link_dir</span><span class="p">:</span> <span class="n">link</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span>
+    <span class="p">}</span></div>
+
+<div class="viewcode-block" id="get_archived_folders"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.get_archived_folders">[docs]</a><span class="k">def</span> <span class="nf">get_archived_folders</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Link</span><span class="p">]]:</span>
+    <span class="sd">&quot;&quot;&quot;indexed links that are archived with a valid data directory&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">link</span><span class="o">.</span><span class="n">link_dir</span><span class="p">:</span> <span class="n">link</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="n">is_archived</span><span class="p">,</span> <span class="n">links</span><span class="p">)</span>
+    <span class="p">}</span></div>
+
+<div class="viewcode-block" id="get_unarchived_folders"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.get_unarchived_folders">[docs]</a><span class="k">def</span> <span class="nf">get_unarchived_folders</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Link</span><span class="p">]]:</span>
+    <span class="sd">&quot;&quot;&quot;indexed links that are unarchived with no data directory or an empty data directory&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">link</span><span class="o">.</span><span class="n">link_dir</span><span class="p">:</span> <span class="n">link</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="n">is_unarchived</span><span class="p">,</span> <span class="n">links</span><span class="p">)</span>
+    <span class="p">}</span></div>
+
+<div class="viewcode-block" id="get_present_folders"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.get_present_folders">[docs]</a><span class="k">def</span> <span class="nf">get_present_folders</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Link</span><span class="p">]]:</span>
+    <span class="sd">&quot;&quot;&quot;dirs that are expected to exist based on the main index&quot;&quot;&quot;</span>
+    <span class="n">all_folders</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">scandir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">ARCHIVE_DIR_NAME</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">entry</span><span class="o">.</span><span class="n">is_dir</span><span class="p">(</span><span class="n">follow_symlinks</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">link</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">link</span> <span class="o">=</span> <span class="n">parse_json_link_details</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+            <span class="n">all_folders</span><span class="p">[</span><span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="p">]</span> <span class="o">=</span> <span class="n">link</span>
+
+    <span class="k">return</span> <span class="n">all_folders</span></div>
+
+<div class="viewcode-block" id="get_valid_folders"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.get_valid_folders">[docs]</a><span class="k">def</span> <span class="nf">get_valid_folders</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Link</span><span class="p">]]:</span>
+    <span class="sd">&quot;&quot;&quot;dirs with a valid index matched to the main index and archived content&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">link</span><span class="o">.</span><span class="n">link_dir</span><span class="p">:</span> <span class="n">link</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="n">is_valid</span><span class="p">,</span> <span class="n">links</span><span class="p">)</span>
+    <span class="p">}</span></div>
+
+<div class="viewcode-block" id="get_invalid_folders"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.get_invalid_folders">[docs]</a><span class="k">def</span> <span class="nf">get_invalid_folders</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Link</span><span class="p">]]:</span>
+    <span class="sd">&quot;&quot;&quot;dirs that are invalid for any reason: corrupted/duplicate/orphaned/unrecognized&quot;&quot;&quot;</span>
+    <span class="n">duplicate</span> <span class="o">=</span> <span class="n">get_duplicate_folders</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span>
+    <span class="n">orphaned</span> <span class="o">=</span> <span class="n">get_orphaned_folders</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span>
+    <span class="n">corrupted</span> <span class="o">=</span> <span class="n">get_corrupted_folders</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span>
+    <span class="n">unrecognized</span> <span class="o">=</span> <span class="n">get_unrecognized_folders</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="o">**</span><span class="n">duplicate</span><span class="p">,</span> <span class="o">**</span><span class="n">orphaned</span><span class="p">,</span> <span class="o">**</span><span class="n">corrupted</span><span class="p">,</span> <span class="o">**</span><span class="n">unrecognized</span><span class="p">}</span></div>
+
+
+<div class="viewcode-block" id="get_duplicate_folders"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.get_duplicate_folders">[docs]</a><span class="k">def</span> <span class="nf">get_duplicate_folders</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Link</span><span class="p">]]:</span>
+    <span class="sd">&quot;&quot;&quot;dirs that conflict with other directories that have the same link URL or timestamp&quot;&quot;&quot;</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">links</span><span class="p">)</span>
+    <span class="n">by_url</span> <span class="o">=</span> <span class="p">{</span><span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">}</span>
+    <span class="n">by_timestamp</span> <span class="o">=</span> <span class="p">{</span><span class="n">link</span><span class="o">.</span><span class="n">timestamp</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">}</span>
+
+    <span class="n">duplicate_folders</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">indexed_folders</span> <span class="o">=</span> <span class="p">{</span><span class="n">link</span><span class="o">.</span><span class="n">link_dir</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">}</span>
+    <span class="n">data_folders</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">entry</span><span class="o">.</span><span class="n">path</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">scandir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">ARCHIVE_DIR_NAME</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">entry</span><span class="o">.</span><span class="n">is_dir</span><span class="p">(</span><span class="n">follow_symlinks</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="ow">and</span> <span class="n">entry</span><span class="o">.</span><span class="n">path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">indexed_folders</span>
+    <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">chain</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">indexed_folders</span><span class="p">),</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">data_folders</span><span class="p">)):</span>
+        <span class="n">link</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">link</span> <span class="o">=</span> <span class="n">parse_json_link_details</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="k">if</span> <span class="n">link</span><span class="p">:</span>
+            <span class="c1"># link folder has same timestamp as different link folder</span>
+            <span class="n">by_timestamp</span><span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">timestamp</span><span class="p">]</span> <span class="o">=</span> <span class="n">by_timestamp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">by_timestamp</span><span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">timestamp</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">duplicate_folders</span><span class="p">[</span><span class="n">path</span><span class="p">]</span> <span class="o">=</span> <span class="n">link</span>
+
+            <span class="c1"># link folder has same url as different link folder</span>
+            <span class="n">by_url</span><span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">]</span> <span class="o">=</span> <span class="n">by_url</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">by_url</span><span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">duplicate_folders</span><span class="p">[</span><span class="n">path</span><span class="p">]</span> <span class="o">=</span> <span class="n">link</span>
+
+    <span class="k">return</span> <span class="n">duplicate_folders</span></div>
+
+<div class="viewcode-block" id="get_orphaned_folders"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.get_orphaned_folders">[docs]</a><span class="k">def</span> <span class="nf">get_orphaned_folders</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Link</span><span class="p">]]:</span>
+    <span class="sd">&quot;&quot;&quot;dirs that contain a valid index but aren&#39;t listed in the main index&quot;&quot;&quot;</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">links</span><span class="p">)</span>
+    <span class="n">indexed_folders</span> <span class="o">=</span> <span class="p">{</span><span class="n">link</span><span class="o">.</span><span class="n">link_dir</span><span class="p">:</span> <span class="n">link</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">}</span>
+    <span class="n">orphaned_folders</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">scandir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">ARCHIVE_DIR_NAME</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">entry</span><span class="o">.</span><span class="n">is_dir</span><span class="p">(</span><span class="n">follow_symlinks</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">link</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">link</span> <span class="o">=</span> <span class="n">parse_json_link_details</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+            <span class="k">if</span> <span class="n">link</span> <span class="ow">and</span> <span class="n">entry</span><span class="o">.</span><span class="n">path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">indexed_folders</span><span class="p">:</span>
+                <span class="c1"># folder is a valid link data dir with index details, but it&#39;s not in the main index</span>
+                <span class="n">orphaned_folders</span><span class="p">[</span><span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="p">]</span> <span class="o">=</span> <span class="n">link</span>
+
+    <span class="k">return</span> <span class="n">orphaned_folders</span></div>
+
+<div class="viewcode-block" id="get_corrupted_folders"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.get_corrupted_folders">[docs]</a><span class="k">def</span> <span class="nf">get_corrupted_folders</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Link</span><span class="p">]]:</span>
+    <span class="sd">&quot;&quot;&quot;dirs that don&#39;t contain a valid index and aren&#39;t listed in the main index&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">link</span><span class="o">.</span><span class="n">link_dir</span><span class="p">:</span> <span class="n">link</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="n">is_corrupt</span><span class="p">,</span> <span class="n">links</span><span class="p">)</span>
+    <span class="p">}</span></div>
+
+<div class="viewcode-block" id="get_unrecognized_folders"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.get_unrecognized_folders">[docs]</a><span class="k">def</span> <span class="nf">get_unrecognized_folders</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Link</span><span class="p">]]:</span>
+    <span class="sd">&quot;&quot;&quot;dirs that don&#39;t contain recognizable archive data and aren&#39;t listed in the main index&quot;&quot;&quot;</span>
+    <span class="n">by_timestamp</span> <span class="o">=</span> <span class="p">{</span><span class="n">link</span><span class="o">.</span><span class="n">timestamp</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">}</span>
+    <span class="n">unrecognized_folders</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Link</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">scandir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">ARCHIVE_DIR_NAME</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">entry</span><span class="o">.</span><span class="n">is_dir</span><span class="p">(</span><span class="n">follow_symlinks</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">index_exists</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;index.json&#39;</span><span class="p">))</span>
+            <span class="n">link</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">link</span> <span class="o">=</span> <span class="n">parse_json_link_details</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+            <span class="k">if</span> <span class="n">index_exists</span> <span class="ow">and</span> <span class="n">link</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="c1"># index exists but it&#39;s corrupted or unparseable</span>
+                <span class="n">unrecognized_folders</span><span class="p">[</span><span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="p">]</span> <span class="o">=</span> <span class="n">link</span>
+            
+            <span class="k">elif</span> <span class="ow">not</span> <span class="n">index_exists</span><span class="p">:</span>
+                <span class="c1"># link details index doesn&#39;t exist and the folder isn&#39;t in the main index</span>
+                <span class="n">timestamp</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">timestamp</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">by_timestamp</span><span class="p">:</span>
+                    <span class="n">unrecognized_folders</span><span class="p">[</span><span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="p">]</span> <span class="o">=</span> <span class="n">link</span>
+
+    <span class="k">return</span> <span class="n">unrecognized_folders</span></div>
+
+
+<div class="viewcode-block" id="is_valid"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.is_valid">[docs]</a><span class="k">def</span> <span class="nf">is_valid</span><span class="p">(</span><span class="n">link</span><span class="p">:</span> <span class="n">Link</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="n">dir_exists</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">link_dir</span><span class="p">)</span>
+    <span class="n">index_exists</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">link_dir</span><span class="p">,</span> <span class="s1">&#39;index.json&#39;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">dir_exists</span><span class="p">:</span>
+        <span class="c1"># unarchived links are not included in the valid list</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">dir_exists</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">index_exists</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">dir_exists</span> <span class="ow">and</span> <span class="n">index_exists</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">parsed_link</span> <span class="o">=</span> <span class="n">parse_json_link_details</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">link_dir</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">link</span><span class="o">.</span><span class="n">url</span> <span class="o">==</span> <span class="n">parsed_link</span><span class="o">.</span><span class="n">url</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">pass</span>
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="is_corrupt"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.is_corrupt">[docs]</a><span class="k">def</span> <span class="nf">is_corrupt</span><span class="p">(</span><span class="n">link</span><span class="p">:</span> <span class="n">Link</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">link_dir</span><span class="p">):</span>
+        <span class="c1"># unarchived links are not considered corrupt</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="n">is_valid</span><span class="p">(</span><span class="n">link</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="is_archived"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.is_archived">[docs]</a><span class="k">def</span> <span class="nf">is_archived</span><span class="p">(</span><span class="n">link</span><span class="p">:</span> <span class="n">Link</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">is_valid</span><span class="p">(</span><span class="n">link</span><span class="p">)</span> <span class="ow">and</span> <span class="n">link</span><span class="o">.</span><span class="n">is_archived</span></div>
+    
+<div class="viewcode-block" id="is_unarchived"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.is_unarchived">[docs]</a><span class="k">def</span> <span class="nf">is_unarchived</span><span class="p">(</span><span class="n">link</span><span class="p">:</span> <span class="n">Link</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">link_dir</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="n">link</span><span class="o">.</span><span class="n">is_archived</span></div>
+
+
+<div class="viewcode-block" id="fix_invalid_folder_locations"><a class="viewcode-back" href="../../archivebox.index.html#archivebox.index.fix_invalid_folder_locations">[docs]</a><span class="k">def</span> <span class="nf">fix_invalid_folder_locations</span><span class="p">(</span><span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+    <span class="n">fixed</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">cant_fix</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">scandir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">ARCHIVE_DIR_NAME</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">entry</span><span class="o">.</span><span class="n">is_dir</span><span class="p">(</span><span class="n">follow_symlinks</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;index.json&#39;</span><span class="p">)):</span>
+                <span class="n">link</span> <span class="o">=</span> <span class="n">parse_json_link_details</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">link</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;/</span><span class="si">{link.timestamp}</span><span class="s1">&#39;</span><span class="p">):</span>
+                    <span class="n">dest</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">ARCHIVE_DIR_NAME</span><span class="p">,</span> <span class="n">link</span><span class="o">.</span><span class="n">timestamp</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">dest</span><span class="p">):</span>
+                        <span class="n">cant_fix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
+                        <span class="n">fixed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">link</span><span class="o">.</span><span class="n">link_dir</span> <span class="o">!=</span> <span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+                    <span class="n">link</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">overwrite</span><span class="p">(</span><span class="n">link_dir</span><span class="o">=</span><span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+                    <span class="n">write_json_link_details</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="n">entry</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">cant_fix</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nick Sweeting
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

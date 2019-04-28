@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Changelog &mdash; ArchiveBox 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Donations" href="Donations.html" />
+    <link rel="prev" title="Roadmap" href="Roadmap.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ArchiveBox
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#overview">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#documentation">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#screenshots">Screenshots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Roadmap.html">Roadmap</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Donations.html">Donations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Web-Archiving-Community.html">Web Archiving Community</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ArchiveBox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Changelog</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Changelog.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<p>▶️ <em>If you’re having an issue with a breaking change, or migrating your data between versions, open an <a class="reference external" href="https://github.com/pirate/ArchiveBox/issues">issue</a> to get help.</em></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">ArchiveBox</span></code> was previously named <code class="docutils literal notranslate"><span class="pre">Pocket</span> <span class="pre">Archive</span> <span class="pre">Stream</span></code> and then <code class="docutils literal notranslate"><span class="pre">Bookmark</span> <span class="pre">Archiver</span></code>.</strong></p>
+<br/><div align="center"><p>See the <a class="reference external" href="https://github.com/pirate/ArchiveBox/releases">releases</a> page for versioned source downloads and full changelog.🍰 Many thanks to our 30+ contributors and everyone in the web archiving community! 🏛</p>
+</div><hr class="docutils" />
+<ul class="simple">
+<li><p>v0.2.4 released</p></li>
+<li><p>better archive corruption guards (check structure invariants on every parse &amp; save)</p></li>
+<li><p>remove title prefetching in favor of new FETCH_TITLE archive method</p></li>
+<li><p>slightly improved CLI output for parsing and remote url downloading</p></li>
+<li><p>re-save index after archiving completes to update titles and urls</p></li>
+<li><p>remove redundant derivable data from link json schema</p></li>
+<li><p>markdown link parsing support</p></li>
+<li><p>faster link parsing and better symbol handling using a new compiled URL_REGEX</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>v0.2.3 released</p></li>
+<li><p>fixed issues with parsing titles including trailing tags</p></li>
+<li><p>fixed issues with titles defaulting to URLs instead of attempting to fetch</p></li>
+<li><p>fixed issue where bookmark timestamps from RSS would be ignored and current ts used instead</p></li>
+<li><p>fixed issue where ONLY_NEW would overwrite existing links in archive with only new ones</p></li>
+<li><p>fixed lots of issues with URL parsing by using <code class="docutils literal notranslate"><span class="pre">urllib.parse</span></code> instead of hand-written lambdas</p></li>
+<li><p>ignore robots.txt when using wget (ssshhh don’t tell anyone 😁)</p></li>
+<li><p>fix RSS parser bailing out when there’s whitespace around XML tags</p></li>
+<li><p>fix issue with browser history export trying to run ls on wrong directory</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>v0.2.2 released</p></li>
+<li><p>Shaarli RSS export support</p></li>
+<li><p>Fix issues with plain text link parsing including quotes, whitespace, and closing tags in URLs</p></li>
+<li><p>add USER_AGENT to archive.org submissions so they can track archivebox usage</p></li>
+<li><p>remove all icons similar to archive.org branding from archive UI</p></li>
+<li><p>hide some of the noisier youtubedl and wget errors</p></li>
+<li><p>set permissions on youtubedl media folder</p></li>
+<li><p>fix chrome data dir incorrect path and quoting</p></li>
+<li><p>better chrome binary finding</p></li>
+<li><p>show which parser is used when importing links, show progress when fetching titles</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>v0.2.1 released with new logo</p></li>
+<li><p>ability to import plain lists of links and almost all other raw filetypes</p></li>
+<li><p>WARC saving support via wget</p></li>
+<li><p>Git repository downloading with git clone</p></li>
+<li><p>Media downloading with youtube-dl (video, audio, subtitles, description, playlist, etc)</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>v0.2.0 released with new name</p></li>
+<li><p><a class="reference external" href="https://github.com/pirate/ArchiveBox/issues/108">renamed</a> from <strong>Bookmark Archiver</strong> -&gt; <strong>ArchiveBox</strong></p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>v0.1.0 released</p></li>
+<li><p>support for browser history exporting added with <code class="docutils literal notranslate"><span class="pre">./bin/archivebox-export-browser-history</span></code></p></li>
+<li><p>support for chrome <code class="docutils literal notranslate"><span class="pre">--dump-dom</span></code> to output full page HTML after JS executes</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>v0.0.3 released</p></li>
+<li><p>support for chrome <code class="docutils literal notranslate"><span class="pre">--user-data-dir</span></code> to archive sites that need logins</p></li>
+<li><p>fancy individual html &amp; json indexes for each link</p></li>
+<li><p>smartly append new links to existing index instead of overwriting</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>v0.0.2 released</p></li>
+<li><p>proper HTML templating instead of format strings (thanks to https://github.com/bardisty!)</p></li>
+<li><p>refactored into separate files, wip audio &amp; video archiving</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>v0.0.1 released</p></li>
+<li><p>Index links now work without nginx url rewrites, archive can now be hosted on github pages</p></li>
+<li><p>added setup.sh script &amp; docstrings &amp; help commands</p></li>
+<li><p>made Chromium the default instead of Google Chrome (yay free software)</p></li>
+<li><p>added <a class="reference external" href="https://github.com/pirate/ArchiveBox/pull/25">env-variable</a> configuration (thanks to https://github.com/hannah98!)</p></li>
+<li><p>renamed from <strong>Pocket Archive Stream</strong> -&gt; <strong>Bookmark Archiver</strong></p></li>
+<li><p>added <a class="reference external" href="https://github.com/pirate/ArchiveBox/pull/20">Netscape-format</a> export support (thanks to https://github.com/ilvar!)</p></li>
+<li><p>added <a class="reference external" href="https://github.com/pirate/ArchiveBox/pull/7">Pinboard-format</a> export support (thanks to https://github.com/sconeyard!)</p></li>
+<li><p>front-page of HN, oops! apparently I have users to support now :grin:?</p></li>
+<li><p>added Pocket-format export support</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>v0.0.0 released: created Pocket Archive Stream 2017/05/05</p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Donations.html" class="btn btn-neutral float-right" title="Donations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Roadmap.html" class="btn btn-neutral float-left" title="Roadmap" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nick Sweeting
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Usage &mdash; ArchiveBox 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="General Settings" href="Configuration.html" />
+    <link rel="prev" title="Docker" href="Docker.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ArchiveBox
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">How does it work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#quickstart">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#overview">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#documentation">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#screenshots">Screenshots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Donations.html">Donations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Web-Archiving-Community.html">Web Archiving Community</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Docker.html">Docker</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cli-usage">CLI Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#run-archivebox-with-configuration-options">Run ArchiveBox with configuration options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-a-single-url-or-list-of-urls-via-stdin">Import a single URL or list of URLs via stdin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-list-of-links-exported-from-browser-or-another-service">Import list of links exported from browser or another service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-list-of-urls-from-a-remote-rss-feed-or-file">Import list of URLs from a remote RSS feed or file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-list-of-links-from-browser-history">Import list of links from browser history</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ui-usage">UI Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#disk-layout">Disk Layout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#large-archives">Large Archives</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#python-api-usage">Python API Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">General Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html#archive-method-toggles">Archive Method Toggles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html#archive-method-options">Archive Method Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html#shell-options">Shell Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html#dependency-options">Dependency Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html#creating-a-config-file">Creating a Config File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html#archiving">Archiving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html#hosting-the-archive">Hosting the Archive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Security-Overview.html">Usage Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Security-Overview.html#do-not-run-as-root">Do not run as root</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Security-Overview.html#output-folder">Output Folder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Publishing-Your-Archive.html">Publishing Your Archive</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ArchiveBox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Usage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Usage.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<p>▶️ <em>Make sure the dependencies are <a class="reference external" href="https://github.com/pirate/ArchiveBox/wiki/Install">fully installed</a> before running any ArchiveBox commands.</em></p>
+<p><strong>ArchiveBox API Reference:</strong></p>
+<img src="https://i.imgur.com/aQZZcku.png" width="20%" align="right"/> <ul class="simple">
+<li><p><a class="reference external" href="#Overview">Overview</a>: Program structure and outline of basic archiving process.</p></li>
+<li><p><a class="reference external" href="#CLI-Usage">CLI Usage</a>: Docs and examples for the ArchiveBox command line interface.</p></li>
+<li><p><a class="reference external" href="#UI-Usage">UI Usage</a>: Docs and screenshots for the outputted HTML archive interface.</p></li>
+<li><p><a class="reference external" href="#Disk-Layout">Disk Layout</a>: Description of the archive folder structure and contents.</p></li>
+</ul>
+<p><strong>Related:</strong></p>
+<ul class="simple">
+<li><p>[[Docker]]: Learn about ArchiveBox usage with Docker and Docker Compose</p></li>
+<li><p>[[Configuration]]: Learn about the various archive method options</p></li>
+<li><p>[[Scheduled Archiving]]: Learn how to set up automatic daily archiving</p></li>
+<li><p>[[Publishing Your Archive]]: Learn how to host your archive for others to access</p></li>
+<li><p>[[Troubleshooting]]: Resources if you encounter any problems</p></li>
+<li><p><a class="reference external" href="https://github.com/pirate/ArchiveBox#Screenshots">Screenshots</a>: See what the CLI and outputted HTML look like</p></li>
+</ul>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">./archive</span></code> binary is a shortcut to <code class="docutils literal notranslate"><span class="pre">bin/archivebox</span></code>.  Piping RSS, JSON, <a class="reference external" href="https://msdn.microsoft.com/en-us/library/aa753582(v=vs.85).aspx">Netscape</a>, or TXT lists of links into the <code class="docutils literal notranslate"><span class="pre">./archive</span></code> command will add them to your archive folder, and create a locally-stored browsable archive for each new URL.</p>
+<p>The archiver produces an <a class="reference external" href="#Disk-Layout">output folder</a> <code class="docutils literal notranslate"><span class="pre">output/</span></code> containing <code class="docutils literal notranslate"><span class="pre">index.html</span></code>, <code class="docutils literal notranslate"><span class="pre">index.json</span></code>, and archived copies of all the sites organized by timestamp bookmarked.  It’s powered by <a class="reference external" href="https://developers.google.com/web/updates/2017/04/headless-chrome">Chrome headless</a>, good ‘ol <code class="docutils literal notranslate"><span class="pre">wget</span></code>, and a few other common Unix tools.</p>
+</div>
+<div class="section" id="cli-usage">
+<h2>CLI Usage<a class="headerlink" href="#cli-usage" title="Permalink to this headline">¶</a></h2>
+<img src="https://i.imgur.com/biVfFYr.png" width="30%" align="right"><p><code class="docutils literal notranslate"><span class="pre">./archive</span></code> refers to the executable shortcut in the root of the project, but you can also call ArchiveBox via <code class="docutils literal notranslate"><span class="pre">./bin/archivebox</span></code>.  If you add <code class="docutils literal notranslate"><span class="pre">/path/to/ArchiveBox/bin</span></code> to your shell <code class="docutils literal notranslate"><span class="pre">$PATH</span></code> then you can call <code class="docutils literal notranslate"><span class="pre">archivebox</span></code> from anywhere on your system.</p>
+<p>If you’re using Docker, the CLI interface is similar but needs to be prefixed by <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span> <span class="pre">...</span></code> or <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">...</span></code>, for examples see the [[Docker]] page.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#Run-ArchiveBox-with-configuration-options">Run ArchiveBox with configuration options</a></p></li>
+<li><p><a class="reference external" href="#Import-a-single-URL-or-list-of-URLs-via-stdin">Import a single URL or list of URLs via stdin</a></p></li>
+<li><p><a class="reference external" href="#Import-list-of-links-exported-from-browser-or-another-service">Import list of links exported from browser or another service</a></p></li>
+<li><p><a class="reference external" href="#Import-list-of-URLs-from-a-remote-RSS-feed-or-file">Import list of URLs from a remote RSS feed or file</a></p></li>
+<li><p><a class="reference external" href="#Import-list-of-links-from-browser-history">Import list of links from browser history</a></p></li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="run-archivebox-with-configuration-options">
+<h3>Run ArchiveBox with configuration options<a class="headerlink" href="#run-archivebox-with-configuration-options" title="Permalink to this headline">¶</a></h3>
+<p>You can set environment variables in your shell profile, a config file, or by using the <code class="docutils literal notranslate"><span class="pre">env</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env <span class="nv">FETCH_MEDIA</span><span class="o">=</span>True <span class="nv">MEDIA_TIMEOUT</span><span class="o">=</span><span class="m">500</span> ./archive ...
+</pre></div>
+</div>
+<p>See [[Configuration]] page for more details about the available options and ways to pass config.If you’re using Docker, also make sure to read the Configuration section on the [[Docker]] page.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="import-a-single-url-or-list-of-urls-via-stdin">
+<h3>Import a single URL or list of URLs via stdin<a class="headerlink" href="#import-a-single-url-or-list-of-urls-via-stdin" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;https://example.com&#39;</span> <span class="p">|</span> ./archive
+<span class="c1"># or</span>
+cat urls_to_archive.txt <span class="p">|</span> ./archive
+</pre></div>
+</div>
+<p>You can also pipe in RSS, XML, Netscape, or any of the other supported import formats via stdin.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="import-list-of-links-exported-from-browser-or-another-service">
+<h3>Import list of links exported from browser or another service<a class="headerlink" href="#import-list-of-links-exported-from-browser-or-another-service" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./archive ~/Downloads/browser_bookmarks_export.html
+<span class="c1"># or</span>
+./archive ~/Downloads/pinboard_bookmarks.json
+<span class="c1"># or</span>
+./archive ~/Downloads/other_links.txt
+</pre></div>
+</div>
+<p>Passing a file as an argument here does not archive the file, it parses it as a list of URLs and archives the links <em>inside of it</em>, so only use it for <em>lists of links</em> to archive, not HTML files or other content you want added directy to the archive.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="import-list-of-urls-from-a-remote-rss-feed-or-file">
+<h3>Import list of URLs from a remote RSS feed or file<a class="headerlink" href="#import-list-of-urls-from-a-remote-rss-feed-or-file" title="Permalink to this headline">¶</a></h3>
+<p>ArchiveBox will download the URL to a local file in <code class="docutils literal notranslate"><span class="pre">output/sources/</span></code> and attempt to autodetect the format and import any URLs found. Currently, Netscape HTML, JSON, RSS, and plain text links lists are supported.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./archive https://example.com/feed.rss
+<span class="c1"># or</span>
+./archive https://example.com/links.txt
+</pre></div>
+</div>
+<p>Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links <em>inside</em> of it, so only use it for RSS feeds or other <em>lists of links</em> you want to add.  To add an individual link use the instruction above and pass the URL via stdin instead of as an argument.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="import-list-of-links-from-browser-history">
+<h3>Import list of links from browser history<a class="headerlink" href="#import-list-of-links-from-browser-history" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./bin/archivebox-export-browser-history --chrome
+./archive output/sources/chrome_history.json
+<span class="c1"># or</span>
+./bin/archivebox-export-browser-history --firefox
+./archive output/sources/firefox_history.json
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="ui-usage">
+<h2>UI Usage<a class="headerlink" href="#ui-usage" title="Permalink to this headline">¶</a></h2>
+<p>To access your archive, open <code class="docutils literal notranslate"><span class="pre">output/index.html</span></code> in a browser.  You should see something <a class="reference external" href="https://archive.sweeting.me">like this</a>.</p>
+<p>You can sort by column, search using the box in the upper right, and see the total number of links at the bottom.</p>
+<p>Click the Favicon under the “Files” column to go to the details page for each link.</p>
+<div align="center">
+<img src="https://i.imgur.com/52RjhUM.png" width="45%">
+<img src="https://i.imgur.com/Gg9sTyq.png" width="45%">
+</div></div>
+<div class="section" id="disk-layout">
+<h2>Disk Layout<a class="headerlink" href="#disk-layout" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">output/</span></code> folder containing the UI HTML and archived data has the structure outlined here.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span> <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">output/</span>
+   <span class="l l-Scalar l-Scalar-Plain">- index.json</span>           <span class="c1"># Main index of all archived URLs</span>
+   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">index.html</span>
+
+   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">archive/</span>
+      <span class="l l-Scalar l-Scalar-Plain">- 155243135/</span>        <span class="c1"># Archived links are stored in folders by timestamp</span>
+         <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">index.json</span>     <span class="c1"># Index/details page for individual archived link</span>
+         <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">index.html</span>
+
+         <span class="c1"># Archive method outputs:</span>
+         <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">warc/</span>          
+         <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">media/</span>
+         <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">git/</span>
+         <span class="l l-Scalar l-Scalar-Plain">...</span>
+
+   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sources/</span>             <span class="c1"># Each imported URL list is saved as a copy here</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">getpocket.com-1552432264.txt</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stdin-1552291774.txt</span>
+      <span class="l l-Scalar l-Scalar-Plain">...</span>
+
+   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">static/</span>              <span class="c1"># Staticfiles for the archive UI</span>
+   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">robots.txt</span>
+</pre></div>
+</div>
+<div class="section" id="large-archives">
+<h3>Large Archives<a class="headerlink" href="#large-archives" title="Permalink to this headline">¶</a></h3>
+<p>I’ve found it takes about an hour to download 1000 articles, and they’ll take up roughly 1GB.Those numbers are from running it single-threaded on my i5 machine with 50mbps down.  YMMV.</p>
+<p>Storage requirements go up immensely if you’re using <code class="docutils literal notranslate"><span class="pre">FETCH_MEDIA=True</span></code> and are archiving many pages with audio &amp; video.</p>
+<p>You can run it in parallel by using the <code class="docutils literal notranslate"><span class="pre">resume</span></code> feature, or by manually splitting export.html into multiple files:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./archive export.html <span class="m">1498800000</span> <span class="p">&amp;</span>  <span class="c1"># second argument is timestamp to resume downloading from</span>
+./archive export.html <span class="m">1498810000</span> <span class="p">&amp;</span>
+./archive export.html <span class="m">1498820000</span> <span class="p">&amp;</span>
+./archive export.html <span class="m">1498830000</span> <span class="p">&amp;</span>
+</pre></div>
+</div>
+<p>Users have reported running it with 50k+ bookmarks with success (though it will take more RAM while running).</p>
+<p>If you already imported a huge list of bookmarks and want to import only new
+bookmarks, you can use the <code class="docutils literal notranslate"><span class="pre">ONLY_NEW</span></code> environment variable. This is useful if
+you want to import a bookmark dump periodically and want to skip broken links
+which are already in the index.</p>
+</div>
+</div>
+<div class="section" id="python-api-usage">
+<h2>Python API Usage<a class="headerlink" href="#python-api-usage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">archivebox.main</span> <span class="kn">import</span> <span class="n">add</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">remove</span><span class="p">,</span> <span class="n">check_data_folder</span>
+
+<span class="n">check_data_folder</span><span class="p">()</span>
+<span class="n">add</span><span class="p">(</span><span class="s1">&#39;https://example.com&#39;</span><span class="p">,</span> <span class="n">index_only</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">info</span><span class="p">()</span>
+<span class="n">remove</span><span class="p">(</span><span class="s1">&#39;https://example.com&#39;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">yes</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For more information see the Python API Reference.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Configuration.html" class="btn btn-neutral float-right" title="General Settings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Docker.html" class="btn btn-neutral float-left" title="Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nick Sweeting
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

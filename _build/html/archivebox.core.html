@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>archivebox.core package &mdash; ArchiveBox 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ArchiveBox
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">How does it work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#quickstart">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#overview">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#documentation">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#screenshots">Screenshots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Donations.html">Donations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Web-Archiving-Community.html">Web Archiving Community</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Docker.html">Docker</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Security-Overview.html">Security Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Publishing-Your-Archive.html">Publishing Your Archive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Scheduled-Archiving.html">Scheduled Archiving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chromium-Install.html">Chromium Install</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ArchiveBox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>archivebox.core package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/archivebox.core.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="archivebox-core-package">
+<h1>archivebox.core package<a class="headerlink" href="#archivebox-core-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="archivebox.core.migrations.html">archivebox.core.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="archivebox.core.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archivebox.core.migrations.html#module-archivebox.core.migrations.0001_initial">archivebox.core.migrations.0001_initial module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archivebox.core.migrations.html#module-archivebox.core.migrations.0002_auto_20190417_0739">archivebox.core.migrations.0002_auto_20190417_0739 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="archivebox.core.migrations.html#module-archivebox.core.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="archivebox-core-admin-module">
+<h2>archivebox.core.admin module<a class="headerlink" href="#archivebox-core-admin-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-archivebox.core.apps">
+<span id="archivebox-core-apps-module"></span><h2>archivebox.core.apps module<a class="headerlink" href="#module-archivebox.core.apps" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="archivebox.core.apps.CoreConfig">
+<em class="property">class </em><code class="descclassname">archivebox.core.apps.</code><code class="descname">CoreConfig</code><span class="sig-paren">(</span><em>app_name</em>, <em>app_module</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/archivebox/core/apps.html#CoreConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.core.apps.CoreConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.apps.config.AppConfig</span></code></p>
+<dl class="attribute">
+<dt id="archivebox.core.apps.CoreConfig.name">
+<code class="descname">name</code><em class="property"> = 'core'</em><a class="headerlink" href="#archivebox.core.apps.CoreConfig.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="archivebox-core-models-module">
+<h2>archivebox.core.models module<a class="headerlink" href="#archivebox-core-models-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-archivebox.core.settings">
+<span id="archivebox-core-settings-module"></span><h2>archivebox.core.settings module<a class="headerlink" href="#module-archivebox.core.settings" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-archivebox.core.tests">
+<span id="archivebox-core-tests-module"></span><h2>archivebox.core.tests module<a class="headerlink" href="#module-archivebox.core.tests" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="archivebox-core-urls-module">
+<h2>archivebox.core.urls module<a class="headerlink" href="#archivebox-core-urls-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="archivebox-core-views-module">
+<h2>archivebox.core.views module<a class="headerlink" href="#archivebox-core-views-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="archivebox-core-welcome-message-module">
+<h2>archivebox.core.welcome_message module<a class="headerlink" href="#archivebox-core-welcome-message-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-archivebox.core.wsgi">
+<span id="archivebox-core-wsgi-module"></span><h2>archivebox.core.wsgi module<a class="headerlink" href="#module-archivebox.core.wsgi" title="Permalink to this headline">¶</a></h2>
+<p>WSGI config for archivebox project.</p>
+<p>It exposes the WSGI callable as a module-level variable named <code class="docutils literal notranslate"><span class="pre">application</span></code>.</p>
+<p>For more information on this file, see
+<a class="reference external" href="https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/">https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/</a></p>
+</div>
+<div class="section" id="module-archivebox.core">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-archivebox.core" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nick Sweeting
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

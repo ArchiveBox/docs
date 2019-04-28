@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Docker &mdash; ArchiveBox 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Install" href="Install.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ArchiveBox
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">How does it work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#quickstart">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#overview">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#documentation">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#screenshots">Screenshots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Donations.html">Donations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Web-Archiving-Community.html">Web Archiving Community</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">Install</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker-compose">Docker Compose</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#accessing-the-data">Accessing the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Accessing the data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-a-bind-folder">Using a bind folder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-a-named-docker-data-volume">Using a named Docker data volume</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ArchiveBox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Docker</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Docker.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="docker">
+<h1>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Running ArchiveBox with Docker allows you to manage it in a container without exposing it to the rest of your system.  Usage with Docker is similar to usage of ArchiveBox normally, with a few small differences.</p>
+<p>Make sure you have Docker installed and set up on your machine before following these instructions.  If you don’t already have Docker installed, follow the official install instructions for Linux, macOS, or Windows here: https://docs.docker.com/install/#supported-platforms.</p>
+<img src="https://i.imgur.com/qFAPRwC.png" width="20%" align="right"> <ul class="simple">
+<li><p><a class="reference external" href="#">Overview</a></p></li>
+<li><p><a class="reference external" href="#docker-compose">Docker Compose</a> (recommended way)</p>
+<ul>
+<li><p><a class="reference external" href="#setup">Setup</a></p></li>
+<li><p><a class="reference external" href="#usage">Usage</a></p></li>
+<li><p><a class="reference external" href="#accessing-the-data">Accessing the data</a></p></li>
+<li><p><a class="reference external" href="#configuration">Configuration</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#docker">Plain Docker</a></p>
+<ul>
+<li><p><a class="reference external" href="#setup-1">Setup</a></p></li>
+<li><p><a class="reference external" href="#usage-1">Usage</a></p></li>
+<li><p><a class="reference external" href="#accessing-the-data-1">Accessing the data</a></p></li>
+<li><p><a class="reference external" href="#configuration-1">Configuration</a></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Official Docker Hub image:</strong>https://hub.docker.com/r/nikisweeting/archivebox</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;https://example.com&#39;</span> <span class="p">|</span> docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox
+</pre></div>
+</div>
+<hr class="docutils" />
+<img src="https://i.imgur.com/knwOtky.png" height="40px" align="right"></div>
+<div class="section" id="docker-compose">
+<h2>Docker Compose<a class="headerlink" href="#docker-compose" title="Permalink to this headline">¶</a></h2>
+<p>An example <a class="reference external" href="https://github.com/pirate/ArchiveBox/blob/master/docker-compose.yml"><code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code></a> config with ArchiveBox and an Nginx server to serve the archive is included in the project root.  You can edit it as you see fit, or just run it as it comes out-of-the-box.</p>
+<p>Just make sure you have a Docker version that’s <a class="reference external" href="https://docs.docker.com/compose/compose-file/">new enough</a> to support <code class="docutils literal notranslate"><span class="pre">version:</span> <span class="pre">3</span></code> format:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker --version
+Docker version <span class="m">18</span>.09.1, build 4c52b90    <span class="c1"># must be &gt;= 17.04.0</span>
+</pre></div>
+</div>
+<div class="section" id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/pirate/ArchiveBox <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ArchiveBox
+mkdir data <span class="o">&amp;&amp;</span> chmod <span class="m">777</span> data
+docker-compose up -d
+</pre></div>
+</div>
+<p>Then open <a class="reference external" href="http://127.0.0.1:8098"><code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8098</span></code></a> or <code class="docutils literal notranslate"><span class="pre">data/index.html</span></code> to view the archive (HTTP, not HTTPS).</p>
+</div>
+<div class="section" id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
+<p>First, make sure you’re <code class="docutils literal notranslate"><span class="pre">cd</span></code>’ed into the same folder as your <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file (e.g. the project root) and that your containers have been started with <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">-d</span></code>.</p>
+<p>To add new URLs, you can use docker-compose just like the normal <code class="docutils literal notranslate"><span class="pre">./archive</span></code> CLI.</p>
+<p><strong>To add an individual link or list of links</strong>, pass in URLs via stdin.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;https://example.com&quot;</span> <span class="p">|</span> docker-compose <span class="nb">exec</span> -T archivebox /bin/archive
+</pre></div>
+</div>
+<p><strong>To import links from a file</strong> you can either <code class="docutils literal notranslate"><span class="pre">cat</span></code> the file and pass it via stdin like above, or move it into your data folder so that ArchiveBox can access it from within the container.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv ~/Downloads/bookmarks.html data/sources/bookmarks.html
+docker-compose <span class="nb">exec</span> archivebox /bin/archive /data/sources/bookmarks.html
+</pre></div>
+</div>
+<p><strong>To pull in links from a feed or remote file</strong>, pass the URL or path to the feed as an argument.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose <span class="nb">exec</span> archivebox /bin/archive https://example.com/some/feed.rss
+</pre></div>
+</div>
+<p>Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links <em>inside</em> of it, so only use it for RSS feeds or other <em>lists of links</em> you want to add.  To add an individual link you want to archive use the instruction above and pass via stdin instead of by argument.</p>
+</div>
+<div class="section" id="accessing-the-data">
+<h3>Accessing the data<a class="headerlink" href="#accessing-the-data" title="Permalink to this headline">¶</a></h3>
+<p>The outputted archive data is stored in <code class="docutils literal notranslate"><span class="pre">data/</span></code> (relative to the project root), or whatever folder path you specified in the <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> <code class="docutils literal notranslate"><span class="pre">volumes:</span></code> section.  Make sure the <code class="docutils literal notranslate"><span class="pre">data/</span></code> folder on the host has permissions initially  set to <code class="docutils literal notranslate"><span class="pre">777</span></code> so that the ArchiveBox command is able to set it to the specified <code class="docutils literal notranslate"><span class="pre">OUTPUT_PERMISSIONS</span></code> config setting on the first run.</p>
+<p>To access your archive, you can open <code class="docutils literal notranslate"><span class="pre">data/index.html</span></code> directly, or you can use the provided Nginx server running inside docker on <a class="reference external" href="http://127.0.0.1:8098"><code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8098</span></code></a>.</p>
+</div>
+<div class="section" id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<p>ArchiveBox running with docker-compose accepts all the same environment variables as normal, see the full list on the [[Configuration]] page.</p>
+<p>The recommended way to pass in config variables is to edit the <code class="docutils literal notranslate"><span class="pre">environment:</span></code> section in <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> directly or add an <code class="docutils literal notranslate"><span class="pre">env_file:</span> <span class="pre">./path/to/ArchiveBox.conf</span></code> line before <code class="docutils literal notranslate"><span class="pre">environment:</span></code> to import variables from an env file.</p>
+<p>Example of adding config options to <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code>:</p>
+<div class="highlight-yml notranslate"><div class="highlight"><pre><span></span>...
+
+services:
+    archivebox:
+        ...
+        environment:
+            - USE_COLOR=False
+            - SHOW_PROGRESS=False
+            - CHECK_SSL_VALIDITY=False
+            - RESOLUTION=1900,1820
+            - MEDIA_TIMEOUT=512000
+        ...
+</pre></div>
+</div>
+<p>You can also specify an env file via CLI when running compose using <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">--env-file=/path/to/config.env</span> <span class="pre">...</span></code> although you must specify the variables in the <code class="docutils literal notranslate"><span class="pre">environment:</span></code> section that you want to have passed down to the ArchiveBox container from the passed env file.</p>
+<p>If you want to access your archive server with HTTPS, put a reverse proxy like Nginx or Caddy in front of <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8098</span></code> to do SSL termination.  You can find many instructions to do this online if you search “SSL reverse proxy”.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h2>Docker<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Setup<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Fetch and run the ArchiveBox Docker image to create your initial archive.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;https://example.com&#39;</span> <span class="p">|</span> docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">~/ArchiveBox</span></code> in the command above with the full path to a folder to use to store your archive on the host, or name of a Docker data volume.</p>
+<p>Make sure the data folder you use host is either a new, uncreated path, or if it already exists make sure it has permissions initially set to <code class="docutils literal notranslate"><span class="pre">777</span></code> so that the ArchiveBox command is able to set it to the specified <code class="docutils literal notranslate"><span class="pre">OUTPUT_PERMISSIONS</span></code> config setting on the first run.</p>
+</div>
+<div class="section" id="id3">
+<h3>Usage<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><strong>To add a single URL to the archive</strong> or a list of links from a file, pipe them in via stdin.  This will archive each link passed in.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;https://example.com&#39;</span> <span class="p">|</span> docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox
+<span class="c1"># or</span>
+cat bookmarks.html <span class="p">|</span> docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox
+</pre></div>
+</div>
+<p><strong>To add a list of pages via feed URL or remote file,</strong> pass the URL of the feed as an argument.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -v -v ~/ArchiveBox:/data nikisweeting/archivebox /bin/archive <span class="s1">&#39;https://example.com/some/rss/feed.xml&#39;</span>
+</pre></div>
+</div>
+<p>Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links <em>inside</em> of it, so only use it for RSS feeds or other <em>lists of links</em> you want to add.  To add an individual link use the instruction above and pass via stdin instead of by argument.</p>
+</div>
+<div class="section" id="id4">
+<h3>Accessing the data<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="using-a-bind-folder">
+<h4>Using a bind folder<a class="headerlink" href="#using-a-bind-folder" title="Permalink to this headline">¶</a></h4>
+<p>Use the flag:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-v /full/path/to/folder/on/host:/data
+</pre></div>
+</div>
+<p>This will use the folder <code class="docutils literal notranslate"><span class="pre">/full/path/to/folder/on/host</span></code> on your host to store the ArchiveBox output.</p>
+</div>
+<div class="section" id="using-a-named-docker-data-volume">
+<h4>Using a named Docker data volume<a class="headerlink" href="#using-a-named-docker-data-volume" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker volume create archivebox-data
+</pre></div>
+</div>
+<p>Then use the flag:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-v archivebox-data:/data
+</pre></div>
+</div>
+<p>You can mount your data volume using standard docker tools, or access the contents directly here:<code class="docutils literal notranslate"><span class="pre">/var/lib/docker/volumes/archivebox-data/_data</span></code> (on most Linux systems)</p>
+<p>On a Mac you’ll have to enter the base Docker Linux VM first to access the volume data:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty
+<span class="nb">cd</span> /var/lib/docker/volumes/archivebox-data/_data
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Configuration<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>ArchiveBox in Docker accepts all the same environment variables as normal, see the list on the [[Configuration]] page.</p>
+<p>To pass environment variables when running, you can use the env command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;https://example.com&#39;</span> <span class="p">|</span> docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox env <span class="nv">FETCH_SCREENSHOT</span><span class="o">=</span>False /bin/archive
+</pre></div>
+</div>
+<p>Or you can create an <code class="docutils literal notranslate"><span class="pre">ArchiveBox.env</span></code> file (copy from the default <code class="docutils literal notranslate"><span class="pre">etc/ArchiveBox.conf.default</span></code>) and pass it in like so:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -i -v --env-file<span class="o">=</span>ArchiveBox.env nikisweeting/archivebox
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="Install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nick Sweeting
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

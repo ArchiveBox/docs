@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Scheduled Archiving &mdash; ArchiveBox 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chromium Install" href="Chromium-Install.html" />
+    <link rel="prev" title="Publishing Your Archive" href="Publishing-Your-Archive.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ArchiveBox
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">How does it work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#quickstart">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#overview">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#documentation">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#screenshots">Screenshots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Donations.html">Donations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Web-Archiving-Community.html">Web Archiving Community</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Docker.html">Docker</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Security-Overview.html">Security Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Publishing-Your-Archive.html">Publishing Your Archive</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Scheduled Archiving</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-cron">Using Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-import-firefox-browser-history-every-24-hours">Example: Import Firefox browser history every 24 hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-import-an-rss-feed-from-pocket-every-12-hours">Example: Import an RSS feed from Pocket every 12 hours</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Chromium-Install.html">Chromium Install</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ArchiveBox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Scheduled Archiving</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Scheduled-Archiving.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="scheduled-archiving">
+<h1>Scheduled Archiving<a class="headerlink" href="#scheduled-archiving" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="using-cron">
+<h2>Using Cron<a class="headerlink" href="#using-cron" title="Permalink to this headline">¶</a></h2>
+<p>To schedule regular archiving you can use any task scheduler like <code class="docutils literal notranslate"><span class="pre">cron</span></code>, <code class="docutils literal notranslate"><span class="pre">at</span></code>, <code class="docutils literal notranslate"><span class="pre">sytsemd</span></code>, etc.</p>
+<p>ArchiveBox ignores links that are imported multiple times (keeping the earliest version that it’s seen).
+This means you can add cron jobs that regularly poll the same file or URL for new links, adding only new
+ones as necessary.</p>
+<p>For some example configs, see the <a class="reference external" href="https://github.com/pirate/ArchiveBox/blob/master/etc/cron.d"><code class="docutils literal notranslate"><span class="pre">etc/cron.d</span></code></a> and <a class="reference external" href="https://github.com/pirate/ArchiveBox/blob/master/etc/supervisord"><code class="docutils literal notranslate"><span class="pre">etc/supervisord</span></code></a> folders.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-import-firefox-browser-history-every-24-hours">
+<h3>Example: Import Firefox browser history every 24 hours<a class="headerlink" href="#example-import-firefox-browser-history-every-24-hours" title="Permalink to this headline">¶</a></h3>
+<p>This example exports your browser history and archives it once a day:</p>
+<p><strong>Create <code class="docutils literal notranslate"><span class="pre">/opt/ArchiveBox/bin/firefox_custom.sh</span></code>:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nb">cd</span> /opt/ArchiveBox
+./bin/archivebox-export-browser-history --firefox ./output/sources/firefox_history.json
+./bin/archivebox ./output/sources/firefox_history.json  &gt;&gt; /var/log/ArchiveBox.log
+</pre></div>
+</div>
+<p><strong>Then create a new file <code class="docutils literal notranslate"><span class="pre">/etc/cron.d/ArchiveBox-Firefox</span></code> to tell cron to run your script every 24 hours:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">24</span> * * * www-data /opt/ArchiveBox/bin/firefox_custom.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-import-an-rss-feed-from-pocket-every-12-hours">
+<h3>Example: Import an RSS feed from Pocket every 12 hours<a class="headerlink" href="#example-import-an-rss-feed-from-pocket-every-12-hours" title="Permalink to this headline">¶</a></h3>
+<p>This example imports your Pocket bookmark feed and archives any new links once a day:</p>
+<p>First, set your Pocket RSS feed to “public” under https://getpocket.com/privacy_controls.</p>
+<p><strong>Create <code class="docutils literal notranslate"><span class="pre">/opt/ArchiveBox/bin/pocket_custom.sh</span></code>:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nb">cd</span> /opt/ArchiveBox
+./bin/archivebox https://getpocket.com/users/yourusernamegoeshere/feed/all  &gt;&gt; /var/log/ArchiveBox.log
+</pre></div>
+</div>
+<p><strong>Then create a new file <code class="docutils literal notranslate"><span class="pre">/etc/cron.d/ArchiveBox-Pocket</span></code> to tell cron to run your script every 12 hours:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">12</span> * * * www-data /opt/ArchiveBox/bin/pocket_custom.sh
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Chromium-Install.html" class="btn btn-neutral float-right" title="Chromium Install" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Publishing-Your-Archive.html" class="btn btn-neutral float-left" title="Publishing Your Archive" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nick Sweeting
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

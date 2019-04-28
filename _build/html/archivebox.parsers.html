@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>archivebox.parsers package &mdash; ArchiveBox 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ArchiveBox
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">archivebox.parsers package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-archivebox.parsers.generic_json">archivebox.parsers.generic_json module</a></li>
+<li><a class="reference internal" href="#module-archivebox.parsers.generic_rss">archivebox.parsers.generic_rss module</a></li>
+<li><a class="reference internal" href="#module-archivebox.parsers.generic_txt">archivebox.parsers.generic_txt module</a></li>
+<li><a class="reference internal" href="#module-archivebox.parsers.medium_rss">archivebox.parsers.medium_rss module</a></li>
+<li><a class="reference internal" href="#module-archivebox.parsers.netscape_html">archivebox.parsers.netscape_html module</a></li>
+<li><a class="reference internal" href="#module-archivebox.parsers.pinboard_rss">archivebox.parsers.pinboard_rss module</a></li>
+<li><a class="reference internal" href="#module-archivebox.parsers.pocket_html">archivebox.parsers.pocket_html module</a></li>
+<li><a class="reference internal" href="#module-archivebox.parsers.shaarli_rss">archivebox.parsers.shaarli_rss module</a></li>
+<li><a class="reference internal" href="#module-archivebox.parsers">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ArchiveBox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>archivebox.parsers package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/archivebox.parsers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="archivebox-parsers-package">
+<h1>archivebox.parsers package<a class="headerlink" href="#archivebox-parsers-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-archivebox.parsers.generic_json">
+<span id="archivebox-parsers-generic-json-module"></span><h2>archivebox.parsers.generic_json module<a class="headerlink" href="#module-archivebox.parsers.generic_json" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.parsers.generic_json.parse_generic_json_export">
+<code class="descclassname">archivebox.parsers.generic_json.</code><code class="descname">parse_generic_json_export</code><span class="sig-paren">(</span><em>json_file: IO[str]</em><span class="sig-paren">)</span> &#x2192; Iterable[archivebox.index.schema.Link]<a class="reference internal" href="_modules/archivebox/parsers/generic_json.html#parse_generic_json_export"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.parsers.generic_json.parse_generic_json_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse JSON-format bookmarks export files (produced by pinboard.in/export/, or wallabag)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.parsers.generic_rss">
+<span id="archivebox-parsers-generic-rss-module"></span><h2>archivebox.parsers.generic_rss module<a class="headerlink" href="#module-archivebox.parsers.generic_rss" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.parsers.generic_rss.parse_generic_rss_export">
+<code class="descclassname">archivebox.parsers.generic_rss.</code><code class="descname">parse_generic_rss_export</code><span class="sig-paren">(</span><em>rss_file: IO[str]</em><span class="sig-paren">)</span> &#x2192; Iterable[archivebox.index.schema.Link]<a class="reference internal" href="_modules/archivebox/parsers/generic_rss.html#parse_generic_rss_export"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.parsers.generic_rss.parse_generic_rss_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse RSS XML-format files into links</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.parsers.generic_txt">
+<span id="archivebox-parsers-generic-txt-module"></span><h2>archivebox.parsers.generic_txt module<a class="headerlink" href="#module-archivebox.parsers.generic_txt" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.parsers.generic_txt.parse_generic_txt_export">
+<code class="descclassname">archivebox.parsers.generic_txt.</code><code class="descname">parse_generic_txt_export</code><span class="sig-paren">(</span><em>text_file: IO[str]</em><span class="sig-paren">)</span> &#x2192; Iterable[archivebox.index.schema.Link]<a class="reference internal" href="_modules/archivebox/parsers/generic_txt.html#parse_generic_txt_export"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.parsers.generic_txt.parse_generic_txt_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse raw links from each line in a text file</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.parsers.medium_rss">
+<span id="archivebox-parsers-medium-rss-module"></span><h2>archivebox.parsers.medium_rss module<a class="headerlink" href="#module-archivebox.parsers.medium_rss" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.parsers.medium_rss.parse_medium_rss_export">
+<code class="descclassname">archivebox.parsers.medium_rss.</code><code class="descname">parse_medium_rss_export</code><span class="sig-paren">(</span><em>rss_file: IO[str]</em><span class="sig-paren">)</span> &#x2192; Iterable[archivebox.index.schema.Link]<a class="reference internal" href="_modules/archivebox/parsers/medium_rss.html#parse_medium_rss_export"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.parsers.medium_rss.parse_medium_rss_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse Medium RSS feed files into links</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.parsers.netscape_html">
+<span id="archivebox-parsers-netscape-html-module"></span><h2>archivebox.parsers.netscape_html module<a class="headerlink" href="#module-archivebox.parsers.netscape_html" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.parsers.netscape_html.parse_netscape_html_export">
+<code class="descclassname">archivebox.parsers.netscape_html.</code><code class="descname">parse_netscape_html_export</code><span class="sig-paren">(</span><em>html_file: IO[str]</em><span class="sig-paren">)</span> &#x2192; Iterable[archivebox.index.schema.Link]<a class="reference internal" href="_modules/archivebox/parsers/netscape_html.html#parse_netscape_html_export"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.parsers.netscape_html.parse_netscape_html_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse netscape-format bookmarks export files (produced by all browsers)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.parsers.pinboard_rss">
+<span id="archivebox-parsers-pinboard-rss-module"></span><h2>archivebox.parsers.pinboard_rss module<a class="headerlink" href="#module-archivebox.parsers.pinboard_rss" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.parsers.pinboard_rss.parse_pinboard_rss_export">
+<code class="descclassname">archivebox.parsers.pinboard_rss.</code><code class="descname">parse_pinboard_rss_export</code><span class="sig-paren">(</span><em>rss_file: IO[str]</em><span class="sig-paren">)</span> &#x2192; Iterable[archivebox.index.schema.Link]<a class="reference internal" href="_modules/archivebox/parsers/pinboard_rss.html#parse_pinboard_rss_export"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.parsers.pinboard_rss.parse_pinboard_rss_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse Pinboard RSS feed files into links</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.parsers.pocket_html">
+<span id="archivebox-parsers-pocket-html-module"></span><h2>archivebox.parsers.pocket_html module<a class="headerlink" href="#module-archivebox.parsers.pocket_html" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.parsers.pocket_html.parse_pocket_html_export">
+<code class="descclassname">archivebox.parsers.pocket_html.</code><code class="descname">parse_pocket_html_export</code><span class="sig-paren">(</span><em>html_file: IO[str]</em><span class="sig-paren">)</span> &#x2192; Iterable[archivebox.index.schema.Link]<a class="reference internal" href="_modules/archivebox/parsers/pocket_html.html#parse_pocket_html_export"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.parsers.pocket_html.parse_pocket_html_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse Pocket-format bookmarks export files (produced by getpocket.com/export/)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.parsers.shaarli_rss">
+<span id="archivebox-parsers-shaarli-rss-module"></span><h2>archivebox.parsers.shaarli_rss module<a class="headerlink" href="#module-archivebox.parsers.shaarli_rss" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="archivebox.parsers.shaarli_rss.parse_shaarli_rss_export">
+<code class="descclassname">archivebox.parsers.shaarli_rss.</code><code class="descname">parse_shaarli_rss_export</code><span class="sig-paren">(</span><em>rss_file: IO[str]</em><span class="sig-paren">)</span> &#x2192; Iterable[archivebox.index.schema.Link]<a class="reference internal" href="_modules/archivebox/parsers/shaarli_rss.html#parse_shaarli_rss_export"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.parsers.shaarli_rss.parse_shaarli_rss_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse Shaarli-specific RSS XML-format files into links</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-archivebox.parsers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-archivebox.parsers" title="Permalink to this headline">¶</a></h2>
+<p>Everything related to parsing links from input sources.</p>
+<p>For a list of supported services, see the README.md.
+For examples of supported import formats see tests/.</p>
+<dl class="function">
+<dt id="archivebox.parsers.parse_links">
+<code class="descclassname">archivebox.parsers.</code><code class="descname">parse_links</code><span class="sig-paren">(</span><em>source_file: str</em><span class="sig-paren">)</span> &#x2192; Tuple[List[archivebox.index.schema.Link], str]<a class="reference internal" href="_modules/archivebox/parsers.html#parse_links"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#archivebox.parsers.parse_links" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse a list of URLs with their metadata from an
+RSS feed, bookmarks export, or text file</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nick Sweeting
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
