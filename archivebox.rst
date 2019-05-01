@@ -32,6 +32,14 @@ archivebox.manage module
     :undoc-members:
     :show-inheritance:
 
+archivebox.system module
+------------------------
+
+.. automodule:: archivebox.system
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 archivebox.util module
 ----------------------
 

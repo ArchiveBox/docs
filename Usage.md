@@ -169,10 +169,11 @@ which are already in the index.
 ```python
 from archivebox.main import add, info, remove, check_data_folder
 
-check_data_folder()
-add('https://example.com', index_only=True)
-info()
-remove('https://example.com', delete=True, yes=True)
+out_dir = '~/path/to/my/data/folder'
+check_data_folder(out_dir=out_dir)
+add('https://example.com', index_only=True, out_dir=out_dir)
+info(out_dir=out_dir)
+remove('https://example.com', delete=True, yes=True, out_dir=out_dir)
 ```
 
 For more information see the Python API Reference.

@@ -4,6 +4,14 @@ archivebox.index package
 Submodules
 ----------
 
+archivebox.index.csv module
+---------------------------
+
+.. automodule:: archivebox.index.csv
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 archivebox.index.html module
 ----------------------------
 
