@@ -48,6 +48,8 @@ chown -R archivebox:archivebox /home/archivebox
 sudo -u archivebox ./archive ...
 ```
 
+If you absolutely must run it as root for some reason, a footgun is provided: you can set [`ALLOW_ROOT=True`](https://github.com/pirate/ArchiveBox/wiki/Configuration#ALLOW_ROOT) via environment variable or in your ArchiveBox.conf file.
+
 <img src="https://i.imgur.com/ca1he6I.png" width="40px" align="right"/>
 
 ## Output Folder
