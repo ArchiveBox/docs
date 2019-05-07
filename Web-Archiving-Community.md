@@ -184,6 +184,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 Random helpful utilities for web archiving, WARC creation and replay, and more...
 
  - https://github.com/gildas-lormeau/SingleFile/ Web Extension for Firefox and Chrome to save a web page as a single HTML file
+ - https://github.com/vrtdev/save-page-state A Chrome extension for saving the state of a page in multiple formats
  - https://github.com/jsvine/waybackpack command-line tool that lets you download the entire Wayback Machine archive for a given URL
  - https://github.com/hartator/wayback-machine-downloader Download an entire website from the Internet Archive Wayback Machine.
  - https://en.archivarix.com download an archived page or entire site from the Wayback Machine
