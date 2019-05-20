@@ -10,10 +10,17 @@ This is the default (lax) mode, intended for archiving public (non-secret) URLs 
 
 This mode should not be used for archiving entire browser history or authenticated private content like Google Docs, paywalled content, invite-only subreddits, etc.
 
+```diff
+- ----------------------------------------------------------------------
+```
+
+# IMPORTANT: Don't use ArchiveBox for private archived content right now as we're in the middle of resolving some security issues with how JS is executed in archived content.
+
+```diff
+- ----------------------------------------------------------------------
+```
+
 <img src="https://i.imgur.com/xg6TxoK.png" width="50px" align="right"/>
-
-
-## IMPORTANT: Don't use ArchiveBox for private archived content right now as we're in the middle of resolving some security issues with how JS is executed in archived content.
 
 #### ~~Private Mode~~
 
