@@ -331,11 +331,11 @@ ONLY_NEW=False
 ...
 ```
 ```bash
-$ archviebox --get CHROME_VERSION
+$ archviebox config --get CHROME_VERSION
 Google Chrome 74.0.3729.40 beta
 ```
 ```bash
-$ archviebox --set USE_CHROME=False
+$ archviebox config --set USE_CHROME=False
 USE_CHROME=False
 ```
 
