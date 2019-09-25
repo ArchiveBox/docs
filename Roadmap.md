@@ -477,8 +477,8 @@ Available subcommands:
 
 ### `$ archivebox server`
 
-#### `[ip:port]`
-The address:port combo to run the server on, defaults to `127.0.0.1:8000`.
+#### `--bind=[ip:port]`
+The address:port combo to run the web UI server on, defaults to `127.0.0.1:8000`.
 
 ```bash
 $ archivebox server
@@ -495,7 +495,7 @@ Quit the server with CONTROL-C.
 
 ### `$ archivebox proxy`
 
-Run a live HTTP/HTTPS proxy for recording and replaying WARCs using pywb.
+Run a live HTTP/HTTPS proxy that records all traffic into WARC files using pywb.
 
 #### `--bind=[ip:port]`
 The address:port combo to run the proxy on, defaults to `127.0.0.1:8010`.
