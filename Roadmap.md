@@ -13,7 +13,7 @@ If you feel like contributing a PR, some of these tasks are pretty easy.  Feel f
 
 # Planned Specification
 
-ArchiveBox is going to migrate towards this design spec over the next 3 months bit by bit as functionality gets implemented and refactors are released.
+ArchiveBox is going to migrate towards this design spec over the upcoming months bit by bit as functionality gets implemented and refactors are released.
 
 To see how much of this spec is scheduled / implemented / released so far, read these pull requests:
  - [v0.3.0](https://github.com/pirate/ArchiveBox/pull/197)
