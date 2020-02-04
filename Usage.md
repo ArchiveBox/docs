@@ -88,12 +88,19 @@ Passing a URL as an argument here does not archive the specified URL, it downloa
 ---
 
 ### Import list of links from browser history
+
+This uses the `archivebox-export-browser-history` helper script to parse your browser's SQLite history database for URLs.
+Specify the type of the browser as the first argument, and optionally the path to the SQLite history file as the second argument.
+
 ```bash
 ./bin/archivebox-export-browser-history --chrome
 ./archive output/sources/chrome_history.json
 # or
 ./bin/archivebox-export-browser-history --firefox
 ./archive output/sources/firefox_history.json
+# or
+./bin/archivebox-export-browser-history --safari
+./archive output/sources/safari_history.json
 ```
 
 ---
