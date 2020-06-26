@@ -24,7 +24,7 @@ To see how much of this spec is scheduled / implemented / released so far, read 
  - [`archivebox version`](#-archivebox-version--version)
  - [`archivebox help`](#-archivebox-help-h--help)
  - [`archivebox init`](#-archivebox-init)
- - [`archivebox info`](#-archivebox-info)
+ - [`archivebox status`](#-archivebox-status)
  - [`archivebox add`](#-archivebox-add)
  - [`archivebox remove`](#-archivebox-remove)
  - [`archivebox schedule`](#-archivebox-schedule)
@@ -145,7 +145,7 @@ $ archivebox init
     ! Skipped adding 2 orphaned link data directories that would have overwritten existing data.
     ! Skipped adding 2 corrupted/unrecognized link data directories that could not be read.
         For more information about the link data directories that were skipped, run:
-            archivebox info
+            archivebox status
             archivebox list --status=invalid
             archivebox list --status=orphaned
             archivebox list --status=duplicate
@@ -168,12 +168,12 @@ $ archivebox init
         archivebox help
 ```
 
-### `$ archivebox info`
+### `$ archivebox status`
 
 Print out some info and statistics about the archive collection.
 
 ```bash
-$ archivebox info
+$ archivebox status
 [*] Scanning archive collection main index...
     /Users/squash/Documents/Code/ArchiveBox/data/*
     Size: 209.3 KB across 3 files
