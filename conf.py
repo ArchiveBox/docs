@@ -32,7 +32,7 @@ VERSION = open(os.path.join(PYTHON_DIR, 'VERSION'), 'r').read().strip()
 # -- Project information -----------------------------------------------------
 
 project = 'ArchiveBox'
-copyright = '2019, Nick Sweeting'
+copyright = '2020, Nick Sweeting'
 author = 'Nick Sweeting'
 github_url = 'https://github.com/pirate/ArchiveBox'
 github_doc_root = 'https://github.com/pirate/ArchiveBox/tree/master/docs/'
