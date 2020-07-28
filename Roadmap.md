@@ -11,10 +11,10 @@
 # Planned Specification
 
 To see how this spec has been scheduled / implemented / released so far, read these pull requests:
- - √ [v0.2.x](https://github.com/pirate/ArchiveBox/tree/483a3bef9e2b1a7b80611947a3be99b0cf4f9959) 
- - √ [v0.3.x](https://github.com/pirate/ArchiveBox/pull/197)
- - √ [v0.4.x](https://github.com/pirate/ArchiveBox/pull/207)
- - [v0.5.x](https://github.com/pirate/ArchiveBox/pull/275)
+ - ✅ [v0.2.x](https://github.com/pirate/ArchiveBox/tree/483a3bef9e2b1a7b80611947a3be99b0cf4f9959) 
+ - ✅ [v0.3.x](https://github.com/pirate/ArchiveBox/pull/197)
+ - ✅ [v0.4.x](https://github.com/pirate/ArchiveBox/pull/207)
+ - 🛠 [v0.5.x](https://github.com/pirate/ArchiveBox/pull/275)
 
 **API:**
  - [`pip install archivebox`](#-pip-install-archivebox)
