@@ -16,8 +16,10 @@ If you feel like contributing a PR, some of these tasks are pretty easy.  Feel f
 ArchiveBox is going to migrate towards this design spec over the upcoming months bit by bit as functionality gets implemented and refactors are released.
 
 To see how much of this spec is scheduled / implemented / released so far, read these pull requests:
- - [v0.3.0](https://github.com/pirate/ArchiveBox/pull/197)
- - [v0.4.0](https://github.com/pirate/ArchiveBox/pull/207)
+ - √ [v0.2.x](https://github.com/pirate/ArchiveBox/tree/483a3bef9e2b1a7b80611947a3be99b0cf4f9959) 
+ - √ [v0.3.x](https://github.com/pirate/ArchiveBox/pull/197)
+ - √ [v0.4.x](https://github.com/pirate/ArchiveBox/pull/207)
+ - [v0.5.x](https://github.com/pirate/ArchiveBox/pull/275)
 
 **API:**
  - [`pip install archivebox`](#-pip-install-archivebox)
