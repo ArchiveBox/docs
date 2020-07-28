@@ -13,32 +13,25 @@ See the [releases](https://github.com/pirate/ArchiveBox/releases) page for versi
 
 ---
 
-
-- https://pypi.org/project/archivebox/
-- https://hub.docker.com/r/nikisweeting/archivebox
-- https://archivebox.readthedocs.io/en/latest/
-- https://github.com/pirate/ArchiveBox/releases
-
-```bash
-pip install archivebox
-
-cd path/to/your/archive/folder
-
-archivebox init
-archviebox add 'https://example.com'
-archviebox add 'https://getpocket.com/users/USERNAME/feed/all' --depth=1
-# docker setup available as well
-```
-
- - `pip install archivebox` is now available
+ - v0.4.9 released
+   - `pip install archivebox` https://pypi.org/project/archivebox/
+   - `docker run nikisweeting/archivebox` https://hub.docker.com/r/nikisweeting/archivebox
+   - https://archivebox.readthedocs.io/en/latest/
+   - https://github.com/pirate/ArchiveBox/releases
+ - easy migration from previous versions
+   ```bash
+   cd path/to/your/archive/folder
+   archivebox init
+   archviebox add 'https://example.com'
+   archviebox add 'https://getpocket.com/users/USERNAME/feed/all' --depth=1
+   ```
  - full transition to Django Sqlite DB with migrations (making upgrades between versions much safer now)
  - maintains an intuitive and helpful CLI that's backwards-compatible with all previous archivebox data versions
  - uses argparse instead of hand-written CLI system: see `archivebox/cli/archivebox.py`
  - new subcommands-based CLI for `archivebox` (see below)
  - new Web UI with pagination, better search, filtering, permissions, and more
  - 30+ assorted bugfixes, new features, and tickets closed
-
-For more info, see: https://github.com/pirate/ArchiveBox/releases/tag/v0.4.9
+ - for more info, see: https://github.com/pirate/ArchiveBox/releases/tag/v0.4.9
 
 ---
 
