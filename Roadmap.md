@@ -5,17 +5,12 @@
 ▶️ *Comment here to discuss the contribution roadmap:  
 [Official Roadmap Discussion](https://github.com/pirate/ArchiveBox/issues/120).*
 
-If you feel like contributing a PR, some of these tasks are pretty easy.  Feel free to open an issue if you need help getting started in any way!
-
-**IMPORTANT**: *Please don't work on any of these major long-term tasks without [contacting me first](https://nicksweeting.com/blog#Contact-Me), work is already in progress for many of these, and I may have to reject your PR if it doesn't align with the existing work!*
 
 ---
 
 # Planned Specification
 
-ArchiveBox is going to migrate towards this design spec over the upcoming months bit by bit as functionality gets implemented and refactors are released.
-
-To see how much of this spec is scheduled / implemented / released so far, read these pull requests:
+To see how this spec has been scheduled / implemented / released so far, read these pull requests:
  - √ [v0.2.x](https://github.com/pirate/ArchiveBox/tree/483a3bef9e2b1a7b80611947a3be99b0cf4f9959) 
  - √ [v0.3.x](https://github.com/pirate/ArchiveBox/pull/197)
  - √ [v0.4.x](https://github.com/pirate/ArchiveBox/pull/207)
@@ -51,26 +46,26 @@ To see how much of this spec is scheduled / implemented / released so far, read 
 
 ## CLI Usage
 
-*Note, these ways to run ArchiveBox are all equivalent:*
+*Note, these ways to run ArchiveBox are equivalent:*
 
  - `archivebox [subcommand] [...args]`
  - `python3 -m archivebox [subcommand] [...args]`
- - `python3 archivebox/__main__.py [subcommand] [...args]`
- - `python3 archivebox/manage.py archivebox [subcommand] [...args]`
+ - `docker run -v $PWD:/data nikisweeting/archivebox [subcommand] [...args]`
+ - `docker-compose run archivebox [subcommand] [...args]`
 
 ### `$ pip install archivebox`
 ```bash
 ...
 Installing collected packages: archivebox
   Running setup.py install for archivebox ... done
-Successfully installed archivebox-0.4.0
+Successfully installed archivebox-0.4.9
 ```
 
 Developers who are working on the ArchiveBox codebase should install the project in "linked" mode for development using: `pipenv install; pip install -e .`.
 
 ### `$ archivebox [version|--version]`
 ```bash
-ArchiveBox v0.4.0
+ArchiveBox v0.4.9
 
 [i] Dependency versions:
  √  PYTHON_BINARY            /optArchiveBox/.venv/bin/python3.7            v3.7            valid
