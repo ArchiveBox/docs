@@ -24,11 +24,11 @@
 
 All three of these ways of running ArchiveBox are equivalent and interchangeable:
 
-- `archivebox [subcommand] [...args]`
+- `archivebox [subcommand] [...args]`  
   *Using the PyPI package via `pip install archivebox`*
-- `archivebox run -v $PWD:/data nikisweeting/archivebox [subcommand] [...args]`
+- `archivebox run -v $PWD:/data nikisweeting/archivebox [subcommand] [...args]`  
   *Using the official Docker image*
-- `docker-compose run archivebox [subcommand] [...args]`
+- `docker-compose run archivebox [subcommand] [...args]`  
   *Using the official Docker image w/ Docker Compose*
 
 You can share a single archivebox data directory between Docker and non-Docker instances as well, allowing you to run the server in a container but still execute CLI commands on the host for example.
