@@ -41,11 +41,19 @@ For more examples see the [[Docker]] page.
 ---
 
 ### Run ArchiveBox with configuration options
-You can set environment variables in your shell profile, a config file, or by using the `env` command.
 
 ```bash
-env FETCH_MEDIA=True MEDIA_TIMEOUT=500 ./archive ...
+# via the CLI
+archivebox config --set TIMEOUT=3600
+
+# by modifying the config file
+nano ArchiveBox.conf
+# TIMEOUT=3600
+
+# or by using environment variables
+env TIMEOUT=3600 archivebox add 'https://example.com'
 ```
+
 See [[Configuration]] page for more details about the available options and ways to pass config.  
 If you're using Docker, also make sure to read the Configuration section on the [[Docker]] page.
 
