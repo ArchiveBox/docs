@@ -17,19 +17,20 @@
  - [[Troubleshooting]]: Resources if you encounter any problems
  - [Screenshots](https://github.com/pirate/ArchiveBox#Screenshots): See what the CLI and outputted HTML look like
 
-## Overview
-
-The `./archive` binary is a shortcut to `bin/archivebox`.  Piping RSS, JSON, [Netscape](https://msdn.microsoft.com/en-us/library/aa753582(v=vs.85).aspx), or TXT lists of links into the `./archive` command will add them to your archive folder, and create a locally-stored browsable archive for each new URL.
-
-The archiver produces an [output folder](#Disk-Layout) `output/` containing `index.html`, `index.json`, and archived copies of all the sites organized by timestamp bookmarked.  It's powered by [Chrome headless](https://developers.google.com/web/updates/2017/04/headless-chrome), good 'ol `wget`, and a few other common Unix tools.
 
 ## CLI Usage
 
 <img src="https://i.imgur.com/biVfFYr.png" width="30%" align="right">
 
-`./archive` refers to the executable shortcut in the root of the project, but you can also call ArchiveBox via `./bin/archivebox`.  If you add `/path/to/ArchiveBox/bin` to your shell `$PATH` then you can call `archivebox` from anywhere on your system.
+All three of these ways of running ArchiveBox are equivalent and interchangeable:
 
-If you're using Docker, the CLI interface is similar but needs to be prefixed by `docker-compose exec ...` or `docker run ...`, for examples see the [[Docker]] page.
+- `archivebox [subcommand] [...args]` (using `pip install archivebox`)
+- `archivebox run -v $PWD:/data nikisweeting/archivebox [subcommand] [...args]` (using the official Docker image)
+- `docker-compose run archivebox [subcommand] [...args]` (using the official Docker image in a Docker Compose project)
+
+You can share a single archivebox data directory between Docker and non-Docker instances as well, allowing you to run the server in a container but still execute CLI commands on the host for example.
+
+For more examples see the [[Docker]] page.
 
  - [Run ArchiveBox with configuration options](#Run-ArchiveBox-with-configuration-options)
  - [Import a single URL or list of URLs via stdin](#Import-a-single-URL-or-list-of-URLs-via-stdin)
@@ -52,9 +53,17 @@ If you're using Docker, also make sure to read the Configuration section on the 
 
 ### Import a single URL or list of URLs via stdin
 ```bash
-echo 'https://example.com' | ./archive
+archivebox add 'https://example.com'
 # or
-cat urls_to_archive.txt | ./archive
+echo 'https://example.com' | archivebox add
+```
+
+---
+### Import a list of URLs from a file or feed
+```bash
+archivebox add < urls_to_archive.txt
+# or
+curl https://getpocket.com/users/USERNAME/feed/all | archivebox add
 ```
 You can also pipe in RSS, XML, Netscape, or any of the other supported import formats via stdin.
 
@@ -63,27 +72,14 @@ You can also pipe in RSS, XML, Netscape, or any of the other supported import fo
 ### Import list of links exported from browser or another service
 
 ```bash
-./archive ~/Downloads/browser_bookmarks_export.html
+archivebox add < ~/Downloads/browser_bookmarks_export.html
 # or
-./archive ~/Downloads/pinboard_bookmarks.json
+archivebox add < ~/Downloads/pinboard_bookmarks.json
 # or
-./archive ~/Downloads/other_links.txt
+archivebox add < ~/Downloads/other_links.txt
 ```
 
-Passing a file as an argument here does not archive the file, it parses it as a list of URLs and archives the links *inside of it*, so only use it for *lists of links* to archive, not HTML files or other content you want added directy to the archive.
-
----
-
-### Import list of URLs from a remote RSS feed or file
-ArchiveBox will download the URL to a local file in `output/sources/` and attempt to autodetect the format and import any URLs found. Currently, Netscape HTML, JSON, RSS, and plain text links lists are supported.
-
-```bash
-./archive https://example.com/feed.rss
-# or
-./archive https://example.com/links.txt
-```
-
-Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links *inside* of it, so only use it for RSS feeds or other *lists of links* you want to add.  To add an individual link use the instruction above and pass the URL via stdin instead of as an argument.
+You can also add `--depth=1` to any of these commands if you want to recursively archive the URLs and all URLs one hop away. (e.g. all the outlinks on a page + the page).
 
 ---
 
@@ -93,21 +89,27 @@ This uses the `archivebox-export-browser-history` helper script to parse your br
 Specify the type of the browser as the first argument, and optionally the path to the SQLite history file as the second argument.
 
 ```bash
-./bin/archivebox-export-browser-history --chrome
-./archive output/sources/chrome_history.json
+./bin/export-browser-history --chrome
+archivebox add < output/sources/chrome_history.json
 # or
-./bin/archivebox-export-browser-history --firefox
-./archive output/sources/firefox_history.json
+./bin/export-browser-history --firefox
+archivebox add < output/sources/firefox_history.json
 # or
-./bin/archivebox-export-browser-history --safari
-./archive output/sources/safari_history.json
+./bin/export-browser-history --safari
+archivebox add < output/sources/safari_history.json
 ```
 
 ---
 
 ## UI Usage
 
-To access your archive, open `output/index.html` in a browser.  You should see something [like this](https://archive.sweeting.me).
+```bash
+archivebox server
+open http://127.0.0.1:8000
+```
+
+Or if you prefer to use the static HTML UI instead of the interactive UI provided by the server,
+you can open `./index.html` in a browser.  You should see something [like this](https://archive.sweeting.me).
 
 You can sort by column, search using the box in the upper right, and see the total number of links at the bottom.
 
@@ -120,12 +122,13 @@ Click the Favicon under the "Files" column to go to the details page for each li
 
 ## Disk Layout
 
-The `output/` folder containing the UI HTML and archived data has the structure outlined here.
+The `OUTPUT_DIR` folder (usually whatever folder you run `archivebox` in), contains the UI HTML and archived data with the structure outlined below.
 
 ```yaml
  - output/
-   - index.json           # Main index of all archived URLs
-   - index.html
+   - index.sqlite3        # Main index of all archived URLs
+   - index.json           # Redundant JSON version of the same main index
+   - index.html           # Redundant static HTML version of the same main index
 
    - archive/
       - 155243135/        # Archived links are stored in folders by timestamp
@@ -154,12 +157,11 @@ Those numbers are from running it single-threaded on my i5 machine with 50mbps d
 
 Storage requirements go up immensely if you're using `FETCH_MEDIA=True` and are archiving many pages with audio & video.
 
-You can run it in parallel by using the `resume` feature, or by manually splitting export.html into multiple files:
+You can run it in parallel by manually splitting your URLs into separate chunks:
 ```bash
-./archive export.html 1498800000 &  # second argument is timestamp to resume downloading from
-./archive export.html 1498810000 &
-./archive export.html 1498820000 &
-./archive export.html 1498830000 &
+archivebox add < urls_chunk_1.txt &
+archivebox add < urls_chunk_2.txt &
+archivebox add < urls_chunk_3.txt &
 ```
 Users have reported running it with 50k+ bookmarks with success (though it will take more RAM while running).
 
