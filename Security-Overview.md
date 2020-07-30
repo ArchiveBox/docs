@@ -1,3 +1,5 @@
+# Security Overview
+
 ## Usage Modes
 
 ArchiveBox has three common usage modes outlined below.

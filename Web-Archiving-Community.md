@@ -1,3 +1,5 @@
+# Web Archiving Community
+
 <div align="center">
 
 <!--💬 **Join the [`#ArchiveBox` channel](http://webchat.freenode.net?channels=ArchiveBox&uio=d4) via IRC on [FreeNode.net](http://webchat.freenode.net?channels=ArchiveBox&uio=d4) to chat with us!**-->
@@ -12,7 +14,6 @@ The internet archiving community is surprisingly far-reaching and almost univers
 
 Whether you want to learn which organizations are the big players in the web archiving space, want to find a specific open source tool for your web archiving need, or just want to see where archivists hang out online, this is my attempt at an index of the entire web archiving community.
 
-## Contents
 
 <img src="https://i.imgur.com/duS8Lm7.png" width="200px" align="right"/>
 

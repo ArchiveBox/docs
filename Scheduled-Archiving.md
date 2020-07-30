@@ -1,4 +1,6 @@
-## Schedule daily importing of new links into your archive
+# Scheduled Archiving
+
+## Using Cron
 
 To schedule regular archiving you can use any task scheduler like `cron`, `at`, `sytsemd`, etc.
 
@@ -8,7 +10,9 @@ ones as necessary.
 
 For some example configs, see the [`etc/cron.d`](https://github.com/pirate/ArchiveBox/blob/master/etc/cron.d) and [`etc/supervisord`](https://github.com/pirate/ArchiveBox/blob/master/etc/supervisord) folders.
 
-## Example: Import Firefox browser history every 24 hours
+## Examples
+
+### Example: Import Firefox browser history every 24 hours
 
 This example exports your browser history and archives it once a day:
 
@@ -26,7 +30,7 @@ cd /opt/ArchiveBox
 0 24 * * * www-data /opt/ArchiveBox/bin/firefox_custom.sh
 ```
 
-## Example: Import an RSS feed from Pocket every 12 hours
+### Example: Import an RSS feed from Pocket every 12 hours
 
 This example imports your Pocket bookmark feed and archives any new links once a day:
 

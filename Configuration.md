@@ -1,5 +1,6 @@
-▶️ *The default ArchiveBox config file can be found here: [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).*
+# Configuration
 
+▶️ *The default ArchiveBox config file can be found here: [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).*
 
 Configuration is done through environment variables.  You can pass in settings using all the usual environment variable methods: e.g. by using the `env` command, exporting variables in your shell profile, or sourcing a `.env` file before running the command.
 
@@ -384,31 +385,3 @@ Path or name of the curl binary to use.
 
 
 <img src="https://i.imgur.com/almAbwK.png" width="100%"/>
-
----
-
-
-# Creating a Config File
-
-*Note: If you're using Docker, see the [[Docker]] page for configuration instructions.*
-
-To set up a persistent config:
-
-1. Copy `etc/ArchiveBox.conf.default` to `~/.ArchiveBox.conf`
-```bash
-cp ArchiveBox/etc/ArchiveBox.conf.default ~/.ArchiveBox.conf
-```
-
-2. Edit your options inside `~/.ArchiveBox.conf`, e.g.:
-```bash
-CHROME_BINARY=google-chrome-stable
-RESOLUTION=1440,900
-FETCH_PDF=False
-```
-
-3. Source your config file when you run your archive script:
-```bash
-eval export $(grep -v '^#' ~/path/to/your/ArchiveBox.conf); ./archive https://example.com/rss/feed.xml
-```
-
-Improving this process is on the roadmap, in future versions you'll be able to pass a config file directly to the archive command.

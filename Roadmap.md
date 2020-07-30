@@ -1,4 +1,4 @@
-## Roadmap
+# Roadmap
 
 <img src="https://i.imgur.com/es97GGV.png" width="20%" align="right"/>
 
@@ -8,7 +8,7 @@
 
 ---
 
-# Planned Specification
+## Planned Specification
 
 To see how this spec has been scheduled / implemented / released so far, read these pull requests:
  - ✅ [v0.2.x](https://github.com/pirate/ArchiveBox/tree/483a3bef9e2b1a7b80611947a3be99b0cf4f9959) 
