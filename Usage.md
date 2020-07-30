@@ -70,7 +70,6 @@ If you're using Docker, also make sure to read the Configuration section on the 
 ### Import a single URL
 
 ```bash
-<<<<<<< HEAD
 archivebox add 'https://example.com'
 # or
 echo 'https://example.com' | archivebox add
