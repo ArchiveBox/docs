@@ -20,7 +20,7 @@ Clone the ArchiveBox repo and install its dependencies.
 ```bash
 git clone https://github.com/pirate/ArchiveBox
 cd ArchiveBox/
-./bin/archivebox-setup  # script prompts for user confirmation before installing anything
+./bin/setup.sh  # script prompts for user confirmation before installing anything
 ```
 
 <img src="https://i.imgur.com/VMTzm0G.png" width="99%"/>
