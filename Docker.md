@@ -50,6 +50,7 @@ Docker version 18.09.1, build 4c52b90    # must be >= 17.04.0
 git clone https://github.com/pirate/ArchiveBox && cd ArchiveBox
 mkdir data && chmod 777 data
 docker-compose up -d
+docker-compose run archivebox init
 ```
 
 Then open [`http://127.0.0.1:8098`](http://127.0.0.1:8098) or `data/index.html` to view the archive (HTTP, not HTTPS).
