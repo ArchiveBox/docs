@@ -53,7 +53,7 @@ docker-compose up -d
 docker-compose run archivebox init
 ```
 
-Then open [`http://127.0.0.1:8098`](http://127.0.0.1:8098) or `data/index.html` to view the archive (HTTP, not HTTPS).
+Then open [`http://127.0.0.1:8080`](http://127.0.0.1:8080) or `data/index.html` to view the archive (HTTP, not HTTPS).
 
 ### Usage
 
@@ -86,7 +86,7 @@ Passing a URL as an argument here does not archive the specified URL, it downloa
 
 The outputted archive data is stored in `data/` (relative to the project root), or whatever folder path you specified in the `docker-compose.yml` `volumes:` section. Make sure the `data/` folder on the host has permissions initially set to `777` so that the ArchiveBox command is able to set it to the specified `OUTPUT_PERMISSIONS` config setting on the first run.
 
-To access your archive, you can open `data/index.html` directly, or you can use the provided Nginx server running inside docker on [`http://127.0.0.1:8098`](http://127.0.0.1:8098).
+To access your archive, you can open `data/index.html` directly, or you can use the provided Nginx server running inside docker on [`http://127.0.0.1:8080`](http://127.0.0.1:8080).
 
 ### Configuration
 
