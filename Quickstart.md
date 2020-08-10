@@ -51,14 +51,12 @@ Follow the links here to find instructions for exporting a list of URLs from eac
 
 ## 3. Add your URLs to the archive
 
-Pass in URLs to archive via stdin:
+Pass in URLs directly, import a list of links from a file, or import from a feed URL. All via stdin:
 ```bash
 echo 'https://example.com' | archivebox add
-```
-
-Or import a list of links from a file or feed URL:
-```bash
+# or
 archivebox add < ~/Downloads/example_bookmarks_export.html
+# or
 curl https://getpocket.com/users/example/feed/all | archivebox add
 ```
 
