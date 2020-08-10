@@ -53,13 +53,13 @@ Follow the links here to find instructions for exporting a list of URLs from eac
 
 Pass in URLs to archive via stdin:
 ```bash
-echo 'https://example.com' | ./archive
+echo 'https://example.com' | archivebox add
 ```
 
 Or import a list of links from a file or feed URL:
 ```bash
-./archive ~/Downloads/example_bookmarks_export.html
-./archive https://getpocket.com/users/example/feed/all
+archivebox add < ~/Downloads/example_bookmarks_export.html
+curl https://getpocket.com/users/example/feed/all | archivebox add
 ```
 
 ## ✅ Done!
