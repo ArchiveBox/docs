@@ -64,7 +64,7 @@ BSD, Windows, and other OS users should follow the [Manual Setup](#manual-setup)
 
 ```bash
 cd ArchiveBox/
-./bin/archivebox-setup
+./bin/setup
 ``` 
 
 The script explains what it installs beforehand, and will prompt for user confirmation before making any changes to your system.
@@ -117,9 +117,9 @@ Follow the [[Quickstart]] guide to download your bookmarks export file containin
 
 1. Clone this repo `git clone https://github.com/pirate/ArchiveBox`
 2. `cd ArchiveBox/`
-3. `./archive ~/Downloads/links_list.html`
+3. `archivebox add < ~/Downloads/links_list.html`
 
-You may optionally specify a second argument to `archive.py export.html 153242424324` to resume the archive update at a specific timestamp.
+You can also use the `update` subcommand to resume the archive update at a specific timestamp `archivebox update --resume=153242424324.123`.
 
 ### Next Steps
 
