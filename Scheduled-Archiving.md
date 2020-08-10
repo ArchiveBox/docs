@@ -22,7 +22,7 @@ This example exports your browser history and archives it once a day:
 
 cd /opt/ArchiveBox
 ./bin/archivebox-export-browser-history --firefox ./output/sources/firefox_history.json
-./bin/archivebox ./output/sources/firefox_history.json  >> /var/log/ArchiveBox.log
+archivebox add < ./output/sources/firefox_history.json  >> /var/log/ArchiveBox.log
 ```
 
 **Then create a new file `/etc/cron.d/ArchiveBox-Firefox` to tell cron to run your script every 24 hours:**
@@ -41,7 +41,7 @@ First, set your Pocket RSS feed to "public" under https://getpocket.com/privacy_
 #!/bin/bash
 
 cd /opt/ArchiveBox
-./bin/archivebox https://getpocket.com/users/yourusernamegoeshere/feed/all  >> /var/log/ArchiveBox.log
+curl https://getpocket.com/users/yourusernamegoeshere/feed/all | archivebox add  >> /var/log/ArchiveBox.log
 ```
 
 **Then create a new file `/etc/cron.d/ArchiveBox-Pocket` to tell cron to run your script every 12 hours:**
