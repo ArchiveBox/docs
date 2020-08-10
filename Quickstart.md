@@ -12,7 +12,7 @@ If you want to use Docker or Docker Compose to run ArchiveBox, see the [[Docker]
 
 ---
 
-First, we install the ArchiveBox [dependencies](./Install#dependencies), then we create a folder to [store the archive data](https://github.com/pirate/ArchiveBox/wiki/Usage#Disk-Layout), and finally, we [import the list of links](https://github.com/pirate/ArchiveBox/wiki/Usage#CLI-Usage) to the archive by running `archivebox add < <links_file>`.
+First, we install the ArchiveBox [dependencies](./Install#dependencies), then we create a folder to [store the archive data](https://github.com/pirate/ArchiveBox/wiki/Usage#Disk-Layout), and finally, we [import the list of links](https://github.com/pirate/ArchiveBox/wiki/Usage#CLI-Usage) to the archive by running `archivebox add < [links_file]`.
 
 ## 1. Set up ArchiveBox
 
