@@ -8,7 +8,7 @@ ArchiveBox only has a few main dependencies apart from `python3`, and they can a
  - [Dependencies](#dependencies)
  - [Automatic Setup](#automatic-setup)
  - [Manual Setup](#manual-setup)
- - [Docker Setup](#docker-setup)
+ - **[Docker Setup](#docker-setup)**
 
 ## Supported Systems
 
