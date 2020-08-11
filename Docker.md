@@ -24,9 +24,11 @@ Make sure you have Docker installed and set up on your machine before following 
 https://hub.docker.com/r/nikisweeting/archivebox
 
 **Usage:**
-
 ```bash
-echo 'https://example.com' | docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox add
+docker run -v $PWD:/data nikisweeting/archivebox init
+docker run -v $PWD:/data nikisweeting/archivebox add 'https://example.com'
+docker run -v $PWD:/data -it nikisweeting/archivebox manage createsuperuser
+docker run -v $PWD:/data -p 8000:8000 nikisweeting/archivebox server 0.0.0.0:8000
 ```
 
 ---
