@@ -66,29 +66,29 @@ To add new URLs, you can use docker-compose just like the normal `./archive` CLI
 **To add an individual link or list of links**, pass in URLs via stdin.
 
 ```bash
-echo "https://example.com" | docker-compose exec -T archivebox /bin/archive
+echo "https://example.com" | docker-compose run -T archivebox add
 ```
 
 **To import links from a file** you can either `cat` the file and pass it via stdin like above, or move it into your data folder so that ArchiveBox can access it from within the container.
 
 ```bash
 mv ~/Downloads/bookmarks.html data/sources/bookmarks.html
-docker-compose exec archivebox /bin/archive /data/sources/bookmarks.html
+docker-compose run archivebox add /data/sources/bookmarks.html
 ```
 
 **To pull in links from a feed or remote file**, pass the URL or path to the feed as an argument.
 
 ```bash
-docker-compose exec archivebox /bin/archive https://example.com/some/feed.rss
+docker-compose run archivebox add https://example.com/some/feed.rss --depth=1
 ```
 
-Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links _inside_ of it, so only use it for RSS feeds or other _lists of links_ you want to add. To add an individual link you want to archive use the instruction above and pass via stdin instead of by argument.
+The `depth` argument controls if you want to save the links contained in that URL, or only the specified URL.
 
 ### Accessing the data
 
 The outputted archive data is stored in `data/` (relative to the project root), or whatever folder path you specified in the `docker-compose.yml` `volumes:` section. Make sure the `data/` folder on the host has permissions initially set to `777` so that the ArchiveBox command is able to set it to the specified `OUTPUT_PERMISSIONS` config setting on the first run.
 
-To access your archive, you can open `data/index.html` directly, or you can use the provided Nginx server running inside docker on [`http://127.0.0.1:8080`](http://127.0.0.1:8080).
+To access your archive, you can open `data/index.html` directly, or you can use the provided Django development server running inside docker on [`http://127.0.0.1:8000`](http://127.0.0.1:8000).
 
 ### Configuration
 
@@ -146,10 +146,10 @@ cat bookmarks.html | docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox
 **To add a list of pages via feed URL or remote file,** pass the URL of the feed as an argument.
 
 ```bash
-docker run -v -v ~/ArchiveBox:/data nikisweeting/archivebox /bin/archive 'https://example.com/some/rss/feed.xml'
+docker run -v ~/ArchiveBox:/data nikisweeting/archivebox add 'https://example.com/some/rss/feed.xml'
 ```
 
-Passing a URL as an argument here does not archive the specified URL, it downloads it and archives the links _inside_ of it, so only use it for RSS feeds or other _lists of links_ you want to add. To add an individual link use the instruction above and pass via stdin instead of by argument.
+The `depth` argument controls if you want to save the links contained in that URL, or only the specified URL.
 
 ### Accessing the data
 
