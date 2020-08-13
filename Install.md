@@ -24,7 +24,7 @@ ArchiveBox officially supports the following operating systems:
 
 Other systems that are not officially supported but probably work to varying degrees:
 
-<img src="https://camo.githubusercontent.com/fa6d5c12609ed8a3ba1163b96f9e9979b8f59b0d/687474703a2f2f7765732e696f2f566663732f636f6e74656e74" width="6%" align="right"/>
+<img src="https://i.imgur.com/WYSb96z.png" width="6%" align="right"/>
 <img src="http://files.softicons.com/download/system-icons/web0.2ama-icons-by-chrfb/png/256x256/Operating%20System%20-%20Windows.png" width="5%" align="right"/>
 
 
@@ -45,7 +45,7 @@ Not all the dependencies are required for all modes. If you disable some archive
 
 <img src="https://avatars0.githubusercontent.com/u/1503512?s=200&v=4" width="10%" align="right"/>
 
- - `python3 >= 3.5`
+ - `python3 >= 3.7`
  - `wget >= 1.16`
  - `chromium >= 59` (`google-chrome >= v59` works fine as well)
  - `youtube-dl`
@@ -113,11 +113,14 @@ If you have issues setting up Chromium / Google Chrome, see the [[Chromium Insta
 
 Follow the [[Quickstart]] guide to download your bookmarks export file containing a list of links to archive.
 
-### 3. Run the archive script
+### 3. Run archivebox
 
-1. Clone this repo `git clone https://github.com/pirate/ArchiveBox`
-2. `cd ArchiveBox/`
-3. `archivebox add < ~/Downloads/links_list.html`
+```bash
+# create a new folder to hold your data and cd into it
+mkdir data && cd data
+archivebox init
+archivebox add < ~/Downloads/bookmarks_export.html
+```
 
 You can also use the `update` subcommand to resume the archive update at a specific timestamp `archivebox update --resume=153242424324.123`.
 
