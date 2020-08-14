@@ -270,6 +270,7 @@ If any of these links are dead, you can find an archived version on https://arch
    https://qiita.com/CloudRemix/items/691caf91efa3ef19a7ad
  - "WEB-ARCHIV TEIL 8: WALLABAG UND ARCHIVEBOX"
    http://webermartin.net/blog/web-archiv-teil-8-wallabag-und-archivebox/
+ - https://metaxyntax.neocities.org/entries/7.html
 
 ### ArchiveBox Discussions in News & Social Media
 
