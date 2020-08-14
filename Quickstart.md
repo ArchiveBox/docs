@@ -46,8 +46,9 @@ Follow the links here to find instructions for exporting a list of URLs from eac
  - [Safari Bookmarks](http://i.imgur.com/AtcvUZA.png)
  - [Opera Bookmarks](http://help.opera.com/Windows/12.10/en/importexport.html)
  - [Internet Explorer Bookmarks](https://support.microsoft.com/en-us/help/211089/how-to-import-and-export-the-internet-explorer-favorites-folder-to-a-32-bit-version-of-windows)
- - Chrome History: `./bin/archivebox-export-browser-history --chrome`
- - Firefox History: `./bin/archivebox-export-browser-history --firefox`
+ - Chrome History: `./bin/export-browser-history.sh --chrome`
+ - Firefox History: `./bin/export-browser-history.sh --firefox`
+ - Safari History: `./bin/export-browser-history.sh --safari`
  - Other File or URL: (e.g. RSS feed url, text file path) pass as second argument in the next step
 
  (If any of these links are broken, please submit an issue and I'll fix it)
