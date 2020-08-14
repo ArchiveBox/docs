@@ -16,12 +16,15 @@ First, we install the ArchiveBox [dependencies](./Install#dependencies), then we
 
 ## 1. Set up ArchiveBox
 
-Clone the ArchiveBox repo and install its dependencies.
+Clone the ArchiveBox repo and install its dependencies:
+
 ```bash
 git clone https://github.com/pirate/ArchiveBox
 cd ArchiveBox/
 ./bin/setup.sh  # script prompts for user confirmation before installing anything
 ```
+
+(The above are shell commands to run. If you're not used to those, consult your operating system's manual for how to run a terminal emulator.)
 
 <img src="https://i.imgur.com/VMTzm0G.png" width="99%"/>
 
