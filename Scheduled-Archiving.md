@@ -32,7 +32,7 @@ archivebox add < ./output/sources/firefox_history.json  >> /var/log/ArchiveBox.l
 
 ### Example: Import an RSS feed from Pocket every 12 hours
 
-This example imports your Pocket bookmark feed and archives any new links once a day:
+This example imports your Pocket bookmark feed and archives any new links every 12 hours:
 
 First, set your Pocket RSS feed to "public" under https://getpocket.com/privacy_controls.
 
