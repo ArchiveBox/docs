@@ -61,7 +61,7 @@ To see how this spec has been scheduled / implemented / released so far, read th
 
 ...
 
-### `v2.0` Federated or distributed archiving + paid hosted service offering
+### `v2.0 Federated or distributed archiving + paid hosted service offering`
  - merkel tree for storing archive output subresource hashes
  - DHT for assigning merkel tree hash:file shards to nodes
  - tag system for tagging certain hashes with human-readable names, e.g. title, url, tags, filetype etc.
