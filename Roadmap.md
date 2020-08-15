@@ -22,36 +22,36 @@ To see how this spec has been scheduled / implemented / released so far, read th
 
 (this is not set in stone, just a rough estimate)
 
-### `v0.5`: Remove live-updated JSON & HTML index in favor of `archivebox export`
+### `v0.5: Remove live-updated JSON & HTML index in favor of archivebox export`
  - use SQLite as the main db and export staticfile indexes once at the *end* of the whole process  instead of live-updating them during each extractor run (i.e. remove `patch_main_index`)
  - create archivebox export command
  - we have to create a public view to replace `index.html` / `old.html` used for non-logged in users
     
-### `v0.6`: Code cleanup / refactor
+### `v0.6: Code cleanup / refactor`
  - move config loading logic into settings.py
  - move all the extractors into "plugin" style folders that register their own config
  - right now, the paths of the extractor output are scattered all over the codebase, e.g. `output.pdf` (should be moved to constants at the top of the plugin config file)
  - make out_dir, link_dir, extractor_dir, naming consistent across codebase
  - convert all `os.path` calls and raw string paths to `Pathlib`
 
-### `v0.7`: Schema improvements
+### `v0.7: Schema improvements`
  - remove `timestamps` as primary keys in favor of hashes, UUIDs, or some other slug
  - create a migration system for folder layout independent of the index (`mv` is atomic at the FS level, so we just need a `transaction.atomic(): move(oldpath, newpath); snap.data_dir = newpath; snap.save()`)
  - make `Tag` a real model `ManyToMany` with Snapshots
  - allow multiple Snapshots of the same site over time + CLI / UI to manage those, + migration from old style `#2020-01-01` hack to proper versioned snapshots
     
-### `v0.8`:  Security
+### `v0.8:  Security`
  - Add CSRF/CSP/XSS protection to rendered archive pages
  - Provide secure reverse proxy in front of archivebox server in docker-compose.yml
  - Create UX flow for users to setup session cookies / auth for archiving private sites
    - cookies for wget, curl, etc low-level commands
    - localstorage, cookies, indexedb setup for chrome archiving methods
         
-### `v0.9`:  Performance
+### `v0.9:  Performance`
  - setup huey, break up archiving process into tasks on a queue that a worker pool executes
  - setup pyppeteer2 to wrap chrome so that it's not open/closed during each extractor
 
-### `v1.0`: Full headless browser control
+### `v1.0: Full headless browser control`
  - run user-scripts / extensions in the context of the page during archiving
  - community userscripts for unrolling twitter threads, reddit threads, youtube comment sections, etc.
  - pywb-based headless browser session recording and warc replay
