@@ -5,17 +5,6 @@
 ▶️ *Comment here to discuss the contribution roadmap:  
 [Official Roadmap Discussion](https://github.com/pirate/ArchiveBox/issues/120).*
 
-
----
-
-## Past Releases
-
-To see how this spec has been scheduled / implemented / released so far, read these pull requests:
- - ✅ [v0.2.x](https://github.com/pirate/ArchiveBox/tree/483a3bef9e2b1a7b80611947a3be99b0cf4f9959) 
- - ✅ [v0.3.x](https://github.com/pirate/ArchiveBox/pull/197)
- - ✅ [v0.4.x](https://github.com/pirate/ArchiveBox/pull/207)
- - 🛠 [v0.5.x](https://github.com/pirate/ArchiveBox/pull/275)
-
 ---
 
 ## Planned Specification
@@ -97,3 +86,14 @@ To see how this spec has been scheduled / implemented / released so far, read th
 ---
 
 **IMPORTANT**: *Please don't work on any of these major long-term tasks without [contacting me first](https://nicksweeting.com/blog#Contact-Me), work is already in progress for many of these, and I may have to reject your PR if it doesn't align with the existing work!*
+
+
+---
+
+## Past Releases
+
+To see how this spec has been scheduled / implemented / released so far, read these pull requests:
+ - ✅ [v0.2.x](https://github.com/pirate/ArchiveBox/tree/483a3bef9e2b1a7b80611947a3be99b0cf4f9959) 
+ - ✅ [v0.3.x](https://github.com/pirate/ArchiveBox/pull/197)
+ - ✅ [v0.4.x](https://github.com/pirate/ArchiveBox/pull/207)
+ - 🛠 [v0.5.x](https://github.com/pirate/ArchiveBox/pull/275)
