@@ -6,7 +6,7 @@ Configuration is done through environment variables.  You can pass in settings u
 
 *Example of passing configuration using `env` command:*
 ```bash
-env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 FETCH_PDF=False ./archive ~/Downloads/bookmarks_export.html
+env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 SAVE_PDF=False archivebox add ~/Downloads/bookmarks_export.html
 ```
 
 <br/>
@@ -71,12 +71,12 @@ Maximum allowed download time per archive method for each link in seconds.  If y
 ---
 #### `MEDIA_TIMEOUT`
 **Possible Values:** [`3600`]/`120`/...  
-Maximum allowed download time for fetching media when `FETCH_MEDIA=True` in seconds.  This timeout is separate and usually much longer than `TIMEOUT` because media downloaded with `youtube-dl` can often be quite large and take many minutes/hours to download.  Tweak this setting based on your network speed and maximum media file size you plan on downloading.
+Maximum allowed download time for fetching media when `SAVE_MEDIA=True` in seconds.  This timeout is separate and usually much longer than `TIMEOUT` because media downloaded with `youtube-dl` can often be quite large and take many minutes/hours to download.  Tweak this setting based on your network speed and maximum media file size you plan on downloading.
 
 *Note: Do not set this to anything less than `10` seconds as it can often take 5-10 seconds for `youtube-dl` just to parse the page before it starts downloading media files.*
 
 *Related options:*  
-[`FETCH_MEDIA`](#fetch_media)
+[`SAVE_MEDIA`](#save_media)
 
 ---
 #### `TEMPLATES_DIR`
@@ -116,7 +116,7 @@ True
 ```
 
 *Related options:*  
-[`FETCH_MEDIA`](#FETCH_MEDIA), [`FETCH_GIT`](#FETCH_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
+[`SAVE_MEDIA`](#SAVE_MEDIA), [`SAVE_GIT`](#SAVE_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
 
 ---
 
@@ -125,7 +125,7 @@ True
 *High-level on/off switches for all the various methods used to archive URLs.*
 
 ---
-#### `FETCH_TITLE`
+#### `SAVE_TITLE`
 **Possible Values:** [`True`]/`False`  
 By default ArchiveBox uses the title provided by the import file, but not all types of imports provide titles (e.g. Plain texts lists of URLs).  When this is True, ArchiveBox downloads the page (and follows all redirects), then it attempts to parse the link's title from the first `<title></title>` tag found in the response.  It may be buggy or not work for certain sites that use JS to set the title, disabling it will lead to links imported without a title showing up with their URL as the title in the UI.
 
@@ -133,7 +133,7 @@ By default ArchiveBox uses the title provided by the import file, but not all ty
 [`ONLY_NEW`](#only_new), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
 
 ---
-#### `FETCH_FAVICON`
+#### `SAVE_FAVICON`
 **Possible Values:** [`True`]/`False`  
 Fetch and save favicon for the URL from Google's public favicon service: `https://www.google.com/s2/favicons?domain={domain}`.  Set this to `FALSE` if you don't need favicons.
 
@@ -141,23 +141,23 @@ Fetch and save favicon for the URL from Google's public favicon service: `https:
 [`TEMPLATES_DIR`](#templates_dir), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CURL_BINARY`](#curl_binary)
 
 ---
-#### `FETCH_WGET`
+#### `SAVE_WGET`
 **Possible Values:** [`True`]/`False`  
-Fetch page with wget, and save responses into folders for each domain, e.g. `example.com/index.html`, with `.html` appended if not present.  For a full list of options used during the `wget` download process, see the `archivebox/archive_methods.py:fetch_wget(...)` function.
+Fetch page with wget, and save responses into folders for each domain, e.g. `example.com/index.html`, with `.html` appended if not present.  For a full list of options used during the `wget` download process, see the `archivebox/archive_methods.py:save_wget(...)` function.
 
 *Related options:*  
-[`TIMEOUT`](#timeout), [`FETCH_WGET_REQUISITES`](#fetch_wget_requisites), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`COOKIES_FILE`](#cookies_file), [`WGET_USER_AGENT`](#wget_user_agent), [`FETCH_WARC`](#fetch_warc), [`WGET_BINARY`](#wget_binary)
+[`TIMEOUT`](#timeout), [`SAVE_WGET_REQUISITES`](#save_wget_requisites), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`COOKIES_FILE`](#cookies_file), [`WGET_USER_AGENT`](#wget_user_agent), [`SAVE_WARC`](#save_warc), [`WGET_BINARY`](#wget_binary)
 
 ---
-#### `FETCH_WARC`
+#### `SAVE_WARC`
 **Possible Values:** [`True`]/`False`  
 Save a timestamped WARC archive of all the page requests and responses during the wget archive process.
 
 *Related options:*  
-[`TIMEOUT`](#timeout), [`FETCH_WGET_REQUISITES`](#fetch_wget_requisites), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`COOKIES_FILE`](#cookies_file), [`WGET_USER_AGENT`](#wget_user_agent), [`FETCH_WGET`](#fetch_wget), [`WGET_BINARY`](#wget_binary)
+[`TIMEOUT`](#timeout), [`SAVE_WGET_REQUISITES`](#save_wget_requisites), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`COOKIES_FILE`](#cookies_file), [`WGET_USER_AGENT`](#wget_user_agent), [`SAVE_WGET`](#save_wget), [`WGET_BINARY`](#wget_binary)
 
 ---
-#### `FETCH_PDF`
+#### `SAVE_PDF`
 **Possible Values:** [`True`]/`False`  
 Print page as PDF.
 
@@ -165,7 +165,7 @@ Print page as PDF.
 [`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary)
 
 ---
-#### `FETCH_SCREENSHOT`
+#### `SAVE_SCREENSHOT`
 **Possible Values:** [`True`]/`False`  
 Fetch a screenshot of the page.
 
@@ -173,7 +173,7 @@ Fetch a screenshot of the page.
 [`RESOLUTION`](#resolution), [`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary)
 
 ---
-#### `FETCH_DOM`
+#### `SAVE_DOM`
 **Possible Values:** [`True`]/`False`  
 Fetch a DOM dump of the page.
 
@@ -181,7 +181,15 @@ Fetch a DOM dump of the page.
 [`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary)
 
 ---
-#### `FETCH_GIT`
+#### `SAVE_SINGLEFILE`
+**Possible Values:** [`True`]/`False`  
+Fetch an HTML file with all assets embedded using [Single File](https://github.com/gildas-lormeau/SingleFile).
+
+*Related options:*  
+[`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary), [`SINGLEFILE_BINARY`](#singlefile_binary)
+
+---
+#### `SAVE_GIT`
 **Possible Values:** [`True`]/`False`  
 Fetch any git repositories on the page.
 
@@ -189,7 +197,7 @@ Fetch any git repositories on the page.
 [`TIMEOUT`](#timeout), [`GIT_DOMAINS`](#git_domains), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`GIT_BINARY`](#git_binary)
 
 ---
-#### `FETCH_MEDIA`
+#### `SAVE_MEDIA`
 **Possible Values:** [`True`]/`False`  
 Fetch all audio, video, annotations, and media metadata on the page using `youtube-dl`.  Warning, this can use up *a lot* of storage very quickly.
 
@@ -216,12 +224,12 @@ Submit the page's URL to be archived on Archive.org. (The Internet Archive)
 Whether to enforce HTTPS certificate and HSTS chain of trust when archiving sites.  Set this to `False` if you want to archive pages even if they have expired or invalid certificates.  Be aware that when `False` you cannot guarantee that you have not been man-in-the-middle'd while archiving content, so the content cannot be verified to be what's on the original site.
 
 ---
-#### `FETCH_WGET_REQUISITES`
+#### `SAVE_WGET_REQUISITES`
 **Possible Values:** [`True`]/`False`  
 Fetch images/css/js with wget. (True is highly recommended, otherwise your wont download many critical assets to render the page, like images, js, css, etc.)
 
 *Related options:*  
-[`TIMEOUT`](#timeout), [`FETCH_WGET`](#fetch_wget), [`FETCH_WARC`](#fetch_warc), [`WGET_BINARY`](#wget_binary)
+[`TIMEOUT`](#timeout), [`SAVE_WGET`](#save_wget), [`SAVE_WARC`](#save_warc), [`WGET_BINARY`](#wget_binary)
 
 ---
 #### `RESOLUTION`
@@ -229,7 +237,7 @@ Fetch images/css/js with wget. (True is highly recommended, otherwise your wont 
 Screenshot resolution in pixels width,height.  
 
 *Related options:*  
-[`FETCH_SCREENSHOT`](#fetch_screenshot)
+[`SAVE_SCREENSHOT`](#save_screenshot)
 
 ---
 #### `WGET_USER_AGENT`
@@ -237,7 +245,7 @@ Screenshot resolution in pixels width,height.
 This is the user agent to use during wget archiving.  You can set this to impersonate a more common browser like Chrome or Firefox if you're getting blocked by servers for having an unknown/blacklisted user agent.
 
 *Related options:*  
-[`FETCH_WGET`](#fetch_wget), [`FETCH_WARC`](#fetch_warc), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`WGET_BINARY`](#wget_binary), [`CHROME_USER_AGENT`](#chrome_user_agent)
+[`SAVE_WGET`](#save_wget), [`SAVE_WARC`](#save_warc), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`WGET_BINARY`](#wget_binary), [`CHROME_USER_AGENT`](#chrome_user_agent)
 
 ---
 #### `CHROME_USER_AGENT`
@@ -246,7 +254,7 @@ This is the user agent to use during wget archiving.  You can set this to impers
 This is the user agent to use during Chrome headless archiving.  If you're experiencing being blocked by many sites, you can set this to hide the `Headless` string that reveals to servers that you're using a headless browser.
 
 *Related options:*  
-[`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_BINARY`](#chrome_binary), [`WGET_USER_AGENT`](#wget_user_agent)
+[`SAVE_PDF`](#save_pdf), [`SAVE_SCREENSHOT`](#save_screenshot), [`SAVE_DOM`](#save_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_BINARY`](#chrome_binary), [`WGET_USER_AGENT`](#wget_user_agent)
 
 
 ---
@@ -255,7 +263,7 @@ This is the user agent to use during Chrome headless archiving.  If you're exper
 Domains to attempt download of git repositories on using `git clone`.
 
 *Related options:*  
-[`FETCH_GIT`](#fetch_git), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
+[`SAVE_GIT`](#save_git), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
 
 ---
 ####  `COOKIES_FILE`
@@ -263,7 +271,7 @@ Domains to attempt download of git repositories on using `git clone`.
 Cookies file to pass to wget.  To capture sites that require a user to be logged in, you can specify a path to a [netscape-format](http://www.cookiecentral.com/faq/#3.5) `cookies.txt` file for wget to use.  You can generate this file by using a browser extension to export your cookies in this format, or by using wget with `--save-cookies`.
 
 *Related options:*  
-[`FETCH_WGET`](#fetch_wget), [`FETCH_WARC`](#fetch_warc), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`WGET_BINARY`](#wget_binary)
+[`SAVE_WGET`](#save_wget), [`SAVE_WARC`](#save_warc), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`WGET_BINARY`](#wget_binary)
 
 ---
 #### `CHROME_USER_DATA_DIR`
@@ -276,7 +284,7 @@ By default when set to `None`, ArchiveBox tries all the following User Data Dir 
 https://chromium.googlesource.com/chromium/src/+/HEAD/docs/user_data_dir.md
 
 *Related options:*  
-[`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_BINARY`](#chrome_binary)
+[`SAVE_PDF`](#save_pdf), [`SAVE_SCREENSHOT`](#save_screenshot), [`SAVE_DOM`](#save_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_BINARY`](#chrome_binary)
 
 ---
 #### `CHROME_HEADLESS`
@@ -284,7 +292,7 @@ https://chromium.googlesource.com/chromium/src/+/HEAD/docs/user_data_dir.md
 Whether or not to use Chrome/Chromium in `--headless` mode (no browser UI displayed).  When set to `False`, the full Chrome UI will be launched each time it's used to archive a page, which greatly slows down the process but allows you to watch in real-time as it saves each page.  
 
 *Related options:*  
-[`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary)
+[`SAVE_PDF`](#save_pdf), [`SAVE_SCREENSHOT`](#save_screenshot), [`SAVE_DOM`](#save_dom), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary)
 
 ---
 #### `CHROME_SANDBOX`
@@ -299,7 +307,7 @@ If you see an error message like this, it means you are trying to run ArchiveBox
 *Note: **Do not run ArchiveBox as root!** The solution to this error is not to override it by setting `CHROME_SANDBOX=False`, it's to use create another user (e.g. `www-data`) and run ArchiveBox under that new, less privileged user. This is a security-critical setting, only set this to `False` if you're running ArchiveBox inside a container or VM where it doesn't have access to the rest of your system!
 
 *Related options:*  
-[`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_BINARY`](#chrome_binary)
+[`SAVE_PDF`](#save_pdf), [`SAVE_SCREENSHOT`](#save_screenshot), [`SAVE_DOM`](#save_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_BINARY`](#chrome_binary)
 
 
 ---
@@ -349,7 +357,7 @@ You can override the default behavior to search for any available bin by setting
 The chrome/chromium dependency is _optional_ and only required for screenshots, PDF, and DOM dump output, it can be safely ignored if those three methods are disabled.
 
 *Related options:*  
-[`FETCH_PDF`](#fetch_pdf), [`FETCH_SCREENSHOT`](#fetch_screenshot), [`FETCH_DOM`](#fetch_dom), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_SANDBOX`](#chrome_sandbox)
+[`SAVE_PDF`](#save_pdf), [`SAVE_SCREENSHOT`](#save_screenshot), [`SAVE_DOM`](#save_dom), [`SAVE_SINGLEFILE`](#save_singlefile), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_SANDBOX`](#chrome_sandbox)
 
 ---
 #### `WGET_BINARY`
@@ -357,7 +365,7 @@ The chrome/chromium dependency is _optional_ and only required for screenshots, 
 Path or name of the wget binary to use.
 
 *Related options:*  
-[`FETCH_WGET`](#fetch_wget), [`FETCH_WARC`](#fetch_warc)
+[`SAVE_WGET`](#save_wget), [`SAVE_WARC`](#save_warc)
 
 ---
 #### `YOUTUBEDL_BINARY`
@@ -365,7 +373,7 @@ Path or name of the wget binary to use.
 Path or name of the [youtube-dl](https://github.com/rg3/youtube-dl) binary to use.
 
 *Related options:*  
-[`FETCH_MEDIA`](#fetch_media)
+[`SAVE_MEDIA`](#save_media)
 
 ---
 #### `GIT_BINARY`
@@ -373,7 +381,7 @@ Path or name of the [youtube-dl](https://github.com/rg3/youtube-dl) binary to us
 Path or name of the git binary to use.
 
 *Related options:*  
-[`FETCH_GIT`](#fetch_git)
+[`SAVE_GIT`](#save_git)
 
 ---
 #### `CURL_BINARY`
@@ -381,7 +389,15 @@ Path or name of the git binary to use.
 Path or name of the curl binary to use.
 
 *Related options:*  
-[`FETCH_FAVICON`](#fetch_favicon), [`SUBMIT_ARCHIVE_DOT_ORG`](#submit_archive_dot_org)
+[`SAVE_FAVICON`](#save_favicon), [`SUBMIT_ARCHIVE_DOT_ORG`](#submit_archive_dot_org)
+
+---
+#### `SINGLEFILE_BINARY`
+**Possible Values:** [`single-file`]/`/usr/local/bin/single-file`/...  
+Path or name of the SingleFile binary to use.
+
+*Related options:*  
+[`SAVE_SINGLEFILE`](#save_singlefile), [`CHROME_BINARY`](#chrome_binary), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_SANDBOX`](#chrome_sandbox)
 
 
 <img src="https://i.imgur.com/almAbwK.png" width="100%"/>
