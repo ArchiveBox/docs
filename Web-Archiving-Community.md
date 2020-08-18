@@ -178,6 +178,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - [WWWofle](http://www.gedanken.org.uk/software/wwwoffle/) old proxying recorder software similar to ArchiveBox
  - [Erised](https://github.com/marvelm/erised) Super simple CLI utility to bookmark and archive webpages
  - [Zotero](https://www.zotero.org/) collect, organize, cite, and share research (mainly for technical/scientific papers & citations)
+ - [TiddlyWiki](https://tiddlywiki.com/) Non-linear bookmark and note-taking tool with archiving support
 
 ---
 
