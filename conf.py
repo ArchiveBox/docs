@@ -12,14 +12,17 @@
 #
 import os
 import sys
-
+import json
 import django
+
+from pathlib import Path
 import recommonmark
 from recommonmark.transform import AutoStructify
 
 os.environ['USE_CHROME'] = 'False'
 
-PYTHON_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'archivebox'))
+REPO_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+PYTHON_DIR = os.path.join(REPO_DIR, 'archivebox')
 
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('../'))
@@ -27,7 +30,7 @@ sys.path.insert(0, PYTHON_DIR)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
 django.setup()
 
-VERSION = open(os.path.join(PYTHON_DIR, 'VERSION'), 'r').read().strip()
+VERSION = json.loads((Path(REPO_DIR) / 'package.json').read_text().strip())['version']
 
 # -- Project information -----------------------------------------------------
 
