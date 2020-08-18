@@ -55,7 +55,7 @@ This is useful when running ArchiveBox inside Docker as root and you need to exp
 ---
 #### `ONLY_NEW`
 **Possible Values:** [`False`]/`True`  
-Download files for only newly added links when running the `./archive` command.  
+Toggle whether or not to attempt rechecking old links when adding new ones, or leave old incomplete links alone and only archive the new links.
 
 By default, ArchiveBox will go through all links in the index and download any missing files on every run, set this to `True` to only archive the most recently added batch of links without attempting to also update older archived links.
 
