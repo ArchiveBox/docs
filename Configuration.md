@@ -1,6 +1,6 @@
 # Configuration
 
-▶️ *The default ArchiveBox config file definition be found here: [`archivebox/config/__init__.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config/__init__.py#L45).*
+▶️ *The full ArchiveBox config file definition with defaults can be found here: [`archivebox/config/__init__.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config/__init__.py#L45).*
 
 Configuration of ArchiveBox is done by using the `archivebox config` command, modifying the `ArchiveBox.conf` file in the data folder, or by using environment variables. All three methods work equivalently when using Docker as well.
 
