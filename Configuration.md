@@ -1,13 +1,19 @@
 # Configuration
 
-▶️ *The default ArchiveBox config file can be found here: [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default).*
+▶️ *The default ArchiveBox config file definition be found here: [`archivebox/config/__init__.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config/__init__.py#L45).*
 
-Configuration is done through environment variables.  You can pass in settings using all the usual environment variable methods: e.g. by using the `env` command, exporting variables in your shell profile, or sourcing a `.env` file before running the command.
+Configuration of ArchiveBox is done by using the `archivebox config` command, modifying the `ArchiveBox.conf` file in the data folder, or by using environment variables. All three methods work equivalently when using Docker as well.
 
-*Example of passing configuration using `env` command:*
+*Some equivalent examples of setting some configuration options:*
 ```bash
-env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 SAVE_PDF=False archivebox add ~/Downloads/bookmarks_export.html
+archivebox config --set CHROME_BINARY=google-chrome-stable
+# OR
+echo "CHROME_BINARY=google-chrome-stable" >> ArchiveBox.conf
+# OR
+env CHROME_BINARY=google-chrome-stable archivebox add ~/Downloads/bookmarks_export.html
 ```
+
+Environment variables take precedence over the config file, which is useful if you only want to use a certain option temporarily during a single run.
 
 <br/>
 
@@ -22,10 +28,7 @@ env CHROME_BINARY=google-chrome-stable RESOLUTION=1440,900 SAVE_PDF=False archiv
 
 <br/>
 
-All the available config options are described in this document below, but can also be found along with examples in [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default). The code that loads the config is in [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config.py), but don't modify the defaults in `config.py` directly, as your changes there will be erased whenever you update ArchiveBox.
-
-To create a persistent config file, see the [Creating a Config File](#creating-a-config-file) section.  
-To see details on how to do configuration when using Docker, see the [[Docker]] page.
+All the available config options are described in this document below, but can also be found along with examples in [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default). The code that loads the config is in [`archivebox/config/__init__.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config/__init__.py#L45).
 
 ---
 
@@ -41,9 +44,9 @@ To see details on how to do configuration when using Docker, see the [[Docker]] 
 **Possible Values:** [`$REPO_DIR/output`]/`/srv/www/bookmarks`/...  
 Path to an output folder to store the archive in.  
 
-Defaults to `output/` in the root directory of the repository folder.
+Defaults to the current folder you're in (`$PWD`) when you run the `archivebox` command.
 
-*Note: ArchiveBox will create this folder if missing. If it already exists, make sure ArchiveBox has permission to write to it.*
+*Note: make sure the user running ArchiveBox has permissions set to allow writing to this folder!*
 
 ---
 #### `OUTPUT_PERMISSIONS`
@@ -54,12 +57,12 @@ This is useful when running ArchiveBox inside Docker as root and you need to exp
 
 ---
 #### `ONLY_NEW`
-**Possible Values:** [`False`]/`True`  
+**Possible Values:** [`True`]/`False`  
 Toggle whether or not to attempt rechecking old links when adding new ones, or leave old incomplete links alone and only archive the new links.
 
-By default, ArchiveBox will go through all links in the index and download any missing files on every run, set this to `True` to only archive the most recently added batch of links without attempting to also update older archived links.
+By default, ArchiveBox will only archive new links on each import. If you want it to go back through all links in the index and download any missing files on every run, set this to `False`.
 
-*Note: Regardless of how this is set, ArchiveBox will never re-download sites that have already succeeded previously. When this is `False` it only attempts to fix previous pages have missing archives, it does not re-archive pages that have already been archived. Set it to `True` only if you wish to skip repairing missing older archives on every run.*
+*Note: Regardless of how this is set, ArchiveBox will never re-download sites that have already succeeded previously. When this is `False` it only attempts to fix previous pages have *missing* archive extractor outputs, it does not re-archive pages that have already been successfully archived.
 
 ---
 #### `TIMEOUT`
@@ -81,13 +84,7 @@ Maximum allowed download time for fetching media when `SAVE_MEDIA=True` in secon
 ---
 #### `TEMPLATES_DIR`
 **Possible Values:** [`$REPO_DIR/archivebox/templates`]/`/path/to/custom/templates`/...  
-Path to a directory containing custom index html templates for themeing your archive output.  Folder at specified path must contain the following files:
- - `static/`
- - `index.html`
- - `link_index.html`
- - `index_row.html`
-
-You can copy the files in `archivebox/templates` into your own directory to start developing a custom theme, then edit `TEMPLATES_DIR` to point to your new custom templates directory.
+Path to a directory containing custom index html templates for theming your archive output.  Files found in the folder at the specified path can override any of the defaults in the [`archivebox/themes`](https://github.com/pirate/ArchiveBox/tree/master/archivebox/themes) directory. If you've used `django` before, this works exactly the same way that `django` template overrides work (because it uses `django` under the hood).
 
 *Related options:*  
 [`FOOTER_INFO`](#footer_info)
@@ -189,6 +186,16 @@ Fetch an HTML file with all assets embedded using [Single File](https://github.c
 [`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary), [`SINGLEFILE_BINARY`](#singlefile_binary)
 
 ---
+#### `SAVE_READABILITY`
+**Possible Values:** [`True`]/`False`  
+Extract article text, summary, and byline using Mozilla's [Readability](https://github.com/mozilla/readability) library.
+Unlike the other methods, this does not download any additional files, so it's practically free from a disk usage perspective. It works by using any existing downloaded HTML version (e.g. wget, DOM dump, singlefile) and piping it into readability.
+
+*Related options:*  
+[`TIMEOUT`](#timeout), [`SAVE_WGET`](#save_wget), [`SAVE_DOM`](#save_dom), [`SAVE_SINGLEFILE`](#save_singlefile)
+
+
+---
 #### `SAVE_GIT`
 **Possible Values:** [`True`]/`False`  
 Fetch any git repositories on the page.
@@ -226,7 +233,7 @@ Whether to enforce HTTPS certificate and HSTS chain of trust when archiving site
 ---
 #### `SAVE_WGET_REQUISITES`
 **Possible Values:** [`True`]/`False`  
-Fetch images/css/js with wget. (True is highly recommended, otherwise your wont download many critical assets to render the page, like images, js, css, etc.)
+Fetch images/css/js with wget. (True is highly recommended, otherwise your won't download many critical assets to render the page, like images, js, css, etc.)
 
 *Related options:*  
 [`TIMEOUT`](#timeout), [`SAVE_WGET`](#save_wget), [`SAVE_WARC`](#save_warc), [`WGET_BINARY`](#wget_binary)
@@ -238,6 +245,14 @@ Screenshot resolution in pixels width,height.
 
 *Related options:*  
 [`SAVE_SCREENSHOT`](#save_screenshot)
+
+---
+#### `CURL_USER_AGENT`
+**Possible Values:** [`Curl/1.19.1`]/`"Mozilla/5.0 ..."`/...  
+This is the user agent to use during curl archiving.  You can set this to impersonate a more common browser like Chrome or Firefox if you're getting blocked by servers for having an unknown/blacklisted user agent.
+
+*Related options:*  
+[`USE_CURL`](#use_curl), [`SAVE_TITLE`](#save_title), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CURL_BINARY`](#curl_binary), [`WGET_USER_AGENT`](#wget_user_agent), [`CHROME_USER_AGENT`](#chrome_user_agent)
 
 ---
 #### `WGET_USER_AGENT`
@@ -396,8 +411,20 @@ Path or name of the curl binary to use.
 **Possible Values:** [`single-file`]/`/usr/local/bin/single-file`/...  
 Path or name of the SingleFile binary to use.
 
+This can be installed using `npm install -g git+https://github.com/gildas-lormeau/SingleFile.git`.
+
 *Related options:*  
 [`SAVE_SINGLEFILE`](#save_singlefile), [`CHROME_BINARY`](#chrome_binary), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_SANDBOX`](#chrome_sandbox)
+
+---
+#### `READABILITY_BINARY`
+**Possible Values:** [`readability-extractor`]/`/usr/local/bin/readability-extractor`/...  
+Path or name of the Readability extrator binary to use.
+
+This can be installed using `npm install -g git+https://github.com/pirate/readability-extractor.git`.
+
+*Related options:*  
+[`SAVE_READABILITY`](#save_readability)
 
 
 <img src="https://i.imgur.com/almAbwK.png" width="100%"/>
