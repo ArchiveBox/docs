@@ -44,7 +44,7 @@ All the available config options are described in this document below, but can a
 **Possible Values:** [`.`]/`~/archivebox`/...  
 Path to an output folder to store the archive in.  
 
-Defaults to the current folder you're in (`$PWD`) when you run the `archivebox` command.
+Defaults to the current folder you're in `./` (`$PWD`) when you run the `archivebox` command.
 
 *Note: make sure the user running ArchiveBox has permissions set to allow writing to this folder!*
 
@@ -62,7 +62,7 @@ Toggle whether or not to attempt rechecking old links when adding new ones, or l
 
 By default, ArchiveBox will only archive new links on each import. If you want it to go back through all links in the index and download any missing files on every run, set this to `False`.
 
-*Note: Regardless of how this is set, ArchiveBox will never re-download sites that have already succeeded previously. When this is `False` it only attempts to fix previous pages have *missing* archive extractor outputs, it does not re-archive pages that have already been successfully archived.
+*Note: Regardless of how this is set, ArchiveBox will never re-download sites that have already succeeded previously. When this is `False` it only attempts to fix previous pages have *missing* archive extractor outputs, it does not re-archive pages that have already been successfully archived.*
 
 ---
 #### `TIMEOUT`
