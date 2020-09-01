@@ -41,7 +41,7 @@ All the available config options are described in this document below, but can a
 
 ---
 #### `OUTPUT_DIR`
-**Possible Values:** [`$REPO_DIR/output`]/`/srv/www/bookmarks`/...  
+**Possible Values:** [`.`]/`/srv/www/bookmarks`/...  
 Path to an output folder to store the archive in.  
 
 Defaults to the current folder you're in (`$PWD`) when you run the `archivebox` command.
