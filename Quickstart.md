@@ -17,12 +17,18 @@ First, we install the ArchiveBox [dependencies](./Install#dependencies), then we
 
 ## 1. Set up ArchiveBox
 
-Clone the ArchiveBox repo and install its dependencies:
+We recommend using Docker because it has all the extractors and dependencies working out-of-the-box:
 
 ```bash
-git clone https://github.com/pirate/ArchiveBox
-cd ArchiveBox/
-./bin/setup.sh  # script prompts for user confirmation before installing anything
+# first make sure you have docker: https://docs.docker.com/get-docker/
+
+# then run this to get started with a collection in the current directory
+docker run -v $PWD:/data -it nikisweeting/archivebox init
+
+# alternatively, install ArchiveBox and its dependencies directly on your system without docker
+# (script prompts for user confirmation before installing anything)
+curl https://raw.githubusercontent.com/pirate/ArchiveBox/master/bin/setup.sh | sh
+# or follow the manual setup instructions if you don't like using curl | sh
 ```
 
 (The above are shell commands to run. If you're not used to those, consult your operating system's manual for how to run a terminal emulator.)
@@ -58,16 +64,29 @@ Follow the links here to find instructions for exporting a list of URLs from eac
 
 Pass in URLs directly, import a list of links from a file, or import from a feed URL. All via stdin:
 ```bash
-echo 'https://example.com' | archivebox add
-# or
-archivebox add < ~/Downloads/example_bookmarks_export.html
-# or
+# if using docker
+docker run -v $PWD:/data -it nikisweeting/archivebox add 'https://example.com'
+
+# or if not using docker
+archivebox add 'https://example.com'
+
+# any text containing links can also be passed in via stdin (works with docker as well)
 curl https://getpocket.com/users/example/feed/all | archivebox add
 ```
 
 ## ✅ Done!
 
-Open `output/index.html` to view your archive.  (favicons will appear next to each title once they have finished downloading)
+Open `./index.html` to view your archive.  (favicons will appear next to each title once they have finished downloading)
+
+You can also use the interactive Web UI to view/manage/add links to your archive:
+```bash
+# with docker:
+docker run -v $PWD:/data -it -p 8000:8000 nikisweeting/archivebox
+# or without docker:
+archivebox server
+
+open http://127.0.0.1:8000
+```
 
 ---
 
