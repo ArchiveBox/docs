@@ -190,6 +190,7 @@ Random helpful utilities for web archiving, WARC creation and replay, and more..
  - https://github.com/vrtdev/save-page-state A Chrome extension for saving the state of a page in multiple formats
  - https://github.com/jsvine/waybackpack command-line tool that lets you download the entire Wayback Machine archive for a given URL
  - https://github.com/hartator/wayback-machine-downloader Download an entire website from the Internet Archive Wayback Machine.
+ - https://github.com/Lifesgood123/prevent-link-rot Replace any broken URLs in some content with Wayback machine URL equivalents
  - https://en.archivarix.com download an archived page or entire site from the Wayback Machine
  - https://proofofexistence.com prove that a certain file existed at a given time using the blockchain
  - https://github.com/chfoo/warcat for merging, extracting, and verifying WARC files
