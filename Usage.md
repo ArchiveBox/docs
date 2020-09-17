@@ -191,13 +191,14 @@ which are already in the index.
 ## Python API Usage
 
 ```python
-from archivebox.main import add, info, remove, check_data_folder
+from archivebox.main import add, remove, server
 
-out_dir = '~/path/to/my/data/folder'
-check_data_folder(out_dir=out_dir)
+... # load the archive directory first, see API docs below for more info
+
 add('https://example.com', index_only=True, out_dir=out_dir)
-info(out_dir=out_dir)
-remove('https://example.com', delete=True, yes=True, out_dir=out_dir)
+remove(...)
+server(...)
+...
 ```
 
 For more information see the [Python API Reference](https://docs.archivebox.io/en/latest/archivebox.html).
