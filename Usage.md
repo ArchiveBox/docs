@@ -190,12 +190,65 @@ which are already in the index.
 
 ## Python API Usage
 
+First, explore the Python API a bit to see whats available using the archivebox shell:
+```bash
+$ archivebox shell
+[i] [2020-09-17 16:57:07] ArchiveBox v0.4.21: archivebox shell
+    > /Users/squash/Documents/opt/ArchiveBox/data
+
+# Shell Plus Model Imports
+from core.models import Snapshot
+from django.contrib.admin.models import LogEntry
+from django.contrib.auth.models import Group, Permission, User
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.sessions.models import Session
+# Shell Plus Django Imports
+from django.core.cache import cache
+from django.conf import settings
+from django.contrib.auth import get_user_model
+from django.db import transaction
+from django.db.models import Avg, Case, Count, F, Max, Min, Prefetch, Q, Sum, When
+from django.utils import timezone
+from django.urls import reverse
+from django.db.models import Exists, OuterRef, Subquery
+# ArchiveBox Imports
+from archivebox.core.models import Snapshot, User
+from archivebox import *
+    help
+    version
+    init
+    config
+    add
+    remove
+    update
+    list
+    shell
+    server
+    status
+    manage
+    oneshot
+    schedule
+
+[i] Welcome to the ArchiveBox Shell!
+    https://github.com/pirate/ArchiveBox/wiki/Usage#Shell-Usage
+
+    Hint: Example use:
+        print(Snapshot.objects.filter(is_archived=True).count())
+        Snapshot.objects.get(url="https://example.com").as_json()
+        add("https://example.com/some/new/url")
+```
+
+Or if you want to use it from a standalone script/library:
 ```python
-from archivebox.main import add, remove, server
+import os
+from archivebox.main import check_data_folder, setup_django, add, remove, server
 
-... # load the archive directory first, see API docs below for more info
+DATA_DIR = '~/some/path/containing/your/archivebox/data'
+os.chdir(DATA_DIR)
+check_data_folder(DATA_DIR)
+setup_django(DATA_DIR)
 
-add('https://example.com', index_only=True, out_dir=out_dir)
+add('https://example.com', index_only=True, out_dir=DATA_DIR)
 remove(...)
 server(...)
 ...
