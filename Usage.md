@@ -242,10 +242,12 @@ from archivebox import *
 
 ```python
 import os
-from archivebox.main import check_data_folder, setup_django, add, remove, server
-
 DATA_DIR = '~/some/path/containing/your/archivebox/data'
 os.chdir(DATA_DIR)
+
+
+from archivebox.main import check_data_folder, setup_django, add, remove, server
+
 check_data_folder(DATA_DIR)
 setup_django(DATA_DIR)
 
