@@ -200,4 +200,4 @@ info(out_dir=out_dir)
 remove('https://example.com', delete=True, yes=True, out_dir=out_dir)
 ```
 
-For more information see the Python API Reference.
+For more information see the [Python API Reference](https://docs.archivebox.io/en/latest/archivebox.html).
