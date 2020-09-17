@@ -188,9 +188,9 @@ bookmarks, you can use the `ONLY_NEW` environment variable. This is useful if
 you want to import a bookmark dump periodically and want to skip broken links
 which are already in the index.
 
-## Python API Usage
+## Python Shell Usage
 
-First, explore the Python API a bit to see whats available using the archivebox shell:
+Explore the Python API a bit to see whats available using the archivebox shell:
 ```bash
 $ archivebox shell
 [i] [2020-09-17 16:57:07] ArchiveBox v0.4.21: archivebox shell
@@ -238,7 +238,8 @@ from archivebox import *
         add("https://example.com/some/new/url")
 ```
 
-Or if you want to use it from a standalone script/library:
+## Python API Usage
+
 ```python
 import os
 from archivebox.main import check_data_folder, setup_django, add, remove, server
