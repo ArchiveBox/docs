@@ -45,7 +45,7 @@ Follow the links here to find instructions for exporting a list of URLs from eac
  - [Pinboard](https://pinboard.in/export/)
  - [Instapaper](https://www.instapaper.com/user/export)
  - [Reddit Saved Posts](https://github.com/csu/export-saved-reddit)
- - [Shaarli](https://shaarli.readthedocs.io/en/master/guides/backup-restore-import-export/#export-links-as)
+ - [Shaarli](https://shaarli.readthedocs.io/en/master/Usage/#importexport)
  - [Unmark.it](http://help.unmark.it/import-export)
  - [Wallabag](https://doc.wallabag.org/en/user/import/wallabagv2.html)
  - [Chrome Bookmarks](https://support.google.com/chrome/answer/96816?hl=en)
