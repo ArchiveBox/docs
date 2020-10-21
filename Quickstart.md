@@ -35,7 +35,7 @@ curl https://raw.githubusercontent.com/pirate/ArchiveBox/master/bin/setup.sh | s
 
 <img src="https://i.imgur.com/VMTzm0G.png" width="99%"/>
 
-For more detail, including the manual setup and docker instructions, see the [[Install]] page.
+For more details, including the manual setup and docker instructions, see the [[Install]] page.
 
 ## 2. Get your list of URLs to archive
 
