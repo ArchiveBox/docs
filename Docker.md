@@ -74,12 +74,13 @@ echo "https://example.com" | docker-compose run -T archivebox add
 ```bash
 mv ~/Downloads/bookmarks.html data/sources/bookmarks.html
 docker-compose run archivebox add /data/sources/bookmarks.html
+docker-compose run archivebox add < data/sources/bookmarks.html
 ```
 
 **To pull in links from a feed or remote file**, pass the URL or path to the feed as an argument.
 
 ```bash
-docker-compose run archivebox add https://example.com/some/feed.rss --depth=1
+docker-compose run archivebox add --depth=1 https://example.com/some/feed.rss
 ```
 
 The `depth` argument controls if you want to save the links contained in that URL, or only the specified URL.
@@ -138,9 +139,9 @@ Make sure the data folder you use host is either a new, uncreated path, or if it
 **To add a single URL to the archive** or a list of links from a file, pipe them in via stdin. This will archive each link passed in.
 
 ```bash
-echo 'https://example.com' | docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox
+echo 'https://example.com' | docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox add
 # or
-cat bookmarks.html | docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox
+cat bookmarks.html | docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox add
 ```
 
 **To add a list of pages via feed URL or remote file,** pass the URL of the feed as an argument.
@@ -189,10 +190,10 @@ cd /var/lib/docker/volumes/archivebox-data/_data
 
 ArchiveBox in Docker accepts all the same environment variables as normal, see the list on the [[Configuration]] page.
 
-To pass environment variables when running, you can use the env command.
+To pass environment variables when running, you can use the `env` command or `-e`.
 
 ```bash
-echo 'https://example.com' | docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox env FETCH_SCREENSHOT=False /bin/archive
+echo 'https://example.com' | docker run -it -v $PWD:/data -e FETCH_SCREENSHOT=False nikisweeting/archivebox add
 ```
 
 Or you can create an `ArchiveBox.env` file (copy from the default `etc/ArchiveBox.conf.default`) and pass it in like so:
