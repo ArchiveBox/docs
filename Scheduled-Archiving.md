@@ -2,7 +2,7 @@
 
 ## Using Cron
 
-To schedule regular archiving you can use any task scheduler like `cron`, `at`, `sytsemd`, etc.
+To schedule regular archiving you can use any task scheduler like `cron`, `at`, `systemd`, etc.
 
 ArchiveBox ignores links that are imported multiple times (keeping the earliest version that it's seen).
 This means you can add cron jobs that regularly poll the same file or URL for new links, adding only new
