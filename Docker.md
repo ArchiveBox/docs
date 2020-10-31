@@ -49,10 +49,12 @@ Docker version 18.09.1, build 4c52b90    # must be >= 17.04.0
 ### Setup
 
 ```bash
-git clone https://github.com/pirate/ArchiveBox && cd ArchiveBox
-mkdir data && chmod 777 data
+mkdir archivebox && cd archivebox
+wget https://raw.githubusercontent.com/pirate/ArchiveBox/master/docker-compose.yml
 docker-compose up -d
 docker-compose run archivebox init
+docker-compose run archivebox manage createsuperuser
+docker-compose run archivebox add 'https://example.com'
 ```
 
 ### Usage
@@ -61,12 +63,12 @@ First, make sure you're `cd`'ed into the same folder as your `docker-compose.yml
 
 Then open [`http://127.0.0.1:8000`](http://127.0.0.1:8000) or `data/index.html` to view the archive (HTTP, not HTTPS).
 
-To add new URLs, you can use docker-compose just like the normal `./archive` CLI.
+To add new URLs, you can use docker-compose just like the normal `archivebox <subcommand> [args]` CLI.
 
 **To add an individual link or list of links**, pass in URLs via stdin.
 
 ```bash
-echo "https://example.com" | docker-compose run -T archivebox add
+echo "https://example.com" | docker-compose run archivebox add
 ```
 
 **To import links from a file** you can either `cat` the file and pass it via stdin like above, or move it into your data folder so that ArchiveBox can access it from within the container.
@@ -127,7 +129,7 @@ If you want to access your archive server with HTTPS, put a reverse proxy like N
 Fetch and run the ArchiveBox Docker image to create your initial archive.
 
 ```bash
-echo 'https://example.com' | docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox
+echo 'https://example.com' | docker run -it -v $PWD:/data nikisweeting/archivebox add
 ```
 
 Replace `~/ArchiveBox` in the command above with the full path to a folder to use to store your archive on the host, or name of a Docker data volume.
@@ -139,15 +141,15 @@ Make sure the data folder you use host is either a new, uncreated path, or if it
 **To add a single URL to the archive** or a list of links from a file, pipe them in via stdin. This will archive each link passed in.
 
 ```bash
-echo 'https://example.com' | docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox add
+echo 'https://example.com' | docker run -it -v $PWD:/data nikisweeting/archivebox add
 # or
-cat bookmarks.html | docker run -i -v ~/ArchiveBox:/data nikisweeting/archivebox add
+docker run -it -v $PWD:/data nikisweeting/archivebox add < bookmarks.html
 ```
 
 **To add a list of pages via feed URL or remote file,** pass the URL of the feed as an argument.
 
 ```bash
-docker run -v ~/ArchiveBox:/data nikisweeting/archivebox add 'https://example.com/some/rss/feed.xml'
+docker run -it -v $PWD:/data nikisweeting/archivebox add 'https://example.com/some/rss/feed.xml'
 ```
 
 The `depth` argument controls if you want to save the links contained in that URL, or only the specified URL.
@@ -165,6 +167,8 @@ Use the flag:
 This will use the folder `/full/path/to/folder/on/host` on your host to store the ArchiveBox output.
 
 #### Using a named Docker data volume
+
+(not recommended unless you know what you're doing)
 
 ```bash
 docker volume create archivebox-data
@@ -188,16 +192,25 @@ cd /var/lib/docker/volumes/archivebox-data/_data
 
 ### Configuration
 
+The easiest way is to use the a `.env` file or add your config to your `docker-compose.yml` `environment:` section.
+
+The next easiest way to get/set config is using the archivebox CLI:
+```bash
+docker-compose run archivebox config --get RESOLUTION
+docker-compose run archivebox config --set RESOLUTION=1440,900
+# or
+docker run -it -v $PWD:/data nikisweeting/archivebox config --set MEDIA_TIMEOUT=120
+```
+
 ArchiveBox in Docker accepts all the same environment variables as normal, see the list on the [[Configuration]] page.
 
-To pass environment variables when running, you can use the `env` command or `-e`.
+To set environment variables for a single run, you can use the `env KEY=VAL ...` command, `-e KEY=VAL`, or `--env-file=somefile.env`.
 
 ```bash
 echo 'https://example.com' | docker run -it -v $PWD:/data -e FETCH_SCREENSHOT=False nikisweeting/archivebox add
 ```
-
-Or you can create an `ArchiveBox.env` file (copy from the default `etc/ArchiveBox.conf.default`) and pass it in like so:
-
 ```bash
 docker run -i -v --env-file=ArchiveBox.env nikisweeting/archivebox
 ```
+
+You can also edit the `data/ArchiveBox.conf` file directly and the changes will take effect on the next run.
