@@ -16,21 +16,22 @@ import json
 import django
 
 from pathlib import Path
-import recommonmark
+
+import recommonmark                                   # noqa: F401
 from recommonmark.transform import AutoStructify
 
 os.environ['USE_CHROME'] = 'False'
 
-REPO_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
-PYTHON_DIR = os.path.join(REPO_DIR, 'archivebox')
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+PACKAGE_DIR = os.path.join(ROOT_DIR, 'archivebox')
 
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('../'))
-sys.path.insert(0, PYTHON_DIR)
+sys.path.insert(0, PACKAGE_DIR)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
 django.setup()
 
-VERSION = json.loads((Path(REPO_DIR) / 'package.json').read_text().strip())['version']
+VERSION = json.loads((Path(ROOT_DIR) / 'package.json').read_text().strip())['version']
 
 # -- Project information -----------------------------------------------------
 
