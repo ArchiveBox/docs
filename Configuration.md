@@ -240,7 +240,7 @@ Fetch images/css/js with wget. (True is highly recommended, otherwise your won't
 
 ---
 #### `RESOLUTION`
-**Possible Values:** [`1440,900`]/`1024,768`/...  
+**Possible Values:** [`1440,2000`]/`1024,768`/...  
 Screenshot resolution in pixels width,height.  
 
 *Related options:*  
