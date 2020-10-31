@@ -63,10 +63,9 @@ If you're on Linux with `apt`, or macOS with `brew` there is an automatic setup 
 BSD, Windows, and other OS users should follow the [Manual Setup](#manual-setup) or [[Docker]] instructions.
 
 ```bash
-cd ArchiveBox/
-./bin/setup
+# docker or the manual setup are preferred on all platforms now, if you want to use the old install script you can run:
+curl https://raw.githubusercontent.com/pirate/ArchiveBox/master/bin/setup.sh | sh
 ``` 
-
 The script explains what it installs beforehand, and will prompt for user confirmation before making any changes to your system.
 
 <img src="https://i.imgur.com/VMTzm0G.png" width="99%">
@@ -81,6 +80,8 @@ If you don't like running random setup scripts off the internet (:+1:), you can 
 
 #### macOS
 ```bash
+brew tap homebrew-ffmpeg/ffmpeg
+brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
 brew install python3 git wget curl youtube-dl
 brew cask install chromium  # Skip this if you already have Google Chrome/Chromium installed in /Applications/
 ```
@@ -105,6 +106,8 @@ wget --version | head -n 1 &&
 curl --version | head -n 1 && 
 youtube-dl --version | head -n 1 && 
 echo "[√] All dependencies installed."
+
+archivebox version
 ```
 
 If you have issues setting up Chromium / Google Chrome, see the [[Chromium Install]] page for more detailed setup instructions.
@@ -119,6 +122,7 @@ Follow the [[Quickstart]] guide to download your bookmarks export file containin
 # create a new folder to hold your data and cd into it
 mkdir data && cd data
 archivebox init
+archivebox version
 archivebox add < ~/Downloads/bookmarks_export.html
 ```
 
