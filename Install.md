@@ -98,6 +98,11 @@ pkg install python3 git wget curl youtube-dl
 pkg install chromium-browser  # Skip this if you already have Google Chrome/Chromium installed
 ```
 
+#### Install ArchiveBox using pip
+```bash
+python3 -m pip install --upgrade archivebox
+```
+
 #### Check that everything worked and the versions are high enough.
 ```bash
 python3 --version | head -n 1 && 
