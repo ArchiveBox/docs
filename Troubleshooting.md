@@ -1,11 +1,11 @@
 # Troubleshooting
 
-▶️ *If you need help or have a question, you can open an [issue](https://github.com/pirate/ArchiveBox/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or reach out on [Twitter](https://twitter.com/theSquashSH).*
+▶️ *If you need help or have a question, you can open an [issue](https://github.com/ArchiveBox/ArchiveBox/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or reach out on [Twitter](https://twitter.com/theSquashSH).*
 
 What are you having an issue with?:
 
 - [Installing](#Installing)
-- [Configuration](https://github.com/pirate/ArchiveBox/wiki/Configuration)
+- [Configuration](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration)
 - [Archiving Process](#Archiving)
 - [Hosting the Archive](#Hosting-the-Archive)
 
@@ -77,7 +77,7 @@ a bug in versions `<=1.19.1_1` that caused wget to fail for perfectly valid site
 
 ### No links parsed from export file
 
-Please open an [issue](https://github.com/pirate/ArchiveBox/issues) with a description of where you got the export, and
+Please open an [issue](https://github.com/ArchiveBox/ArchiveBox/issues) with a description of where you got the export, and
 preferrably your export file attached (you can redact the links).  We'll fix the parser to support your format.
 
 ### Lots of skipped sites
@@ -91,12 +91,12 @@ If you're still having issues, try deleting or moving the `output/archive` folde
 ### Lots of errors
 
 Make sure you have all the dependencies installed and that you're able to visit the links from your browser normally.
-Open an [issue](https://github.com/pirate/ArchiveBox/issues) with a description of the errors if you're still having problems.
+Open an [issue](https://github.com/ArchiveBox/ArchiveBox/issues) with a description of the errors if you're still having problems.
 
 ### Lots of broken links from the index
 
 Not all sites can be effectively archived with each method, that's why it's best to use a combination of `wget`, PDFs, and screenshots.
-If it seems like more than 10-20% of sites in the archive are broken, open an [issue](https://github.com/pirate/ArchiveBox/issues)
+If it seems like more than 10-20% of sites in the archive are broken, open an [issue](https://github.com/ArchiveBox/ArchiveBox/issues)
 with some of the URLs that failed to be archived and I'll investigate.
 
 ### Removing unwanted links from the index
@@ -106,5 +106,5 @@ If you accidentally added lots of unwanted links into index and they slow down y
 ## Hosting the Archive
 
 If you're having issues trying to host the archive via nginx, make sure you already have nginx running with SSL.
-If you don't, google around, there are plenty of tutorials to help get that set up.  Open an [issue](https://github.com/pirate/ArchiveBox/issues)
+If you don't, google around, there are plenty of tutorials to help get that set up.  Open an [issue](https://github.com/ArchiveBox/ArchiveBox/issues)
 if you have problem with a particular nginx config.

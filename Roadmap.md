@@ -3,7 +3,7 @@
 <img src="https://i.imgur.com/es97GGV.png" width="20%" align="right"/>
 
 ▶️ *Comment here to discuss the contribution roadmap:  
-[Official Roadmap Discussion](https://github.com/pirate/ArchiveBox/issues/120).*
+[Official Roadmap Discussion](https://github.com/ArchiveBox/ArchiveBox/issues/120).*
 
 ---
 
@@ -81,7 +81,7 @@
  - full-text search of extracted text with elasticsearch/elasticlunr/ag
  - download closed-caption subtitles from Youtube and other video sites for full-text indexing of video content
  - try pulling dead sites from archive.org and other sources if original is down (https://github.com/hartator/wayback-machine-downloader)
- - And more in the [issues list](https://github.com/pirate/ArchiveBox/issues/)...
+ - And more in the [issues list](https://github.com/ArchiveBox/ArchiveBox/issues/)...
 
 ---
 
@@ -93,7 +93,7 @@
 ## Past Releases
 
 To see how this spec has been scheduled / implemented / released so far, read these pull requests:
- - ✅ [v0.2.x](https://github.com/pirate/ArchiveBox/tree/483a3bef9e2b1a7b80611947a3be99b0cf4f9959) 
- - ✅ [v0.3.x](https://github.com/pirate/ArchiveBox/pull/197)
- - ✅ [v0.4.x](https://github.com/pirate/ArchiveBox/pull/207)
- - 🛠 [v0.5.x](https://github.com/pirate/ArchiveBox/pull/275)
+ - ✅ [v0.2.x](https://github.com/ArchiveBox/ArchiveBox/tree/483a3bef9e2b1a7b80611947a3be99b0cf4f9959) 
+ - ✅ [v0.3.x](https://github.com/ArchiveBox/ArchiveBox/pull/197)
+ - ✅ [v0.4.x](https://github.com/ArchiveBox/ArchiveBox/pull/207)
+ - 🛠 [v0.5.x](https://github.com/ArchiveBox/ArchiveBox/pull/275)

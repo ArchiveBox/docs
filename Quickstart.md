@@ -6,13 +6,13 @@
 
 ▶️ *It only takes about 5 minutes to get up and running with ArchiveBox.*
 
-ArchiveBox [officially supports](https://github.com/pirate/ArchiveBox/wiki/Install#supported-systems) **macOS**, **Ubuntu/Debian**, and **BSD**, but likely runs on many other systems.  You can run it on any system that supports **Docker**, including Windows (using Docker in WSL2).
+ArchiveBox [officially supports](https://github.com/ArchiveBox/ArchiveBox/wiki/Install#supported-systems) **macOS**, **Ubuntu/Debian**, and **BSD**, but likely runs on many other systems.  You can run it on any system that supports **Docker**, including Windows (using Docker in WSL2).
 
 If you want to use Docker or Docker Compose to run ArchiveBox, see the [[Docker]] page.
 
 ---
 
-First, we install the ArchiveBox [dependencies](./Install#dependencies), then we create a folder to [store the archive data](https://github.com/pirate/ArchiveBox/wiki/Usage#Disk-Layout), and finally, we [import the list of links](https://github.com/pirate/ArchiveBox/wiki/Usage#CLI-Usage) to the archive by running:  
+First, we install the ArchiveBox [dependencies](./Install#dependencies), then we create a folder to [store the archive data](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#Disk-Layout), and finally, we [import the list of links](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#CLI-Usage) to the archive by running:  
 `archivebox add < [links_file]`
 
 ## 1. Set up ArchiveBox
@@ -27,7 +27,7 @@ docker run -v $PWD:/data -it nikisweeting/archivebox init
 
 # alternatively, install ArchiveBox and its dependencies directly on your system without docker
 # (script prompts for user confirmation before installing anything)
-curl https://raw.githubusercontent.com/pirate/ArchiveBox/master/bin/setup.sh | sh
+curl https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/bin/setup.sh | sh
 # or follow the manual setup instructions if you don't like using curl | sh
 ```
 

@@ -14,8 +14,8 @@
 
  - [[Usage]]
  - [[Configuration]]
- - [Supported Sources](https://github.com/pirate/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive)
- - [Supported Outputs](https://github.com/pirate/ArchiveBox#output-formats)
+ - [Supported Sources](https://github.com/ArchiveBox/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive)
+ - [Supported Outputs](https://github.com/ArchiveBox/ArchiveBox#output-formats)
  - [[Scheduled Archiving]]
  - [[Publishing Your Archive]]
  - [[Chromium Install]]
@@ -27,8 +27,8 @@
  - [[Roadmap]]
  - [[Changelog]]
  - [[Donations]]
- - [Background & Motivation](https://github.com/pirate/ArchiveBox#background--motivation)
- - [Comparison to Other Tools](https://github.com/pirate/ArchiveBox#comparison-to-other-projects)
+ - [Background & Motivation](https://github.com/ArchiveBox/ArchiveBox#background--motivation)
+ - [Comparison to Other Tools](https://github.com/ArchiveBox/ArchiveBox#comparison-to-other-projects)
  - [[Web Archiving Community]]
 
 ---

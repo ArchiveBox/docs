@@ -37,7 +37,7 @@ docker run -v $PWD:/data -p 8000:8000 nikisweeting/archivebox server 0.0.0.0:800
 
 ## Docker Compose
 
-An example [`docker-compose.yml`](https://github.com/pirate/ArchiveBox/blob/master/docker-compose.yml) config with ArchiveBox and an Nginx server to serve the archive is included in the project root. You can edit it as you see fit, or just run it as it comes out-of-the-box.
+An example [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/master/docker-compose.yml) config with ArchiveBox and an Nginx server to serve the archive is included in the project root. You can edit it as you see fit, or just run it as it comes out-of-the-box.
 
 Just make sure you have a Docker version that's [new enough](https://docs.docker.com/compose/compose-file/) to support `version: 3` format:
 
@@ -50,7 +50,7 @@ Docker version 18.09.1, build 4c52b90    # must be >= 17.04.0
 
 ```bash
 mkdir archivebox && cd archivebox
-wget https://raw.githubusercontent.com/pirate/ArchiveBox/master/docker-compose.yml
+wget https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/docker-compose.yml
 docker-compose up -d
 docker-compose run archivebox init
 docker-compose run archivebox manage createsuperuser

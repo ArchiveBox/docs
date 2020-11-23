@@ -1,6 +1,6 @@
 # Usage
 
-▶️ _Make sure the dependencies are [fully installed](https://github.com/pirate/ArchiveBox/wiki/Install) before running any ArchiveBox commands._
+▶️ _Make sure the dependencies are [fully installed](https://github.com/ArchiveBox/ArchiveBox/wiki/Install) before running any ArchiveBox commands._
 
 **ArchiveBox API Reference:**
 
@@ -18,7 +18,7 @@
 - [[Scheduled Archiving]]: Learn how to set up automatic daily archiving
 - [[Publishing Your Archive]]: Learn how to host your archive for others to access
 - [[Troubleshooting]]: Resources if you encounter any problems
-- [Screenshots](https://github.com/pirate/ArchiveBox#Screenshots): See what the CLI and outputted HTML look like
+- [Screenshots](https://github.com/ArchiveBox/ArchiveBox#Screenshots): See what the CLI and outputted HTML look like
 
 
 ## CLI Usage
@@ -230,7 +230,7 @@ from archivebox import *
     schedule
 
 [i] Welcome to the ArchiveBox Shell!
-    https://github.com/pirate/ArchiveBox/wiki/Usage#Shell-Usage
+    https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#Shell-Usage
 
     Hint: Example use:
         print(Snapshot.objects.filter(is_archived=True).count())

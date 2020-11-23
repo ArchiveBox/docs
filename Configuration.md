@@ -1,11 +1,11 @@
 # Configuration
 
-▶️ *The full ArchiveBox config file definition with defaults can be found here: [`archivebox/config.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config.py#L27).*
+▶️ *The full ArchiveBox config file definition with defaults can be found here: [`archivebox/config.py`](https://github.com/ArchiveBox/ArchiveBox/blob/master/archivebox/config.py#L27).*
 
 Configuration of ArchiveBox is done by using the `archivebox config` command, modifying the `ArchiveBox.conf` file in the data folder, or by using environment variables. All three methods work equivalently when using Docker as well.
 
 *Some equivalent examples of setting some configuration options:*
-```bash
+```bash[][]
 archivebox config --set CHROME_BINARY=google-chrome-stable
 # OR
 echo "CHROME_BINARY=google-chrome-stable" >> ArchiveBox.conf
@@ -28,7 +28,7 @@ Environment variables take precedence over the config file, which is useful if y
 
 <br/>
 
-All the available config options are described in this document below, but can also be found along with examples in [`etc/ArchiveBox.conf.default`](https://github.com/pirate/ArchiveBox/blob/master/etc/ArchiveBox.conf.default). The code that loads the config is in [`archivebox/config/__init__.py`](https://github.com/pirate/ArchiveBox/blob/master/archivebox/config/__init__.py#L45).
+All the available config options are described in this document below, but can also be found along with examples in [`etc/ArchiveBox.conf.default`](https://github.com/ArchiveBox/ArchiveBox/blob/master/etc/ArchiveBox.conf.default). The code that loads the config is in [`archivebox/config/__init__.py`](https://github.com/ArchiveBox/ArchiveBox/blob/master/archivebox/config/__init__.py#L45).
 
 ---
 
@@ -84,7 +84,7 @@ Maximum allowed download time for fetching media when `SAVE_MEDIA=True` in secon
 ---
 #### `TEMPLATES_DIR`
 **Possible Values:** [`$REPO_DIR/archivebox/templates`]/`/path/to/custom/templates`/...  
-Path to a directory containing custom index html templates for theming your archive output.  Files found in the folder at the specified path can override any of the defaults in the [`archivebox/themes`](https://github.com/pirate/ArchiveBox/tree/master/archivebox/themes) directory. If you've used `django` before, this works exactly the same way that `django` template overrides work (because it uses `django` under the hood).
+Path to a directory containing custom index html templates for theming your archive output.  Files found in the folder at the specified path can override any of the defaults in the [`archivebox/themes`](https://github.com/ArchiveBox/ArchiveBox/tree/master/archivebox/themes) directory. If you've used `django` before, this works exactly the same way that `django` template overrides work (because it uses `django` under the hood).
 
 *Related options:*  
 [`FOOTER_INFO`](#footer_info)
@@ -428,3 +428,4 @@ This can be installed using `npm install -g git+https://github.com/pirate/readab
 
 
 <img src="https://i.imgur.com/almAbwK.png" width="100%"/>
+[]: 

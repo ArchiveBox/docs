@@ -1,6 +1,6 @@
 # Changelog
 
-▶️ *If you're having an issue with a breaking change, or migrating your data between versions, open an [issue](https://github.com/pirate/ArchiveBox/issues) to get help.*
+▶️ *If you're having an issue with a breaking change, or migrating your data between versions, open an [issue](https://github.com/ArchiveBox/ArchiveBox/issues) to get help.*
 
 **`ArchiveBox` was previously named `Pocket Archive Stream` and then `Bookmark Archiver`.**
 
@@ -8,7 +8,7 @@
 
 <div align="center">
 
-See the [releases](https://github.com/pirate/ArchiveBox/releases) page for versioned source downloads and full changelog.  
+See the [releases](https://github.com/ArchiveBox/ArchiveBox/releases) page for versioned source downloads and full changelog.  
 🍰 Many thanks to our 30+ contributors and everyone in the web archiving community! 🏛
 
 </div>
@@ -19,7 +19,7 @@ See the [releases](https://github.com/pirate/ArchiveBox/releases) page for versi
    - `pip install archivebox` https://pypi.org/project/archivebox/
    - `docker run nikisweeting/archivebox` https://hub.docker.com/r/nikisweeting/archivebox
    - https://archivebox.readthedocs.io/en/latest/
-   - https://github.com/pirate/ArchiveBox/releases
+   - https://github.com/ArchiveBox/ArchiveBox/releases
  - easy migration from previous versions
    ```bash
    cd path/to/your/archive/folder
@@ -33,7 +33,7 @@ See the [releases](https://github.com/pirate/ArchiveBox/releases) page for versi
  - new subcommands-based CLI for `archivebox` (see below)
  - new Web UI with pagination, better search, filtering, permissions, and more
  - 30+ assorted bugfixes, new features, and tickets closed
- - for more info, see: https://github.com/pirate/ArchiveBox/releases/tag/v0.4.9
+ - for more info, see: https://github.com/ArchiveBox/ArchiveBox/releases/tag/v0.4.9
 
 ---
 
@@ -81,7 +81,7 @@ See the [releases](https://github.com/pirate/ArchiveBox/releases) page for versi
 
 ---
  - v0.2.0 released with new name
- - [renamed](https://github.com/pirate/ArchiveBox/issues/108) from **Bookmark Archiver** -> **ArchiveBox**
+ - [renamed](https://github.com/ArchiveBox/ArchiveBox/issues/108) from **Bookmark Archiver** -> **ArchiveBox**
 
 ---
  - v0.1.0 released
@@ -104,10 +104,10 @@ See the [releases](https://github.com/pirate/ArchiveBox/releases) page for versi
  - Index links now work without nginx url rewrites, archive can now be hosted on github pages
  - added setup.sh script & docstrings & help commands
  - made Chromium the default instead of Google Chrome (yay free software)
- - added [env-variable](https://github.com/pirate/ArchiveBox/pull/25) configuration (thanks to https://github.com/hannah98!)
+ - added [env-variable](https://github.com/ArchiveBox/ArchiveBox/pull/25) configuration (thanks to https://github.com/hannah98!)
  - renamed from **Pocket Archive Stream** -> **Bookmark Archiver**
- - added [Netscape-format](https://github.com/pirate/ArchiveBox/pull/20) export support (thanks to https://github.com/ilvar!)
- - added [Pinboard-format](https://github.com/pirate/ArchiveBox/pull/7) export support (thanks to https://github.com/sconeyard!)
+ - added [Netscape-format](https://github.com/ArchiveBox/ArchiveBox/pull/20) export support (thanks to https://github.com/ilvar!)
+ - added [Pinboard-format](https://github.com/ArchiveBox/ArchiveBox/pull/7) export support (thanks to https://github.com/sconeyard!)
  - front-page of HN, oops! apparently I have users to support now :grin:?
  - added Pocket-format export support
 

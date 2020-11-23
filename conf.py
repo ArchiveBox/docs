@@ -38,8 +38,8 @@ VERSION = json.loads((Path(ROOT_DIR) / 'package.json').read_text().strip())['ver
 project = 'ArchiveBox'
 copyright = '2020, Nick Sweeting'
 author = 'Nick Sweeting'
-github_url = 'https://github.com/pirate/ArchiveBox'
-github_doc_root = 'https://github.com/pirate/ArchiveBox/tree/master/docs/'
+github_url = 'https://github.com/ArchiveBox/ArchiveBox'
+github_doc_root = 'https://github.com/ArchiveBox/ArchiveBox/tree/master/docs/'
 language = 'en'
 
 # The full version, including alpha/beta/rc tags

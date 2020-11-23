@@ -50,4 +50,4 @@ apt install google-chrome-beta
 
 ## Troubleshooting
 
-If you encounter problems setting up Google Chrome or Chromium, see the [Troubleshooting](https://github.com/pirate/ArchiveBox/wiki/Troubleshooting#chromiumgoogle-chrome) page.
+If you encounter problems setting up Google Chrome or Chromium, see the [Troubleshooting](https://github.com/ArchiveBox/ArchiveBox/wiki/Troubleshooting#chromiumgoogle-chrome) page.
