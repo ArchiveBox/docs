@@ -21,14 +21,14 @@ Make sure you have Docker installed and set up on your machine before following 
   - [Configuration](#configuration-1)
 
 **Official Docker Hub image:**  
-https://hub.docker.com/r/nikisweeting/archivebox
+https://hub.docker.com/r/archivebox/archivebox
 
 **Usage:**
 ```bash
-docker run -v $PWD:/data nikisweeting/archivebox init
-docker run -v $PWD:/data nikisweeting/archivebox add 'https://example.com'
-docker run -v $PWD:/data -it nikisweeting/archivebox manage createsuperuser
-docker run -v $PWD:/data -p 8000:8000 nikisweeting/archivebox server 0.0.0.0:8000
+docker run -v $PWD:/data archivebox/archivebox init
+docker run -v $PWD:/data archivebox/archivebox add 'https://example.com'
+docker run -v $PWD:/data -it archivebox/archivebox manage createsuperuser
+docker run -v $PWD:/data -p 8000:8000 archivebox/archivebox server 0.0.0.0:8000
 ```
 
 ---
@@ -129,7 +129,7 @@ If you want to access your archive server with HTTPS, put a reverse proxy like N
 Fetch and run the ArchiveBox Docker image to create your initial archive.
 
 ```bash
-echo 'https://example.com' | docker run -it -v $PWD:/data nikisweeting/archivebox add
+echo 'https://example.com' | docker run -it -v $PWD:/data archivebox/archivebox add
 ```
 
 Replace `~/ArchiveBox` in the command above with the full path to a folder to use to store your archive on the host, or name of a Docker data volume.
@@ -141,15 +141,15 @@ Make sure the data folder you use host is either a new, uncreated path, or if it
 **To add a single URL to the archive** or a list of links from a file, pipe them in via stdin. This will archive each link passed in.
 
 ```bash
-echo 'https://example.com' | docker run -it -v $PWD:/data nikisweeting/archivebox add
+echo 'https://example.com' | docker run -it -v $PWD:/data archivebox/archivebox add
 # or
-docker run -it -v $PWD:/data nikisweeting/archivebox add < bookmarks.html
+docker run -it -v $PWD:/data archivebox/archivebox add < bookmarks.html
 ```
 
 **To add a list of pages via feed URL or remote file,** pass the URL of the feed as an argument.
 
 ```bash
-docker run -it -v $PWD:/data nikisweeting/archivebox add 'https://example.com/some/rss/feed.xml'
+docker run -it -v $PWD:/data archivebox/archivebox add 'https://example.com/some/rss/feed.xml'
 ```
 
 The `depth` argument controls if you want to save the links contained in that URL, or only the specified URL.
@@ -199,7 +199,7 @@ The next easiest way to get/set config is using the archivebox CLI:
 docker-compose run archivebox config --get RESOLUTION
 docker-compose run archivebox config --set RESOLUTION=1440,900
 # or
-docker run -it -v $PWD:/data nikisweeting/archivebox config --set MEDIA_TIMEOUT=120
+docker run -it -v $PWD:/data archivebox/archivebox config --set MEDIA_TIMEOUT=120
 ```
 
 ArchiveBox in Docker accepts all the same environment variables as normal, see the list on the [[Configuration]] page.
@@ -207,10 +207,10 @@ ArchiveBox in Docker accepts all the same environment variables as normal, see t
 To set environment variables for a single run, you can use the `env KEY=VAL ...` command, `-e KEY=VAL`, or `--env-file=somefile.env`.
 
 ```bash
-echo 'https://example.com' | docker run -it -v $PWD:/data -e FETCH_SCREENSHOT=False nikisweeting/archivebox add
+echo 'https://example.com' | docker run -it -v $PWD:/data -e FETCH_SCREENSHOT=False archivebox/archivebox add
 ```
 ```bash
-docker run -i -v --env-file=ArchiveBox.env nikisweeting/archivebox
+docker run -i -v --env-file=ArchiveBox.env archivebox/archivebox
 ```
 
 You can also edit the `data/ArchiveBox.conf` file directly and the changes will take effect on the next run.

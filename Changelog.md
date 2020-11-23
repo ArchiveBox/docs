@@ -17,7 +17,7 @@ See the [releases](https://github.com/ArchiveBox/ArchiveBox/releases) page for v
 
  - v0.4.9 released
    - `pip install archivebox` https://pypi.org/project/archivebox/
-   - `docker run nikisweeting/archivebox` https://hub.docker.com/r/nikisweeting/archivebox
+   - `docker run archivebox/archivebox` https://hub.docker.com/r/archivebox/archivebox
    - https://archivebox.readthedocs.io/en/latest/
    - https://github.com/ArchiveBox/ArchiveBox/releases
  - easy migration from previous versions

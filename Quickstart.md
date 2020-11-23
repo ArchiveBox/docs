@@ -23,7 +23,7 @@ We recommend using Docker because it has all the extractors and dependencies wor
 # first make sure you have docker: https://docs.docker.com/get-docker/
 
 # then run this to get started with a collection in the current directory
-docker run -v $PWD:/data -it nikisweeting/archivebox init
+docker run -v $PWD:/data -it archivebox/archivebox init
 
 # alternatively, install ArchiveBox and its dependencies directly on your system without docker
 # (script prompts for user confirmation before installing anything)
@@ -65,7 +65,7 @@ Follow the links here to find instructions for exporting a list of URLs from eac
 Pass in URLs directly, import a list of links from a file, or import from a feed URL. All via stdin:
 ```bash
 # if using docker
-docker run -v $PWD:/data -it nikisweeting/archivebox add 'https://example.com'
+docker run -v $PWD:/data -it archivebox/archivebox add 'https://example.com'
 
 # or if not using docker
 archivebox add 'https://example.com'
@@ -81,7 +81,7 @@ Open `./index.html` to view your archive.  (favicons will appear next to each ti
 You can also use the interactive Web UI to view/manage/add links to your archive:
 ```bash
 # with docker:
-docker run -v $PWD:/data -it -p 8000:8000 nikisweeting/archivebox
+docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox
 # or without docker:
 archivebox server
 
