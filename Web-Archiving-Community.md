@@ -223,7 +223,7 @@ A collection of blog posts and articles about internet archiving, contact me / o
 
  - https://blog.archive.org
  - https://netpreserveblog.wordpress.com
- - https://blog.webrecorder.io/
+ - https://blog.conifer.rhizome.org/ (_formerly_ https://blog.webrecorder.io/)
  - https://ws-dl.blogspot.com
  - https://siarchives.si.edu/blog
  - https://parameters.ssrc.org
