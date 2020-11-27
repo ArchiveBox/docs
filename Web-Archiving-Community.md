@@ -62,7 +62,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 ## Web Archiving Projects
 
 <div align="center">
-<img src="https://alternative.me/icons/pocket.jpg" width="50px"/> &nbsp; &nbsp;
+<img src="http://web.archive.org/web/20201127205833if_/https://avatars3.githubusercontent.com/u/1553831?s=200&v=4" width="50px"/> &nbsp; &nbsp;
 <img src="https://assets.ifttt.com/images/channels/23/icons/large.png" width="50px"/> &nbsp; &nbsp;
 <img src="https://avatars1.githubusercontent.com/u/8275533?s=400&v=4" width="50px"/> &nbsp; &nbsp;
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Logo-wallabag-svg.svg/2000px-Logo-wallabag-svg.svg.png" width="50px"/>
