@@ -308,7 +308,8 @@ If any of these links are dead, you can find an archived version on https://arch
  - **[The Internet Archive (Archive.org)](https://archive.org/iathreads/forums.php)** (USA)
  - **[International Internet Preservation Consortium (IIPC)](http://netpreserve.org/)** (International)
  - **[The Archive Team](https://www.archiveteam.org/), [URL Team](https://www.archiveteam.org/index.php?title=URLTeam), [r/ArchiveTeam](https://reddit.com/r/ArchiveTeam)** (International)
- - **[Rhizome.org](http://archive.rhizome.org/)** The digital preservation group that works on Webrecorder.io (USA)
+ - **[Rhizome.org](http://archive.rhizome.org/)** The digital preservation group that works on [Conifer by Rhizome](https://conifer.rhizome.org/) formerly Webrecorder.io (USA)
+ - **[Webrecorder.net](https://webrecorder.net/)** Formerly known[¹](https://blog.conifer.rhizome.org/2020/06/11/webrecorder-conifer.html) as Webrecorder.io is a project Led by Ilya Kreymer, that researchs and develops web archiving tools, widely used by the community.
  - **[r/DataHoarder](https://www.reddit.com/r/DataHoarder), [r/Archivists](https://www.reddit.com/r/Archivists/), [r/DHExchange](https://www.reddit.com/r/DHExchange/)** (International)
  - [The Eye](https://the-eye.eu) Non-profit working on content archival and long-term preservation (Europe)
  - [Digital Preservation Coalition](https://www.dpconline.org/about) & their [Software Tool Registry (COPTR)](http://coptr.digipres.org/Main_Page) (UK & Wales)
