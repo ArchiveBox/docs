@@ -96,4 +96,4 @@ To see how this spec has been scheduled / implemented / released so far, read th
  - ✅ [v0.2.x](https://github.com/ArchiveBox/ArchiveBox/tree/483a3bef9e2b1a7b80611947a3be99b0cf4f9959) 
  - ✅ [v0.3.x](https://github.com/ArchiveBox/ArchiveBox/pull/197)
  - ✅ [v0.4.x](https://github.com/ArchiveBox/ArchiveBox/pull/207)
- - 🛠 [v0.5.x](https://github.com/ArchiveBox/ArchiveBox/pull/275)
+ - 🛠 [v0.5.x](https://github.com/ArchiveBox/ArchiveBox/pull/552)
