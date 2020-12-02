@@ -93,9 +93,18 @@ apt install chromium-browser  # Skip this if you already have Google Chrome/Chro
 ```
 
 #### BSD
+
+FreeBSD:
+
 ```bash
-pkg install python3 git wget curl youtube-dl 
+pkg install python git wget curl youtube-dl 
 pkg install chromium-browser  # Skip this if you already have Google Chrome/Chromium installed
+```
+
+OpenBSD:
+
+```bash
+pkg_add python3 git wget curl youtube-dl chromium
 ```
 
 #### Install ArchiveBox using pip
