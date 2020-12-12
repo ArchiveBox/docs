@@ -1,16 +1,47 @@
 # Publishing Your Archive
 
-The archive produced by `./archive` is suitable for serving on any provider that can host static html (e.g. github pages!).
+There are two ways to publish your archive: using the `archivebox server` or by exporting and hosting it as static HTML.
 
-You can also serve it from a home server or VPS by uploading the outputted `output` folder to your web directory, e.g. `/var/www/ArchiveBox` and configuring your webserver.  If you're using docker-compose, an Nginx server serving the archive via HTTP is provided right out of the box! See the [[Docker]] page for details.
+## 1. Use the built-in webserver
 
-Here's a sample nginx configuration that works to serve archive folders:
+```bash
+# set the permissions depending on how public/locked down you want it to be
+archivebox config --set PUBLIC_INDEX=True
+archivebox config --set PUBLIC_SNAPSHOTS=True
+archivebox config --set PUBLIC_ADD_VIEW=True
+
+# create an admin username and password for yourself
+archivebox manage createsuperuser
+
+# then start the webserver and open the web UI in your browser
+archivebox server 0.0.0.0:8000
+open http://127.0.0.1:8000
+```
+
+This server is enabled out-of-the-box if you're using `docker-compose` to run ArchiveBox,
+and there is a commented-out example nginx config with SSL set up as well.
+
+## 2. Export and host it as static HTML
+
+```bash
+archivebox list --html --with-headers > index.html
+archivebox list --json --with-headers > index.json
+
+# then upload the entire output folder containing index.html and archive/ somewhere
+# e.g. github pages or another static hosting provider
+
+# you can also serve it with the simple python HTTP server
+python3 -m http.server --bind 0.0.0.0 --directory . 8000
+open http://127.0.0.1:8000
+```
+
+Here's a sample nginx configuration that works to serve your static archive folder:
 
 ```nginx
 location / {
-    alias       /path/to/ArchiveBox/output/;
+    alias       /path/to/your/ArchiveBox/data/;
     index       index.html;
-    autoindex   on;               # see directory listing upon clicking "The Files" links
+    autoindex   on;
     try_files   $uri $uri/ =404;
 }
 ```
@@ -18,6 +49,8 @@ location / {
 Make sure you're not running any content as CGI or PHP, you only want to serve static files!
 
 Urls look like: `https://archive.example.com/archive/1493350273/en.wikipedia.org/wiki/Dining_philosophers_problem.html`
+
+---
 
 ## Security Concerns
 
