@@ -22,7 +22,7 @@ Google Chrome 73.0.3683.75 beta     # should be >v59
 ### macOS
 If you already have `/Applications/Chromium.app`, you don't need to run this.
 ```bash
-brew cask install chromium-browser
+brew install chromium
 ```
 
 ### Ubuntu/Debian
@@ -37,7 +37,7 @@ apt install chromium-browser
 ### macOS
 If you already have `/Applications/Google Chrome.app`, you don't need to run this.
 ```bash
-brew cask install google-chrome
+brew install google-chrome
 ```
 ### Ubuntu/Debian
 If you already have `google-chrome` >= v59 installed (run `google-chrome --version`, you don't need to run this.
