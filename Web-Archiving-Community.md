@@ -150,7 +150,10 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Archive.is.jpg/250px-Archive.is.jpg" width="150px" align="right"/>
 
-
+ - https://perma.cc
+ - https://www.pagefreezer.com
+ - https://www.smarsh.com
+ - https://www.stillio.com
  - https://archive.is / https://archive.today
  - https://archive.st
  - http://theoldnet.com
@@ -159,6 +162,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - https://webcitation.org/archive
  - https://archiveofourown.org/
  - https://megalodon.jp/
+ - https://www.webarchive.org.uk/ukwa/
  - https://github.com/HelloZeroNet/ZeroNet (super cool project)
  - Google, Bing, DuckDuckGo, and other search engine caches
 
