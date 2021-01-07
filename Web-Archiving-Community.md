@@ -107,9 +107,6 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - [warcit](https://github.com/webrecorder/warcit) Create a warc file out of a folder full of assets
  - [WebArchivePlayer](https://github.com/ikreymer/webarchiveplayer#auto-load-warcs) A tool for replaying web archives
  - [warcio](https://github.com/webrecorder/warcio) fast streaming asynchronous WARC reader and writer
- - [node-warc](https://github.com/N0taN3rd/node-warc) Parse And Create Web ARChive (WARC) files with node.js
- - [WAIL](https://machawk1.github.io/wail/) Web archiver GUI using Heritrix and OpenWayback
- - [squidwarc](https://github.com/N0taN3rd/Squidwarc) User-scriptable, archival crawler using Chrome
  - [More on their Github...](https://github.com/webrecorder)
 
 ---
@@ -119,7 +116,10 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
  - **[ipwb](https://github.com/oduwsdl/ipwb) A distributed web archiving solution using pywb with ipfs for storage**
  - **[archivenow](https://github.com/oduwsdl/archivenow) tool that pushes urls into all the online archive services like Archive.is and Archive.org**
- - [WAIL](https://github.com/n0tan3rd/wail) Electron app version of the original [wail](https://github.com/machawk1/wail) for creating and interacting with web archives
+ - [node-warc](https://github.com/N0taN3rd/node-warc) Parse And Create Web ARChive (WARC) files with node.js
+ - [WAIL](https://machawk1.github.io/wail/) Web archiver GUI using Heritrix and OpenWayback
+ - [Squidwarc](https://github.com/N0taN3rd/Squidwarc) User-scriptable, archival crawler using Chrome
+ - [WAIL (Electron)](https://github.com/n0tan3rd/wail) Electron app version of the original [wail](https://github.com/machawk1/wail) for creating and interacting with web archives
  - **[warcreate](https://github.com/machawk1/warcreate) a Chrome extension for creating WARCs from any webpage**
  - [More on their Github...](https://github.com/oduwsdl)
 
