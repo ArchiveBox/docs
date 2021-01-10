@@ -6,7 +6,6 @@
 
 <img src="https://i.imgur.com/aQZZcku.png" width="20%" align="right"/>
 
-- [Overview](#Overview): Program structure and outline of basic archiving process.
 - [CLI Usage](#CLI-Usage): Docs and examples for the ArchiveBox command line interface.
 - [UI Usage](#UI-Usage): Docs and screenshots for the outputted HTML archive interface.
 - [Disk Layout](#Disk-Layout): Description of the archive folder structure and contents.
@@ -39,9 +38,8 @@ You can share a single archivebox data directory between Docker and non-Docker i
 For more examples see the [[Docker]] page.
 
 - [Run ArchiveBox with configuration options](#Run-ArchiveBox-with-configuration-options)
-- [Import a single URL or list of URLs via stdin](#Import-a-single-URL-or-list-of-URLs-via-stdin)
-- [Import list of links exported from browser or another service](#Import-list-of-links-exported-from-browser-or-another-service)
-- [Import list of URLs from a remote RSS feed or file](#Import-list-of-URLs-from-a-remote-RSS-feed-or-file)
+- [Import a single URL](#Import-a-single-URL)
+- [Import a list of URLs from a text file](#Import-a-list-of-URLs-from-a-text-file)
 - [Import list of links from browser history](#Import-list-of-links-from-browser-history)
 
 ---
@@ -77,7 +75,7 @@ echo 'https://example.com' | archivebox add
 
 You can also add `--depth=1` to any of these commands if you want to recursively archive the URLs and all URLs one hop away. (e.g. all the outlinks on a page + the page).
 
-### Import a list of URLs from a txt file
+### Import a list of URLs from a text file
 
 ```bash
 cat urls_to_archive.txt | archivebox add
