@@ -17,8 +17,6 @@
 - [[Scheduled Archiving]]: Learn how to set up automatic daily archiving
 - [[Publishing Your Archive]]: Learn how to host your archive for others to access
 - [[Troubleshooting]]: Resources if you encounter any problems
-- [Screenshots](https://github.com/ArchiveBox/ArchiveBox#Screenshots): See what the CLI and outputted HTML look like
-
 
 ## CLI Usage
 
