@@ -176,6 +176,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - **[Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline**
  - **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support**
  - [Archivy](https://github.com/Uzay-G/archivy) Python-based self-hosted knowledge base embedded into your filesystem
+ - [LinkAce](https://www.linkace.org/) A self-hosted bookmark management tool that saves snapshots to archive.org
  - [ReadableWebProxy](https://github.com/fake-name/ReadableWebProxy) A proxying archiver that downloads content from sites and can snapshot multiple versions of sites over time
  - [Perkeep](https://perkeep.org/) "Perkeep lets you permanently keep your stuff, for life."
  - [Fetching.io](http://fetching.io/) A personal search engine/archiver that lets you search through all archived websites that you've bookmarked
