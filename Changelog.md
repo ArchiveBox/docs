@@ -8,7 +8,9 @@
 
 <div align="center">
 
-See the [releases](https://github.com/ArchiveBox/ArchiveBox/releases) page for versioned source downloads and full changelog.  
+**See the [releases](https://github.com/ArchiveBox/ArchiveBox/releases) page for versioned source downloads and full changelog.**
+
+
 🍰 Many thanks to our 60+ contributors and everyone in the web archiving community! 🏛
 
 </div>
