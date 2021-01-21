@@ -13,6 +13,9 @@ See the [releases](https://github.com/ArchiveBox/ArchiveBox/releases) page for v
 
 </div>
 
+<details>
+<summary>Expand old release notes...</summary>
+
 ---
 
  - v0.4.9 released
@@ -113,3 +116,5 @@ See the [releases](https://github.com/ArchiveBox/ArchiveBox/releases) page for v
 
 ---
  - v0.0.0 released: created Pocket Archive Stream 2017/05/05
+
+</details>
