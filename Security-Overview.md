@@ -16,6 +16,7 @@ This mode should not be used for archiving entire browser history or authenticat
 
 ### IMPORTANT: Don't use ArchiveBox for private archived content right now as we're in the middle of resolving some security issues with how JS is executed in archived content.
 
+See here for more info: **[Architecture: Archived JS executes in a context shared with all other archived content](https://github.com/ArchiveBox/ArchiveBox/issues/239)**
 
 <img src="https://i.imgur.com/xg6TxoK.png" width="50px" align="right"/>
 
