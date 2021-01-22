@@ -51,8 +51,9 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
  - **[COPTR Wiki of Web Archiving Tools](http://coptr.digipres.org/Category:Tools) (COPTR)**  
  - **[Awesome Web Archiving Tools](https://github.com/iipc/awesome-web-archiving) (IIPC)**  
+ - [Spreadsheet Comparison of Archiving Tools](https://github.com/datatogether/research/tree/master/web_archiving) (DataTogether)
  - [Awesome Web Crawling Tools](https://github.com/BruceDone/awesome-crawler)
- - [Awesome Web Scraping Tools](https://github.com/duyetdev/awesome-web-scraper)
+ - [Awesome Web Scraping Tools](https://github.com/duyetdev/awesome-web-scraper)b
  - [ArchiveTeam's List of Software](https://www.archiveteam.org/index.php?title=Software) (ArchiveTeam.org)  
  - [List of Web Archiving Initiatives](https://en.wikipedia.org/wiki/List_of_Web_archiving_initiatives) (Wikipedia.org)  
  - [Directory of Archiving Organizations](https://www2.archivists.org/assoc-orgs) (American Society of Archivists)  
@@ -177,6 +178,9 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support**
  - [Archivy](https://github.com/Uzay-G/archivy) Python-based self-hosted knowledge base embedded into your filesystem
  - [LinkAce](https://www.linkace.org/) A self-hosted bookmark management tool that saves snapshots to archive.org
+ - [Trilium](https://github.com/zadam/trilium) Personal web UI based knowledge-base with web clipping and note-taking
+ - [Herodotus](https://github.com/alaskanpuffin/herodotus-core) Django-based web archiving tool with a focus on collecting text-based content
+ - [Buku](https://github.com/jarun/buku) Browser-independent bookmark manager CLI written in Python3 and SQLite3
  - [ReadableWebProxy](https://github.com/fake-name/ReadableWebProxy) A proxying archiver that downloads content from sites and can snapshot multiple versions of sites over time
  - [Perkeep](https://perkeep.org/) "Perkeep lets you permanently keep your stuff, for life."
  - [Fetching.io](http://fetching.io/) A personal search engine/archiver that lets you search through all archived websites that you've bookmarked
@@ -187,6 +191,8 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - [Erised](https://github.com/marvelm/erised) Super simple CLI utility to bookmark and archive webpages
  - [Zotero](https://www.zotero.org/) collect, organize, cite, and share research (mainly for technical/scientific papers & citations)
  - [TiddlyWiki](https://tiddlywiki.com/) Non-linear bookmark and note-taking tool with archiving support
+ - [Joplin](https://joplinapp.org/) Desktop + mobile app for knowledge-base-style info collection and notes (w/ optional plugin for archiving)
+ - [22120](https://github.com/c9fe/22120) Archiving tool that uses the Chrome debugger protocol to save each page as-loaded in the browser
 
 ---
 
