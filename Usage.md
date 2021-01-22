@@ -134,13 +134,12 @@ Click the Favicon under the "Files" column to go to the details page for each li
 
 ## Disk Layout
 
-The `OUTPUT_DIR` folder (usually whatever folder you run `archivebox` in), contains the UI HTML and archived data with the structure outlined below.
+The `OUTPUT_DIR` folder (usually whatever folder you run the `archivebox` command in), contains the UI HTML and archived data with the structure outlined below.
 
 ```yaml
- - output/
+ - data/
    - index.sqlite3        # Main index of all archived URLs
-   - index.json           # Redundant JSON version of the same main index
-   - index.html           # Redundant static HTML version of the same main index
+   - ArchiveBox.conf      # Main config file in ini format
 
    - archive/
       - 155243135/        # Archived links are stored in folders by timestamp
@@ -157,9 +156,6 @@ The `OUTPUT_DIR` folder (usually whatever folder you run `archivebox` in), conta
       - getpocket.com-1552432264.txt
       - stdin-1552291774.txt
       ...
-
-   - static/              # Staticfiles for the archive UI
-   - robots.txt
 ```
 
 ### Large Archives
