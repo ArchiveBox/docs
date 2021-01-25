@@ -61,6 +61,6 @@ Due to the security risk of serving some malicious JS you archived by accident, 
 
 Be aware that some sites you archive may not allow you to rehost their content publicly for copyright reasons, it's up to you to host responsibly and respond to takedown requests appropriately.
 
-You may also want to blacklist your archive in `/robots.txt` if you don't want to be publicly assosciated with all the links you archive via search engine results.
+You may also want to blacklist your archive in `/robots.txt` if you don't want to be publicly associated with all the links you archive via search engine results.
 
 Please modify the `FOOTER_INFO` config variable to add your contact info to the footer of your index.
