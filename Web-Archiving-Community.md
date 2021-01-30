@@ -321,17 +321,19 @@ If any of these links are dead, you can find an archived version on https://arch
  - **[The Archive Team](https://www.archiveteam.org/), [URL Team](https://www.archiveteam.org/index.php?title=URLTeam), [r/ArchiveTeam](https://reddit.com/r/ArchiveTeam)** (International)
  - **[Rhizome.org](http://archive.rhizome.org/)** The digital preservation group that works on [Conifer by Rhizome](https://conifer.rhizome.org/) formerly Webrecorder.io (USA)
  - **[Webrecorder.net](https://webrecorder.net/)** Formerly known[¹](https://blog.conifer.rhizome.org/2020/06/11/webrecorder-conifer.html) as Webrecorder.io is a project Led by Ilya Kreymer, that researchs and develops web archiving tools, widely used by the community.
+ - **[Old Dominion University: Web Science and Digital Libraries (WS-DL @ ODU)](https://ws-dl.cs.odu.edu)** (Virginia, USA)
  - **[r/DataHoarder](https://www.reddit.com/r/DataHoarder), [r/Archivists](https://www.reddit.com/r/Archivists/), [r/DHExchange](https://www.reddit.com/r/DHExchange/)** (International)
  - [The Eye](https://the-eye.eu) Non-profit working on content archival and long-term preservation (Europe)
  - [Digital Preservation Coalition](https://www.dpconline.org/about) & their [Software Tool Registry (COPTR)](http://coptr.digipres.org/Main_Page) (UK & Wales)
  - [Archives Unleashed Project](https://archivesunleashed.org/about-project/) and [UAP Github](https://github.com/archivesunleashed) (Canada)
- - [Old Dominion University: Web Science and Digital Libraries (WS-DL @ ODU)](https://ws-dl.cs.odu.edu) (Virginia, USA)
 
 ---
 
 ### Web Archiving Communities
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Noun_project_community_icon_986427_cc.svg/2000px-Noun_project_community_icon_986427_cc.svg.png" width="230px" align="right">
+
+Follow these technological and organizational archiving hubs for the latest archiving news.
 
  - [Canadian Web Archiving Coalition](https://www.carl-abrc.ca/advancing-research/digital-preservation/cwac/) (Canada)
  - [Web Archives for Historical Research Group](https://uwaterloo.ca/web-archive-group/about) (Canada)
@@ -354,6 +356,8 @@ If any of these links are dead, you can find an archived version on https://arch
 ### General Archiving Foundations, Coalitions, Initiatives, and Institutes
 
 <img src="https://us.123rf.com/450wm/drvector/drvector1510/drvector151000331/45755355-government-icons.jpg?ver=6" width="230px" align="right">
+
+Find your local archiving group in the list and see how you can contribute!
 
  - [Community Archives and Heritage Group](https://www.communityarchives.org.uk/content/about/history-and-purpose) (UK & Ireland)
  - [Open Preservation Foundation (OPF)](https://openpreservation.org/about/organisation/) (UK & Europe)
