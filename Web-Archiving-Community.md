@@ -174,9 +174,10 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - **[Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content**
  - **[Reminiscence](https://github.com/kanishka-linux/reminiscence/) extremely similar to ArchiveBox, uses a Django backend + UI and provides auto-tagging and summary features with NLTK**
  - **[Shaarchiver](https://github.com/nodiscc/shaarchiver) very similar project that archives Firefox, Shaarli, or Delicious bookmarks and all linked media, generating a markdown/HTML index**
+ - **[Archivy](https://github.com/Uzay-G/archivy) Python-based self-hosted knowledge base embedded into your filesystem**
  - **[Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline**
  - **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support**
- - [Archivy](https://github.com/Uzay-G/archivy) Python-based self-hosted knowledge base embedded into your filesystem
+ - **[22120](https://github.com/c9fe/22120) Archiving tool that uses the Chrome debugger protocol to save each page as-loaded in the browser**
  - [LinkAce](https://www.linkace.org/) A self-hosted bookmark management tool that saves snapshots to archive.org
  - [Trilium](https://github.com/zadam/trilium) Personal web UI based knowledge-base with web clipping and note-taking
  - [Herodotus](https://github.com/alaskanpuffin/herodotus-core) Django-based web archiving tool with a focus on collecting text-based content
@@ -192,7 +193,6 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - [Zotero](https://www.zotero.org/) collect, organize, cite, and share research (mainly for technical/scientific papers & citations)
  - [TiddlyWiki](https://tiddlywiki.com/) Non-linear bookmark and note-taking tool with archiving support
  - [Joplin](https://joplinapp.org/) Desktop + mobile app for knowledge-base-style info collection and notes (w/ optional plugin for archiving)
- - [22120](https://github.com/c9fe/22120) Archiving tool that uses the Chrome debugger protocol to save each page as-loaded in the browser
 
 ---
 
