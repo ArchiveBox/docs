@@ -176,8 +176,8 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - **[Shaarchiver](https://github.com/nodiscc/shaarchiver) very similar project that archives Firefox, Shaarli, or Delicious bookmarks and all linked media, generating a markdown/HTML index**
  - **[Archivy](https://github.com/Uzay-G/archivy) Python-based self-hosted knowledge base embedded into your filesystem**
  - **[Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline**
- - **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support**
  - **[22120](https://github.com/c9fe/22120) Archiving tool that uses the Chrome debugger protocol to save each page as-loaded in the browser**
+ - **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support**
  - [LinkAce](https://www.linkace.org/) A self-hosted bookmark management tool that saves snapshots to archive.org
  - [Trilium](https://github.com/zadam/trilium) Personal web UI based knowledge-base with web clipping and note-taking
  - [Herodotus](https://github.com/alaskanpuffin/herodotus-core) Django-based web archiving tool with a focus on collecting text-based content
