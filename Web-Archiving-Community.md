@@ -170,6 +170,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 ---
 
 ### Other ArchiveBox Alternatives
+ - **[browsertrix-crawler](https://github.com/webrecorder/browsertrix-crawler) / [ArchiveWeb.page](https://github.com/webrecorder/archiveweb.page) + [ReplayWeb.page](https://github.com/webrecorder/replayweb.page) + [pywb](https://github.com/webrecorder/pywb) Webrecorder.io's archiving suite has the highest fidelity, and can flawlessly archive YouTube, Twitter, FB and other complex, JS-heavy SPAs**
  - **[Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a beautiful, user-friendly browser extension that archives all history with full-text search, annotation support, and more**
  - **[Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content**
  - **[Reminiscence](https://github.com/kanishka-linux/reminiscence/) extremely similar to ArchiveBox, uses a Django backend + UI and provides auto-tagging and summary features with NLTK**
