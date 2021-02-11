@@ -52,7 +52,7 @@ Docker version 18.09.1, build 4c52b90    # must be >= 17.04.0
 mkdir archivebox && cd archivebox
 wget https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/docker-compose.yml
 mkdir -p etc/sonic
-wget https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/dev/etc/sonic/config.cfg -O etc/sonic/config.cfg
+wget https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/etc/sonic/config.cfg -O etc/sonic/config.cfg
 docker-compose up -d
 docker-compose run archivebox init
 docker-compose run archivebox manage createsuperuser
