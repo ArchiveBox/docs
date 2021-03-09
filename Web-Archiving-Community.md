@@ -76,6 +76,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - [Instapaper](https://www.instapaper.com) Bookmarking alternative to Pocket/Pinboard (with no archiving)
  - [Wallabag](https://wallabag.org) / [Wallabag.it](https://wallabag.it) Self-hostable web archiving server that can import via RSS
  - [Shaarli](https://github.com/shaarli/Shaarli) Self-hostable bookmark tagging, archiving, and sharing service
+ - [ReadWise](https://readwise.io/) A paid Pocket/Pinboard alternative that includes article snippet and highlight saving
 
 ---
 
@@ -195,6 +196,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - [Zotero](https://www.zotero.org/) collect, organize, cite, and share research (mainly for technical/scientific papers & citations)
  - [TiddlyWiki](https://tiddlywiki.com/) Non-linear bookmark and note-taking tool with archiving support
  - [Joplin](https://joplinapp.org/) Desktop + mobile app for knowledge-base-style info collection and notes (w/ optional plugin for archiving)
+ - [Hunchly](https://www.hunch.ly/) A paid web archiving / session recording tool design for OSINT
 
 ---
 
@@ -219,6 +221,8 @@ Random helpful utilities for web archiving, WARC creation and replay, and more..
  - https://github.com/ArchiveTeam/wpull
  - http://freedup.org/
  - https://en.wikipedia.org/wiki/Furl
+ - https://preservica.com/digital-archive-software-1/active-digital-preservation For-profit company offering a digital preservation software suite
+ - https://github.com/karlicoss/grasp capture webpages from Firefox and Chrome into Org-mode documents
  - [And many more on the other lists...](#the-master-lists)
 
 ---
