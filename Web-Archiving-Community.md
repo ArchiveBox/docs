@@ -204,6 +204,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 Random helpful utilities for web archiving, WARC creation and replay, and more...
 
+ - https://beepb00p.xyz/promnesia.html#urls_broken A browser extension that collects and collates all the URLs you visit into a hierarchical/graph structure with metadata
  - https://github.com/vrtdev/save-page-state A Chrome extension for saving the state of a page in multiple formats
  - https://github.com/jsvine/waybackpack command-line tool that lets you download the entire Wayback Machine archive for a given URL
  - https://github.com/hartator/wayback-machine-downloader Download an entire website from the Internet Archive Wayback Machine.
