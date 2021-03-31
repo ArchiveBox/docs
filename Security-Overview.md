@@ -49,7 +49,7 @@ Do not run ArchiveBox as root for a number of reasons:
 
 **Instead, you should run ArchiveBox as your normal user, or create a user with less privileged access:**
 ```bash
-useradd -r -g archivebox -G audio,video archivebox
+useradd -r -g archivebox -G audio,video archivebox  # the audio & video groups are used by chrome
 mkdir -p /home/archivebox/data
 chown -R archivebox:archivebox /home/archivebox
 ...
