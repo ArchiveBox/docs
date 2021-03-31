@@ -56,7 +56,7 @@ chown -R archivebox:archivebox /home/archivebox
 sudo -u archivebox archivebox add ...
 ```
 
-~~If you absolutely must run it as root for some reason, a footgun is provided: you can set [`ALLOW_ROOT=True`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#ALLOW_ROOT) via environment variable or in your ArchiveBox.conf file.~~ It was removed.
+~~If you absolutely must run it as root for some reason, a footgun is provided: you can set [`ALLOW_ROOT=True`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#ALLOW_ROOT) via environment variable or in your ArchiveBox.conf file.~~ This footgun option was removed (I'm sorry, the support burden of helping people who messed up their systems by running this as root was too high).
 
 <img src="https://i.imgur.com/ca1he6I.png" width="40px" align="right"/>
 
