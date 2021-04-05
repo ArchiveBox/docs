@@ -28,7 +28,7 @@ Environment variables take precedence over the config file, which is useful if y
 
 <br/>
 
-All the available config options are described in this document below, but can also be found along with examples in [`etc/ArchiveBox.conf.default`](https://github.com/ArchiveBox/ArchiveBox/blob/master/etc/ArchiveBox.conf.default). The code that loads the config is in [`archivebox/config/__init__.py`](https://github.com/ArchiveBox/ArchiveBox/blob/master/archivebox/config/__init__.py#L45).
+In case this document is ever out of date, it's recommended to read the code that loads the config directly in [`archivebox/config.py`](https://github.com/ArchiveBox/ArchiveBox/blob/master/archivebox/config.py#L27).
 
 ---
 
