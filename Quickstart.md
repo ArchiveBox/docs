@@ -6,18 +6,15 @@
 
 ▶️ *It only takes about 5 minutes to get up and running with ArchiveBox.*
 
-ArchiveBox [officially supports](https://github.com/ArchiveBox/ArchiveBox/wiki/Install#supported-systems) **macOS**, **Ubuntu/Debian**, and **BSD**, but likely runs on many other systems.  You can run it on any system that supports **Docker**, including Windows (using Docker, Docker in WSL2, or WSL/WS2 directly, with varying levels of ease).
+ArchiveBox [officially supports](https://github.com/ArchiveBox/ArchiveBox/wiki/Install#supported-systems) **macOS**, **Ubuntu/Debian**, and **BSD**, but likely runs on many other systems.  You can run it on any system that supports **Docker** and/or Python. Windows is not officially supported but user have reported success getting it running using Docker, Docker in WSL2, bare WSL/WS2, or batch/powershell (advanced users only).
 
 If you want to use Docker or Docker Compose to run ArchiveBox, see the [[Docker]] page.
 
 ---
 
-First, we install the ArchiveBox [dependencies](./Install#dependencies), then we create a folder to [store the archive data](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#Disk-Layout), and finally, we [import the list of links](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#CLI-Usage) to the archive by running:  
-`archivebox add < [links_file]`
-
 ## 1. Set up ArchiveBox
 
-Follow the [README Quickstart Instructions](https://github.com/ArchiveBox/ArchiveBox#quickstart) for your platform to get archivebox set up.
+Follow the [README Instructions](https://github.com/ArchiveBox/ArchiveBox#quickstart) for your platform to get archivebox set up.
 
 ## 2. Get your list of URLs to archive
 
