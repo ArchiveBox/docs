@@ -17,21 +17,7 @@ First, we install the ArchiveBox [dependencies](./Install#dependencies), then we
 
 ## 1. Set up ArchiveBox
 
-We recommend using Docker because it has all the extractors and dependencies working out-of-the-box:
-
-```bash
-# first make sure you have docker: https://docs.docker.com/get-docker/
-
-# then run this to get started with a collection in the current directory
-docker run -v $PWD:/data -it archivebox/archivebox init --setup
-
-# alternatively, install ArchiveBox and its dependencies directly on your system without docker
-# by following the instructions in the README.md
-```
-
-(The above are shell commands to run. If you're not used to those, consult your operating system's manual for how to run a terminal emulator.)
-
-For more details, including the manual setup and docker instructions, see the [[Install]] page or the [README Quickstart Instructions](https://github.com/ArchiveBox/ArchiveBox#quickstart).
+Follow the [README Quickstart Instructions](https://github.com/ArchiveBox/ArchiveBox#quickstart) for your platform to get archivebox set up.
 
 ## 2. Get your list of URLs to archive
 
