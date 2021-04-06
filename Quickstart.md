@@ -1,7 +1,7 @@
 # Quickstart
 
 <div align="center">
-<img src="https://i.imgur.com/ZbHpEf8.jpg" width="40%"/>
+<img src="https://i.imgur.com/ZbHpEf8.jpg" width="30%"/>
 </div>
 
 ▶️ *It only takes about 5 minutes to get up and running with ArchiveBox.*
@@ -31,9 +31,7 @@ docker run -v $PWD:/data -it archivebox/archivebox init --setup
 
 (The above are shell commands to run. If you're not used to those, consult your operating system's manual for how to run a terminal emulator.)
 
-<img src="https://i.imgur.com/VMTzm0G.png" width="99%"/>
-
-For more details, including the manual setup and docker instructions, see the [[Install]] page.
+For more details, including the manual setup and docker instructions, see the [[Install]] page or the [README Quickstart Instructions](https://github.com/ArchiveBox/ArchiveBox#quickstart).
 
 ## 2. Get your list of URLs to archive
 
