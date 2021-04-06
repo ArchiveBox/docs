@@ -281,6 +281,8 @@ If any of these links are dead, you can find an archived version on https://arch
 
 ### ArchiveBox-Specific Posts, Tutorials, and Guides
 
+ - https://www.cyberpunks.com/preserve-the-internet-with-archivebox/
+ - https://nixintel.info/osint-tools/make-your-own-internet-archive-with-archive-box/
  - "How to install ArchiveBox to preserve websites you care about"
     https://blog.sleeplessbeastie.eu/2019/06/19/how-to-install-archivebox-to-preserve-websites-you-care-about/
  - "How to remotely archive websites using ArchiveBox"
