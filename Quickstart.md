@@ -43,14 +43,17 @@ Follow the links here to find instructions for exporting a list of URLs from eac
 
 Pass in URLs directly, import a list of links from a file, or import from a feed URL. All via stdin:
 ```bash
-# if using docker
-docker run -v $PWD:/data -it archivebox/archivebox add 'https://example.com'
+archivebox add < your_urls.txt
 
-# or if not using docker
-archivebox add 'https://example.com'
+# or if using docker
+docker run -v $PWD:/data -it archivebox/archivebox add < your_urls.txt
 
-# any text containing links can also be passed in via stdin (works with docker as well)
+# or if using docker-compose
+docker-compose run archivebox add < your_urls.txt
+
+# any text containing URLs can ingested via stdin or as args
 curl https://getpocket.com/users/YOURUSERNAME/feed/all | archivebox add
+archivebox add 'https://example.com'
 ```
 
 ## ✅ Done!
@@ -70,6 +73,10 @@ open http://127.0.0.1:8000
 ---
 
 **Next Steps:**
+
+```bash
+archivebox help   # see info about all the available commands
+```
 
  - Read [[Usage]] to learn about the various CLI and web UI functions
  - Read [[Configuration]] to learn about the various archive method options
