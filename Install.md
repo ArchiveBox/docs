@@ -28,7 +28,7 @@ Other systems that are not officially supported but probably work to varying deg
 <img src="http://files.softicons.com/download/system-icons/web0.2ama-icons-by-chrfb/png/256x256/Operating%20System%20-%20Windows.png" width="5%" align="right"/>
 
 
- * Windows: Via [[Docker]] or WSL
+ * Windows: Via [[Docker]], Docker in WSL2, bare WSL/WSL2, or even directly in batch/powershell with `pip` (if you're adventurous)
  * Other Linux distros: Fedora, SUSE, Arch, CentOS, etc.
 
 <br/>
