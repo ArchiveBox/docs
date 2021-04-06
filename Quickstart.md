@@ -6,7 +6,7 @@
 
 ▶️ *It only takes about 5 minutes to get up and running with ArchiveBox.*
 
-ArchiveBox [officially supports](https://github.com/ArchiveBox/ArchiveBox/wiki/Install#supported-systems) **macOS**, **Ubuntu/Debian**, and **BSD**, but likely runs on many other systems.  You can run it on any system that supports **Docker**, including Windows (using Docker in WSL2).
+ArchiveBox [officially supports](https://github.com/ArchiveBox/ArchiveBox/wiki/Install#supported-systems) **macOS**, **Ubuntu/Debian**, and **BSD**, but likely runs on many other systems.  You can run it on any system that supports **Docker**, including Windows (using Docker, Docker in WSL2, or WSL/WS2 directly, with varying levels of ease).
 
 If you want to use Docker or Docker Compose to run ArchiveBox, see the [[Docker]] page.
 
