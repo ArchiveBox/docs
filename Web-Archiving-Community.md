@@ -302,7 +302,7 @@ If any of these links are dead, you can find an archived version on https://arch
  - "使用存档盒制作自己的Internet存档" http://www.diglog.com/story/1045192.html
  - "How to Make Your Own Internet Archive With ArchiveBox" https://nixintel.info/osint-tools/make-your-own-internet-archive-with-archive-box/
  - "Mit ArchiveBox Webseiten auf der Festplatte archivieren" https://www.linux-community.de/ausgaben/linuxuser/2020/12/mit-archivebox-webseiten-auf-der-festplatte-archivieren/
- - "ArchiveBox：开源的WEB存档" https://zhen.bushini.de/14738.html
+ - "ArchiveBox：开源的WEB存档" https://zhen.bushini.de/14738.html / https://www.1fishsauce.com/?p=4206
  - "两个基于爬虫的项目: Kiwix & ArchiveBox" https://blog.csdn.net/JackLang/article/details/108328791
  - "如何创建自己的私人自托管即时阅读应用程序" https://www.pcpc.me/tech/self-hosted-read-later-app
  - "How to install ArchiveBox to preserve websites you care about"
