@@ -8,7 +8,7 @@
 
 ArchiveBox [officially supports](https://github.com/ArchiveBox/ArchiveBox/wiki/Install#supported-systems) **macOS**, **Ubuntu/Debian**, and **BSD**, but likely runs on many other systems.  You can run it on any system that supports **Docker** and/or Python. Windows is not officially supported but user have reported success getting it running using Docker, Docker in WSL2, bare WSL/WS2, or batch/powershell (advanced users only).
 
-For more detailed Docker or Docker-Compose-specific instructions, see the [[Docker]] page.
+For more detailed Docker and Docker Compose-specific instructions, see the [[Docker]] page.
 
 ---
 
