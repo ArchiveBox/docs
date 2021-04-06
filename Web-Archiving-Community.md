@@ -204,6 +204,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 Random helpful utilities for web archiving, WARC creation and replay, and more...
 
+ - https://github.com/TheCakeIsNaOH/xbs-to-archivebox A utility to sync xBrowserSync bookmarks with ArchiveBox
  - https://github.com/karlicoss/promnesia A browser extension that [collects and collates all the URLs you visit](https://beepb00p.xyz/promnesia.html) into a hierarchical/graph structure with metadata
  - https://github.com/vrtdev/save-page-state A Chrome extension for saving the state of a page in multiple formats
  - https://github.com/jsvine/waybackpack command-line tool that lets you download the entire Wayback Machine archive for a given URL
@@ -225,6 +226,15 @@ Random helpful utilities for web archiving, WARC creation and replay, and more..
  - https://preservica.com/digital-archive-software-1/active-digital-preservation For-profit company offering a digital preservation software suite
  - https://github.com/karlicoss/grasp capture webpages from Firefox and Chrome into Org-mode documents
  - [And many more on the other lists...](#the-master-lists)
+
+---
+
+### Managed ArchiveBox Hosting
+
+These are 3rd-party options that provide managed ArchiveBox hosting. They are not endorsed nor officially supported by us, but they may be useful if you don't want to host ArchiveBox yourself and are willing to pay some money.
+
+- https://aws.amazon.com/marketplace/pp/Linnovate-Open-Source-Innovation-Support-For-Archi/B08RVW6MJ2
+- https://www.stellarhosted.com/archivebox/
 
 ---
 
@@ -279,14 +289,27 @@ If any of these links are dead, you can find an archived version on https://arch
 
 ---
 
+
 ### ArchiveBox-Specific Posts, Tutorials, and Guides
 
- - https://www.cyberpunks.com/preserve-the-internet-with-archivebox/
- - https://nixintel.info/osint-tools/make-your-own-internet-archive-with-archive-box/
+*Beware: many of these may be outdated, as ArchiveBox has frequent updates and continual improvement.*
+
+ - "网页存档的开源工具ArchiveBox，可以将网页文字、图片、媒体文件等都保存下来，供日后查看。基于Python的开源项目，可搭建私人的网络存档服务。" https://www.bilibili.com/s/video/BV1ib4y1X7SL
+ - "Персональный интернет-архив без боли" https://habr.com/ru/company/vdsina/blog/550180/
+ - "ArchiveBox, una solución para crear nuestro propio Archive.org en miniatura y personalizado" https://www.genbeta.com/herramientas/archivebox-solucion-para-crear-nuestro-propio-archive-org-miniatura-personalizado
+ - "Preserve the Internet With ArchiveBox" https://www.cyberpunks.com/preserve-the-internet-with-archivebox/
+ - "Сам себе архивариус. Изучаем возможности ArchiveBox" https://xakep.ru/2021/02/01/archivebox/
+ - "使用存档盒制作自己的Internet存档" http://www.diglog.com/story/1045192.html
+ - "How to Make Your Own Internet Archive With ArchiveBox" https://nixintel.info/osint-tools/make-your-own-internet-archive-with-archive-box/
+ - "Mit ArchiveBox Webseiten auf der Festplatte archivieren" https://www.linux-community.de/ausgaben/linuxuser/2020/12/mit-archivebox-webseiten-auf-der-festplatte-archivieren/
+ - "ArchiveBox：开源的WEB存档" https://zhen.bushini.de/14738.html
+ - "两个基于爬虫的项目: Kiwix & ArchiveBox" https://blog.csdn.net/JackLang/article/details/108328791
+ - "如何创建自己的私人自托管即时阅读应用程序" https://www.pcpc.me/tech/self-hosted-read-later-app
  - "How to install ArchiveBox to preserve websites you care about"
     https://blog.sleeplessbeastie.eu/2019/06/19/how-to-install-archivebox-to-preserve-websites-you-care-about/
  - "How to remotely archive websites using ArchiveBox"
    https://blog.sleeplessbeastie.eu/2019/06/26/how-to-remotely-archive-websites-using-archivebox/
+ - "How to Create Your Own Private Self-Hosted Read-It-Later App" https://www.makeuseof.com/tag/self-hosted-read-later-app/
  - "How to use CutyCapt inside ArchiveBox"
    https://blog.sleeplessbeastie.eu/2019/07/10/how-to-use-cutycapt-inside-archivebox/
  - "Automate ArchiveBox with Google Spreadsheet to Backup your internet"
