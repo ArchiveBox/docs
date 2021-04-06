@@ -23,12 +23,10 @@ We recommend using Docker because it has all the extractors and dependencies wor
 # first make sure you have docker: https://docs.docker.com/get-docker/
 
 # then run this to get started with a collection in the current directory
-docker run -v $PWD:/data -it archivebox/archivebox init
+docker run -v $PWD:/data -it archivebox/archivebox init --setup
 
 # alternatively, install ArchiveBox and its dependencies directly on your system without docker
-# (script prompts for user confirmation before installing anything)
-curl https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/bin/setup.sh | sh
-# or follow the manual setup instructions if you don't like using curl | sh
+# by following the instructions in the README.md
 ```
 
 (The above are shell commands to run. If you're not used to those, consult your operating system's manual for how to run a terminal emulator.)
@@ -71,12 +69,12 @@ docker run -v $PWD:/data -it archivebox/archivebox add 'https://example.com'
 archivebox add 'https://example.com'
 
 # any text containing links can also be passed in via stdin (works with docker as well)
-curl https://getpocket.com/users/example/feed/all | archivebox add
+curl https://getpocket.com/users/YOURUSERNAME/feed/all | archivebox add
 ```
 
 ## ✅ Done!
 
-Open `./index.html` to view your archive.  (favicons will appear next to each title once they have finished downloading)
+Open `./archive` to view your archive data in the filesystem.
 
 You can also use the interactive Web UI to view/manage/add links to your archive:
 ```bash
