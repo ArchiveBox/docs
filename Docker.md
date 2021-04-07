@@ -25,9 +25,8 @@ https://hub.docker.com/r/archivebox/archivebox
 
 **Usage:**
 ```bash
-docker run -v $PWD:/data archivebox/archivebox init
-docker run -v $PWD:/data archivebox/archivebox add 'https://example.com'
-docker run -v $PWD:/data -it archivebox/archivebox manage createsuperuser
+docker run -v $PWD:/data -it archivebox/archivebox init --setup
+docker run -v $PWD:/data -it archivebox/archivebox add 'https://example.com'
 docker run -v $PWD:/data -p 8000:8000 archivebox/archivebox server 0.0.0.0:8000
 ```
 
@@ -50,20 +49,18 @@ Docker version 18.09.1, build 4c52b90    # must be >= 17.04.0
 
 ```bash
 mkdir archivebox && cd archivebox
-wget https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/docker-compose.yml
-mkdir -p etc/sonic
-wget https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/etc/sonic/config.cfg -O etc/sonic/config.cfg
-docker-compose up -d
-docker-compose run archivebox init
-docker-compose run archivebox manage createsuperuser
+curl -O https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/docker-compose.yml
+curl https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/etc/sonic/config.cfg > sonic.cfg
+docker-compose run archivebox init --setup
 docker-compose run archivebox add 'https://example.com'
+docker-compose up
 ```
 
 ### Usage
 
 First, make sure you're `cd`'ed into the same folder as your `docker-compose.yml` file (e.g. the project root) and that your containers have been started with `docker-compose up -d`.
 
-Then open [`http://127.0.0.1:8000`](http://127.0.0.1:8000) or `data/index.html` to view the archive (HTTP, not HTTPS).
+Then open [`http://127.0.0.1:8000`](http://127.0.0.1:8000) or browse `./data/archive` in the filesystem to view the archive.
 
 To add new URLs, you can use docker-compose just like the normal `archivebox <subcommand> [args]` CLI.
 
@@ -76,12 +73,12 @@ echo "https://example.com" | docker-compose run archivebox add
 **To import links from a file** you can either `cat` the file and pass it via stdin like above, or move it into your data folder so that ArchiveBox can access it from within the container.
 
 ```bash
-mv ~/Downloads/bookmarks.html data/sources/bookmarks.html
-docker-compose run archivebox add /data/sources/bookmarks.html
-docker-compose run archivebox add < data/sources/bookmarks.html
+docker-compose run archivebox add 'https://exmaple.com/some/url/here'
+docker-compose run archivebox add < ~/Downloads/bookmarks.html
+curl https://example.com/some/rss/feed.xml | docker-compose run archivebox add
 ```
 
-**To pull in links from a feed or remote file**, pass the URL or path to the feed as an argument.
+**To ingest a feed or remote file and archive all the URLs within**, pass the URL or path to the feed or page as an argument using depth=1.
 
 ```bash
 docker-compose run archivebox add --depth=1 https://example.com/some/feed.rss
@@ -151,7 +148,7 @@ docker run -it -v $PWD:/data archivebox/archivebox add < bookmarks.html
 **To add a list of pages via feed URL or remote file,** pass the URL of the feed as an argument.
 
 ```bash
-docker run -it -v $PWD:/data archivebox/archivebox add 'https://example.com/some/rss/feed.xml'
+docker run -it -v $PWD:/data archivebox/archivebox add --depth=1 'https://example.com/some/rss/feed.xml'
 ```
 
 The `depth` argument controls if you want to save the links contained in that URL, or only the specified URL.
@@ -167,30 +164,6 @@ Use the flag:
 ```
 
 This will use the folder `/full/path/to/folder/on/host` on your host to store the ArchiveBox output.
-
-#### Using a named Docker data volume
-
-(not recommended unless you know what you're doing)
-
-```bash
-docker volume create archivebox-data
-```
-
-Then use the flag:
-
-```bash
--v archivebox-data:/data
-```
-
-You can mount your data volume using standard docker tools, or access the contents directly here:  
-`/var/lib/docker/volumes/archivebox-data/_data` (on most Linux systems)
-
-On a Mac you'll have to enter the base Docker Linux VM first to access the volume data:
-
-```bash
-screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty
-cd /var/lib/docker/volumes/archivebox-data/_data
-```
 
 ### Configuration
 
