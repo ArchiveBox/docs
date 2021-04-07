@@ -54,9 +54,9 @@
 ---
 
 ### Major long-term changes
- - release **`pip`, `apt`, `pkg`, and `brew` packaged distributions** for installing ArchiveBox
- - add an **optional web GUI** for managing sources, adding new links, and viewing the archive
- - switch to django + **sqlite db with migrations system** & json/html export for managing archive schema changes and persistence
+ - ✅ release **`pip`, `apt`, `pkg`, and `brew` packaged distributions** for installing ArchiveBox
+ - ✅ add an **optional web GUI** for managing sources, adding new links, and viewing the archive
+ - ✅ switch to django + **sqlite db with migrations system** & json/html export for managing archive schema changes and persistence
  - modularize internals to allow importing individual components
  - switch to sha256 of URL as unique link ID
  - support **storing multiple snapshots** of pages over time
@@ -66,12 +66,12 @@
 
 ### Smaller planned features
  - support pushing pages to multiple 3rd party services using ArchiveNow instead of just archive.org
- - body text extraction to markdown (using [fathom](https://hacks.mozilla.org/2017/04/fathom-a-framework-for-understanding-web-pages/)?)
+ - ✅ body text extraction to markdown (using ~~[fathom](https://hacks.mozilla.org/2017/04/fathom-a-framework-for-understanding-web-pages/)~~ readability and mercury)
  - featured image / thumbnail extraction
  - auto-tagging links based on important/frequent keywords in extracted text (like pocket)
  - automatic article summary paragraphs from extracted text with nlp summarization library
- - full-text search of extracted text with elasticsearch/elasticlunr/ag
- - download closed-caption subtitles from Youtube and other video sites for full-text indexing of video content
+ - ✅ full-text search of extracted text with ~~elasticsearch/elasticlunr/ag~~ sonic and ripgrep
+ - ✅ download closed-caption subtitles from Youtube and other video sites (TODO: submit the subtitle files to the full-text search index)
  - try pulling dead sites from archive.org and other sources if original is down (https://github.com/hartator/wayback-machine-downloader)
  - And more in the [issues list](https://github.com/ArchiveBox/ArchiveBox/issues/)...
 
