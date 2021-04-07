@@ -11,19 +11,11 @@
 
 (this is not set in stone, just a rough estimate)
 
-### `v0.5: Remove live-updated JSON & HTML index in favor of archivebox export`
- - use SQLite as the main db and export staticfile indexes once at the *end* of the whole process  instead of live-updating them during each extractor run (i.e. remove `patch_main_index`)
- - create archivebox export command
- - we have to create a public view to replace `index.html` / `old.html` used for non-logged in users
-    
-### `v0.6: Code cleanup / refactor`
+### `v0.7: Schema improvements`
  - move config loading logic into settings.py
  - move all the extractors into "plugin" style folders that register their own config
  - right now, the paths of the extractor output are scattered all over the codebase, e.g. `output.pdf` (should be moved to constants at the top of the plugin config file)
  - make out_dir, link_dir, extractor_dir, naming consistent across codebase
- - convert all `os.path` calls and raw string paths to `Pathlib`
-
-### `v0.7: Schema improvements`
  - remove `timestamps` as primary keys in favor of hashes, UUIDs, or some other slug
  - create a migration system for folder layout independent of the index (`mv` is atomic at the FS level, so we just need a `transaction.atomic(): move(oldpath, newpath); snap.data_dir = newpath; snap.save()`)
  - make `Tag` a real model `ManyToMany` with Snapshots
