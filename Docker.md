@@ -50,10 +50,18 @@ Docker version 18.09.1, build 4c52b90    # must be >= 17.04.0
 ```bash
 mkdir archivebox && cd archivebox
 curl -O https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/docker-compose.yml
-curl https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/etc/sonic/config.cfg > sonic.cfg
 docker-compose run archivebox init --setup
 docker-compose run archivebox add 'https://example.com'
 docker-compose up
+```
+
+If you want to use sonic for full text search, download the sonic config file uncomment the sonic service in your `docker-compose.yml` file:
+```bash
+curl https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/etc/sonic/config.cfg > sonic.cfg
+# then uncomment the sonic block in docker-compose.yml
+
+# to backfill previously added snapshots into the full text index, run:
+docker-compose run archivebox update --index-only
 ```
 
 ### Usage
