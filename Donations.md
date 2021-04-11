@@ -1,5 +1,7 @@
 ## Supporting Development
 
+**Github Sponsors:** https://github.com/sponsors/pirate
+
 **Patreon:** https://www.patreon.com/theSquashSH
 
 **Paypal:** https://paypal.me/NicholasSweeting
