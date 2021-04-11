@@ -27,6 +27,6 @@
 <br/>
 <hr/>
 
-[![](https://img.shields.io/badge/Donate-Patreon-%23DD5D76.svg)](https://www.patreon.com/theSquashSH)
+[![](https://img.shields.io/badge/Support+development-Patreon-%23DD5D76.svg)](https://www.patreon.com/theSquashSH)
 
 </div>
