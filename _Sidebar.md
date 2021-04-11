@@ -36,5 +36,5 @@
 <p align="center">
   <a href="https://archivebox.io"><img src="https://i.imgur.com/4nkFjdv.png" height="30px"/></a><br/><br/>
   <a href="https://twitter.com/thesquashSH"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"/></a>
-  <a href="https://www.patreon.com/theSquashSH"><img src="https://img.shields.io/badge/Donate-Patreon-%23DD5D76.svg"/></a>
+  <a href="https://www.patreon.com/theSquashSH"><img src="https://img.shields.io/badge/Support development-Patreon-%23DD5D76.svg"/></a>
 </p>
