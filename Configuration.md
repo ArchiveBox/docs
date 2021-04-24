@@ -40,15 +40,6 @@ In case this document is ever out of date, it's recommended to read the code tha
 *General options around the archiving process, output format, and timing.*
 
 ---
-#### `OUTPUT_DIR`
-**Possible Values:** [`.`]/`~/archivebox`/...  
-Path to an output folder to store the archive in.  
-
-Defaults to the current folder you're in `./` (`$PWD`) when you run the `archivebox` command.
-
-*Note: make sure the user running ArchiveBox has permissions set to allow writing to this folder!*
-
----
 #### `OUTPUT_PERMISSIONS`
 **Possible Values:** [`755`]/`644`/...  
 Permissions to set the output directory and file contents to.  
@@ -82,12 +73,23 @@ Maximum allowed download time for fetching media when `SAVE_MEDIA=True` in secon
 [`SAVE_MEDIA`](#save_media)
 
 ---
-#### `TEMPLATES_DIR`
-**Possible Values:** [`$REPO_DIR/archivebox/templates`]/`/path/to/custom/templates`/...  
-Path to a directory containing custom index html templates for theming your archive output.  Files found in the folder at the specified path can override any of the defaults in the [`archivebox/themes`](https://github.com/ArchiveBox/ArchiveBox/tree/master/archivebox/themes) directory. If you've used `django` before, this works exactly the same way that `django` template overrides work (because it uses `django` under the hood).
+#### `CUSTOM_TEMPLATES_DIR`
+**Possible Values:** [`None`]/`./path/to/custom_templates`/...  
+Path to a directory containing custom html/css/images for overriding the default UI styling.  Files found in the folder at the specified path can override any of the defaults in the [`TEMPLATES_DIR`](https://github.com/ArchiveBox/ArchiveBox/tree/dev/archivebox/templates) directory (copy files from that default dir into your custom dir to get started making a custom theme).
+
+If you've used `django` before, this works exactly the same way that `django` template overrides work (because it uses `django` under the hood).
 
 *Related options:*  
 [`FOOTER_INFO`](#footer_info)
+
+---
+#### `SNAPSHOTS_PER_PAGE`
+**Possible Values:** [`40`]/`100`/...  
+
+Maximum number of Snapshots to show per page on Snapshot list pages. Lower this value on slower machines to make the UI faster.
+
+*Related options:*  
+[`SEARCH_BACKEND_TIMEOUT`](#search_backend_timeout)
 
 ---
 #### `FOOTER_INFO`
@@ -192,7 +194,16 @@ Extract article text, summary, and byline using Mozilla's [Readability](https://
 Unlike the other methods, this does not download any additional files, so it's practically free from a disk usage perspective. It works by using any existing downloaded HTML version (e.g. wget, DOM dump, singlefile) and piping it into readability.
 
 *Related options:*  
-[`TIMEOUT`](#timeout), [`SAVE_WGET`](#save_wget), [`SAVE_DOM`](#save_dom), [`SAVE_SINGLEFILE`](#save_singlefile)
+[`TIMEOUT`](#timeout), [`SAVE_WGET`](#save_wget), [`SAVE_DOM`](#save_dom), [`SAVE_SINGLEFILE`](#save_singlefile), [`SAVE_MERCURY`](#save_mercury)
+
+---
+#### `SAVE_MERCURY`
+**Possible Values:** [`True`]/`False`  
+Extract article text, summary, and byline using the [Mercury](https://github.com/postlight/mercury-parser) library.
+Unlike the other methods, this does not download any additional files, so it's practically free from a disk usage perspective. It works by using any existing downloaded HTML version (e.g. wget, DOM dump, singlefile) and piping it into readability.
+
+*Related options:*  
+[`TIMEOUT`](#timeout), [`SAVE_WGET`](#save_wget), [`SAVE_DOM`](#save_dom), [`SAVE_SINGLEFILE`](#save_singlefile), [`SAVE_READABILITY`](#save_readability)
 
 
 ---
@@ -248,7 +259,7 @@ Screenshot resolution in pixels width,height.
 
 ---
 #### `CURL_USER_AGENT`
-**Possible Values:** [`Curl/1.19.1`]/`"Mozilla/5.0 ..."`/...  
+**Possible Values:** [`Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/) curl/{CURL_VERSION}`]/`"Mozilla/5.0 ..."`/...  
 This is the user agent to use during curl archiving.  You can set this to impersonate a more common browser like Chrome or Firefox if you're getting blocked by servers for having an unknown/blacklisted user agent.
 
 *Related options:*  
@@ -256,7 +267,7 @@ This is the user agent to use during curl archiving.  You can set this to impers
 
 ---
 #### `WGET_USER_AGENT`
-**Possible Values:** [`Wget/1.19.1`]/`"Mozilla/5.0 ..."`/...  
+**Possible Values:** [`Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/) wget/{WGET_VERSION}`]/`"Mozilla/5.0 ..."`/...  
 This is the user agent to use during wget archiving.  You can set this to impersonate a more common browser like Chrome or Firefox if you're getting blocked by servers for having an unknown/blacklisted user agent.
 
 *Related options:*  
@@ -264,7 +275,7 @@ This is the user agent to use during wget archiving.  You can set this to impers
 
 ---
 #### `CHROME_USER_AGENT`
-**Possible Values:** [`"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/73.0.3683.75 Safari/537.36"`]/`"Mozilla/5.0 ..."`/...  
+**Possible Values:** [`Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)`]/`"Mozilla/5.0 ..."`/...  
 
 This is the user agent to use during Chrome headless archiving.  If you're experiencing being blocked by many sites, you can set this to hide the `Headless` string that reveals to servers that you're using a headless browser.
 
@@ -408,23 +419,46 @@ Path or name of the curl binary to use.
 
 ---
 #### `SINGLEFILE_BINARY`
-**Possible Values:** [`single-file`]/`/usr/local/bin/single-file`/...  
+**Possible Values:** [`single-file`]/`./node_modules/single-file/cli/single-file`/...  
 Path or name of the SingleFile binary to use.
 
-This can be installed using `npm install -g git+https://github.com/gildas-lormeau/SingleFile.git`.
+This can be installed using `npm install --no-audit --no-fund 'git+https://github.com/gildas-lormeau/SingleFile.git'`.
 
 *Related options:*  
 [`SAVE_SINGLEFILE`](#save_singlefile), [`CHROME_BINARY`](#chrome_binary), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_SANDBOX`](#chrome_sandbox)
 
 ---
 #### `READABILITY_BINARY`
-**Possible Values:** [`readability-extractor`]/`/usr/local/bin/readability-extractor`/...  
+**Possible Values:** [`readability-extractor`]/`./node_modules/readability-extractor/readability-extractor`/...  
 Path or name of the Readability extrator binary to use.
 
-This can be installed using `npm install -g git+https://github.com/pirate/readability-extractor.git`.
+This can be installed using `npm install --no-audit --no-fund 'git+https://github.com/ArchiveBox/readability-extractor.git'`.
 
 *Related options:*  
 [`SAVE_READABILITY`](#save_readability)
+
+---
+#### `MERCURY_BINARY`
+**Possible Values:** [`mercury-parser`]/`./node_modules/@postlight/mercury-parser/cli.js`/...  
+Path or name of the Mercury parser extractor binary to use.
+
+This can be installed using `npm install --no-audit --no-fund '@postlight/mercury-parser'`.
+
+*Related options:*  
+[`SAVE_MERCURY`](#save_mercury)
+
+---
+#### `RIPGREP_BINARY`
+**Possible Values:** [`rg`]/`rga`/...  
+
+Path or name of the ripgrep binary to use for full text search.
+
+This can be installed using your system package manager, e.g. `apt install ripgrep` or `brew install ripgrep`.
+
+Optionally switch this to use `ripgrep-all` for full-text search support across more filetypes (e.g. PDF): https://github.com/phiresky/ripgrep-all.
+
+*Related options:*  
+[`SEARCH_BACKEND_ENGINE`](#search_backend_engine)
 
 
 <img src="https://i.imgur.com/almAbwK.png" width="100%"/>
