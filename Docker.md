@@ -57,7 +57,7 @@ docker-compose up
 
 If you want to use sonic for full text search, download the sonic config file uncomment the sonic service in your `docker-compose.yml` file:
 ```bash
-curl https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/etc/config.cfg > sonic.cfg
+curl https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/etc/sonic.cfg > sonic.cfg
 # then uncomment the sonic block in docker-compose.yml
 
 # to backfill previously added snapshots into the full text index, run:
