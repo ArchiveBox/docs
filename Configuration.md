@@ -223,7 +223,7 @@ Fetch all audio, video, annotations, and media metadata on the page using `youtu
 [`MEDIA_TIMEOUT`](#media_timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`YOUTUBEDL_BINARY`](#youtubedl_binary)
 
 ---
-#### `SUBMIT_ARCHIVE_DOT_ORG`
+#### `SAVE_ARCHIVE_DOT_ORG`
 **Possible Values:** [`True`]/`False`  
 Submit the page's URL to be archived on Archive.org. (The Internet Archive) 
 
@@ -415,7 +415,7 @@ Path or name of the git binary to use.
 Path or name of the curl binary to use.
 
 *Related options:*  
-[`SAVE_FAVICON`](#save_favicon), [`SUBMIT_ARCHIVE_DOT_ORG`](#submit_archive_dot_org)
+[`SAVE_FAVICON`](#save_favicon), [`SAVE_ARCHIVE_DOT_ORG`](#save_archive_dot_org)
 
 ---
 #### `SINGLEFILE_BINARY`
