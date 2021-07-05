@@ -136,7 +136,7 @@ If you want to access your archive server with HTTPS, put a reverse proxy like N
 Fetch and run the ArchiveBox Docker image to create your initial archive.
 
 ```bash
-echo 'https://example.com' | docker run -it -v $PWD:/data archivebox/archivebox add
+echo 'https://example.com' | docker run -i -v $PWD:/data archivebox/archivebox add
 ```
 
 Replace `~/ArchiveBox` in the command above with the full path to a folder to use to store your archive on the host, or name of a Docker data volume.
@@ -148,9 +148,9 @@ Make sure the data folder you use host is either a new, uncreated path, or if it
 **To add a single URL to the archive** or a list of links from a file, pipe them in via stdin. This will archive each link passed in.
 
 ```bash
-echo 'https://example.com' | docker run -it -v $PWD:/data archivebox/archivebox add
+echo 'https://example.com' | docker run -i -v $PWD:/data archivebox/archivebox add
 # or
-docker run -it -v $PWD:/data archivebox/archivebox add < bookmarks.html
+docker run -i -v $PWD:/data archivebox/archivebox add < bookmarks.html
 ```
 
 **To add a list of pages via feed URL or remote file,** pass the URL of the feed as an argument.
@@ -182,7 +182,7 @@ The next easiest way to get/set config is using the archivebox CLI:
 docker-compose run archivebox config --get RESOLUTION
 docker-compose run archivebox config --set RESOLUTION=1440,900
 # or
-docker run -it -v $PWD:/data archivebox/archivebox config --set MEDIA_TIMEOUT=120
+docker run -i -v $PWD:/data archivebox/archivebox config --set MEDIA_TIMEOUT=120
 ```
 
 ArchiveBox in Docker accepts all the same environment variables as normal, see the list on the [[Configuration]] page.
@@ -190,10 +190,10 @@ ArchiveBox in Docker accepts all the same environment variables as normal, see t
 To set environment variables for a single run, you can use the `env KEY=VAL ...` command, `-e KEY=VAL`, or `--env-file=somefile.env`.
 
 ```bash
-echo 'https://example.com' | docker run -it -v $PWD:/data -e FETCH_SCREENSHOT=False archivebox/archivebox add
+echo 'https://example.com' | docker run -i -v $PWD:/data -e FETCH_SCREENSHOT=False archivebox/archivebox add
 ```
 ```bash
-docker run -i -v --env-file=ArchiveBox.env archivebox/archivebox
+docker run ... --env-file=ArchiveBox.env archivebox/archivebox ...
 ```
 
 You can also edit the `data/ArchiveBox.conf` file directly and the changes will take effect on the next run.
