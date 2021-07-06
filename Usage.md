@@ -165,7 +165,7 @@ Those numbers are from running it single-threaded on my i5 machine with 50mbps d
 
 Storage requirements go up immensely if you're using `FETCH_MEDIA=True` and are archiving many pages with audio & video.
 
-You can run it in parallel by manually splitting your URLs into separate chunks:
+You can try to run it in parallel by manually splitting your URLs into separate chunks (though this may not work with `database locked` errors on slower filesystems):
 ```bash
 archivebox add < urls_chunk_1.txt &
 archivebox add < urls_chunk_2.txt &
