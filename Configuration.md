@@ -101,32 +101,61 @@ Some text to display in the footer of the archive index.  Useful for providing s
 
 ---
 #### `URL_BLACKLIST`
-**Possible Values:** [`None`]/`.+\.exe$`/`http(s)?:\/\/(.+)?example.com\/.*'`/...  
+**Possible Values:** [`\.(css|js|otf|ttf|woff|woff2|gstatic\.com|googleapis\.com/css)(\?.*)?$`]/`.+\.exe$`/`http(s)?:\/\/(.+)?example.com\/.*'`/...  
 
-A regex expression used to exclude certain URLs from the archive.  You can use if there are certain domains, extensions, or other URL patterns that you want to ignore whenever they get imported.  Blacklisted URLs wont be included in the index, and their page content wont be archived.
+A regex expression used to exclude certain URLs from archiving.  You can use if there are certain domains, extensions, or other URL patterns that you want to ignore whenever they get imported.  Blacklisted URLs wont be included in the index, and their page content wont be archived.
 
-When building your blacklist, you can check whether a given URL matches your regex expression like so:
+When building your exclusion list, you can check whether a given URL matches your regex expression in `python` like so:
 ```python
 >>> import re
->>> URL_BLACKLIST = r'http(s)?:\/\/(.+)?(youtube\.com)|(amazon\.com)\/.*'  # replace this with your regex to test
+>>> URL_BLACKLIST = r'^http(s)?:\/\/(.+\.)?(youtube\.com)|(amazon\.com)\/.*$'  # replace this with your regex to test
 >>> test_url = 'https://test.youtube.com/example.php?abc=123'
->>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match(test_url))
-True
+>>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE | re.UNICODE | re.MULTILINE).search(test_url))
+True   # this URL would not be archived because it matches the exclusion pattern
 ```
 
-You can also use this to **whitelist** certain patterns and exclude all others by adding `(?!`*pattern*`)` around the pattern to negate it. For example, to match only URLs `*.example.com` you could do:
-```python
->>> URL_BLACKLIST = r'(?!http(s)?:\/\/(.+\.)?example\.com\/?.*)'
->>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match('https://example.com/example.php?abc=123'))
-False  # this URL would not be excluded (i.e. it will be archived)
->>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match('https://abc.example.com'))
-False  # this URL would not be excluded (i.e. it will be archived)
->>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match('https://example.youtube.com/example.php?abc=123'))
-True   # but this would be excluded and not archived, because it does not match *.example.com
-```
+*Note: all assets required to render each page are still archived, `URL_BLACKLIST`/`URL_WHITELIST` do not apply to images, css, video, etc. visible inline within the page.*
 
 *Related options:*  
-[`SAVE_MEDIA`](#SAVE_MEDIA), [`SAVE_GIT`](#SAVE_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
+[`URL_WHITELIST`](#URL_WHITELIST), [`SAVE_MEDIA`](#SAVE_MEDIA), [`SAVE_GIT`](#SAVE_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
+
+---
+#### `URL_WHITELIST`
+**Possible Values:** [`None`]/`^http(s)?:\/\/(.+)?example\.com\/?.*$`/...  
+
+A regex expression used to exclude all URLs that don't match the given pattern from archiving.  You can use if there are certain domains, extensions, or other URL patterns that you want to ignore whenever they get imported.  Blacklisted URLs wont be included in the index, and their page content wont be archived.
+
+When building your blacklist, you can check whether a given URL matches your regex expression in `python` like so:
+```python
+>>> import re
+>>> URL_WHITELIST = r'^http(s)?:\/\/(.+)?example\.org\/?.*$'  # replace this with your regex to test
+>>> test_url = 'https://test.example.com/example.php?abc=123'
+>>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE | re.UNICODE | re.MULTILINE).search(test_url))
+True      # this URL would be archived
+
+>>> test_url = 'https://test.youtube.com/example.php?abc=123'
+>>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE | re.UNICODE | re.MULTILINE).search(test_url))
+False     # this URL would be excluded from archiving
+```
+
+This option is useful for recursively archiving all the pages on a given domain (aka crawling/spidering), without following links to external domains.
+```bash
+# temporarily enforce a whitelist by setting the option as an environment variable
+export URL_WHITELIST='^http(s)?:\/\/(.+)?example\.com\/?.*$'
+
+# then run your archivebox commands in the same shell
+archivebox add --depth=1 'https://example.com'
+archivebox list https://example.com | archivebox add --depth=1
+archivebox list https://example.com | archivebox add --depth=1
+archivebox list https://example.com | archivebox add --depth=1   # repeat up to desired depth
+...
+# all URLs that don't match *.example.com will be excluded, e.g. a link to youtube.com would not be followed
+```
+
+*Note: all assets required to render each page are still archived, `URL_BLACKLIST`/`URL_WHITELIST` do not apply to images, css, video, etc. visible inline within the page.*
+
+*Related options:*  
+[`URL_BLACKLIST`](#URL_BLACKLIST), [`SAVE_MEDIA`](#SAVE_MEDIA), [`SAVE_GIT`](#SAVE_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
 
 ---
 
