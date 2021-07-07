@@ -109,8 +109,9 @@ When building your exclusion list, you can check whether a given URL matches you
 ```python
 >>> import re
 >>> URL_BLACKLIST = r'^http(s)?:\/\/(.+\.)?(youtube\.com)|(amazon\.com)\/.*$'  # replace this with your regex to test
->>> test_url = 'https://test.youtube.com/example.php?abc=123'
->>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE | re.UNICODE | re.MULTILINE).search(test_url))
+>>> URL_BLACKLIST_PTN = re.compile(URL_BLACKLIST, re.IGNORECASE | re.UNICODE | re.MULTILINE)
+
+>>> bool(URL_BLACKLIST_PTN.search('https://test.youtube.com/example.php?abc=123'))  # replace this with the URL to test
 True   # this URL would not be archived because it matches the exclusion pattern
 ```
 
@@ -129,12 +130,12 @@ When building your blacklist, you can check whether a given URL matches your reg
 ```python
 >>> import re
 >>> URL_WHITELIST = r'^http(s)?:\/\/(.+)?example\.com\/?.*$'  # replace this with your regex to test
->>> test_url = 'https://test.example.com/example.php?abc=123'
->>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE | re.UNICODE | re.MULTILINE).search(test_url))
+>>> URL_WHITELIST_PTN = re.compile(URL_BLACKLIST, re.IGNORECASE | re.UNICODE | re.MULTILINE)
+
+>>> bool(URL_WHITELIST_PTN.search('https://test.example.com/example.php?abc=123'))
 True      # this URL would be archived
 
->>> test_url = 'https://test.youtube.com/example.php?abc=123'
->>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE | re.UNICODE | re.MULTILINE).search(test_url))
+>>> bool(URL_WHITELIST_PTN.search('https://test.youtube.com/example.php?abc=123'))
 False     # this URL would be excluded from archiving
 ```
 
