@@ -124,9 +124,9 @@ True   # this URL would not be archived because it matches the exclusion pattern
 #### `URL_WHITELIST`
 **Possible Values:** [`None`]/`^http(s)?:\/\/(.+)?example\.com\/?.*$`/...  
 
-A regex expression used to exclude all URLs that don't match the given pattern from archiving.  You can use if there are certain domains, extensions, or other URL patterns that you want to ignore whenever they get imported.  Blacklisted URLs wont be included in the index, and their page content wont be archived.
+A regex expression used to exclude all URLs that don't match the given pattern from archiving.  You can use if there are certain domains, extensions, or other URL patterns that you want to restrict the scope of archiving to (e.g. to only archive a single domain, subdirectory, or filetype, etc..
 
-When building your blacklist, you can check whether a given URL matches your regex expression in `python` like so:
+When building your whitelist, you can check whether a given URL matches your regex expression in `python` like so:
 ```python
 >>> import re
 >>> URL_WHITELIST = r'^http(s)?:\/\/(.+)?example\.com\/?.*$'  # replace this with your regex to test
