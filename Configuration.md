@@ -107,11 +107,22 @@ A regex expression used to exclude certain URLs from the archive.  You can use i
 
 When building your blacklist, you can check whether a given URL matches your regex expression like so:
 ```python
->>>import re
->>>URL_BLACKLIST = r'http(s)?:\/\/(.+)?(youtube\.com)|(amazon\.com)\/.*'  # replace this with your regex to test
->>>test_url = 'https://test.youtube.com/example.php?abc=123'
->>>bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match(test_url))
+>>> import re
+>>> URL_BLACKLIST = r'http(s)?:\/\/(.+)?(youtube\.com)|(amazon\.com)\/.*'  # replace this with your regex to test
+>>> test_url = 'https://test.youtube.com/example.php?abc=123'
+>>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match(test_url))
 True
+```
+
+You can also use this to **whitelist** certain patterns and exclude all others by adding `(?!`*pattern*`)` around the pattern to negate it. For example, to match only URLs `*.example.org` you could do:
+```python
+>>> URL_BLACKLIST = r'(?!http(s)?:\/\/(.+)?example\.org\/?.*)'
+>>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match('https://example.org/example.php?abc=123')
+False  # this URL would not be excluded (i.e. it will be archived)
+>>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match('https://abc.example.org')
+False  # this URL would not be excluded (i.e. it will be archived)
+>>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match('https://test.youtube.com/example.php?abc=123')
+True   # but this would be excluded and not archived, because it does not match *.example.org
 ```
 
 *Related options:*  
