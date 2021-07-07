@@ -114,15 +114,15 @@ When building your blacklist, you can check whether a given URL matches your reg
 True
 ```
 
-You can also use this to **whitelist** certain patterns and exclude all others by adding `(?!`*pattern*`)` around the pattern to negate it. For example, to match only URLs `*.example.org` you could do:
+You can also use this to **whitelist** certain patterns and exclude all others by adding `(?!`*pattern*`)` around the pattern to negate it. For example, to match only URLs `*.example.com` you could do:
 ```python
->>> URL_BLACKLIST = r'(?!http(s)?:\/\/(.+)?example\.org\/?.*)'
->>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match('https://example.org/example.php?abc=123')
+>>> URL_BLACKLIST = r'(?!http(s)?:\/\/(.+\.)?example\.com\/?.*)'
+>>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match('https://example.com/example.php?abc=123'))
 False  # this URL would not be excluded (i.e. it will be archived)
->>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match('https://abc.example.org')
+>>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match('https://abc.example.com'))
 False  # this URL would not be excluded (i.e. it will be archived)
->>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match('https://test.youtube.com/example.php?abc=123')
-True   # but this would be excluded and not archived, because it does not match *.example.org
+>>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE).match('https://example.youtube.com/example.php?abc=123'))
+True   # but this would be excluded and not archived, because it does not match *.example.com
 ```
 
 *Related options:*  
