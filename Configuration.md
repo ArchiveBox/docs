@@ -128,7 +128,7 @@ A regex expression used to exclude all URLs that don't match the given pattern f
 When building your blacklist, you can check whether a given URL matches your regex expression in `python` like so:
 ```python
 >>> import re
->>> URL_WHITELIST = r'^http(s)?:\/\/(.+)?example\.org\/?.*$'  # replace this with your regex to test
+>>> URL_WHITELIST = r'^http(s)?:\/\/(.+)?example\.com\/?.*$'  # replace this with your regex to test
 >>> test_url = 'https://test.example.com/example.php?abc=123'
 >>> bool(re.compile(URL_BLACKLIST, re.IGNORECASE | re.UNICODE | re.MULTILINE).search(test_url))
 True      # this URL would be archived
@@ -138,7 +138,7 @@ True      # this URL would be archived
 False     # this URL would be excluded from archiving
 ```
 
-This option is useful for recursively archiving all the pages on a given domain (aka crawling/spidering), without following links to external domains.
+This option is useful for **recursive archiving** of all the pages under a given domain or subfolder (aka crawling/spidering), without following links to external domains / parent folders.
 ```bash
 # temporarily enforce a whitelist by setting the option as an environment variable
 export URL_WHITELIST='^http(s)?:\/\/(.+)?example\.com\/?.*$'
