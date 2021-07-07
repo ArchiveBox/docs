@@ -20,19 +20,19 @@ Make sure you've followed the Manual Setup guide in the [[Install]] instructions
 On some Linux distributions the python3 package might not be recent enough.
 If this is the case for you, resort to installing a recent enough version manually.
 ```bash
-add-apt-repository ppa:fkrull/deadsnakes && apt update && apt install python3.6
+add-apt-repository ppa:fkrull/deadsnakes && apt update && apt install python3.8  # python3.9 also works
 ```
-If you still need help, [the official Python docs](https://docs.python.org/3.6/using/unix.html) are a good place to start.
+If you still need help, [the official Python docs](https://docs.python.org/3.8/using/unix.html) are a good place to start.
 
 ### Chromium/Google Chrome
 
 For more info, see the [[Chromium Install]] page.
 
-`archive.py` depends on being able to access a `chromium-browser`/`google-chrome` executable.  The executable used
+ArchiveBox depends on being able to access a `chromium-browser`/`google-chrome` executable.  The executable used
 defaults to `chromium-browser` but can be manually specified with the environment variable `CHROME_BINARY`:
 
 ```bash
-env CHROME_BINARY=/usr/local/bin/chromium-browser ./archive ~/Downloads/bookmarks_export.html
+env CHROME_BINARY=/usr/local/bin/chromium-browser archivebox add ~/Downloads/bookmarks_export.html
 ```
 
 1. Test to make sure you have Chrome on your `$PATH` with:
@@ -57,10 +57,10 @@ apt upgrade chromium-browser -y
 brew cask upgrade chromium-browser
 ```
 
-4. If a version is displayed and it's `>=59`, make sure `archive.py` is running the right one:
+4. If a version is displayed and it's `>=59`, make sure ArchiveBox is running the right one:
 
 ```bash
-env CHROME_BINARY=/path/from/step/1/chromium-browser ./archive bookmarks_export.html   # replace the path with the one you got from step 1
+env CHROME_BINARY=/path/from/step/1/chromium-browser archivebox version   # replace the path with the one you got from step 1
 ```
 
 
@@ -84,9 +84,9 @@ preferrably your export file attached (you can redact the links).  We'll fix the
 
 If you ran the archiver once, it wont re-download sites subsequent times, it will only download new links.
 If you haven't already run it, make sure you have a working internet connection and that the parsed URLs look correct.
-You can check the `archive.py` output or `index.html` to see what links it's downloading.
+You can check the ArchiveBox stdout logs or the Web UI to see what links it's downloading.
 
-If you're still having issues, try deleting or moving the `output/archive` folder (back it up first!) and running `./archive` again.
+If you're still having issues, try deleting or moving the `./archive` folder (back it up first!) and running `archivebox init` again.
 
 ### Lots of errors
 
