@@ -225,6 +225,7 @@ Random helpful utilities for web archiving, WARC creation and replay, and more..
  - https://en.wikipedia.org/wiki/Furl
  - https://preservica.com/digital-archive-software-1/active-digital-preservation For-profit company offering a digital preservation software suite
  - https://github.com/karlicoss/grasp capture webpages from Firefox and Chrome into Org-mode documents
+ - https://github.com/dgtlmoon/changedetection.io Change detection and monitoring of web page content changes
  - [And many more on the other lists...](#the-master-lists)
 
 ---
