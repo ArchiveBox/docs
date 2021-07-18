@@ -78,6 +78,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - [Wallabag](https://wallabag.org) / [Wallabag.it](https://wallabag.it) Self-hostable web archiving server that can import via RSS
  - [Shaarli](https://github.com/shaarli/Shaarli) Self-hostable bookmark tagging, archiving, and sharing service
  - [ReadWise](https://readwise.io/) A paid Pocket/Pinboard alternative that includes article snippet and highlight saving
+ - [Diigo](https://www.diigo.com/) Another brookmarking/annotation service with archiving as a paid feature
 
 ---
 
