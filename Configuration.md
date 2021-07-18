@@ -130,7 +130,7 @@ When building your whitelist, you can check whether a given URL matches your reg
 ```python
 >>> import re
 >>> URL_WHITELIST = r'^http(s)?:\/\/(.+)?example\.com\/?.*$'  # replace this with your regex to test
->>> URL_WHITELIST_PTN = re.compile(URL_BLACKLIST, re.IGNORECASE | re.UNICODE | re.MULTILINE)
+>>> URL_WHITELIST_PTN = re.compile(URL_WHITELIST, re.IGNORECASE | re.UNICODE | re.MULTILINE)
 
 >>> bool(URL_WHITELIST_PTN.search('https://test.example.com/example.php?abc=123'))
 True      # this URL would be archived
