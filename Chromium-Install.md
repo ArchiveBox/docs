@@ -30,6 +30,8 @@ If you already have `chromium-browser` >= v59 installed (run `chromium-browser -
 ```bash
 apt update
 apt install chromium-browser
+# or on some systems:
+apt install chromium
 ```
 
 ## Installing Google Chrome
@@ -45,7 +47,7 @@ If you already have `google-chrome` >= v59 installed (run `google-chrome --versi
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 apt update
-apt install google-chrome-beta
+apt install google-chrome
 ```
 
 ## Troubleshooting
