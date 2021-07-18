@@ -73,6 +73,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
  - **[Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla**
  - **[Pinboard](https://pinboard.in) Bookmarking tool that provides archiving in a paid version, run by a single independent developer**
+ - **[Raindrop](https://raindrop.io) Bookmarking tool with archiving in their paid version, run by a company est. 2011**
  - [Instapaper](https://www.instapaper.com) Bookmarking alternative to Pocket/Pinboard (with no archiving)
  - [Wallabag](https://wallabag.org) / [Wallabag.it](https://wallabag.it) Self-hostable web archiving server that can import via RSS
  - [Shaarli](https://github.com/shaarli/Shaarli) Self-hostable bookmark tagging, archiving, and sharing service
