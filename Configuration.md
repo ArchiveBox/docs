@@ -396,6 +396,8 @@ Colorize console output. Defaults to `True` if stdin is a TTY (interactive sessi
 **Possible Values:** [`True`]/`False`  
 Show real-time progress bar in console output. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
 
+*Note: We use [asymptotic progress bars](https://gist.github.com/pirate/c89b7d42be148e9180d8c7cf81e734c8) because most tasks complete quickly! ✨*
+
 <img src="https://i.imgur.com/XY2E7AR.png" width="99%"/>
 
 ---
