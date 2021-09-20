@@ -241,7 +241,7 @@ Unlike the other methods, this does not download any additional files, so it's p
 #### `SAVE_MERCURY`
 **Possible Values:** [`True`]/`False`  
 Extract article text, summary, and byline using the [Mercury](https://github.com/postlight/mercury-parser) library.
-Unlike the other methods, this does not download any additional files, so it's practically free from a disk usage perspective. It works by using any existing downloaded HTML version (e.g. wget, DOM dump, singlefile) and piping it into readability.
+Unlike the other methods, this does not download any additional files, so it's practically free from a disk usage perspective. It works by using any existing downloaded HTML version (e.g. wget, DOM dump, singlefile) and piping it into Mercury.
 
 *Related options:*  
 [`TIMEOUT`](#timeout), [`SAVE_WGET`](#save_wget), [`SAVE_DOM`](#save_dom), [`SAVE_SINGLEFILE`](#save_singlefile), [`SAVE_READABILITY`](#save_readability)
