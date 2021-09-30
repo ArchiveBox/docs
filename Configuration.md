@@ -116,6 +116,24 @@ True
 [`SAVE_MEDIA`](#SAVE_MEDIA), [`SAVE_GIT`](#SAVE_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
 
 ---
+#### `REVERSE_PROXY_USER_HEADER`
+**Possible Values:** [`Remote-User`]/`X-Remote-User`/...
+
+HTTP header containing user name from authenticated proxy.
+
+*Related options:*
+[`REVERSE_PROXY_WHITELIST`](#REVERSE_PROXY_WHITELIST)
+
+---
+#### `REVERSE_PROXY_WHITELIST`
+**Possible Values:** [`<empty string>`],`172.16.0.0/16`,`2001:d80::/26`/...
+
+Comma separated list of IP CIDRs which are allowed to use reverse proxy authentication. Both IPv4 and IPv6 IPs can be used next to each other. Empty string means "deny all".
+
+*Related options:*
+[`REVERSE_PROXY_USER_HEADER`](#REVERSE_PROXY_USER_HEADER)
+
+---
 
 ## Archive Method Toggles
 
