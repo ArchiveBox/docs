@@ -202,7 +202,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - [Monolith](https://github.com/Y2Z/monolith) CLI tool for saving complete web pages as a single HTML file
  - [Percollate](https://github.com/danburzo/percollate) A command-line tool to turn web pages into beautiful, readable PDF, EPUB, or HTML docs.
  - [Shiori](https://github.com/go-shiori/shiori) Simple bookmark manager + readability archiver built with Go (like a clone of Pocket)
-
+ - [Munin Archiver](https://github.com/peterk/munin-indexer) Social media archiver for Facebook, Instagram and VKontakte accounts.
 ---
 
 ### Smaller Utilities
