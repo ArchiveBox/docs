@@ -6,21 +6,15 @@ ArchiveBox has three common usage modes outlined below.
 
 <img src="https://i.imgur.com/K3dZcjG.png" width="50px" align="right"/>
 
-#### Public Mode [Default]
+#### Public Content Mode [Default]
 
 This is the default (lax) mode, intended for archiving public (non-secret) URLs without authenticating the headless browser.  This is the mode used if you're archiving news articles, audio, video, etc. browser bookmarks to a folder published on your webserver. This allows you to access and link to content on `http://your.archive.com/archive...` after the originals go down.
 
-This mode should not be used for archiving entire browser history or authenticated private content like Google Docs, paywalled content, invite-only subreddits, etc.
-
-
-
-### IMPORTANT: Don't use ArchiveBox for private archived content right now as we're in the middle of resolving some security issues with how JS is executed in archived content.
-
-See here for more info: **[Architecture: Archived JS executes in a context shared with all other archived content](https://github.com/ArchiveBox/ArchiveBox/issues/239)**
-
-<img src="https://i.imgur.com/xg6TxoK.png" width="50px" align="right"/>
+This mode should not be used for archiving entire browser history or authenticated private content like Google Docs, paywalled content, invite-only subreddits, private photo share urls, etc.
 
 #### Archiving Private Content
+
+`WARNING! Advanced users only`
 
 ArchiveBox is able to archive content that requires authentication or cookies, but it comes with some caveats. Create dedicated logins for archiving to access paywalled content, private forums, LAN-only content, etc. then share them with ArchiveBox via Chrome profile + cookies.txt file.
 
@@ -28,20 +22,17 @@ To get started, set [`CHROME_USER_DATA_DIR`](https://github.com/ArchiveBox/Archi
 
 If you're importing private links or authenticated content, you probably don't want to share your archive folder publicly on a webserver, so don't follow the [[Publishing Your Archive]] instructions unless you are only serving it on a trusted LAN or have some sort of authentication in front of it.  Make sure to point ArchiveBox to an output folder with conservative permissions, as it may contain archived content with secret session tokens or pieces of your user data.  You may also wish to encrypt the archive using an encrypted disk image or filesystem like ZFS as it will contain all requests and response data, including session keys, user data, usernames, etc.
 
-Beware that any cookies / secret state in this profile will be totally visible to anyone viewing the archives! Make dedicated accounts for archiving and don't share your personal login with the archiver unless you want your keys in the archive. 
+**Things to watch out for:**
+- any cookies / secret state in this profile will be totally visible to anyone viewing the archives, don't use your personal Chrome profile
+- any secret tokens in URLs are sent to `archive.org` (unless you set `SAVE_ARCHIVE_DOT_ORG = False`) 
+- domain in URL is leaked to favicon service (unless you set `SAVE_FAVICON = False`)
+- viewing malicious archived JS could allow an attacker to access your other archive items + the admin interface (it executes on the same domain right now, fix is pending)
 
 <img src="https://i.imgur.com/Jszo4h2.png" width="400px"/>
 
 *An example of a session cookie reflected in `headers.json` visible in the archive.*
 
 <img src="https://i.imgur.com/DfyQUDV.png" width="50px" align="right"/>
-
-#### Stealth Mode
-
-If you want ArchiveBox to be less noisy and avoid leaking any URLs to 3rd-party APIs during archiving, you can disable the options below.  Disabling these are recommended if you plan on archiving any sites that use secret tokens in the URL to grant access to private content without authentication, e.g. Google Docs, CodiDM notepads, etc.
-
- - `https://web.archive.org/save/{url}` when [`SAVE_ARCHIVE_DOT_ORG`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#save_archive_dot_org) is `True`, full URLs are submitted to the Wayback Machine for archiving, but no cookies or content from the local authenticated archive are shared
- - `https://www.google.com/s2/favicons?domain={domain}` when [`FETCH_FAVICON`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#fetch_favicon) is `True`, the domains for each link are shared in order to get the favicon, but not the full URL~~
 
 ## Do not run as root
 
