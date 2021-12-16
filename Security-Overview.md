@@ -2,11 +2,9 @@
 
 ## Usage Modes
 
-ArchiveBox has three common usage modes outlined below.
-
 <img src="https://i.imgur.com/K3dZcjG.png" width="50px" align="right"/>
 
-#### Public Content Mode [Default]
+#### Archiving Public Content [Default]
 
 This is the default (lax) mode, intended for archiving public (non-secret) URLs without authenticating the headless browser.  This is the mode used if you're archiving news articles, audio, video, etc. browser bookmarks to a folder published on your webserver. This allows you to access and link to content on `http://your.archive.com/archive...` after the originals go down.
 
@@ -33,6 +31,8 @@ If you're importing private links or authenticated content, you probably don't w
 *An example of a session cookie reflected in `headers.json` visible in the archive.*
 
 <img src="https://i.imgur.com/DfyQUDV.png" width="50px" align="right"/>
+
+---
 
 ## Do not run as root
 
