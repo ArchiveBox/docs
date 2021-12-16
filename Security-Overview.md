@@ -20,13 +20,19 @@ See here for more info: **[Architecture: Archived JS executes in a context share
 
 <img src="https://i.imgur.com/xg6TxoK.png" width="50px" align="right"/>
 
-#### Private Mode
+#### Archiving Private Content
 
-ArchiveBox is designed to be able to archive content that requires authentication or cookies.  This includes paywalled content, private forums, LAN-only content, etc.
+ArchiveBox is able to archive content that requires authentication or cookies, but it comes with some caveats. Create dedicated logins for archiving to access paywalled content, private forums, LAN-only content, etc. then share them with ArchiveBox via Chrome profile + cookies.txt file.
 
 To get started, set [`CHROME_USER_DATA_DIR`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#chrome_user_data_dir) and [`COOKIES_FILE`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#COOKIES_FILE) to point to a Chrome user folder that has your sessions and a wget `cookies.txt` file respectively.
 
 If you're importing private links or authenticated content, you probably don't want to share your archive folder publicly on a webserver, so don't follow the [[Publishing Your Archive]] instructions unless you are only serving it on a trusted LAN or have some sort of authentication in front of it.  Make sure to point ArchiveBox to an output folder with conservative permissions, as it may contain archived content with secret session tokens or pieces of your user data.  You may also wish to encrypt the archive using an encrypted disk image or filesystem like ZFS as it will contain all requests and response data, including session keys, user data, usernames, etc.
+
+Beware that any cookies / secret state in this profile will be totally visible to anyone viewing the archives! Make dedicated accounts for archiving and don't share your personal login with the archiver unless you want your keys in the archive. 
+
+<img src="https://i.imgur.com/Jszo4h2.png" width="400px"/>
+
+*An example of a session cookie reflected in `headers.json` visible in the archive.*
 
 <img src="https://i.imgur.com/DfyQUDV.png" width="50px" align="right"/>
 
