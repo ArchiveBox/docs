@@ -449,6 +449,12 @@ You can find more organizations and initiatives on these other lists:
 
 ---
 
+### Unofficial support
+
+ - [Unofficial ArchiveBox support/discussion chat room](https://matrix.to/#/#archivebox:matrix.org)
+
+---
+
 <div align="center">
 
 [![](https://img.shields.io/badge/Donate-ArchiveBox.io-%23DD5D76.svg)](https://www.patreon.com/theSquashSH)
