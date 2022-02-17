@@ -132,6 +132,18 @@ Click the Favicon under the "Files" column to go to the details page for each li
 <img src="https://i.imgur.com/Gg9sTyq.png" width="45%">
 </div>
 
+### Explanation of buttons in the web UI - admin snapshots list
+
+A logged-in admin user may perform these operations on one or more snapshots:
+
+- <kbd>Search</kbd> (tbd)
+- Tags - tag or un-tag snapshots
+- <kbd>Title</kbd> Pull the title ( redownload if it was missing, or the title has changed )
+- <kbd>Pull</kbd> Download missing/failed outputs/extractors methods ( pdf, wget... etc). Maybe because download failed or interrupted by a reboot or something. This is the default behavior when you add new URL, they will get pulled automatically. https://github.com/ArchiveBox/ArchiveBox#output-formats
+- <kbd>Re-Snapshot</kbd> As the name suggests, re-download the page as a separated unique page. Not the same as pull, this one will create a separate entry, and the page is treated as a new URL ending with the date and time #2020-10-24-08:00 https://github.com/ArchiveBox/ArchiveBox#saving-multiple-snapshots-of-a-single-url
+- <kbd>Reset</kbd> Delete all type of output and redownload them. In the contrary of snapshot, this will overwrite the files.
+- <kbd>Reset</kbd> Delete a snapshot entirely. This action cannot be undone.
+
 ## Disk Layout
 
 The `OUTPUT_DIR` folder (usually whatever folder you run the `archivebox` command in), contains the UI HTML and archived data with the structure outlined below.
