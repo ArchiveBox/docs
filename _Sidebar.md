@@ -20,6 +20,7 @@
  - [[Publishing Your Archive]]
  - [[Chromium Install]]
  - [[Security Overview]]
+ - [[Upgrading / Merging Archives]]
  - [[Troubleshooting]]
 
 # More Info
