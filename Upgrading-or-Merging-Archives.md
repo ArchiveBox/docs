@@ -3,12 +3,12 @@
 *Note: It's recommended to only upgrade one major version at a time. e.g. if you're on `v0.4.14`, upgrade to `v0.4.2`, then to `v0.5.6` (the latest available minor version for each major version), then from there to `v0.6.3`, not straight from `v0.4.14` -> `v0.6.3`.
 You can specify exact versions with pip like so: `pip install archivebox==0.6.3` or with docker `docker pull archivebox/archivebox:0.6.3`. Upgrading directly across multiple major versions may work in some cases, but is not recommended for maximum data safety.*
 
-The list of all ArchiveBox releases/versions can be found here: https://github.com/ArchiveBox/ArchiveBox/releases
+**✅ Upgrading checklist:**
 
 1. Find the version you want to upgrade to on https://github.com/ArchiveBox/ArchiveBox/releases
 2. **Read the release notes carefully** for any instructions or extra steps around upgrading
 3. **Make a full backup** of your `index.sqlite3` and `archive/` content before upgrading!
-4. Follow the steps below depending on your setup
+4. Follow the steps below depending on your setup (repeating as necessary for each major version if upgrading across multiple major versions)
 
 ArchiveBox uses the Django migrations system for deterministic, atomic, safe upgrades, so your DB should always be left in a consistent state in the event of a failure or power outage.
 
