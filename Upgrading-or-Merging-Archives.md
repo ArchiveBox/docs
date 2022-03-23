@@ -89,7 +89,7 @@ Two or more existing ArchiveBox collection dirs can be merged together by simply
   # ... repeat the same for each collection if merging more than two
   ```
 
-2. Create a new empty archivebox collection in a new folder somewhere
+2. Create a new empty archivebox collection in a new folder somewhere, this will hold the new merged collection
   ```bash
   mkdir ~/archivebox_new
   cd ~/archivebox_new
