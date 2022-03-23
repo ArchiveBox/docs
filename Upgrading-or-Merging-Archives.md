@@ -6,8 +6,11 @@
 2. **Read the release notes carefully** for any instructions or extra steps around upgrading for each release you're skipping or installing
 3. **Make a full backup** of your `index.sqlite3` and `archive/` content before upgrading!
 4. Follow the steps below depending on your setup (repeating as necessary for each major version if upgrading across multiple major versions)
+5. Confirm the upgrade succeeded and check for any orphan/corrupted snapshots with `archivebox status`
 
-**ℹ️ How it works:**
+**ℹ️ How it works internally:**
+
+The same command is used for initializing a new archive and upgrading an existing one. `archivebox init` is indempotent and safely be run multiple times. Running it will ensure your collection is on the latest version and all the files are in their correct locations.
 
 There are three main areas on disk that ArchiveBox modifies during upgrades:
 - `index.sqlite3` contains the SQLite3 DB index that gets upgraded automatically by Django based on the changes in [`archivebox/core/models.py`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/core/models.py).
