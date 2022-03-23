@@ -5,7 +5,7 @@
 1. Find the version you want to upgrade to on https://github.com/ArchiveBox/ArchiveBox/releases
 2. **Read the release notes carefully** for any instructions or extra steps around upgrading for each release you're skipping or installing
 3. **Make a full backup** of your `index.sqlite3` and `archive/` content before upgrading!
-4. Follow the steps below depending on your setup (repeating as necessary for each major version if upgrading across multiple major versions)
+4. Follow the steps below depending on your setup to run `archivebox init` (repeating as necessary for each major version if upgrading across multiple major versions)
 5. Confirm the upgrade succeeded and check for any orphan/corrupted snapshots with `archivebox status`
 
 **ℹ️ How it works internally:**
