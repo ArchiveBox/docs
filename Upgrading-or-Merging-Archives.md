@@ -46,12 +46,43 @@ archivebox init        # run init to upgrade the collection to the latest versio
 ## Merge two or more existing archives
 
 1. Upgrade both old collections to the most recent ArchiveBox version (following instructions above)
-  `pip install --upgrade archivebox # or docker pull if using docker; archivebox init`
+  ```bash
+  pip install --upgrade archivebox   # or follow instructions above for upgrading w/ Docker
+
+  cd /path/to/archivebox1/data
+  archivebox init --setup
+
+  cd /path/to/archivebox2/data
+  archivebox init --setup
+
+  # ... repeat the same for each collection if merging more than two
+  ```
+
 2. Create a new empty archivebox collection in a new folder somewhere
-  `mkdir ~/archivebox_new; cd ~/archivebox_new; archivebox init --setup` 
-3. Drag everything under `archive/*` in each old collections into the new empty collection's `~/archiebox_new/archive/` folder
-4. Run `archivebox init` in the new collection to regenerate the new index
+  ```bash
+  mkdir ~/archivebox_new
+  cd ~/archivebox_new
+  archivebox init --setup
+  ```
+
+3. Copy everything under `./archive/*` in each old collection into the new collection's `./archive/` folder
+  ```bash
+  rsync --archive --info=progress2 /path/to/archivebox1/data/archive/ ~/archivebox_new/archive
+  rsync --archive --info=progress2 /path/to/archivebox2/data/archive/ ~/archivebox_new/archive
+  # ...repeat the same for each collection if merging more than two
+  ```
+
+4. Run `archivebox init` in the new merged collection to regenerate the new index
+  ```bash
+  cd ~/archivebox_new
+  archivebox init --setup
+  ```
+
 5. The new collection should now contain all the entries from the old collections combined
+  ```bash
+  cd ~/archivebox_new
+  archivebox status
+  ```
 
 ---
 
