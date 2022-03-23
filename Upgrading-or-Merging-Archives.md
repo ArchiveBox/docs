@@ -51,9 +51,11 @@ archivebox init        # run init to upgrade the collection to the latest versio
 
   cd /path/to/archivebox1/data
   archivebox init --setup
+  archivebox status
 
   cd /path/to/archivebox2/data
   archivebox init --setup
+  archivebox status
 
   # ... repeat the same for each collection if merging more than two
   ```
