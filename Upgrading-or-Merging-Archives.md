@@ -92,6 +92,8 @@ archivebox init        # run init to upgrade the collection to the latest versio
 
 If you need to automate changes to the ArchiveBox DB (for example adding a User from an Ansible script), you can modify the SQLite3 DB directly.
 
+Note, this is often unnecessary for modifying ArchiveBox on a host that doesn't have the CLI installed, as you can also copy the `index.sqlite3` to a local machine that has it, do the modifications locally, then copy the modified db back into place on the host. (Docker/CLI/GUI/Web ArchiveBox all share the same DB schema/format)
+
 ```bash
 cd ~/archivebox         # cd into your archivebox collection dir
 sqlite3 index.sqlite3   # open the db with sqlite3 shell
