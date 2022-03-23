@@ -23,7 +23,7 @@ You can specify exact versions with pip like so: `pip install archivebox==0.6.3`
 
 💬 [Open an issue](https://github.com/ArchiveBox/ArchiveBox/issues/new/choose) in our bug tracker if you experience any problems with upgrading/merging/modifying collections.
 
-### With Docker Compose
+### Upgrading with Docker Compose
 
 ```bash
 cd ~/archivebox        # or wherever your data folder is
@@ -33,7 +33,7 @@ docker-compose pull    # pull the latest image version from Docker Hub
 docker-compose up      # collection will be automatically upgraded as it starts
 ```
 
-### With plain Docker
+### Upgrading with plain Docker
 
 ```bash
 docker ps -a -q  --filter ancestor=archivebox/archivebox  # find any currently running archivebox containers
@@ -45,7 +45,7 @@ docker run -v $PWD:/data -it archivebox/archivebox init --setup  # upgrade the c
 docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox server
 ```
 
-### With a package manager
+### Upgrading with a package manager
 
 ```bash
 cd ~/archivebox        # or wherever your data folder is
