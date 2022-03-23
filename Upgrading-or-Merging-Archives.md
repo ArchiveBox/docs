@@ -7,7 +7,14 @@
 3. **Make a full backup** of your `index.sqlite3` and `archive/` content before upgrading!
 4. Follow the steps below depending on your setup (repeating as necessary for each major version if upgrading across multiple major versions)
 
-**ℹ️ Details:**
+**ℹ️ How it works:**
+
+There are three main areas on disk that ArchiveBox modifies during upgrades:
+- `index.sqlite3` contains the SQLite3 DB index that gets upgraded automatically by Django based on the changes in [`archivebox/core/models.py`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/core/models.py).
+- `archive/*/index.json` these files are redundant json exports of the data for each Snapshot in `index.sqlite3`, the schema of these files updated on every `archivebox update` run or anytime the Snapshot is modified from the GUI or CLI
+- `archive/*` the Snapshot output files may be moved or renamed by future upgrades, but so far they have remained the same since v0.1
+
+The `ArchiveBox.conf` file is not modified by upgrades and should remain forward-compatible across future versions (even when config options are renamed, we check the old names internally to maintain compatibility).
 
 As of v0.4 and above, ArchiveBox uses the Django migrations system for deterministic, atomic, safe upgrades, so your DB should always be left in a consistent state in the event of a failure or power outage. If you need help fixing a corrupted collection, open an issue using the link below.
 
