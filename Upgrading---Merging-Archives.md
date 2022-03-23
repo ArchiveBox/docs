@@ -52,3 +52,37 @@ archivebox init        # run init to upgrade the collection to the latest versio
 3. Drag everything under `archive/*` in each old collections into the new empty collection's `~/archiebox_new/archive/` folder
 4. Run `archivebox init` in the new collection to regenerate the new index
 5. The new collection should now contain all the entries from the old collections combined
+
+---
+
+## Modify the ArchiveBox SQLite3 DB directly
+
+If you need to automate changes to the ArchiveBox DB (for example adding a User from an Ansible script), you can modify the SQLite3 DB directly.
+
+**As an example, here's how to add a user row manually:**
+
+1. First, generate the hashed password in a Python shell using Django's `make_password` function.
+
+This can be done on any machine with Python 3+, it doesn't have to have ArchiveBox installed.
+  ```bash
+pip3 install django==3.1.3   # install the django version used by ArchiveBox
+python3                      # open any python shell with django available, doesn't have to be the archivebox shell
+```
+```python3
+>>> from django.contrib.auth.hashers import make_password
+>>> make_password('somePasswordHere', 'someSaltHere', 'pbkdf2_sha256')         # choose a password and a salt (can be anything 12 chars long)
+'pbkdf2_sha256$216000$someSaltHere$styW1Uoy8SHp3zbSwGRp20C9mPjOHVjP9rl5a8/UOVE='
+```
+2. Use the generated hashed password to insert a new User row in the SQLite3 database directly:
+  ```bash
+cd ~/archivebox         # cd into your archivebox collection dir
+sqlite3 index.sqlite3   # open the db with sqlite3 shell
+```
+```sql
+INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined")
+VALUES ('pbkdf2_sha256$216000$someSaltHere$+2beZufc3JUXnmn0tG+2peJEBh7MjxPYmT3YfIFzEl0=', NULL, 0, 'someUsername', '', '', 'someEmail@example.com', 0, 1, '2022-03-22 23:34:02.333042')
+```
+  Replace the values above with the desired username, email, and password hash from python output^.
+
+3. Log in using the new generated user to confirm it works
+    https://localhost:8000/admin/login/ user: `someUsername` pass:`somePasswordHere`
