@@ -4,6 +4,7 @@
 You can specify exact versions with pip like so: `pip install archivebox==0.6.3` or with docker `docker pull archivebox/archivebox:0.6.3`. Upgrading directly across multiple major versions may work in some cases, but is not recommended for maximum data safety.*
 
 The list of all ArchiveBox releases/versions can be found here: https://github.com/ArchiveBox/ArchiveBox/releases
+Read the release notes carefully for each version you run to make sure there are no quirks around upgrading!
 
 **Make sure you have a backup of your `index.sqlite3` and `archive/` content before upgrading!**
 
