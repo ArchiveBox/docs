@@ -9,7 +9,7 @@
 
 **ℹ️ Details:**
 
-As of v0.4 and above, ArchiveBox uses the Django migrations system for deterministic, atomic, safe upgrades, so your DB should always be left in a consistent state in the event of a failure or power outage.
+As of v0.4 and above, ArchiveBox uses the Django migrations system for deterministic, atomic, safe upgrades, so your DB should always be left in a consistent state in the event of a failure or power outage. If you need help fixing a corrupted collection, open an issue using the link below.
 
 *Note: It's recommended to only upgrade one major version at a time. e.g. if you're on `v0.4.14`, upgrade to `v0.4.2`, then to `v0.5.6` (the latest available minor version for each major version), then from there to `v0.6.3`, not straight from `v0.4.14` -> `v0.6.3`.
 You can specify exact versions with pip like so: `pip install archivebox==0.6.3` or with docker `docker pull archivebox/archivebox:0.6.3`. Upgrading directly across multiple major versions may work in some cases, but is not recommended for maximum data safety.*
