@@ -92,7 +92,20 @@ archivebox init        # run init to upgrade the collection to the latest versio
 
 If you need to automate changes to the ArchiveBox DB (for example adding a User from an Ansible script), you can modify the SQLite3 DB directly.
 
-**As an example, here's how to add a user row manually:**
+```bash
+cd ~/archivebox         # cd into your archivebox collection dir
+sqlite3 index.sqlite3   # open the db with sqlite3 shell
+```
+
+#### Example: Modifying an existing user's email
+
+```sql
+UPDATE auth_user
+SET email = 'someNewEmail@example.com', is_superuser = 1
+WHERE username = 'someUsernameHere';
+```
+
+#### Example: Adding a new user with a hashed password
 
 1. First, generate the hashed password in a Python shell using Django's `make_password` function.
 
