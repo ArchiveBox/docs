@@ -72,6 +72,8 @@ archivebox init        # run init to upgrade the collection to the latest versio
 
 ## Merge two or more existing archives
 
+Two or more existing ArchiveBox collection dirs can be merged together by simply combining the contents of `archive/*` and re-running `archivebox init` to pull the new Snapshots into the index.
+
 1. Upgrade both old collections to the most recent ArchiveBox version (following instructions above)
   ```bash
   pip install --upgrade archivebox   # or follow instructions above for upgrading w/ Docker
