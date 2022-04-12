@@ -12,7 +12,7 @@ This mode should not be used for archiving entire browser history or authenticat
 
 #### Archiving Private Content
 
-`WARNING! Advanced users only`
+🚨 `WARNING! Advanced users only`
 
 ArchiveBox is able to archive content that requires authentication or cookies, but it comes with some caveats. Create dedicated logins for archiving to access paywalled content, private forums, LAN-only content, etc. then share them with ArchiveBox via Chrome profile + cookies.txt file.
 
@@ -22,12 +22,13 @@ To get started, set [`CHROME_USER_DATA_DIR`](https://github.com/ArchiveBox/Archi
 
 If you're importing private links or authenticated content, you probably don't want to share your archive folder publicly on a webserver, so don't follow the [[Publishing Your Archive]] instructions unless you are only serving it on a trusted LAN or have some sort of authentication in front of it.  Make sure to point ArchiveBox to an output folder with conservative permissions, as it may contain archived content with secret session tokens or pieces of your user data.  You may also wish to encrypt the archive using an encrypted disk image or filesystem like ZFS as it will contain all requests and response data, including session keys, user data, usernames, etc.
 
-**Things to watch out for:**
+⚠️ **Things to watch out for:** ⚠️
 - any cookies / secret state in this profile may be [reflected in responses and saved in the Snapshot output (e.g. in `headers.json`)](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/extractors/headers.py) making it [visible in cleartext to anyone viewing the Snapshot](https://archive.sweeting.me/archive/1613417792.264667/headers.json), (don't use your personal Chrome profile for archiving or people viewing your archive can then authenticate as you!)
 - any secret tokens in URLs (e.g. secret invite links, Google Doc URLs, etc.) are [sent in the URL when submitting to `archive.org`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/extractors/archive_org.py#L46) (unless you set `SAVE_ARCHIVE_DOT_ORG = False`) 
 - domain in URL is [leaked to favicon service](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/extractors/favicon.py#L43) (unless you set `SAVE_FAVICON = False`)
 - [viewing malicious archived JS could allow an attacker to access your other archive items + the admin interface (it executes on the same domain right now, fix is pending)](https://github.com/ArchiveBox/ArchiveBox/issues/239)
 
+<br/>
 <img src="https://i.imgur.com/Jszo4h2.png" width="400px"/>
 
 *An example of a session cookie reflected in `headers.json` visible in the archive.*
