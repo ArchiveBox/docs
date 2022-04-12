@@ -50,15 +50,16 @@ apt update
 apt install google-chrome
 ```
 
-## Troubleshooting
+## Troubleshooting Chromium Install
 
 If you encounter problems setting up Google Chrome or Chromium, see the [Troubleshooting](https://github.com/ArchiveBox/ArchiveBox/wiki/Troubleshooting#chromiumgoogle-chrome) page.
 
 
-## Using a Chromium/Chrome Profile
+---
 
-You may choose to set up a Chromium user profile in order to use your cookies/sessions to log into sites behind authentication/paywall.
+# Setting Up a Chromium User Profile
 
+You may choose to set up a Chrome/Chromium user profile in order to use your cookies/sessions to log into sites behind authentication/paywall during archiving.
 
 You must set up the profile using the exact same version of chrome that ArchiveBox is running (which can be found with `archivebox version`).
 You can download old versions of Chrome in order to match it from https://chromium.cypress.io.
