@@ -228,29 +228,48 @@ More info:
 These issues are uncommon but do come up from time to time (especially when using networked storage, large archives, or multiple ArchiveBox processes for a single collection).  
 Many of these issues are duplicates but contain valuable context and troubleshooting steps if you're trying to figure out the cause of a problem.
 
-#### `Unable to create the django_migrations table (database is locked)`
+
+#### Filesystem doesn't support FSYNC (e.g. network mounts)
+
+The `index.sqlite3` file must be stored on a filesystem that supports FSYNC (most local filesystems) in order to ensure SQLite3 database integrity when multiple ArchiveBox processes may be accessing it simultaneously. However, the `./archive` folder can be on a NAS or other filesystem that does not support FSYNC.
+
+- https://github.com/ArchiveBox/ArchiveBox/issues/742
+- https://github.com/ArchiveBox/ArchiveBox/issues/894
+- https://github.com/ArchiveBox/ArchiveBox/issues/722
+- https://github.com/ArchiveBox/ArchiveBox/issues/456
+
+
+#### Database and filesystem contention issues when running multiple ArchiveBox processes
+
+ArchiveBox can sometimes struggle when archiving many links in parallel with multiple ArchiveBox processes trying to write to the database at the same time, leading to errors like this:
+```logs
+Unable to create the django_migrations table (database is locked)
+```
+
+These errors can also be encountered when there are permissions, network, or filesystem issues preventing writes to the `index.sqlite3` file.
+
 - https://github.com/ArchiveBox/ArchiveBox/issues/946
 - https://github.com/ArchiveBox/ArchiveBox/issues/880
 - https://github.com/ArchiveBox/ArchiveBox/issues/781
 - https://github.com/ArchiveBox/ArchiveBox/issues/601
+- https://github.com/ArchiveBox/ArchiveBox/issues/91
+- https://github.com/ArchiveBox/ArchiveBox/issues/454
+- https://github.com/ArchiveBox/ArchiveBox/issues/234
+- https://github.com/ArchiveBox/ArchiveBox/issues/781
+- https://github.com/ArchiveBox/ArchiveBox/issues/601
 
-#### Filesystem doesn't support FSYNC (e.g. network mounts)
-- https://github.com/ArchiveBox/ArchiveBox/issues/742
+#### Database migrations errors or upgrade issues
 
-#### Database migrations errors when skipping major versions
+Migration or upgrade issues happen occasionally with some niche setups or when skipping major versions during archiving.  
+Always backup your archive before upgrading, but know that migrations are deterministic and atomic using Django's migration system, so a failed migration does not mean your archive is unrecoverable, you just have to downgrade to the previous stable major version then continue upgrading.
+
 - https://github.com/ArchiveBox/ArchiveBox/issues/705
 - https://github.com/ArchiveBox/ArchiveBox/issues/597
 - https://github.com/ArchiveBox/ArchiveBox/issues/596
 - https://github.com/ArchiveBox/ArchiveBox/issues/412
 - https://github.com/ArchiveBox/ArchiveBox/issues/341
 - https://github.com/ArchiveBox/ArchiveBox/issues/962
-
-#### Database and filesystem contention issues when running multiple ArchiveBox processes
-- https://github.com/ArchiveBox/ArchiveBox/issues/91
-- https://github.com/ArchiveBox/ArchiveBox/issues/454
-- https://github.com/ArchiveBox/ArchiveBox/issues/234
-- https://github.com/ArchiveBox/ArchiveBox/issues/781
-- https://github.com/ArchiveBox/ArchiveBox/issues/601
+- https://github.com/ArchiveBox/ArchiveBox/issues/704
 
 Other issues that may be encountered with the ArchiveBox database are listed here:
 - https://github.com/ArchiveBox/ArchiveBox/issues/880
