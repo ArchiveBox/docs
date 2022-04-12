@@ -181,7 +181,7 @@ More info:
 
 ## Repairing a Corrupted Database
 
-This should never happen, and there has only been one report of a user encountering it, but if you ever need to repair a corrupted ArchiveBox index you can run the following steps.
+A corrupted database file can theoretically only happen if an external process or filesystem error corrupts the SQLite3 database (there has only been [one report](https://github.com/ArchiveBox/ArchiveBox/issues/955) of a user encountering this in real life). If you ever need to repair a corrupted ArchiveBox index you can run the following steps.
 
 Generally all index issues should be fixable by running `archivebox init`.  
 You can see the status of Snapshots and find any invalid/orphan/missing snapshots with `archivebox status`.
