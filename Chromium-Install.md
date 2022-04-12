@@ -66,14 +66,27 @@ You can download old versions of Chrome in order to match it from https://chromi
 
 **General steps:**
 
-1. install desired chromium version in directory shared as a Docker volume `/data/chrome-linux/chrome`
-2. run vncserver as archivebox user and run chromium in vnc session to generate cookies
-3. Close chromium in vncserver session
-4. chmod -R ugo+rwx /opt/archivebox/.config/chromium
-5. mount /opt/archivebox/.config/chromium as docker volume /data/chromium
-6. set `archivebox config --set CHROME_USER_DATA_DIR=/data/chromium`
-7. set `archivebox config --set CHROME_BINARY=/data/chrome-linux/chrome` (installed version of chrome now common between host VNC session and docker container)
-8. `chown -R archivebox:archivebox /opt/archivebox/`
+1. Install desired chromium version in new directory inside your data folder `./data/chromium` on the host (outside Docker)
+2. Run [`vncserver`](https://linux.die.net/man/1/vncserver) as `archivebox` user and run chromium in VNC session to generate cookies, then close VNC session
+3. Add the config to `docker-compose.yml` for the chromium data dir and binary mount and config 
+`docker-compose.yml`:
+```yaml
+services:
+    archivebox:
+        ...
+        environment:
+            ...
+            - CHROME_USER_DATA_DIR=/data/chromium/.config/chromium
+            - CHROME_BINARY=/data/chromium/chrome
+        volumes:
+            - ./data:/data
+            - ./data/chromium:/data/chromium
+            ...
+...
+```
+4. Set the permissions on the chromium dir (may need to be done inside Docker with `docker-compose run --rm archivebox <command>`)
+  `chmod -R ugo+rwx ./data/chromium/.config/chromium`
+  `chown -R archivebox:archivebox /data/chromium/`
 
 Now profile is now generated and used by same instance of chrome on docker host and container.
 
