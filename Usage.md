@@ -219,6 +219,7 @@ More info:
 - https://github.com/ArchiveBox/ArchiveBox#-sqlpythonfilesystem-usage
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#modify-the-archivebox-sqlite3-db-directly
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#database-troubleshooting
+- https://stackoverflow.com/questions/1074212/how-can-i-see-the-raw-sql-queries-django-is-running
 
 ## Python Shell Usage
 
@@ -268,6 +269,18 @@ from archivebox import *
         print(Snapshot.objects.filter(is_archived=True).count())
         Snapshot.objects.get(url="https://example.com").as_json()
         add("https://example.com/some/new/url")
+
+# run Python API queries/function calls directly
+>>> print(Snapshot.objects.filter(is_archived=True).count())
+24
+
+# get help info on an object or function
+>>> help(Snapshot)
+...
+
+# show raw SQL queries run
+>>> from django.db import connection
+>>> print(connection.queries)
 ```
 
 For more info and example usage:
@@ -275,10 +288,14 @@ For more info and example usage:
 - https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/main.py
 - https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/config.py
 - https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/core/models.py
+- https://stackoverflow.com/questions/1074212/how-can-i-see-the-raw-sql-queries-django-is-running
 
 
 ## Python API Usage
 
+You can interact with ArchiveBox as a Python library from external scripts or programs.
+
+For example you could create and a script `add_archivebox_url.py` like so:
 ```python
 import os
 DATA_DIR = '~/archivebox/data'
