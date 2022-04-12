@@ -192,6 +192,21 @@ bookmarks, you can use the `ONLY_NEW` environment variable. This is useful if
 you want to import a bookmark dump periodically and want to skip broken links
 which are already in the index.
 
+## SQL Shell Usage
+
+Explore the SQLite3 DB a bit to see whats available using the SQLite3 shell:
+```bash
+cd ~/archivebox
+sqlite3 index.sqlite3
+
+# example usage:
+SELECT * FROM snapshot;
+UPDATE auth_user SET email = 'someNewEmail@example.com' WHERE username = 'someUsernameHere';
+...
+```
+
+More info: https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#modify-the-archivebox-sqlite3-db-directly
+
 ## Python Shell Usage
 
 Explore the Python API a bit to see whats available using the archivebox shell:
