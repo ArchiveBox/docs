@@ -22,7 +22,8 @@ To get started, set [`CHROME_USER_DATA_DIR`](https://github.com/ArchiveBox/Archi
 
 If you're importing private links or authenticated content, you probably don't want to share your archive folder publicly on a webserver, so don't follow the [[Publishing Your Archive]] instructions unless you are only serving it on a trusted LAN or have some sort of authentication in front of it.  Make sure to point ArchiveBox to an output folder with conservative permissions, as it may contain archived content with secret session tokens or pieces of your user data.  You may also wish to encrypt the archive using an encrypted disk image or filesystem like ZFS as it will contain all requests and response data, including session keys, user data, usernames, etc.
 
-⚠️ **Things to watch out for:** ⚠️
+#### ⚠️ **Things to watch out for:** ⚠️
+
 - any cookies / secret state present in a Chrome user profile or `cookies.txt` file may be [reflected in server responses and saved in the Snapshot output (e.g. in `headers.json`)](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/extractors/headers.py) making it [visible in cleartext to anyone viewing the Snapshot](https://archive.sweeting.me/archive/1613417792.264667/headers.json), (don't use your personal Chrome profile for archiving or people viewing your archive can then authenticate as you!)
 - any secret tokens embedded in URLs (e.g. secret invite links, Google Doc URLs, etc.) will be visible on `archive.org` as the URLs are not filtered [when saving to `archive.org`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/extractors/archive_org.py#L46) (disable submitting to Archive.org entirely with `SAVE_ARCHIVE_DOT_ORG=False`) 
 - the domain portion in archived URLs is [sent to a favicon service](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/extractors/favicon.py#L43) in order to retrieve an icon more reliably than a janky internal implementation would be able to (if leaking domains is a concern, you can disable the favicon fetching entirely with `SAVE_FAVICON=False`)
@@ -74,9 +75,11 @@ More info:
 
 ### Filesystem
 
-How much are you planning to archive?  Only a few bookmarked articles, or thousands of pages of browsing history a day?  If it's only 1-50 pages a day, you can probably just stick it in a normal folder on your hard drive, but if you want to go over 100 pages a day, you will likely want to put your archive on a compressed/deduplicated/encrypted disk image or filesystem like ZFS. Other distributed/networked/checksummed filesystems that have also been reported to work (but are not technically officially supported) include SMB, NFS, Ceph, Unraid, and BTRFS. Make sure the filesystem you're using supports FSYNC
+How much are you planning to archive?  Only a few bookmarked articles, or thousands of pages of browsing history a day?  If it's only 1-50 pages a day, you can probably just stick it in a normal folder on your hard drive, but if you want to go over 100 pages a day, you will likely want to put your archive on a compressed/deduplicated/encrypted disk image or filesystem like ZFS. Other distributed/networked/checksummed filesystems that have also been reported to work (but are not technically officially supported) include SMB, NFS, Ceph, Unraid, and BTRFS. Make sure the filesystem you're using supports FSYNC. Some filesystems are unable to store more than a certain number of directory entries, and your total number of snapshots in `./archive` may be capped as a result. Some other filesystems begin to have performance degradations but continue to function when the directory entry count gets too high. Generally this isn't an issue unless you have more than ~20,000 Snapshot folders in `./archive`.
 
-Unless `--delete` is passed to `archivebox remove`, Snapshots removed from the index remain in the filesystem and their `./archive/<timestamp>` folders need to be deleted manually to be fully removed. Imported URLs are also logged separately in `./sources` and `./logs` and should be removed manually as well to clear all traces of a URL added by accident.
+#### Purging entries
+
+Unless `--delete` is passed to `archivebox remove`, Snapshots removed from the index remain in the filesystem and their `./archive/<timestamp>` folders need to be deleted manually to be fully removed. Imported URLs are also logged separately in `./sources`, `./logs`, and the Sonic full-text index `./sonic` and should be removed manually as well to clear all traces of a URL added by accident. You can search for a URL on the filesystem you're trying to remove using `grep -a -r "https://example.com/url/to/search/for"`.
 
 #### Permissions
 
@@ -93,6 +96,8 @@ More info:
 Are you publishing your archive? If so, make sure you're only serving it as HTML and not accidentally running it as php or cgi, and put it on its own domain not shared with other services.  This is done in order to avoid cookies leaking between your main domain and domains hosting content you don't control.  Many companies put user provided files on separate domains like googleusercontent.com and github.io to avoid this problem.
 
 Published archives automatically include a `robots.txt` `Dissallow: /` to block search engines from indexing them. You may still wish to publish your contact info in the index footer though using [`FOOTER_INFO`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#FOOTER_INFO) so that you can respond to any DMCA and copyright takedown notices if you accidentally rehost copyrighted content.
+
+⚠️ Make sure to read all the warnings [above]() about the dangers of exposing Chrome profile data, cookies, secret tokens in URLs, and the risks of viewing archived JS on a shared origin.
 
 More info:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Publishing-Your-Archive
