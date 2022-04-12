@@ -68,7 +68,7 @@ You can download old versions of Chrome in order to match it from https://chromi
 
 1. Install desired chromium version in new directory inside your data folder `./data/chromium` on the host (outside Docker)
 2. Run [`vncserver`](https://linux.die.net/man/1/vncserver) as `archivebox` user and run chromium in VNC session to generate cookies, then close VNC session
-3. Add the config to `docker-compose.yml` to mount the `./data/chromium` volume and environemnt variables telling ArchiveBox to it 
+3. Add the config to `docker-compose.yml` to mount the `./data/chromium` volume and environment variables telling ArchiveBox to use it 
   `docker-compose.yml`:  
   ```yaml
 services:
