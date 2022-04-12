@@ -238,10 +238,10 @@ Many of these issues are duplicates but contain valuable context and troubleshoo
 
 The `index.sqlite3` file must be stored on a filesystem that supports FSYNC (most local filesystems) in order to ensure SQLite3 database integrity when multiple ArchiveBox processes may be accessing it simultaneously. However, the `./archive` folder can be on a NAS or other filesystem that does not support FSYNC.
 
-- https://github.com/ArchiveBox/ArchiveBox/issues/742
-- https://github.com/ArchiveBox/ArchiveBox/issues/894
-- https://github.com/ArchiveBox/ArchiveBox/issues/722
-- https://github.com/ArchiveBox/ArchiveBox/issues/456
+- [Archivebox hangs when initializing collection on network drive that doesn't support FSYNC #742](https://github.com/ArchiveBox/ArchiveBox/issues/742)
+- [Question: How to run AB on localhost but store data on NAS? #894](https://github.com/ArchiveBox/ArchiveBox/issues/894)
+- [Question: Docker on Windows archiving to an SMB path that doesn't support FSYNC #722](https://github.com/ArchiveBox/ArchiveBox/issues/722)
+- [Support for network drives or filesystems that don't implement FSYNC #456](https://github.com/ArchiveBox/ArchiveBox/issues/456)
 
 More info:
 - https://www.geeksforgeeks.org/python-os-fsync-method/
@@ -258,15 +258,15 @@ Unable to create the django_migrations table (database is locked)
 
 These errors can also be encountered when there are permissions, network, or filesystem issues preventing writes to the `index.sqlite3` file.
 
-- https://github.com/ArchiveBox/ArchiveBox/issues/946
-- https://github.com/ArchiveBox/ArchiveBox/issues/880
-- https://github.com/ArchiveBox/ArchiveBox/issues/781
-- https://github.com/ArchiveBox/ArchiveBox/issues/601
-- https://github.com/ArchiveBox/ArchiveBox/issues/91
-- https://github.com/ArchiveBox/ArchiveBox/issues/454
-- https://github.com/ArchiveBox/ArchiveBox/issues/234
-- https://github.com/ArchiveBox/ArchiveBox/issues/781
-- https://github.com/ArchiveBox/ArchiveBox/issues/601
+- [Question: Unable to create the django_migrations table (database is locked) - When OUTPUT_DIR to SAMBA share #946](https://github.com/ArchiveBox/ArchiveBox/issues/946)
+- [Question: ...Unable to create the django_migrations table (database is locked) #880](https://github.com/ArchiveBox/ArchiveBox/issues/880)
+- [Database is locked and other weird behavior when doing simultaneous adds #781](https://github.com/ArchiveBox/ArchiveBox/issues/781)
+- [Bugfix: Retry on "database locked" error (or add support for PostgreSQL/MySQL DB backend) #601](https://github.com/ArchiveBox/ArchiveBox/issues/601)
+- [Architecture: Use multiple cores to run link archiving in parallel #91](https://github.com/ArchiveBox/ArchiveBox/issues/91)
+- [ArchiveBox index corruption when running multiple import processes on v0.5.0 #454](https://github.com/ArchiveBox/ArchiveBox/issues/454)
+- [Architecture: Concurrent runs accidentally delete each other's temp files, leaving the index broken #234](https://github.com/ArchiveBox/ArchiveBox/issues/234)
+- [Database is locked and other weird behavior when doing simultaneous adds #781](https://github.com/ArchiveBox/ArchiveBox/issues/781)
+- [Bugfix: Retry on "database locked" error (or add support for PostgreSQL/MySQL DB backend) #601](https://github.com/ArchiveBox/ArchiveBox/issues/601)
 
 More info:
 - https://www.sqlite.org/lockingv3.html
@@ -284,13 +284,13 @@ Always backup your archive before upgrading, but know that migrations are determ
 archivebox init  # this usually applies any necesary migrations (atomically and indempotently, safe to run multiple times)
 ```
 
-- https://github.com/ArchiveBox/ArchiveBox/issues/705
-- https://github.com/ArchiveBox/ArchiveBox/issues/597
-- https://github.com/ArchiveBox/ArchiveBox/issues/596
-- https://github.com/ArchiveBox/ArchiveBox/issues/412
-- https://github.com/ArchiveBox/ArchiveBox/issues/341
-- https://github.com/ArchiveBox/ArchiveBox/issues/962
-- https://github.com/ArchiveBox/ArchiveBox/issues/704
+- [Bug: NOT NULL constraint failed: core_archiveresult.output when upgrading v0.4.24 archive to v0.6 #705](https://github.com/ArchiveBox/ArchiveBox/issues/705)
+- [Bugfix: sqlite3.IntegrityError: NOT NULL constraint failed: core_archiveresult.cmd_version and .output #597](https://github.com/ArchiveBox/ArchiveBox/issues/597)
+- [Error: django.db.utils.IntegrityError: UNIQUE constraint failed: core_tag.slug  #596](https://github.com/ArchiveBox/ArchiveBox/issues/596)
+- [Bugfix: django.db.utils.IntegrityError: UNIQUE constraint failed: core_snapshot.timestamp #412](https://github.com/ArchiveBox/ArchiveBox/issues/412)
+- [Best Practices for Backup/Restore #341](https://github.com/ArchiveBox/ArchiveBox/issues/341)
+- [Bug: Running archivebox update --index-only doesn't upgrade Snapshot index.{html,json} files #962](https://github.com/ArchiveBox/ArchiveBox/issues/962)
+- [Feature Request: Deduplicate files on archives #704](https://github.com/ArchiveBox/ArchiveBox/issues/704)
 
 More info:
 - https://docs.djangoproject.com/en/4.0/topics/migrations/
