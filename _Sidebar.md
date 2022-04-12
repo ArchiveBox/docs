@@ -9,19 +9,22 @@
  - [[Quickstart]]
  - [[Install]]
  - [[Docker]]
-
-# Documentation
-
  - [[Usage]]
  - [[Configuration]]
  - [Supported Sources](https://github.com/ArchiveBox/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive)
  - [Supported Outputs](https://github.com/ArchiveBox/ArchiveBox#output-formats)
+
+# Advanced
+
  - [[Troubleshooting]]
  - [[Scheduled Archiving]]
  - [[Publishing Your Archive]]
  - [[Chromium Install]]
  - [[Security Overview]]
  - [[Upgrading or Merging Archives]]
+ - [Python API Reference](https://docs.archivebox.io/en/latest/modules.html)
+ - [REST API Reference](https://github.com/ArchiveBox/ArchiveBox/issues/496)
+ - [Developer Documentation](https://github.com/ArchiveBox/ArchiveBox#archivebox-development)
 
 # More Info
 
