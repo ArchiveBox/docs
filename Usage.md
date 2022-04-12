@@ -170,6 +170,12 @@ The `OUTPUT_DIR` folder (usually whatever folder you run the `archivebox` comman
       ...
 ```
 
+For more info about ArchiveBox's database/filesystem layout and troubleshooting steps:
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#output-folder
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#modify-the-archivebox-sqlite3-db-directly
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#database-troubleshooting
+
 ### Large Archives
 
 I've found it takes about an hour to download 1000 articles, and they'll take up roughly 1GB.  
@@ -192,6 +198,10 @@ bookmarks, you can use the `ONLY_NEW` environment variable. This is useful if
 you want to import a bookmark dump periodically and want to skip broken links
 which are already in the index.
 
+For more info about troubleshooting filesystem permissions, performance, or issues when running on a NAS:
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#output-folder
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#database-troubleshooting
+
 ## SQL Shell Usage
 
 Explore the SQLite3 DB a bit to see whats available using the SQLite3 shell:
@@ -205,7 +215,10 @@ UPDATE auth_user SET email = 'someNewEmail@example.com' WHERE username = 'someUs
 ...
 ```
 
-More info: https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#modify-the-archivebox-sqlite3-db-directly
+More info:
+- https://github.com/ArchiveBox/ArchiveBox#-sqlpythonfilesystem-usage
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#modify-the-archivebox-sqlite3-db-directly
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#database-troubleshooting
 
 ## Python Shell Usage
 
@@ -257,6 +270,10 @@ from archivebox import *
         add("https://example.com/some/new/url")
 ```
 
+For an advanced example of using the ArchiveBox Python shell to reset a user's password see:
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#example-adding-a-new-user-with-a-hashed-password
+
+
 ## Python API Usage
 
 ```python
@@ -276,4 +293,4 @@ server(...)
 ...
 ```
 
-For more information see the [Python API Reference](https://docs.archivebox.io/en/latest/archivebox.html).
+For more information see the [Python API Reference](https://docs.archivebox.io/en/latest/archivebox.html), [Developer Documentation](https://github.com/ArchiveBox/ArchiveBox#archivebox-development), and [Python source code](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/).
