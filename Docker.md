@@ -11,11 +11,13 @@ Make sure you have Docker installed and set up on your machine before following 
 - [Overview](#)
 - [Docker Compose](#docker-compose) (recommended way)
   - [Setup](#setup)
+  - [Upgrading](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#upgrading-with-docker-compose-%EF%B8%8F)
   - [Usage](#usage)
   - [Accessing the data](#accessing-the-data)
   - [Configuration](#configuration)
 - [Plain Docker](#docker)
   - [Setup](#setup-1)
+  - [Upgrading](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#upgrading-with-plain-docker)
   - [Usage](#usage-1)
   - [Accessing the data](#accessing-the-data-1)
   - [Configuration](#configuration-1)
@@ -63,6 +65,10 @@ curl https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/etc/sonic.cf
 # to backfill previously added snapshots into the full text index, run:
 docker-compose run archivebox update --index-only
 ```
+
+### Upgrading
+
+See https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#upgrading-with-docker-compose-%EF%B8%8F
 
 ### Usage
 
@@ -142,6 +148,10 @@ echo 'https://example.com' | docker run -i -v $PWD:/data archivebox/archivebox a
 Replace `~/ArchiveBox` in the command above with the full path to a folder to use to store your archive on the host, or name of a Docker data volume.
 
 Make sure the data folder you use host is either a new, uncreated path, or if it already exists make sure it has permissions initially set to `777` so that the ArchiveBox command is able to set it to the specified `OUTPUT_PERMISSIONS` config setting on the first run.
+
+### Upgrading
+
+See https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#upgrading-with-plain-docker
 
 ### Usage
 
