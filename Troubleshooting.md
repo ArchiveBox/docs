@@ -8,6 +8,7 @@ What are you having an issue with?:
 - [Configuration](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration)
 - [Archiving Process](#Archiving)
 - [Hosting the Archive](#Hosting-the-Archive)
+- [Database Issues](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#database-troubleshooting)
 
 ---
 
@@ -108,3 +109,17 @@ with some of the URLs that failed to be archived and I'll investigate.
 If you're having issues trying to host the archive via nginx, make sure you already have nginx running with SSL.
 If you don't, google around, there are plenty of tutorials to help get that set up.  Open an [issue](https://github.com/ArchiveBox/ArchiveBox/issues)
 if you have problem with a particular nginx config.
+
+### Other database or filesystem issues
+
+See here for more info:
+
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#database-troubleshooting
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#repairing-a-corrupted-database
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#modify-the-archivebox-sqlite3-db-directly
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#merge-two-or-more-existing-archives
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#python-shell-usage
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#sql-shell-usage
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#do-not-run-as-root
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#output-folder
