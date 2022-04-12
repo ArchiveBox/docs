@@ -183,6 +183,11 @@ More info:
 
 A corrupted database file can theoretically only happen if an external process or filesystem error corrupts the SQLite3 database (there has only been [one report](https://github.com/ArchiveBox/ArchiveBox/issues/955) of a user encountering this in real life). If you ever need to repair a corrupted ArchiveBox index you can run the following steps.
 
+Note this is specific to this error, these steps do not apply to other migrations/db errors (see below for other issues):
+```logs
+sqlite3.DatabaseError: database disk image is malformed    
+```
+
 Generally all index issues should be fixable by running `archivebox init`.  
 You can see the status of Snapshots and find any invalid/orphan/missing snapshots with `archivebox status`.
 
@@ -238,6 +243,11 @@ The `index.sqlite3` file must be stored on a filesystem that supports FSYNC (mos
 - https://github.com/ArchiveBox/ArchiveBox/issues/722
 - https://github.com/ArchiveBox/ArchiveBox/issues/456
 
+More info:
+- https://www.geeksforgeeks.org/python-os-fsync-method/
+- https://man7.org/linux/man-pages/man2/fdatasync.2.html
+- https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html
+- https://eclecticlight.co/2022/02/18/how-can-you-trust-a-disk-to-write-data/
 
 #### Database and filesystem contention issues when running multiple ArchiveBox processes
 
@@ -258,10 +268,21 @@ These errors can also be encountered when there are permissions, network, or fil
 - https://github.com/ArchiveBox/ArchiveBox/issues/781
 - https://github.com/ArchiveBox/ArchiveBox/issues/601
 
+More info:
+- https://www.sqlite.org/lockingv3.html
+- https://charlesleifer.com/blog/going-fast-with-sqlite-and-python/
+- https://victoria.dev/blog/sqlite-in-production-with-wal/
+- https://code.djangoproject.com/ticket/29280
+- https://stackoverflow.com/questions/47761570/how-can-i-avoid-database-is-locked-sqlite3-errors-in-django
+
 #### Database migrations errors or upgrade issues
 
 Migration or upgrade issues happen occasionally with some niche setups or when skipping major versions during archiving.  
 Always backup your archive before upgrading, but know that migrations are deterministic and atomic using Django's migration system, so a failed migration does not mean your archive is unrecoverable, you just have to downgrade to the previous stable major version then continue upgrading.
+
+```bash
+archivebox init  # this usually applies any necesary migrations (atomically and indempotently, safe to run multiple times)
+```
 
 - https://github.com/ArchiveBox/ArchiveBox/issues/705
 - https://github.com/ArchiveBox/ArchiveBox/issues/597
@@ -270,6 +291,13 @@ Always backup your archive before upgrading, but know that migrations are determ
 - https://github.com/ArchiveBox/ArchiveBox/issues/341
 - https://github.com/ArchiveBox/ArchiveBox/issues/962
 - https://github.com/ArchiveBox/ArchiveBox/issues/704
+
+More info:
+- https://docs.djangoproject.com/en/4.0/topics/migrations/
+- https://realpython.com/django-migrations-a-primer/
+- https://realpython.com/digging-deeper-into-migrations/
+- https://www.kite.com/blog/python/django-database-migrations-overview/
+- https://markusholtermann.eu/2021/06/writing-safe-database-migrations-in-django/
 
 #### Related Documents
 
