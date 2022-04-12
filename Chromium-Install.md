@@ -84,10 +84,11 @@ services:
             ...
 ...
 ```
+
 4. Set the permissions on the chromium dir  
-    `chmod -R ugo+rwx ./data/chromium/.config/chromium`  
-    `chown -R archivebox:archivebox /data/chromium/`  
-    (may need to be done inside Docker with `docker-compose run --rm archivebox <command>`)
+  `chmod -R ugo+rwx ./data/chromium/.config/chromium`  
+  `chown -R archivebox:archivebox /data/chromium/`  
+  (may need to be done inside Docker with `docker-compose run --rm archivebox <command>`)
 
 Now profile is now generated and used by same instance of chrome on docker host and container.
 
