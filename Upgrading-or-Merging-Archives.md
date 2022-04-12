@@ -60,8 +60,9 @@ docker kill <image>    # stop any currently running archivebox versions
 
 docker pull archivebox/archivebox
 docker run -v $PWD:/data -it archivebox/archivebox init --setup  # upgrade the collection to the latest version
-# restart archivebox server container if needed
-docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox server
+
+# restart the archivebox server container if needed
+docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox server 0.0.0.0:8000
 ```
 
 ### Upgrading with a package manager
@@ -197,9 +198,19 @@ More info:
 
 ## Database Troubleshooting
 
-These issues are uncommon but do come up from time to time (especially when using networked storage, large archives, or multiple ArchiveBox processes for a single collection).  
-Many of these issues are duplicates but contain valuable context and troubleshooting steps if you're trying to figure out the cause of a problem.
+Database and filesystem issues are uncommon but do come up from time to time (especially when using networked storage, large archives, or multiple ArchiveBox processes for a single collection).  
 
+*ℹ️ Generally, these commands can help you resolve most issues:*
+```bash
+archivebox init                 # upgrade the archivebox collection
+archivebox init --setup         # upgrade the archivebox collection and all dependencies
+archivebox update --index-only  # force an upgrade of some of the archivebox index/collection files
+archivebox server --debug       # run the server with more verbose debug log output
+archivebox shell                # access the Python API / Django management shell
+sqlite3 index.sqlite3           # access the SQLite3 SQL database shell
+```
+
+Don't be scared by the volume of content here. Almost all of these issues linked below are duplicates or old resolved bugs, but they contain valuable context and troubleshooting steps if you're trying to figure out the cause of a problem with your setup.
 
 #### Filesystem doesn't support FSYNC (e.g. network mounts)
 
