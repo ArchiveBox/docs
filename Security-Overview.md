@@ -93,7 +93,7 @@ More info:
 
 ### Publishing
 
-Are you publishing your archive? If so, make sure you're only serving it as HTML and not accidentally running it as php or cgi, and put it on its own domain not shared with other services.  This is done in order to avoid cookies leaking between your main domain and domains hosting content you don't control.  Many companies put user provided files on separate domains like googleusercontent.com and github.io to avoid this problem.
+Are you [publishing your archive](https://github.com/ArchiveBox/ArchiveBox/wiki/Publishing-Your-Archive)? If so, make sure you use the built-in `archivebox server` or only serve the static export as static HTML (don't accidentally serve it as PHP or CGI or you may execute malicious archived files by accident). Regardless of how you serve it, make sure to put it on its own domain not shared with other services.  This is done in order to avoid cookies leaking between your main domain and domains hosting content you don't control. A common practice is to put user provided / untrusted archived content on completely separate top-level domains from anything else (like how Google and Github do with `googleusercontent.com` and `github.io`).
 
 Published archives automatically include a `robots.txt` `Dissallow: /` to block search engines from indexing them. You may still wish to publish your contact info in the index footer though using [`FOOTER_INFO`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#FOOTER_INFO) so that you can respond to any DMCA and copyright takedown notices if you accidentally rehost copyrighted content.
 
