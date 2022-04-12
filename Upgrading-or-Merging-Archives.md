@@ -50,6 +50,11 @@ docker-compose pull    # pull the latest image version from Docker Hub
 docker-compose up      # collection will be automatically upgraded as it starts
 ```
 
+More info:
+- https://github.com/ArchiveBox/ArchiveBox#%EF%B8%8F-easy-setup
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Docker#docker-compose
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Docker#setup
+
 ### Upgrading with plain Docker
 
 Upgrading with plain Docker is similar to the process with Docker Compose, but you have to run `archivebox init` manually at the end to finish the process.
@@ -64,6 +69,11 @@ docker run -v $PWD:/data -it archivebox/archivebox init --setup  # upgrade the c
 # restart the archivebox server container if needed
 docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox server 0.0.0.0:8000
 ```
+
+More info:
+- https://github.com/ArchiveBox/ArchiveBox#%EF%B8%8F-easy-setup
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Docker#docker
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Docker#setup-1
 
 ### Upgrading with a package manager
 
@@ -88,7 +98,17 @@ archivebox update --index-only  # optionally force an update of the snapshot ind
 
 archivebox status      # check that everything succeeded
 ```
-*More detailed instructions here: https://github.com/ArchiveBox/ArchiveBox#-package-manager-setup*
+
+More info:
+- https://github.com/ArchiveBox/ArchiveBox#-package-manager-setup
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Install#manual-setup
+- https://github.com/ArchiveBox/pip-archivebox
+- https://github.com/ArchiveBox/homebrew-archivebox
+- https://github.com/ArchiveBox/docker-archivebox
+- https://github.com/ArchiveBox/debian-archivebox
+- https://github.com/ArchiveBox/electron-archivebox
+- https://aur.archlinux.org/packages/archivebox
+- https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/misc/archivebox/default.nix
 
 ---
 
