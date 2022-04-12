@@ -4,11 +4,12 @@
 
 What are you having an issue with?:
 
-- [Installing](#Installing)
-- [Configuration](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration)
-- [Archiving Process](#Archiving)
-- [Hosting the Archive](#Hosting-the-Archive)
-- [Database Issues](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#database-troubleshooting)
+- [Installing ArchiveBox](#Installing)
+- [Upgrading ArchiveBox](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives)
+- [Configuring ArchiveBox](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration)
+- [Archiving content with ArchiveBox](#Archiving)
+- [Hosting your collection publicly](#Hosting-the-Archive)
+- [Database and filesystem issues](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#database-troubleshooting)
 
 ---
 
