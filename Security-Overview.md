@@ -97,7 +97,7 @@ Are you publishing your archive? If so, make sure you're only serving it as HTML
 
 Published archives automatically include a `robots.txt` `Dissallow: /` to block search engines from indexing them. You may still wish to publish your contact info in the index footer though using [`FOOTER_INFO`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#FOOTER_INFO) so that you can respond to any DMCA and copyright takedown notices if you accidentally rehost copyrighted content.
 
-⚠️ Make sure to read all the warnings [above]() about the dangers of exposing Chrome profile data, cookies, secret tokens in URLs, and the risks of viewing archived JS on a shared origin.
+⚠️ Make sure to read all the warnings [above](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#%EF%B8%8F-things-to-watch-out-for-%EF%B8%8F) about the dangers of exposing Chrome profile data, cookies, secret tokens in URLs, and the risks of viewing archived JS on a shared origin before publishing your archive.
 
 More info:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Publishing-Your-Archive
