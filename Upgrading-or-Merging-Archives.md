@@ -37,7 +37,10 @@ More info:
 
 ---
 
-### Upgrading with Docker Compose
+### Upgrading with Docker Compose ⭐️
+
+Using Docker Compose is recommended because it makes upgrading a breeze! ✨  
+Pulling and running the latest version automatically upgrades the ArchiveBox collection and all of ArchiveBox's internal dependencies.
 
 ```bash
 cd ~/archivebox        # or wherever your data folder is
@@ -48,6 +51,8 @@ docker-compose up      # collection will be automatically upgraded as it starts
 ```
 
 ### Upgrading with plain Docker
+
+Upgrading with plain Docker is similar to the process with Docker Compose, but you have to run `archivebox init` manually at the end to finish the process.
 
 ```bash
 docker ps -a -q  --filter ancestor=archivebox/archivebox  # find any currently running archivebox containers
@@ -61,6 +66,8 @@ docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox server
 
 ### Upgrading with a package manager
 
+Package manager releases take a lot of effort to maintain ([contributions welcome!](https://github.com/ArchiveBox/ArchiveBox/wiki/Donations)) and sometimes lag behind the Docker releases. We make a best effort to have the latest release available through all channels within a reasonable timeframe.
+
 ```bash
 cd ~/archivebox        # or wherever your data folder is
 killall archivebox     # stop the currently running archivebox version
@@ -71,10 +78,14 @@ pip install --upgrade archivebox
 brew upgrade archivebox
 # or
 apt install --upgrade archivebox
-# or
+# or with the optional auto-installer script
 curl -sSL 'https://get.archivebox.io' | sh
 
 archivebox init        # run init to upgrade the collection to the latest version
+
+archivebox update --index-only  # optionally force an update of the snapshot index files (normally done lazily, see issue #962 for more info)
+
+archivebox status      # check that everything succeeded
 ```
 *More detailed instructions here: https://github.com/ArchiveBox/ArchiveBox#-package-manager-setup*
 
@@ -124,7 +135,7 @@ Two or more existing ArchiveBox collection dirs can be merged together by simply
   cd /path/to/archivebox_new
   archivebox status
 
-  # optionally update the snapshot index.{json,html} files (normally done lazily)
+  # optionally force an update of the snapshot index files (normally done lazily)
   archivebox update --index-only
   ```
   For more information about why Snapshot index files are usually updated lazily, see: https://github.com/ArchiveBox/ArchiveBox/issues/962
