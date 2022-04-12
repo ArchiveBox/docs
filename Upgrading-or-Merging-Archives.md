@@ -179,55 +179,6 @@ More info:
 
 ---
 
-## Repairing a Corrupted Database
-
-A corrupted database file can theoretically only happen if an external process or filesystem error corrupts the SQLite3 database (there has only been [one report](https://github.com/ArchiveBox/ArchiveBox/issues/955) of a user encountering this in real life). If you ever need to repair a corrupted ArchiveBox index you can run the following steps.
-
-Note this is specific to this error, these steps do not apply to other migrations/db errors (see below for other issues):
-```logs
-sqlite3.DatabaseError: database disk image is malformed    
-```
-
-Generally all index issues should be fixable by running `archivebox init`.  
-You can see the status of Snapshots and find any invalid/orphan/missing snapshots with `archivebox status`.
-
-**Error output:**
-
-```python3
-[i] [2022-03-24 20:37:27] ArchiveBox v0.6.2: archivebox init                                                                                                                                  
-    > /data                                                                                                                                                                                   
-                                                                                                                                                                                              
-[^] Verifying and updating existing ArchiveBox collection to v0.6.2...                                                                                                                        
-----------------------------------------------------------------------                                                                                                                        
-                                                                                                                                                                                              
-[*] Verifying archive folder structure...                                                                                                                                                     
-    + ./archive, ./sources, ./logs...                                                                                                                                                         
-    + ./ArchiveBox.conf...                                                                                                                                                                    
-                                                                                                                                                                                              
-[*] Verifying main SQL index and running any migrations needed...                                                                                                                             
-Traceback (most recent call last):                                                                                                                                                            
-  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 82, in _execute                                                                                             
-    return self.cursor.execute(sql)                                                                                                                                                           
-  File "/usr/local/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 411, in execute                                                                                      
-    return Database.Cursor.execute(self, query)                                                                                                                                               
-sqlite3.DatabaseError: database disk image is malformed    
-```
-
-**Steps to fix:**
-
-```bash
-cd ~/archivebox
-echo '.dump' | sqlite3 index.sqlite3 | sqlite3 repaired_index.sqlite3
-mv index.sqlite3 corrupt_index.sqlite3
-mv repaired_index.sqlite3 index.sqlite3
-```
-
-More info:
-- https://github.com/ArchiveBox/ArchiveBox/issues/955
-- https://stackoverflow.com/questions/5274202/sqlite3-database-or-disk-is-full-the-database-disk-image-is-malformed
-
----
-
 ## Database Troubleshooting
 
 These issues are uncommon but do come up from time to time (especially when using networked storage, large archives, or multiple ArchiveBox processes for a single collection).  
@@ -299,7 +250,58 @@ More info:
 - https://www.kite.com/blog/python/django-database-migrations-overview/
 - https://markusholtermann.eu/2021/06/writing-safe-database-migrations-in-django/
 
-#### Related Documents
+
+#### Repairing a corrupted SQLite3 database file
+
+A corrupted database file can theoretically only happen if an external process or filesystem error corrupts the SQLite3 database (there has only been [one report](https://github.com/ArchiveBox/ArchiveBox/issues/955) of a user encountering this in real life). If you ever need to repair a corrupted ArchiveBox index you can run the following steps.
+
+Note this is specific to this error, these steps do not apply to other migrations/db errors (see below for other issues):
+```logs
+sqlite3.DatabaseError: database disk image is malformed    
+```
+
+Generally all index issues should be fixable by running `archivebox init`.  
+You can see the status of Snapshots and find any invalid/orphan/missing snapshots with `archivebox status`.
+
+**Error output:**
+
+```python3
+[i] [2022-03-24 20:37:27] ArchiveBox v0.6.2: archivebox init                                                                                                                                  
+    > /data                                                                                                                                                                                   
+                                                                                                                                                                                              
+[^] Verifying and updating existing ArchiveBox collection to v0.6.2...                                                                                                                        
+----------------------------------------------------------------------                                                                                                                        
+                                                                                                                                                                                              
+[*] Verifying archive folder structure...                                                                                                                                                     
+    + ./archive, ./sources, ./logs...                                                                                                                                                         
+    + ./ArchiveBox.conf...                                                                                                                                                                    
+                                                                                                                                                                                              
+[*] Verifying main SQL index and running any migrations needed...                                                                                                                             
+Traceback (most recent call last):                                                                                                                                                            
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 82, in _execute                                                                                             
+    return self.cursor.execute(sql)                                                                                                                                                           
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 411, in execute                                                                                      
+    return Database.Cursor.execute(self, query)                                                                                                                                               
+sqlite3.DatabaseError: database disk image is malformed    
+```
+
+**Steps to fix:**
+
+```bash
+cd ~/archivebox
+echo '.dump' | sqlite3 index.sqlite3 | sqlite3 repaired_index.sqlite3
+mv index.sqlite3 corrupt_index.sqlite3
+mv repaired_index.sqlite3 index.sqlite3
+```
+
+More info:
+- https://github.com/ArchiveBox/ArchiveBox/issues/955
+- https://stackoverflow.com/questions/5274202/sqlite3-database-or-disk-is-full-the-database-disk-image-is-malformed
+
+
+---
+
+## Related Documents
 
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#disk-layout
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#large-archives
