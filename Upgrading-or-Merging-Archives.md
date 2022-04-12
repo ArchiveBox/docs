@@ -30,6 +30,11 @@ The `ArchiveBox.conf` file is not modified by upgrades and should remain forward
 
 As of v0.4 and above, ArchiveBox uses the Django migrations system for deterministic, atomic, safe upgrades, so your DB should always be left in a consistent state in the event of a failure or power outage. If you need help fixing a corrupted collection, open an issue using the link above.
 
+More info:
+- https://docs.djangoproject.com/en/4.0/topics/migrations/
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#database-migrations-errors-or-upgrade-issues
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Troubleshooting
+
 ---
 
 ### Upgrading with Docker Compose
