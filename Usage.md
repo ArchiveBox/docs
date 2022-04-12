@@ -270,15 +270,18 @@ from archivebox import *
         add("https://example.com/some/new/url")
 ```
 
-For an advanced example of using the ArchiveBox Python shell to reset a user's password see:
+For more info and example usage:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#example-adding-a-new-user-with-a-hashed-password
+- https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/main.py
+- https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/config.py
+- https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/core/models.py
 
 
 ## Python API Usage
 
 ```python
 import os
-DATA_DIR = '~/some/path/containing/your/archivebox/data'
+DATA_DIR = '~/archivebox/data'
 os.chdir(DATA_DIR)
 
 
@@ -293,4 +296,7 @@ server(...)
 ...
 ```
 
-For more information see the [Python API Reference](https://docs.archivebox.io/en/latest/archivebox.html), [Developer Documentation](https://github.com/ArchiveBox/ArchiveBox#archivebox-development), and [Python source code](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/).
+For more information see:
+- [ArchiveBox Python API Reference (ReadTheDocs)](https://docs.archivebox.io/en/latest/archivebox.html)
+- [ArchiveBox Developer Documentation](https://github.com/ArchiveBox/ArchiveBox#archivebox-development)
+- [ArchiveBox Python source code](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/)
