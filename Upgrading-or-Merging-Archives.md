@@ -118,7 +118,9 @@ Two or more existing ArchiveBox collection dirs can be merged together by simply
   ```bash
   cd /path/to/archivebox_new
   archivebox status
-  archivebox update --index-only  # optionally update the snapshot index.{json,html} files
+
+  # optionally update the snapshot index.{json,html} files (normally done lazily)
+  archivebox update --index-only
   ```
 
 ---
