@@ -271,9 +271,6 @@ Always backup your archive before upgrading, but know that migrations are determ
 - https://github.com/ArchiveBox/ArchiveBox/issues/962
 - https://github.com/ArchiveBox/ArchiveBox/issues/704
 
-Other issues that may be encountered with the ArchiveBox database are listed here:
-- https://github.com/ArchiveBox/ArchiveBox/issues/880
-
 #### Related Documents
 
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#disk-layout
