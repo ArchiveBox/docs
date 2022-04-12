@@ -96,28 +96,29 @@ Two or more existing ArchiveBox collection dirs can be merged together by simply
 
 2. Create a new empty archivebox collection in a new folder somewhere, this will hold the new merged collection
   ```bash
-  mkdir ~/archivebox_new
-  cd ~/archivebox_new
+  mkdir /path/to/archivebox_new
+  cd /path/to/archivebox_new
   archivebox init --setup
   ```
 
 3. Copy everything under `./archive/*` in each old collection into the new collection's `./archive/` folder
   ```bash
-  rsync --archive --info=progress2 /path/to/archivebox1/data/archive/ ~/archivebox_new/archive
-  rsync --archive --info=progress2 /path/to/archivebox2/data/archive/ ~/archivebox_new/archive
+  rsync --archive --info=progress2 /path/to/archivebox1/data/archive/ /path/to/archivebox_new/data/archive
+  rsync --archive --info=progress2 /path/to/archivebox2/data/archive/ /path/to/archivebox_new/data/archive
   # ...repeat the same for each collection if merging more than two
   ```
 
 4. Run `archivebox init` in the new merged collection to regenerate the new index
   ```bash
-  cd ~/archivebox_new
+  cd /path/to/archivebox_new
   archivebox init --setup
   ```
 
 5. The new collection should now contain all the entries from the old collections combined
   ```bash
-  cd ~/archivebox_new
+  cd /path/to/archivebox_new
   archivebox status
+  archivebox update --index-only  # optionally update the snapshot index.{json,html} files
   ```
 
 ---
