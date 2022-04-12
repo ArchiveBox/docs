@@ -173,6 +173,10 @@ VALUES ('pbkdf2_sha256$216000$someSaltHere$+2beZufc3JUXnmn0tG+2peJEBh7MjxPYmT3Yf
 3. Log in using the new generated user to confirm it works
     https://localhost:8000/admin/login/ user: `someUsername` pass:`somePasswordHere`
 
+More info:
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#python-shell-usage
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#sql-shell-usage
+
 ---
 
 ## Repairing a Corrupted Database
@@ -221,6 +225,9 @@ More info:
 
 ## Database Troubleshooting
 
+These issues are uncommon but do come up from time to time (especially when using networked storage, large archives, or multiple ArchiveBox processes for a single collection).  
+Many of these issues are duplicates but contain valuable context and troubleshooting steps if you're trying to figure out the cause of a problem.
+
 #### `Unable to create the django_migrations table (database is locked)`
 - https://github.com/ArchiveBox/ArchiveBox/issues/946
 - https://github.com/ArchiveBox/ArchiveBox/issues/880
@@ -250,5 +257,8 @@ Other issues that may be encountered with the ArchiveBox database are listed her
 
 #### Related Documents
 
-- https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#Disk-Layout
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#disk-layout
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#large-archives
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#output-folder
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#python-shell-usage
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#sql-shell-usage
