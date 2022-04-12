@@ -122,6 +122,7 @@ Two or more existing ArchiveBox collection dirs can be merged together by simply
   # optionally update the snapshot index.{json,html} files (normally done lazily)
   archivebox update --index-only
   ```
+  For more information about why Snapshot index files are usually updated lazily, see: https://github.com/ArchiveBox/ArchiveBox/issues/962
 
 ---
 
@@ -171,3 +172,83 @@ VALUES ('pbkdf2_sha256$216000$someSaltHere$+2beZufc3JUXnmn0tG+2peJEBh7MjxPYmT3Yf
 
 3. Log in using the new generated user to confirm it works
     https://localhost:8000/admin/login/ user: `someUsername` pass:`somePasswordHere`
+
+---
+
+## Repairing a Corrupted Database
+
+This should never happen, and there has only been one report of a user encountering it, but if you ever need to repair a corrupted ArchiveBox index you can run the following steps.
+
+Generally all index issues should be fixable by running `archivebox init`.  
+You can see the status of Snapshots and find any invalid/orphan/missing snapshots with `archivebox status`.
+
+**Error output:**
+
+```python3
+[i] [2022-03-24 20:37:27] ArchiveBox v0.6.2: archivebox init                                                                                                                                  
+    > /data                                                                                                                                                                                   
+                                                                                                                                                                                              
+[^] Verifying and updating existing ArchiveBox collection to v0.6.2...                                                                                                                        
+----------------------------------------------------------------------                                                                                                                        
+                                                                                                                                                                                              
+[*] Verifying archive folder structure...                                                                                                                                                     
+    + ./archive, ./sources, ./logs...                                                                                                                                                         
+    + ./ArchiveBox.conf...                                                                                                                                                                    
+                                                                                                                                                                                              
+[*] Verifying main SQL index and running any migrations needed...                                                                                                                             
+Traceback (most recent call last):                                                                                                                                                            
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 82, in _execute                                                                                             
+    return self.cursor.execute(sql)                                                                                                                                                           
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 411, in execute                                                                                      
+    return Database.Cursor.execute(self, query)                                                                                                                                               
+sqlite3.DatabaseError: database disk image is malformed    
+```
+
+**Steps to fix:**
+
+```bash
+cd ~/archivebox
+echo '.dump' | sqlite3 index.sqlite3 | sqlite3 repaired_index.sqlite3
+mv index.sqlite3 corrupt_index.sqlite3
+mv repaired_index.sqlite3 index.sqlite3
+```
+
+More info:
+- https://github.com/ArchiveBox/ArchiveBox/issues/955
+- https://stackoverflow.com/questions/5274202/sqlite3-database-or-disk-is-full-the-database-disk-image-is-malformed
+
+---
+
+## Database Troubleshooting
+
+#### `Unable to create the django_migrations table (database is locked)`
+- https://github.com/ArchiveBox/ArchiveBox/issues/946
+- https://github.com/ArchiveBox/ArchiveBox/issues/880
+- https://github.com/ArchiveBox/ArchiveBox/issues/781
+- https://github.com/ArchiveBox/ArchiveBox/issues/601
+
+#### Filesystem doesn't support FSYNC (e.g. network mounts)
+- https://github.com/ArchiveBox/ArchiveBox/issues/742
+
+#### Database migrations errors when skipping major versions
+- https://github.com/ArchiveBox/ArchiveBox/issues/705
+- https://github.com/ArchiveBox/ArchiveBox/issues/597
+- https://github.com/ArchiveBox/ArchiveBox/issues/596
+- https://github.com/ArchiveBox/ArchiveBox/issues/412
+- https://github.com/ArchiveBox/ArchiveBox/issues/341
+- https://github.com/ArchiveBox/ArchiveBox/issues/962
+
+#### Database and filesystem contention issues when running multiple ArchiveBox processes
+- https://github.com/ArchiveBox/ArchiveBox/issues/91
+- https://github.com/ArchiveBox/ArchiveBox/issues/454
+- https://github.com/ArchiveBox/ArchiveBox/issues/234
+- https://github.com/ArchiveBox/ArchiveBox/issues/781
+- https://github.com/ArchiveBox/ArchiveBox/issues/601
+
+Other issues that may be encountered with the ArchiveBox database are listed here:
+- https://github.com/ArchiveBox/ArchiveBox/issues/880
+
+#### Related Documents
+
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#Disk-Layout
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#output-folder
