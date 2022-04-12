@@ -53,3 +53,29 @@ apt install google-chrome
 ## Troubleshooting
 
 If you encounter problems setting up Google Chrome or Chromium, see the [Troubleshooting](https://github.com/ArchiveBox/ArchiveBox/wiki/Troubleshooting#chromiumgoogle-chrome) page.
+
+
+## Using a Chromium/Chrome Profile
+
+You may choose to set up a Chromium user profile in order to use your cookies/sessions to log into sites behind authentication/paywall.
+
+
+You must set up the profile using the exact same version of chrome that ArchiveBox is running (which can be found with `archivebox version`).
+You can download old versions of Chrome in order to match it from https://chromium.cypress.io.
+
+**General steps:**
+
+1. install desired chromium version in directory shared as a Docker volume `/data/chrome-linux/chrome`
+2. run vncserver as archivebox user and run chromium in vnc session to generate cookies
+3. Close chromium in vncserver session
+4. chmod -R ugo+rwx /opt/archivebox/.config/chromium
+5. mount /opt/archivebox/.config/chromium as docker volume /data/chromium
+6. set `archivebox config --set CHROME_USER_DATA_DIR=/data/chromium`
+7. set `archivebox config --set CHROME_BINARY=/data/chrome-linux/chrome` (installed version of chrome now common between host VNC session and docker container)
+8. `chown -R archivebox:archivebox /opt/archivebox/`
+
+Now profile is now generated and used by same instance of chrome on docker host and container.
+
+Each step is crucial, especially the permissions and matching the binary inside of Docker and outside.
+
+More info and troubleshooting steps: https://github.com/ArchiveBox/ArchiveBox/issues/952
