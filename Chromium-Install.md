@@ -66,8 +66,8 @@ You can download old versions of Chrome in order to match it from https://chromi
 
 **General steps:**
 
-1. Install desired chromium version in new directory inside your data folder `./data/chromium` on the host (outside Docker)
-2. Run [`vncserver`](https://linux.die.net/man/1/vncserver) as `archivebox` user and run chromium in VNC session to generate cookies, then close VNC session ([detailed instructions here](https://forums.raspberrypi.com/viewtopic.php?t=200590))
+1. Install desired Chromium version in new directory `./data/chromium` inside your data folder on the host (outside Docker)
+2. Open the Chromium binary directly on the host if possible, or run [`vncserver`](https://linux.die.net/man/1/vncserver) as `archivebox` user and run chromium in VNC session to generate cookies, then close VNC session ([detailed instructions here](https://forums.raspberrypi.com/viewtopic.php?t=200590))
 3. Add the config to `docker-compose.yml` to mount the `./data/chromium` volume and environment variables telling ArchiveBox to use it 
   `docker-compose.yml`:  
   ```yaml
@@ -90,10 +90,10 @@ services:
 docker-compose run --rm archivebox /bin/bash
 # then inside of docker run these:
 chown -R archivebox:archivebox /data/chromium/
-chmod -R ugo+rwx ./data/chromium/.config/chromium
+chmod -R ugo+rwx /data/chromium
 ```
 
-Now profile is now generated and used by same instance of chrome on docker host and container.
+The new profile is now generated and used by same instance of Chrome on docker host and container.
 
 Each step is crucial, especially the permissions and matching the binary inside of Docker and outside.
 
