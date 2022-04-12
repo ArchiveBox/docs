@@ -22,7 +22,7 @@ To get started, set [`CHROME_USER_DATA_DIR`](https://github.com/ArchiveBox/Archi
 
 If you're importing private links or authenticated content, you probably don't want to share your archive folder publicly on a webserver, so don't follow the [[Publishing Your Archive]] instructions unless you are only serving it on a trusted LAN or have some sort of authentication in front of it.  Make sure to point ArchiveBox to an output folder with conservative permissions, as it may contain archived content with secret session tokens or pieces of your user data.  You may also wish to encrypt the archive using an encrypted disk image or filesystem like ZFS as it will contain all requests and response data, including session keys, user data, usernames, etc.
 
-#### ⚠️ **Things to watch out for:** ⚠️
+#### ⚠️ Things to watch out for: ⚠️
 
 - any cookies / secret state present in a Chrome user profile or `cookies.txt` file may be [reflected in server responses and saved in the Snapshot output (e.g. in `headers.json`)](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/extractors/headers.py) making it [visible in cleartext to anyone viewing the Snapshot](https://archive.sweeting.me/archive/1613417792.264667/headers.json), (don't use your personal Chrome profile for archiving or people viewing your archive can then authenticate as you!)
 - any secret tokens embedded in URLs (e.g. secret invite links, Google Doc URLs, etc.) will be visible on `archive.org` as the URLs are not filtered [when saving to `archive.org`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/extractors/archive_org.py#L46) (disable submitting to Archive.org entirely with `SAVE_ARCHIVE_DOT_ORG=False`) 
