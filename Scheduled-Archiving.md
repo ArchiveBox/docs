@@ -34,7 +34,9 @@ The list of defined scheduled tasks can be inspected and cleared with `archivebo
 ⚠️ Many popular sites such as Twitter, Reddit, Facebook, etc. take efforts to block/ratelimit/lazy-load content to avoid being scraped by bots like ArchiveBox. It may be better to use an alternative frontend with minimal JS when archiving those sites:  
 https://github.com/mendel5/alternative-front-ends
 
-The scheduler can be run in `--foreground` mode to avoid relying on your host system's cron scheduler.  
+The scheduled interval can be passed easily using `--every={day,week,month,year}` or by passing a [cron-style schedule](https://crontab.guru/) e.g. `--every='5 4 * * *'` to run at 04:05 every day.
+
+The scheduler can also be run in `--foreground` mode to avoid relying on your host system's cron scheduler to be running.  
 In foreground mode, it will run all tasks previously added using `archivebox schedule` in a long-running foreground process.
 This is useful for running scheduled tasks inside docker-compose or supervisord.
 
@@ -62,27 +64,27 @@ For a full Docker Compose example config see here: https://github.com/ArchiveBox
 
 ---
 
-### Example: Archive a Twitter user's profile once a week
+### Example: Archive a Twitter user's Tweets and linked content within once a week
 
 ```bash
-archivebox schedule --every=week --overwrite https://nitter.net/ArchiveBoxApp
+archivebox schedule --every=week --depth=1 'https://nitter.net/ArchiveBoxApp'
 ```
 
-Nitter is an alternative frontends recommended Twitter that formats the content better for archiving/bots and avoids ratelimits.  
-`--overwrite` is passed to save a fresh copy each week, otherwise the URL will be ignored as it's already present in the collection after the first time it's added.
+Nitter is an alternative frontends recommended Twitter that formats the content better for archiving/bots and avoids ratelimits.
 
 ### Example: Archive a Reddit subreddit and discussions for every post once a week
 
 ```bash
-# optionally limit URLs to Teddit (aka Reddit) to capture discussion and user pages but not outbound URLs
+# optionally limit URLs to Teddit (aka Reddit) to capture discussion and user pages but not external outbound URLs
 archivebox config --set URL_WHITELIST='^http(s)?:\/\/(.+)?teddit\.net\/?.*$'
 
 archivebox schedule --every=week --overwrite --depth=1 'https://teddit.net/r/DataHoarder/'
 ```
 
 Teddit is an alternative frontend recommended for Reddit that formats the content better for archiving/bots and avoids ratelimits.  
+`--overwrite` is passed to save a fresh copy each week, otherwise the URL will be ignored as it's already present in the collection after the first time it's added.
 
-### Example: Archive the HackerNews front page and all linked articles every 24 hours
+### Example: Archive the HackerNews front page and some linked articles every 24 hours
 
 ```bash
 # optional exclude some URLs you don't want to archive
@@ -109,35 +111,39 @@ archivebox schedule --every=month --extract=git --overwrite 'https://github.com/
 ```
 `--extract=git` tells it to only use the Git source extractor and skip saving the HTML/screenshot/etc. other extractor methods.
 
-### Example: Archive a list of URLs from the filesystem every 30 minutes
+### Example: Archive a list of URLs pulled from the filesystem every 30 minutes
 
 ```bash
-archivebox schedule --
+archivebox schedule --every='30 * * * *' /some/path/to/urls.txt
+```
 
 ---
 
-## Manual Scheduling Using Cron
+## Advanced Scheduling Using Cron
 
-To schedule regular archiving you can use any task scheduler like `cron`, `at`, `systemd`, etc. or the built-in scheduler `archivebox schedule` (which uses crontab internally).
+To schedule regular archiving you can also use any other task scheduler like `cron`, `at`, `systemd`, etc. aside from the built-in scheduler `archivebox schedule`.
 
 For some example configs, see the [`etc/cron.d`](https://github.com/ArchiveBox/ArchiveBox/blob/master/etc/cron.d) and [`etc/supervisord`](https://github.com/ArchiveBox/ArchiveBox/blob/master/etc/supervisord) folders.
 
-### Example: Import Firefox browser history every 24 hours
+### Example: Export and archive Firefox browser history every 24 hours
 
-This example exports your browser history and archives it once a day:
+This example exports your browser history and archives it once a day, saving a summary to disk:
 
-**Create `/opt/ArchiveBox/bin/firefox_custom.sh`:**
+First download the ArchiveBox helper script for browser history exporting https://github.com/ArchiveBox/ArchiveBox/blob/dev/bin/export_browser_history.sh to `./bin/export_browser_history.sh`
+
+Then create `/home/ArchiveBox/archivebox/bin/scheduled_firefox_import.sh`:
 ```bash
 #!/bin/bash
 
-cd /opt/ArchiveBox
-./bin/archivebox-export-browser-history --firefox ./output/sources/firefox_history.json
-archivebox add < ./output/sources/firefox_history.json  >> /var/log/ArchiveBox.log
+cd `/home/ArchiveBox/archivebox
+bash ./bin/export_browser_history --firefox ./output/sources/firefox_history.json
+archivebox add < ./output/sources/firefox_history.json >> /var/log/ArchiveBox.log
+archivebox status >> /var/log/ArchiveBox.log
 ```
 
-**Then create a new file `/etc/cron.d/ArchiveBox-Firefox` to tell cron to run your script every 24 hours:**
+Then tell cron to run your script every 24 hours:
 ```bash
-0 24 * * * www-data /opt/ArchiveBox/bin/firefox_custom.sh
+echo '0 24 * * * archivebox /home/ArchiveBox/archivebox/bin/scheduled_firefox_import.sh' > /etc/cron.d/archivebox_scheduled_firefox_import
 ```
 
 ### Example: Import an RSS feed from Pocket every 12 hours
