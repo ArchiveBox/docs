@@ -1,6 +1,6 @@
 # Scheduled Archiving
 
-ArchiveBox contains a built-in scheduler that supports pulling in URLs and files from the local filesystem containing URLs to archive.
+ArchiveBox contains a built-in scheduler that supports pulling in URLs regularly from the web or from the local filesystem.
 
 ```bash
 $ archivebox schedule --help
