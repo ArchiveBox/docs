@@ -97,4 +97,11 @@ The new profile is now generated and used by same instance of Chrome on docker h
 
 Each step is crucial, especially the permissions and matching the binary inside of Docker and outside.
 
-More info and troubleshooting steps: https://github.com/ArchiveBox/ArchiveBox/issues/952
+More info and troubleshooting steps:
+- https://github.com/ArchiveBox/ArchiveBox/issues/952
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#archiving-private-content
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#%EF%B8%8F-things-to-watch-out-for-%EF%B8%8F
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#publishing
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#chrome_user_data_dir
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#chrome_binary
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#cookies_file
