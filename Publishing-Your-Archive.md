@@ -57,6 +57,11 @@ Urls look like: `https://archive.example.com/archive/1493350273/en.wikipedia.org
 Re-hosting other people's content has security implications for any other sites sharing your hosting domain.  Make sure you understand the dangers of hosting untrusted archived HTML/JS/CSS [on a shared domain](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy).
 Due to the security risk of serving some malicious JS you archived by accident, it's best to put this on a domain or subdomain of its own to keep cookies separate and help limit the effectiveness of [CSRF attacks](https://en.wikipedia.org/wiki/Cross-site_request_forgery) and other nastiness.
 
+More info:
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#publishing
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#%EF%B8%8F-things-to-watch-out-for-%EF%B8%8F
+
 ## Copyright Concerns
 
 Be aware that some sites you archive may not allow you to rehost their content publicly for copyright reasons, it's up to you to host responsibly and respond to takedown requests appropriately.
