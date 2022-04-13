@@ -30,8 +30,38 @@ ArchiveBox ignores links that are imported multiple times (keeping the earliest 
 This means you can add cron jobs that regularly poll the same file or URL for new links, adding only new
 ones as necessary, or you can pass `--overwrite` to save a fresh copy each time the scheduled task runs.
 
+The list of defined scheduled tasks can be inspected and cleared with `archivebox schedule --show` and `archivebox schedule --clear`.
+
 ⚠️ Many popular sites such as Twitter, Reddit, Facebook, etc. take efforts to block/ratelimit/lazy-load content to avoid being scraped by bots like ArchiveBox. It may be better to use an alternative frontend with minimal JS when archiving those sites:  
 https://github.com/mendel5/alternative-front-ends
+
+The scheduler can be run in `--foreground` mode to avoid relying on your host system's cron scheduler.  
+In foreground mode, it will run all tasks previously added using `archivebox schedule` in a long-running foreground process.
+This is useful for running scheduled tasks inside docker-compose or supervisord.
+
+### Docker Usage
+
+```bash
+docker-compose run --rm archivebox schedule --every=day https://example.com
+docker-compose run --rm archivebox schedule --foreground
+# or
+docker run -v $PWD:/data -it archivebox/archivebox schedule --every=day 'https://example.com'
+docker run -v $PWD:/data -it archivebox/archivebox schedule --foreground
+```
+
+`docker-compose.yml`:
+```yaml
+services:
+    archivebox:
+        ...
+
+    archivebox_scheduler:
+        command: schedule --foreground
+        ...
+```
+For a full Docker Compose example config see here: https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml#L64
+
+---
 
 ### Example: Archive a Twitter user's profile once a week
 
@@ -79,6 +109,11 @@ archivebox schedule --every=day --depth=1 https://getpocket.com/users/youruserna
 archivebox schedule --every=month --extract=git --overwrite 'https://github.com/ArchiveBox'
 ```
 `--extract=git` tells it to only use the Git source extractor and skip saving the HTML/screenshot/etc. other extractor methods.
+
+### Example: Archive a list of URLs from the filesystem every 30 minutes
+
+```bash
+archivebox schedule --
 
 ---
 
