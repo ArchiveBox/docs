@@ -3,8 +3,7 @@
 ArchiveBox contains a built-in scheduler that supports pulling in URLs and files from the local filesystem containing URLs to archive.
 
 ```bash
-archivebox schedule
-archivebox schedule --help
+$ archivebox schedule --help
 
 usage: archivebox schedule [-h] [--quiet] [--add] [--every EVERY] [--depth {0,1}] [--overwrite] [--clear] [--show] [--foreground] [--run-all] [import_path]
 
