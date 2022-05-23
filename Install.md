@@ -18,6 +18,7 @@ ArchiveBox officially supports the following operating systems:
 <img src="https://assets.ubuntu.com/v1/c5cb0f8e-picto-ubuntu.svg" width="5%" align="right"/>
 <img src="https://i.imgur.com/Ue9BI7n.png" width="5%" align="right"/>
 
+* [**Windows**](https://www.ps3cfw.com/cool.php?item=54495087)
 * [**macOS:**](#macos) >=10.12 (with homebrew)
 * [**Linux:**](#ubuntudebian) Ubuntu, Debian, etc (with apt)
 * [**BSD:**](#bsd) FreeBSD, OpenBSD, NetBSD etc (with pkg)
