@@ -503,6 +503,51 @@ Optionally switch this to use `ripgrep-all` for full-text search support across 
 *Related options:*  
 [`SEARCH_BACKEND_ENGINE`](#search_backend_engine)
 
+---
+#### `SINGLEFILE_ARGS`
+**Possible Values:** [`["--back-end=playwright-firefox","--load-deferred-images-dispatch-scroll-event=true"]`]/..
+
+Arguments that are passed to the SingleFile binary. The values should be a valid JSON string.
+
+*Related options:*  
+[`SINGLEFILE_BINARY`](#singlefile_binary)
+
+---
+#### `CURL_ARGS`
+**Possible Values:** [`["--tlsv1.3","--http2"]`]/..
+
+Arguments that are passed to the curl binary. The values should be a valid JSON string.
+
+*Related options:*  
+[`CURL_BINARY`](#curl_binary)
+
+---
+#### `WGET_ARGS`
+**Possible Values:** [`["--https-only"]`]/..
+
+Arguments that are passed to the wget binary. The values should be a valid JSON string.
+
+*Related options:*  
+[`WGET_BINARY`](#wget_binary)
+
+---
+#### `YOUTUBEDL_ARGS`
+**Possible Values:** [`["--limit-rate=10M"]`]/..
+
+Arguments that are passed to the [youtube-dl](https://github.com/rg3/youtube-dl) binary. The values should be a valid JSON string.
+
+*Related options:*  
+[`YOUTUBEDL_BINARY`](#youtubedl_binary)
+
+---
+#### `GIT_ARGS`
+**Possible Values:** [`["--depth=1"]`]
+
+Arguments that are passed to the `git clone` subcommand. The values should be a valid JSON string.
+
+*Related options:*  
+[`GIT_BINARY`](#git_binary)
+
 
 <img src="https://i.imgur.com/almAbwK.png" width="100%"/>
 []: 
