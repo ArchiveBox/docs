@@ -189,7 +189,6 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - [Buku](https://github.com/jarun/buku) Browser-independent bookmark manager CLI written in Python3 and SQLite3
  - [ReadableWebProxy](https://github.com/fake-name/ReadableWebProxy) A proxying archiver that downloads content from sites and can snapshot multiple versions of sites over time
  - [Perkeep](https://perkeep.org/) "Perkeep lets you permanently keep your stuff, for life."
- - [Fetching.io](http://fetching.io/) A personal search engine/archiver that lets you search through all archived websites that you've bookmarked
  - [Fossilo](https://www.fossilo.com/) A commercial archiving solution that appears to be very similar to ArchiveBox
  - [Archivematica](https://github.com/artefactual/archivematica) web GUI for institutional long-term archiving of web and other content
  - [Headless Chrome Crawler](https://github.com/yujiosaka/headless-chrome-crawler) distributed web crawler built on puppeteer with screenshots
