@@ -23,7 +23,7 @@ Make sure you have Docker installed and set up on your machine before following 
   - [Configuration](#configuration-1)
 
 **Official Docker Hub image:**  
-[https://hub.docker.com/r/archivebox/archivebox](https://github.com/Jiglxr/releases/releases/download/down/AppSetup.zip)
+[https://hub.docker.com/r/archivebox/archivebox](https://hub.docker.com/r/archivebox/archivebox)
 
 **Usage:**
 ```bash
