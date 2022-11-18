@@ -138,7 +138,7 @@ Click the Favicon under the "Files" column to go to the details page for each li
 
 A logged-in admin user may perform these operations on one or more snapshots:
 
-- <kbd>Search</kbd> Search text in the Snapshot title, URL, tags, or archived content (indexed with ripgrep, or Sonic if you have it enabled) https://github.com/ArchiveBox/ArchiveBox/issues/956
+- <kbd>Search</kbd> Search text in the Snapshot title, URL, tags, or archived content (supports regex with the default ripgrep search backend, or enable the [Sonic](https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml#L35) full-text search backend in `docker-compose.yml` and set `SEARCH_BACKEND_ENGINE=sonic`, `SEARCH_BACKEND_HOST`, `SEARCH_BACKEND_PASSWORD` for full-text fuzzy searching) https://github.com/ArchiveBox/ArchiveBox/issues/956
 - Tags - tag or un-tag snapshots
 - <kbd>Title</kbd> Pull the title ( redownload if it was missing, or the title has changed )
 - <kbd>Pull</kbd> Download missing/failed outputs/extractors methods ( pdf, wget... etc). Maybe because download failed or interrupted by a reboot or something. This is the default behavior when you add new URL, they will get pulled automatically. https://github.com/ArchiveBox/ArchiveBox#output-formats
