@@ -134,6 +134,8 @@ Click the Favicon under the "Files" column to go to the details page for each li
 
 ### Explanation of buttons in the web UI - admin snapshots list
 
+<img src="https://i.imgur.com/4Sa76Ek.png" alt="Screenshot of buttons at top of Snapshot admin page"/>
+
 A logged-in admin user may perform these operations on one or more snapshots:
 
 - <kbd>Search</kbd> (tbd)
