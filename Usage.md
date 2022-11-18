@@ -138,7 +138,7 @@ Click the Favicon under the "Files" column to go to the details page for each li
 
 A logged-in admin user may perform these operations on one or more snapshots:
 
-- <kbd>Search</kbd> (tbd)
+- <kbd>Search</kbd> Search text in the Snapshot title, URL, tags, or archived content (indexed with ripgrep, or Sonic if you have it enabled) https://github.com/ArchiveBox/ArchiveBox/issues/956
 - Tags - tag or un-tag snapshots
 - <kbd>Title</kbd> Pull the title ( redownload if it was missing, or the title has changed )
 - <kbd>Pull</kbd> Download missing/failed outputs/extractors methods ( pdf, wget... etc). Maybe because download failed or interrupted by a reboot or something. This is the default behavior when you add new URL, they will get pulled automatically. https://github.com/ArchiveBox/ArchiveBox#output-formats
