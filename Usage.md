@@ -117,12 +117,21 @@ archivebox add < output/sources/safari_history.json
 ## UI Usage
 
 ```bash
-archivebox server
-open http://127.0.0.1:8000
+# configure which areas you want to require login to use vs make publicly available
+archivebox config --set PUBLIC_INDEX=False
+archivebox config --set PUBLIC_SNAPSHOTS=False
+archivebox config --set PUBLIC_ADD_VIEW=False
+
+archivebox manage createsuperuser  # set an admin password to use for any areas requiring login
+archivebox server 0.0.0.0:8000     # start the archivebox web server
+
+open http://127.0.0.1:8000         # open the admin UI in a browser to view your archive
 ```
 
+*See the [Configuration Wiki](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view) and [Security Wiki](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#archiving-private-content) for more info...*
+
 Or if you prefer to use the static HTML UI instead of the interactive UI provided by the server,
-you can open `./index.html` in a browser.  You should see something [like this](https://archive.sweeting.me).
+you can run `archivebox list --html --with-headers > ./index.html` and then open `./index.html` in a browser.  You should see something [like this](https://archive.sweeting.me).
 
 You can sort by column, search using the box in the upper right, and see the total number of links at the bottom.
 
