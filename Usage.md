@@ -158,7 +158,7 @@ Get the official [`@tjhorner/archivebox-exporter` Browser Extension](https://git
 3. Set the `BASE_URL` in the extension to your ArchiveBox server's URL, e.g. `https://archivebox.example.com:3000`
 4. Test it by archiving some pages from your browser and checking `data/logs/*` and `https://archivebox.example.com:3000/admin/core/archiveresult/`
 
-<img width="400" alt="chrome web store screenshot" src="https://user-images.githubusercontent.com/511499/215699375-5c98c9bb-56fd-4a46-a990-e5745d46019c.png"><img width="400" alt="browser extension config screen" src="https://user-images.githubusercontent.com/511499/215702958-4683af8f-7f1e-4b0e-a313-2466b9cf0276.png">
+<img width="400" align="top" alt="chrome web store screenshot" src="https://user-images.githubusercontent.com/511499/215699375-5c98c9bb-56fd-4a46-a990-e5745d46019c.png"><img width="400" align="top" alt="browser extension config screen" src="https://user-images.githubusercontent.com/511499/215702958-4683af8f-7f1e-4b0e-a313-2466b9cf0276.png">
 
 See https://github.com/ArchiveBox/ArchiveBox/issues/577 for more information.
 
