@@ -73,6 +73,20 @@ Maximum allowed download time for fetching media when `SAVE_MEDIA=True` in secon
 [`SAVE_MEDIA`](#save_media)
 
 ---
+#### `PUBLIC_INDEX` / `PUBLIC_SNAPSHOTS` / `PUBLIC_ADD_VIEW`
+**Possible Values:** [`False`]/`True`
+Configure whether or not login is required to use each area of ArchiveBox.
+
+```python3
+archivebox manage createsuperuser  # set a password before disabling public access
+
+archivebox config --set PUBLIC_INDEX=False
+archivebox config --set PUBLIC_SNAPSHOTS=False
+archivebox config --set PUBLIC_ADD_VIEW=False
+```
+https://github.com/ArchiveBox/ArchiveBox#-web-ui-usage
+
+---
 #### `CUSTOM_TEMPLATES_DIR`
 **Possible Values:** [`None`]/`./path/to/custom_templates`/...  
 Path to a directory containing custom html/css/images for overriding the default UI styling.  Files found in the folder at the specified path can override any of the defaults in the [`TEMPLATES_DIR`](https://github.com/ArchiveBox/ArchiveBox/tree/dev/archivebox/templates) directory (copy files from that default dir into your custom dir to get started making a custom theme).
