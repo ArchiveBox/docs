@@ -85,7 +85,8 @@
 ## Past Releases
 
 To see how this spec has been scheduled / implemented / released so far, read these pull requests:
- - ✅ [v0.2.x](https://github.com/ArchiveBox/ArchiveBox/tree/483a3bef9e2b1a7b80611947a3be99b0cf4f9959) (~2018)
+ - ✅ v0.1.x pre-git-history (~2017)
+ - ✅ [v0.2.x](https://github.com/ArchiveBox/ArchiveBox/tree/483a3bef9e2b1a7b80611947a3be99b0cf4f9959) (~2018/12)
  - ✅ [v0.3.x](https://github.com/ArchiveBox/ArchiveBox/pull/197) (~2019/03)
  - ✅ [v0.4.x](https://github.com/ArchiveBox/ArchiveBox/pull/207) (~2019/04)
  - ✅ [v0.5.x](https://github.com/ArchiveBox/ArchiveBox/pull/552) (~2020/11)
