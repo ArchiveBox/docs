@@ -151,8 +151,12 @@ A logged-in admin user may perform these operations on one or more snapshots:
 
 Get the official [`@tjhorner/archivebox-exporter` Browser Extension](https://github.com/tjhorner/archivebox-exporter):
 
+1. Set your Add page to allow non-logged-in access `archivebox config --set PUBLIC_ADD_VIEW=True`
+2. Install the extension in your browser:
 - [Chrome/Edge/Other Chromium](https://chrome.google.com/webstore/detail/habonpimjphpdnmcfkaockjnffodikoj)
 - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/archivebox-exporter/)
+3. Set the `BASE_URL` in the extension to your ArchiveBox server's URL, e.g. `https://archivebox.example.com:3000`
+4. Test it by archiving some pages from your browser and checking `data/logs/*` and `https://archivebox.example.com:3000/admin/core/archiveresult/`
 
 <img width="452" alt="image" src="https://user-images.githubusercontent.com/511499/215699060-a0b856fa-21fb-40b5-b17b-8de8625d8adf.png">
 <img width="597" alt="image" src="https://user-images.githubusercontent.com/511499/215699375-5c98c9bb-56fd-4a46-a990-e5745d46019c.png">
