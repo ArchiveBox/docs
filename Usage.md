@@ -7,7 +7,8 @@
 <img src="https://i.imgur.com/aQZZcku.png" width="20%" align="right"/>
 
 - [CLI Usage](#CLI-Usage): Docs and examples for the ArchiveBox command line interface.
-- [UI Usage](#UI-Usage): Docs and screenshots for the outputted HTML archive interface.
+- [Admin UI Usage](#UI-Usage): Docs and screenshots for the outputted HTML archive interface.
+- [Browser Extension Usage](#Browser-Extension-Usage): Docs and screenshots for the outputted HTML archive interface.
 - [Disk Layout](#Disk-Layout): Description of the archive folder structure and contents.
 
 **Related:**
@@ -145,6 +146,18 @@ A logged-in admin user may perform these operations on one or more snapshots:
 - <kbd>Re-Snapshot</kbd> As the name suggests, re-download the page as a separated unique page. Not the same as pull, this one will create a separate entry, and the page is treated as a new URL ending with the date and time #2020-10-24-08:00 https://github.com/ArchiveBox/ArchiveBox#saving-multiple-snapshots-of-a-single-url
 - <kbd>Reset</kbd> Delete all type of output and redownload them. In the contrary of snapshot, this will overwrite the files.
 - <kbd>Delete</kbd> Delete a snapshot entirely. This action cannot be undone.
+
+## Browser Extension Usage
+
+Get the official [`@tjhorner/archivebox-exporter` Browser Extension](https://github.com/tjhorner/archivebox-exporter):
+
+- [Chrome/Edge/Other Chromium](https://chrome.google.com/webstore/detail/habonpimjphpdnmcfkaockjnffodikoj)
+- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/archivebox-exporter/)
+
+<img width="452" alt="image" src="https://user-images.githubusercontent.com/511499/215699060-a0b856fa-21fb-40b5-b17b-8de8625d8adf.png">
+<img width="597" alt="image" src="https://user-images.githubusercontent.com/511499/215699375-5c98c9bb-56fd-4a46-a990-e5745d46019c.png">
+
+See https://github.com/ArchiveBox/ArchiveBox/issues/577 for more information.
 
 ## Disk Layout
 
