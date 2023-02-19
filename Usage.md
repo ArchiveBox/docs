@@ -251,6 +251,9 @@ More info:
 ## Python Shell Usage
 
 Explore the Python API a bit to see whats available using the archivebox shell:
+
+**Python API Documentation:** https://docs.archivebox.io/en/master/archivebox.html#module-archivebox.main
+
 ```bash
 $ archivebox shell
 [i] [2020-09-17 16:57:07] ArchiveBox v0.4.21: archivebox shell
@@ -291,6 +294,7 @@ from archivebox import *
 
 [i] Welcome to the ArchiveBox Shell!
     https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#Shell-Usage
+    https://docs.archivebox.io/en/master/archivebox.html#module-archivebox.main
 
     Hint: Example use:
         print(Snapshot.objects.filter(is_archived=True).count())
