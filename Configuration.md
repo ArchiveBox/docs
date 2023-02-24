@@ -131,6 +131,8 @@ True   # this URL would not be archived because it matches the exclusion pattern
 
 *Note: all assets required to render each page are still archived, `URL_BLACKLIST`/`URL_WHITELIST` do not apply to images, css, video, etc. visible inline within the page.*
 
+*Note 2:* I named these options poorly years ago when I added them and I plan to rename them to `URL_ALLOWLIST` & `URL_DENYLIST` in a future release.
+
 *Related options:*  
 [`URL_WHITELIST`](#URL_WHITELIST), [`SAVE_MEDIA`](#SAVE_MEDIA), [`SAVE_GIT`](#SAVE_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
 
