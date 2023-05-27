@@ -450,9 +450,29 @@ You can find more organizations and initiatives on these other lists:
 
 ---
 
-### Unofficial support
+## ArchiveBox Community Resources
 
- - [Unofficial ArchiveBox support/discussion chat room](https://matrix.to/#/#archivebox:matrix.org)
+### ArchiveBox Chat Rooms
+
+ - [Official ArchiveBox Zulip Chat Server](https://zulip.archivebox.io)
+ - [Unofficial ArchiveBox Matrix chat room](https://matrix.to/#/#archivebox:matrix.org) (old)
+ - [Github Discussions](https://github.com/ArchiveBox/ArchiveBox/discussions)
+
+### ArchiveBox on Social Media
+
+ - [Twitter: @ArchiveBoxApp](https://twitter.com/ArchiveBoxApp)
+ - [LinkedIn: ArchiveBox](https://www.linkedin.com/company/archivebox/)
+ - [YouTube: @ArchiveBoxApp](https://www.youtube.com/@ArchiveBoxApp)
+ - [Reddit: r/ArchiveBox](https://www.reddit.com/r/ArchiveBox/)
+ - [Alternative.to](https://alternativeto.net/software/archivebox/about/)
+ - [ReposHub](https://reposhub.com/python/web-crawling/pirate-ArchiveBox.html)
+
+### ArchiveBox on Package Distribution Platforms
+
+ - [Python PyPI](https://pypi.org/project/archivebox/)
+ - [Docker Hub](https://hub.docker.com/r/archivebox/archivebox)
+ - [ArchLinux AUR](https://aur.archlinux.org/packages/archivebox)
+ - [Ubuntu Launchpad PPA](https://launchpad.net/~archivebox/+archive/ubuntu/archivebox)
 
 ---
 
