@@ -301,6 +301,9 @@ If any of these links are dead, you can find an archived version on https://arch
 
 *Beware: many of these may be outdated, as ArchiveBox has frequent updates and continual improvement.*
 
+ - "Install ArchiveBox on SaltBox.dev" https://docs.saltbox.dev/sandbox/apps/archivebox/#3-setup
+ - "ArchiveBox is an open-source self-hosted web archiving system for the web and the desktop" https://medevel.com/archivebox/
+ - "Install ArchiveBox on a One-Click Docker Application" https://www.vultr.com/docs/install-archivebox-on-a-oneclick-docker-application/
  - "ArchiveBox, una solución para crear nuestro propio Archive.org en miniatura y personalizado" https://www.genbeta.com/herramientas/archivebox-solucion-para-crear-nuestro-propio-archive-org-miniatura-personalizado
  - "网页存档的开源工具ArchiveBox，可以将网页文字、图片、媒体文件等都保存下来，供日后查看。基于Python的开源项目，可搭建私人的网络存档服务。" https://www.bilibili.com/s/video/BV1ib4y1X7SL
  - "Персональный интернет-архив без боли" https://habr.com/ru/company/vdsina/blog/550180/
