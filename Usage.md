@@ -332,11 +332,12 @@ import os
 DATA_DIR = '~/archivebox/data'
 os.chdir(DATA_DIR)
 
+# you must import and setup django first to establish a DB connection
+from archivebox.config import setup_django
+setup_django()
 
-from archivebox.main import check_data_folder, setup_django, add, remove, server
-
-check_data_folder(DATA_DIR)
-setup_django(DATA_DIR)
+# then you can import all the main functions
+from archivebox.main import add, remove, server
 
 add('https://example.com', index_only=True, out_dir=DATA_DIR)
 remove(...)
