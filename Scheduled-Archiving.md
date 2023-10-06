@@ -71,7 +71,7 @@ services:
       - ./data:/data
       - ./etc/crontabs:/var/spool/cron/crontabs
 ```
-For a full Docker Compose example config see here: https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml#L64
+For a full Docker Compose example config see here: https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml#:~:text=schedule
 
 For more examples of plain Docker and Docker Compose usage with scheduling, see: https://github.com/ArchiveBox/ArchiveBox/issues/1155#issuecomment-1590146616
 
