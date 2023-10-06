@@ -43,24 +43,37 @@ This is useful for running scheduled tasks inside docker-compose or supervisord.
 ### Docker Usage
 
 ```bash
+docker-compose run --rm archivebox schedule --every=week --depth=1 https://example.com
 docker-compose run --rm archivebox schedule --every=day https://example.com
-docker-compose run --rm archivebox schedule --foreground
-# or
-docker run -v $PWD:/data -it archivebox/archivebox schedule --every=day 'https://example.com'
-docker run -v $PWD:/data -it archivebox/archivebox schedule --foreground
+docker-compose run --rm archivebox schedule --show
+docker-compose run --rm archivebox schedule --help
+
+# restart the scheduler container to pick up any changes made
+docker compose restart archivebox_scheduler
 ```
 
 `docker-compose.yml`:
 ```yaml
 services:
-    archivebox:
-        ...
+  archivebox:
+    image: archivebox/archivebox:dev
+    command: server --quick-init 0.0.0.0:8000
+    ...
+    volumes:
+      - ./data:/data
+      - ./etc/crontabs:/var/spool/cron/crontabs
 
-    archivebox_scheduler:
-        command: schedule --foreground
-        ...
+  archivebox_scheduler:
+    image: archivebox/archivebox:dev
+    command: schedule --foreground
+    ...
+    volumes:
+      - ./data:/data
+      - ./etc/crontabs:/var/spool/cron/crontabs
 ```
 For a full Docker Compose example config see here: https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml#L64
+
+For more examples of plain Docker and Docker Compose usage with scheduling, see: https://github.com/ArchiveBox/ArchiveBox/issues/1155#issuecomment-1590146616
 
 ---
 
