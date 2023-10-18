@@ -184,6 +184,8 @@ WHERE username = 'someUsernameHere';
 
 #### Example: Adding a new user with a hashed password
 
+*Note: this is just an example to demonstrate direct database usage. If you are trying to create a user on initial setup, use the [`ADMIN_USERNAME` & `ADMIN_PASSWORD`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#admin_username--admin_password) configuration options.*
+
 1. First, generate the hashed password in a Python shell using Django's `make_password` function.
 
 This can be done on any machine with Python 3+, it doesn't have to have ArchiveBox installed.
