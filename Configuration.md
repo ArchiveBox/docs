@@ -73,6 +73,16 @@ Maximum allowed download time for fetching media when `SAVE_MEDIA=True` in secon
 [`SAVE_MEDIA`](#save_media)
 
 ---
+#### `ADMIN_USERNAME` / `ADMIN_PASSWORD`
+**Possible Values:** [`None`]/`"admin"`/...  
+
+Only used on first run / initial setup. ArchiveBox will create an admin user with the specified username and password when these options are found in the environment.
+Useful for setting up a Docker instance of ArchiveBox without needing to run a shell command to create the admin user.
+
+*Related options:*  
+[`PUBLIC_INDEX`](#public_index)
+
+---
 #### `PUBLIC_INDEX` / `PUBLIC_SNAPSHOTS` / `PUBLIC_ADD_VIEW`
 **Possible Values:** [`False`]/`True`
 Configure whether or not login is required to use each area of ArchiveBox.
