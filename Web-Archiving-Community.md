@@ -288,7 +288,7 @@ A collection of blog posts and articles about internet archiving, contact me / o
  - https://ianmilligan.ca/2018/05/22/new-article-if-these-crawls-could-talk-studying-and-documenting-web-archives-provenance/
  - https://ws-dl.blogspot.com/2019/02/2019-02-08-google-is-being-shuttered.html
 
-If any of these links are dead, you can find an archived version on https://archive.sweeting.me.
+If any of these links are dead, you can find an archived version on https://archive.sweeting.me or https://web.archive.org.
 
 ---
 
