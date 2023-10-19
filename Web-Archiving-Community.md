@@ -1,10 +1,12 @@
 # Web Archiving Community
 
-<div align="center">
+<div align="center" style="text-align: center">
 
 <!--💬 **Join the [`#ArchiveBox` channel](http://webchat.freenode.net?channels=ArchiveBox&uio=d4) via IRC on [FreeNode.net](http://webchat.freenode.net?channels=ArchiveBox&uio=d4) to chat with us!**-->
 
-🔢 **Just getting started and want to learn more about why Web Archiving is important? <br/> Check out this article: [On the Importance of Web Archiving](https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/).**
+💬 <i><b>Join us on our new ArchiveBox community chat server: https://Zulip.ArchiveBox.io</b></i>
+
+🔢 **Just getting started and want to learn more about why Web Archiving is important? <br/>** &nbsp; &nbsp;&nbsp; Check out this article: [On the Importance of Web Archiving](https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/).
 
 </div>
 
@@ -15,7 +17,7 @@ The internet archiving community is surprisingly far-reaching and almost univers
 Whether you want to learn which organizations are the big players in the web archiving space, want to find a specific open source tool for your web archiving need, or just want to see where archivists hang out online, this is my attempt at an index of the entire web archiving community.
 
 
-<img src="https://i.imgur.com/duS8Lm7.png" width="200px" align="right"/>
+<img src="https://i.imgur.com/duS8Lm7.png" width="200px" align="right" style="float: right; margin: 5px"/>
 
  - [The Master Lists](#The-Master-Lists)  
    *Community-maintained indexes of web archiving tools and groups by IIPC, COPTR, ArchiveTeam, Wikipedia, & the ASA.* 
@@ -45,7 +47,7 @@ Whether you want to learn which organizations are the big players in the web arc
 
 ## The Master Lists
 
-<img src="https://i.pinimg.com/originals/5d/8f/ae/5d8fae9a42210eb0320960b23e3fe236.jpg" width="230px" align="right">
+<img src="https://i.pinimg.com/originals/5d/8f/ae/5d8fae9a42210eb0320960b23e3fe236.jpg" width="230px" align="right" style="float: right; margin: 5px">
 
 Indexes of archiving institutions and software maintained by other people.  If there's anything archivists love doing, it's making lists.
 
@@ -62,7 +64,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ## Web Archiving Projects
 
-<div align="center">
+<div align="center" style="text-align: center">
 <img src="http://web.archive.org/web/20201127205833if_/https://avatars3.githubusercontent.com/u/1553831?s=200&v=4" width="50px"/> &nbsp; &nbsp;
 <img src="https://assets.ifttt.com/images/channels/23/icons/large.png" width="50px"/> &nbsp; &nbsp;
 <img src="https://avatars1.githubusercontent.com/u/8275533?s=400&v=4" width="50px"/> &nbsp; &nbsp;
@@ -84,8 +86,8 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ### From the Archive.org & Archive-It teams
 
-<img src="https://library.gwu.edu/sites/default/files/events/Archive-It.png" width="115px" align="right"/>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Internet_Archive_logo_and_wordmark.svg/250px-Internet_Archive_logo_and_wordmark.svg.png" width="100px" align="right"/>
+<img src="https://docs.monadical.com/uploads/9b9d97d4-eaa4-4399-b7e2-628f1ef81675.png" width="115px" align="right" style="float:right; margin: 5px"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Internet_Archive_logo_and_wordmark.svg/250px-Internet_Archive_logo_and_wordmark.svg.png" width="100px" align="right" style="float:right; margin: 5px"/>
 
  - **[Archive.org](https://archive.org) The O.G. wayback machine provided publicly by the Internet Archive (Archive.org)**
  - **[Archive.it](https://archive-it.org) commercial Wayback-Machine solution**
@@ -101,8 +103,8 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ### From the Rhizome.org/WebRecorder.io/Conifer team
 
-<img src="https://quintagroup.com/cms/python/images/webrecorder.jpeg" width="150px" align="right"/>
-<img src="http://web.archive.org/web/20201025154037im_/https://blog.conifer.rhizome.org/assets/Conifer%20Rhiz%20Horizontal%20@2x.png" alttext="Conifer by Rhizome Logo, previously Know as WebRecorder.io" width="150px" align="right"/>
+<img src="https://quintagroup.com/cms/python/images/webrecorder.jpeg" width="150px" align="right" style="float: right; margin: 5px"/>
+<img src="http://web.archive.org/web/20201025154037im_/https://blog.conifer.rhizome.org/assets/Conifer%20Rhiz%20Horizontal%20@2x.png" alttext="Conifer by Rhizome Logo, previously Know as WebRecorder.io" width="150px" align="right" style="float: right; margin: 5px"/>
 
 
  - **[Conifer by Rhizome.org](https://conifer.rhizome.org/)** **An open-source personal archiving server that uses pywb under the hood** [previously known as _Webrecorder.io_](https://blog.conifer.rhizome.org/2020/06/11/webrecorder-conifer.html)
@@ -116,7 +118,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 ---
 
 ### From the Old Dominion University: Web Science Team
-<img src="https://avatars2.githubusercontent.com/u/4416806?s=280&v=4" width="130px" align="right"/>
+<img src="https://avatars2.githubusercontent.com/u/4416806?s=280&v=4" width="130px" align="right" style="float: right; margin: 5px"/>
 
  - **[ipwb](https://github.com/oduwsdl/ipwb) A distributed web archiving solution using pywb with ipfs for storage**
  - **[archivenow](https://github.com/oduwsdl/archivenow) tool that pushes urls into all the online archive services like Archive.is and Archive.org**
@@ -131,7 +133,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ### From the Archives Unleashed Team
 
-<img src="https://archivesunleashed.org/images/hairball-roboto.png" width="220px" align="right"/>
+<img src="https://archivesunleashed.org/images/hairball-roboto.png" width="220px" align="right" style="float: right; margin: 5px"/>
 
  - [AUT](https://github.com/archivesunleashed/aut) Archives Unleashed Toolkit for analyzing web archives (formerly WarcBase) 
  - [Warclight](https://github.com/archivesunleashed/warclight) A Rails engine for finding and searching web archives
@@ -139,7 +141,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ---
 
-<img src="https://i.imgur.com/iaFQa9S.png" width="220px" align="right"/>
+<img src="https://i.imgur.com/iaFQa9S.png" width="220px" align="right" style="float: right; margin: 5px"/>
 
 ### From the IIPC team
 
@@ -152,7 +154,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ### Other Public Archiving Services
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Archive.is.jpg/250px-Archive.is.jpg" width="150px" align="right"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Archive.is.jpg/250px-Archive.is.jpg" width="150px" align="right" style="float: right; margin: 5px"/>
 
  - https://perma.cc
  - https://www.pagefreezer.com
@@ -234,14 +236,6 @@ Random helpful utilities for web archiving, WARC creation and replay, and more..
  - https://github.com/dgtlmoon/changedetection.io Change detection and monitoring of web page content changes
  - [And many more on the other lists...](#the-master-lists)
 
----
-
-### Managed ArchiveBox Hosting
-
-These are 3rd-party options that provide managed ArchiveBox hosting. They are not endorsed nor officially supported by us, but they may be useful if you don't want to host ArchiveBox yourself and are willing to pay some money.
-
-- https://aws.amazon.com/marketplace/pp/Linnovate-Open-Source-Innovation-Support-For-Archi/B08RVW6MJ2
-- https://www.stellarhosted.com/archivebox/
 
 ---
 
@@ -251,13 +245,14 @@ A collection of blog posts and articles about internet archiving, contact me / o
 
 ---
 
-### Blogs
+### Blogs Friends of ArchiveBox
 
-<img src="https://media.npr.org/assets/img/2017/06/28/istock-506236357-5961b1f611e5136a7cd3fd5f74d97f4575f48c66-s800-c85.jpg" width="350px" align="right">
+<img src="https://media.npr.org/assets/img/2017/06/28/istock-506236357-5961b1f611e5136a7cd3fd5f74d97f4575f48c66-s800-c85.jpg" width="350px" align="right" style="float: right; margin: 5px">
 
  - https://blog.archive.org
+ - https://webrecorder.net/blog
  - https://netpreserveblog.wordpress.com
- - https://blog.conifer.rhizome.org/ (_formerly_ https://blog.webrecorder.io/)
+ - https://blog.conifer.rhizome.org/
  - https://ws-dl.blogspot.com
  - https://siarchives.si.edu/blog
  - https://parameters.ssrc.org
@@ -269,7 +264,8 @@ A collection of blog posts and articles about internet archiving, contact me / o
 
 ---
 
-### Articles
+### Articles We Like About Internet Archiving
+
  - https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/
  - https://theconversation.com/your-internet-data-is-rotting-115891
  - https://www.bbc.com/future/story/20190401-why-theres-so-little-left-of-the-early-internet
@@ -333,22 +329,19 @@ If any of these links are dead, you can find an archived version on https://arch
 
 ### ArchiveBox Discussions in News & Social Media
 
-<img src="https://cdn.dribbble.com/users/896843/screenshots/2560608/news_media_icons-07.png" width="380px" align="right">
+<img src="https://cdn.dribbble.com/users/896843/screenshots/2560608/news_media_icons-07.png" width="380px" align="right" style="float: right; margin: 5px">
 
  - **Aggregators:**  
-   **[ProductHunt](https://www.producthunt.com/posts/archivebox)**, **[AlternativeTo](https://alternativeto.net/software/archivebox/)**, [SteemHunt](https://steemhunt.com/@adnan556644/archivebox-the-open-source-self-hosted-internet-archiving-solution), [Recurse Center: The Joy of Computing](https://joy.recurse.com/posts/224-archivebox), [Github Changelog](https://changelog.com/news/archivebox-opensource-selfhosted-web-archive-6D0d), [Dev.To Ultra List](https://dev.to/teamxenox/-ultra-list-one-list-to-rule-them-all-march-19-4p4f), [O'Reilly 4 Short Links](https://www.oreilly.com/ideas/four-short-links-15-april-2019), [JaxEnter](https://jaxenter.com/github-trending-march-2019-157470.html)
+   **[ProductHunt](https://www.producthunt.com/posts/archivebox)**, **[AlternativeTo](https://alternativeto.net/software/archivebox/)**, **[SaaSHub](https://www.saashub.com/archivebox)**, [Logiciels](https://www.logiciels.pro/logiciel-saas/archivebox/), [SteemHunt](https://steemhunt.com/@adnan556644/archivebox-the-open-source-self-hosted-internet-archiving-solution), [Recurse Center: The Joy of Computing](https://joy.recurse.com/posts/224-archivebox), [Github Changelog](https://changelog.com/news/archivebox-opensource-selfhosted-web-archive-6D0d), [Dev.To Ultra List](https://dev.to/teamxenox/-ultra-list-one-list-to-rule-them-all-march-19-4p4f), [O'Reilly 4 Short Links](https://www.oreilly.com/ideas/four-short-links-15-april-2019), [JaxEnter](https://jaxenter.com/github-trending-march-2019-157470.html)
  - **Blog Posts & Podcasts:**  
    [Korben.info](https://korben.info/archivebox-un-clone-darchive-org-et-de-la-wayback-machine-a-auto-heberger.html), [Defining Desktop Linux Podcast #296 (0:55:00)](https://linuxunplugged.com/296), [Binärgewitter Podcast #221](http://blog.binaergewitter.de/2019/01/18/binaergewitter-talk-number-221-vertieft-in-die-andere-richtung/), [Schrankmonster.de](https://www.schrankmonster.de/2019/04/10/archive-your-slice-of-the-web/), [La Ferme Du Web](https://www.lafermeduweb.net/veille/archivebox-archivez-des-copies-de-sites-en-local-avec-tous-les-medias-lies)
- - **Hacker News:**  
-   [#1](https://news.ycombinator.com/item?id=14272133), [#2](https://news.ycombinator.com/item?id=18728546), [#3](https://news.ycombinator.com/item?id=18876685), **[#4](https://news.ycombinator.com/item?id=19346985)**
- - **Reddit r/DataHoarder**:  
-   [#1](https://www.reddit.com/r/DataHoarder/comments/69e6i9/archive_a_browseable_copy_of_your_saved_pocket/), [#2](https://www.reddit.com/r/DataHoarder/comments/6kepv6/bookmarkarchiver_now_supports_archiving_all_major/), [#3](https://www.reddit.com/r/DataHoarder/comments/apnud4/continually_archive_websites_and_keep_the_older/), [#4](https://www.reddit.com/r/DataHoarder/comments/azdhd9/archivebox_open_source_selfhosted_web_archive/), [#5](https://www.reddit.com/r/DataHoarder/comments/b0o10h/archivebox_self_hosting_clone_of_archiveorg/) , **[#6](https://www.reddit.com/r/DataHoarder/comments/b4nrlc/in_case_you_havent_seen_it_archivebox_has_a/)**
- - **Reddit r/SelfHosted:**  
-   [#1](https://www.reddit.com/r/selfhosted/comments/69eoi3/pocket_stream_archive_your_own_personal_wayback/), [#2](https://www.reddit.com/r/selfhosted/comments/an2368/archivebox_the_opensource_selfhosted_web_archive/)
+ - **Hacker News threads and comments:**  
+   [#1](https://news.ycombinator.com/item?id=14272133), [#2](https://news.ycombinator.com/item?id=18728546), [#3](https://news.ycombinator.com/item?id=18876685), **[#4](https://news.ycombinator.com/item?id=19346985)**, [and many more...](https://www.google.com/search?q=site%3Anews.ycombinator.com+%22archivebox%22)
+ - **Reddit r/DataHoarder, r/SelfHosted, etc. posts and comments**:  
+   [#1](https://www.reddit.com/r/DataHoarder/comments/69e6i9/archive_a_browseable_copy_of_your_saved_pocket/), [#2](https://www.reddit.com/r/DataHoarder/comments/6kepv6/bookmarkarchiver_now_supports_archiving_all_major/), [#3](https://www.reddit.com/r/DataHoarder/comments/apnud4/continually_archive_websites_and_keep_the_older/), [#4](https://www.reddit.com/r/DataHoarder/comments/azdhd9/archivebox_open_source_selfhosted_web_archive/), [#5](https://www.reddit.com/r/DataHoarder/comments/b0o10h/archivebox_self_hosting_clone_of_archiveorg/) , **[#6](https://www.reddit.com/r/DataHoarder/comments/b4nrlc/in_case_you_havent_seen_it_archivebox_has_a/)**, [#7](https://www.reddit.com/r/selfhosted/comments/69eoi3/pocket_stream_archive_your_own_personal_wayback/), [#8](https://www.reddit.com/r/selfhosted/comments/an2368/archivebox_the_opensource_selfhosted_web_archive/), [and many more...](https://www.google.com/search?q=site%3Areddit.com+%22archivebox%22)
  - **Twitter:**  
-   [Python Trending](https://twitter.com/pythontrending/status/1092492387182628865), [PyCoder's Weekly](https://twitter.com/pycoders/status/1105803699799105536), [Python Hub](https://twitter.com/PythonHub/status/1107601343395651589), [Smashing Magazine](https://twitter.com/smashingmag/status/1107990604774928386)
- - **More on:**  
-   [Twitter](https://twitter.com/search?l=&q=archivebox.io%20OR%20pirate%2Farchivebox%20OR%20archivebox&src=typd), [Reddit](https://www.reddit.com/search?q=archivebox&sort=new&t=all), [HN](https://www.google.com/search?q=%22archivebox%22+site%3Anews.ycombinator.com), [Google](https://www.google.com/search?q=%22archivebox.io%22+OR+%22pirate%2FArchiveBox%22+OR+%22ArchiveBox%22+-site%3Areddit.com+-site%3Anews.ycombinator.com)...
+   [Python Trending](https://twitter.com/pythontrending/status/1092492387182628865), [PyCoder's Weekly](https://twitter.com/pycoders/status/1105803699799105536), [Python Hub](https://twitter.com/PythonHub/status/1107601343395651589), [Smashing Magazine](https://twitter.com/smashingmag/status/1107990604774928386), [and many more...]([Twitter](https://twitter.com/search?l=&q=archivebox.io%20OR%20pirate%2Farchivebox%20OR%20archivebox&src=typd))
+
 
 ---
 
@@ -356,7 +349,7 @@ If any of these links are dead, you can find an archived version on https://arch
 
 ### Most Active Communities
 
-<img src="https://www.archiveteam.org/images/f/f3/Archive_team.png" width="230px" align="right">
+<img src="https://www.archiveteam.org/images/f/f3/Archive_team.png" width="230px" align="right" style="float: right; margin: 5px">
 
  - **[The Internet Archive (Archive.org)](https://archive.org/iathreads/forums.php)** (USA)
  - **[International Internet Preservation Consortium (IIPC)](http://netpreserve.org/)** (International)
@@ -373,7 +366,7 @@ If any of these links are dead, you can find an archived version on https://arch
 
 ### Web Archiving Communities
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Noun_project_community_icon_986427_cc.svg/2000px-Noun_project_community_icon_986427_cc.svg.png" width="230px" align="right">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Noun_project_community_icon_986427_cc.svg/2000px-Noun_project_community_icon_986427_cc.svg.png" width="230px" align="right" style="float: right; margin: 5px">
 
 Follow these technological and organizational archiving hubs for the latest archiving news.
 
@@ -397,7 +390,7 @@ Follow these technological and organizational archiving hubs for the latest arch
 
 ### General Archiving Foundations, Coalitions, Initiatives, and Institutes
 
-<img src="https://us.123rf.com/450wm/drvector/drvector1510/drvector151000331/45755355-government-icons.jpg?ver=6" width="230px" align="right">
+<img src="https://us.123rf.com/450wm/drvector/drvector1510/drvector151000331/45755355-government-icons.jpg?ver=6" width="230px" align="right" style="float: right; margin: 5px">
 
 Find your local archiving group in the list and see how you can contribute!
 
