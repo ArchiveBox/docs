@@ -6,7 +6,7 @@
 
 💬 <i><b>Join us on our new ArchiveBox community chat server: https://Zulip.ArchiveBox.io</b></i>
 
-🔢 **Just getting started and want to learn more about why Web Archiving is important? <br/>** &nbsp; &nbsp;&nbsp; Check out this article: [On the Importance of Web Archiving](https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/).
+🔢 **Just getting started and want to learn more about why Web Archiving is important? <br/>** &nbsp; &nbsp;&nbsp; Check out this article: [On the Importance of Web Archiving](https://items.ssrc.org/parameters/on-the-importance-of-web-archiving/).
 
 </div>
 
@@ -266,7 +266,7 @@ A collection of blog posts and articles about internet archiving, contact me / o
 
 ### Articles We Like About Internet Archiving
 
- - https://parameters.ssrc.org/2018/09/on-the-importance-of-web-archiving/
+ - https://items.ssrc.org/parameters/on-the-importance-of-web-archiving/
  - https://theconversation.com/your-internet-data-is-rotting-115891
  - https://www.bbc.com/future/story/20190401-why-theres-so-little-left-of-the-early-internet
  - https://sr.ithaka.org/publications/the-state-of-digital-preservation-in-2018/
