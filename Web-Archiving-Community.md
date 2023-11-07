@@ -162,6 +162,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - https://www.stillio.com
  - https://archive.is / https://archive.today
  - https://archive.st
+ - https://arquivo.pt
  - http://theoldnet.com
  - https://timetravel.mementoweb.org/
  - https://freezepage.com/
