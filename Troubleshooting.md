@@ -19,12 +19,14 @@ Make sure you've followed the Manual Setup guide in the [[Install]] instructions
 
 ### Python
 
-On some Linux distributions the python3 package might not be recent enough.
-If this is the case for you, resort to installing a recent enough version manually.
+Make sure you have at least Python 3.9 installed on your system.
+
 ```bash
-add-apt-repository ppa:fkrull/deadsnakes && apt update && apt install python3.8  # python3.9 also works
+python3 --version
+pip install --upgrade pip setuptools
 ```
-If you still need help, [the official Python docs](https://docs.python.org/3.8/using/unix.html) are a good place to start.
+
+If you still need help getting Python installed, [the official Python docs](https://docs.python.org/3.9/using/unix.html) are a good place to start.
 
 ### Chromium/Google Chrome
 
