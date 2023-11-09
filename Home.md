@@ -11,8 +11,8 @@
 **❓If you need help or have a question, you can:**
 <!-- - 💬 Ask our community by joining the ArchiveBox IRC [chat room](http://webchat.freenode.net?channels=ArchiveBox&uio=d4)-->
  - 🐞 Open an [issue](https://github.com/ArchiveBox/ArchiveBox/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) in our bug tracker
- - 🗣 Reach out to me on [Twitter](https://twitter.com/theSquashSH)
- - 💠 Reach out to me via DM on [Patreon](https://patreon.com/theSquashSH) (you'll get the fastest response here)
+ - 💬 Message us on our [Public Discussion Forum (Zulip)](https://zulip.archivebox.io)
+ - 💠 Reach out to me on Twitter [@ArchiveBoxApp](https://twitter.com/ArchiveBoxApp) or [Patreon](https://patreon.com/theSquashSH)
 
 ---
 
