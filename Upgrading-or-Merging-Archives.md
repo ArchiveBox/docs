@@ -1,7 +1,7 @@
 ## Upgrade your ArchiveBox collection to a new version
 
 
-*Note: It's recommended to only upgrade one major version at a time. e.g. if you're on `v0.4.14`, upgrade to `v0.4.2`, then to `v0.5.6` (the latest available minor version for each major version), then from there to `v0.6.3`, not straight from `v0.4.14` -> `v0.6.3`.
+*Note: It's recommended to only upgrade one major version at a time. e.g. if you're on `v0.4.14`, upgrade to `v0.5.6` next, then `v0.6.3`, and finally `v0.7.1` (as 3 separate steps).
 You can specify exact versions with pip like so: `pip install archivebox==0.6.3` or with docker `docker pull archivebox/archivebox:0.6.3`. Upgrading directly across multiple major versions may work in some cases, but is not recommended for maximum data safety.*
 
 **✅ Upgrading checklist:**
