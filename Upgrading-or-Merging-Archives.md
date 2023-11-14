@@ -252,7 +252,7 @@ More info:
 #### Database and filesystem contention issues when running multiple ArchiveBox processes
 
 ArchiveBox can sometimes struggle when archiving many links in parallel with multiple ArchiveBox processes trying to write to the database at the same time, leading to errors like this:
-```logs
+```bash
 Unable to create the django_migrations table (database is locked)
 ```
 
@@ -305,7 +305,7 @@ More info:
 A corrupted database file can theoretically only happen if an external process or filesystem error corrupts the SQLite3 database (there has only been [one report](https://github.com/ArchiveBox/ArchiveBox/issues/955) of a user encountering this in real life). If you ever need to repair a corrupted ArchiveBox index you can run the following steps.
 
 Note this is specific to this error, these steps do not apply to other migrations/db errors (see below for other issues):
-```logs
+```bash
 sqlite3.DatabaseError: database disk image is malformed    
 ```
 

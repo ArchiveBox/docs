@@ -14,7 +14,7 @@ positional arguments:
 
 optional arguments:
   -h, --help        show this help message and exit
-  --quiet, -q       Don't warn about storage space.
+  --quiet, -q       Dont warn about storage space.
   --add             Add a new scheduled ArchiveBox update job to cron
   --every EVERY     Run ArchiveBox once every [timeperiod] (hour/day/month/year or cron format e.g. "0 0 * * *")
   --depth {0,1}     Depth to archive to [0] or 1, see "add" command help for more info

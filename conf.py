@@ -25,8 +25,10 @@ os.environ['USE_CHROME'] = 'False'
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 PACKAGE_DIR = os.path.join(ROOT_DIR, 'archivebox')
 
+os.chdir(ROOT_DIR)
+
 sys.path.insert(0, os.path.abspath('.'))
-sys.path.insert(0, os.path.abspath('../'))
+sys.path.insert(0, os.path.abspath('..'))
 sys.path.insert(0, PACKAGE_DIR)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
 django.setup()
@@ -36,7 +38,7 @@ VERSION = json.loads((Path(ROOT_DIR) / 'package.json').read_text().strip())['ver
 # -- Project information -----------------------------------------------------
 
 project = 'ArchiveBox'
-copyright = '2020, Nick Sweeting'
+copyright = '2023 ©️ ArchiveBox ™️'
 author = 'Nick Sweeting'
 github_url = 'https://github.com/ArchiveBox/ArchiveBox'
 github_doc_root = 'https://github.com/ArchiveBox/ArchiveBox/tree/master/docs/'

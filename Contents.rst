@@ -31,6 +31,7 @@ General
     Publishing-Your-Archive.md
     Scheduled-Archiving.md
     Chromium-Install.md
+    Upgrading-or-Merging-Archives.md
 
 
 API Reference

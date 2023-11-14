@@ -8,7 +8,7 @@ Make sure you have Docker installed and set up on your machine before following 
 
 <img src="https://i.imgur.com/qFAPRwC.png" width="20%" align="right">
 
-- [Overview](#)
+- [Overview](#Overview)
 - [Docker Compose](#docker-compose) (recommended way)
   - [Setup](#setup)
   - [Upgrading](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#upgrading-with-docker-compose-%EF%B8%8F)

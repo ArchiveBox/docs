@@ -27,14 +27,6 @@ archivebox.core.apps module
     :undoc-members:
     :show-inheritance:
 
-archivebox.core.models module
------------------------------
-
-.. automodule:: archivebox.core.models
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 archivebox.core.settings module
 -------------------------------
 

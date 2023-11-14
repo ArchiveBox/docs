@@ -4,14 +4,6 @@ archivebox.cli package
 Submodules
 ----------
 
-archivebox.cli.archivebox module
---------------------------------
-
-.. automodule:: archivebox.cli.archivebox
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 archivebox.cli.archivebox\_add module
 -------------------------------------
 
@@ -36,10 +28,10 @@ archivebox.cli.archivebox\_help module
     :undoc-members:
     :show-inheritance:
 
-archivebox.cli.archivebox\_info module
---------------------------------------
+archivebox.cli.archivebox\_status module
+----------------------------------------
 
-.. automodule:: archivebox.cli.archivebox_info
+.. automodule:: archivebox.cli.archivebox_status
     :members:
     :undoc-members:
     :show-inheritance:
@@ -112,22 +104,6 @@ archivebox.cli.archivebox\_version module
 -----------------------------------------
 
 .. automodule:: archivebox.cli.archivebox_version
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-archivebox.cli.logging module
------------------------------
-
-.. automodule:: archivebox.cli.logging
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-archivebox.cli.tests module
----------------------------
-
-.. automodule:: archivebox.cli.tests
     :members:
     :undoc-members:
     :show-inheritance:

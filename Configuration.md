@@ -5,7 +5,7 @@
 Configuration of ArchiveBox is done by using the `archivebox config` command, modifying the `ArchiveBox.conf` file in the data folder, or by using environment variables. All three methods work equivalently when using Docker as well.
 
 *Some equivalent examples of setting some configuration options:*
-```bash[][]
+```bash
 archivebox config --set CHROME_BINARY=google-chrome-stable
 # OR
 echo "CHROME_BINARY=google-chrome-stable" >> ArchiveBox.conf
