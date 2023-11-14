@@ -141,7 +141,7 @@ True   # this URL would not be archived because it matches the exclusion pattern
 
 *Note: all assets required to render each page are still archived, `URL_DENYLIST`/`URL_ALLOWLIST` do not apply to images, css, video, etc. visible inline within the page.*
 
-*Note 2:* These options used to be called `URL_WHITELIST` & `URL_BLACKLIST` before v0.7.1.
+<b>Note 2:</b> These options used to be called <a href="#URL_WHITELIST" name="url_whitelist"><code>URL_WHITELIST</code></a> & <a href="#URL_BLACKLIST" name="url_blacklist"><code>URL_BLACKLIST</code></a> before <a href="https://github.com/ArchiveBox/ArchiveBox/releases"><code>v0.7.1</code></a>.
 
 *Related options:*  
 [`URL_ALLOWLIST`](#URL_ALLOWLIST), [`SAVE_MEDIA`](#SAVE_MEDIA), [`SAVE_GIT`](#SAVE_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
