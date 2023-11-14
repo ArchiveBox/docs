@@ -41,7 +41,7 @@ project = 'ArchiveBox'
 copyright = '2023 ©️ ArchiveBox ™️'
 author = 'Nick Sweeting'
 github_url = 'https://github.com/ArchiveBox/ArchiveBox'
-github_doc_root = 'https://github.com/ArchiveBox/ArchiveBox/tree/master/docs/'
+github_doc_root = 'https://github.com/ArchiveBox/docs/tree/master/docs/'
 language = 'en'
 
 # The full version, including alpha/beta/rc tags
