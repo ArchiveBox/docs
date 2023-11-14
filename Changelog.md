@@ -11,7 +11,7 @@
 **`THIS PAGE HAS BEEN MOVED:` See the [releases](https://github.com/ArchiveBox/ArchiveBox/releases) page for versioned source downloads and full changelog.**
 
 
-🍰 Many thanks to our 60+ contributors and everyone in the web archiving community! 🏛
+🍰 Many thanks to our 100+ contributors and everyone in the web archiving community! 🏛
 
 </div>
 
