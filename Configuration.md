@@ -124,7 +124,7 @@ Some text to display in the footer of the archive index.  Useful for providing s
 [`TEMPLATES_DIR`](#templates_dir)
 
 ---
-#### `URL_BLACKLIST`
+#### `URL_DENYLIST`
 **Possible Values:** [`\.(css|js|otf|ttf|woff|woff2|gstatic\.com|googleapis\.com/css)(\?.*)?$`]/`.+\.exe$`/`http(s)?:\/\/(.+)?example.com\/.*`/...  
 
 A regex expression used to exclude certain URLs from archiving.  You can use if there are certain domains, extensions, or other URL patterns that you want to ignore whenever they get imported.  Blacklisted URLs wont be included in the index, and their page content wont be archived.
@@ -132,22 +132,22 @@ A regex expression used to exclude certain URLs from archiving.  You can use if 
 When building your exclusion list, you can check whether a given URL matches your regex expression in `python` like so:
 ```python
 >>> import re
->>> URL_BLACKLIST = r'^http(s)?:\/\/(.+\.)?(youtube\.com)|(amazon\.com)\/.*$'  # replace this with your regex to test
->>> URL_BLACKLIST_PTN = re.compile(URL_BLACKLIST, re.IGNORECASE | re.UNICODE | re.MULTILINE)
+>>> URL_DENYLIST = r'^http(s)?:\/\/(.+\.)?(youtube\.com)|(amazon\.com)\/.*$'  # replace this with your regex to test
+>>> URL_DENYLIST_PTN = re.compile(URL_DENYLIST, re.IGNORECASE | re.UNICODE | re.MULTILINE)
 
->>> bool(URL_BLACKLIST_PTN.search('https://test.youtube.com/example.php?abc=123'))  # replace this with the URL to test
+>>> bool(URL_DENYLIST_PTN.search('https://test.youtube.com/example.php?abc=123'))  # replace this with the URL to test
 True   # this URL would not be archived because it matches the exclusion pattern
 ```
 
-*Note: all assets required to render each page are still archived, `URL_BLACKLIST`/`URL_WHITELIST` do not apply to images, css, video, etc. visible inline within the page.*
+*Note: all assets required to render each page are still archived, `URL_DENYLIST`/`URL_ALLOWLIST` do not apply to images, css, video, etc. visible inline within the page.*
 
-*Note 2:* I named these options poorly years ago when I added them and I plan to rename them to `URL_ALLOWLIST` & `URL_DENYLIST` in a future release.
+*Note 2:* These options used to be called `URL_WHITELIST` & `URL_BLACKLIST` before v0.7.1.
 
 *Related options:*  
-[`URL_WHITELIST`](#URL_WHITELIST), [`SAVE_MEDIA`](#SAVE_MEDIA), [`SAVE_GIT`](#SAVE_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
+[`URL_ALLOWLIST`](#URL_ALLOWLIST), [`SAVE_MEDIA`](#SAVE_MEDIA), [`SAVE_GIT`](#SAVE_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
 
 ---
-#### `URL_WHITELIST`
+#### `URL_ALLOWLIST`
 **Possible Values:** [`None`]/`^http(s)?:\/\/(.+)?example\.com\/?.*$`/...  
 
 A regex expression used to exclude all URLs that don't match the given pattern from archiving.  You can use if there are certain domains, extensions, or other URL patterns that you want to restrict the scope of archiving to (e.g. to only archive a single domain, subdirectory, or filetype, etc..
@@ -155,20 +155,20 @@ A regex expression used to exclude all URLs that don't match the given pattern f
 When building your whitelist, you can check whether a given URL matches your regex expression in `python` like so:
 ```python
 >>> import re
->>> URL_WHITELIST = r'^http(s)?:\/\/(.+)?example\.com\/?.*$'  # replace this with your regex to test
->>> URL_WHITELIST_PTN = re.compile(URL_WHITELIST, re.IGNORECASE | re.UNICODE | re.MULTILINE)
+>>> URL_ALLOWLIST = r'^http(s)?:\/\/(.+)?example\.com\/?.*$'  # replace this with your regex to test
+>>> URL_ALLOWLIST_PTN = re.compile(URL_ALLOWLIST, re.IGNORECASE | re.UNICODE | re.MULTILINE)
 
->>> bool(URL_WHITELIST_PTN.search('https://test.example.com/example.php?abc=123'))
+>>> bool(URL_ALLOWLIST_PTN.search('https://test.example.com/example.php?abc=123'))
 True      # this URL would be archived
 
->>> bool(URL_WHITELIST_PTN.search('https://test.youtube.com/example.php?abc=123'))
+>>> bool(URL_ALLOWLIST_PTN.search('https://test.youtube.com/example.php?abc=123'))
 False     # this URL would be excluded from archiving
 ```
 
 This option is useful for **recursive archiving** of all the pages under a given domain or subfolder (aka crawling/spidering), without following links to external domains / parent folders.
 ```bash
 # temporarily enforce a whitelist by setting the option as an environment variable
-export URL_WHITELIST='^http(s)?:\/\/(.+)?example\.com\/?.*$'
+export URL_ALLOWLIST='^http(s)?:\/\/(.+)?example\.com\/?.*$'
 
 # then run your archivebox commands in the same shell
 archivebox add --depth=1 'https://example.com'
@@ -179,10 +179,10 @@ archivebox list https://example.com | archivebox add --depth=1   # repeat up to 
 # all URLs that don't match *.example.com will be excluded, e.g. a link to youtube.com would not be followed
 ```
 
-*Note: all assets required to render each page are still archived, `URL_BLACKLIST`/`URL_WHITELIST` do not apply to images, css, video, etc. visible inline within the page.*
+*Note: all assets required to render each page are still archived, `URL_DENYLIST`/`URL_ALLOWLIST` do not apply to images, css, video, etc. visible inline within the page.*
 
 *Related options:*  
-[`URL_BLACKLIST`](#URL_BLACKLIST), [`SAVE_MEDIA`](#SAVE_MEDIA), [`SAVE_GIT`](#SAVE_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
+[`URL_DENYLIST`](#URL_DENYLIST), [`SAVE_MEDIA`](#SAVE_MEDIA), [`SAVE_GIT`](#SAVE_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
 
 ---
 
@@ -575,5 +575,4 @@ Arguments that are passed to the `git clone` subcommand. The values should be a 
 [`GIT_BINARY`](#git_binary)
 
 
-<img src="https://i.imgur.com/almAbwK.png" width="100%"/>
-[]: 
+<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/5a4dd576-387a-4a1f-9dfa-407eac87078c" width="100%"/>
