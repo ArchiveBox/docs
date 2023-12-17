@@ -42,6 +42,12 @@ If you're importing private links or authenticated content, you probably don't w
 
 <img src="https://i.imgur.com/yDqJc4I.jpg" width="150px" align="right">
 
+> [!TIP]
+> Make sure you run Docker commands with `run` instead of `exec` or you'll get a warning! e.g.
+> ✅ `docker compose run archivebox manage create superuser`
+> *instead of:*
+> ❌ `docker compose exec archivebox manage create superuser`
+
 Do not run ArchiveBox as root for a number of reasons:
  - Chrome will execute as root and fail immediately because Chrome sandboxing is pointless when the data directory is opened as root (do not set `CHROME_SANDBOX=False` just to bypass that error!)
  - All dependencies will be run as root, if any of them have a vulnerability that's exploited by sites you're archiving you're opening yourself up to full system compromise
