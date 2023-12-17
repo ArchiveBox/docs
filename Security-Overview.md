@@ -42,6 +42,17 @@ If you're importing private links or authenticated content, you probably don't w
 
 <img src="https://i.imgur.com/yDqJc4I.jpg" width="150px" align="right">
 
+> [!WARNING]
+> **Did you try run a command in Docker with `exec` instead of `run` by accident?**  
+> Make sure you use `docker run` instead of `docker exec` to run ArchiveBox commands.  
+>   
+> ✅ `docker compose run archivebox manage createsuperuser`  
+> ✅ `docker run -it -v $PWD:/data archivebox/archivebox manage createsuperuser`  
+> *instead of:*  
+> ❌ `docker compose exec archivebox manage createsuperuser`  
+> ❌ `docker exec archivebox manage createsuperuser`  
+> Explanation: `docker run` automatically applies the correct `archivebox` user file permissions because it goes through [`./bin/docker_entrypoint.sh`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/bin/docker_entrypoint.sh). Because `docker exec` skips the entrypoint, it will attempt to run ArchiveBox as root and fail. If you must use `exec` for some reason (e.g. if you only have access to an interactive shell provided by a container management tool), you can use `su archivebox` within the shell to change to the correct user before running any subsequent commands.
+
 Do not run ArchiveBox as root for a number of reasons:
  - Chrome will execute as root and fail immediately because Chrome sandboxing is pointless when the data directory is opened as root (do not set `CHROME_SANDBOX=False` just to bypass that error!)
  - All dependencies will be run as root, if any of them have a vulnerability that's exploited by sites you're archiving you're opening yourself up to full system compromise
@@ -56,17 +67,6 @@ chown -R archivebox:archivebox /home/archivebox
 ...
 sudo -u archivebox archivebox add ...
 ```
-
-
-> [!WARNING]
-> **Did you try run a command in Docker with `exec` instead of `run` by accident?**
-> Make sure you use `docker run` instead of `docker exec` to run ArchiveBox commands.  
-> `run` automatically takes care of dropping down to the `archivebox` user within Docker e.g.  
-> ✅ `docker compose run archivebox manage createsuperuser`  
-> ✅ `docker run -it -v $PWD:/data archivebox/archivebox manage createsuperuser`  
-> *instead of:*  
-> ❌ `docker compose exec archivebox manage createsuperuser`  
-> ❌ `docker exec archivebox manage createsuperuser`  
 
 ~~If you absolutely must run it as root for some reason, a footgun is provided: you can set [`ALLOW_ROOT=True`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#ALLOW_ROOT) via environment variable or in your ArchiveBox.conf file.~~ This footgun option was removed (I'm sorry, the support burden of helping people who messed up their systems by running everything as root was too high).
 
