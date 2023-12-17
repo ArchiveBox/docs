@@ -43,15 +43,20 @@ If you're importing private links or authenticated content, you probably don't w
 <img src="https://i.imgur.com/yDqJc4I.jpg" width="150px" align="right">
 
 > [!WARNING]
-> **Did you try run a command in Docker with `exec` instead of `run` by accident?**  
+> **Did you run a command in Docker with `exec` instead of `run` by accident and end up here?**  
 > Make sure you use `docker run` instead of `docker exec` to run ArchiveBox commands.  
 >   
+> *For example:*  
 > ✅ `docker compose run archivebox manage createsuperuser`  
 > ✅ `docker run -it -v $PWD:/data archivebox/archivebox manage createsuperuser`  
+> (`docker run` automatically uses the correct `archivebox` user & file permissions enforced via [`./bin/docker_entrypoint.sh`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/bin/docker_entrypoint.sh))  
+>   
 > *instead of:*  
 > ❌ `docker compose exec archivebox manage createsuperuser`  
-> ❌ `docker exec archivebox manage createsuperuser`  
-> Explanation: `docker run` automatically applies the correct `archivebox` user file permissions because it goes through [`./bin/docker_entrypoint.sh`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/bin/docker_entrypoint.sh). Because `docker exec` skips the entrypoint, it will attempt to run ArchiveBox as root and fail. If you must use `exec` for some reason (e.g. if you only have access to an interactive shell provided by a container management tool), you can use `su archivebox` within the shell to change to the correct user before running any subsequent commands.
+> ❌ `docker exec -it archivebox manage createsuperuser`  
+> (`docker exec` will skip the [entrypoint](https://github.com/ArchiveBox/ArchiveBox/blob/dev/bin/docker_entrypoint.sh) and attempt to run everything as root and fail)  
+>   
+> If you must use `exec` for some reason (e.g. if you only have access to a live container shell), you can run `su archivebox` within the shell, or add the arg `--user=archivebox` after `exec`.
 
 Do not run ArchiveBox as root for a number of reasons:
  - Chrome will execute as root and fail immediately because Chrome sandboxing is pointless when the data directory is opened as root (do not set `CHROME_SANDBOX=False` just to bypass that error!)
