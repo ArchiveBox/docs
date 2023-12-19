@@ -27,20 +27,22 @@ Make sure you have Docker installed and set up on your machine before following 
 
 **Usage:**
 ```bash
-docker run -v $PWD:/data -it archivebox/archivebox init --setup
-docker run -v $PWD:/data -it archivebox/archivebox add 'https://example.com'
-docker run -v $PWD:/data -p 8000:8000 archivebox/archivebox server 0.0.0.0:8000
+docker pull archivebox/archivebox
+
+# docker run -v $PWD/data:/data -it archivebox/archivebox [archivebox subcommands go here]
+# docker run -v $PWD/data:/data -it archivebox/archivebox add 'https://example.com'
+# docker run -v $PWD/data:/data -p 8000:8000 archivebox/archivebox server 0.0.0.0:8000
 ```
 
 ---
 
-<img src="https://i.imgur.com/knwOtky.png" height="40px" align="right">
+<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/9e8658f7-7d00-452e-a10e-f7d22ef9365a" height="40px" align="right">
 
 ## Docker Compose
 
 An example [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/master/docker-compose.yml) config with ArchiveBox and an Nginx server to serve the archive is included in the project root. You can edit it as you see fit, or just run it as it comes out-of-the-box.
 
-Just make sure you have a Docker version that's [new enough](https://docs.docker.com/compose/compose-file/) to support `version: 3` format:
+Just make sure you have a Docker version that's [new enough](https://docs.docker.com/compose/compose-file/) to support `version: 3.9` format:
 
 ```bash
 docker --version
@@ -50,20 +52,28 @@ Docker version 18.09.1, build 4c52b90    # must be >= 17.04.0
 ### Setup
 
 ```bash
-mkdir archivebox && cd archivebox
+# create a folder to store your data (can be anywhere)
+mkdir ~/archivebox && cd ~/archivebox
+
+# download the compose file
 curl -O https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/docker-compose.yml
-docker-compose run archivebox init --setup
-docker-compose run archivebox add 'https://example.com'
-docker-compose up
+
+# run the initial setup and add some URLs to test it out, then start the web server
+docker compose run archivebox init --setup
+docker compose run archivebox add 'https://example.com'
+docker compose up
 ```
 
-If you want to use sonic for full text search, download the sonic config file uncomment the sonic service in your `docker-compose.yml` file:
+If you want to use sonic for full text search, download the sonic config file & uncomment the sonic service in your `docker-compose.yml` file:
 ```bash
+# download the sonic config file into your data folder (e.g. ~/archivebox)
 curl https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/etc/sonic.cfg > sonic.cfg
-# then uncomment the sonic block in docker-compose.yml
+
+# then uncomment the sonic-related sections in docker-compose.yml
+nano docker-compose.yml
 
 # to backfill previously added snapshots into the full text index, run:
-docker-compose run archivebox update --index-only
+docker compose run archivebox update --index-only
 ```
 
 ### Upgrading
@@ -76,26 +86,26 @@ First, make sure you're `cd`'ed into the same folder as your `docker-compose.yml
 
 Then open [`http://127.0.0.1:8000`](http://127.0.0.1:8000) or browse `./data/archive` in the filesystem to view the archive.
 
-To add new URLs, you can use docker-compose just like the normal `archivebox <subcommand> [args]` CLI.
+To add new URLs, you can use `docker compose run archivebox <subcommand>` just like the normal `archivebox <subcommand> [args]` CLI.
 
 **To add an individual link or list of links**, pass in URLs via stdin.
 
 ```bash
-echo "https://example.com" | docker-compose run archivebox add
+echo "https://example.com" | docker compose run archivebox add
 ```
 
 **To import links from a file** you can either `cat` the file and pass it via stdin like above, or move it into your data folder so that ArchiveBox can access it from within the container.
 
 ```bash
-docker-compose run archivebox add 'https://exmaple.com/some/url/here'
-docker-compose run archivebox add < ~/Downloads/bookmarks.html
-curl https://example.com/some/rss/feed.xml | docker-compose run archivebox add
+docker compose run archivebox add 'https://exmaple.com/some/url/here'
+docker compose run archivebox add < ~/Downloads/bookmarks.html
+curl https://example.com/some/rss/feed.xml | docker compose run archivebox add
 ```
 
 **To ingest a feed or remote file and archive all the URLs within**, pass the URL or path to the feed or page as an argument using depth=1.
 
 ```bash
-docker-compose run archivebox add --depth=1 https://example.com/some/feed.rss
+docker compose run archivebox add --depth=1 https://example.com/some/feed.rss
 ```
 
 The `depth` argument controls if you want to save the links contained in that URL, or only the specified URL.
@@ -108,7 +118,7 @@ To access your archive, you can open `data/index.html` directly, or you can use 
 
 ### Configuration
 
-ArchiveBox running with docker-compose accepts all the same environment variables as normal, see the full list on the [[Configuration]] page.
+ArchiveBox running with `docker compose` accepts all the same environment variables as normal, see the full list on the [[Configuration]] page.
 
 The recommended way to pass in config variables is to edit the `environment:` section in `docker-compose.yml` directly or add an `env_file: ./path/to/ArchiveBox.conf` line before `environment:` to import variables from an env file.
 
@@ -129,7 +139,7 @@ services:
         ...
 ```
 
-You can also specify an env file via CLI when running compose using `docker-compose --env-file=/path/to/config.env ...` although you must specify the variables in the `environment:` section that you want to have passed down to the ArchiveBox container from the passed env file.
+You can also specify an env file via CLI when running compose using `docker compose --env-file=/path/to/config.env ...` although you must specify the variables in the `environment:` section that you want to have passed down to the ArchiveBox container from the passed env file.
 
 If you want to access your archive server with HTTPS, put a reverse proxy like Nginx or Caddy in front of `http://127.0.0.1:8098` to do SSL termination. You can find many instructions to do this online if you search "SSL reverse proxy".
 
@@ -189,8 +199,8 @@ The easiest way is to use the a `.env` file or add your config to your `docker-c
 
 The next easiest way to get/set config is using the archivebox CLI:
 ```bash
-docker-compose run archivebox config --get RESOLUTION
-docker-compose run archivebox config --set RESOLUTION=1440,900
+docker compose run archivebox config --get RESOLUTION
+docker compose run archivebox config --set RESOLUTION=1440,900
 # or
 docker run -i -v $PWD:/data archivebox/archivebox config --set MEDIA_TIMEOUT=120
 ```
