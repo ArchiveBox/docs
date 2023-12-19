@@ -62,6 +62,10 @@ env TIMEOUT=3600 archivebox add 'https://example.com'
 See [[Configuration]] page for more details about the available options and ways to pass config.  
 If you're using Docker, also make sure to read the Configuration section on the [[Docker]] page.
 
+> [!TIP]  
+> You can run archivebox outside a data directory using:
+> `env chdir=/path/to/archivebox/data archivebox [subcommand] [args...]`
+
 ---
 
 ### Import a single URL
