@@ -85,7 +85,7 @@ If you don't like running random setup scripts off the internet (:+1:), you can 
 brew tap homebrew-ffmpeg/ffmpeg
 brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
 brew install python3 git wget curl youtube-dl
-brew cask install chromium  # Skip this if you already have Google Chrome/Chromium installed in /Applications/
+brew install --cask chromium  # Skip this if you already have Google Chrome/Chromium installed in /Applications/
 ```
 
 #### Ubuntu/Debian
