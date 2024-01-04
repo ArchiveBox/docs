@@ -330,6 +330,8 @@ For more info and example usage:
 
 You can interact with ArchiveBox as a Python library from external scripts or programs.
 
+This API is a *local* API, designed to be used on the same machine as the ArchiveBox collection.
+
 For example you could create and a script `add_archivebox_url.py` like so:
 ```python
 import os
