@@ -47,6 +47,25 @@ Permissions to set the output directory and file contents to.
 This is useful when running ArchiveBox inside Docker as root and you need to explicitly set the permissions to something that the users on the host can access.
 
 ---
+#### `PUID` & `PGID`
+**Possible Values:** [`911`]/`1000`/...
+
+User and Group ownership to set the output directory and file contents to.  **Only settable as environment variables** when using ArchiveBox in Docker.
+
+This is useful on some Docker setups when you want the data dir to be owned by the same UID/GID on the host and inside the container.
+
+`PUID=0` is not allowed ([do not run as root](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#do-not-run-as-root)), and `PGID=0` is allowed but not recommended.  
+Make sure if using NFS/SMB/FUSE that the volume allows setting ownership on files (e.g. don't set `root_squash` or `all_squash` on NFS shares).
+
+*Learn more:*  
+- https://docs.linuxserver.io/general/understanding-puid-and-pgid/
+- https://github.com/ArchiveBox/ArchiveBox/issues/1304
+- https://github.com/ArchiveBox/ArchiveBox/blob/main/bin/docker_entrypoint.sh
+
+*Related options:*  
+[`OUTPUT_PERMISSIONS`](#output_permissions)
+
+---
 #### `ONLY_NEW`
 **Possible Values:** [`True`]/`False`  
 Toggle whether or not to attempt rechecking old links when adding new ones, or leave old incomplete links alone and only archive the new links.
