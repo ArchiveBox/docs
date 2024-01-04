@@ -47,7 +47,7 @@ Permissions to set the output directory and file contents to.
 This is useful when running ArchiveBox inside Docker as root and you need to explicitly set the permissions to something that the users on the host can access.
 
 *Related options:*  
-[`PUID` & `PGID`](#puid-pgid)
+[`PUID` & `PGID`](#puid--pgid)
 
 ---
 #### `PUID` & `PGID`
