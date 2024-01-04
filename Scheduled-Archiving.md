@@ -4,25 +4,29 @@ ArchiveBox contains a built-in scheduler that supports pulling in URLs regularly
 
 ```bash
 $ archivebox schedule --help
+[i] [2024-01-04 20:58:15] ArchiveBox v0.7.2: archivebox schedule --help
+    > ~/ArchiveBox/data
 
-usage: archivebox schedule [-h] [--quiet] [--add] [--every EVERY] [--depth {0,1}] [--overwrite] [--clear] [--show] [--foreground] [--run-all] [import_path]
+usage: archivebox schedule [-h] [--quiet] [--add] [--every EVERY] [--tag TAG] [--depth {0,1}] [--overwrite] [--update] [--clear] [--show] [--foreground] [--run-all] [import_path]
 
 Set ArchiveBox to regularly import URLs at specific times using cron
 
 positional arguments:
-  import_path       Check this path and import any new links on every run (can be either local file or remote URL)
+  import_path        Check this path and import any new links on every run (can be either local file or remote URL)
 
-optional arguments:
-  -h, --help        show this help message and exit
-  --quiet, -q       Dont warn about storage space.
-  --add             Add a new scheduled ArchiveBox update job to cron
-  --every EVERY     Run ArchiveBox once every [timeperiod] (hour/day/month/year or cron format e.g. "0 0 * * *")
-  --depth {0,1}     Depth to archive to [0] or 1, see "add" command help for more info
-  --overwrite       Re-archive any URLs that have been previously archived, overwriting existing Snapshots
-  --clear           Stop all ArchiveBox scheduled runs (remove cron jobs)
-  --show            Print a list of currently active ArchiveBox cron jobs
-  --foreground, -f  Launch ArchiveBox scheduler as a long-running foreground task instead of using cron.
-  --run-all         Run all the scheduled jobs once immediately, independent of their configured schedules, can be used together with --foreground
+options:
+  -h, --help         show this help message and exit
+  --quiet, -q        Don't warn about storage space.
+  --add              Add a new scheduled ArchiveBox update job to cron
+  --every EVERY      Run ArchiveBox once every [timeperiod] (hour/day/month/year or cron format e.g. "0 0 * * *")
+  --tag TAG, -t TAG  Tag the added URLs with the provided tags e.g. --tag=tag1,tag2,tag3
+  --depth {0,1}      Depth to archive to [0] or 1, see "add" command help for more info
+  --overwrite        Re-archive any URLs that have been previously archived, overwriting existing Snapshots
+  --update           Re-pull any URLs that have been previously added, as needed to fill missing ArchiveResults
+  --clear            Stop all ArchiveBox scheduled runs (remove cron jobs)
+  --show             Print a list of currently active ArchiveBox cron jobs
+  --foreground, -f   Launch ArchiveBox scheduler as a long-running foreground task instead of using cron.
+  --run-all          Run all the scheduled jobs once immediately, independent of their configured schedules, can be used together with --foreground
 ```
 
 ArchiveBox ignores links that are imported multiple times (keeping the earliest version that it's seen).
