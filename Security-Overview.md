@@ -101,11 +101,14 @@ Unless `--delete` is passed to `archivebox remove`, Snapshots removed from the i
 
 Consider what permissioning to apply to your archive folder carefully. Limit access to the fewest possible users by checking folder ownership and setting [`OUTPUT_PERMISSIONS`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#OUTPUT_PERMISSIONS) accordingly. Generally the `index.sqlite3` file, `archive/` folder, and `ArchiveBox.conf` file must all be owned and writable by the `archivebox` user or a dedicated non-root user.
 
+[`PUID` & `PGID`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#puid--pgid) can be set when running with Docker to control what user and group ArchiveBox expects to own the data directory within the container.
+
 More info:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#disk-layout
 - https://github.com/ArchiveBox/ArchiveBox#output-formats
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#database-troubleshooting
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#filesystem-doesnt-support-fsync-eg-network-mounts
+- https://github.com/ArchiveBox/ArchiveBox#storage-requirements
 
 ### Publishing
 
