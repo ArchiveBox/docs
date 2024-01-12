@@ -101,14 +101,15 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ---
 
-### From the Rhizome.org/WebRecorder.io/Conifer team
+### From the WebRecorder.io team and the Rhizome.org/Conifer team
 
 <img src="https://quintagroup.com/cms/python/images/webrecorder.jpeg" width="150px" align="right" style="float: right; margin: 5px"/>
 <img src="http://web.archive.org/web/20201025154037im_/https://blog.conifer.rhizome.org/assets/Conifer%20Rhiz%20Horizontal%20@2x.png" alttext="Conifer by Rhizome Logo, previously Know as WebRecorder.io" width="150px" align="right" style="float: right; margin: 5px"/>
 
-
- - **[Conifer by Rhizome.org](https://conifer.rhizome.org/)** **An open-source personal archiving server that uses pywb under the hood** [previously known as _Webrecorder.io_](https://blog.conifer.rhizome.org/2020/06/11/webrecorder-conifer.html)
+ - [ArchiveWeb.page](https://archiveweb.page) + [ReplayWeb.page](https://replayweb.page) single-page self-contained archiving + replay webapp
+ - **[Browsertrix](https://browsertrix.com/) aka [Browsertrix-Crawler](https://github.com/webrecorder/browsertrix-crawler) + [Browsertrix Cloud](https://github.com/webrecorder/browsertrix-cloud)** fully-fledged web app to save + curate high-fidelity web archives
  - **[Webrecorder.net](https://webrecorder.net/) Suite of open source projects and tools, led by [Ilya Kreymer](https://github.com/ikreymer), to capture interactive websites and replay them at a later time as accurately as possible**
+ - **[Conifer by Rhizome.org](https://conifer.rhizome.org/)** **An open-source personal archiving server that uses pywb under the hood** [no longer affiliated with Webrecorder.io](https://blog.conifer.rhizome.org/2020/06/11/webrecorder-conifer.html) 
  - **[pywb](https://github.com/webrecorder/pywb) The python wayback machine, the codebase forked off archive.org that powers webrecorder**
  - [warcit](https://github.com/webrecorder/warcit) Create a warc file out of a folder full of assets
  - [WebArchivePlayer](https://github.com/ikreymer/webarchiveplayer#auto-load-warcs) A tool for replaying web archives
