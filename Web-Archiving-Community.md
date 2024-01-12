@@ -185,15 +185,20 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - **[Shaarchiver](https://github.com/nodiscc/shaarchiver) very similar project that archives Firefox, Shaarli, or Delicious bookmarks and all linked media, generating a markdown/HTML index**
  - **[Archivy](https://github.com/archivy/archivy) Python-based self-hosted knowledge base embedded into your filesystem**
  - **[Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline**
- - **[Diskernet](https://github.com/dosyago/DiskerNet) Archiving tool that uses the Chrome debugger protocol to save each page as-loaded in the browser** (aka 22120 by c0fe or i5ik)
+ - **[LinkWarden](https://github.com/linkwarden/linkwarden) Link archival and curation web app, very similar to ArchiveBox**
  - **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support**
  - [LinkAce](https://www.linkace.org/) A self-hosted bookmark management tool that saves snapshots to archive.org
+ - [LinkDing](https://github.com/sissbruecker/linkding) Self-hosted bookmark manager that is designed be to be minimal, fast, and easy to set up using Docker.
+ - [LinkWallet](https://github.com/tardisx/linkwallet) A self-hosted bookmark database with full-text page content search and limited archiving features
+ - [Espial](https://github.com/jonschoning/espial) Bookmark manager and search tool with limited archiving features
+ - [Diskernet](https://github.com/dosyago/DiskerNet) Archiving tool that uses the Chrome debugger protocol to save each page as-loaded in the browser** (aka 22120 by c0fe or i5ik)
  - [Trilium](https://github.com/zadam/trilium) Personal web UI based knowledge-base with web clipping and note-taking
  - [Herodotus](https://github.com/alaskanpuffin/herodotus-core) Django-based web archiving tool with a focus on collecting text-based content
  - [Buku](https://github.com/jarun/buku) Browser-independent bookmark manager CLI written in Python3 and SQLite3
  - [ReadableWebProxy](https://github.com/fake-name/ReadableWebProxy) A proxying archiver that downloads content from sites and can snapshot multiple versions of sites over time
  - [Perkeep](https://perkeep.org/) "Perkeep lets you permanently keep your stuff, for life."
  - [Fossilo](https://www.fossilo.com/) A commercial archiving solution that appears to be very similar to ArchiveBox
+ - [NeonLink](https://github.com/AlexSciFier/neonlink) Simple self-hosted bookmark management + [Benotes](https://noted.lol/benotes/) note-taking app with limited archiving features
  - [Archivematica](https://github.com/artefactual/archivematica) web GUI for institutional long-term archiving of web and other content
  - [Headless Chrome Crawler](https://github.com/yujiosaka/headless-chrome-crawler) distributed web crawler built on puppeteer with screenshots
  - [WWWofle](http://www.gedanken.org.uk/software/wwwoffle/) old proxying recorder software similar to ArchiveBox
