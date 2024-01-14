@@ -188,6 +188,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - **[Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline**
  - **[LinkWarden](https://github.com/linkwarden/linkwarden) Link archival and curation web app, very similar to ArchiveBox**
  - **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support**
+ - **[Scoop](https://github.com/harvard-lil/scoop)** Create high-fidelity WARC/WACZ captures using a playwright browser, with support for signing, media extraction, PDFs, etc. ([by the perma.cc team](https://lil.law.harvard.edu/blog/2023/04/13/scoop-witnessing-the-web/))
 
 Ones I haven't personally vetted:
 
