@@ -157,14 +157,15 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Archive.is.jpg/250px-Archive.is.jpg" width="150px" align="right" style="float: right; margin: 5px"/>
 
+ - https://archive.is / https://archive.today
+ - https://ghostarchive.org
  - https://perma.cc
+ - https://arquivo.pt
  - https://www.pagefreezer.com
  - https://www.smarsh.com
  - https://www.stillio.com
- - https://archive.is / https://archive.today
  - https://archive.st
- - https://arquivo.pt
- - http://theoldnet.com
+ - https://theoldnet.com/
  - https://timetravel.mementoweb.org/
  - https://freezepage.com/
  - https://webcitation.org/archive
@@ -172,7 +173,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - https://megalodon.jp/
  - https://www.webarchive.org.uk/ukwa/
  - https://github.com/HelloZeroNet/ZeroNet (super cool project)
- - Google, Bing, DuckDuckGo, and other search engine caches
+ - Google, Bing, DuckDuckGo, and other [search engine caches](https://www.clickminded.com/google-cache-search/)
 
 ---
 
