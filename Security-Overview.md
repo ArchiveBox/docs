@@ -40,7 +40,7 @@ If you're importing private links or authenticated content, you probably don't w
 
 ## Do not run as root
 
-<img src="https://i.imgur.com/yDqJc4I.jpg" width="150px" align="right">
+<img src="https://i.imgur.com/yDqJc4I.jpg" width="150px" align="right"/>
 
 > [!WARNING]
 > **Did you run a command in Docker with `exec` instead of `run` by accident and end up here?**  

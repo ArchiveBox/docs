@@ -47,7 +47,7 @@ Whether you want to learn which organizations are the big players in the web arc
 
 ## The Master Lists
 
-<img src="https://i.pinimg.com/originals/5d/8f/ae/5d8fae9a42210eb0320960b23e3fe236.jpg" width="230px" align="right" style="float: right; margin: 5px">
+<img src="https://i.pinimg.com/originals/5d/8f/ae/5d8fae9a42210eb0320960b23e3fe236.jpg" width="230px" align="right" style="float: right; margin: 5px"/>
 
 Indexes of archiving institutions and software maintained by other people.  If there's anything archivists love doing, it's making lists.
 
@@ -119,6 +119,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 ---
 
 ### From the Old Dominion University: Web Science Team
+
 <img src="https://avatars2.githubusercontent.com/u/4416806?s=280&v=4" width="130px" align="right" style="float: right; margin: 5px"/>
 
  - **[ipwb](https://github.com/oduwsdl/ipwb) A distributed web archiving solution using pywb with ipfs for storage**
@@ -260,7 +261,7 @@ A collection of blog posts and articles about internet archiving, contact me / o
 
 ### Blogs Friends of ArchiveBox
 
-<img src="https://media.npr.org/assets/img/2017/06/28/istock-506236357-5961b1f611e5136a7cd3fd5f74d97f4575f48c66-s800-c85.jpg" width="350px" align="right" style="float: right; margin: 5px">
+<img src="https://media.npr.org/assets/img/2017/06/28/istock-506236357-5961b1f611e5136a7cd3fd5f74d97f4575f48c66-s800-c85.jpg" width="350px" align="right" style="float: right; margin: 5px"/>
 
  - https://blog.archive.org
  - https://webrecorder.net/blog
@@ -342,7 +343,7 @@ If any of these links are dead, you can find an archived version on https://arch
 
 ### ArchiveBox Discussions in News & Social Media
 
-<img src="https://cdn.dribbble.com/users/896843/screenshots/2560608/news_media_icons-07.png" width="380px" align="right" style="float: right; margin: 5px">
+<img src="https://cdn.dribbble.com/users/896843/screenshots/2560608/news_media_icons-07.png" width="380px" align="right" style="float: right; margin: 5px"/>
 
  - **Aggregators:**  
    **[ProductHunt](https://www.producthunt.com/posts/archivebox)**, **[AlternativeTo](https://alternativeto.net/software/archivebox/)**, **[SaaSHub](https://www.saashub.com/archivebox)**, [Logiciels](https://www.logiciels.pro/logiciel-saas/archivebox/), [SteemHunt](https://steemhunt.com/@adnan556644/archivebox-the-open-source-self-hosted-internet-archiving-solution), [Recurse Center: The Joy of Computing](https://joy.recurse.com/posts/224-archivebox), [Github Changelog](https://changelog.com/news/archivebox-opensource-selfhosted-web-archive-6D0d), [Dev.To Ultra List](https://dev.to/teamxenox/-ultra-list-one-list-to-rule-them-all-march-19-4p4f), [O'Reilly 4 Short Links](https://www.oreilly.com/ideas/four-short-links-15-april-2019), [JaxEnter](https://jaxenter.com/github-trending-march-2019-157470.html)
@@ -362,7 +363,7 @@ If any of these links are dead, you can find an archived version on https://arch
 
 ### Most Active Communities
 
-<img src="https://www.archiveteam.org/images/f/f3/Archive_team.png" width="230px" align="right" style="float: right; margin: 5px">
+<img src="https://www.archiveteam.org/images/f/f3/Archive_team.png" width="230px" align="right" style="float: right; margin: 5px"/>
 
  - **[The Internet Archive (Archive.org)](https://archive.org/iathreads/forums.php)** (USA)
  - **[International Internet Preservation Consortium (IIPC)](http://netpreserve.org/)** (International)
@@ -379,7 +380,7 @@ If any of these links are dead, you can find an archived version on https://arch
 
 ### Web Archiving Communities
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Noun_project_community_icon_986427_cc.svg/2000px-Noun_project_community_icon_986427_cc.svg.png" width="230px" align="right" style="float: right; margin: 5px">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Noun_project_community_icon_986427_cc.svg/2000px-Noun_project_community_icon_986427_cc.svg.png" width="230px" align="right" style="float: right; margin: 5px"/>
 
 Follow these technological and organizational archiving hubs for the latest archiving news.
 
@@ -403,7 +404,7 @@ Follow these technological and organizational archiving hubs for the latest arch
 
 ### General Archiving Foundations, Coalitions, Initiatives, and Institutes
 
-<img src="https://us.123rf.com/450wm/drvector/drvector1510/drvector151000331/45755355-government-icons.jpg?ver=6" width="230px" align="right" style="float: right; margin: 5px">
+<img src="https://us.123rf.com/450wm/drvector/drvector1510/drvector151000331/45755355-government-icons.jpg?ver=6" width="230px" align="right" style="float: right; margin: 5px"/>
 
 Find your local archiving group in the list and see how you can contribute!
 
@@ -490,6 +491,7 @@ You can find more organizations and initiatives on these other lists:
 
 [![](https://img.shields.io/badge/Donate-ArchiveBox.io-%23DD5D76.svg)](https://www.patreon.com/theSquashSH)
 [![](https://img.shields.io/badge/Donate-Archive.org-%23115D76.svg)](https://archive.org/donate/)
+
 <br/><br/>
 <small><a href="#contents">^ &nbsp; Back to Top &nbsp; ^</a></small>
 </div>
