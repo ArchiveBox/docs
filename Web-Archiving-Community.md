@@ -194,6 +194,8 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 Ones I haven't personally vetted:
 
+ - [Shiori](https://github.com/go-shiori/shiori) Simple bookmark manager + readability archiver built with Go (like a clone of Pocket)
+ - [Percollate](https://github.com/danburzo/percollate) A command-line tool to turn web pages into beautiful, readable PDF, EPUB, or HTML docs.
  - [LinkAce](https://www.linkace.org/) A self-hosted bookmark management tool that saves snapshots to archive.org
  - [LinkDing](https://github.com/sissbruecker/linkding) Self-hosted bookmark manager that is designed be to be minimal, fast, and easy to set up using Docker.
  - [LinkWallet](https://github.com/tardisx/linkwallet) A self-hosted bookmark database with full-text page content search and limited archiving features
@@ -216,8 +218,6 @@ Ones I haven't personally vetted:
  - [Hunchly](https://www.hunch.ly/) A paid web archiving / session recording tool design for OSINT
  - [Monolith](https://github.com/Y2Z/monolith) CLI tool for saving complete web pages as a single HTML file
  - [Obelisk](https://github.com/go-shiori/obelisk) Go package and CLI tool for saving web page as single HTML file
- - [Percollate](https://github.com/danburzo/percollate) A command-line tool to turn web pages into beautiful, readable PDF, EPUB, or HTML docs.
- - [Shiori](https://github.com/go-shiori/shiori) Simple bookmark manager + readability archiver built with Go (like a clone of Pocket)
  - [Munin Archiver](https://github.com/peterk/munin-indexer) Social media archiver for Facebook, Instagram and VKontakte accounts.
  - **[Wayback](https://github.com/wabarc/wayback) Archiving in style like ArchiveBox, but with a chat.**
 ---
