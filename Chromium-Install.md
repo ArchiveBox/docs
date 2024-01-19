@@ -10,7 +10,7 @@ If you don't already have Chrome installed, I recommend installing Chromium inst
 
 **Check for existing Chrome/Chromium install:**
 
-<img src="https://i.imgur.com/FxFoIMH.jpg" width="25%" align="right"/> 
+<img src="https://imgur.zervice.io/FxFoIMH.jpg" width="25%" align="right"/> 
 
 ```bash
 google-chrome --version | chromium-browser --version

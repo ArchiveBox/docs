@@ -17,7 +17,7 @@ Environment variables take precedence over the config file, which is useful if y
 
 <br/>
 
-<img src="https://i.imgur.com/EUeQbiZ.png" width="200px" align="right"/>
+<img src="https://imgur.zervice.io/EUeQbiZ.png" width="200px" align="right"/>
 
 **Available Configuration Options:**
  - [General Settings:](#general-settings) Archiving process, output format, and timing.
@@ -32,7 +32,7 @@ In case this document is ever out of date, it's recommended to read the code tha
 
 ---
 
-<img src="https://i.imgur.com/iTYT7Ip.png" width="100%"/>
+<img src="https://imgur.zervice.io/iTYT7Ip.png" width="100%"/>
 
 
 ## General Settings
@@ -436,8 +436,8 @@ If you see an error message like this, it means you are trying to run ArchiveBox
 **Possible Values:** [`True`]/`False`  
 Colorize console output. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
 
-<img src="https://i.imgur.com/BDPfWxk.png" width="48%"/>
-<img src="https://i.imgur.com/kIL8zSD.png" width="48%"/>
+<img src="https://imgur.zervice.io/BDPfWxk.png" width="48%"/>
+<img src="https://imgur.zervice.io/kIL8zSD.png" width="48%"/>
 
 ---
 #### `SHOW_PROGRESS`
@@ -446,7 +446,7 @@ Show real-time progress bar in console output. Defaults to `True` if stdin is a 
 
 *Note: We use [asymptotic progress bars](https://gist.github.com/pirate/c89b7d42be148e9180d8c7cf81e734c8) because most tasks complete quickly! ✨*
 
-<img src="https://i.imgur.com/XY2E7AR.png" width="99%"/>
+<img src="https://imgur.zervice.io/XY2E7AR.png" width="99%"/>
 
 ---
 

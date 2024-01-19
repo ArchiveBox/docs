@@ -18,7 +18,7 @@ ArchiveBox officially supports the following operating systems:
 
 <img src="https://cdn0.iconfinder.com/data/icons/flat-round-system/512/freebsd-512.png" width="5%" align="right"/>
 <img src="https://assets.ubuntu.com/v1/c5cb0f8e-picto-ubuntu.svg" width="5%" align="right"/>
-<img src="https://i.imgur.com/Ue9BI7n.png" width="5%" align="right"/>
+<img src="https://imgur.zervice.io/Ue9BI7n.png" width="5%" align="right"/>
 
 * [**macOS:**](#macos) >=10.12 (with homebrew)
 * [**Linux:**](#ubuntudebian) Ubuntu, Debian, etc (with apt)
@@ -26,7 +26,7 @@ ArchiveBox officially supports the following operating systems:
 
 Other systems that are not officially supported but probably work to varying degrees:
 
-<img src="https://i.imgur.com/WYSb96z.png" width="6%" align="right"/>
+<img src="https://imgur.zervice.io/WYSb96z.png" width="6%" align="right"/>
 <img src="http://files.softicons.com/download/system-icons/web0.2ama-icons-by-chrfb/png/256x256/Operating%20System%20-%20Windows.png" width="5%" align="right"/>
 
 
@@ -70,7 +70,7 @@ curl https://raw.githubusercontent.com/pirate/ArchiveBox/master/bin/setup.sh | s
 ``` 
 The script explains what it installs beforehand, and will prompt for user confirmation before making any changes to your system.
 
-<img src="https://i.imgur.com/VMTzm0G.png" width="99%"/>
+<img src="https://imgur.zervice.io/VMTzm0G.png" width="99%"/>
 
 After running the setup script, continue with the [[Quickstart]] guide...
 

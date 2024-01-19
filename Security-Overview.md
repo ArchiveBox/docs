@@ -2,7 +2,7 @@
 
 ## Usage Modes
 
-<img src="https://i.imgur.com/K3dZcjG.png" width="50px" align="right"/>
+<img src="https://imgur.zervice.io/K3dZcjG.png" width="50px" align="right"/>
 
 #### Archiving Public Content [Default]
 
@@ -30,17 +30,17 @@ If you're importing private links or authenticated content, you probably don't w
 - [viewing malicious archived JS could allow an attacker to access your other archive items + the admin interface (JS executes on the same origin as the admin panel right now, fix is pending, set `SAVE_WGET=False SAVE_DOM=False` to disable the risky extractors entirely or avoid viewing their output directly in a browser)](https://github.com/ArchiveBox/ArchiveBox/issues/239)
 
 <br/>
-<img src="https://i.imgur.com/Jszo4h2.png" width="400px"/>
+<img src="https://imgur.zervice.io/Jszo4h2.png" width="400px"/>
 
 *An example of a session cookie reflected in `headers.json` visible in the archive.*
 
-<img src="https://i.imgur.com/DfyQUDV.png" width="50px" align="right"/>
+<img src="https://imgur.zervice.io/DfyQUDV.png" width="50px" align="right"/>
 
 ---
 
 ## Do not run as root
 
-<img src="https://i.imgur.com/yDqJc4I.jpg" width="150px" align="right"/>
+<img src="https://imgur.zervice.io/yDqJc4I.jpg" width="150px" align="right"/>
 
 > [!WARNING]
 > **Did you run a command in Docker with `exec` instead of `run` by accident and end up here?**  
@@ -75,7 +75,7 @@ sudo -u archivebox archivebox add ...
 
 ~~If you absolutely must run it as root for some reason, a footgun is provided: you can set [`ALLOW_ROOT=True`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#ALLOW_ROOT) via environment variable or in your ArchiveBox.conf file.~~ This footgun option was removed (I'm sorry, the support burden of helping people who messed up their systems by running everything as root was too high).
 
-<img src="https://i.imgur.com/ca1he6I.png" width="40px" align="right"/>
+<img src="https://imgur.zervice.io/ca1he6I.png" width="40px" align="right"/>
 
 ## Output Folder
 

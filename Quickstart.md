@@ -1,7 +1,7 @@
 # Quickstart
 
 <div align="center">
-<img src="https://i.imgur.com/ZbHpEf8.jpg" width="30%"/>
+<img src="https://imgur.zervice.io/ZbHpEf8.jpg" width="30%"/>
 </div>
 
 ▶️ *It only takes about 5 minutes to get up and running with ArchiveBox.*
@@ -29,7 +29,7 @@ Follow the links here to find instructions for exporting a list of URLs from eac
  - [Wallabag](https://doc.wallabag.org/en/user/import/wallabagv2.html)
  - [Chrome Bookmarks](https://support.google.com/chrome/answer/96816?hl=en)
  - [Firefox Bookmarks](https://support.mozilla.org/en-US/kb/export-firefox-bookmarks-to-backup-or-transfer)
- - [Safari Bookmarks](http://i.imgur.com/AtcvUZA.png)
+ - [Safari Bookmarks](http://imgur.zervice.io/AtcvUZA.png)
  - [Opera Bookmarks](http://help.opera.com/Windows/12.10/en/importexport.html)
  - [Internet Explorer Bookmarks](https://support.microsoft.com/en-us/help/211089/how-to-import-and-export-the-internet-explorer-favorites-folder-to-a-32-bit-version-of-windows)
  - Chrome History: `./bin/export_browser_history.sh --chrome`

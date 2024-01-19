@@ -17,7 +17,7 @@ The internet archiving community is surprisingly far-reaching and almost univers
 Whether you want to learn which organizations are the big players in the web archiving space, want to find a specific open source tool for your web archiving need, or just want to see where archivists hang out online, this is my attempt at an index of the entire web archiving community.
 
 
-<img src="https://i.imgur.com/duS8Lm7.png" width="200px" align="right" style="float: right; margin: 5px"/>
+<img src="https://imgur.zervice.io/duS8Lm7.png" width="200px" align="right" style="float: right; margin: 5px"/>
 
  - [The Master Lists](#The-Master-Lists)  
    *Community-maintained indexes of web archiving tools and groups by IIPC, COPTR, ArchiveTeam, Wikipedia, & the ASA.* 
@@ -143,7 +143,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ---
 
-<img src="https://i.imgur.com/iaFQa9S.png" width="220px" align="right" style="float: right; margin: 5px"/>
+<img src="https://imgur.zervice.io/iaFQa9S.png" width="220px" align="right" style="float: right; margin: 5px"/>
 
 ### From the IIPC team
 

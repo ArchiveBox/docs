@@ -4,7 +4,7 @@
 
 **ArchiveBox API Reference:**
 
-<img src="https://i.imgur.com/aQZZcku.png" width="20%" align="right"/>
+<img src="https://imgur.zervice.io/aQZZcku.png" width="20%" align="right"/>
 
 - [CLI Usage](#CLI-Usage): Docs and examples for the ArchiveBox command line interface.
 - [Admin UI Usage](#UI-Usage): Docs and screenshots for the outputted HTML archive interface.
@@ -21,7 +21,7 @@
 
 ## CLI Usage
 
-<img src="https://i.imgur.com/biVfFYr.png" width="30%" align="right"/>
+<img src="https://imgur.zervice.io/biVfFYr.png" width="30%" align="right"/>
 
 All three of these ways of running ArchiveBox are equivalent and interchangeable:
 
@@ -142,13 +142,13 @@ You can sort by column, search using the box in the upper right, and see the tot
 Click the Favicon under the "Files" column to go to the details page for each link.
 
 <div align="center">
-<img src="https://i.imgur.com/52RjhUM.png" width="45%"/>
-<img src="https://i.imgur.com/Gg9sTyq.png" width="45%"/>
+<img src="https://imgur.zervice.io/52RjhUM.png" width="45%"/>
+<img src="https://imgur.zervice.io/Gg9sTyq.png" width="45%"/>
 </div>
 
 ### Explanation of buttons in the web UI - admin snapshots list
 
-<img src="https://i.imgur.com/4Sa76Ek.png" alt="Screenshot of buttons at top of Snapshot admin page"/>
+<img src="https://imgur.zervice.io/4Sa76Ek.png" alt="Screenshot of buttons at top of Snapshot admin page"/>
 
 A logged-in admin user may perform these operations on one or more snapshots:
 
