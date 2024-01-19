@@ -129,6 +129,70 @@ If you've used `django` before, this works exactly the same way that `django` te
 [`FOOTER_INFO`](#footer_info)
 
 ---
+#### `REVERSE_PROXY_USER_HEADER`
+**Possible Values:** [`Remote-User`]/`X-Remote-User`/...
+
+HTTP header containing user name from authenticated proxy.
+
+More info: https://github.com/ArchiveBox/ArchiveBox/pull/866
+
+*Related options:*
+[`REVERSE_PROXY_WHITELIST`](#REVERSE_PROXY_WHITELIST), [`LOGOUT_REDIRECT_URL`](#LOGOUT_REDIRECT_URL)
+
+---
+#### `REVERSE_PROXY_WHITELIST`
+**Possible Values:** [`<empty string>`],`172.16.0.0/16`,`2001:d80::/26`/...
+
+Comma separated list of IP CIDRs which are allowed to use reverse proxy authentication. Both IPv4 and IPv6 IPs can be used next to each other. Empty string means "deny all".
+
+More info: https://github.com/ArchiveBox/ArchiveBox/pull/866
+
+*Related options:*
+[`REVERSE_PROXY_USER_HEADER`](#REVERSE_PROXY_USER_HEADER), [`LOGOUT_REDIRECT_URL`](#LOGOUT_REDIRECT_URL)
+
+---
+#### `LOGOUT_REDIRECT_URL`
+**Possible Values:** [`/`]/`https://example.com/some/other/app`/...
+
+URL to redirect users back to on logout when using reverse proxy authentication.
+
+More info: https://github.com/ArchiveBox/ArchiveBox/pull/866
+
+*Related options:*
+[`REVERSE_PROXY_USER_HEADER`](#REVERSE_PROXY_USER_HEADER), [`REVERSE_PROXY_WHITELIST`](#REVERSE_PROXY_WHITELIST)
+
+---
+#### `LDAP`
+**Possible Values:** [`False`]/`True`
+
+Whether to use an external [LDAP](https://jumpcloud.com/blog/what-is-ldap-authentication) server for authentication (e.g. OpenLDAP, MS Active Directory, OpenDJ, etc.).
+
+```bash
+# first, install optional ldap addon to use this feature
+pip install archivebox[ldap]
+```
+
+Then set these configuration values to finish configuring LDAP:
+```yaml
+LDAP: True
+LDAP_SERVER_URI: "ldap://ldap.example.com:3389"
+LDAP_BIND_DN: "ou=archivebox,ou=services,dc=ldap.example.com"
+LDAP_BIND_PASSWORD: "secret-bind-user-password"
+LDAP_USER_BASE: "ou=users,ou=archivebox,ou=services,dc=ldap.example.com"
+LDAP_USER_FILTER: "(objectClass=user)"
+
+LDAP_USERNAME_ATTR: "uid"
+LDAP_FIRSTNAME_ATTR: "givenName"
+LDAP_LASTNAME_ATTR: "sn"
+LDAP_EMAIL_ATTR: "mail"
+```
+
+More info:
+- https://github.com/ArchiveBox/ArchiveBox/pull/1214
+- https://github.com/django-auth-ldap/django-auth-ldap#example-configuration
+- https://jumpcloud.com/blog/what-is-ldap-authentication
+
+---
 #### `SNAPSHOTS_PER_PAGE`
 **Possible Values:** [`40`]/`100`/...  
 
