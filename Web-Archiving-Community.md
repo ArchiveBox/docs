@@ -491,5 +491,5 @@ You can find more organizations and initiatives on these other lists:
 [![](https://img.shields.io/badge/Donate-ArchiveBox.io-%23DD5D76.svg)](https://www.patreon.com/theSquashSH)
 [![](https://img.shields.io/badge/Donate-Archive.org-%23115D76.svg)](https://archive.org/donate/)
 <br/><br/>
-<small><a href="#contents">^ &nbsp; Back to Top &nbsp; ^</small></a>
+<small><a href="#contents">^ &nbsp; Back to Top &nbsp; ^</a></small>
 </div>
