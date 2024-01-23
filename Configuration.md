@@ -469,7 +469,7 @@ This is the user agent to use during Chrome headless archiving.  If you're exper
 
 ---
 ####  `GIT_DOMAINS`
-**Possible Values:** [`github.com,bitbucket.org,gitlab.com`]/`git.example.com`/...  
+**Possible Values:** [`github.com,bitbucket.org,gitlab.com,gist.github.com,codeberg.org,gitea.com,git.sr.ht`]/`git.example.com`/...  
 Domains to attempt download of git repositories on using `git clone`.
 
 *Related options:*  
