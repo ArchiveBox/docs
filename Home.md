@@ -26,7 +26,7 @@
 <br/>
 <hr/>
 
-[![](https://img.shields.io/badge/Support_Development-Donate-%13DE5D26.svg)](https://hcb.hackclub.com/donations/start/archivebox)
+[![](https://img.shields.io/badge/Support_Us-Donate-%13DE5D26.svg)](https://hcb.hackclub.com/donations/start/archivebox) [![](https://img.shields.io/badge/Support_Us-Patreon-%23DD5D76.svg)](https://www.patreon.com/theSquashSH) [![](https://img.shields.io/badge/Support_Us-Github_Sponsors-%23B7CDFE.svg)](https://github.com/sponsors/pirate)
 
 <br/>
 <sup>ArchiveBox operates as a US 501(c)(3) nonprofit, <a href="https://hcb.hackclub.com/donations/start/archivebox">donations</a> are tax-deductible.<br/>(fiscally sponsored by <a href="https://hackclub.com/hcb?ref=donation">HCB</a> <code>EIN: 81-2908499</code>)</sup><br/>
