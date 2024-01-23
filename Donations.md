@@ -1,23 +1,21 @@
 ## Supporting Development
 
+*ArchiveBox operates as a US 501(c)(3) nonprofit, <a href="https://hcb.hackclub.com/donations/start/archivebox">donations</a> are tax-deductible.<br/>(fiscally sponsored by <a href="https://hackclub.com/hcb?ref=donation">HCB</a> <code>EIN: 81-2908499</code>)*
+
+<hr/>
+
 <br/>
 
-⭐️ **Direct donation via our `501(c)(3)` non-profit:** https://hcb.hackclub.com/donations/start/archivebox (*tax-deductible in the US!*)
+**🏛️ [Hire us for professional support](https://docs.sweeting.me/s/archivebox-consulting-services) 💬**, or donate to support development:
 
-⭐️ **Github Sponsors:** https://github.com/sponsors/pirate
+<br/>
 
-**Patreon:** https://www.patreon.com/theSquashSH
-
-**Paypal:** https://paypal.me/NicholasSweeting
-
-**Crypto:** *[Contact me to request wallet address...](https://zulip.archivebox.io/#narrow/dm/284-Nick-Sweeting)*
+- ⭐️ **Direct donation via our `501(c)(3)` non-profit:** https://hcb.hackclub.com/donations/start/archivebox (*tax-deductible in the US!*)
+- ⭐️ **Github Sponsors:** https://github.com/sponsors/pirate
+- **Patreon:** https://www.patreon.com/theSquashSH
+- **Paypal:** https://paypal.me/NicholasSweeting
+- **Crypto:** *[Contact me to request wallet address...](https://zulip.archivebox.io/#narrow/dm/284-Nick-Sweeting)*
  
 <br/>
 
-If you want to help keep ArchiveBox alive and flourishing, donate to support more development.
-
-You can also [hire us](https://zulip.archivebox.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102) to do corporate installs and prioritize developing your feature requests.
-
-*https://Monadical.com also sometimes helps with ArchiveBox development.*
-
-If you have any questions or want to partner with this project, contact me at: `hello` `@` `archivebox` `.` `io`.
+If you have any questions or want to partner with this project, contact me at: `donations-hello` `@` `archivebox` `.` `io`.
