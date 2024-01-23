@@ -45,7 +45,7 @@
   <a href="https://archivebox.io"><img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/fd4d3161-3860-4b31-a4e9-251c05f75cdf" height="30px"/></a><br/><br/>
   <a href="https://github.com/ArchiveBox/ArchiveBox"><img src="https://img.shields.io/github/stars/ArchiveBox/ArchiveBox.svg?logo=github&label=Stars&logoColor=blue"/></a> &nbsp;
   <a href="https://twitter.com/thesquashSH"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"/></a><br/>
-  <a href="https://hcb.hackclub.com/donations/start/archivebox"><img src="https://img.shields.io/badge/Donate-Directly-%13DE5D26.svg"/></a>
+  <a href="https://hcb.hackclub.com/donations/start/archivebox"><img src="https://img.shields.io/badge/Donate-Directly-%13DE5D26.svg"/></a><br/>
   <a href="https://github.com/sponsors/pirate"><img src="https://img.shields.io/badge/Github_Sponsors-%23B7CDFE.svg"/></a>
   <a href="https://www.patreon.com/theSquashSH"><img src="https://img.shields.io/badge/Patreon-%23DD5D76.svg"/></a>
 </p>
