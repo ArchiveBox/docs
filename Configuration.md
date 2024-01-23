@@ -96,6 +96,10 @@ Maximum allowed download time for fetching media when `SAVE_MEDIA=True` in secon
 
 ---
 #### `ADMIN_USERNAME` / `ADMIN_PASSWORD`
+
+<a name="admin_username"/>
+<a name="admin_password"/>
+
 **Possible Values:** [`None`]/`"admin"`/...  
 
 Only used on first run / initial setup in Docker. ArchiveBox will create an admin user with the specified username and password when these options are found in the environment.
@@ -125,9 +129,9 @@ Configure whether or not login is required to use each area of ArchiveBox.
 ```python3
 archivebox manage createsuperuser  # set a password before disabling public access
 
-archivebox config --set PUBLIC_INDEX=False
-archivebox config --set PUBLIC_SNAPSHOTS=False
-archivebox config --set PUBLIC_ADD_VIEW=False
+archivebox config --set PUBLIC_INDEX=False       # True = allow users to view main snapshots list without logging in
+archivebox config --set PUBLIC_SNAPSHOTS=False   # True = allow users to view snapshot content without logging in
+archivebox config --set PUBLIC_ADD_VIEW=False    # True = allow users to submit new URLs to archive without logging in
 ```
 https://github.com/ArchiveBox/ArchiveBox#-web-ui-usage
 
