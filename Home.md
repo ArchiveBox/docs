@@ -11,7 +11,7 @@
 **❓If you need help or have a question, you can:**
  - 💬 Chat with us on our [Public Zulip Server](https://zulip.archivebox.io)
  - 🐞 Open an [issue or feature request](https://github.com/ArchiveBox/ArchiveBox/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) in our bug tracker
- - 💠 Reach out to me on Twitter [@ArchiveBoxApp](https://twitter.com/ArchiveBoxApp) or [Patreon](https://patreon.com/theSquashSH)
+ - 💠 Reach out to me on Twitter [@ArchiveBoxApp](https://twitter.com/ArchiveBoxApp) or [@theSquashSH](https://twitter.com/theSquashSH)
 
 ---
 
