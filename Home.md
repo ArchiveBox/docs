@@ -26,6 +26,6 @@
 <br/>
 <hr/>
 
-[![](https://img.shields.io/badge/Support_ArchiveBox-Patreon-%23DD5D76.svg)](https://www.patreon.com/theSquashSH) or [![](https://img.shields.io/badge/Tax_Deductible-Donations-%13DE5D26.svg)](https://hcb.hackclub.com/donations/start/archivebox)
+[![](https://img.shields.io/badge/Support_ArchiveBox-Patreon-%23DD5D76.svg)](https://www.patreon.com/theSquashSH) &nbsp; [![](https://img.shields.io/badge/Tax_Deductible-Donations-%13DE5D26.svg)](https://hcb.hackclub.com/donations/start/archivebox)
 
 </div>
