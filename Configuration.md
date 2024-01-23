@@ -98,14 +98,27 @@ Maximum allowed download time for fetching media when `SAVE_MEDIA=True` in secon
 #### `ADMIN_USERNAME` / `ADMIN_PASSWORD`
 **Possible Values:** [`None`]/`"admin"`/...  
 
-Only used on first run / initial setup. ArchiveBox will create an admin user with the specified username and password when these options are found in the environment.
+Only used on first run / initial setup in Docker. ArchiveBox will create an admin user with the specified username and password when these options are found in the environment.
 Useful for setting up a Docker instance of ArchiveBox without needing to run a shell command to create the admin user.
 
+Equivalent to:
+```bash
+$ archivebox manage createsuperuser
+Username: <ADMIN_USERNAME>
+Password: <ADMIN_PASSWORD>
+Password (again): <ADMIN_PASSWORD>
+```
+
 *Related options:*  
-[`PUBLIC_INDEX`](#public_index)
+[`PUBLIC_INDEX / PUBLIC_SNAPSHOTS / PUBLIC_ADD_VIEW`](#public_index)
 
 ---
 #### `PUBLIC_INDEX` / `PUBLIC_SNAPSHOTS` / `PUBLIC_ADD_VIEW`
+
+<a name="public_index"/>
+<a name="public_snapshots"/>
+<a name="public_add_view"/>
+
 **Possible Values:** [`False`]/`True`
 Configure whether or not login is required to use each area of ArchiveBox.
 
