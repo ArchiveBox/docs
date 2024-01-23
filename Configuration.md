@@ -50,11 +50,12 @@ This is useful when running ArchiveBox inside Docker as root and you need to exp
 [`PUID` / `PGID`](#puid--pgid)
 
 ---
-#### `PUID` / `PGID`
 
 <a name="puid--pgid"/>
 <a name="puid"/>
 <a name="pgid"/>
+
+#### `PUID` / `PGID`
 
 **Possible Values:** [`911`]/`1000`/...
 
@@ -100,10 +101,11 @@ Maximum allowed download time for fetching media when `SAVE_MEDIA=True` in secon
 [`SAVE_MEDIA`](#save_media)
 
 ---
-#### `ADMIN_USERNAME` / `ADMIN_PASSWORD`
 
 <a name="admin_username"/>
 <a name="admin_password"/>
+
+#### `ADMIN_USERNAME` / `ADMIN_PASSWORD`
 
 **Possible Values:** [`None`]/`"admin"`/...  
 
@@ -122,11 +124,12 @@ Password (again): <ADMIN_PASSWORD>
 [`PUBLIC_INDEX / PUBLIC_SNAPSHOTS / PUBLIC_ADD_VIEW`](#public_index)
 
 ---
-#### `PUBLIC_INDEX` / `PUBLIC_SNAPSHOTS` / `PUBLIC_ADD_VIEW`
 
 <a name="public_index"/>
 <a name="public_snapshots"/>
 <a name="public_add_view"/>
+
+#### `PUBLIC_INDEX` / `PUBLIC_SNAPSHOTS` / `PUBLIC_ADD_VIEW`
 
 **Possible Values:** [`False`]/`True`
 Configure whether or not login is required to use each area of ArchiveBox.
@@ -232,6 +235,9 @@ Some text to display in the footer of the archive index.  Useful for providing s
 [`TEMPLATES_DIR`](#templates_dir)
 
 ---
+
+<a name="url_blacklist"/>
+
 #### `URL_DENYLIST`
 **Possible Values:** [`\.(css|js|otf|ttf|woff|woff2|gstatic\.com|googleapis\.com/css)(\?.*)?$`]/`.+\.exe$`/`http(s)?:\/\/(.+)?example.com\/.*`/...  
 
@@ -249,12 +255,15 @@ True   # this URL would not be archived because it matches the exclusion pattern
 
 *Note: all assets required to render each page are still archived, `URL_DENYLIST`/`URL_ALLOWLIST` do not apply to images, css, video, etc. visible inline within the page.*
 
-<b>Note 2:</b> These options used to be called <a href="#URL_WHITELIST" name="url_whitelist"><code>URL_WHITELIST</code></a> & <a href="#URL_BLACKLIST" name="url_blacklist"><code>URL_BLACKLIST</code></a> before <a href="https://github.com/ArchiveBox/ArchiveBox/releases"><code>v0.7.1</code></a>.
+<b>Note 2:</b> These options used to be called <a href="#url_whitelist"><code>URL_WHITELIST</code></a> & <a href="#url_blacklist"><code>URL_BLACKLIST</code></a> before <a href="https://github.com/ArchiveBox/ArchiveBox/releases"><code>v0.7.1</code></a>.
 
 *Related options:*  
 [`URL_ALLOWLIST`](#URL_ALLOWLIST), [`SAVE_MEDIA`](#SAVE_MEDIA), [`SAVE_GIT`](#SAVE_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
 
 ---
+
+<a name="url_whitelist"/>
+
 #### `URL_ALLOWLIST`
 **Possible Values:** [`None`]/`^http(s)?:\/\/(.+)?example\.com\/?.*$`/...  
 
