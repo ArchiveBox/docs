@@ -25,6 +25,13 @@ archivebox init
 
 ---
 
+*Note: It's recommended to only upgrade one major version at a time. e.g. if you're on `v0.4.14`, upgrade to `v0.5.6` next, then `v0.6.3`, and finally `v0.7.1` (as 3 separate steps).
+You can specify exact versions with pip like so: `pip install archivebox==0.6.3` or with docker `docker pull archivebox/archivebox:0.6.3`. Upgrading directly across multiple major versions may work in some cases, but is not recommended for maximum data safety.*
+
+
+---
+---
+
 **ℹ️ How it works internally:**
 
 The same command is used for initializing a new archive and upgrading an existing one. `archivebox init` is indempotent and safely be run multiple times. Running it will ensure your collection is on the latest version and all the files are in their correct locations. `archivebox status` can be used to check for orphan/corrupted snapshots or invalid index data.
