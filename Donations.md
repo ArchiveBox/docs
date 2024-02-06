@@ -12,9 +12,13 @@
 
 - ⭐️ **Direct donation via our `501(c)(3)` non-profit:** https://hcb.hackclub.com/donations/start/archivebox  
   *(tax-deductible in the US!)*
+
 - ⭐️ **Github Sponsors:** https://github.com/sponsors/pirate
+
 - **Patreon:** https://www.patreon.com/theSquashSH
+
 - **Paypal:** https://paypal.me/NicholasSweeting
+
 - **Crypto:** *[Contact me to request wallet address...](https://zulip.archivebox.io/#narrow/dm/284-Nick-Sweeting)*
  
 <br/>
