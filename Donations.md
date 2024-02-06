@@ -10,7 +10,7 @@
 
 <br/>
 
-- ⭐️ **Direct donation via our `501(c)(3)` non-profit:** https://hcb.hackclub.com/donations/start/archivebox 
+- ⭐️ **Direct donation via our `501(c)(3)` non-profit:** https://hcb.hackclub.com/donations/start/archivebox  
   *(tax-deductible in the US!)*
 - ⭐️ **Github Sponsors:** https://github.com/sponsors/pirate
 - **Patreon:** https://www.patreon.com/theSquashSH
