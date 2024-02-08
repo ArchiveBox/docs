@@ -1,6 +1,6 @@
 # Install
 
-ArchiveBox is primarily distributed as a Python package via `pip`, but it also depends on some system packages that can be installed manually or automatically with Docker. It usually takes ~2min to get up and running if you use [Docker](#docker-setup) or the [helper script](#automatic-setup), or about ~10min if you install everything [manually](#manual-setup).
+ArchiveBox is primarily distributed as a Python package via `pip`, but it also depends on some system packages that can be installed manually or automatically with Docker. It usually takes 2~10min to get ArchiveBox set up and running.
 
 <img src="https://lh4.googleusercontent.com/KWaqSJ_J9nSaGZugZWGR_mC18xxbGj2pVScriSzP8hX7KiUSw6L3VVL8rhDxQKIwxaCsfSFUO1B2pipEM4h7L-HJOGXo7yZK8a3DBVERwqfEZ8GxpeHPwh8P4LSkqVjPGRx5XYs" width="20%" align="right"/>
 
