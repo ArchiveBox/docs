@@ -216,7 +216,7 @@ archivebox add --help
 archivebox add < ~/Downloads/bookmarks_export.html
 ```
 
-If you have issues setting up Chromium / Google Chrome, see the [[Chromium Install]] and [[Troubleshooting]] pages for more detailed instructions.
+If you have issues getting Chromium / Google Chrome working with ArchiveBox, see the [[Chromium Install]] and [[Troubleshooting]] pages for more detailed instructions.
 
 <br/>
 
@@ -230,7 +230,8 @@ pip install --upgrade --ignore-installed archivebox
 
 # run init inside any data directories to migrate the index to the latest version
 cd ~/archivebox
-archivebox init --setup
+archivebox setup         # update runtime dependencies to latest versions
+archivebox init          # update collection index & apply any migrations 
 ```
 
 Check our more detailed [Upgrading](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives) documentation and [Release Notes](https://github.com/ArchiveBox/ArchiveBox/releases) if you run into any problems. ➡️
