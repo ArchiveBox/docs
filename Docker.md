@@ -56,7 +56,7 @@ You can uncomment sections within it to enable extra features, or run the basic 
 # create a folder to store your data (can be anywhere)
 mkdir ~/archivebox && cd ~/archivebox
 
-# download the compose file
+# download the compose file into the directory
 curl -fsSL 'https://docker-compose.archivebox.io' > docker-compose.yml
 # (shortcut for getting https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/main/docker-compose.yml)
 
