@@ -176,10 +176,10 @@ See the [Quickstart](https://github.com/ArchiveBox/ArchiveBox#-package-manager-s
 <br/>
 
 
-<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/65315723-adae-42e4-b8c6-e44b79165ae5" width="30px" align="right"/>
-
+<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/65315723-adae-42e4-b8c6-e44b79165ae5" width="55px" align="right"/>
 
 ### 2. Install ArchiveBox using `pip`
+
 ```bash
 # install latest version of archivebox from PyPI
 python3 -m pip install --upgrade --ignore-installed archivebox
