@@ -43,14 +43,14 @@ docker pull archivebox/archivebox
 
 ## Docker Compose
 
-An ArchiveBox [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/main/docker-compose.yml) file is provided with all the extras included. You can uncomment sections to enable extra features, or run the basic version as-is.
+An ArchiveBox [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/main/docker-compose.yml) file is provided with all the extras included.  
+You can uncomment sections to enable extra features, or run the basic version as-is.
 
-Just make sure you have a Docker version that's [new enough](https://docs.docker.com/compose/compose-file/) to support `version: 3.9` format:
-
+*Make sure you have a Docker version that's [new enough](https://docs.docker.com/compose/compose-file/) to support `version: 3.9` format!*
 ```bash
-docker --version
-Docker version 18.09.1, build 4c52b90    # must be >= 17.04.0
+docker --version            # must be >= 17.04.0
 ```
+
 <br/>
 
 ### Setup
