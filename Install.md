@@ -53,7 +53,7 @@ It's also recommended to use a filesystem with compression and/or deduplication 
 
 *Docker Compose is the recommended way to get ArchiveBox, as it includes all the extras out-of-the-box and provides the best security and upgrade UX.*
 
-1. If you don't already have docker installed, follow the official install instructions to get Docker on Linux, macOS, or Windows:  
+1. If you don't already have docker installed, follow the official instructions to get Docker on Linux, macOS, or Windows:  
   https://docs.docker.com/install/#supported-platforms ➡️
 
 2. Then follow the [Quickstart](https://github.com/ArchiveBox/ArchiveBox#quickstart) guide and read the [[Docker]] wiki page for next steps. ➡️
