@@ -4,7 +4,8 @@
 
 Running ArchiveBox with Docker allows you to manage it in a container without exposing it to the rest of your system. ArchiveBox generally works the same in Docker as it does outside Docker. You can even use `pip`-installed ArchiveBox and Docker ArchiveBox in tandem, as they both share the same data directory format.
 
-Make sure you have Docker installed and set up on your machine before following these instructions. If you don't already have Docker installed, follow the official install instructions for Linux, macOS, or Windows here: https://docs.docker.com/install/#supported-platforms.
+> *Make sure you have Docker installed before following these instructions!*  
+> https://docs.docker.com/install/#supported-platforms ➡️
 
 <img src="https://imgur.zervice.io/qFAPRwC.png" width="20%" align="right"/>
 
