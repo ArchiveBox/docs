@@ -20,6 +20,8 @@ ArchiveBox officially supports the following operating systems:
 <img src="https://assets.ubuntu.com/v1/c5cb0f8e-picto-ubuntu.svg" width="5%" align="right"/>
 <img src="https://imgur.zervice.io/Ue9BI7n.png" width="5%" align="right"/>
 
+**CPU Architectures:** `amd64` (`x86_64`), `arm64` (`aarch64`), `arm7` (e.g. Rasberry Pi >= 3)
+
 * [**macOS:**](#macos) >=10.12 (with homebrew)
 * [**Linux:**](#ubuntudebian) Ubuntu, Debian, etc (with apt)
 * [**BSD:**](#bsd) FreeBSD, OpenBSD, NetBSD etc (with pkg)
@@ -30,8 +32,8 @@ Other systems that are not officially supported but probably work to varying deg
 <img src="http://files.softicons.com/download/system-icons/web0.2ama-icons-by-chrfb/png/256x256/Operating%20System%20-%20Windows.png" width="5%" align="right"/>
 
 
- * Windows: Via [[Docker]], Docker in WSL2, bare WSL/WSL2, or even directly in batch/powershell with `pip` (if you're adventurous)
- * Other Linux distros: Fedora, SUSE, Arch, CentOS, etc.
+ * Windows: Via [[Docker]], Docker in WSL2, or WSL2 without Docker (partial support)
+ * [Other UNIX systems:](https://github.com/ArchiveBox/ArchiveBox#-package-manager-setup) Arch, Nix, Guix, Fedora, SUSE, Arch, CentOS, etc.
 
 <br/>
 
@@ -43,14 +45,15 @@ You will also need 500MB of RAM (bare minimum), though 2GB or greater recommende
 
 ## Dependencies
 
-Not all the dependencies are required for all modes. If you disable some archive methods you can avoid those dependencies, for example, if you set `FETCH_MEDIA=False` you don't need to install `youtube-dl`, and if you set `FETCH_[PDF,SCREENSHOT,DOM]=False` you don't need `chromium`.
+Not all the dependencies are required for all modes. If you disable some archive methods you can avoid those dependencies, for example, if you set `FETCH_MEDIA=False` you don't need to install `yt-dlp`, and if you set `FETCH_[PDF,SCREENSHOT,DOM]=False` you don't need `chromium`.
 
 <img src="https://avatars0.githubusercontent.com/u/1503512?s=200&v=4" width="10%" align="right"/>
 
- - `python3 >= 3.7`
+ - `python3 >= 3.9`
+ - `node >= 20 w/ npm`
  - `wget >= 1.16`
- - `chromium >= 59` (`google-chrome >= v59` works fine as well)
- - `youtube-dl`
+ - `chromium >= 110` (`google-chrome >= v110` works fine as well)
+ - `yt-dlp` (the new replacement for `youtube-dl`)
  - `curl` (usually already on most systems)
  - `git` (usually already on most systems)
 
@@ -59,90 +62,189 @@ Not all the dependencies are required for all modes. If you disable some archive
  - To use specific binaries for dependencies, see the [Configuration: Dependencies](Configuration#dependency-options) page.
  - To disable unwanted dependencies, see the [Configuration: Archive Method Toggles](Configuration#archive-method-toggles) page.  
 
-## Automatic Setup
 
-If you're on Linux with `apt`, or macOS with `brew` there is an automatic setup script provided to install all the dependencies.
-BSD, Windows, and other OS users should follow the [Manual Setup](#manual-setup) or [[Docker]] instructions.
+
+<br/>
+
+## Option A. Docker / Docker Compose Setup ⭐️
+
+*Docker Compose is the recommended way to get ArchiveBox, as it includes all the extras out-of-the-box and provides the best security and upgrade UX.*
+
+1. If you don't already have docker installed, follow the official install instructions to get Docker on Linux, macOS, or Windows:  
+  https://docs.docker.com/install/#supported-platforms ➡️
+
+2. Then follow the [Quickstart](https://github.com/ArchiveBox/ArchiveBox#quickstart) guide and read the [[Docker]] wiki page for next steps. ➡️
+
+You can also run Dockerized ArchiveBox using [UNRAID/TrueNAS/Proxmox/etc.](https://github.com/ArchiveBox/ArchiveBox#-other-options) or [Kubernetes](https://github.com/ArchiveBox/docker-archivebox/blob/master/archivebox.yml). 
+
+**More info:**
+- [`Dockerfile`](https://github.com/ArchiveBox/ArchiveBox/blob/main/Dockerfile)
+- [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/main/docker-compose.yml)
+- [`archivebox-kubernetes.yml`](https://github.com/ArchiveBox/docker-archivebox/blob/master/archivebox.yml)
+- [ArchiveBox Docker Quickstart](https://github.com/ArchiveBox/ArchiveBox#quickstart) + [Usage](https://github.com/ArchiveBox/ArchiveBox/wiki/Docker) + [Configuration](https://github.com/ArchiveBox/ArchiveBox/wiki/Docker#configuration) + [Upgrading](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives) documentation
+
+<br/>
+
+---
+
+<br/>
+
+
+## Automatic Setup Script
+
+If you're on Linux with `apt`, FreeBSD with `pkg`, or macOS with `brew` there is an automatic setup script provided to install all the dependencies in one go.
+
+*(or scroll further down for manual install instructions)*
 
 ```bash
-# docker or the manual setup are preferred on all platforms now, if you want to use the old install script you can run:
-curl https://raw.githubusercontent.com/pirate/ArchiveBox/master/bin/setup.sh | sh
+curl -fsSL 'https://get.archivebox.io' | bash
+# runs https://raw.githubusercontent.com/pirate/ArchiveBox/master/bin/setup.sh
 ``` 
-The script explains what it installs beforehand, and will prompt for user confirmation before making any changes to your system.
+The script explains what it installs beforehand, and will prompt for user confirmation before making any changes to your system. The script uses Docker if already installed, but you can decline and it will attempt to install everything using your package manager instead.
 
 <img src="https://imgur.zervice.io/VMTzm0G.png" width="99%"/>
 
-After running the setup script, continue with the [[Quickstart]] guide...
+After running the setup script, continue with the [Quickstart](https://github.com/ArchiveBox/ArchiveBox#%EF%B8%8F-next-steps) guide... ➡️
 
-## Manual Setup
+<br/>
 
-If you don't like running random setup scripts off the internet (:+1:), you can follow these manual setup instructions.
+---
 
-### 1. Install dependencies
+<br/>
+
+## Option C. Bare Metal Setup
+
+If you'd rather not use [Docker](https://github.com/ArchiveBox/ArchiveBox#%EF%B8%8F-easy-setup) or our [auto-install script](https://github.com/ArchiveBox/ArchiveBox#%EF%B8%8F-easy-setup), you can follow these manual setup instructions to install ArchiveBox and its dependencies using `pip` & your system package manager of choice (e.g. `apt`, `brew`, `pkg`, `nix`, etc.).
+
+See our [Dependencies](https://github.com/ArchiveBox/ArchiveBox#dependencies) documentation to see the full list of dependencies and how they're used.
+
+<br/>
+
+### 1. Install base system dependencies needed for your OS
+
+*Be aware, you'll need to keep all these packages up-to-date yourself over time!*
 
 #### macOS
 ```bash
 brew tap homebrew-ffmpeg/ffmpeg
 brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
-brew install python3 git wget curl youtube-dl
-brew install --cask chromium  # Skip this if you already have Google Chrome/Chromium installed in /Applications/
+brew install python3 node git wget curl yt-dlp ripgrep
+
+# Skip this if you already have Google Chrome/Chromium installed in /Applications/
+pip3 install --upgrade playwright
+playwright install --with-deps chromium
+# OR
+brew install --cask chromium
 ```
 
-#### Ubuntu/Debian
+#### Ubuntu/Debian-based Systems
 ```bash
-apt install python3 python3-pip python3-distutils git wget curl youtube-dl
-apt install chromium-browser  # Skip this if you already have Google Chrome/Chromium installed
+# add the nodejs sources to your apt lists (optional, otherwise may use older node)
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+
+# Install base system dependencies, if out-of-date check ArchiveBox/Dockerfile
+sudo apt install python3 python3-pip python3-minimal python3-distutils nodejs libatomic1 zlib1g-dev libssl-dev libldap2-dev libsasl2-dev python3-ldap python3-msgpack python3-mutagen python3-regex python3-pycryptodome procps wget curl git yt-dlp ffmpeg ripgrep
+
+# Skip this if you already have Google Chrome/Chromium installed and in your $PATH
+pip3 install --upgrade playwright
+playwright install --with-deps chromium
+# OR
+sudo apt install chromium fontconfig fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-symbola fonts-noto fonts-freefont-ttf
 ```
 
-#### BSD
-
-FreeBSD:
+#### FreeBSD
 
 ```bash
-pkg install python git wget curl youtube-dl 
-pkg install chromium-browser  # Skip this if you already have Google Chrome/Chromium installed
+sudo pkg install python node wget curl git yt-dlp ffmpeg ripgrep chromium-browser
 ```
 
-OpenBSD:
+#### OpenBSD
 
 ```bash
-pkg_add python3 git wget curl youtube-dl chromium
+sudo pkg_add python3 node wget git curl yt-dlp ffmpeg ripgrep chromium
 ```
 
-#### Install ArchiveBox using pip
+#### Arch Linux / Nix / Guix / etc. Other OSs
+
+See the [Quickstart](https://github.com/ArchiveBox/ArchiveBox#-package-manager-setup) instructions for other operating systems and release channels. ➡️
+
+<br/>
+
+### 2. Install ArchiveBox using `pip`
 ```bash
-python3 -m pip install --upgrade archivebox
+# install latest version of archivebox from PyPI
+python3 -m pip install --upgrade --ignore-installed archivebox
+
+# OR install with all the extras (LDAP-support, Sonic full-text search, etc.)
+python3 -m pip install --upgrade --ignore-installed archivebox[ldap,sonic]
+# apt install build-essensial python3-ldap (install C++ toolchain if any errors during build)
 ```
 
 #### Check that everything worked and the versions are high enough.
 ```bash
-python3 --version | head -n 1 && 
-git --version | head -n 1 && 
-wget --version | head -n 1 && 
-curl --version | head -n 1 && 
-youtube-dl --version | head -n 1 && 
+echo $PATH && \
+python3 --version | head -n 1 && \
+node --version | head -n 1 && \
+git --version | head -n 1 && \
+wget --version | head -n 1 && \
+curl --version | head -n 1 && \
+yt-dlp --version | head -n 1 && \
 echo "[√] All dependencies installed."
 
+# get a summary of the installed archivebox version and all active dependencies
 archivebox version
 ```
 
-If you have issues setting up Chromium / Google Chrome, see the [[Chromium Install]] page for more detailed setup instructions.
+If you have issues setting up Chromium / Google Chrome, see the [[Chromium Install]] and [[Troubleshooting]] pages for more detailed instructions.
 
-### 2. Get your bookmark export file
+<br/>
 
-Follow the [[Quickstart]] guide to download your bookmarks export file containing a list of links to archive.
+### 3. Prepare your URLs for importing
 
-### 3. Run archivebox
+For guides on how to import URLs from different sources into ArchiveBox, follow the links in our [Input Formats](https://github.com/ArchiveBox/ArchiveBox#input-formats) and [Preparing URLs](https://github.com/ArchiveBox/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive) documentation. ➡️
+
+<br/>
+
+### 4. Run `archivebox add` to import URLs for archiving
+
+Make to run `archivebox` as an unprivileged user (i.e. without `sudo` / not logged in as `root`).
 
 ```bash
-# create a new folder to hold your data and cd into it
-mkdir data && cd data
-archivebox init
+# create a new folder anywhere to hold your collection, and cd into it
+mkdir ~/archivebox && cd ~/archivebox
+
+# instantiate a new collection & finish installing all runtime dependencies
+archivebox init --setup
 archivebox version
+archivebox help
+
+# feed in your URLs to start archiving!
+archivebox add --help
 archivebox add < ~/Downloads/bookmarks_export.html
 ```
 
-You can also use the `update` subcommand to resume the archive update at a specific timestamp `archivebox update --resume=153242424324.123`.
+<br/>
+
+### *Upgrading Archivebox to a new version*
+
+Make sure all apt/brew/pkg/etc. dependencies from above are installed & up-to-date first.
+
+```bash
+# get the latest archivebox version from PyPI
+pip install --upgrade --ignore-installed archivebox
+
+# run init inside any data directories to migrate the index to the latest version
+cd ~/archivebox
+archivebox init --setup
+```
+
+Check our [Upgrading](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives) documentation and [Release Notes](https://github.com/ArchiveBox/ArchiveBox/releases) if you run into any problems. ➡️
+
+<br/>
+
+---
+
+<br/>
 
 ### Next Steps
 
@@ -151,11 +253,3 @@ You can also use the `update` subcommand to resume the archive update at a speci
  - Read [[Scheduled Archiving]] to learn how to set up automatic daily archiving
  - Read [[Publishing Your Archive]] if you want to host your archive for others to access online
  - Read [[Troubleshooting]] if you encounter any problems
-
-
-## Docker Setup
-
-First, if you don't already have docker installed, follow the official install instructions for Linux, macOS, or Windows https://docs.docker.com/install/#supported-platforms.
-
-
-Then see the [[Docker]] page for next steps.
