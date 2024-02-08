@@ -197,25 +197,21 @@ This will use the folder `/full/path/to/folder/on/host` on your host to store th
 
 ### Configuration
 
-The easiest way is to use the a `.env` file or add your config to your `docker-compose.yml` `environment:` section.
+The easiest way to use `archivebox config --set KEY=value` or edit `ArchiveBox.conf` in your collection folder.
 
-The next easiest way to get/set config is using the archivebox CLI:
+For example, to set `MEDIA_TIMEOUT=120` as a persistent setting for this collection.
 ```bash
-docker compose run archivebox config --get RESOLUTION
-docker compose run archivebox config --set RESOLUTION=1440,900
-# or
-docker run -i -v $PWD:/data archivebox/archivebox config --set MEDIA_TIMEOUT=120
+docker run -it -v $PWD:/data archivebox/archivebox config --set MEDIA_TIMEOUT=120
+# OR
+echo 'MEDIA_TIMEOUT=120' >> ./ArchiveBox.conf
 ```
 
-ArchiveBox in Docker accepts all the same environment variables as normal, see the list on the [[Configuration]] page.
+ArchiveBox in Docker also accepts config as environment variables, see more on the [[Configuration]] page.
 
-To set environment variables for a single run, you can use the `env KEY=VAL ...` command, `-e KEY=VAL`, or `--env-file=somefile.env`.
-
+For example, this applies `FETCH_SCREENSHOT=False` to a single run (without persisting for other runs):
 ```bash
-echo 'https://example.com' | docker run -i -v $PWD:/data -e FETCH_SCREENSHOT=False archivebox/archivebox add
+docker run -it -v $PWD:/data -e FETCH_SCREENSHOT=False archivebox/archivebox add 'https://example.com'
+# OR
+echo 'FETCH_SCREENSHOT=False' >> ./.env
+docker run ... --env-file=./.env archivebox/archivebox ...
 ```
-```bash
-docker run ... --env-file=ArchiveBox.env archivebox/archivebox ...
-```
-
-You can also edit the `data/ArchiveBox.conf` file directly and the changes will take effect on the next run.
