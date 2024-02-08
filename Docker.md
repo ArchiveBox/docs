@@ -20,6 +20,8 @@ Running ArchiveBox with Docker allows you to manage it in a container without ex
   - [Accessing the data](#accessing-the-data-1)
   - [Configuration](#configuration-1)
 
+<br/>
+
 **Official Docker Hub image:** [`hub.docker.com/r/archivebox/archivebox`](https://hub.docker.com/r/archivebox/archivebox) 
 ```bash
 docker pull archivebox/archivebox
@@ -28,10 +30,11 @@ docker pull archivebox/archivebox
 - [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/main/docker-compose.yml)
 - [`archivebox-kubernetes.yml`](https://github.com/ArchiveBox/docker-archivebox/blob/master/archivebox.yml)
 
-> *Make sure you [install Docker](https://docs.docker.com/install/#supported-platforms) before following the instructions below!*  ➡️
 
 <br/>
 
+---
+> *Make sure you **[install Docker](https://docs.docker.com/install/#supported-platforms)** before following the instructions below!*  ➡️
 ---
 
 <br/>
