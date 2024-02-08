@@ -189,7 +189,7 @@ docker run -it -v $PWD:/data archivebox/archivebox add --depth=1 'https://exampl
 
 ### Accessing the data
 
-Use the `docker run` `-v /path/on/host:/path/inside/container` flag to specify where you want your data to live on the host.
+Use the `docker run` `-v /path/on/host:/path/inside/container` flag to specify where you want your data to live.
 
 For example to use a folder on an external USB drive (instead of the current directory `$PWD` or `~/archivebox`):
 ```bash
