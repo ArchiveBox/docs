@@ -1,14 +1,14 @@
 # Install
 
-ArchiveBox only has a few main dependencies apart from `python3`, and they can all be installed using your normal package manager.  It usually takes 1min to get up and running if you use the [helper script](#automatic-setup), or about 5min if you install everything [manually](#manual-setup).
+ArchiveBox is primarily distributed as a Python package via `pip`, but it also depends on some system packages that can be installed manually or automatically with Docker. It usually takes ~2min to get up and running if you use the [helper script](#automatic-setup), or about ~10min if you install everything [manually](#manual-setup).
 
 <img src="https://lh4.googleusercontent.com/KWaqSJ_J9nSaGZugZWGR_mC18xxbGj2pVScriSzP8hX7KiUSw6L3VVL8rhDxQKIwxaCsfSFUO1B2pipEM4h7L-HJOGXo7yZK8a3DBVERwqfEZ8GxpeHPwh8P4LSkqVjPGRx5XYs" width="20%" align="right"/>
 
  - [Supported Systems](#supported-systems)
- - [Dependencies](#dependencies)
+ - **[Docker Setup](#docker-setup)**
  - [Automatic Setup](#automatic-setup)
  - [Manual Setup](#manual-setup)
- - **[Docker Setup](#docker-setup)**
+
 
 ## Supported Systems
 
