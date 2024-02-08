@@ -36,11 +36,9 @@ Other systems are not officially supported but may work with degraded functional
 
 <br/>
 
-It's recommended to use a filesystem with compression and/or deduplication abilities (e.g. ZFS or BTRFS) for maximum archive storage efficiency.
-
 You will also need at least 500MB of RAM (bare minimum), 2GB or greater is recommended. You may be able to reduce the RAM requirements if you disable all the chrome-based archiving methods with `USE_CHROME=False`.
 
-[TOC]
+It's also recommended to use a filesystem with compression and/or deduplication abilities (e.g. [ZFS](https://openzfs.github.io/openzfs-docs/Getting%20Started/index.html) or BTRFS) for maximum archive storage efficiency.
 
 <br/>
 
