@@ -83,7 +83,7 @@ If you're on Linux with `apt`, FreeBSD with `pkg`, or macOS with `brew` there is
 curl -fsSL 'https://get.archivebox.io' | bash
 # runs https://raw.githubusercontent.com/pirate/ArchiveBox/master/bin/setup.sh
 ``` 
-The script explains what it installs beforehand, and will prompt for user confirmation before making any changes to your system. The script uses Docker if already installed, but you can decline and it will attempt to install everything using your package manager instead.
+The script explains what it installs beforehand, and will prompt for user confirmation before making any changes to your system. The script uses Docker if already installed, but you can decline and it will attempt to auto-install everything using `apt`/`brew`/`pkg` + `pip` instead.
 
 <img src="https://imgur.zervice.io/VMTzm0G.png" width="99%"/>
 
