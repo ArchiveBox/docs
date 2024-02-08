@@ -23,17 +23,10 @@ Make sure you have Docker installed and set up on your machine before following 
   - [Configuration](#configuration-1)
 
 **Official Docker Hub image:**  
-[https://hub.docker.com/r/archivebox/archivebox](https://hub.docker.com/r/archivebox/archivebox)
-
-**Usage:**
 ```bash
 docker pull archivebox/archivebox
-
-# docker run -v $PWD/data:/data -it archivebox/archivebox [archivebox subcommands go here]
-# docker run -v $PWD/data:/data -it archivebox/archivebox help
-# docker run -v $PWD/data:/data -it archivebox/archivebox add 'https://example.com'
-# docker run -v $PWD/data:/data -p 8000:8000 archivebox/archivebox server 0.0.0.0:8000
 ```
+[https://hub.docker.com/r/archivebox/archivebox](https://hub.docker.com/r/archivebox/archivebox)
 
 ---
 
@@ -87,15 +80,16 @@ See the wiki page on [Upgrading or Merging Archives: Upgrading with Docker Compo
 
 First, make sure you're `cd`'ed into the same folder as your `docker-compose.yml` file (e.g. the project root).
 
-To add new URLs, you can use `docker compose run archivebox <subcommand>` just like the normal `archivebox <subcommand> [args]` CLI.
+To add new URLs, you can use `docker compose run archivebox [subcommand]` just like the non-Docker `archivebox [subcommand]` CLI.
 
-**To add an individual link or list of links**, pass in URLs via stdin.
-
+To add an individual URL, pass it in as an arg or via stdin.
 ```bash
-echo "https://example.com" | docker compose run archivebox add
+docker compose run archivebox add 'https://example.com'
+# OR
+echo 'https://example.com' | docker compose run archivebox add
 ```
 
-**To import links from a file** you can either pipe it in via stdin, or move it into your `./data/sources` folder so that ArchiveBox can access it from within the container.
+To add multiple URLs at once, pipe them in via stdin, or place them in a file inside `./data/sources` so that ArchiveBox can access it from within the container.
 
 ```bash
 # pipe URLs in from a file outside Docker
@@ -190,18 +184,26 @@ See the wiki page on [Upgrading or Merging Archives: Upgrading with plain Docker
 
 ### Usage
 
+First, make sure you're `cd`'ed into your collection data folder (e.g. `~/archivebox`).
+
+The Docker CLI `docker run ... archivebox/archivebox [subcommand]` works just like the non-Docker `archivebox [subcommand]` CLI.
+
 **To add a single URL to the archive** or a list of links from a file, pipe them in via stdin. This will archive each link passed in.
 
 ```bash
 docker run -it -v $PWD:/data archivebox/archivebox add 'https://example.com'
 # OR
 echo 'https://example.com' | docker run -i -v $PWD:/data archivebox/archivebox add
-# OR
-docker run -i -v $PWD:/data archivebox/archivebox add < urls.txt
 ```
 
-To seed a crawl of a list of URLs, add the `--depth=1` flag so that archivebox recursively archives the URLs within the provided source.
+To archive multiple URLs at once, pass text containing URLs in via stdin.
+```bash
+docker run -i -v $PWD:/data archivebox/archivebox add < urls.txt
+# OR
+curl 'https://example.com/some/rss/feed.xml' | docker run -i -v $PWD:/data archivebox/archivebox add
+```
 
+You can also use the `--depth=1` flag to tell ArchiveBox to recursively archive the URLs within the provided source.
 ```bash
 docker run -it -v $PWD:/data archivebox/archivebox add --depth=1 'https://example.com/some/rss/feed.xml'
 ```
@@ -209,7 +211,7 @@ docker run -it -v $PWD:/data archivebox/archivebox add --depth=1 'https://exampl
 
 ### Accessing the data
 
-Use the `docker run` `-v /path/on/host:/path/inside/container` flag to specify where you want your data to live.
+The `docker run` `-v /path/on/host:/path/inside/container` flag specifies where your data dir lives on the host.
 
 For example to use a folder on an external USB drive (instead of the current directory `$PWD` or `~/archivebox`):
 ```bash
@@ -226,7 +228,7 @@ docker run -it -v /media/USB_DRIVE/archivebox:/data -p 8000:8000 archivebox/arch
 
 The easiest way is to use `archivebox config --set KEY=value` or edit `./ArchiveBox.conf` (in your collection dir).
 
-For example, to set `MEDIA_TIMEOUT=120` as a persistent setting for a collection:
+For example, this sets `MEDIA_TIMEOUT=120` as a persistent setting for the collection:
 ```bash
 docker run -it -v $PWD:/data archivebox/archivebox config --set MEDIA_TIMEOUT=120
 # OR
