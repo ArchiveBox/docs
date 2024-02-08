@@ -30,6 +30,7 @@ Make sure you have Docker installed and set up on your machine before following 
 docker pull archivebox/archivebox
 
 # docker run -v $PWD/data:/data -it archivebox/archivebox [archivebox subcommands go here]
+# docker run -v $PWD/data:/data -it archivebox/archivebox help
 # docker run -v $PWD/data:/data -it archivebox/archivebox add 'https://example.com'
 # docker run -v $PWD/data:/data -p 8000:8000 archivebox/archivebox server 0.0.0.0:8000
 ```
@@ -61,6 +62,7 @@ curl -O https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/main/docker-comp
 # run the initial setup and add some URLs to test it out, then start the web server
 docker compose run archivebox init --setup
 docker compose run archivebox add 'https://example.com'
+docker compose run archivebox help
 docker compose up
 ```
 
@@ -120,7 +122,7 @@ To access your archive, you can open `data/index.html` directly, or you can use 
 
 ArchiveBox running with `docker compose` accepts all the same environment variables as normal, see the full list on the [[Configuration]] page.
 
-The recommended way to pass in config variables is to edit the `environment:` section in `docker-compose.yml` directly or add an `env_file: ./path/to/ArchiveBox.conf` line before `environment:` to import variables from an env file.
+The recommended way configure ArchiveBox is by editing `ArchiveBox.conf` or using `docker compose run archivebox config --set ...`, as this will apply the config to all containers that access the collection. However, if you're only running one container, or if you want to scope config options to only apply to one container, you can set them in that container's `environment:` section.
 
 Example of adding config options to `docker-compose.yml`:
 
