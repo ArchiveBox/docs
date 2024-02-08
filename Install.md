@@ -44,26 +44,11 @@ It's recommended to use a filesystem with compression and/or deduplication abili
 
 You will also need 500MB of RAM (bare minimum), though 2GB or greater recommended. You may be able to reduce the RAM requirements if you disable all the chrome-based archiving methods with `USE_CHROME=False`.
 
-## Dependencies
+[TOC]
 
-Not all the dependencies are required for all modes. If you disable some archive methods you can avoid those dependencies, for example, if you set `FETCH_MEDIA=False` you don't need to install `yt-dlp`, and if you set `FETCH_[PDF,SCREENSHOT,DOM]=False` you don't need `chromium`.
+<br/>
 
-<img src="https://avatars0.githubusercontent.com/u/1503512?s=200&v=4" width="10%" align="right"/>
-
- - `python3 >= 3.9`
- - `node >= 20 w/ npm`
- - `wget >= 1.16`
- - `chromium >= 110` (`google-chrome >= v110` works fine as well)
- - `yt-dlp` (the new replacement for `youtube-dl`)
- - `curl` (usually already on most systems)
- - `git` (usually already on most systems)
-
-**More info:**
- - For help installing these, see the [Manual Setup](#manual-setup), [[Troubleshooting]] and [[Chromium Install]] pages.
- - To use specific binaries for dependencies, see the [Configuration: Dependencies](Configuration#dependency-options) page.
- - To disable unwanted dependencies, see the [Configuration: Archive Method Toggles](Configuration#archive-method-toggles) page.  
-
-
+---
 
 <br/>
 
@@ -91,7 +76,7 @@ You can also run Dockerized ArchiveBox using [UNRAID/TrueNAS/Proxmox/etc.](https
 <br/>
 
 
-## Automatic Setup Script
+## Option B. Automatic Setup Script
 
 If you're on Linux with `apt`, FreeBSD with `pkg`, or macOS with `brew` there is an automatic setup script provided to install all the dependencies in one go.
 
@@ -115,9 +100,19 @@ After running the setup script, continue with the [Quickstart](https://github.co
 
 ## Option C. Bare Metal Setup
 
+<img src="https://avatars0.githubusercontent.com/u/1503512?s=200&v=4" width="10%" align="right"/>
+
+
 If you'd rather not use [Docker](https://github.com/ArchiveBox/ArchiveBox#%EF%B8%8F-easy-setup) or our [auto-install script](https://github.com/ArchiveBox/ArchiveBox#%EF%B8%8F-easy-setup), you can follow these manual setup instructions to install ArchiveBox and its dependencies using `pip` & your system package manager of choice (e.g. `apt`, `brew`, `pkg`, `nix`, etc.).
 
-See our [Dependencies](https://github.com/ArchiveBox/ArchiveBox#dependencies) documentation to see the full list of dependencies and how they're used.
+See our [Dependencies](https://github.com/ArchiveBox/ArchiveBox#dependencies) documentation to see the full list of dependencies and how they're used. Not all the dependencies are required for all modes. If you disable some archive methods you can skip installing those dependencies, for example, if you set `FETCH_MEDIA=False` you don't need to install `yt-dlp`, and if you set `FETCH_[PDF,SCREENSHOT,DOM]=False` you don't need `chromium`.
+
+**More info:**
+ - For help installing these, see the [Manual Setup](#manual-setup), [[Troubleshooting]] and [[Chromium Install]] pages.
+ - To use specific binaries for dependencies, see the [Configuration: Dependencies](Configuration#dependency-options) page.
+ - To disable unwanted dependencies, see the [Configuration: Archive Method Toggles](Configuration#archive-method-toggles) page.  
+
+
 
 <br/>
 
