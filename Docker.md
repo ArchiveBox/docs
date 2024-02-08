@@ -92,23 +92,21 @@ See the wiki page on [Upgrading or Merging Archives: Upgrading with Docker Compo
 
 ### Usage
 
+You can use `docker compose run archivebox [subcommand]` just like the non-Docker `archivebox [subcommand]` CLI.
+
+First, make sure you're `cd`'ed into the same folder as your `docker-compose.yml` file (e.g. `~/archivebox`):
 ```bash
 docker compose run archivebox help
 ```
 
-First, make sure you're `cd`'ed into the same folder as your `docker-compose.yml` file (e.g. `~/archivebox`).
-
-To add new URLs, you can use `docker compose run archivebox [subcommand]` just like the non-Docker `archivebox [subcommand]` CLI.
-
-To add an individual URL, pass it in as an arg or via stdin.
+To add an individual URL, pass it in as an arg or via stdin:
 ```bash
 docker compose run archivebox add 'https://example.com'
 # OR
 echo 'https://example.com' | docker compose run archivebox add
 ```
 
-To add multiple URLs at once, pipe them in via stdin, or place them in a file inside `./data/sources` so that ArchiveBox can access it from within the container.
-
+To add multiple URLs at once, pipe them in via stdin, or place them in a file inside `./data/sources` so that ArchiveBox can access it from within the container:
 ```bash
 # pipe URLs in from a file outside Docker
 docker compose run archivebox add < ~/Downloads/example_urls.txt
@@ -121,7 +119,7 @@ curl 'https://example.com/some/rss/feed.xml' | docker compose run archivebox add
 docker compose run archivebox add --depth=1 'https://example.com/some/rss/feed.xml'
 ```
 
-The `--depth=1` flag tells archivebox to look inside the provided source and archive all the URLs within:
+The `--depth=1` flag tells ArchiveBox to look inside the provided source and archive all the URLs within:
 ```bash
 # this archives just the RSS file itself (probably not what you want)
 docker compose run archivebox add 'https://example.com/some/feed.rss'
@@ -215,30 +213,29 @@ See the wiki page on [Upgrading or Merging Archives: Upgrading with plain Docker
 
 ### Usage
 
-```bash
-docker run -it archivebox/archivebox help
-```
+The Docker CLI `docker run ... archivebox/archivebox [subcommand]` works just like the non-Docker `archivebox [subcommand]` CLI.
 
 First, make sure you're `cd`'ed into your collection data folder (e.g. `~/archivebox`).
 
-The Docker CLI `docker run ... archivebox/archivebox [subcommand]` works just like the non-Docker `archivebox [subcommand]` CLI.
+```bash
+docker run -it -v $PWD:/data archivebox/archivebox help
+```
 
-**To add a single URL to the archive** or a list of links from a file, pipe them in via stdin. This will archive each link passed in.
-
+To add a single URL, pass it as an arg or pipe it in via stdin:
 ```bash
 docker run -it -v $PWD:/data archivebox/archivebox add 'https://example.com'
 # OR
 echo 'https://example.com' | docker run -i -v $PWD:/data archivebox/archivebox add
 ```
 
-To archive multiple URLs at once, pass text containing URLs in via stdin.
+To archive multiple URLs at once, pass text containing URLs in via stdin:
 ```bash
 docker run -i -v $PWD:/data archivebox/archivebox add < urls.txt
 # OR
 curl 'https://example.com/some/rss/feed.xml' | docker run -i -v $PWD:/data archivebox/archivebox add
 ```
 
-You can also use the `--depth=1` flag to tell ArchiveBox to recursively archive the URLs within the provided source.
+You can also use the `--depth=1` flag to tell ArchiveBox to recursively archive the URLs within a provided source.
 ```bash
 docker run -it -v $PWD:/data archivebox/archivebox add --depth=1 'https://example.com/some/rss/feed.xml'
 ```
