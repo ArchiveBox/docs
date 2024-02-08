@@ -203,7 +203,7 @@ For guides on how to import URLs from different sources into ArchiveBox, follow 
 
 ### 4. Run `archivebox add` to import URLs for archiving
 
-Make to run `archivebox` as an unprivileged user (i.e. without `sudo` / not logged in as `root`).
+Make sure to run `archivebox` as an unprivileged user (i.e. without `sudo` / not logged in as `root`).
 
 ```bash
 # create a new folder anywhere to hold your collection, and cd into it
@@ -234,7 +234,7 @@ cd ~/archivebox
 archivebox init --setup
 ```
 
-Check our [Upgrading](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives) documentation and [Release Notes](https://github.com/ArchiveBox/ArchiveBox/releases) if you run into any problems. ➡️
+Check our more detailed [Upgrading](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives) documentation and [Release Notes](https://github.com/ArchiveBox/ArchiveBox/releases) if you run into any problems. ➡️
 
 <br/>
 
