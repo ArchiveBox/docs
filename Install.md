@@ -25,7 +25,7 @@ ArchiveBox is primarily distributed as a Python package via `pip`, but it also d
 * [**Linux:**](#ubuntudebian) Ubuntu, Debian, etc (with apt)
 * [**BSD:**](#bsd) FreeBSD, OpenBSD, NetBSD etc (with pkg)
 
-Other systems that are not officially supported but probably work to varying degrees:
+Other systems that are not officially supported but may work with degraded functionality:
 
 <img src="https://imgur.zervice.io/WYSb96z.png" width="6%" align="right"/>
 <img src="http://files.softicons.com/download/system-icons/web0.2ama-icons-by-chrfb/png/256x256/Operating%20System%20-%20Windows.png" width="5%" align="right"/>
