@@ -22,11 +22,10 @@ Make sure you have Docker installed and set up on your machine before following 
   - [Accessing the data](#accessing-the-data-1)
   - [Configuration](#configuration-1)
 
-**Official Docker Hub image:**  
+**Official Docker Hub image:** [`hub.docker.com/r/archivebox/archivebox`](https://hub.docker.com/r/archivebox/archivebox) 
 ```bash
 docker pull archivebox/archivebox
 ```
-- [Docker Hub Official Image](https://hub.docker.com/r/archivebox/archivebox) `hub.docker.com/r/archivebox/archivebox`
 - [`Dockerfile`](https://github.com/ArchiveBox/ArchiveBox/blob/main/Dockerfile)
 - [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/main/docker-compose.yml)
 - [`archivebox-kubernetes.yml`](https://github.com/ArchiveBox/docker-archivebox/blob/master/archivebox.yml)
