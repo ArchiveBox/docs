@@ -121,6 +121,8 @@ See our [Dependencies](https://github.com/ArchiveBox/ArchiveBox#dependencies) do
 
 #### macOS
 
+<img src="https://imgur.zervice.io/Ue9BI7n.png" width="5%" align="right"/>
+
 Make sure you have [Homebrew](https://brew.sh/) installed first.
 
 ```bash
@@ -136,6 +138,9 @@ brew install --cask chromium
 ```
 
 #### Ubuntu/Debian-based Systems
+
+<img src="https://assets.ubuntu.com/v1/c5cb0f8e-picto-ubuntu.svg" width="5%" align="right"/>
+
 ```bash
 # add the nodejs sources to your apt lists (optional, otherwise may use older node)
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
@@ -151,6 +156,8 @@ sudo apt install chromium fontconfig fonts-ipafont-gothic fonts-wqy-zenhei fonts
 ```
 
 #### FreeBSD
+
+<img src="https://cdn0.iconfinder.com/data/icons/flat-round-system/512/freebsd-512.png" width="5%" align="right"/>
 
 ```bash
 sudo pkg install python node wget curl git yt-dlp ffmpeg ripgrep chromium-browser
