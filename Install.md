@@ -20,7 +20,8 @@ ArchiveBox officially supports the following operating systems:
 <img src="https://assets.ubuntu.com/v1/c5cb0f8e-picto-ubuntu.svg" width="5%" align="right"/>
 <img src="https://imgur.zervice.io/Ue9BI7n.png" width="5%" align="right"/>
 
-**CPU Architectures:** `amd64` (`x86_64`), `arm64` (`aarch64`), `arm7` (e.g. Rasberry Pi >= 3)
+**CPU Architectures:** `amd64` (`x86_64`), `arm64` (`aarch64`), `arm7`  
+*(Including M1/M2/etc. Mac, Rasberry Pi >= 3, and all 64-bit Intel/AMD CPUs)*
 
 * [**macOS:**](#macos) >=10.12 (with homebrew)
 * [**Linux:**](#ubuntudebian) Ubuntu, Debian, etc (with apt)
