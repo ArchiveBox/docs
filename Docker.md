@@ -134,9 +134,9 @@ Then open [`http://127.0.0.1:8000`](http://127.0.0.1:8000).
 
 ### Configuration
 
-ArchiveBox running with `docker compose` accepts all the same environment variables as normal, see the full list on the [[Configuration]] page.
+ArchiveBox running with `docker compose` accepts all the same config options as other ArchiveBox distributions, see the full list of options available on the [[Configuration]] page.
 
-The recommended way configure ArchiveBox is by editing `ArchiveBox.conf` or using `archivebox config --set ...`.
+The recommended way configure ArchiveBox in Docker Compose is using `archivebox config --set ...` or by editing `ArchiveBox.conf`.
 ```bash
 docker compose run archivebox config --set MEDIA_MAX_SIZE=750mb
 # OR
