@@ -5,9 +5,11 @@ ArchiveBox is primarily distributed as a Python package via `pip`, but it also d
 <img src="https://lh4.googleusercontent.com/KWaqSJ_J9nSaGZugZWGR_mC18xxbGj2pVScriSzP8hX7KiUSw6L3VVL8rhDxQKIwxaCsfSFUO1B2pipEM4h7L-HJOGXo7yZK8a3DBVERwqfEZ8GxpeHPwh8P4LSkqVjPGRx5XYs" width="20%" align="right"/>
 
  - [Supported Systems](#supported-systems)
- - **[Docker Setup](#docker-setup)**
- - [Automatic Setup](#automatic-setup)
- - [Manual Setup](#manual-setup)
+ - **[Option A. Install with Docker / Docker Compose ⭐️](#option-a-docker--docker-compose-setup-%EF%B8%8F)**
+ - [Option B. Install with Automatic Setup Script](#option-b-automatic-setup-script)
+ - [Option C. Install with system Package Manager](#option-c-bare-metal-setup)
+ - *[Upgrading ArchiveBox to a new version](#upgrading-archivebox-to-a-new-version)*
+ - [Next Steps](#next-steps)
 
 
 ## Supported Systems
