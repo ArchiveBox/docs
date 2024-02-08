@@ -25,13 +25,13 @@ ArchiveBox is primarily distributed as a Python package via `pip`, but it also d
 * [**Linux:**](#ubuntudebian) Ubuntu, Debian, etc (with apt)
 * [**BSD:**](#bsd) FreeBSD, OpenBSD, NetBSD etc (with pkg)
 
-Other systems that are not officially supported but may work with degraded functionality:
+Other systems are not officially supported but may work with degraded functionality:
 
 <img src="https://imgur.zervice.io/WYSb96z.png" width="6%" align="right"/>
 <img src="http://files.softicons.com/download/system-icons/web0.2ama-icons-by-chrfb/png/256x256/Operating%20System%20-%20Windows.png" width="5%" align="right"/>
 
 
- * Windows: Via [[Docker]], Docker in WSL2, or WSL2 without Docker (partial support)
+ * **Windows:** Via [[Docker]], Docker in WSL2, or WSL2 without Docker (partial support)
  * [Other UNIX systems:](https://github.com/ArchiveBox/ArchiveBox#-package-manager-setup) Arch, Nix, Guix, Fedora, SUSE, Arch, CentOS, etc.
 
 <br/>
