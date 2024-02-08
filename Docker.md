@@ -143,7 +143,7 @@ services:
 
 You can also specify an env file via CLI when running compose using `docker compose --env-file=/path/to/config.env ...` although you must specify the variables in the `environment:` section that you want to have passed down to the ArchiveBox container from the passed env file.
 
-If you want to access your archive server with HTTPS, put a reverse proxy like Nginx or Caddy in front of `http://127.0.0.1:8098` to do SSL termination. You can find many instructions to do this online if you search "SSL reverse proxy".
+If you want to access your archive server with HTTPS, put a reverse proxy like Nginx or Caddy in front of `http://127.0.0.1:8000` to do SSL termination. Here is an example [ArchiveBox nginx container](https://github.com/ArchiveBox/ArchiveBox/blob/main/docker-compose.yml#:~:text=nginx) + [`nginx.conf`](https://github.com/ArchiveBox/ArchiveBox/blob/main/etc/nginx.conf) that you can modify to add your preferred TLS settings.
 
 ---
 
