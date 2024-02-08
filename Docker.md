@@ -35,7 +35,7 @@ docker pull archivebox/archivebox
 
 ---
 > *Make sure you **[install Docker](https://docs.docker.com/install/#supported-platforms)** before following the instructions below!*  ➡️  
-> `docker --version    # must be >= 17.04.0`
+> `docker --version           # must be >= 17.04.0`
 ---
 
 <br/>
