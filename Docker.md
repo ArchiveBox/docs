@@ -40,7 +40,7 @@ docker pull archivebox/archivebox
 
 ## Docker Compose
 
-An example [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/master/docker-compose.yml) config with ArchiveBox and an Nginx server to serve the archive is included in the project root. You can edit it as you see fit, or just run it as it comes out-of-the-box.
+An example [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/main/docker-compose.yml) config with ArchiveBox and an Nginx server to serve the archive is included in the project root. You can edit it as you see fit, or just run it as it comes out-of-the-box.
 
 Just make sure you have a Docker version that's [new enough](https://docs.docker.com/compose/compose-file/) to support `version: 3.9` format:
 
@@ -56,7 +56,7 @@ Docker version 18.09.1, build 4c52b90    # must be >= 17.04.0
 mkdir ~/archivebox && cd ~/archivebox
 
 # download the compose file
-curl -O https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/docker-compose.yml
+curl -O https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/main/docker-compose.yml
 
 # run the initial setup and add some URLs to test it out, then start the web server
 docker compose run archivebox init --setup
@@ -67,7 +67,7 @@ docker compose up
 If you want to use sonic for full text search, download the sonic config file & uncomment the sonic service in your `docker-compose.yml` file:
 ```bash
 # download the sonic config file into your data folder (e.g. ~/archivebox)
-curl https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/master/etc/sonic.cfg > sonic.cfg
+curl https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/main/etc/sonic.cfg > sonic.cfg
 
 # then uncomment the sonic-related sections in docker-compose.yml
 nano docker-compose.yml
