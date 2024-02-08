@@ -34,7 +34,9 @@ docker pull archivebox/archivebox
 <br/>
 
 ---
-> *Make sure you **[install Docker](https://docs.docker.com/install/#supported-platforms)** before following the instructions below!*  ➡️
+> *Make sure you **[install Docker](https://docs.docker.com/install/#supported-platforms)** before following the instructions below!*  ➡️  
+> Check to make sure your installed Docker version is [new enough](https://docs.docker.com/compose/compose-file/):  
+> `docker --version            # must be >= 17.04.0`
 ---
 
 <br/>
@@ -43,17 +45,13 @@ docker pull archivebox/archivebox
 
 ## Docker Compose
 
-An ArchiveBox [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/main/docker-compose.yml) file is provided with all the extras included.  
-You can uncomment sections to enable extra features, or run the basic version as-is.
-
-*Make sure you have a Docker version that's [new enough](https://docs.docker.com/compose/compose-file/) to support `version: 3.9` format!*
-```bash
-docker --version            # must be >= 17.04.0
-```
-
 <br/>
 
 ### Setup
+
+A full [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/main/docker-compose.yml) file is provided with all the extras included.  
+You can uncomment sections within it to enable extra features, or run the basic version as-is.
+
 
 ```bash
 # create a folder to store your data (can be anywhere)
