@@ -60,11 +60,8 @@ mkdir ~/archivebox && cd ~/archivebox
 curl -fsSL 'https://docker-compose.archivebox.io' > docker-compose.yml
 # (shortcut for getting https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/main/docker-compose.yml)
 
-# run the initial setup and add some URLs to test it out, then start the web server
+# run setup to choose an admin username+password (or set ADMIN_USERNAME/ADMIN_PASSWORD env vars)
 docker compose run archivebox init --setup
-docker compose run archivebox add 'https://example.com'
-docker compose run archivebox help
-docker compose up
 ```
 
 To use [Sonic](https://github.com/valeriansaliou/sonic) for improved full-text search, download this config & uncomment the sonic service in `docker-compose.yml`:
