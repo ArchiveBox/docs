@@ -189,22 +189,6 @@ python3 -m pip install --upgrade --ignore-installed archivebox[ldap,sonic]
 # apt install build-essensial python3-ldap (install C++ toolchain if any errors during build)
 ```
 
-#### Check that everything worked and the versions are high enough.
-```bash
-echo $PATH && \
-python3 --version | head -n 1 && \
-node --version | head -n 1 && \
-git --version | head -n 1 && \
-wget --version | head -n 1 && \
-curl --version | head -n 1 && \
-yt-dlp --version | head -n 1 && \
-echo "[√] All dependencies installed."
-
-# get a summary of the installed archivebox version and all active dependencies
-archivebox version
-```
-
-If you have issues setting up Chromium / Google Chrome, see the [[Chromium Install]] and [[Troubleshooting]] pages for more detailed instructions.
 
 <br/>
 
@@ -231,6 +215,8 @@ archivebox help
 archivebox add --help
 archivebox add < ~/Downloads/bookmarks_export.html
 ```
+
+If you have issues setting up Chromium / Google Chrome, see the [[Chromium Install]] and [[Troubleshooting]] pages for more detailed instructions.
 
 <br/>
 
