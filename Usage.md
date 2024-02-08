@@ -27,7 +27,7 @@ All three of these ways of running ArchiveBox are equivalent and interchangeable
 
 - `archivebox [subcommand] [...args]`  
   *Using the PyPI package via `pip install archivebox`*
-- `docker run -it -v $PWD:/data archivebox/archivebox [subcommand] [...args]`  
+- `docker run ... archivebox/archivebox [subcommand] [...args]`  
   *Using the official Docker image*
 - `docker-compose run archivebox [subcommand] [...args]`  
   *Using the official Docker image w/ Docker Compose*
@@ -48,22 +48,21 @@ For more examples see the [[Docker]] page.
 You can set environment variables in your shell profile, a config file, or by using the `env` command.
 
 ```bash
-# via the CLI
-archivebox config --set TIMEOUT=3600
+# set config via the CLI
+archivebox config --set MEDIA_MAX_SIZE=750mb
 
-# by modifying the config file
-nano ArchiveBox.conf
-# TIMEOUT=3600
+# OR modify the config file directly
+echo 'MEDIA_MAX_SIZE=750mb' >> ArchiveBox.conf
 
-# or by using environment variables
-env TIMEOUT=3600 archivebox add 'https://example.com'
+# OR use environment variables
+env MEDIA_MAX_SIZE=750mb archivebox add 'https://example.com'
 ```
 
 See [[Configuration]] page for more details about the available options and ways to pass config.  
 If you're using Docker, also make sure to read the Configuration section on the [[Docker]] page.
 
 > [!TIP]  
-> You can run archivebox outside a data directory using:
+> You can run archivebox outside a data directory using:  
 > `env chdir=/path/to/archivebox/data archivebox [subcommand] [args...]`
 
 ---
@@ -72,7 +71,7 @@ If you're using Docker, also make sure to read the Configuration section on the 
 
 ```bash
 archivebox add 'https://example.com'
-# or
+# OR
 echo 'https://example.com' | archivebox add
 ```
 
@@ -82,20 +81,22 @@ You can also add `--depth=1` to any of these commands if you want to recursively
 
 ```bash
 cat urls_to_archive.txt | archivebox add
-# or
+# OR
 archivebox add < urls_to_archive.txt
-# or
-curl https://getpocket.com/users/USERNAME/feed/all | archivebox add
+# OR
+curl 'https://example.com/some/rss/feed.xml' | archivebox add
+# OR
+archivebox add --depth=1 'https://example.com/some/rss/feed.xml'
 ```
 
-You can also pipe in RSS, XML, Netscape, or any of the other supported import formats via stdin.
+You can also pipe in RSS, XML, Netscape, or any of the other [supported import formats](https://github.com/ArchiveBox/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive) via stdin.
 
 ```bash
 archivebox add < ~/Downloads/browser_bookmarks_export.html
-# or
+# OR
 archivebox add < ~/Downloads/pinboard_bookmarks.json
-# or
-archivebox add < ~/Downloads/other_links.txt
+# OR
+archivebox add < ~/Downloads/any_text_containing_urls.txt
 ```
 
 ---
@@ -134,8 +135,7 @@ open http://127.0.0.1:8000         # open the admin UI in a browser to view your
 
 *See the [Configuration Wiki](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view) and [Security Wiki](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#archiving-private-content) for more info...*
 
-Or if you prefer to use the static HTML UI instead of the interactive UI provided by the server,
-you can run `archivebox list --html --with-headers > ./index.html` and then open `./index.html` in a browser.  You should see something [like this](https://archive.sweeting.me).
+Or if you prefer to generate a [static HTML index](https://github.com/ArchiveBox/ArchiveBox#static-archive-exporting) instead of using the built-in web server, you can run `archivebox list --html --with-headers > ./index.html` and then open `./index.html` in a browser.  You should see something [like this](https://demo.archivebox.io).
 
 You can sort by column, search using the box in the upper right, and see the total number of links at the bottom.
 
