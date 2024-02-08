@@ -7,7 +7,7 @@ Running ArchiveBox with Docker allows you to manage it in a container without ex
 <img src="https://imgur.zervice.io/qFAPRwC.png" width="20%" align="right"/>
 
 - [Overview](#Overview)
-- [Docker Compose](#docker-compose) (recommended way)
+- [Docker Compose](#docker-compose) ⭐️ (recommended)
   - [Setup](#setup)
   - [Upgrading](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#upgrading-with-docker-compose-%EF%B8%8F)
   - [Usage](#usage)
