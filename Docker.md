@@ -95,16 +95,26 @@ To add new URLs, you can use `docker compose run archivebox <subcommand>` just l
 echo "https://example.com" | docker compose run archivebox add
 ```
 
-**To import links from a file** you can either `cat` the file and pass it via stdin like above, or move it into your data folder so that ArchiveBox can access it from within the container.
+**To import links from a file** you can either pipe it in via stdin, or move it into your `./data/sources` folder so that ArchiveBox can access it from within the container.
 
 ```bash
-docker compose run archivebox add 'https://exmaple.com/some/url/here'
-docker compose run archivebox add < ~/Downloads/bookmarks.html
-curl https://example.com/some/rss/feed.xml | docker compose run archivebox add
+# pipe URLs in from a file outside Docker
+docker compose run archivebox add < ~/Downloads/example_urls.txt
+
+# OR ingest URLs from a file mounted inside Docker
+docker compose run archivebox add --depth=1 /data/sources/example_urls.txt
+
+# OR pipe in URLs from a remote source
+curl 'https://example.com/some/rss/feed.xml' | docker compose run archivebox add
+docker compose run archivebox add --depth=1 'https://example.com/some/rss/feed.xml'
 ```
 
-To ingest a feed or remote file and recursively archive all the URLs within, add the `--depth=1` flag:
+The `--depth=1` flag tells archivebox to look inside the provided source and archive all the URLs within:
 ```bash
+# this archives just the RSS file itself (probably not what you want)
+docker compose run archivebox add 'https://example.com/some/feed.rss'
+
+# this archives the RSS feed file + all the URLs mentioned inside of it
 docker compose run archivebox add --depth=1 'https://example.com/some/feed.rss'
 ```
 
