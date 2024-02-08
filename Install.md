@@ -58,7 +58,7 @@ It's also recommended to use a filesystem with compression and/or deduplication 
 
 2. Then follow the [Quickstart](https://github.com/ArchiveBox/ArchiveBox#quickstart) guide and read the [[Docker]] wiki page for next steps. ➡️
 
-You can also run Dockerized ArchiveBox using [UNRAID/TrueNAS/Proxmox/etc.](https://github.com/ArchiveBox/ArchiveBox#-other-options) or [Kubernetes](https://github.com/ArchiveBox/docker-archivebox/blob/master/archivebox.yml). 
+> You can also run Dockerized ArchiveBox using [UNRAID/TrueNAS/Proxmox/etc.](https://github.com/ArchiveBox/ArchiveBox#-other-options) or [Kubernetes](https://github.com/ArchiveBox/docker-archivebox/blob/master/archivebox.yml). 
 
 **More info:**
 - [`Dockerfile`](https://github.com/ArchiveBox/ArchiveBox/blob/main/Dockerfile)
@@ -75,7 +75,7 @@ You can also run Dockerized ArchiveBox using [UNRAID/TrueNAS/Proxmox/etc.](https
 
 ## Option B. Automatic Setup Script
 
-If you're on Linux with `apt`, FreeBSD with `pkg`, or macOS with `brew` there is an automatic setup script provided to install all the dependencies in one go.
+If you're on Linux with `apt`, FreeBSD with `pkg`, or macOS with `brew` there is an optional auto-setup script provided.
 
 *(or scroll further down for manual install instructions)*
 
