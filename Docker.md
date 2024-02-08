@@ -22,7 +22,7 @@ Running ArchiveBox with Docker allows you to manage it in a container without ex
 
 <br/>
 
-**Official Docker Hub image:** [`hub.docker.com/r/archivebox/archivebox`](https://hub.docker.com/r/archivebox/archivebox) 
+**Official Docker Hub image: [`hub.docker.com/r/archivebox/archivebox`](https://hub.docker.com/r/archivebox/archivebox)**
 ```bash
 docker pull archivebox/archivebox
 ```
