@@ -164,7 +164,8 @@ A logged-in admin user may perform these operations on one or more snapshots:
 
 Get the official [ArchiveBox Browser Extension](https://github.com/ArchiveBox/archivebox-browser-extension):
 
-1. Set your Add page to allow non-logged-in access `archivebox config --set PUBLIC_ADD_VIEW=True` (see [`PUBLIC_ADD_VIEW` in the wiki](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view))
+1. Set your Add page to allow non-logged-in access `archivebox config --set PUBLIC_ADD_VIEW=True`  
+  (see [`PUBLIC_ADD_VIEW` in the wiki](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view))
 2. Install the extension in your browser:
 - [Chrome/Edge/Other Chromium](https://chrome.google.com/webstore/detail/habonpimjphpdnmcfkaockjnffodikoj)
 - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/archivebox-exporter/)
