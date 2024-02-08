@@ -154,52 +154,59 @@ If you want to access your archive server with HTTPS, put a reverse proxy like N
 Fetch and run the ArchiveBox Docker image to create your initial archive.
 
 ```bash
-echo 'https://example.com' | docker run -i -v $PWD:/data archivebox/archivebox add
+docker pull archivebox/archivebox
+
+mkdkir ~/archivebox && cd ~/archivebox
+docker run -it -v $PWD:/data archivebox/archivebox init --setup
 ```
 
-Replace `~/ArchiveBox` in the command above with the full path to a folder to use to store your archive on the host, or name of a Docker data volume.
+*(You can create a collection in any directory you want, `~/archivebox` is just used as an example here)*
 
-Make sure the data folder you use host is either a new, uncreated path, or if it already exists make sure it has permissions initially set to `777` so that the ArchiveBox command is able to set it to the specified `OUTPUT_PERMISSIONS` config setting on the first run.
+If you encounter permissions issues, you may need configure user/group ownership explicitly with [`PUID`/`PGID`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#puid--pgid).
 
 ### Upgrading
 
-See https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#upgrading-with-plain-docker
+See the wiki page on [Upgrading or Merging Archives: Upgrading with plain Docker](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#upgrading-with-plain-docker) for instructions. ➡️
 
 ### Usage
 
 **To add a single URL to the archive** or a list of links from a file, pipe them in via stdin. This will archive each link passed in.
 
 ```bash
+docker run -it -v $PWD:/data archivebox/archivebox add 'https://example.com'
+# OR
 echo 'https://example.com' | docker run -i -v $PWD:/data archivebox/archivebox add
-# or
-docker run -i -v $PWD:/data archivebox/archivebox add < bookmarks.html
+# OR
+docker run -i -v $PWD:/data archivebox/archivebox add < urls.txt
 ```
 
-**To add a list of pages via feed URL or remote file,** pass the URL of the feed as an argument.
+To seed a crawl of a list of URLs, add the `--depth=1` flag so that archivebox recursively archives the URLs within the provided source.
 
 ```bash
 docker run -it -v $PWD:/data archivebox/archivebox add --depth=1 'https://example.com/some/rss/feed.xml'
 ```
 
-The `depth` argument controls if you want to save the links contained in that URL, or only the specified URL.
 
 ### Accessing the data
 
-#### Using a bind folder
+Use the `docker run` `-v /path/on/host:/path/inside/container` flag to specify where you want your data to live on the host.
 
-Use the flag:
-
+For example to use a folder on an external USB drive (instead of the current directory `$PWD` or `~/archivebox`):
 ```bash
--v /full/path/to/folder/on/host:/data
+docker run -it -v /media/USB_DRIVE/archivebox:/data archivebox/archivebox ...
 ```
 
-This will use the folder `/full/path/to/folder/on/host` on your host to store the ArchiveBox output.
+Then to view your data, you can look in the folder on the host `/media/USB_DRIVE/archivebox`, or use the Web UI:
+```bash
+docker run -it -v /media/USB_DRIVE/archivebox:/data -p 8000:8000 archivebox/archivebox
+# then open https://127.0.0.1:8000
+```
 
 ### Configuration
 
-The easiest way to use `archivebox config --set KEY=value` or edit `ArchiveBox.conf` in your collection folder.
+The easiest way is to use `archivebox config --set KEY=value` or edit `./ArchiveBox.conf` (in your collection data folder).
 
-For example, to set `MEDIA_TIMEOUT=120` as a persistent setting for this collection.
+For example, to set `MEDIA_TIMEOUT=120` as a persistent setting for a collection:
 ```bash
 docker run -it -v $PWD:/data archivebox/archivebox config --set MEDIA_TIMEOUT=120
 # OR
