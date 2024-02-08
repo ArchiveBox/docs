@@ -57,7 +57,8 @@ Docker version 18.09.1, build 4c52b90    # must be >= 17.04.0
 mkdir ~/archivebox && cd ~/archivebox
 
 # download the compose file
-curl -O https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/main/docker-compose.yml
+curl -fsSL 'https://docker-compose.archivebox.io' > docker-compose.yml
+# (shortcut for getting https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/main/docker-compose.yml)
 
 # run the initial setup and add some URLs to test it out, then start the web server
 docker compose run archivebox init --setup
@@ -66,10 +67,10 @@ docker compose run archivebox help
 docker compose up
 ```
 
-If you want to use sonic for full text search, download the sonic config file & uncomment the sonic service in your `docker-compose.yml` file:
+To use [Sonic](https://github.com/valeriansaliou/sonic) for improved full-text search, download this config & uncomment the sonic service in `docker-compose.yml`:
 ```bash
 # download the sonic config file into your data folder (e.g. ~/archivebox)
-curl https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/main/etc/sonic.cfg > sonic.cfg
+curl -fsSL 'https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/main/etc/sonic.cfg' > sonic.cfg
 
 # then uncomment the sonic-related sections in docker-compose.yml
 nano docker-compose.yml
@@ -84,9 +85,7 @@ See the wiki page on [Upgrading or Merging Archives: Upgrading with Docker Compo
 
 ### Usage
 
-First, make sure you're `cd`'ed into the same folder as your `docker-compose.yml` file (e.g. the project root) and that your containers have been started with `docker-compose up -d`.
-
-Then open [`http://127.0.0.1:8000`](http://127.0.0.1:8000) or browse `./data/archive` in the filesystem to view the archive.
+First, make sure you're `cd`'ed into the same folder as your `docker-compose.yml` file (e.g. the project root).
 
 To add new URLs, you can use `docker compose run archivebox <subcommand>` just like the normal `archivebox <subcommand> [args]` CLI.
 
@@ -104,19 +103,24 @@ docker compose run archivebox add < ~/Downloads/bookmarks.html
 curl https://example.com/some/rss/feed.xml | docker compose run archivebox add
 ```
 
-**To ingest a feed or remote file and archive all the URLs within**, pass the URL or path to the feed or page as an argument using depth=1.
-
+To ingest a feed or remote file and recursively archive all the URLs within, add the `--depth=1` flag:
 ```bash
-docker compose run archivebox add --depth=1 https://example.com/some/feed.rss
+docker compose run archivebox add --depth=1 'https://example.com/some/feed.rss'
 ```
 
-The `depth` argument controls if you want to save the links contained in that URL, or only the specified URL.
 
 ### Accessing the data
 
 The outputted archive data is stored in `data/` (relative to the project root), or whatever folder path you specified in the `docker-compose.yml` `volumes:` section. Make sure the `data/` folder on the host has permissions initially set to `777` so that the ArchiveBox command is able to set it to the specified `OUTPUT_PERMISSIONS` config setting on the first run.
 
-To access your archive, you can open `data/index.html` directly, or you can use the provided Django development server running inside docker on [`http://127.0.0.1:8000`](http://127.0.0.1:8000).
+To access the results directly via the filesystem, open `./data/archive/<timestamp>/index.html` (timestamp is shown in output of previous command).
+
+Alternatively, to use the web UI, start the server with:
+```bash
+docker compose up         # add -d to run in the background
+```
+
+Then open [`http://127.0.0.1:8000`](http://127.0.0.1:8000).
 
 ### Configuration
 
