@@ -119,9 +119,9 @@ See our [Dependencies](https://github.com/ArchiveBox/ArchiveBox#dependencies) do
 
 *Be aware, you'll need to keep all these packages up-to-date yourself over time!*
 
-#### macOS
-
 <img src="https://imgur.zervice.io/Ue9BI7n.png" width="5%" align="right"/>
+
+#### macOS
 
 Make sure you have [Homebrew](https://brew.sh/) installed first.
 
@@ -137,9 +137,9 @@ playwright install --with-deps chromium
 brew install --cask chromium
 ```
 
-#### Ubuntu/Debian-based Systems
-
 <img src="https://assets.ubuntu.com/v1/c5cb0f8e-picto-ubuntu.svg" width="5%" align="right"/>
+
+#### Ubuntu/Debian-based Systems
 
 ```bash
 # add the nodejs sources to your apt lists (optional, otherwise may use older node)
@@ -155,9 +155,10 @@ playwright install --with-deps chromium
 sudo apt install chromium fontconfig fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-symbola fonts-noto fonts-freefont-ttf
 ```
 
-#### FreeBSD
-
 <img src="https://cdn0.iconfinder.com/data/icons/flat-round-system/512/freebsd-512.png" width="5%" align="right"/>
+
+
+#### FreeBSD
 
 ```bash
 sudo pkg install python node wget curl git yt-dlp ffmpeg ripgrep chromium-browser
