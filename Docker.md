@@ -204,7 +204,7 @@ docker run -it -v /media/USB_DRIVE/archivebox:/data -p 8000:8000 archivebox/arch
 
 ### Configuration
 
-The easiest way is to use `archivebox config --set KEY=value` or edit `./ArchiveBox.conf` (in your collection data folder).
+The easiest way is to use `archivebox config --set KEY=value` or edit `./ArchiveBox.conf` (in your collection dir).
 
 For example, to set `MEDIA_TIMEOUT=120` as a persistent setting for a collection:
 ```bash
