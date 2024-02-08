@@ -24,9 +24,9 @@ ArchiveBox is primarily distributed as a Python package via `pip`, but it also d
 **CPU Architectures:** `amd64` (`x86_64`), `arm64` (`aarch64`), `arm7`  
 *(Including M1/M2/etc. Mac, Rasberry Pi >= 3, and 64-bit Intel/AMD)*
 
-* [**macOS:**](#macos) >=10.12 (with homebrew)
-* [**Linux:**](#ubuntudebian) Ubuntu, Debian, etc (with apt)
-* [**BSD:**](#bsd) FreeBSD, OpenBSD, NetBSD etc (with pkg)
+* [**macOS:**](#macos) >=10.12 (with `brew`)
+* [**Linux:**](#ubuntudebian) Ubuntu (>= 18.04), Debian (>= 10), etc. (with `apt`)
+* [**BSD:**](#bsd) FreeBSD, OpenBSD, NetBSD etc (with `pkg`)
 
 Other systems are not officially supported but may work with degraded functionality:
 
@@ -118,6 +118,9 @@ See our [Dependencies](https://github.com/ArchiveBox/ArchiveBox#dependencies) do
 *Be aware, you'll need to keep all these packages up-to-date yourself over time!*
 
 #### macOS
+
+Make sure you have [Homebrew](https://brew.sh/) installed first.
+
 ```bash
 brew tap homebrew-ffmpeg/ffmpeg
 brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
