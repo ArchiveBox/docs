@@ -99,12 +99,12 @@ After running the setup script, continue with the [Quickstart](https://github.co
 
 ## Option C. Bare Metal Setup
 
-<img src="https://avatars0.githubusercontent.com/u/1503512?s=200&v=4" width="10%" align="right"/>
-
-
 If you'd rather not use [Docker](https://github.com/ArchiveBox/ArchiveBox#%EF%B8%8F-easy-setup) or our [auto-install script](https://github.com/ArchiveBox/ArchiveBox#%EF%B8%8F-easy-setup), you can follow these manual setup instructions to install ArchiveBox and its dependencies using `pip` & your system package manager of choice (e.g. `apt`, `brew`, `pkg`, `nix`, etc.).
 
 See our [Dependencies](https://github.com/ArchiveBox/ArchiveBox#dependencies) documentation to see the full list of dependencies and how they're used. Not all the dependencies are required for all modes. If you disable some archive methods you can skip installing those dependencies, for example, if you set `FETCH_MEDIA=False` you don't need to install `yt-dlp`, and if you set `FETCH_[PDF,SCREENSHOT,DOM]=False` you don't need `chromium`.
+
+<img src="https://avatars0.githubusercontent.com/u/1503512?s=200&v=4" width="80px" align="right"/>
+
 
 **More info:**
  - For help installing these, see the [Manual Setup](#manual-setup), [[Troubleshooting]] and [[Chromium Install]] pages.
@@ -119,7 +119,7 @@ See our [Dependencies](https://github.com/ArchiveBox/ArchiveBox#dependencies) do
 
 *Be aware, you'll need to keep all these packages up-to-date yourself over time!*
 
-<img src="https://imgur.zervice.io/Ue9BI7n.png" width="5%" align="right"/>
+<img src="https://imgur.zervice.io/Ue9BI7n.png" width="40px" align="right"/>
 
 #### macOS
 
@@ -137,7 +137,7 @@ playwright install --with-deps chromium
 brew install --cask chromium
 ```
 
-<img src="https://assets.ubuntu.com/v1/c5cb0f8e-picto-ubuntu.svg" width="5%" align="right"/>
+<img src="https://assets.ubuntu.com/v1/c5cb0f8e-picto-ubuntu.svg" width="40px" align="right"/>
 
 #### Ubuntu/Debian-based Systems
 
@@ -155,7 +155,7 @@ playwright install --with-deps chromium
 sudo apt install chromium fontconfig fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-symbola fonts-noto fonts-freefont-ttf
 ```
 
-<img src="https://cdn0.iconfinder.com/data/icons/flat-round-system/512/freebsd-512.png" width="5%" align="right"/>
+<img src="https://cdn0.iconfinder.com/data/icons/flat-round-system/512/freebsd-512.png" width="40px" align="right"/>
 
 
 #### FreeBSD
