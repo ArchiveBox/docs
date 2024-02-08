@@ -142,7 +142,7 @@ curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt install python3 python3-pip python3-minimal python3-distutils nodejs libatomic1 zlib1g-dev libssl-dev libldap2-dev libsasl2-dev python3-ldap python3-msgpack python3-mutagen python3-regex python3-pycryptodome procps wget curl git yt-dlp ffmpeg ripgrep
 
 # Skip this if you already have Google Chrome/Chromium installed and in your $PATH
-pip3 install --upgrade playwright
+python3 -m pip install --upgrade playwright
 playwright install --with-deps chromium
 # OR
 sudo apt install chromium fontconfig fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-symbola fonts-noto fonts-freefont-ttf
