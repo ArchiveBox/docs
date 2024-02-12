@@ -2,7 +2,7 @@
 
 *ArchiveBox operates as a US 501(c)(3) nonprofit, <a href="https://hcb.hackclub.com/donations/start/archivebox">donations</a> are tax-deductible.<br/>(we're fiscally sponsored by <a href="https://hackclub.com/hcb?ref=donation">HCB</a> <code>EIN: 81-2908499</code>)*
 
-**🏛️ [Hire us for professional support](https://docs.sweeting.me/s/archivebox-consulting-services) 💬** or donate below, everything goes towards supporting ArchiveBox open-source development.
+**🏛️ [Hire us for professional support](https://docs.sweeting.me/s/archivebox-consulting-services) 💬** or donate. Everything goes towards supporting ArchiveBox open-source development.
 
 <hr/>
 
