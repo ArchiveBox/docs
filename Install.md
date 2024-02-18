@@ -126,15 +126,19 @@ See our [Dependencies](https://github.com/ArchiveBox/ArchiveBox#dependencies) do
 Make sure you have [Homebrew](https://brew.sh/) installed first.
 
 ```bash
+# Install ArchiveBox's dependencies manually
 brew tap homebrew-ffmpeg/ffmpeg
 brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
 brew install python3 node git wget curl yt-dlp ripgrep
+# OR install using the official ArchiveBox brew package
+# brew tap archivebox/archivebox
+# brew install archivebox
 
 # Skip this if you already have Google Chrome/Chromium installed in /Applications/
 pip3 install --upgrade playwright
 playwright install --with-deps chromium
-# OR
-brew install --cask chromium
+# OR install chrome as a brew cask
+# brew install --cask chromium
 ```
 
 <img src="https://assets.ubuntu.com/v1/c5cb0f8e-picto-ubuntu.svg" width="30px" align="right"/>
@@ -145,14 +149,18 @@ brew install --cask chromium
 # add the nodejs sources to your apt lists (optional, otherwise may use older node)
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 
-# Install base system dependencies, if out-of-date check ArchiveBox/Dockerfile
+# Install base system dependencies manually (check ArchiveBox/Dockerfile for more if needed)
 sudo apt install python3 python3-pip python3-minimal python3-distutils nodejs libatomic1 zlib1g-dev libssl-dev libldap2-dev libsasl2-dev python3-ldap python3-msgpack python3-mutagen python3-regex python3-pycryptodome procps wget curl git yt-dlp ffmpeg ripgrep
+# OR install them using the official ArchiveBox apt package
+# echo "deb http://ppa.launchpad.net/archivebox/archivebox/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/archivebox.list
+# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C258F79DCC02E369
+# sudo apt-get update && sudo apt-get install archivebox
 
 # Skip this if you already have Google Chrome/Chromium installed and in your $PATH
 python3 -m pip install --upgrade playwright
 playwright install --with-deps chromium
-# OR
-sudo apt install chromium fontconfig fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-symbola fonts-noto fonts-freefont-ttf
+# OR install chromium and its dependencies manually with apt
+# sudo apt install chromium fontconfig fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-symbola fonts-noto fonts-freefont-ttf
 ```
 
 <img src="https://cdn0.iconfinder.com/data/icons/flat-round-system/512/freebsd-512.png" width="30px" align="right"/>
