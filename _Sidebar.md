@@ -10,13 +10,10 @@
 # Reference
 
  - [[Usage]]
-   - [Usage: Command Line](../Usage)
-   - [Usage: Web Interface](../Usage)
-   - [Usage: Browser Extension](../Usage)
-   - [Usage: Python Shell](../Usage)
-   - [Usage: Python Library](https://docs.archivebox.io/en/latest/modules.html)
-   - [Usage: SQL API](../Usage)
-   - [Usage: REST API](https://github.com/ArchiveBox/ArchiveBox/issues/496)
+   - [Command Line](../Usage)
+   - [Web Interface](../Usage), [REST API](https://github.com/ArchiveBox/ArchiveBox/issues/496)
+   - [Browser Extension](../Usage)
+   - [Python Library](https://docs.archivebox.io/en/latest/modules.html), [Python Shell](../Usage), [SQL DB](../Usage)
  
  - Inputs & Outputs
    - [Supported Sources](https://github.com/ArchiveBox/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive)
