@@ -1,7 +1,5 @@
 # Configuration
 
-▶️ *The full ArchiveBox config file definition with defaults can be found here: [`archivebox/config.py`](https://github.com/ArchiveBox/ArchiveBox/blob/master/archivebox/config.py#L27).*
-
 Configuration of ArchiveBox is done by using the `archivebox config` command, modifying the `ArchiveBox.conf` file in the data folder, or by using environment variables. All three methods work equivalently when using Docker as well.
 
 *Some equivalent examples of setting some configuration options:*
@@ -28,7 +26,7 @@ Environment variables take precedence over the config file, which is useful if y
 
 <br/>
 
-In case this document is ever out of date, it's recommended to read the code that loads the config directly in [`archivebox/config.py`](https://github.com/ArchiveBox/ArchiveBox/blob/master/archivebox/config.py#L27).
+*In case this document is ever out of date, it's recommended to read the code that loads the config directly in [`archivebox/config.py`](https://github.com/ArchiveBox/ArchiveBox/blob/master/archivebox/config.py#L27). ➡️*
 
 ---
 
