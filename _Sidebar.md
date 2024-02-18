@@ -10,18 +10,18 @@
 
 # [[Usage]]
 
- - ﹩[Command Line](../Usage)
- - 🌐 [Web UI](../Usage)
- - 🧩 [Browser Extension](../Usage)
- - 📜 [Python Library](https://docs.archivebox.io/en/latest/modules.html) / [Python Shell](../Usage) 
- - 👾 [REST API](https://github.com/ArchiveBox/ArchiveBox/issues/496) / [SQL API](../Usage)
+ - ﹩[Command Line](Usage#cli-usage)
+ - 🌐 [Web UI](Usage#ui-usage)
+ - 🧩 [Browser Extension](Usage#browser-extension-usage)
+ - 📜 [Python Library](https://docs.archivebox.io/en/latest/modules.html) / [Python Shell](Usage#python-shell-usage) 
+ - 👾 [REST API](https://github.com/ArchiveBox/ArchiveBox/issues/496) / [SQL API](Usage#sql-shell-usage)
 
 # Reference
 
  - ⚙️ [[Configuration]]
+ - 📦 [Dependencies](https://github.com/ArchiveBox/ArchiveBox#dependencies)
+ - 💿 [Disk Layout](https://github.com/ArchiveBox/ArchiveBox#archive-layout)
  - 🔒 [[Security Overview]]
- - 💿 [Disk Layout]()
- - 📦 [Dependencies]()
  - 📝 [Developer Documentation](https://github.com/ArchiveBox/ArchiveBox#archivebox-development)
 
 # Guides
