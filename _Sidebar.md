@@ -15,7 +15,7 @@
    - [Command Line](../Usage)
    - [Web UI](../Usage) / [REST API](https://github.com/ArchiveBox/ArchiveBox/issues/496)
    - [Browser Extension](../Usage)
-   - [Python Library](https://docs.archivebox.io/en/latest/modules.html) / [Python Shell](../Usage) / [SQL DB](../Usage)
+   - [Python Library](https://docs.archivebox.io/en/latest/modules.html) + [Shell](../Usage) / [SQL DB](../Usage)
  - [[Configuration]]
  - [[Security Overview]]
  - [Disk Layout]()
