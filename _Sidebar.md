@@ -13,11 +13,10 @@
  - [Supported Outputs](https://github.com/ArchiveBox/ArchiveBox#output-formats)
  - [[Usage]]
    - [Command Line](../Usage)
-   - [Web UI](../Usage) / 
+   - [Web UI](../Usage)
    - [Browser Extension](../Usage)
    - [Python Library](https://docs.archivebox.io/en/latest/modules.html) / [Python Shell](../Usage) 
    - [REST API](https://github.com/ArchiveBox/ArchiveBox/issues/496) / [SQL API](../Usage)
- - 
  - [[Configuration]]
  - [[Security Overview]]
  - [Disk Layout]()
