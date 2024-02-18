@@ -34,7 +34,7 @@ All three of these ways of running ArchiveBox are equivalent and interchangeable
 
 You can share a single archivebox data directory between Docker and non-Docker instances as well, allowing you to run the server in a container but still execute CLI commands on the host for example.
 
-For more examples see the [[Docker]] page.
+For more examples see [README: Usage](https://github.com/ArchiveBox/ArchiveBox#%EF%B8%8F-cli-usage) and [[Docker]] pages.
 
 - [Run ArchiveBox with configuration options](#Run-ArchiveBox-with-configuration-options)
 - [Import a single URL](#Import-a-single-URL)
