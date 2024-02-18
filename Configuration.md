@@ -26,12 +26,14 @@ Environment variables take precedence over the config file, which is useful if y
 
 <br/>
 
-*In case this document is ever out of date, it's recommended to read the code that loads the config directly in [`archivebox/config.py`](https://github.com/ArchiveBox/ArchiveBox/blob/master/archivebox/config.py#L27). ➡️*
-
 ---
 
 <img src="https://imgur.zervice.io/iTYT7Ip.png" width="100%"/>
+<p align="center">
 
+*In case this document is ever out of date, it's recommended to read the code that loads the config directly: [`archivebox/config.py`](https://github.com/ArchiveBox/ArchiveBox/blob/master/archivebox/config.py#L27) ➡️*
+
+</p>
 
 ## General Settings
 
