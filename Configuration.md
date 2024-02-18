@@ -13,7 +13,7 @@ echo "CHROME_BINARY=google-chrome-stable" >> ArchiveBox.conf
 env CHROME_BINARY=google-chrome-stable archivebox add ~/Downloads/bookmarks_export.html
 ```
 
-Environment variables take precedence over the config file, which is useful if you only want to use a certain option temporarily during a single run.
+Environment variables take precedence over the config file, which is useful if you only want to use a certain option temporarily during a single run. For more examples see [Usage: Configuration](Usage#run-archivebox-with-configuration-options)...
 
 <br/>
 
