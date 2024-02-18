@@ -33,9 +33,10 @@ Other systems are not officially supported but may work with degraded functional
 <img src="https://imgur.zervice.io/WYSb96z.png" width="6%" align="right"/>
 <img src="http://files.softicons.com/download/system-icons/web0.2ama-icons-by-chrfb/png/256x256/Operating%20System%20-%20Windows.png" width="5%" align="right"/>
 
-
  * **Windows:** Via [[Docker]], Docker in WSL2, or WSL2 without Docker (not recommended)
  * [Other UNIX systems:](https://github.com/ArchiveBox/ArchiveBox#-package-manager-setup) Arch, Nix, Guix, Fedora, SUSE, Arch, CentOS, etc.
+
+<sub>Note: On `arm7` the `playwright` package is not available, so `chromium` must be installed manually if needed.</sub>
 
 <br/>
 
