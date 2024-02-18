@@ -10,34 +10,49 @@
  - [[Install]]
  - [[Docker]]
  - [[Usage]]
- - [[Configuration]]
- - [Supported Sources](https://github.com/ArchiveBox/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive)
- - [Supported Outputs](https://github.com/ArchiveBox/ArchiveBox#output-formats)
 
-# Advanced
+# Reference
+
+ - [[Usage]]
+   - [Usage: Command Line](../Usage)
+   - [Usage: Web Interface](../Usage)
+   - [Usage: Browser Extension](../Usage)
+   - [Usage: Python Shell](../Usage)
+   - [Usage: Python Library](https://docs.archivebox.io/en/latest/modules.html)
+   - [Usage: SQL API](../Usage)
+   - [Usage: REST API](https://github.com/ArchiveBox/ArchiveBox/issues/496)
+ 
+ - Inputs & Outputs
+   - [Supported Sources](https://github.com/ArchiveBox/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive)
+   - [Supported Outputs](https://github.com/ArchiveBox/ArchiveBox#output-formats)
+
+ - [[Configuration]]
+   - General Settings
+   - Archiving Settings
+   - Web Server Settings
+   - Extractor Enabling/Disabling/Tuning
+
+ - [[Security Overview]]
+ - [Disk Layout]()
+ - [Dependencies]()
+ - [Developer Documentation](https://github.com/ArchiveBox/ArchiveBox#archivebox-development)
+
+
+# Guides
 
  - [[Troubleshooting]]
  - [[Scheduled Archiving]]
  - [[Publishing Your Archive]]
  - [[Chromium Install]]
  - [Cookies & Sessions Setup](https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#setting-up-a-chromium-user-profile)
- - [[Security Overview]]
  - [[Upgrading or Merging Archives]]
-
-# Developers
-
- - [Python API Reference](https://docs.archivebox.io/en/latest/modules.html)
- - [REST API Reference](https://github.com/ArchiveBox/ArchiveBox/issues/496)
- - [Developer Documentation](https://github.com/ArchiveBox/ArchiveBox#archivebox-development)
 
 # More Info
 
- - [[Roadmap]]
- - [Changelog](https://github.com/ArchiveBox/ArchiveBox/releases)
- - [[Donations]]
+ - ⭐️ [[Web Archiving Community]]
  - [Background & Motivation](https://github.com/ArchiveBox/ArchiveBox#background--motivation)
  - [Comparison to Other Tools](https://github.com/ArchiveBox/ArchiveBox#comparison-to-other-projects)
- - ⭐️ [[Web Archiving Community]]
+ - [Changelog](https://github.com/ArchiveBox/ArchiveBox/releases) & [[Roadmap]]
 
 ---
 
