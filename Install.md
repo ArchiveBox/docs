@@ -145,6 +145,8 @@ playwright install --with-deps chromium
 
 #### Ubuntu/Debian-based Systems
 
+Make sure `apt` and `dpkg` are available on your system.
+
 ```bash
 # add the nodejs sources to your apt lists (optional, otherwise may use older node)
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
