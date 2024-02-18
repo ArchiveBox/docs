@@ -692,4 +692,4 @@ Arguments that are passed to the `git clone` subcommand. The values should be a 
 
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/5a4dd576-387a-4a1f-9dfa-407eac87078c" width="100%"/>
 
-▶️ *Looking for more? Sometimes this document is out of date. Check the code that loads this config: [`archivebox/config.py`](https://github.com/ArchiveBox/ArchiveBox/blob/master/archivebox/config.py#L27).*
+▶️ *Looking for more? Sometimes this document is out of date. Check the source code for undocumented options and defaults: [`archivebox/config.py`](https://github.com/ArchiveBox/ArchiveBox/blob/master/archivebox/config.py#L27).*
