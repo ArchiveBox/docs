@@ -150,16 +150,18 @@ Path to a directory containing custom html/css/images for overriding the default
 If you've used `django` before, this works exactly the same way that `django` template overrides work (because it uses `django` under the hood).
 
 ```bash
-$ pip show -f archivebox | grep Location: | awk '{print $2}'
-/opt/homebrew/lib/python3.11/site-packages
-$ pip show -f archivebox | grep archivebox/templates
-archivebox/templates/admin/app_index.html
-archivebox/templates/admin/base.html
-archivebox/templates/admin/login.html
-...
+pip show -f archivebox | grep Location: | awk '{print $2}'
+# /opt/homebrew/lib/python3.11/site-packages
+
+pip show -f archivebox | grep archivebox/templates
+# archivebox/templates/admin/app_index.html
+# archivebox/templates/admin/base.html
+# archivebox/templates/admin/login.html
+# ...
+
 # copy default templates into a directory somewhere, edit as needed, then point archivebox to it
-$ cp -r /opt/homebrew/lib/python3.11/site-packages/archivebox/templates ~/archivebox/custom_templates
-$ archivebox config --set CUSTOM_TEMPLATES_DIR=~/archivebox/custom_templates
+cp -r /opt/homebrew/lib/python3.11/site-packages/archivebox/templates ~/archivebox/custom_templates
+archivebox config --set CUSTOM_TEMPLATES_DIR=~/archivebox/custom_templates
 ```
 
 *Related options:*  
