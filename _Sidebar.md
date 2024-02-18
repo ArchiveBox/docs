@@ -1,6 +1,6 @@
 [![](https://github.com/ArchiveBox/ArchiveBox/assets/511499/acffcee3-d1ec-439d-8278-e481101c3d0d)](Home)
 
-# Getting Started
+# [Getting Started](Quickstart)
 
  - [[Quickstart]]
  - [[Install]]
