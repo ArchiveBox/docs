@@ -9,19 +9,19 @@
 
 # Reference
 
- - [Supported Sources](https://github.com/ArchiveBox/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive)
- - [Supported Outputs](https://github.com/ArchiveBox/ArchiveBox#output-formats)
+ - 📥 [Supported Sources](https://github.com/ArchiveBox/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive)
+ - 📤 [Supported Outputs](https://github.com/ArchiveBox/ArchiveBox#output-formats)
  - [[Usage]]
-   - [Command Line](../Usage)
-   - [Web UI](../Usage)
-   - [Browser Extension](../Usage)
-   - [Python Library](https://docs.archivebox.io/en/latest/modules.html) / [Python Shell](../Usage) 
-   - [REST API](https://github.com/ArchiveBox/ArchiveBox/issues/496) / [SQL API](../Usage)
- - [[Configuration]]
- - [[Security Overview]]
- - [Disk Layout]()
- - [Dependencies]()
- - [Developer Documentation](https://github.com/ArchiveBox/ArchiveBox#archivebox-development)
+   - ﹩[Command Line](../Usage)
+   - 🌐 [Web UI](../Usage)
+   - 🧩 [Browser Extension](../Usage)
+   - 📜 [Python Library](https://docs.archivebox.io/en/latest/modules.html) / [Python Shell](../Usage) 
+   - 👾 [REST API](https://github.com/ArchiveBox/ArchiveBox/issues/496) / [SQL API](../Usage)
+ - ⚙️ [[Configuration]]
+ - 🔒 [[Security Overview]]
+ - 💿 [Disk Layout]()
+ - 📦 [Dependencies]()
+ - 📝 [Developer Documentation](https://github.com/ArchiveBox/ArchiveBox#archivebox-development)
 
 
 # Guides
