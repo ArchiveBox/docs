@@ -202,6 +202,15 @@ python3 -m pip install --upgrade --ignore-installed archivebox[ldap,sonic]
 # apt install build-essensial python3-ldap (install C++ toolchain if any errors during build)
 ```
 
+Then make sure the `pip`-installed version of `archivebox` is available in your `$PATH`.
+```bash
+echo $PATH               # show the directories your system is searching for binaries
+which -a archivebox      # show all installed archivebox binaries available
+which archivebox         # show which archivebox binary is being called
+
+archivebox version       # show all the archivebox & dependency version info
+```
+(ensure the version shown is the most recent available from [Releases](https://github.com/ArchiveBox/ArchiveBox/releases))
 
 <br/>
 
