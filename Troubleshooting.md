@@ -97,7 +97,7 @@ a bug in versions `<=1.19.1_1` that caused wget to fail for perfectly valid site
 
 ### NPM Dependencies
 
-NPM dependencies like `readability`, `singlefile`, and `mercury` are installed in you data directory by `archivebox setup`.
+NPM packages like `readability`, `singlefile`, etc. are auto-installed by `archivebox setup` into `data/node_modules`.
 
 Make sure you have installed NodeJS + NPM first, here are their [official install docs](https://nodejs.org/en/download/package-manager/).
 
@@ -106,7 +106,7 @@ node --version         # make sure you have node >=19 installed
 npm --version          # make sure you have npm installed
 
 cd ~/archivebox/data   # go into your data directory
-archivebox setup       # install all runtime dependencies
+archivebox setup       # auto-installs all JS dependencies into ./node_modules
 # equivalent to:
 # curl -fsSL 'https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/main/archivebox/package.json' > package.json
 # npm install
