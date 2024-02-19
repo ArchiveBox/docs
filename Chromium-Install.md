@@ -14,7 +14,7 @@ If you don't already have Chrome installed, I recommend installing Chromium inst
 
 ```bash
 google-chrome --version | chromium-browser --version
-Google Chrome 73.0.3683.75 beta     # should be >v59
+Google Chrome 73.0.3683.75 beta     # should be >v111
 ```
 
 ## Installing Chromium
@@ -32,12 +32,12 @@ brew install --cask chromium
 ```
 
 ### Ubuntu/Debian
-If you already have `chromium-browser` >= v59 installed (run `chromium-browser --version`, you don't need to run this.
+If you already have `chromium-browser` >= v111 installed (run `chromium-browser --version`, you don't need to run this.
 ```bash
-apt update
-apt install chromium-browser
+sudo apt update
+sudo apt install chromium-browser
 # or on some systems:
-apt install chromium
+sudo apt install chromium
 ```
 
 ## Installing Google Chrome
@@ -48,12 +48,12 @@ If you already have `/Applications/Google Chrome.app`, you don't need to run thi
 brew install --cask google-chrome
 ```
 ### Ubuntu/Debian
-If you already have `google-chrome` >= v59 installed (run `google-chrome --version`, you don't need to run this.
+If you already have `google-chrome` >= v111 installed (run `google-chrome --version`, you don't need to run this.
 ```bash
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-apt update
-apt install google-chrome
+wget -q -O - 'https://dl-ssl.google.com/linux/linux_signing_key.pub' | sudo apt-key add -
+echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+sudo apt update
+sudo apt install -y google-chrome
 ```
 
 ## Troubleshooting Chromium Install
