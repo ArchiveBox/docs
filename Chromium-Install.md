@@ -5,6 +5,7 @@ By default, ArchiveBox looks for any existing installed version of Chrome/Chromi
  - `CHROME_BINARY=google-chrome-beta`
  - `CHROME_BINARY=/usr/bin/chromium-browser`
  - `CHROME_BINARY='/Applications/Chromium.app/Contents/MacOS/Chromium'`
+ - `CHROME_BINARY='~/Library/Caches/ms-playwright/chromium-857950/chrome-mac/Chromium.app/Contents/MacOS/Chromium'`
 
 If you don't already have Chrome installed, I recommend installing Chromium instead of Google Chrome, as it's the open-source fork of Chrome that doesn't send as much tracking data to Google.
 
