@@ -15,7 +15,7 @@ What are you having an issue with?:
 
 ## Installing
 
-Make sure you've followed the Manual Setup guide in the [[Install]] instructions first.  Then check here for help depending on what component you need help with.
+If using `archivebox` without Docker, make sure you've followed the full guide in the [[Install]] instructions first.  Then check here for help depending on what component you need help with.
 
 Then make sure `archivebox` is installed available in your `$PATH`.
 ```bash
