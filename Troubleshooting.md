@@ -95,6 +95,28 @@ If wget times out or randomly fails to download some sites that you have confirm
 upgrade wget to the most recent version with `brew upgrade wget` or `apt upgrade wget`.  There is
 a bug in versions `<=1.19.1_1` that caused wget to fail for perfectly valid sites.
 
+### NPM Dependencies
+
+NPM dependencies like `readability`, `singlefile`, and `mercury` are installed in you data directory by `archivebox setup`.
+
+Make sure you have installed NodeJS + NPM first, here are their [official install docs](https://nodejs.org/en/download/package-manager/).
+
+```bash
+node --version         # make sure you have node >=19 installed
+npm --version          # make sure you have npm installed
+
+cd ~/archivebox/data   # go into your data directory
+archivebox setup       # install all runtime dependencies
+# equivalent to:
+# curl -fsSL 'https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/main/archivebox/package.json' > package.json
+# npm install
+
+# install npm dependencies should then be present in ~/archivebox/data/node_modules/.bin
+archivebox version     # show version full info to make sure they're loaded correctly
+```
+
+---
+
 ## Archiving
 
 ### No links parsed from export file
