@@ -158,8 +158,8 @@ sudo apt install python3 python3-pip python3-minimal python3-distutils nodejs li
 # sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C258F79DCC02E369
 # sudo apt-get update && sudo apt-get install archivebox
 
-# Skip this if you already have Google Chrome/Chromium installed and in your $PATH
-python3 -m pip install --upgrade playwright
+# Make sure to install Chromium as well (can be skipped if you already have chrome installed and in your $PATH)
+pip install --upgrade playwright
 playwright install --with-deps chromium
 # OR install chromium and its dependencies manually with apt
 # sudo apt install chromium fontconfig fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-symbola fonts-noto fonts-freefont-ttf
