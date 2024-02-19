@@ -238,7 +238,7 @@ For more info about troubleshooting filesystem permissions, performance, or issu
 
 Explore the SQLite3 DB a bit to see whats available using the SQLite3 shell:
 ```bash
-cd ~/archivebox
+cd ~/archivebox/data
 sqlite3 index.sqlite3
 
 # example usage:
