@@ -19,10 +19,16 @@ Google Chrome 73.0.3683.75 beta     # should be >v59
 
 ## Installing Chromium
 
+### Any OS (using [`playwright`](https://playwright.dev/python/docs/browsers))
+```bash
+pip install --upgrade --ignore-installed playwright
+playwright install --with-deps chromium
+```
+
 ### macOS
 If you already have `/Applications/Chromium.app`, you don't need to run this.
 ```bash
-brew install chromium
+brew install --cask chromium
 ```
 
 ### Ubuntu/Debian
@@ -39,7 +45,7 @@ apt install chromium
 ### macOS
 If you already have `/Applications/Google Chrome.app`, you don't need to run this.
 ```bash
-brew install google-chrome
+brew install --cask google-chrome
 ```
 ### Ubuntu/Debian
 If you already have `google-chrome` >= v59 installed (run `google-chrome --version`, you don't need to run this.
@@ -53,7 +59,6 @@ apt install google-chrome
 ## Troubleshooting Chromium Install
 
 If you encounter problems setting up Google Chrome or Chromium, see the [Troubleshooting](https://github.com/ArchiveBox/ArchiveBox/wiki/Troubleshooting#chromiumgoogle-chrome) page.
-
 
 ---
 
