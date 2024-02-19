@@ -19,6 +19,7 @@ If using `archivebox` without Docker, make sure you've followed the full guide i
 
 Then make sure `archivebox` is installed available in your `$PATH`.
 ```bash
+apt show archivebox      # show info about the apt-installed version of archivebox
 brew info archivebox     # show info about the brew-installed version of archivebox
 pip show archivebox      # show info about the pip-installed version of archivebox
 
