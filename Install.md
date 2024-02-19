@@ -126,13 +126,12 @@ See our [Dependencies](https://github.com/ArchiveBox/ArchiveBox#dependencies) do
 Make sure you have [Homebrew](https://brew.sh/) installed first.
 
 ```bash
-# Install ArchiveBox's dependencies manually
-brew tap homebrew-ffmpeg/ffmpeg
-brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
-brew install python3 node git wget curl yt-dlp ripgrep
-# OR install using the official ArchiveBox brew package
-# brew tap archivebox/archivebox
-# brew install archivebox
+brew tap archivebox/archivebox
+brew install archivebox
+# OR Install ArchiveBox's dependencies manually (instead of using the all-in-one brew package)
+# brew tap homebrew-ffmpeg/ffmpeg
+# brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
+# brew install python3 node git wget curl yt-dlp ripgrep
 
 # Skip this if you already have Google Chrome/Chromium installed in /Applications/
 pip3 install --upgrade playwright
@@ -204,11 +203,16 @@ python3 -m pip install --upgrade --ignore-installed archivebox[ldap,sonic]
 
 Then make sure the `pip`-installed version of `archivebox` is available in your `$PATH`.
 ```bash
+brew info archivebox     # show info about the brew-installed version of archivebox
+pip show archivebox      # show info about the pip-installed version of archivebox
 echo $PATH               # show the directories your system is searching for binaries
 which -a archivebox      # show all installed archivebox binaries available
 which archivebox         # show which archivebox binary is being called
+```
 
-archivebox version       # show all the archivebox & dependency version info
+**⭐️ Show the full archivebox version info + info about all installed dependencies:**
+```bash
+archivebox version       # shows lots of useful info about installed dependencies and more
 ```
 (ensure the version shown is the most recent available from [Releases](https://github.com/ArchiveBox/ArchiveBox/releases))
 
