@@ -15,7 +15,24 @@ What are you having an issue with?:
 
 ## Installing
 
-Make sure you've followed the Manual Setup guide in the [[Install]] instructions first.  Then check here for help depending on what component you need help with:
+Make sure you've followed the Manual Setup guide in the [[Install]] instructions first.  Then check here for help depending on what component you need help with.
+
+Then make sure `archivebox` is installed available in your `$PATH`.
+```bash
+brew info archivebox     # show info about the brew-installed version of archivebox
+pip show archivebox      # show info about the pip-installed version of archivebox
+
+echo $PATH               # show the directories your system is searching for binaries
+which -a archivebox      # show all installed archivebox binaries available
+which archivebox         # show which archivebox binary is being called
+```
+**⭐️ Show the full archivebox version info + info about all installed dependencies:**
+```bash
+archivebox version       # shows lots of useful info about installed dependencies and more
+```
+(ensure the version shown is the most recent available from [Releases](https://github.com/ArchiveBox/ArchiveBox/releases))
+
+
 
 ### Python
 
@@ -23,6 +40,7 @@ Make sure you have at least Python 3.9 installed on your system.
 
 ```bash
 python3 --version
+pip --version
 pip install --upgrade pip setuptools
 ```
 
@@ -53,7 +71,7 @@ chromium-browser --version || google-chrome --version
 ```
 If no version is displayed, try the setup instructions again, or confirm that you have permission to access chrome.
 
-3. If a version is displayed and it's `<59`, upgrade it:
+3. If a version is displayed and it's `<111`, upgrade it:
 
 ```bash
 apt upgrade chromium-browser -y
@@ -61,7 +79,7 @@ apt upgrade chromium-browser -y
 brew cask upgrade chromium-browser
 ```
 
-4. If a version is displayed and it's `>=59`, make sure ArchiveBox is running the right one:
+4. If a version is displayed and it's `>=111`, make sure ArchiveBox is running the right one:
 
 ```bash
 env CHROME_BINARY=/path/from/step/1/chromium-browser archivebox version   # replace the path with the one you got from step 1
