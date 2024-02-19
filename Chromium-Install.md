@@ -15,7 +15,7 @@ If you don't already have Chrome installed, I recommend installing Chromium inst
 
 ```bash
 google-chrome --version | chromium-browser --version
-Google Chrome 73.0.3683.75 beta     # should be >v111
+Google Chrome 122.0.6261.49 beta     # should be >v111
 ```
 
 ## Installing Chromium
