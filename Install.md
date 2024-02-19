@@ -204,8 +204,10 @@ pip install --upgrade --ignore-installed archivebox[ldap,sonic]
 
 Then make sure the `pip`-installed version of `archivebox` is available in your `$PATH`.
 ```bash
+apt show archivebox      # show info about the apt-installed version of archivebox
 brew info archivebox     # show info about the brew-installed version of archivebox
 pip show archivebox      # show info about the pip-installed version of archivebox
+
 echo $PATH               # show the directories your system is searching for binaries
 which -a archivebox      # show all installed archivebox binaries available
 which archivebox         # show which archivebox binary is being called
