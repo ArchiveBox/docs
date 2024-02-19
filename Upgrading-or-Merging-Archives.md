@@ -1,9 +1,10 @@
 ## Upgrade your ArchiveBox collection to a new version
 
 ```bash
-cd ~/path/to/your/data
+# cd /path/to/your/archivebox/data
+cd ~/archivebox/data
 
-pip install --upgrade archivebox
+pip install --upgrade --ignore-installed archivebox
 # or
 docker pull archivebox/archivebox:latest
 
@@ -58,7 +59,7 @@ Using Docker Compose is recommended because it makes upgrading a breeze! ✨
 Pulling and running the latest version automatically upgrades the ArchiveBox collection and all of ArchiveBox's internal dependencies.
 
 ```bash
-cd ~/archivebox        # or wherever your data folder is
+cd ~/archivebox        # or wherever your folder containing docker-compose.yml is
 docker-compose down    # stop the currently running archivebox containers
 docker-compose down    # run twice to clear stopped containers
 docker-compose pull    # pull the latest image version from Docker Hub
@@ -95,12 +96,13 @@ More info:
 Package manager releases take a lot of effort to maintain ([contributions welcome!](https://github.com/ArchiveBox/ArchiveBox/wiki/Donations)) and sometimes lag behind the Docker releases. We make a best effort to have the latest release available through all channels within a reasonable timeframe.
 
 ```bash
-cd ~/archivebox        # or wherever your data folder is
+cd ~/archivebox/data   # or wherever your data folder is
 killall archivebox     # stop the currently running archivebox version
 
 # upgrade ArchiveBox using the package manager you originally used to install it
-pip install --upgrade archivebox
+pip install --upgrade --ignore-installed archivebox
 # or
+brew update
 brew upgrade archivebox
 # or
 apt install --upgrade archivebox
@@ -187,7 +189,7 @@ If you need to automate changes to the ArchiveBox DB (for example adding a User 
 Note, this is often unnecessary for modifying ArchiveBox on a host that doesn't have the CLI installed, as you can also copy the `index.sqlite3` to a local machine that has it, do the modifications locally, then copy the modified db back into place on the host. (Docker/CLI/GUI/Web ArchiveBox all share the same DB schema/format)
 
 ```bash
-cd ~/archivebox         # cd into your archivebox collection dir
+cd ~/archivebox/data    # cd into your archivebox collection dir
 sqlite3 index.sqlite3   # open the db with sqlite3 shell
 ```
 
@@ -217,7 +219,7 @@ python3                      # open any python shell with django available, does
 ```
 2. Use the generated hashed password to insert a new User row in the SQLite3 database directly:
   ```bash
-cd ~/archivebox         # cd into your archivebox collection dir
+cd ~/archivebox/data    # cd into your archivebox collection dir
 sqlite3 index.sqlite3   # open the db with sqlite3 shell
 ```
 ```sql
@@ -354,7 +356,7 @@ sqlite3.DatabaseError: database disk image is malformed
 **Steps to fix:**
 
 ```bash
-cd ~/archivebox
+cd ~/archivebox/data
 echo '.dump' | sqlite3 index.sqlite3 | sqlite3 repaired_index.sqlite3
 mv index.sqlite3 corrupt_index.sqlite3
 mv repaired_index.sqlite3 index.sqlite3
