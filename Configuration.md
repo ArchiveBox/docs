@@ -159,9 +159,9 @@ pip show -f archivebox | grep archivebox/templates
 # archivebox/templates/admin/login.html
 # ...
 
-# copy default templates into a directory somewhere, edit as needed, then point archivebox to it
+# copy default templates into a directory somewhere, edit as needed, then point archivebox to it, e.g.
 cp -r /opt/homebrew/lib/python3.11/site-packages/archivebox/templates ~/archivebox/custom_templates
-archivebox config --set CUSTOM_TEMPLATES_DIR=~/archivebox/custom_templates
+archivebox config --set CUSTOM_TEMPLATES_DIR=~/archivebox/data/custom_templates
 ```
 
 *Related options:*  
