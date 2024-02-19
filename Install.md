@@ -191,7 +191,7 @@ See the [Quickstart](https://github.com/ArchiveBox/ArchiveBox#-package-manager-s
 
 ### 2. Install ArchiveBox using `pip`
 
-You may do this even if you've already installed `archivebox` with `apt`/`brew`, as sometimes `pip` provides a newer version.
+You may do this even if you've already installed `archivebox` with `apt`/`brew` (sometimes the `pip` version is newer).
 
 ```bash
 # get the latest version of archivebox from PyPI (optional, takes precedence over apt/brew-installed archivebox)
