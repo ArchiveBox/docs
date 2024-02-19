@@ -193,12 +193,11 @@ See the [Quickstart](https://github.com/ArchiveBox/ArchiveBox#-package-manager-s
 Do this even if you've already installed `archivebox` with `apt`/`brew`/etc., as the `pip` version is often newer.
 
 ```bash
-# install latest version of archivebox from PyPI
-python3 -m pip install --upgrade --ignore-installed archivebox
+# get the latest version of archivebox from PyPI (optional, takes precedence over apt/brew-installed archivebox)
+pip install --upgrade --ignore-installed archivebox[ldap,sonic]
 
-# OR install with all the extras (LDAP-support, Sonic full-text search, etc.)
-python3 -m pip install --upgrade --ignore-installed archivebox[ldap,sonic]
-# apt install build-essensial python3-ldap (install C++ toolchain if any errors during build)
+# if you see errors about ldap, install the C++ build tools + ldap headers and retry (only needed on some OSs)
+# apt install build-essensial python3-ldap
 ```
 
 Then make sure the `pip`-installed version of `archivebox` is available in your `$PATH`.
@@ -209,7 +208,6 @@ echo $PATH               # show the directories your system is searching for bin
 which -a archivebox      # show all installed archivebox binaries available
 which archivebox         # show which archivebox binary is being called
 ```
-
 **⭐️ Show the full archivebox version info + info about all installed dependencies:**
 ```bash
 archivebox version       # shows lots of useful info about installed dependencies and more
