@@ -230,7 +230,7 @@ Make sure to run `archivebox` as an unprivileged user (i.e. without `sudo` / not
 
 ```bash
 # create a new folder anywhere to hold your collection, and cd into it
-mkdir ~/archivebox && cd ~/archivebox
+mkdir -p ~/archivebox/data && cd ~/archivebox/data
 
 # instantiate a new collection & finish installing all runtime dependencies
 archivebox init --setup
@@ -255,7 +255,7 @@ Make sure all apt/brew/pkg/etc. dependencies from above are installed & up-to-da
 pip install --upgrade --ignore-installed archivebox
 
 # run init inside any data directories to migrate the index to the latest version
-cd ~/archivebox
+cd ~/archivebox/data
 archivebox setup         # update runtime dependencies to latest versions
 archivebox init          # update collection index & apply any migrations 
 ```
