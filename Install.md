@@ -194,8 +194,9 @@ See the [Quickstart](https://github.com/ArchiveBox/ArchiveBox#-package-manager-s
 You may do this even if you've already installed `archivebox` with `apt`/`brew` (sometimes the `pip` version is newer).
 
 ```bash
-# get the latest version of archivebox from PyPI (optional, takes precedence over apt/brew-installed archivebox)
+# get the latest version of archivebox from PyPI
 pip install --upgrade --ignore-installed archivebox[ldap,sonic]
+# (takes precedence over apt/brew-installed archivebox, it's fine to have both)
 
 # if you see errors about ldap, install the C++ build tools + ldap headers and retry (only needed on some OSs)
 # apt install build-essensial python3-ldap
