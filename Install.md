@@ -126,6 +126,7 @@ See our [Dependencies](https://github.com/ArchiveBox/ArchiveBox#dependencies) do
 Make sure you have [Homebrew](https://brew.sh/) installed first.
 
 ```bash
+# Install everything automatically with our official ArchiveBox brew package
 brew tap archivebox/archivebox
 brew install archivebox
 # OR Install ArchiveBox's dependencies manually (instead of using the all-in-one brew package)
