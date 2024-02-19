@@ -54,7 +54,7 @@ You can uncomment sections within it to enable extra features, or run the basic 
 
 ```bash
 # create a folder to store your data (can be anywhere)
-mkdir ~/archivebox && cd ~/archivebox
+mkdir -p ~/archivebox/data && cd ~/archivebox
 
 # download the compose file into the directory
 curl -fsSL 'https://docker-compose.archivebox.io' > docker-compose.yml
@@ -189,11 +189,11 @@ Fetch and run the ArchiveBox Docker image to create your initial archive.
 ```bash
 docker pull archivebox/archivebox
 
-mkdkir ~/archivebox && cd ~/archivebox
+mkdkir -p ~/archivebox/data && cd ~/archivebox/data
 docker run -it -v $PWD:/data archivebox/archivebox init --setup
 ```
 
-*(You can create a collection in any directory you want, `~/archivebox` is just used as an example here)*
+*(You can create a collection in any directory you want, `~/archivebox/data` is just used as an example here)*
 
 If you encounter permissions issues, you may need configure user/group ownership explicitly with [`PUID`/`PGID`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#puid--pgid).
 
@@ -209,7 +209,7 @@ See the wiki page on [Upgrading or Merging Archives: Upgrading with plain Docker
 
 The Docker CLI `docker run ... archivebox/archivebox [subcommand]` works just like the non-Docker `archivebox [subcommand]` CLI.
 
-First, make sure you're `cd`'ed into your collection data folder (e.g. `~/archivebox`).
+First, make sure you're `cd`'ed into your collection data folder (e.g. `~/archivebox/data`).
 
 ```bash
 docker run -it -v $PWD:/data archivebox/archivebox help
@@ -240,14 +240,14 @@ docker run -it -v $PWD:/data archivebox/archivebox add --depth=1 'https://exampl
 
 The `docker run` `-v /path/on/host:/path/inside/container` flag specifies where your data dir lives on the host.
 
-For example to use a folder on an external USB drive (instead of the current directory `$PWD` or `~/archivebox`):
+For example to use a folder on an external USB drive (instead of the current directory `$PWD` or `~/archivebox/data`):
 ```bash
-docker run -it -v /media/USB_DRIVE/archivebox:/data archivebox/archivebox ...
+docker run -it -v /media/USB-DRIVE/archivebox/data:/data archivebox/archivebox ...
 ```
 
-Then to view your data, you can look in the folder on the host `/media/USB_DRIVE/archivebox`, or use the Web UI:
+Then to view your data, you can look in the folder on the host `/media/USB-DRIVE/archivebox/data`, or use the Web UI:
 ```bash
-docker run -it -v /media/USB_DRIVE/archivebox:/data -p 8000:8000 archivebox/archivebox
+docker run -it -v /media/USB_DRIVE/archivebox/data:/data -p 8000:8000 archivebox/archivebox
 # then open https://127.0.0.1:8000
 ```
 
