@@ -129,14 +129,15 @@ Password (again): <ADMIN_PASSWORD>
 
 #### `PUBLIC_INDEX` / `PUBLIC_SNAPSHOTS` / `PUBLIC_ADD_VIEW`
 
-**Possible Values:** [`False`]/`True`
+**Possible Values:** [`True`]/`False`
 Configure whether or not login is required to use each area of ArchiveBox.
 
 ```python3
 archivebox manage createsuperuser  # set a password before disabling public access
 
-archivebox config --set PUBLIC_INDEX=False       # True = allow users to view main snapshots list without logging in
-archivebox config --set PUBLIC_SNAPSHOTS=False   # True = allow users to view snapshot content without logging in
+# these are the default values
+archivebox config --set PUBLIC_INDEX=True        # True = allow users to view main snapshots list without logging in
+archivebox config --set PUBLIC_SNAPSHOTS=True    # True = allow users to view snapshot content without logging in
 archivebox config --set PUBLIC_ADD_VIEW=False    # True = allow users to submit new URLs to archive without logging in
 ```
 https://github.com/ArchiveBox/ArchiveBox#-web-ui-usage
