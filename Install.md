@@ -189,13 +189,13 @@ See the [Quickstart](https://github.com/ArchiveBox/ArchiveBox#-package-manager-s
 
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/65315723-adae-42e4-b8c6-e44b79165ae5" width="55px" align="right"/>
 
-### 2. Install ArchiveBox using `pip`
+### 2. Install the Python dependencies using `pip`
 
-You may do this even if you've already installed `archivebox` with `apt`/`brew` (sometimes the `pip` version is newer).
+It's recommended to `pip`-install ArchiveBox even if you already installed `archivebox` with one of our official `apt`/`brew` packages above (sometimes the `pip` version is newer). This step also ensures you have the latest `yt-dlp` and `playwright` versions.
 
 ```bash
 # get the latest version of archivebox from PyPI
-pip install --upgrade --ignore-installed archivebox[ldap,sonic]
+pip install --upgrade --ignore-installed archivebox[ldap,sonic] yt-dlp playwright
 # (takes precedence over apt/brew-installed archivebox, it's fine to have both)
 
 # if you see errors about ldap, install the C++ build tools + ldap headers and retry (only needed on some OSs)
