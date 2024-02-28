@@ -211,6 +211,7 @@ mkdir -p ~/archivebox/data && cd ~/archivebox/data
 
 # instantiate it as a collection dir and auto-setup all the JS dependencies inside it
 archivebox init --setup
+archivebox version
 ```
 
 ### Troubleshooting
@@ -224,18 +225,14 @@ pip show archivebox      # show info about the pip-installed version of archiveb
 echo $PATH               # show the directories your system is searching for binaries
 which -a archivebox      # show all installed archivebox binaries available
 which archivebox         # show which archivebox binary is being called
-```
 
-Make sure to run `archivebox` as an unprivileged user (i.e. without `sudo` / not logged in as `root`).
-
-**⭐️ Show the full archivebox version info + info about all its dependencies:**
-```bash
 cd ~/archivebox/data
-
-# show lots of useful info about installed dependencies and more
-archivebox version
+archivebox version       # ⭐️ show lots of useful info about installed dependencies and more
 ```
-(ensure the version shown is the most recent available from [Releases](https://github.com/ArchiveBox/ArchiveBox/releases))
+(ensure the version shown is the most recent available from [Releases](https://github.com/ArchiveBox/ArchiveBox/releases))  
+  
+Make sure to run `archivebox` as an unprivileged user (i.e. without `sudo` / not logged in as `root`).  
+Make sure to run all commands, including `archivebox version`, `archivebox help`, etc. inside a data directory (or a new empty dir that will become a data dir).
 
 If you have issues getting Chromium / Google Chrome working with ArchiveBox, see the [[Chromium Install]] and [[Troubleshooting]] pages for more detailed instructions.
 
