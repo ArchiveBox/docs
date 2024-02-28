@@ -228,13 +228,13 @@ archivebox help
 
 <br/>
 
-### 3. Prepare your URLs for importing
+### 3. Next Steps: Prepare your URLs for importing
 
 For guides on how to import URLs from different sources into ArchiveBox, follow the links in our [Input Formats](https://github.com/ArchiveBox/ArchiveBox#input-formats) and [Preparing URLs](https://github.com/ArchiveBox/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive) documentation. ➡️
 
 <br/>
 
-### 4. Run `archivebox add` to import URLs for archiving
+### 4. Next Steps: Run `archivebox add` to import URLs for archiving
 
 Make sure to run `archivebox` as an unprivileged user (i.e. without `sudo` / not logged in as `root`).
 
