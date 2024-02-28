@@ -211,7 +211,10 @@ mkdir -p ~/archivebox/data && cd ~/archivebox/data
 
 # instantiate it as a collection dir and auto-setup all the JS dependencies inside it
 archivebox init --setup
+
+# ✅ see a final detailed breakdown of all the installed dependencies and commands available
 archivebox version
+archivebox help
 ```
 
 ### Troubleshooting
