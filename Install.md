@@ -214,7 +214,15 @@ which archivebox         # show which archivebox binary is being called
 ```
 **⭐️ Show the full archivebox version info + info about all installed dependencies:**
 ```bash
-archivebox version       # shows lots of useful info about installed dependencies and more
+# create a new empty folder anywhere to hold your collection, and cd into it
+mkdir -p ~/archivebox/data && cd ~/archivebox/data
+
+# finish installing JS dependencies that live inside your data dir (e.g. readability, singlefile)
+archivebox init --setup
+
+# show lots of useful info about installed dependencies and more
+archivebox version
+archivebox help
 ```
 (ensure the version shown is the most recent available from [Releases](https://github.com/ArchiveBox/ArchiveBox/releases))
 
@@ -231,17 +239,17 @@ For guides on how to import URLs from different sources into ArchiveBox, follow 
 Make sure to run `archivebox` as an unprivileged user (i.e. without `sudo` / not logged in as `root`).
 
 ```bash
-# create a new folder anywhere to hold your collection, and cd into it
-mkdir -p ~/archivebox/data && cd ~/archivebox/data
-
-# instantiate a new collection & finish installing all runtime dependencies
-archivebox init --setup
-archivebox version
-archivebox help
-
 # feed in your URLs to start archiving!
 archivebox add --help
 archivebox add < ~/Downloads/bookmarks_export.html
+
+# inspect the newly added Snapshots via the CLI
+archivebox list
+archivebox status
+
+# OR start the webserver and view them in the Web UI
+archivebox server 0.0.0.0:8000
+open http://localhost:8000
 ```
 
 If you have issues getting Chromium / Google Chrome working with ArchiveBox, see the [[Chromium Install]] and [[Troubleshooting]] pages for more detailed instructions.
