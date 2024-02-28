@@ -202,7 +202,20 @@ pip install --upgrade --ignore-installed archivebox[ldap,sonic]
 # apt install build-essensial python3-ldap
 ```
 
-Then make sure the `pip`-installed version of `archivebox` is available in your `$PATH`.
+### 3. Install the JS dependencies using `archivebox setup`
+
+Finish installing the runtime JS dependencies that live inside your collection data dir (e.g. readability, singlefile, mercury).
+```bash
+# create a new empty folder anywhere to hold your collection, and cd into it
+mkdir -p ~/archivebox/data && cd ~/archivebox/data
+
+# instantiate it as a collection dir and auto-setup all the JS dependencies inside it
+archivebox init --setup
+```
+
+### Troubleshooting
+
+Make sure the `pip`-installed version of `archivebox` is available in your `$PATH`.
 ```bash
 apt show archivebox      # show info about the apt-installed version of archivebox
 brew info archivebox     # show info about the brew-installed version of archivebox
@@ -212,51 +225,46 @@ echo $PATH               # show the directories your system is searching for bin
 which -a archivebox      # show all installed archivebox binaries available
 which archivebox         # show which archivebox binary is being called
 ```
-**⭐️ Show the full archivebox version info + info about all installed dependencies:**
-```bash
-# create a new empty folder anywhere to hold your collection, and cd into it
-mkdir -p ~/archivebox/data && cd ~/archivebox/data
-
-# finish installing JS dependencies that live inside your data dir (e.g. readability, singlefile)
-archivebox init --setup
-
-# show lots of useful info about installed dependencies and more
-archivebox version
-archivebox help
-```
-(ensure the version shown is the most recent available from [Releases](https://github.com/ArchiveBox/ArchiveBox/releases))
-
-<br/>
-
-### 3. Next Steps: Prepare your URLs for importing
-
-For guides on how to import URLs from different sources into ArchiveBox, follow the links in our [Input Formats](https://github.com/ArchiveBox/ArchiveBox#input-formats) and [Preparing URLs](https://github.com/ArchiveBox/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive) documentation. ➡️
-
-<br/>
-
-### 4. Next Steps: Run `archivebox add` to import URLs for archiving
 
 Make sure to run `archivebox` as an unprivileged user (i.e. without `sudo` / not logged in as `root`).
 
+**⭐️ Show the full archivebox version info + info about all its dependencies:**
 ```bash
-# feed in your URLs to start archiving!
-archivebox add --help
-archivebox add < ~/Downloads/bookmarks_export.html
+cd ~/archivebox/data
 
-# inspect the newly added Snapshots via the CLI
-archivebox list
-archivebox status
-
-# OR start the webserver and view them in the Web UI
-archivebox server 0.0.0.0:8000
-open http://localhost:8000
+# show lots of useful info about installed dependencies and more
+archivebox version
 ```
+(ensure the version shown is the most recent available from [Releases](https://github.com/ArchiveBox/ArchiveBox/releases))
 
 If you have issues getting Chromium / Google Chrome working with ArchiveBox, see the [[Chromium Install]] and [[Troubleshooting]] pages for more detailed instructions.
 
 <br/>
 
-### *Upgrading Archivebox to a new version*
+### Next Steps: Run `archivebox add` to import URLs for archiving
+
+
+For guides on how to import URLs from different sources into ArchiveBox, follow the links in our [Input Formats](https://github.com/ArchiveBox/ArchiveBox#input-formats) and [Preparing URLs](https://github.com/ArchiveBox/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive) documentation. ➡️
+
+```bash
+# feed in your URLs to start archiving!
+archivebox add --help
+archivebox add < ~/Downloads/bookmarks_export.html
+```
+```bash
+# inspect the newly added Snapshots via the CLI
+archivebox list
+archivebox status
+```
+```bash
+# OR start the webserver and view them in the Web UI
+archivebox server 0.0.0.0:8000
+open http://localhost:8000
+```
+
+<br/>
+
+### Next Steps: *Upgrading Archivebox to a new version*
 
 Make sure all apt/brew/pkg/etc. dependencies from above are installed & up-to-date first.
 
