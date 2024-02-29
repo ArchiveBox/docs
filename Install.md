@@ -202,6 +202,8 @@ pip install --upgrade --ignore-installed archivebox[ldap,sonic] yt-dlp playwrigh
 # apt install build-essensial python3-ldap
 ```
 
+<br/>
+
 ### 3. Install the JS dependencies using `archivebox init --setup`
 
 Finish installing the runtime JS dependencies that live inside your collection data dir (e.g. readability, singlefile, mercury).
@@ -219,6 +221,8 @@ archivebox setup
 archivebox version
 archivebox help
 ```
+
+<br/>
 
 ### Troubleshooting
 
@@ -246,7 +250,7 @@ If you have issues getting Chromium / Google Chrome or other dependencies workin
 
 <br/>
 
-### Next Steps: Run `archivebox add` to import URLs for archiving
+### Next Steps: Add some URLs to archive and try out CLI / Web UI
 
 
 For guides on how to import URLs from different sources into ArchiveBox, follow the links in our [Input Formats](https://github.com/ArchiveBox/ArchiveBox#input-formats) and [Preparing URLs](https://github.com/ArchiveBox/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive) documentation. ➡️
@@ -295,7 +299,7 @@ Check our more detailed [Upgrading](https://github.com/ArchiveBox/ArchiveBox/wik
 
 <br/>
 
-### Next Steps
+### Further Reading
 
  - Read [[Usage]] to learn how to use the ArchiveBox CLI and HTML output
  - Read [[Configuration]] to learn about the various archive method options
