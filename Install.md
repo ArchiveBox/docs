@@ -247,6 +247,9 @@ If you have issues getting Chromium / Google Chrome working with ArchiveBox, see
 For guides on how to import URLs from different sources into ArchiveBox, follow the links in our [Input Formats](https://github.com/ArchiveBox/ArchiveBox#input-formats) and [Preparing URLs](https://github.com/ArchiveBox/ArchiveBox/wiki/Quickstart#2-get-your-list-of-urls-to-archive) documentation. ➡️
 
 ```bash
+cd ~/archivebox/data
+```
+```bash
 # feed in your URLs to start archiving!
 archivebox add --help
 archivebox add < ~/Downloads/bookmarks_export.html
@@ -261,6 +264,7 @@ archivebox status
 archivebox server 0.0.0.0:8000
 open http://localhost:8000
 ```
+See our [[Usage]] Wiki documentation page for more examples.
 
 <br/>
 
