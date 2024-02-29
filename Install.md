@@ -234,6 +234,8 @@ which archivebox         # show which archivebox binary is being called
 
 cd ~/archivebox/data
 archivebox version       # ⭐️ show lots of useful info about installed dependencies and more
+archivebox status
+archivebox help
 ```
 (ensure the version shown is the most recent available from [Releases](https://github.com/ArchiveBox/ArchiveBox/releases))  
   
