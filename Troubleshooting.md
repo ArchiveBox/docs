@@ -156,6 +156,26 @@ if you have problem with a particular nginx config.
 
 ### Other database or filesystem issues
 
+#### Docker Permissions issues
+
+Try Setting `PUID` & `PGID`: https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#puid--pgid
+
+Try using [`bindfs`](https://github.com/clecherbauer/docker-volume-bindfs) to work around issues by remapping permissions, for example to remap `uid:33 gid:33` on the host to `911:911` inside the container:
+`docker-compose.yml`:
+```yaml
+services:
+  archivebox:
+    volumes:
+      - archivebox-data:/data
+
+volumes:
+  archivebox-data:
+    driver: lebokus/bindfs:latest
+    driver_opts:
+      sourcePath: "${EXTERNAL_MOUNT_PARENT}/external-parent/external/archivebox"
+      map: "33/911:@33/@911"
+```
+
 See here for more info:
 
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives
