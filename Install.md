@@ -234,10 +234,10 @@ archivebox version       # ⭐️ show lots of useful info about installed depen
 ```
 (ensure the version shown is the most recent available from [Releases](https://github.com/ArchiveBox/ArchiveBox/releases))  
   
-Make sure to run `archivebox` as an unprivileged user (i.e. without `sudo` / not logged in as `root`).  
-Make sure to run all commands, including `archivebox version`, `archivebox help`, etc. inside a data directory (or a new empty dir that will become a data dir).
+Make sure to run `archivebox` **as an unprivileged user** (i.e. without `sudo` / not logged in as `root`).  
+Make sure to run all commands, including `archivebox version`, `archivebox help`, etc. **inside a data directory** (or a new empty dir that will become a data dir).
 
-If you have issues getting Chromium / Google Chrome working with ArchiveBox, see the [[Chromium Install]] and [[Troubleshooting]] pages for more detailed instructions.
+If you have issues getting Chromium / Google Chrome or other dependencies working with ArchiveBox, see the [[Chromium Install]] and [[Troubleshooting]] pages for more detailed instructions.
 
 <br/>
 
