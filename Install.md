@@ -216,6 +216,10 @@ archivebox init
 
 # auto-install all the runtime JS dependencies inside ./node_modules
 archivebox setup
+# under the hood, this does:
+# - npm install 'git+https://github.com/ArchiveBox/ArchiveBox.git#dev'
+# - playwright install chromium
+# - and a few other auto-install checks...
 
 # ✅ see a final detailed breakdown of all the installed dependencies and commands available
 archivebox version
