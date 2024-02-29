@@ -202,15 +202,18 @@ pip install --upgrade --ignore-installed archivebox[ldap,sonic] yt-dlp playwrigh
 # apt install build-essensial python3-ldap
 ```
 
-### 3. Install the JS dependencies using `archivebox setup`
+### 3. Install the JS dependencies using `archivebox init --setup`
 
 Finish installing the runtime JS dependencies that live inside your collection data dir (e.g. readability, singlefile, mercury).
 ```bash
 # create a new empty folder anywhere to hold your collection, and cd into it
 mkdir -p ~/archivebox/data && cd ~/archivebox/data
 
-# instantiate it as a collection dir and auto-setup all the JS dependencies inside it
-archivebox init --setup
+# instantiate the directory as an archivebox collection dir
+archivebox init
+
+# auto-install all the runtime JS dependencies inside ./node_modules
+archivebox setup
 
 # ✅ see a final detailed breakdown of all the installed dependencies and commands available
 archivebox version
