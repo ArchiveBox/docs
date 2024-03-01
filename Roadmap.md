@@ -99,11 +99,11 @@ To see how this spec has been scheduled / implemented / released so far, read th
 
 ## New Extractors Planned
 
-- https://github.com/ArchiveBox/ArchiveBox/issues/564
-- https://github.com/ArchiveBox/ArchiveBox/issues/1357
-- https://github.com/ArchiveBox/ArchiveBox/issues/720
-- https://github.com/ArchiveBox/ArchiveBox/issues/668
-- https://github.com/ArchiveBox/ArchiveBox/issues/1355
+- `gallery-dl`: https://github.com/ArchiveBox/ArchiveBox/issues/564
+- `podcast-archiver`: https://github.com/ArchiveBox/ArchiveBox/issues/1357
+- `scihub-dl`: https://github.com/ArchiveBox/ArchiveBox/issues/720
+- `cad-dl`: https://github.com/ArchiveBox/ArchiveBox/issues/668
+- `aria2`: https://github.com/ArchiveBox/ArchiveBox/issues/1355
 
 And others we're considering for the future:
 
