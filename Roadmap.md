@@ -16,7 +16,7 @@
  - move all the extractors into "plugin" style folders that register their own config
  - right now, the paths of the extractor output are scattered all over the codebase, e.g. `output.pdf` (should be moved to constants at the top of the plugin config file)
  - make out_dir, link_dir, extractor_dir, naming consistent across codebase
- - remove `timestamps` as primary keys in favor of hashes, UUIDs, or some other slug
+ - remove `timestamps` as primary keys in favor of hashes, UUIDs, or some other slug https://github.com/ArchiveBox/ArchiveBox/issues/74
  - create a migration system for folder layout independent of the index (`mv` is atomic at the FS level, so we just need a `transaction.atomic(): move(oldpath, newpath); snap.data_dir = newpath; snap.save()`)
  - make `Tag` a real model `ManyToMany` with Snapshots
  - allow multiple Snapshots of the same site over time + CLI / UI to manage those, + migration from old style `#2020-01-01` hack to proper versioned snapshots
@@ -105,6 +105,7 @@ To see how this spec has been scheduled / implemented / released so far, read th
 - `cad-dl`: https://github.com/ArchiveBox/ArchiveBox/issues/668
 - `aria2`: https://github.com/ArchiveBox/ArchiveBox/issues/1355
 - `podcast-archiver`: https://github.com/ArchiveBox/ArchiveBox/issues/1357
+- `bdfr`: https://github.com/ArchiveBox/ArchiveBox/issues/778
 
 [ArchiveBox Developer Documentation: Contributing a New Extractor](https://github.com/ArchiveBox/ArchiveBox#contributing-a-new-extractor)
 
