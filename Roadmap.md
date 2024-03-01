@@ -93,3 +93,127 @@ To see how this spec has been scheduled / implemented / released so far, read th
  - ✅ [v0.6.x](https://github.com/ArchiveBox/ArchiveBox/pull/680) (~2021/03)
  - 🏖️ sabbatical / coding hiatus for 2022 / mostly answered tickets + merged PRs
  - 🛠 v0.7.x next ... (planned for 2023)
+
+
+---
+
+## New Extractors Planned
+
+- https://github.com/ArchiveBox/ArchiveBox/issues/564
+- https://github.com/ArchiveBox/ArchiveBox/issues/1357
+- https://github.com/ArchiveBox/ArchiveBox/issues/720
+- https://github.com/ArchiveBox/ArchiveBox/issues/668
+- https://github.com/ArchiveBox/ArchiveBox/issues/1355
+
+And others we're considering for the future:
+
+### Social Media
+
+- Instagram
+  - https://github.com/instaloader/instaloader (instagram downloader)
+  - https://github.com/althonos/InstaLooter (stale)
+- Telegram
+  - https://github.com/iyear/tdl (telegram downloader)
+- TikTok
+  - https://github.com/charmparticle/tiktokget (tiktok downloader using yt-dlp)
+  - https://github.com/TerminalWarlord/TikTok-Downloader-Bot
+  - https://github.com/n0l3r/tiktok-downloader
+  - https://github.com/hansputera/tiktok-dl
+  - https://github.com/naseif/tiktok-scraper
+  - https://github.com/irevenko/tiktik
+  - https://github.com/samirelanduk/tiktok-save
+  - https://github.com/Dinoosauro/tiktok-to-ytdlp
+  - https://github.com/krypton-byte/tiktok-downloader
+- Twitter
+  - https://github.com/HoloArchivists/twspace-dl (stale, twitter spaces archiver)
+
+
+### Video/Streams
+
+- https://github.com/lay295/TwitchDownloader
+- https://github.com/ihabunek/twitch-dl
+- https://github.com/iawia002/lux (generic video/audio downloader)
+- https://github.com/wukko/cobalt (generic video/audio downloader)
+- https://github.com/jaysonlong/webvideo-downloader (Bilibili, iQIYI, Tencent Video, MGTV and WeTV)
+- https://github.com/spaam/svtplay-dl (comedy central, twitch, HBO, etc. video downloader)
+- https://github.com/aajanki/yle-dl (Yle Areena Finnish broadcasting video downloader)
+- https://github.com/WHTJEON/widevine-dl (encrypted widevine video downloader)
+- https://github.com/soimort/you-get
+
+### Audio/Music
+
+- https://github.com/nathom/streamrip (Qobuz, Tidal, Deezer and SoundCloud)
+- https://github.com/0xHJK/music-dl
+- https://github.com/guanguans/music-dl
+- https://github.com/CharlesPikachu/musicdl
+- https://github.com/iheanyi/bandcamp-dl
+- https://github.com/spotDL/spotify-downloader
+- https://github.com/Shabinder/SpotiFlyer
+- https://github.com/SathyaBhat/spotify-dl / https://github.com/SwapnilSoni1999/spotify-dl / https://github.com/dhruv-ahuja/spoti-dl
+- https://github.com/vitiko98/qobuz-dl (Qobuz music downloader)
+- https://github.com/akhilrex/podgrab (stale)
+- https://github.com/yaronzz/Tidal-Media-Downloader-PRO (stale)
+- https://github.com/flyingrub/scdl (stale)
+- https://github.com/ravishi/rdio-dl (stale, Rdio song downloader)
+- https://github.com/carlosflorencio/laracasts-downloader (stale?)
+
+### Photos/Images/Comics
+
+- https://github.com/mikf/gallery-dl ⭐️
+- https://github.com/Bionus/imgbrd-grabber (generic image board downloader like gallery-dl)
+- https://github.com/Xonshiz/comic-dl (comic, anime, manga, etc. downloader)
+- https://github.com/justfoolingaround/animdl (anime downloader)
+- https://github.com/metafates/mangal (manga downloader)
+- https://github.com/boredazfcuk/docker-icloudpd (iCloud Photos downloader)
+- https://github.com/Oshan96/monkey-dl (stale? anime downloader)
+- https://github.com/QianyanTech/Image-Downloader (stale?)
+- https://github.com/Xonshiz/anime-dl (stale?)
+
+### Text/Forums
+
+- https://github.com/mikwielgus/forum-dl ⭐️
+- https://github.com/AAndyProgram/SCrawler (Twitter, Reddit, Instagram, Threads, Facebook, Pinterest, nsfw sites downloader)
+- https://github.com/extractus/article-extractor
+- https://github.com/shadowmoose/RedditDownloader (stale?)
+- https://github.com/aliparlakci/bulk-downloader-for-reddit (stale?)
+
+### MOOC/Educational Content
+
+- https://github.com/coursera-dl/coursera-dl
+- https://github.com/rand-net/khan-dl
+- https://github.com/C0D3D3V/Moodle-DL
+- https://github.com/r0oth3x49/acloud-dl
+- https://github.com/Puyodead1/udemy-downloader
+- https://github.com/PyJun/Mooc_Downloader (stale)
+- https://github.com/yann0917/dedao-dl (stale, MOOC course downloader)
+- https://github.com/coursera-dl/edx-dl (stale?)
+- https://github.com/SigureMo/mooc-dl (stale?)
+- https://github.com/calvinhobbes23/Skillshare-DL (stale)
+- https://github.com/r0oth3x49/lynda-dl (stale, Lynda.com course downloader)
+
+### Re-Archiving / WARC Creation
+
+- https://github.com/hartator/wayback-machine-downloader
+- https://github.com/MiniGlome/Archive.org-Downloader
+- https://github.com/ArchiveTeam/grab-site
+- https://github.com/oduwsdl/archivenow
+- https://github.com/wabarc/warcraft
+- https://github.com/sul-dlss/wasapi-downloader
+- https://github.com/KellyStathis/warc_downloader
+- https://github.com/internetarchive/heritrix3
+- https://github.com/AhmadIbrahiim/Website-downloader (wget wrapper)
+- https://github.com/igrigorik/gharchive.org (stale? Github downloader)
+
+### Other
+
+- https://github.com/KurtBestor/Hitomi-Downloader
+- https://github.com/nilaoda/BBDown
+- https://github.com/biliup/biliup
+- https://github.com/yutto-dev/bilili
+- https://github.com/nICEnnnnnnnLee/BilibiliDown
+- https://github.com/matlink/gplaycli (Google Play store Android app downloader)
+- https://github.com/AlphaSlayer1964/kemono-dl (Patreon, gumroad, etc. archiver)
+- https://github.com/manga-download/hakuneko
+- https://github.com/cancerian0684/dli-downloader (Digital Library of India ebook downloader)
+- https://github.com/tusharbabbar/gaana-dl (gaana.com bollywood song downloader)
+- https://github.com/rebane2001/matterport-dl (stale? virtual house tour downloader)
