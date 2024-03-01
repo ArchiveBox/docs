@@ -20,6 +20,7 @@
  - create a migration system for folder layout independent of the index (`mv` is atomic at the FS level, so we just need a `transaction.atomic(): move(oldpath, newpath); snap.data_dir = newpath; snap.save()`)
  - make `Tag` a real model `ManyToMany` with Snapshots
  - allow multiple Snapshots of the same site over time + CLI / UI to manage those, + migration from old style `#2020-01-01` hack to proper versioned snapshots
+ - upgrade from Django 3 to Django 5 https://github.com/ArchiveBox/ArchiveBox/issues/988
     
 ### `v0.8:  Security`
  - Add CSRF/CSP/XSS protection to rendered archive pages
