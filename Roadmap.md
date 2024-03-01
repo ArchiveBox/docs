@@ -106,6 +106,7 @@ To see how this spec has been scheduled / implemented / released so far, read th
 - `aria2`: https://github.com/ArchiveBox/ArchiveBox/issues/1355
 - `podcast-archiver`: https://github.com/ArchiveBox/ArchiveBox/issues/1357
 - `bdfr`: https://github.com/ArchiveBox/ArchiveBox/issues/778
+- sourcemap downloader: https://github.com/ArchiveBox/ArchiveBox/issues/1291
 
 [ArchiveBox Developer Documentation: Contributing a New Extractor](https://github.com/ArchiveBox/ArchiveBox#contributing-a-new-extractor)
 
