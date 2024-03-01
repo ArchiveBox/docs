@@ -98,6 +98,15 @@ To see how this spec has been scheduled / implemented / released so far, read th
 
 ---
 
+## UI / UX Improvements Planned
+
+- https://github.com/ArchiveBox/ArchiveBox/issues/1358
+- https://github.com/ArchiveBox/ArchiveBox/issues/1273
+- https://github.com/ArchiveBox/ArchiveBox/issues/988
+- https://github.com/ArchiveBox/ArchiveBox/issues/930
+
+---
+
 ## New Extractors Planned
 
 - `gallery-dl`: https://github.com/ArchiveBox/ArchiveBox/issues/564
