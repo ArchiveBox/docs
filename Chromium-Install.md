@@ -70,7 +70,7 @@ You may choose to set up a Chrome/Chromium user profile in order to use your coo
 *Note: not all extractors use Chrome (e.g. `wget`, `mercury`, `media`), so [`COOKIES_FILE`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration/#cookies_file) should be set up as well after this.*
 
 > [!WARNING]
-> **Make sure you use separate burner credentials dedicated to archiving,** e.g. don't log in with your normal daily Facebook/Instagram/Youtube/etc. accounts as server responses and page content will often contain your name/email/PII, session cookies, private tokens, etc.!  
+> **Make sure you use separate burner credentials dedicated to archiving,** e.g. don't log in with your normal daily Facebook/Instagram/Youtube/etc. accounts as server responses and page content will often contain your name/email/PII, session cookies, private tokens, etc. that could be used to access your accounts!  
 >  
 > You need to use a separate account to make sure you don't leak your account info to any future viewers of your snapshots (even if you keep your archive data private for now, you may want to share a snapshot in the future, and they're very hard to sanitize after-the-fact!).
 
