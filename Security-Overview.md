@@ -1,18 +1,32 @@
 # Security Overview
 
-## Usage Modes
+## Web UI Permissions
+
+```bash
+# require login to access the list of Snapshots
+archivebox config --set PUBLIC_INDEX=False
+
+# require login to access Snapshot content
+archivebox config --set PUBLIC_SNAPSHOTS=False
+
+# require log-in to submit new URLs for archiving
+archivebox config --set PUBLIC_ADD_VIEW=False
+
+# create/modify admin UI users
+archivebox manage [createsuperuser|changepassword] --help
+```
+
+## ArchiveBox Use-Cases
 
 <img src="https://imgur.zervice.io/K3dZcjG.png" width="50px" align="right"/>
 
-#### Archiving Public Content [Default]
+#### Archiving Public Content Only ⭐️ `[Recommended for most people]`
 
 This is the default (lax) mode, intended for archiving public (non-secret) URLs without authenticating the headless browser.  This is the mode used if you're archiving news articles, audio, video, etc. browser bookmarks to a folder published on your webserver. This allows you to access and link to content on `http://your.archive.com/archive...` after the originals go down.
 
 This mode should not be used for archiving entire browser history or authenticated private content like Google Docs, paywalled content, invite-only subreddits, private photo share urls, etc.
 
-#### Archiving Private Content
-
-🚨 `WARNING! Advanced users only`
+#### Archiving Content Behind Log-Ins 🚨 `[Advanced users only]`
 
 ArchiveBox is able to archive content that requires authentication or cookies, but it comes with some caveats. Create dedicated logins for archiving to access paywalled content, private forums, LAN-only content, etc. then share them with ArchiveBox via Chrome profile + cookies.txt file.
 
