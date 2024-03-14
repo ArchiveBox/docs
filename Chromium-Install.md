@@ -69,9 +69,10 @@ You may choose to set up a Chrome/Chromium user profile in order to use your coo
 
 ### Docker Setup
 
-If using ArchiveBox in Docker, the easiest way to set up session credentials is by attaching the ArchiveBox browser to a virtual window server in a sidecar container, and logging in to your sites over VNC (which is less complicated than it sounds).
+If using ArchiveBox in Docker, the easiest way to set up session credentials is by attaching the ArchiveBox browser to a virtual window server in a sidecar container, and logging in to your sites over VNC (less complicated than it sounds).
 
-1. Add a `novnc` container and some config settings to your `docker-compose.yml`. This will provide a virtual desktop environment that can be controlled from your browser over HTTP+VNC, letting you log in to sites using ArchiveBox's browser remotely:
+1. Add a `novnc` container and these settings to your `docker-compose.yml`.
+   (`novnc` provides a virtual desktop environment that lets you remote-control ArchiveBox's Chrome from your browser)
 
 `docker-compose.yml`:
 ```yaml
