@@ -108,17 +108,17 @@ services:
             - "8080:8080"
 ```
 
-2. Start the `novnc` container in the background:
+2. Start the `novnc` window server container
 ```bash
 docker compose up -d novnc
 # wait a few seconds for novnc to start...
 ```
 
-3. Start ArchiveBox's browser inside Docker
+3. Start ArchiveBox's Chrome inside Docker
 ```bash
 docker compose run archivebox /usr/bin/chromium-browser --headless=false --user-data-dir=/home/archivebox/chrome_profile
 ```
-<small>(make sure the `DISPLAY` environment variable is set above so it opens in `nonvc`'s X-window server)</small>
+<small>(make sure the `DISPLAY` environment variable is set above so it renders Chrome in `nonvc`'s X-window server)</small>
 
 4. Open [`http://localhost:8080`](http://localhost:8080) in your browser. You should see a remote linux desktop shown with Chrome open, allowing you to remote-control ArchiveBox's browser and use it to log into any sites where you want to save credentials.
 
