@@ -151,7 +151,7 @@ Then run Chrome (with that profile dir) to open a visible browser window where y
 
 ```bash
 # find your CHROME_BINARY path by running
-archivebox version
+archivebox version | grep CHROME_BINARY
 
 # macOS example (using Google Chrome.app)
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=/Users/alice/.archivebox_chrome
