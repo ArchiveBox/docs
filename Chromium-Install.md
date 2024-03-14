@@ -67,6 +67,69 @@ If you encounter problems setting up Google Chrome or Chromium, see the [Trouble
 
 You may choose to set up a Chrome/Chromium user profile in order to use your cookies/sessions to log into sites behind authentication/paywall during archiving.
 
+### Non-Docker Setup
+
+The easiest way is to log in using ArchiveBox's built-in Chrome browser in a non-headless session. If you are running ArchiveBox without Docker, you can simply run the CHROME_BINARY shown in `archivebox version` output with the `--user-data-dir=/path/to/store/profile` flag, and it should open a browser window that you can use to log in. Afterwards, set `CHROME_USER_DATA_DIR=/path/to/store/profile` (replacing the path with the path you chose to store your profile in).
+
+### Docker Setup
+
+If using ArchiveBox in Docker, the easiest way to set up session credentials is by attaching the ArchiveBox browser to a virtual window server in a sidecar container, and logging in to your sites over VNC (which is less complicated than it sounds).
+
+1. Add a `novnc` container and some config settings to your `docker-compose.yml`. This will provide a virtual desktop environment that can be controlled from your browser over HTTP+VNC, letting you log in to sites using ArchiveBox's browser remotely:
+
+`docker-compose.yml`:
+```yaml
+services:
+    archivebox:
+        ...
+        environment:
+            - CHROME_USER_DATA_DIR=/home/archivebox/chrome_profile
+            - DISPLAY=novnc:0.0
+            
+    novnc:
+        image: theasp/novnc:latest
+        environment:
+            - DISPLAY_WIDTH=1920
+            - DISPLAY_HEIGHT=1080
+            - RUN_XTERM=no
+        ports:
+            - "8080:8080"
+```
+
+2. Start the `novnc` container in the background:
+```bash
+docker compose up -d novnc
+# wait a few seconds for novnc to start...
+```
+
+3. Start ArchiveBox's browser inside Docker
+```bash
+docker compose run archivebox /usr/bin/chromium-browser --headless=false --user-data-dir=/home/archivebox/chrome_profile
+```
+<small>(make sure the `DISPLAY` environment variable is set above so it opens in `nonvc`'s X-window server)</small>
+
+4. Open [`http://localhost:8080`](http://localhost:8080) in your browser. You should see a remote linux desktop shown with Chrome open, allowing you to remote-control ArchiveBox's browser and use it to log into any sites where you want to save credentials.
+
+5. ✅ Close the browser, stop & remove novnc, and then run archivebox normally. It will use the profile stored in `CHROME_USER_DATA_DIR=/home/archivebox/chrome_profile` going forward, you should now be able to archive sites as if you were logged in!
+
+```bash
+# stop the archivebox and novnc containers
+docker compose down
+docker compose down --remove-orphans
+# edit docker-compose.yml to remove/comment out the novnc: section
+
+# test it all out by archiving something hosted on one of the domains you logged in to
+docker compose add 'https://example.com/some/site/requiring/login.html'
+# check the SingleFile, Screenshot, DOM, or PDF snapshot output (only these use the Chrome profile)
+# make sure the content appears as your logged-in user would see it
+```
+
+> [!WARNING]
+> Make sure you use separate credentials dedicated to archiving, e.g. don't log in with your normal daily Facebook/Instagram/Youtube/etc. accounts as server responses and page content will often contain your name/email/PII, session cookies, private tokens, etc.! You need to use a separate account to make sure you don't leak your account info to any future viewers of your snapshots (even if you keep your archive data private for now, you may want to share a snapshot in the future, and they're very hard to sanitize after-the-fact!).
+
+
+### Alternative Approach
+
 You must set up the profile using the exact same version of chrome that ArchiveBox is running (which can be found with `archivebox version`).
 You can download old versions of Chrome in order to match it from https://chromium.cypress.io.
 
