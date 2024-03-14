@@ -76,7 +76,7 @@ You may choose to set up a Chrome/Chromium user profile in order to use your coo
 *Note: not all extractors use Chrome (e.g. `wget`, `mercury`, `media`), so [`COOKIES_FILE`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration/#cookies_file) should be set up as well after this.*
 
 > [!WARNING]
-> **Make sure you use separate burner credentials dedicated to archiving,** e.g. don't log in with your normal daily Facebook/Instagram/Youtube/etc. accounts as server responses and page content will often contain your name/email/PII, session cookies, private tokens, etc. which then get preserved in your snapshots.
+> **Make sure you use separate burner credentials dedicated to archiving,** e.g. don't log in with your normal daily Facebook/Instagram/Google/etc. accounts as server responses and page content will often contain your name/email/PII, session cookies, private tokens, etc. which then get preserved in your snapshots.
 >  
 > Future viewers of your archive may be able to use any reflected archived session tokens to log in as you, or at the very least, associate the content with your real identity. Even if this tradeoff seems acceptable now or you plan to keep your archive data private, you may want to share a snapshot with others in the future, and snapshots are very hard to sanitize/anonymize after-the-fact!
 >
