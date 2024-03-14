@@ -67,10 +67,6 @@ If you encounter problems setting up Google Chrome or Chromium, see the [Trouble
 
 You may choose to set up a Chrome/Chromium user profile in order to use your cookies/sessions to log into sites behind authentication/paywall during archiving.
 
-### Non-Docker Setup
-
-The easiest way is to log in using ArchiveBox's built-in Chrome browser in a non-headless session. If you are running ArchiveBox without Docker, you can simply run the CHROME_BINARY shown in `archivebox version` output with the `--user-data-dir=/path/to/store/profile` flag, and it should open a browser window that you can use to log in. Afterwards, set `CHROME_USER_DATA_DIR=/path/to/store/profile` (replacing the path with the path you chose to store your profile in).
-
 ### Docker Setup
 
 If using ArchiveBox in Docker, the easiest way to set up session credentials is by attaching the ArchiveBox browser to a virtual window server in a sidecar container, and logging in to your sites over VNC (which is less complicated than it sounds).
@@ -124,11 +120,42 @@ docker compose add 'https://example.com/some/site/requiring/login.html'
 # make sure the content appears as your logged-in user would see it
 ```
 
+*Note: not all extractors use Chrome (e.g. `wget`, `mercury`, `media`), so `COOKIES_FILE` should be set up as well.
+
 > [!WARNING]
 > Make sure you use separate credentials dedicated to archiving, e.g. don't log in with your normal daily Facebook/Instagram/Youtube/etc. accounts as server responses and page content will often contain your name/email/PII, session cookies, private tokens, etc.! You need to use a separate account to make sure you don't leak your account info to any future viewers of your snapshots (even if you keep your archive data private for now, you may want to share a snapshot in the future, and they're very hard to sanitize after-the-fact!).
 
 
-### Alternative Approach
+### Non-Docker Setup (Local Host)
+
+If running ArchiveBox on your local machine without Docker, this process is fairly easy.
+
+First, point archivebox to a path where you want to store your Chrome profile.
+
+```bash
+archivebox config --set CHROME_USER_DATA_DIR=/Users/alice/.archivebox_chrome
+# replacing the path with the path you chose to store your profile in
+```
+
+Then run Chrome (`CHROME_BINARY` shown by `archivebox version`) with that profile to open a window where you can log in to things, e.g.:
+
+```bash
+# macOS example (using Google Chrome.app)
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=/Users/alice/.archivebox_chrome
+
+# Linux example (using Playwright Chromium)
+pip install playwright && playwright install --with-deps chromium
+/root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --user-data-dir=/Users/alice/.archivebox_chrome
+```
+
+Once it's open, log in to all the sites you want to be logged in to for archiving, then close/quit Chrome.
+
+✅ All ArchiveBox commands going forward should now use that profile.
+
+*Note: not all extractors use Chrome (e.g. `wget`, `mercury`, `media`), so `COOKIES_FILE` should be set up as well.
+
+
+### Non-Docker Setup (Remote Host)
 
 You must set up the profile using the exact same version of chrome that ArchiveBox is running (which can be found with `archivebox version`).
 You can download old versions of Chrome in order to match it from https://chromium.cypress.io.
