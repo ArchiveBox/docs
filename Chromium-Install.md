@@ -67,6 +67,13 @@ If you encounter problems setting up Google Chrome or Chromium, see the [Trouble
 
 You may choose to set up a Chrome/Chromium user profile in order to use your cookies/sessions to log into sites behind authentication/paywall during archiving.
 
+*Note: not all extractors use Chrome (e.g. `wget`, `mercury`, `media`), so [`COOKIES_FILE`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration/#cookies_file) should be set up as well after this.*
+
+> [!WARNING]
+> **Make sure you use separate credentials dedicated to archiving,** e.g. don't log in with your normal daily Facebook/Instagram/Youtube/etc. accounts as server responses and page content will often contain your name/email/PII, session cookies, private tokens, etc.!  
+>  
+> You need to use a separate account to make sure you don't leak your account info to any future viewers of your snapshots (even if you keep your archive data private for now, you may want to share a snapshot in the future, and they're very hard to sanitize after-the-fact!).
+
 ### Docker Setup
 
 If using ArchiveBox in Docker, the easiest way to set up session credentials is by attaching the ArchiveBox browser to a virtual window server in a sidecar container, and logging in to your sites over VNC (less complicated than it sounds).
@@ -120,11 +127,6 @@ docker compose add 'https://example.com/some/site/requiring/login.html'
 # check the SingleFile, Screenshot, DOM, or PDF snapshot output (only these use the Chrome profile)
 # make sure the content appears as your logged-in user would see it
 ```
-
-*Note: not all extractors use Chrome (e.g. `wget`, `mercury`, `media`), so `COOKIES_FILE` should be set up as well.
-
-> [!WARNING]
-> Make sure you use separate credentials dedicated to archiving, e.g. don't log in with your normal daily Facebook/Instagram/Youtube/etc. accounts as server responses and page content will often contain your name/email/PII, session cookies, private tokens, etc.! You need to use a separate account to make sure you don't leak your account info to any future viewers of your snapshots (even if you keep your archive data private for now, you may want to share a snapshot in the future, and they're very hard to sanitize after-the-fact!).
 
 
 ### Non-Docker Setup (Local Host)
