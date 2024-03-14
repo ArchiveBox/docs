@@ -147,9 +147,12 @@ archivebox config --set CHROME_USER_DATA_DIR=/Users/alice/.archivebox_chrome
 # replacing the path with the path you chose to store your profile in
 ```
 
-Then run Chrome (`CHROME_BINARY` shown by `archivebox version`) with that profile to open a window where you can log in to things, e.g.:
+Then run Chrome (with that profile dir) to open a visible browser window where you can log into things, e.g.:
 
 ```bash
+# find your CHROME_BINARY path by running
+archivebox version
+
 # macOS example (using Google Chrome.app)
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=/Users/alice/.archivebox_chrome
 
