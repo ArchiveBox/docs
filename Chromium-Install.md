@@ -80,7 +80,7 @@ You may choose to set up a Chrome/Chromium user profile in order to use your coo
 >  
 > Future viewers of your archive may be able to use any reflected archived session tokens to log in as you, or at the very least, associate the content with your real identity. Even if this tradeoff seems acceptable now or you plan to keep your archive data private, you may want to share a snapshot with others in the future, and snapshots are very hard to sanitize/anonymize after-the-fact!
 >
-> For this reason, it's best to set up dedicated fake profile accounts for each site you want to archive, and consider them burned if you ever share any archived snapshots of those sites with untrusted people.
+> For this reason, it's best to set up dedicated fake profile accounts for each site you want to archive, and consider them burned if you ever share any of your archived snapshots of those sites with untrusted people.
 
 ### Docker Setup
 
