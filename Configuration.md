@@ -504,7 +504,7 @@ You can generate this `cookies.txt` file by using a number of different [browser
 > [!WARNING]
 > **Make sure you use separate burner credentials dedicated to archiving,** e.g. don't re-use your normal daily Facebook/Instagram/Youtube/etc. account cookies as server responses often contain your name/email/PII, session tokens, etc. which then get preserved in your snapshots!  
 >  
-> Future viewers of your archive may be able to use any reflected archived session tokens to log in as you, or at the very least, associate the content with your real identity. Even if this tradeoff seems acceptable now or you plan to keep your archive data private, you may want to share a snapshot with others in the future, and snapshots are very hard to sanitize/anonymize after-the-fact!
+> Future viewers of your archive may be able to use any reflected [archived session tokens](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#%EF%B8%8F-things-to-watch-out-for-%EF%B8%8F) to log in as you, or at the very least, associate the content with your real identity. Even if this tradeoff seems acceptable now or you plan to keep your archive data private, you may want to share a snapshot with others in the future, and snapshots are very hard to sanitize/anonymize after-the-fact!
 
 *Related options:*  
 [`SAVE_WGET`](#save_wget), [`SAVE_WARC`](#save_warc), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`WGET_BINARY`](#wget_binary)
@@ -523,7 +523,7 @@ For a guide on how to set this up, see our [Chromium Install: Setting up a profi
 > [!WARNING]
 > **Make sure you use separate burner credentials dedicated to archiving,** e.g. don't log in with your normal daily Facebook/Instagram/Youtube/etc. accounts as server responses and page content will often contain your name/email/PII, session cookies, private tokens, etc. which then get preserved in your snapshots!  
 >  
-> Future viewers of your archive may be able to use any reflected archived session tokens to log in as you, or at the very least, associate the content with your real identity. Even if this tradeoff seems acceptable now or you plan to keep your archive data private, you may want to share a snapshot with others in the future, and snapshots are very hard to sanitize/anonymize after-the-fact!
+> Future viewers of your archive may be able to use any reflected [archived session tokens](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#%EF%B8%8F-things-to-watch-out-for-%EF%B8%8F) to log in as you, or at the very least, associate the content with your real identity. Even if this tradeoff seems acceptable now or you plan to keep your archive data private, you may want to share a snapshot with others in the future, and snapshots are very hard to sanitize/anonymize after-the-fact!
 
 <small>When set to `None`, ArchiveBox `<v0.7.2` used to try to find any existing profile on your system automatically, but this behavior has been disabled in later versions for security reasons, it must now be set explicitly if you want to use a profile.</small>
 
