@@ -128,12 +128,13 @@ docker compose add 'https://example.com/some/site/requiring/login.html'
 # make sure the content appears as your logged-in user would see it
 ```
 
+<br/>
 
 ### Non-Docker Setup (Local Host)
 
 If running ArchiveBox on your local machine without Docker, this process is fairly easy.
 
-First, point archivebox to a path where you want to store your Chrome profile.
+First, tell archivebox where you want to store your Chrome profile.
 
 ```bash
 archivebox config --set CHROME_USER_DATA_DIR=/Users/alice/.archivebox_chrome
@@ -153,50 +154,34 @@ pip install playwright && playwright install --with-deps chromium
 
 Once it's open, log in to all the sites you want to be logged in to for archiving, then close/quit Chrome.
 
-✅ All ArchiveBox commands going forward should now use that profile.
+✅ All ArchiveBox extractors that use Chrome (e.g. Screenshot, PDF, DOM, Singlefile) should now use that profile going forward.  
+*Don't forget to set up [`COOKIES_FILE`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration/#cookies_file) for the rest!*
 
-*Note: not all extractors use Chrome (e.g. `wget`, `mercury`, `media`), so `COOKIES_FILE` should be set up as well.
-
+<br/>
 
 ### Non-Docker Setup (Remote Host)
 
 You must set up the profile using the exact same version of chrome that ArchiveBox is running (which can be found with `archivebox version`).
-You can download old versions of Chrome in order to match it from https://chromium.cypress.io.
+You can download the latest chromium with `pip install playwright && playwright install --with-deps chromium`, or get older versions of Chrome from https://chromium.cypress.io.
 
 **General steps:**
 
-1. Install desired Chromium version in new directory `./data/chromium` inside your data folder on the host (outside Docker)
-2. Open the Chromium binary directly on the host if possible, or run [`vncserver`](https://linux.die.net/man/1/vncserver) as `archivebox` user and run chromium in VNC session to generate cookies, then close VNC session ([detailed instructions here](https://forums.raspberrypi.com/viewtopic.php?t=200590))
-3. Add the config to `docker-compose.yml` to mount the `./data/chromium` volume and environment variables telling ArchiveBox to use it 
-  `docker-compose.yml`:  
-  ```yaml
-services:
-    archivebox:
-        ...
-        environment:
-            ...
-            - CHROME_USER_DATA_DIR=/data/chromium/.config/chromium
-            - CHROME_BINARY=/data/chromium/chrome
-        volumes:
-            - ./data:/data
-            - ./data/chromium:/data/chromium
-            ...
-...
-```
+1. Make sure you are running the same OS and have the same version of Chrome installed as the host running ArchiveBox
+2. Follow the `Non-Docker Setup (Local Host)` setups above to create a Chrome profile locally
+3. Rsync your chrome profile from your local machine to the remote archivebox host  
+   `rsync --archive /path/to/profile remotehost:/path/to/profile/on/remote/host`
+4. Configure ArchiveBox on the remote host to use the `rsync`'ed Chrome profile  
+   `archivebox config --set CHROME_USER_DATA_DIR=/path/to/profile/on/remote/host`
 
-4. Set the permissions on the chromium dir  
-  ```bash
-docker-compose run --rm archivebox /bin/bash
-# then inside of docker run these:
-chown -R archivebox:archivebox /data/chromium/
-chmod -R ugo+rwx /data/chromium
-```
+You may need to run `chown -R archivebox /path/to/profile/on/remote/host` on the remote host to make the profile editable by the `archivebox` user on that machine.
 
-The new profile is now generated and used by same instance of Chrome on docker host and container.
+✅ All ArchiveBox extractors that use Chrome (e.g. Screenshot, PDF, DOM, Singlefile) should now use that profile going forward.  
+*Don't forget to set up [`COOKIES_FILE`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration/#cookies_file) for the rest!*
 
-Each step is crucial, especially the permissions and matching the binary inside of Docker and outside.
+---
 
-More info and troubleshooting steps:
+## More Info & Troubleshooting
+
 - https://github.com/ArchiveBox/ArchiveBox/issues/952
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#archiving-private-content
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#%EF%B8%8F-things-to-watch-out-for-%EF%B8%8F
