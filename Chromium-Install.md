@@ -27,7 +27,8 @@ playwright install --with-deps chromium
 ```
 
 ### macOS
-If you already have `/Applications/Chromium.app` (or `Google Chrome.app`), you don't need to run this.
+
+If you already have a Chrome app installed like `/Applications/Chromium.app`, you don't need to run this.
 ```bash
 brew install --cask chromium
 ```
