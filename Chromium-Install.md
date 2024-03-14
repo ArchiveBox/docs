@@ -78,7 +78,9 @@ You may choose to set up a Chrome/Chromium user profile in order to use your coo
 > [!WARNING]
 > **Make sure you use separate burner credentials dedicated to archiving,** e.g. don't log in with your normal daily Facebook/Instagram/Youtube/etc. accounts as server responses and page content will often contain your name/email/PII, session cookies, private tokens, etc.!  
 >  
-> Any future viewers of your archive can use these session tokens within the archives to masquerade as you (even if you keep your archive data private for now, you may want to share a snapshot in the future, and they're very hard to sanitize after-the-fact!).
+> Future viewers of your archive may be able to use any reflected archived session tokens to log in as you, or at the very least, associate the content with your real identity. Even if this tradeoff seems acceptable now or you plan to keep your archive data private, you may want to share a snapshot with others in the future, and snapshots are very hard to sanitize/anonymize after-the-fact!
+>
+> For this reason, it's best to set up dedicated fake profile accounts for each site you want to archive, and consider them burned if you ever share any archived snapshots of those sites with untrusted people.
 
 ### Docker Setup
 
