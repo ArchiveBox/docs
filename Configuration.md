@@ -494,25 +494,38 @@ Domains to attempt download of git repositories on using `git clone`.
 [`SAVE_GIT`](#save_git), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
 
 ---
-####  `COOKIES_FILE`
+#### `COOKIES_FILE`
 **Possible Values:** [`None`]/`/path/to/cookies.txt`/...  
 
 Cookies file to pass to `wget`, `curl`, `yt-dlp` and other extractors that don't use Chrome (with its `CHROME_USER_DATA_DIR`) for authentication.  To capture sites that require a user to be logged in, you configure this option to point to a [netscape-format `cookies.txt`](http://www.cookiecentral.com/faq/#3.5) file containing all the cookies you want to use during archiving.
 
 You can generate this `cookies.txt` file by using a number of different [browser extensions](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc) that can export your cookies in this format, or by using `wget` on the command line with `--save-cookies` + `--user=... --password=...`.
 
+> [!WARNING]
+> **Make sure you use separate burner credentials dedicated to archiving,** e.g. don't re-use your normal daily Facebook/Instagram/Youtube/etc. account cookies as server responses often contain your name/email/PII, session tokens, etc. which then get preserved in your snapshots!  
+>  
+> Future viewers of your archive may be able to use any reflected archived session tokens to log in as you, or at the very least, associate the content with your real identity. Even if this tradeoff seems acceptable now or you plan to keep your archive data private, you may want to share a snapshot with others in the future, and snapshots are very hard to sanitize/anonymize after-the-fact!
+
 *Related options:*  
 [`SAVE_WGET`](#save_wget), [`SAVE_WARC`](#save_warc), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`WGET_BINARY`](#wget_binary)
 
 ---
 #### `CHROME_USER_DATA_DIR`
+
 **Possible Values:** [`~/.config/google-chrome`]/`/tmp/chrome-profile`/...  
-Path to a Chrome user profile directory.  To capture sites that require a user to be logged in, you can specify a path to a chrome user profile (which loads the cookies needed for the user to be logged in).  If you don't have an existing Chrome profile, create one with `chromium-browser --user-data-dir=/tmp/chrome-profile`, and log into the sites you need.  Then set `CHROME_USER_DATA_DIR=/tmp/chrome-profile` to make ArchiveBox use that profile.  
+
+Path to a [Chrome user profile directory](https://chromium.googlesource.com/chromium/src/+/HEAD/docs/user_data_dir.md).  To capture sites that require a user to be logged in, you can specify a path to a Chrome user profile (which loads the cookies needed for the user to be logged in).  If you don't have an existing Chrome profile, create one with `chromium-browser --user-data-dir=/tmp/chrome-profile`, and log into the sites you need.  Then set `CHROME_USER_DATA_DIR=/tmp/chrome-profile` to make ArchiveBox use that profile.  
+
+For a guide on how to set this up, see our [Chromium Install: Setting up a profile](https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#setting-up-a-chromium-user-profile) wiki.
 
 *Note: Make sure the path does not have `Default` at the end (it should the the parent folder of `Default`), e.g. set it to `CHROME_USER_DATA_DIR=~/.config/chromium` and not `CHROME_USER_DATA_DIR=~/.config/chromium/Default`.* 
 
-By default when set to `None`, ArchiveBox tries all the following User Data Dir paths in order:  
-https://chromium.googlesource.com/chromium/src/+/HEAD/docs/user_data_dir.md
+> [!WARNING]
+> **Make sure you use separate burner credentials dedicated to archiving,** e.g. don't log in with your normal daily Facebook/Instagram/Youtube/etc. accounts as server responses and page content will often contain your name/email/PII, session cookies, private tokens, etc. which then get preserved in your snapshots!  
+>  
+> Future viewers of your archive may be able to use any reflected archived session tokens to log in as you, or at the very least, associate the content with your real identity. Even if this tradeoff seems acceptable now or you plan to keep your archive data private, you may want to share a snapshot with others in the future, and snapshots are very hard to sanitize/anonymize after-the-fact!
+
+<small>When set to `None`, ArchiveBox `<v0.7.2` used to try to find any existing profile on your system automatically, but this behavior has been disabled in later versions for security reasons, it must now be set explicitly if you want to use a profile.</small>
 
 *Related options:*  
 [`SAVE_PDF`](#save_pdf), [`SAVE_SCREENSHOT`](#save_screenshot), [`SAVE_DOM`](#save_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_BINARY`](#chrome_binary)
