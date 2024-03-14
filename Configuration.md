@@ -496,7 +496,10 @@ Domains to attempt download of git repositories on using `git clone`.
 ---
 ####  `COOKIES_FILE`
 **Possible Values:** [`None`]/`/path/to/cookies.txt`/...  
-Cookies file to pass to wget.  To capture sites that require a user to be logged in, you can specify a path to a [netscape-format](http://www.cookiecentral.com/faq/#3.5) `cookies.txt` file for wget to use.  You can generate this file by using a browser extension to export your cookies in this format, or by using wget with `--save-cookies`.
+
+Cookies file to pass to `wget`, `curl`, `yt-dlp` and other extractors that don't use Chrome (with its `CHROME_USER_DATA_DIR`) for authentication.  To capture sites that require a user to be logged in, you configure this option to point to a [netscape-format `cookies.txt`](http://www.cookiecentral.com/faq/#3.5) file containing all the cookies you want to use during archiving.
+
+You can generate this `cookies.txt` file by using a number of different [browser extensions](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc) that can export your cookies in this format, or by using `wget` on the command line with `--save-cookies` + `--user=... --password=...`.
 
 *Related options:*  
 [`SAVE_WGET`](#save_wget), [`SAVE_WARC`](#save_warc), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`WGET_BINARY`](#wget_binary)
