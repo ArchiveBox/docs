@@ -131,7 +131,7 @@ docker compose down --remove-orphans
 # edit docker-compose.yml to remove/comment out the novnc: section
 
 # test it all out by archiving something hosted on one of the domains you logged in to
-docker compose add 'https://example.com/some/site/requiring/login.html'
+docker compose run archivebox add 'https://private.example.com/some/site/requiring/login.html'
 # check the SingleFile, Screenshot, DOM, or PDF snapshot output (only these use the Chrome profile)
 # make sure the content appears as your logged-in user would see it
 ```
