@@ -528,7 +528,7 @@ For a guide on how to set this up, see our [Chromium Install: Setting up a profi
 <small>When set to `None`, ArchiveBox `<v0.7.2` used to try to find any existing profile on your system automatically, but this behavior has been disabled in later versions for security reasons, it must now be set explicitly if you want to use a profile.</small>
 
 *Related options:*  
-[`SAVE_PDF`](#save_pdf), [`SAVE_SCREENSHOT`](#save_screenshot), [`SAVE_DOM`](#save_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_BINARY`](#chrome_binary)
+[`SAVE_PDF`](#save_pdf), [`SAVE_SCREENSHOT`](#save_screenshot), [`SAVE_DOM`](#save_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_BINARY`](#chrome_binary), [`COOKIES_FILE`](#cookies_file)
 
 ---
 #### `CHROME_HEADLESS`
