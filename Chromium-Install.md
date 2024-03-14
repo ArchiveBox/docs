@@ -162,7 +162,7 @@ archivebox version | grep CHROME_BINARY
 
 Once it's open, log in to all the sites you want to be logged in to for archiving, then close/quit Chrome.
 
-✅ All ArchiveBox extractors that use Chrome (e.g. Screenshot, PDF, DOM, Singlefile) should now use that profile going forward.  
+✅ All ArchiveBox extractors that use Chrome (e.g. Screenshot, PDF, DOM, Singlefile) should now use that profile.  
 *Don't forget to set up [`COOKIES_FILE`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration/#cookies_file) for the rest!*
 
 <br/>
@@ -183,7 +183,7 @@ You can download the latest chromium with `pip install playwright && playwright 
 
 You may need to run `chown -R archivebox /path/to/profile/on/remote/host` on the remote host to make the profile editable by the `archivebox` user on that machine.
 
-✅ All ArchiveBox extractors that use Chrome (e.g. Screenshot, PDF, DOM, Singlefile) should now use that profile going forward.  
+✅ All ArchiveBox extractors that use Chrome (e.g. Screenshot, PDF, DOM, Singlefile) should now use that profile.  
 *Don't forget to set up [`COOKIES_FILE`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration/#cookies_file) for the rest!*
 
 ---
