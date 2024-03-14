@@ -143,8 +143,8 @@ If running ArchiveBox on your local machine without Docker, this process is fair
 First, tell archivebox where you want to store your Chrome profile.
 
 ```bash
+# replace /Users/alice/.archivebox_chrome with a path to store your profile in
 archivebox config --set CHROME_USER_DATA_DIR=/Users/alice/.archivebox_chrome
-# replacing the path with the path you chose to store your profile in
 ```
 
 Then run Chrome (with that profile dir) to open a visible browser window where you can log into things, e.g.:
@@ -157,7 +157,6 @@ archivebox version
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=/Users/alice/.archivebox_chrome
 
 # Linux example (using Playwright Chromium)
-pip install playwright && playwright install --with-deps chromium
 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --user-data-dir=/Users/alice/.archivebox_chrome
 ```
 
