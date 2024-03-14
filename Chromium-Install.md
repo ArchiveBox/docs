@@ -20,10 +20,15 @@ Google Chrome 122.0.6261.49 beta     # should be >v111
 
 ## Installing Chromium
 
-### Any OS (using [`playwright`](https://playwright.dev/python/docs/browsers))
+### ⭐️ Any OS (recommended)
+
+[`playwright`](https://playwright.dev/python/docs/browsers) (by the Microsoft team) and [`puppeteer`](https://github.com/puppeteer/puppeteer) (by the Google team) are packages that provides stable, repeatable Chromium distributions for many OSs.
 ```bash
 pip install --upgrade --ignore-installed playwright
 playwright install --with-deps chromium
+
+# alternatively use puppeteer to get Chromium instead of playwright:
+npm install puppeteer
 ```
 
 ### macOS
