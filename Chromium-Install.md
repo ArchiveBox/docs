@@ -116,7 +116,7 @@ docker compose up -d novnc
 
 3. Start ArchiveBox's Chrome inside Docker
 ```bash
-docker compose run archivebox /usr/bin/chromium-browser --user-data-dir=/home/archivebox/chrome_profile --no-sandbox --start-maximized --suppress-message-center-popups
+docker compose run archivebox /usr/bin/chromium-browser --user-data-dir=/home/archivebox/chrome_profile --start-maximized --suppress-message-center-popups
 ```
 <small>(make sure the `DISPLAY` environment variable is set above so it renders Chrome in `nonvc`'s X-window server)</small>
 
