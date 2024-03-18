@@ -94,6 +94,9 @@ If using ArchiveBox in Docker, the easiest way to set up session credentials is 
 services:
     archivebox:
         ...
+        volumes:
+            ...
+            - ./chrome_profile:/home/archivebox/chrome_profile
         environment:
             - CHROME_USER_DATA_DIR=/home/archivebox/chrome_profile
             - DISPLAY=novnc:0.0
@@ -116,7 +119,7 @@ docker compose up -d novnc
 
 3. Start ArchiveBox's Chrome inside Docker
 ```bash
-docker compose run archivebox /usr/bin/chromium-browser --user-data-dir=/home/archivebox/chrome_profile --start-maximized --suppress-message-center-popups
+docker compose run archivebox /usr/bin/chromium-browser --user-data-dir=/home/archivebox/chrome_profile --disable-gpu --disable-features=dbus --disable-dev-shm-usage --start-maximized
 ```
 <small>(make sure the `DISPLAY` environment variable is set above so it renders Chrome in `nonvc`'s X-window server)</small>
 
