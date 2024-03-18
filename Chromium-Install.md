@@ -119,11 +119,11 @@ docker compose up -d novnc
 
 3. Start ArchiveBox's Chrome inside Docker
 ```bash
-docker compose run archivebox /usr/bin/chromium-browser --user-data-dir=/home/archivebox/chrome_profile --disable-gpu --disable-features=dbus --disable-dev-shm-usage --start-maximized
+docker compose run archivebox /usr/bin/chromium-browser --user-data-dir=/home/archivebox/chrome_profile --profile-directory=Default --disable-gpu --disable-features=dbus --disable-dev-shm-usage --start-maximized --no-sandbox --no-zygote --disable-sync --no-first-run
 ```
-<small>(make sure the `DISPLAY` environment variable is set above so it renders Chrome in `nonvc`'s X-window server)</small>
+<small>(make sure you set `DISPLAY` & `CHROME_USER_DATA_DIR` and added the line to `volumes:` above first!)</small>
 
-4. Open [`http://localhost:8080/vnc.html`](http://localhost:8080/vnc.html) in your browser. You should see a remote linux desktop shown with Chrome open, allowing you to remote-control ArchiveBox's browser and use it to log into any sites where you want to save credentials.
+4. Open [`http://localhost:8080/vnc.html`](http://localhost:8080/vnc.html) in your browser. You should see a remote linux desktop shown with Chrome open, allowing you to remote-control ArchiveBox's browser. Use it to log into any sites where you want to save credentials.
 
 5. ✅ Close the browser, stop & remove novnc, and then run archivebox normally. It will use the profile stored in `CHROME_USER_DATA_DIR=/home/archivebox/chrome_profile` going forward, you should now be able to archive sites as if you were logged in!
 
