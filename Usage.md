@@ -117,7 +117,11 @@ archivebox add < output/sources/firefox_history.json
 archivebox add < output/sources/safari_history.json
 ```
 
+<br/>
+
 ---
+
+<br/>
 
 ## UI Usage
 
@@ -160,6 +164,12 @@ A logged-in admin user may perform these operations on one or more snapshots:
 - <kbd>Reset</kbd> Delete all type of output and redownload them. In the contrary of snapshot, this will overwrite the files.
 - <kbd>Delete</kbd> Delete a snapshot entirely. This action cannot be undone.
 
+<br/>
+
+---
+
+<br/>
+
 ## Browser Extension Usage
 
 Set up the official [ArchiveBox Browser Extension](https://github.com/ArchiveBox/archivebox-browser-extension) to submit URLs directly from your browser to ArchiveBox.
@@ -171,7 +181,7 @@ Set up the official [ArchiveBox Browser Extension](https://github.com/ArchiveBox
 2. Make sure you can access your ArchiveBox server's admin interface from your browser, e.g.  
    [`http://localhost:8000/admin/`](http://localhost:8000/admin/)  
    The extension will re-use any active login session to submit URLs to your server, so *make sure to log in!*  
-   ---
+   _
    *Alternatively:* You can configure Archivebox [allow submitting URLs without requiring log-in](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view)  
    `archivebox config --set PUBLIC_ADD_VIEW=True`
 
@@ -179,13 +189,24 @@ Set up the official [ArchiveBox Browser Extension](https://github.com/ArchiveBox
    `http://localhost:8000`
 
 4. ✅ Done! Test it out: `Right-click on any page > ArchiveBox Exporter > Archive Current Page`  
-   *Then check your ArchiveBox instance to confirm it got archived.*
+   *Then check your ArchiveBox instance to confirm the URL was added.*
 
 <img width="400" align="right" alt="browser extension config screen" src="https://user-images.githubusercontent.com/511499/215702958-4683af8f-7f1e-4b0e-a313-2466b9cf0276.png"/>
 <img width="350" align="top" alt="chrome web store screenshot" src="https://user-images.githubusercontent.com/511499/215699375-5c98c9bb-56fd-4a46-a990-e5745d46019c.png"/><br/><img width="400" alt="image" src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/1c00c64e-4d02-4cf1-b270-2ff4e1b8e02f">
 
+#### More Info
 
-See https://github.com/ArchiveBox/ArchiveBox/issues/577 for more information.
+- https://github.com/ArchiveBox/archivebox-browser-extension
+- https://github.com/ArchiveBox/archivebox-browser-extension#setup
+- https://github.com/ArchiveBox/archivebox-browser-extension#features
+- https://github.com/ArchiveBox/archivebox-browser-extension#alternative-extensions-for-archiving
+- https://github.com/ArchiveBox/ArchiveBox/issues/577
+
+<br/>
+
+---
+
+<br/>
 
 ## Disk Layout
 
@@ -219,6 +240,7 @@ For more info about ArchiveBox's database/filesystem layout and troubleshooting 
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#modify-the-archivebox-sqlite3-db-directly
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#database-troubleshooting
 
+
 ### Large Archives
 
 I've found it takes about an hour to download 1000 articles, and they'll take up roughly 1GB.  
@@ -245,6 +267,12 @@ For more info about troubleshooting filesystem permissions, performance, or issu
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#output-folder
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#database-troubleshooting
 
+<br/>
+
+---
+
+<br/>
+
 ## SQL Shell Usage
 
 Explore the SQLite3 DB a bit to see whats available using the SQLite3 shell:
@@ -264,6 +292,12 @@ More info:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#database-troubleshooting
 - https://stackoverflow.com/questions/1074212/how-can-i-see-the-raw-sql-queries-django-is-running
 - https://adamobeng.com/wddbfs-mount-a-sqlite-database-as-a-filesystem/
+
+<br/>
+
+---
+
+<br/>
 
 ## Python Shell Usage
 
@@ -338,6 +372,11 @@ For more info and example usage:
 - https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/core/models.py
 - https://stackoverflow.com/questions/1074212/how-can-i-see-the-raw-sql-queries-django-is-running
 
+<br/>
+
+---
+
+<br/>
 
 ## Python API Usage
 
