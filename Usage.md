@@ -162,18 +162,21 @@ A logged-in admin user may perform these operations on one or more snapshots:
 
 ## Browser Extension Usage
 
-Set up the official [ArchiveBox Browser Extension](https://github.com/ArchiveBox/archivebox-browser-extension) to submit specific pages or your entire browsing history to an ArchiveBox server in realtime.
+Set up the official [ArchiveBox Browser Extension](https://github.com/ArchiveBox/archivebox-browser-extension) to submit URLs directly from your browser to ArchiveBox.
 
 1. Install the extension in your browser:
-- [Chrome/Edge/Other Chromium](https://chrome.google.com/webstore/detail/habonpimjphpdnmcfkaockjnffodikoj)
-- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/archivebox-exporter/)
+   - [Google Chrome / Edge / All Chromium-based browsers...](https://chrome.google.com/webstore/detail/habonpimjphpdnmcfkaockjnffodikoj)
+   - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/archivebox-exporter/)
+
 2. Make sure you can access your ArchiveBox server's admin interface from your browser, e.g.  
    `http://localhost:8000/admin/`  
    The extension will re-use any active login session to submit URLs to your server, so make sure to log in!  
    *Alternatively:* You can configure Archivebox [allow submitting URLs without requiring log-in](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view)  
    `archivebox config --set PUBLIC_ADD_VIEW=True`
+
 3. Click the ArchiveBox extension in your browser and set `Config > BASE_URL` to your ArchiveBox server's URL, e.g.  
    `http://localhost:8000`
+
 4. ✅ Done! Test it out: `Right-click on any page > ArchiveBox Exporter > Archive Current Page`  
    *Then check your ArchiveBox instance to confirm it got archived.*
 
