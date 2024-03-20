@@ -169,13 +169,13 @@ Set up the official [ArchiveBox Browser Extension](https://github.com/ArchiveBox
    - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/archivebox-exporter/)
 
 2. Make sure you can access your ArchiveBox server's admin interface from your browser, e.g.  
-   `http://localhost:8000/admin/`  
+   [`http://localhost:8000/admin/`](http://localhost:8000/admin/)  
    The extension will re-use any active login session to submit URLs to your server, so *make sure to log in!*  
-   ~
+   ---
    *Alternatively:* You can configure Archivebox [allow submitting URLs without requiring log-in](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view)  
    `archivebox config --set PUBLIC_ADD_VIEW=True`
 
-3. Click the ArchiveBox extension in your browser and set `Config > BASE_URL` to your ArchiveBox server's URL, e.g.  
+3. Click the ArchiveBox extension in your browser and set `Config > ArchiveBox Base URL` to your server's URL, e.g.  
    `http://localhost:8000`
 
 4. ✅ Done! Test it out: `Right-click on any page > ArchiveBox Exporter > Archive Current Page`  
