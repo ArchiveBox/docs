@@ -185,7 +185,7 @@ Set up the official [ArchiveBox Browser Extension](https://github.com/ArchiveBox
    *Alternatively:* You can configure Archivebox to [allow submitting URLs without requiring log-in](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view)  
    `archivebox config --set PUBLIC_ADD_VIEW=True`
 
-3. Click the ArchiveBox extension in your browser and set `Config > ArchiveBox Base URL` to your server's base URL, e.g.  
+3. Click the ArchiveBox extension in your browser and set `Config > ArchiveBox Base URL` to your server's URL, e.g.  
    `http://localhost:8000` or `https://demo.archivebox.io`
 
 4. ✅ Done! Test it out: `Right-click on any page > ArchiveBox Exporter > Archive Current Page`  
