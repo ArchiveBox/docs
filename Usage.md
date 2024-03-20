@@ -154,10 +154,10 @@ Click the Favicon under the "Files" column to go to the details page for each li
 
 <img src="https://imgur.zervice.io/4Sa76Ek.png" alt="Screenshot of buttons at top of Snapshot admin page"/>
 
-A logged-in admin user may perform these operations on one or more snapshots:
+A logged-in admin user may select ☑️ one or more snapshots from the list and perform Snapshot actions:
 
 - <kbd>Search</kbd> Search text in the Snapshot title, URL, tags, or archived content (supports regex with the default ripgrep search backend, or enable the [Sonic](https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml#L35) full-text search backend in `docker-compose.yml` and set `SEARCH_BACKEND_ENGINE=sonic`, `SEARCH_BACKEND_HOST`, `SEARCH_BACKEND_PASSWORD` for full-text fuzzy searching) https://github.com/ArchiveBox/ArchiveBox/issues/956
-- Tags - tag or un-tag snapshots
+- <kbd>Tags</kbd> Start typing in the field to select some tags, then click `+` to add them or `-` remove them from the checked snapshots (`Tags` can be created/edited from the `/admin/core/tag/` page)
 - <kbd>Title</kbd> Pull the title ( redownload if it was missing, or the title has changed )
 - <kbd>Pull</kbd> Download missing/failed outputs/extractors methods ( pdf, wget... etc). Maybe because download failed or interrupted by a reboot or something. This is the default behavior when you add new URL, they will get pulled automatically. https://github.com/ArchiveBox/ArchiveBox#output-formats
 - <kbd>Re-Snapshot</kbd> As the name suggests, re-download the page as a separated unique page. Not the same as pull, this one will create a separate entry, and the page is treated as a new URL ending with the date and time #2020-10-24-08:00 https://github.com/ArchiveBox/ArchiveBox#saving-multiple-snapshots-of-a-single-url
