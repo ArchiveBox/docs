@@ -63,7 +63,7 @@ If you're using Docker, also make sure to read the Configuration section on the 
 
 > [!TIP]  
 > You can run ArchiveBox commands from anywhere (without having to `cd` into a data directory first):  
-> `env chdir=/path/to/archivebox/data archivebox [subcommand] [...args]`
+> `/usr/bin/env --chdir=/path/to/archivebox/data archivebox update`
 
 ---
 
