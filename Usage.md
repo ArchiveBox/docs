@@ -62,7 +62,7 @@ See [[Configuration]] page for more details about the available options and ways
 If you're using Docker, also make sure to read the Configuration section on the [[Docker]] page.
 
 > [!TIP]  
-> You can run ArchiveBox commands from anywhere using `env chdir` (without having to `cd` into a data directory first):  
+> You can run ArchiveBox commands from anywhere (without having to `cd` into a data directory first):  
 > `env chdir=/path/to/archivebox/data archivebox [subcommand] [...args]`
 
 ---
@@ -146,8 +146,8 @@ You can sort by column, search using the box in the upper right, and see the tot
 Click the Favicon under the "Files" column to go to the details page for each link.
 
 <div align="center">
-<img src="https://imgur.zervice.io/52RjhUM.png" width="45%"/>
-<img src="https://imgur.zervice.io/Gg9sTyq.png" width="45%"/>
+<img src="https://imgur.zervice.io/52RjhUM.png" width="45%" align="top"/>
+<img src="https://imgur.zervice.io/Gg9sTyq.png" width="45%" align="top"/>
 </div>
 
 ### Explanation of buttons in the web UI - admin snapshots list
