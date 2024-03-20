@@ -164,13 +164,13 @@ A logged-in admin user may perform these operations on one or more snapshots:
 
 Get the official [ArchiveBox Browser Extension](https://github.com/ArchiveBox/archivebox-browser-extension):
 
-1. Set your Add page to allow non-logged-in access `archivebox config --set PUBLIC_ADD_VIEW=True`  
+1. Log into your ArchiveBox server using your admin user/pass (the extension will re-use this login session to submit URLs), or configure Archivebox allow submitting URLs without logging in  `archivebox config --set PUBLIC_ADD_VIEW=True`  
   (see [`PUBLIC_ADD_VIEW` in the wiki](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view))
 2. Install the extension in your browser:
 - [Chrome/Edge/Other Chromium](https://chrome.google.com/webstore/detail/habonpimjphpdnmcfkaockjnffodikoj)
 - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/archivebox-exporter/)
 3. Set the `BASE_URL` in the extension to your ArchiveBox server's URL, e.g. `http://localhost:8000`
-4. Test it by archiving some pages from your browser and checking `data/logs/*` and `http://localhost:8000/admin/core/archiveresult/`
+4. ✅ Done! Test it out: `Right-click on any page > ArchiveBox Exporter > Archive Current Page`, then check your ArchiveBox instance to confirm it got archived.
 
 <img width="400" align="top" alt="chrome web store screenshot" src="https://user-images.githubusercontent.com/511499/215699375-5c98c9bb-56fd-4a46-a990-e5745d46019c.png"/><img width="400" align="top" alt="browser extension config screen" src="https://user-images.githubusercontent.com/511499/215702958-4683af8f-7f1e-4b0e-a313-2466b9cf0276.png"/>
 
