@@ -158,11 +158,11 @@ A logged-in admin user may select ☑️ one or more snapshots from the list and
 
 - <kbd>Search</kbd> Search text in the Snapshot title, URL, tags, or archived content (supports regex with the default ripgrep search backend, or enable the [Sonic](https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml#L35) full-text search backend in `docker-compose.yml` and set `SEARCH_BACKEND_ENGINE=sonic`, `SEARCH_BACKEND_HOST`, `SEARCH_BACKEND_PASSWORD` for full-text fuzzy searching) https://github.com/ArchiveBox/ArchiveBox/issues/956
 - <kbd>Tags</kbd> Start typing in the field to select some tags, then click `+` to add them or `-` remove them from the checked snapshots (`Tags` can be created/edited from the `/admin/core/tag/` page)
-- <kbd>Title</kbd> Pull the title ( redownload if it was missing, or the title has changed )
-- <kbd>Pull</kbd> Download missing/failed outputs/extractors methods ( pdf, wget... etc). Maybe because download failed or interrupted by a reboot or something. This is the default behavior when you add new URL, they will get pulled automatically. https://github.com/ArchiveBox/ArchiveBox#output-formats
-- <kbd>Re-Snapshot</kbd> As the name suggests, re-download the page as a separated unique page. Not the same as pull, this one will create a separate entry, and the page is treated as a new URL ending with the date and time #2020-10-24-08:00 https://github.com/ArchiveBox/ArchiveBox#saving-multiple-snapshots-of-a-single-url
-- <kbd>Reset</kbd> Delete all type of output and redownload them. In the contrary of snapshot, this will overwrite the files.
-- <kbd>Delete</kbd> Delete a snapshot entirely. This action cannot be undone.
+- <kbd>Title</kbd> Pull the latest title and favicon without doing a full snapshot. (helpful to quickly ping any URLs that are stuck showing up as `Pending...` or are missing a title)
+- <kbd>Pull</kbd> Finish downloading the Snapshot, pulls any missing/failed outputs/extractors methods (pdf, wget... etc). Resumes running the same archiving steps as when you add new URL. Useful to finish pulling when previous import was paused or interrupted by a reboot or something.  https://github.com/ArchiveBox/ArchiveBox#output-formats
+- <kbd>Re-Snapshot</kbd> Re-archive the original URL from scratch as a new separate snapshot. Differs from pulling in that it doesn't resume/update existing snapshot, it creates a new separate entry and re-snapshots the URL at the current point in time. (useful for saving multiple Snapshots of a single URL over time) https://github.com/ArchiveBox/ArchiveBox#saving-multiple-snapshots-of-a-single-url
+- <kbd>Reset</kbd> Keep the Snapshot entry, but delete all its archive results and redownload them from scratch immediately. Useful for re-trying a bad Snapshot and overwriting its previous results, e.g. if it initially archived a temporary error page or hit a transient rate-limit/CAPTCHA/login page.
+- <kbd>Delete</kbd> Delete a snapshot and all its archive results entirely. This action cannot be undone. (Note: to thoroughly remove every trace of a URL ever being added, you should also manually scrub log output found in `sources/` and `logs/`)
 
 <br/>
 
