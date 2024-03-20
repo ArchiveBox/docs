@@ -119,7 +119,7 @@ docker compose up -d novnc
 
 3. Start ArchiveBox's Chrome inside Docker
 ```bash
-docker compose run archivebox /usr/bin/chromium-browser --user-data-dir=/home/archivebox/chrome_profile --profile-directory=Default --disable-gpu --disable-features=dbus --disable-dev-shm-usage --start-maximized --no-sandbox --no-zygote --disable-sync --no-first-run
+docker compose run archivebox /usr/bin/chromium-browser --user-data-dir=/home/archivebox/chrome_profile --profile-directory=Default --disable-gpu --disable-features=dbus --disable-dev-shm-usage --start-maximized --no-sandbox --disable-setuid-sandbox --no-zygote --disable-sync --no-first-run
 ```
 <small>(make sure you set `DISPLAY` & `CHROME_USER_DATA_DIR` and added the line to `volumes:` above first!)</small>
 
