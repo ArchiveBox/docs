@@ -172,7 +172,8 @@ Get the official [ArchiveBox Browser Extension](https://github.com/ArchiveBox/ar
 3. Set the `BASE_URL` in the extension to your ArchiveBox server's URL, e.g. `http://localhost:8000`
 4. ✅ Done! Test it out: `Right-click on any page > ArchiveBox Exporter > Archive Current Page`, then check your ArchiveBox instance to confirm it got archived.
 
-<img width="400" align="top" alt="chrome web store screenshot" src="https://user-images.githubusercontent.com/511499/215699375-5c98c9bb-56fd-4a46-a990-e5745d46019c.png"/><img width="400" align="top" alt="browser extension config screen" src="https://user-images.githubusercontent.com/511499/215702958-4683af8f-7f1e-4b0e-a313-2466b9cf0276.png"/><img width="716" alt="image" src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/1c00c64e-4d02-4cf1-b270-2ff4e1b8e02f">
+<img width="400" align="right" alt="browser extension config screen" src="https://user-images.githubusercontent.com/511499/215702958-4683af8f-7f1e-4b0e-a313-2466b9cf0276.png"/>
+<img width="400" align="top" alt="chrome web store screenshot" src="https://user-images.githubusercontent.com/511499/215699375-5c98c9bb-56fd-4a46-a990-e5745d46019c.png"/><br/><img width="400" alt="image" src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/1c00c64e-4d02-4cf1-b270-2ff4e1b8e02f">
 
 
 See https://github.com/ArchiveBox/ArchiveBox/issues/577 for more information.
