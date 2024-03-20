@@ -62,8 +62,8 @@ See [[Configuration]] page for more details about the available options and ways
 If you're using Docker, also make sure to read the Configuration section on the [[Docker]] page.
 
 > [!TIP]  
-> You can run archivebox outside a data directory using `env chdir=...`:  
-> `env chdir=/path/to/archivebox/data archivebox [subcommand] [args...]`
+> You can run ArchiveBox commands from anywhere using `env chdir` (without having to `cd` into a data directory first):  
+> `env chdir=/path/to/archivebox/data archivebox [subcommand] [...args]`
 
 ---
 
