@@ -146,6 +146,7 @@ And others we're considering for the future:
 
 ### Video/Streams
 
+- https://github.com/soimort/you-get ⭐️
 - https://github.com/lay295/TwitchDownloader
 - https://github.com/ihabunek/twitch-dl
 - https://github.com/iawia002/lux (generic video/audio downloader)
@@ -154,7 +155,6 @@ And others we're considering for the future:
 - https://github.com/spaam/svtplay-dl (comedy central, twitch, HBO, etc. video downloader)
 - https://github.com/aajanki/yle-dl (Yle Areena Finnish broadcasting video downloader)
 - https://github.com/WHTJEON/widevine-dl (encrypted widevine video downloader)
-- https://github.com/soimort/you-get
 
 ### Audio/Music
 
@@ -188,6 +188,7 @@ And others we're considering for the future:
 ### Text/Forums
 
 - https://github.com/mikwielgus/forum-dl ⭐️
+- https://github.com/AndyTheFactory/newspaper4k ⭐️
 - https://github.com/AAndyProgram/SCrawler (Twitter, Reddit, Instagram, Threads, Facebook, Pinterest, nsfw sites downloader)
 - https://github.com/extractus/article-extractor
 - https://github.com/shadowmoose/RedditDownloader (stale?)
