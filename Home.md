@@ -8,7 +8,7 @@
 
 **📖 Use the sidebar on the right to browse documentation topics ➡️**  
   
-<i>(Expand the `Pages` section to 🔍 Search the documentation)</i>
+<i>(Expand the `Pages` section to 🔍 Search for a specific page)</i>
 
 **❓If you need help or have a question, you can:**
  - 💬 Chat with us on our [Public Zulip Server](https://zulip.archivebox.io)
