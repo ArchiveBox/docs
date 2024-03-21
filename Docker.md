@@ -97,13 +97,13 @@ To add an individual URL, pass it in as an arg or via stdin:
 ```bash
 docker compose run archivebox add 'https://example.com'
 # OR
-echo 'https://example.com' | docker compose run archivebox add
+echo 'https://example.com' | docker compose run -T archivebox add
 ```
 
 To add multiple URLs at once, pipe them in via stdin, or place them in a file inside `./data/sources` so that ArchiveBox can access it from within the container:
 ```bash
 # pipe URLs in from a file outside Docker
-docker compose run archivebox add < ~/Downloads/example_urls.txt
+docker compose run -T archivebox add < ~/Downloads/example_urls.txt
 
 # OR ingest URLs from a file mounted inside Docker
 docker compose run archivebox add --depth=1 /data/sources/example_urls.txt
