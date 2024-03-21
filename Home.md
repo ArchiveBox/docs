@@ -6,7 +6,7 @@
 
 </div>
 
-**📖 Use the sidebar on the right to browse documentation topics ->**  
+**📖 Use the sidebar on the right to browse documentation topics ➡️**  
   
 <i>(Expand the `Pages` section to 🔍 Search the documentation)</i>
 
