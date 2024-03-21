@@ -42,7 +42,7 @@ Other systems are not officially supported but may work with degraded functional
 
 You will also need at least 500MB of RAM (bare minimum), 2GB or greater is recommended. You may be able to reduce the RAM requirements if you disable all the chrome-based archiving methods with `USE_CHROME=False`.
 
-It's also recommended to use a filesystem with compression and/or deduplication abilities (e.g. [ZFS](https://openzfs.github.io/openzfs-docs/Getting%20Started/index.html) or BTRFS) for maximum archive storage efficiency.
+It's also recommended to use a filesystem with compression and/or [deduplication abilities](https://www.ixsystems.com/blog/ixsystems-and-klara-systems-celebrate-valentines-day-with-a-heartfelt-donation-of-fast-dedupe-to-openzfs-and-truenas/) (e.g. [ZFS](https://openzfs.github.io/openzfs-docs/Getting%20Started/index.html) or BTRFS) for maximum storage efficiency.
 
 <br/>
 
