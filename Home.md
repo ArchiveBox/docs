@@ -34,7 +34,7 @@
 
 <br/>
 
-**✨ Or donate to support development ✨**
+**✨ Or donate to support open-source development ✨**
 
 [![](https://img.shields.io/badge/Donate-Directly-%13DE5D26.svg)](https://hcb.hackclub.com/donations/start/archivebox) [![](https://img.shields.io/badge/Donate-Patreon-%23DD5D76.svg)](https://www.patreon.com/theSquashSH) [![](https://img.shields.io/badge/Donate-Github_Sponsors-%23B7CDFE.svg)](https://github.com/sponsors/pirate)
 
