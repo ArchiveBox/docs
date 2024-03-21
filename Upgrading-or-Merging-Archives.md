@@ -275,7 +275,7 @@ ArchiveBox can sometimes struggle when archiving many links in parallel with mul
 Unable to create the django_migrations table (database is locked)
 ```
 
-These errors can also be encountered when there are permissions, network, or filesystem issues preventing writes to the `index.sqlite3` file.
+These errors can also be encountered when there are permissions, network, or filesystem issues preventing writes to `index.sqlite3`.
 
 - [Question: Unable to create the django_migrations table (database is locked) - When OUTPUT_DIR to SAMBA share #946](https://github.com/ArchiveBox/ArchiveBox/issues/946)
 - [Question: ...Unable to create the django_migrations table (database is locked) #880](https://github.com/ArchiveBox/ArchiveBox/issues/880)
