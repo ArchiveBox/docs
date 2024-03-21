@@ -6,7 +6,8 @@
 
 </div>
 
-**📖 Use the sidebar on the right to browse documentation topics ->**
+**📖 Use the sidebar on the right to browse documentation topics ->**  
+<sub>(Expand the `Pages:` section to 🔍 Search)</sub>
 
 **❓If you need help or have a question, you can:**
  - 💬 Chat with us on our [Public Zulip Server](https://zulip.archivebox.io)
