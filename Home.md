@@ -10,7 +10,9 @@
   
 <i>(Expand the `Pages` section to 🔍 Search for a specific term)</i>
 
-**❓If you need help or have a question, you can:**
+<br/>
+
+**📚 If you need help or have a question, you can:**
  - 💬 Chat with us on our [Public Zulip Server](https://zulip.archivebox.io)
  - 🐞 Open an [issue or feature request](https://github.com/ArchiveBox/ArchiveBox/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) in our bug tracker
  - 💠 Reach out to me on Twitter [@ArchiveBoxApp](https://twitter.com/ArchiveBoxApp) or [@theSquashSH](https://twitter.com/theSquashSH)
