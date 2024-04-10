@@ -15,14 +15,19 @@ services:
 
 ---
 
+## Supported Local Filesystems
+
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/45abfe78-87c4-4c87-ab11-9dae2f3b2518" alt="local filesystem icon" width="80px" align="right"/>
 
-## Supported Local Filesystems
+### EXT4, APFS
+
+> [!TIP]
+> These default filesystems are fully supported by ArchiveBox on Linux and macOS respectively.
 
 ### ZFS ⭐️
 
 > [!TIP]
-> This is the recommended filesystem for ArchiveBox. 
+> This is the recommended filesystem for ArchiveBox, it provides more features than EXT4/APFS.
 
 - https://openzfs.github.io/openzfs-docs/
 - https://openzfs.github.io/openzfs-docs/man/v2.2/8/zpool-create.8.html
@@ -57,21 +62,15 @@ zfs create \
     -o keysource=passphrase,prompt \
 ```
 
-
-### EXT4, APFS
-
-> [!TIP]
-> These filesystems are fully supported by ArchiveBox.
-
 ### NTFS, HFS+, BTRFS
 
 > [!WARNING]
-> Likely supported, but not officially tested.
+> These filesystems are likely supported, but are not officially tested.
 
 ### EXT2, EXT3, FAT32, exFAT
 
 > [!CAUTION]
-> Not recommended. Cannot store more than 31k ~ 65k Snapshot entries due to directory entry limits.
+> Not recommended. Cannot store files >4GB or more than 31k ~ 65k Snapshot entries due to directory entry limits.
 
 <br/>
 
@@ -79,12 +78,11 @@ zfs create \
 
 <br/>
 
-<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/6124b92a-df5a-47c4-b3c2-006ebd28785b" alt="local filesystem icon" width="80px" align="right"/>
-
 ## Supported Remote Filesystems
 
-ArchiveBox supports most common types of remote filesystems using NFS and the `rclone` Docker volume plugin.
+<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/6124b92a-df5a-47c4-b3c2-006ebd28785b" alt="local filesystem icon" width="80px" align="right"/>
 
+ArchiveBox supports many common types of remote filesystems using Docker Storage providers, Docker Volume Plugins, and RClone.
 
 ### NFS (Docker Driver)
 
