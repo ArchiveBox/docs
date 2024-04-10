@@ -92,7 +92,13 @@ zfs create \
 
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/6124b92a-df5a-47c4-b3c2-006ebd28785b" alt="local filesystem icon" width="80px" align="right"/>
 
-ArchiveBox supports many common types of remote filesystems using Docker Storage providers, Docker Volume Plugins, and RClone. Only the `archive/` folder should be stored on a remote filesystem while ArchiveBox is running, all the other files in `data/` (especially `index.sqlite3`) should be stored on a local SSD and backed up periodically.
+ArchiveBox supports many common types of remote filesystems using Docker Storage providers, Docker Volume Plugins, and RClone.  
+
+For data integrity and performance reasons, only the `data/archive/` subfolder supports being stored on a remote filesystem while ArchiveBox is actively running. The other files in the `data/` directory are much smaller and should kept on local filesystem (and backed up to a remote periodically). 
+
+> [!CAUTION]
+> `data/index.sqlite3` *must be kept on a local filesystem* which supports FSYNC (ideally backed by SSD or NVMe).
+
 
 ### NFS (Docker Driver)
 
