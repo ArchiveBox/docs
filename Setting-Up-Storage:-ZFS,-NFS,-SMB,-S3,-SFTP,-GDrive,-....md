@@ -123,12 +123,14 @@ volumes:
             o: "username=XXX,password=YYY,uid=911,gid=911"
 ```
 
+<br/>
+
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/0a159c27-5d54-46b9-814b-480f239ed27e" alt="local filesystem icon" height="80px" align="right"/><img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/5ca561b4-4597-401f-84b6-d53042fd7359" alt="local filesystem icon" height="80px" align="right"/>
 
 ### Amazon S3 / Backblaze B2 / Google Drive / etc. (RClone)
 
 ```bash
-# whether or not you're using Docker, you must first install rclone on your host system
+# install the RClone and FUSE packages on your host
 apt install rclone fuse     # or brew install
 
 # allow sharing FUSE volumes between Docker and Host
@@ -138,8 +140,7 @@ echo 'user_allow_other' >> /etc/fuse.conf
 Then define your remote storage config `~/.config/rclone/rclone.conf`:
 
 > [!TIP]
-> You can also create your config using the RClone Web GUI:  
-> `rclone rcd --rc-web-gui`
+> You can also create it using the RClone Web GUI: `rclone rcd --rc-web-gui`
 
 ```ini
 # Example rclone.conf using Amazon S3 for storage:
@@ -167,8 +168,9 @@ region = us-east-1
 - Set up file encryption: https://rclone.org/crypt/
 - Set up hashing engine: https://rclone.org/hasher/
 
+<br/>
 
-#### Running RClone on Bare Metal host
+#### Option A: Running RClone on Bare Metal host
 
 See here for full instructions: https://rclone.org/commands/rclone_mount/
 
@@ -180,10 +182,11 @@ rclone mount --allow-other --uid 911 --gid 911 \
 ```
 
 > [!TIP]
-> You can also pass an Rclone mount created on the host as a normal bind mount volume to Docker containers (without needing the storage plugin below).  
-> (just make sure it's mounted with `--allow-other`)
+> You can also pass an Rclone mount created on the host as a normal bind mount volume to Docker containers (without needing the storage plugin below).
 
-#### Running RClone with Docker Storage Plugin
+<br/>
+
+#### Option B: Running RClone with Docker Storage Plugin
 
 See here for full instructions: https://rclone.org/docker/
 
