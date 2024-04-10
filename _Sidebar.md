@@ -26,7 +26,7 @@
 
 # Guides
 
- - [[Setting up Storage]]: <small>NFS/SMB/S3/GDrive/...</small>
+ - [[Setting up Storage]] <small>NFS/S3/GDrive/...</small>
  - [[Scheduled Archiving]]
  - [[Publishing Your Archive]]
  - [[Chromium Install]]
