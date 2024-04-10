@@ -10,7 +10,7 @@ services:
             - ./data:/data
 
             # but bulk archive/ content can be located on an HDD or remote filesystem
-            - /mnt/archivebox/data/archive:/data/archive
+            - /mnt/archivebox-s3/data/archive:/data/archive
 ```
 
 <h4>Related Docs</h4>
