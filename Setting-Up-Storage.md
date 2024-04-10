@@ -188,10 +188,10 @@ region = us-east-1
 See here for full instructions: https://rclone.org/commands/rclone_mount/
 
 ```bash
-# transfer any existing data to the remote mount
-rclone sync --fast-list --transfers 20 --progress /opt/archivebox/data/archive archivebox-s3:/data/archive
+# transfer any existing local archive data to the remote volume
+rclone sync --fast-list --transfers 20 --progress /opt/archivebox/data/archive/ archivebox-s3:/data/archive
 
-# then run this to mount the remote volume as local FUSE filesystem
+# then mount the remote volume as local FUSE filesystem
 mv /opt/archivebox/data/archive /opt/archivebox/data/archive.localbackup
 rclone mount --allow-other --uid 911 --gid 911 \
              --vfs-cache-mode=full --transfers=16 --checkers=4 \
