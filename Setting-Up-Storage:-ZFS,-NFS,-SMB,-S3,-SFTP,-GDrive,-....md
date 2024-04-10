@@ -221,8 +221,6 @@ docker compose run archivebox /bin/bash 'ls -lah /data/archive/'
 
 ### More Docker Storage Plugins
 
-- [IPFS](https://github.com/djdv/go-filesystem-utils/pull/40) / [Peergos](https://github.com/peergos/peergos)
-- [GlusterFS](https://github.com/calavera/docker-volume-glusterfs) / 
-- DigitalOcean Block Storage Volumes: https://github.com/djmaze/dobs-volume-plugin
-- Linode Block Storage Volumes: https://github.com/linode/docker-volume-linode
-- More volume plugins: https://docs.docker.com/engine/extend/legacy_plugins/#volume-plugins
+- [IPFS](https://github.com/djdv/go-filesystem-utils/pull/40) / [Peergos](https://github.com/peergos/peergos) / [GlusterFS](https://github.com/calavera/docker-volume-glusterfs)
+- [DigitalOcean Block Storage Volumes](https://github.com/djmaze/dobs-volume-plugin) / [Linode Block Storage Volumes](https://github.com/linode/docker-volume-linode)
+- [More volume plugins...](https://docs.docker.com/engine/extend/legacy_plugins/#volume-plugins)
