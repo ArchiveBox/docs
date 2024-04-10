@@ -15,7 +15,7 @@ services:
 
 ---
 
-<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/45abfe78-87c4-4c87-ab11-9dae2f3b2518" alt="local filesystem icon" width="40px" float="right"/>
+<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/45abfe78-87c4-4c87-ab11-9dae2f3b2518" alt="local filesystem icon" width="40px" align="right"/>
 
 ## Supported Local Filesystems
 
@@ -79,7 +79,7 @@ zfs create \
 
 <br/>
 
-<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/6124b92a-df5a-47c4-b3c2-006ebd28785b" alt="local filesystem icon" width="40px" float="right"/>
+<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/6124b92a-df5a-47c4-b3c2-006ebd28785b" alt="local filesystem icon" width="40px" align="right"/>
 
 ## Supported Remote Filesystems
 
@@ -122,6 +122,8 @@ volumes:
             device: "//some-remote-server.example.com/archivebox-archive"
             o: "username=XXX,password=YYY,uid=911,gid=911"
 ```
+
+<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/0a159c27-5d54-46b9-814b-480f239ed27e" alt="local filesystem icon" width="40px" align="right"/><img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/5ca561b4-4597-401f-84b6-d53042fd7359" alt="local filesystem icon" width="40px" align="right"/>
 
 ### Amazon S3 / Backblaze B2 / Google Drive / etc. (RClone)
 
