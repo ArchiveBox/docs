@@ -199,7 +199,7 @@ rclone mount --allow-other --uid 911 --gid 911 \
 ```
 
 > [!TIP]
-> You can also pass an Rclone mount created on the host as a normal bind mount volume to Docker containers (without needing the storage plugin below).
+> You can also pass an Rclone mount created on the host as a normal bind mount volume to Docker containers (without needing the storage plugin below). `-v /opt/archivebox/data/archive:/data/archive`
 
 <br/>
 
