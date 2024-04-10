@@ -96,7 +96,7 @@ ArchiveBox supports many common types of remote filesystems using Docker Storage
 
 For data integrity and performance reasons, only the `data/archive/` subfolder supports being stored on a remote filesystem while ArchiveBox is actively running. The other files in the `data/` directory are much smaller and should kept on local filesystem (and backed up to a remote periodically). 
 
-> [!CAUTION]
+> [!WARNING]
 > `data/index.sqlite3` *must be kept on a local filesystem* which supports FSYNC (ideally backed by SSD or NVMe).
 
 
