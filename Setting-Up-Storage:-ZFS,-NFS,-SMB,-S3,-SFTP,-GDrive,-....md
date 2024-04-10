@@ -13,6 +13,10 @@ services:
             - /mnt/archivebox/data/archive:/data/archive
 ```
 
+---
+
+<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/45abfe78-87c4-4c87-ab11-9dae2f3b2518" alt="local filesystem icon" width="40px" float="right"/>
+
 ## Supported Local Filesystems
 
 ### ZFS ⭐️
@@ -74,6 +78,8 @@ zfs create \
 ---
 
 <br/>
+
+<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/6124b92a-df5a-47c4-b3c2-006ebd28785b" alt="local filesystem icon" width="40px" float="right"/>
 
 ## Supported Remote Filesystems
 
