@@ -53,42 +53,21 @@ zfs create \
     -o keysource=passphrase,prompt \
 ```
 
-### BTRFS
 
-> [!WARNING]
-> Likely supported on Linux, but not officially tested.
-
-- https://docs.docker.com/storage/storagedriver/btrfs-driver/
-
-### EXT4
+### EXT4, APFS
 
 > [!TIP]
-> This is supported by ArchiveBox on Linux systems.
+> These filesystems are fully supported by ArchiveBox.
 
-### APFS
-
-> [!TIP]
-> This is supported by ArchiveBox on macOS systems.
-
-### HFS+
+### NTFS, HFS+, BTRFS
 
 > [!WARNING]
-> Likely supported on macOS, but not officially tested.
+> Likely supported, but not officially tested.
 
-### NTFS
-
-> [!WARNING]
-> Likely supported on Windows through Docker and/or WSL2, but not officially tested.
-
-### EXT2 / EXT3
+### EXT2, EXT3, FAT32, exFAT
 
 > [!CAUTION]
-> Not recommended. Cannot store more than 31,998 Snapshot entries due to directory entry limit.
-
-### FAT32 / exFAT
-
-> [!CAUTION]
-> Not recommended. Cannot store more than 65,536 Snapshot entries due to directory entry limit.
+> Not recommended. Cannot store more than 31k ~ 65k Snapshot entries due to directory entry limits.
 
 <br/>
 
@@ -101,7 +80,7 @@ zfs create \
 ArchiveBox supports most common types of remote filesystems using NFS and the `rclone` Docker volume plugin.
 
 
-### Docker Driver: NFS
+### NFS (Docker Driver)
 
 `docker-compose.yml`:
 ```yaml
@@ -119,7 +98,7 @@ volumes:
             device: ":/archivebox-archive"
 ```
 
-### Docker Driver: CIFS (SMB / Ceph)
+### SMB / Ceph (Docker CIFS Driver)
 
 `docker-compose.yml`:
 ```yaml
@@ -138,7 +117,7 @@ volumes:
             o: "username=XXX,password=YYY,uid=911,gid=911"
 ```
 
-### Docker / Bare Metal: RClone (Amazon S3 / Backblaze B2 / Google Drive / etc.)
+### Amazon S3 / Backblaze B2 / Google Drive / etc. (RClone)
 
 ```bash
 # whether or not you're using Docker, you must first install rclone on your host system
@@ -238,6 +217,9 @@ rclone mount --allow-other --uid 911 --gid 911 \
 > You can also pass an Rclone mount created on the host as a normal bind mount for Docker.  
 > (just make sure it's mounted with `--allow-other`)
 
+<br/>
+---
+<br/>
 
 ### More Docker Storage Plugins
 
