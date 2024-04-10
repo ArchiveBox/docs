@@ -17,7 +17,7 @@ services:
 
 ### ZFS ⭐️
 
-> [!SUCCESS]
+> [!TIP]
 > This is the recommended filesystem for ArchiveBox. 
 
 - https://openzfs.github.io/openzfs-docs/
@@ -62,12 +62,12 @@ zfs create \
 
 ### EXT4
 
-> [!SUCCESS]
+> [!TIP]
 > This is supported by ArchiveBox on Linux systems.
 
 ### APFS
 
-> [!SUCCESS]
+> [!TIP]
 > This is supported by ArchiveBox on macOS systems.
 
 ### HFS+
@@ -82,22 +82,26 @@ zfs create \
 
 ### EXT2 / EXT3
 
-> [!DANGER]
+> [!CAUTION]
 > Not recommended. Cannot store more than 31,998 Snapshot entries due to directory entry limit.
 
 ### FAT32 / exFAT
 
-> [!DANGER]
+> [!CAUTION]
 > Not recommended. Cannot store more than 65,536 Snapshot entries due to directory entry limit.
 
-<br/><hr/><br/>
+<br/>
+
+---
+
+<br/>
 
 ## Supported Remote Filesystems
 
 ArchiveBox supports most common types of remote filesystems using NFS and the `rclone` Docker volume plugin.
 
 
-### NFS
+### Docker Driver: NFS
 
 `docker-compose.yml`:
 ```yaml
@@ -115,7 +119,7 @@ volumes:
             device: ":/archivebox-archive"
 ```
 
-### SMB / CIFS / Ceph
+### Docker Driver: CIFS (SMB / Ceph)
 
 `docker-compose.yml`:
 ```yaml
@@ -134,25 +138,24 @@ volumes:
             o: "username=XXX,password=YYY,uid=911,gid=911"
 ```
 
-### Other Docker Volume Plugin Filesystems
-
-- [IPFS](https://github.com/djdv/go-filesystem-utils/pull/40) / [Peergos](https://github.com/peergos/peergos)
-- [GlusterFS](https://github.com/calavera/docker-volume-glusterfs) / 
-- DigitalOcean Block Storage Volumes: https://github.com/djmaze/dobs-volume-plugin
-- Linode Block Storage Volumes: https://github.com/linode/docker-volume-linode
-- More volume plugins: https://docs.docker.com/engine/extend/legacy_plugins/#volume-plugins
-
-
-### RClone: Amazon S3 / Backblaze B2 / Google Drive / Storj / etc.
+### Docker / Bare Metal: RClone (Amazon S3 / Backblaze B2 / Google Drive / etc.)
 
 ```bash
-# easier: create your storage config using the RClone Web GUI
-rclone rcd --rc-web-gui
+# whether or not you're using Docker, you must first install rclone on your host system
+apt install rclone fuse     # or brew install
+
+# allow sharing FUSE volumes between Docker and Host
+echo 'user_allow_other' >> /etc/fuse.conf
 ```
-```bash
-# harder: create your storage config manually in ~/.config/rclone/rclone.conf:
+
+Then define your remote storage config `~/.config/rclone/rclone.conf`:
+
+> [!TIP]
+> You can also create your config using the RClone Web GUI:  
+> `rclone rcd --rc-web-gui`
+
 ```ini
-# Example using Amazon S3 for storage
+# Example rclone.conf using Amazon S3 for storage:
 [archivebox-s3]
 type = s3
 provider = AWS
@@ -160,7 +163,8 @@ access_key_id = XXX
 secret_access_key = YYY
 region = us-east-1
 ```
-**Examples:**
+
+#### RClone Config Examples
 
 - [SMB](https://rclone.org/smb/) / [Ceph](https://rclone.org/s3/#ceph) / [SFTP](https://rclone.org/sftp/) / [FTP](https://rclone.org/ftp/) / [WebDAV (e.g. Nextcloud)](https://rclone.org/webdav/)
 - [Google Drive](https://rclone.org/drive/) / [Dropbox](https://rclone.org/dropbox/) / [OneDrive](https://rclone.org/onedrive/)
@@ -171,27 +175,74 @@ region = us-east-1
   - https://rclone.org/s3/
   - https://rclone.org/overview/
 
-*Bonus features:*
-- Transparent gzip compression: https://rclone.org/compress/
-- Transparent file encryption: https://rclone.org/crypt/
-- Hasher for other filesystems: https://rclone.org/hasher/
+*Bonus:*
+- Set up gzip compression: https://rclone.org/compress/
+- Set up file encryption: https://rclone.org/crypt/
+- Set up hashing engine: https://rclone.org/hasher/
 
-#### Setup
 
+#### Using Rclone with Docker Compose
+
+See here for full instructions: https://rclone.org/docker/
+
+
+First, install the [Rclone Docker Volume Plugin](https://rclone.org/docker/#installing-as-managed-plugin) for your CPU architecture:
 ```bash
-apt install rclone     # or brew install rclone
-nano ~/.config/rclone/rclone.conf
-
-# for Docker, install the volume plugin for your CPU architecture
 docker plugin install rclone/docker-volume-rclone:amd64 --grant-all-permissions --alias rclone
 ln -sf ~/.config/rclone/rclone.conf /var/lib/docker-plugins/rclone/config/rclone.conf
-
-# for bare-metal, run this to mount the remote volume
-rclone mount --allow-other --uid 911 --gid 911 --vfs-cache-mode=full --transfers=16 --checkers=4 archivebox-s3:/mnt/archivebox-s3
 ```
-See the full [Rclone + Docker Documentation](https://rclone.org/docker/) for more help and examples...
 
-Then you can start the container and verify the filesystem is accessible within it:
+Then, [create a volume using the Docker CLI](https://rclone.org/docker/#creating-volumes-via-cli) or [define one using Docker Compose / Swarm](https://rclone.org/docker/#using-with-swarm-or-compose):
+
+`docker-compose.yml`:
+```yaml
+services:
+    archivebox:
+        volumes:
+            - ./data:/data
+            - archivebox-s3:/data/archive
+
+volumes:
+    archivebox-s3:
+        driver: rclone
+        driver_opts:
+            remote: 'archivebox-s3/data/archive'
+            allow_other: 'true'
+            vfs_cache_mode: full
+            poll_interval: 0
+            uid: 911
+            gid: 911
+            transfers: 16
+            checkers: 4
+```
+
+
+To start the container and verify the filesystem is accessible within it:
 ```bash
 docker compose run archivebox /bin/bash 'ls -lah /data/archive/'
 ```
+
+
+#### Using RClone on Bare Metal
+
+See here for full instructions: https://rclone.org/commands/rclone_mount/
+
+```bash
+# run this long-running command to mount the remote volume containing data/archive
+rclone mount --allow-other --uid 911 --gid 911 \
+             --vfs-cache-mode=full --transfers=16 --checkers=4 \
+             archivebox-s3/data/archive:/opt/archivebox/data/archive
+```
+
+> [!TIP]
+> You can also pass an Rclone mount created on the host as a normal bind mount for Docker.  
+> (just make sure it's mounted with `--allow-other`)
+
+
+### More Docker Storage Plugins
+
+- [IPFS](https://github.com/djdv/go-filesystem-utils/pull/40) / [Peergos](https://github.com/peergos/peergos)
+- [GlusterFS](https://github.com/calavera/docker-volume-glusterfs) / 
+- DigitalOcean Block Storage Volumes: https://github.com/djmaze/dobs-volume-plugin
+- Linode Block Storage Volumes: https://github.com/linode/docker-volume-linode
+- More volume plugins: https://docs.docker.com/engine/extend/legacy_plugins/#volume-plugins
