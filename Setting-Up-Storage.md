@@ -207,7 +207,7 @@ rclone mount --allow-other --uid 911 --gid 911 \
 
 See here for full instructions: https://rclone.org/docker/
 
-First, install the [Rclone Docker Volume Plugin](https://rclone.org/docker/#installing-as-managed-plugin) for your CPU architecture:
+First, install the [Rclone Docker Volume Plugin](https://rclone.org/docker/#installing-as-managed-plugin) for your CPU architecture (e.g. `amd64` or `arm64`):
 ```bash
 docker plugin install rclone/docker-volume-rclone:amd64 --grant-all-permissions --alias rclone
 ln -sf ~/.config/rclone/rclone.conf /var/lib/docker-plugins/rclone/config/rclone.conf
