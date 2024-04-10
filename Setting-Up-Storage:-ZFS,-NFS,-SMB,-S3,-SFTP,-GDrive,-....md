@@ -160,10 +160,24 @@ region = us-east-1
 - Set up hashing engine: https://rclone.org/hasher/
 
 
-#### Using Rclone with Docker Compose
+#### Running RClone on Bare Metal host
+
+See here for full instructions: https://rclone.org/commands/rclone_mount/
+
+```bash
+# run this long-running command to mount the remote volume containing data/archive
+rclone mount --allow-other --uid 911 --gid 911 \
+             --vfs-cache-mode=full --transfers=16 --checkers=4 \
+             archivebox-s3/data/archive:/opt/archivebox/data/archive
+```
+
+> [!TIP]
+> You can also pass an Rclone mount created on the host as a normal bind mount volume to Docker containers (without needing the storage plugin below).  
+> (just make sure it's mounted with `--allow-other`)
+
+#### Running RClone with Docker Storage Plugin
 
 See here for full instructions: https://rclone.org/docker/
-
 
 First, install the [Rclone Docker Volume Plugin](https://rclone.org/docker/#installing-as-managed-plugin) for your CPU architecture:
 ```bash
@@ -200,22 +214,6 @@ To start the container and verify the filesystem is accessible within it:
 ```bash
 docker compose run archivebox /bin/bash 'ls -lah /data/archive/'
 ```
-
-
-#### Using RClone on Bare Metal
-
-See here for full instructions: https://rclone.org/commands/rclone_mount/
-
-```bash
-# run this long-running command to mount the remote volume containing data/archive
-rclone mount --allow-other --uid 911 --gid 911 \
-             --vfs-cache-mode=full --transfers=16 --checkers=4 \
-             archivebox-s3/data/archive:/opt/archivebox/data/archive
-```
-
-> [!TIP]
-> You can also pass an Rclone mount created on the host as a normal bind mount for Docker.  
-> (just make sure it's mounted with `--allow-other`)
 
 <br/>
 ---
