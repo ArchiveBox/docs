@@ -153,7 +153,7 @@ curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 
 # Install base system dependencies manually (check ArchiveBox/Dockerfile for more if needed)
 sudo apt install python3 python3-pip python3-minimal python3-distutils nodejs libatomic1 zlib1g-dev libssl-dev libldap2-dev libsasl2-dev python3-ldap python3-msgpack python3-mutagen python3-regex python3-pycryptodome procps wget curl git yt-dlp ffmpeg ripgrep
-# OR install them using the official ArchiveBox apt package
+# OR install them using the (outdated) official ArchiveBox apt package
 # echo "deb http://ppa.launchpad.net/archivebox/archivebox/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/archivebox.list
 # sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C258F79DCC02E369
 # sudo apt-get update && sudo apt-get install archivebox
