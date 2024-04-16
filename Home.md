@@ -40,4 +40,6 @@
 
 <br/>
 <sup>ArchiveBox operates as a US 501(c)(3) nonprofit, <a href="https://hcb.hackclub.com/donations/start/archivebox">donations</a> are tax-deductible.<br/>(fiscally sponsored by <a href="https://hackclub.com/hcb?ref=donation">HCB</a> <code>EIN: 81-2908499</code>)</sup><br/>
+<br/>
+<sub>The name ArchiveBox™️ is trademarked in the US and you can find the <a href="https://www.stickermule.com/studio/brand-kits/06f665c3-5b24-4da7-98b3-61d68d3996a0">ArchiveBox brand kit</a> here.</sub>
 </div>
