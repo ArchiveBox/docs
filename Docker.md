@@ -26,8 +26,8 @@ Running ArchiveBox with Docker allows you to manage it in a container without ex
 ```bash
 docker pull archivebox/archivebox
 ```
-- [`Dockerfile`](https://github.com/ArchiveBox/ArchiveBox/blob/main/Dockerfile)
-- [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/main/docker-compose.yml)
+- [`Dockerfile`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/Dockerfile)
+- [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml)
 - [`archivebox-kubernetes.yml`](https://github.com/ArchiveBox/docker-archivebox/blob/master/archivebox.yml)
 
 
@@ -48,7 +48,7 @@ docker pull archivebox/archivebox
 
 ### Setup
 
-A full [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/main/docker-compose.yml) file is provided with all the extras included.  
+A full [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml) file is provided with all the extras included.  
 You can uncomment sections within it to enable extra features, or run the basic version as-is.
 
 
@@ -58,7 +58,7 @@ mkdir -p ~/archivebox/data && cd ~/archivebox
 
 # download the compose file into the directory
 curl -fsSL 'https://docker-compose.archivebox.io' > docker-compose.yml
-# (shortcut for getting https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/main/docker-compose.yml)
+# (shortcut for getting https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/stable/docker-compose.yml)
 
 # run setup to choose an admin username+password (or set ADMIN_USERNAME/ADMIN_PASSWORD env vars)
 docker compose run archivebox init --setup
@@ -67,7 +67,7 @@ docker compose run archivebox init --setup
 To use [Sonic](https://github.com/valeriansaliou/sonic) for improved full-text search, download this config & uncomment the sonic service in `docker-compose.yml`:
 ```bash
 # download the sonic config file into your data folder (e.g. ~/archivebox)
-curl -fsSL 'https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/main/etc/sonic.cfg' > sonic.cfg
+curl -fsSL 'https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/dev/etc/sonic.cfg' > sonic.cfg
 
 # then uncomment the sonic-related sections in docker-compose.yml
 nano docker-compose.yml
@@ -170,7 +170,7 @@ services:
 
 You can also specify an env file via CLI when running compose using `docker compose --env-file=/path/to/config.env ...` although you must specify the variables in the `environment:` section that you want to have passed down to the ArchiveBox container from the passed env file.
 
-If you want to access your archive server with HTTPS, put a reverse proxy like Nginx or Caddy in front of `http://127.0.0.1:8000` to do SSL termination. Here is an example [ArchiveBox nginx container](https://github.com/ArchiveBox/ArchiveBox/blob/main/docker-compose.yml#:~:text=nginx) + [`nginx.conf`](https://github.com/ArchiveBox/ArchiveBox/blob/main/etc/nginx.conf) that you can modify to add your preferred TLS settings.
+If you want to access your archive server with HTTPS, put a reverse proxy like Nginx or Caddy in front of `http://127.0.0.1:8000` to do SSL termination. Here is an example [ArchiveBox nginx container](https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml#:~:text=nginx) + [`nginx.conf`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/etc/nginx.conf) that you can modify to add your preferred TLS settings.
 
 <br/>
 

@@ -109,7 +109,7 @@ npm --version          # make sure you have npm installed
 cd ~/archivebox/data   # go into your data directory
 archivebox setup       # auto-installs all JS dependencies into ./node_modules
 # equivalent to:
-# curl -fsSL 'https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/main/archivebox/package.json' > package.json
+# curl -fsSL 'https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/stable/archivebox/package.json' > package.json
 # npm install
 
 # install npm dependencies should then be present in ~/archivebox/data/node_modules/.bin

@@ -62,8 +62,8 @@ It's also recommended to use a filesystem with compression and/or [deduplication
 > You can also run Dockerized ArchiveBox using [UNRAID/TrueNAS/Proxmox/etc.](https://github.com/ArchiveBox/ArchiveBox#-other-options) or [Kubernetes](https://github.com/ArchiveBox/docker-archivebox/blob/master/archivebox.yml). 
 
 **More info:**
-- [`Dockerfile`](https://github.com/ArchiveBox/ArchiveBox/blob/main/Dockerfile)
-- [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/main/docker-compose.yml)
+- [`Dockerfile`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/Dockerfile)
+- [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml)
 - [`archivebox-kubernetes.yml`](https://github.com/ArchiveBox/docker-archivebox/blob/master/archivebox.yml)
 - [ArchiveBox Docker Quickstart](https://github.com/ArchiveBox/ArchiveBox#quickstart) + [Usage](https://github.com/ArchiveBox/ArchiveBox/wiki/Docker) + [Configuration](https://github.com/ArchiveBox/ArchiveBox/wiki/Docker#configuration) + [Upgrading](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives) documentation
 
@@ -82,7 +82,7 @@ If you're on Linux with `apt`, FreeBSD with `pkg`, or macOS with `brew` there is
 
 ```bash
 curl -fsSL 'https://get.archivebox.io' | sh
-# shortcut to run https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/main/bin/setup.sh
+# shortcut to run https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/stable/bin/setup.sh
 ``` 
 The script explains what it installs beforehand, and will prompt for user confirmation before making any changes to your system. The script uses Docker if already installed, but you can decline and it will attempt to auto-install everything using `apt`/`brew`/`pkg` + `pip` instead.
 
