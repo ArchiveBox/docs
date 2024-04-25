@@ -39,7 +39,7 @@ services:
 > [!TIP]
 > *This is the recommended filesystem for ArchiveBox on Linux, macOS, and BSD (w/wo Docker).*  
 > [`apt install zfsutils-linux`](https://openzfs.github.io/openzfs-docs/Getting%20Started/Ubuntu/index.html)  
-> ZFS provides many useful features beyond typical filesystems, including: RAID, compression, encryption, deduping, 0-cost point-in-time snapshots, and more...  
+> Provides RAID, compression, encryption, deduping, 0-cost point-in-time backups, sending backup diffs remotely, and more...  
 
 - https://openzfs.github.io/openzfs-docs/
 - https://openzfs.github.io/openzfs-docs/man/v2.2/8/zpool-create.8.html
