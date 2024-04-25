@@ -32,14 +32,13 @@ services:
 ### EXT4, APFS
 
 > [!TIP]
-> These default filesystems are fully supported by ArchiveBox on Linux and macOS respectively.
+> These default filesystems are fully supported by ArchiveBox on Linux and macOS (w/wo Docker).
 
 ### ZFS ⭐️
 
 > [!TIP]
-> *This is the recommended filesystem for ArchiveBox on Linux, macOS, and BSD.*  
+> *This is the recommended filesystem for ArchiveBox on Linux, macOS, and BSD (w/wo Docker).*  [`apt install zfsutils-linux`](https://openzfs.github.io/openzfs-docs/Getting%20Started/Ubuntu/index.html)
 > ZFS provides many useful features beyond typical filesystems, including: RAID, compression, encryption, deduping, 0-cost point-in-time snapshots, and more...  
-> [`apt install zfsutils-linux`](https://openzfs.github.io/openzfs-docs/Getting%20Started/Ubuntu/index.html)
 
 - https://openzfs.github.io/openzfs-docs/
 - https://openzfs.github.io/openzfs-docs/man/v2.2/8/zpool-create.8.html
@@ -94,12 +93,12 @@ zfs create \
 
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/6124b92a-df5a-47c4-b3c2-006ebd28785b" alt="local filesystem icon" width="80px" align="right"/>
 
-ArchiveBox supports many common types of remote filesystems using Docker Storage providers, Docker Volume Plugins, and RClone.  
+ArchiveBox supports many common types of remote filesystems using RClone, FUSE, Docker Storage providers, and Docker Volume Plugins.  
 
-The `data/archive/` subfolder contains the bulk archived content, and it supports being stored on a remote server (SMB/NFS/SFTP/etc.) or object store (S3/B2/R2/etc.). For data integrity and performance reasons, the rest of the `data/` directory (e.g. `data/ArchiveBox.conf`, `data/logs`, etc.) must be kept on a local filesystem while ArchiveBox is actively running.
+The `data/archive/` subfolder contains the bulk archived content, and it supports being stored on a slower remote server (SMB/NFS/SFTP/etc.) or object store (S3/B2/R2/etc.). For data integrity and performance reasons, the rest of the `data/` directory (e.g. `data/ArchiveBox.conf`, `data/logs`, etc.) must be kept on a local filesystem while ArchiveBox is actively running.
 
 > [!WARNING]
-> `data/index.sqlite3` is your main DB, *it must be on a fast, reliable filesystem* which supports FSYNC (SSD/NVMe).
+> `data/index.sqlite3` is your main DB, *it must be on a fast, reliable, local filesystem* which supports FSYNC (SSD/NVMe).
 
 ### NFS (Docker Driver)
 
