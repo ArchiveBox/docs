@@ -185,26 +185,33 @@ region = us-east-1
 
 #### Option A: Running RClone on Bare Metal host
 
-See here for full instructions: https://rclone.org/commands/rclone_mount/
-
+1. *If Needed:* Transfer any existing local archive data to the remote volume first
 ```bash
-# transfer any existing local archive data to the remote volume
 rclone sync --fast-list --transfers 20 --progress /opt/archivebox/data/archive/ archivebox-s3:/data/archive
-
-# then mount the remote volume as local FUSE filesystem
 mv /opt/archivebox/data/archive /opt/archivebox/data/archive.localbackup
-rclone mount --allow-other --uid 911 --gid 911 \
-             --vfs-cache-mode=full --transfers=16 --checkers=4 \
-             archivebox-s3/data/archive:/opt/archivebox/data/archive
+```
+2. **Mount the remote storage volume as FUSE filesystem**
+```
+rclone mount
+    --allow-other \                # essential, allows Docker to access FUSE mounts
+    --uid 911 --gid 911 \          # 911 is the default used by ArchiveBox
+    --vfs-cache-mode=full \        # cache both file metadata and contents
+    --transfers=16 --checkers=4 \  # use 16 threads for transfers & 4 for checking
+    archivebox-s3/data/archive:/opt/archivebox/data/archive         # remote:local
 ```
 
+See here for full more detailed instructions here: [RClone Documentation: The `rclone mount` command](https://rclone.org/commands/rclone_mount/)
+
 > [!TIP]
-> You can also pass an Rclone mount created on the host as a normal bind mount volume to Docker containers (without needing the storage plugin below). `-v /opt/archivebox/data/archive:/data/archive`
+> You can use any RClone FUSE mounts as a normal volumes (bind mount) for Docker containers, no storage plugin is needed as long as `allow-other` is setup properly.
+
+`docker run -v $PWD:/data -v /opt/archivebox/data/archive:/data/archive`
 
 `docker-compose.yml`:
 ```yaml
 services:
     archivebox:
+        ...
         volumes:
             - ./data:/data
             - /opt/archivebox/data/archive:/data/archive
@@ -214,15 +221,17 @@ services:
 
 #### Option B: Running RClone with Docker Storage Plugin
 
-See here for full instructions: https://rclone.org/docker/
+*This is only needed if you are unable to `Option A` for compatibility or performance reasons.*
 
-First, install the [Rclone Docker Volume Plugin](https://rclone.org/docker/#installing-as-managed-plugin) for your CPU architecture (e.g. `amd64` or `arm64`):
+See here for full instructions: [RClone Documentation: Docker Plugin](https://rclone.org/docker/)
+
+1. First, install the [Rclone Docker Volume Plugin](https://rclone.org/docker/#installing-as-managed-plugin) for your CPU architecture (e.g. `amd64` or `arm64`):
 ```bash
 docker plugin install rclone/docker-volume-rclone:amd64 --grant-all-permissions --alias rclone
 ln -sf ~/.config/rclone/rclone.conf /var/lib/docker-plugins/rclone/config/rclone.conf
 ```
 
-Then, [create a volume using the Docker CLI](https://rclone.org/docker/#creating-volumes-via-cli) or [define one using Docker Compose / Swarm](https://rclone.org/docker/#using-with-swarm-or-compose):
+2. Then, [create a volume using the Docker CLI](https://rclone.org/docker/#creating-volumes-via-cli) or [define one using Docker Compose / Swarm](https://rclone.org/docker/#using-with-swarm-or-compose):
 
 `docker-compose.yml`:
 ```yaml
