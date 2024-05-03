@@ -34,7 +34,7 @@ services:
 > [!TIP]
 > These default filesystems are fully supported by ArchiveBox on Linux and macOS (w/wo Docker).
 
-### `ZFS` ⭐️
+### `ZFS` (recommended for best experience on Linux/BSD) ⭐️
 
 > [!TIP]
 > *This is the recommended filesystem for ArchiveBox on Linux, macOS, and BSD (w/wo Docker).*  
