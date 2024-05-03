@@ -1,4 +1,4 @@
-ArchiveBox supports several types of authentication for users logging in to the Web UI or using the API.
+ArchiveBox supports several types of authentication for users logging in to the Web UI or using the REST API.
 
 > [!WARNING]
 > This page is a work in progress, follow the links to learn more about each authentication setup below.
