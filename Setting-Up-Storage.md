@@ -29,12 +29,12 @@ services:
 
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/45abfe78-87c4-4c87-ab11-9dae2f3b2518" alt="local filesystem icon" width="80px" align="right"/>
 
-### EXT4, APFS
+### `EXT4` (default on Linux), `APFS` (default on macOS)
 
 > [!TIP]
 > These default filesystems are fully supported by ArchiveBox on Linux and macOS (w/wo Docker).
 
-### ZFS ⭐️
+### `ZFS` ⭐️
 
 > [!TIP]
 > *This is the recommended filesystem for ArchiveBox on Linux, macOS, and BSD (w/wo Docker).*  
@@ -74,12 +74,12 @@ zfs create \
     -o keysource=passphrase,prompt \
 ```
 
-### NTFS, HFS+, BTRFS
+### `NTFS`, `HFS+`, `BTRFS`
 
 > [!WARNING]
 > These filesystems are likely supported, but are not officially tested.
 
-### EXT2, EXT3, FAT32, exFAT
+### `EXT2`, `EXT3`, `FAT32`, `exFAT`
 
 > [!CAUTION]
 > Not recommended. Cannot store files >4GB or more than 31k ~ 65k Snapshot entries due to directory entry limits.
@@ -101,7 +101,7 @@ The `data/archive/` subfolder contains the bulk archived content, and it support
 > [!IMPORTANT]
 > `data/index.sqlite3` is your main archive DB, *it must be on a fast, reliable, local filesystem* which supports [FSYNC](https://stackoverflow.com/questions/40849596/git-clone-fsync-input-output-error-in-linux#:~:text=Some%20filesystems%20%2D%20especially%20remote%20filesystems%20like%20NFS%2C%20sshfs%2C&text=do%20not%20support%20fsync()%20but%20git%20has%20no%20flag%20to%20disable%20these%20calls) (SSD/NVMe recommended).
 
-### NFS (Docker Driver)
+### `NFS` (Docker Driver)
 
 `docker-compose.yml`:
 ```yaml
@@ -119,7 +119,7 @@ volumes:
             device: ":/archivebox-archive"
 ```
 
-### SMB / Ceph (Docker CIFS Driver)
+### `SMB` / `Ceph` (Docker CIFS Driver)
 
 `docker-compose.yml`:
 ```yaml
