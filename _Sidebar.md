@@ -26,8 +26,8 @@
 
 # Guides
 
- - [[Setting up Storage]] <small>(NFS/SMB/S3/etc)</small>
  - [[Scheduled Archiving]]
+ - [[Setting up Storage]] <small>(NFS/SMB/S3/etc)</small>
  - [[Setting up Authentication]] <small>(SSO/LDAP/etc)</small>
  - [[Publishing Your Archive]]
  - [[Chromium Install]]
