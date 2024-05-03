@@ -98,7 +98,7 @@ ArchiveBox supports many common types of remote filesystems using RClone, FUSE, 
 
 The `data/archive/` subfolder contains the bulk archived content, and it supports being stored on a slower remote server (SMB/NFS/SFTP/etc.) or object store (S3/B2/R2/etc.). For data integrity and performance reasons, the rest of the `data/` directory (e.g. `data/ArchiveBox.conf`, `data/logs`, etc.) must be kept on a local filesystem while ArchiveBox is actively running.
 
-> [!WARNING]
+> [!IMPORTANT]
 > `data/index.sqlite3` is your main DB, *it must be on a fast, reliable, local filesystem* which supports FSYNC (SSD/NVMe).
 
 ### NFS (Docker Driver)
