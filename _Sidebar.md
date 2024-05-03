@@ -26,8 +26,9 @@
 
 # Guides
 
- - [[Setting up Storage]] <small>(NFS/SMB/S3/...)</small>
+ - [[Setting up Storage]] <small>(NFS/SMB/S3/etc)</small>
  - [[Scheduled Archiving]]
+ - [[Setting up Authentication]] <small>(SSO/LDAP/etc)</small>
  - [[Publishing Your Archive]]
  - [[Chromium Install]]
  - [Cookies & Sessions Setup](https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#setting-up-a-chromium-user-profile)
