@@ -25,7 +25,7 @@ ArchiveBox supports several types of authentication for users logging in via the
 
 ### Username & Password (the default)
 
-Make sure you have an admin User created first, you can run the commands below to create/edit a user from the command line:
+Make sure you have an admin User created first, you can run the commands below to create/edit a user from the CLI:
 
 ```bash
 archivebox manage createsuperuser
