@@ -65,10 +65,10 @@ Urls look like: `https://demo.archivebox.io/archive/1493350273/en.wikipedia.org/
 
 ## Security Concerns
 
-> [!DANGER]
+> [!CAUTION]
 > Re-hosting untrusted archived web content on a public domain can potentially compromise *all apps hosted on that domain** (including other subdomains)! If a logged-in user happens to visit an archived page with malicious Javascript embedded, it can hijack any cookies on the domain and pretend to be them.
 
-Make sure you thoroughly understand the dangers of [hosting untrusted HTML/JS/CSS](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy), and how it can enable [CSRF attacks](https://en.wikipedia.org/wiki/Cross-site_request_forgery) on anything else sharing the domain.
+Make sure you thoroughly understand the dangers of [hosting untrusted HTML/JS/CSS that may be captured during archiving](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy), and how viewing it can enable [CSRF attacks](https://en.wikipedia.org/wiki/Cross-site_request_forgery) across all apps on the same domain.
 
 You must put ArchiveBox a domain of its own (or at least subdomain), it should not be shared with any other applications in order to mitigate potential damage of leaked cookies, CORS, and CSRF attack.  
 
