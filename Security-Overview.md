@@ -16,6 +16,8 @@ archivebox config --set PUBLIC_ADD_VIEW=False
 archivebox manage [createsuperuser|changepassword] --help
 ```
 
+See [[Setting Up Authentication]] for more...
+
 ## ArchiveBox Use-Cases
 
 <img src="https://imgur.zervice.io/K3dZcjG.png" width="50px" align="right"/>
