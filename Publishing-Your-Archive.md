@@ -2,7 +2,9 @@
 
 There are two ways to publish your archive: using the `archivebox server` or by exporting and hosting it as static HTML.
 
-## 1. Use the built-in webserver
+<br/>
+
+## 1. Use the built-in web server
 
 ```bash
 # set the permissions depending on how public/locked down you want it to be
@@ -20,6 +22,10 @@ open http://127.0.0.1:8000
 
 This server is enabled out-of-the-box if you're using `docker-compose` to run ArchiveBox,
 and there is a commented-out example nginx config with SSL set up as well.
+
+(You can also use nginx to serve the static `/archive/` dir directly from the filesystem to reduce load on the ArchiveBox webserver.)
+
+<br/>
 
 ## 2. Export and host it as static HTML
 
@@ -48,9 +54,13 @@ location / {
 
 Make sure you're not running any content as CGI or PHP, you only want to serve static files!
 
-Urls look like: `https://archive.example.com/archive/1493350273/en.wikipedia.org/wiki/Dining_philosophers_problem.html`
+Urls look like: `https://demo.archivebox.io/archive/1493350273/en.wikipedia.org/wiki/Dining_philosophers_problem.html`
+
+<br/>
 
 ---
+
+<br/>
 
 ## Security Concerns
 
@@ -61,6 +71,12 @@ More info:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#publishing
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#%EF%B8%8F-things-to-watch-out-for-%EF%B8%8F
+
+<br/>
+
+---
+
+<br/>
 
 ## Copyright Concerns
 
