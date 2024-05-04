@@ -8,14 +8,20 @@ If you encounter any issues or need help feel free to ask questions in our publi
 
 ---
 
-## Admin Web UI Permissions
+<br/>
 
-First make sure to set up your Web UI permissions to allow/prevent guest access to content according to your needs. Configuring advanced authentication methods wont help you if your archive is set up to be visible to the public!
+## Set Up Admin Web UI Permissions
+
+> [!IMPORTANT]
+> Make sure to **set up your Web UI permissions first** to allow/prevent guest access to content according to your needs.  
+> Configuring advanced auth methods below wont help you if your archive is set up to be visible to the public!
 
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview
 
-## Admin Web UI Authentication
+<br/>
+
+## Admin Web UI Authentication Methods
 
 ### Username & Password (the default)
 
