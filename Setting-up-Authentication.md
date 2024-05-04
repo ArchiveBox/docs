@@ -25,17 +25,23 @@ ArchiveBox supports several types of authentication for users logging in via the
 
 ### Username & Password (the default)
 
+Make sure you have an admin User created first, you can run the commands below to create/edit a user from the command line:
+
 ```bash
 archivebox manage createsuperuser
+archivebox manage changepassword <username>
 
-archivebox manage changepassword
+# equivalent: docker compose run archivebox manage [...]
+# equivalent: docker run -v $PWD:/data archivebox/archivebox manage [...]
 ```
 
-- https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#admin_username--admin_password
+If using Docker or Docker Compose, you can alternatively configure [`ADMIN_USERNAME` & `ADMIN_PASSWORD`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#admin_username--admin_password) to create an admin user automatically on first run.
+
+<br/>
 
 ### Reverse Proxy Authentication
 
-> Can be used with reverse proxy auth provider like [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy), [Cloudflare Zero Trust](), [Authentik](https://docs.goauthentik.io/docs/providers/proxy/), and others.
+> Can be used with reverse proxy auth provider like [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy), [Cloudflare Zero Trust](https://developers.cloudflare.com/cloudflare-one/tutorials/access-workers/#create-a-worker-with-custom-headers), [Authentik](https://docs.goauthentik.io/docs/providers/proxy/), and others.
 
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#reverse_proxy_user_header
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#reverse_proxy_whitelist
@@ -51,6 +57,8 @@ archivebox manage changepassword
 - https://github.com/django-auth-ldap/django-auth-ldap#example-configuration
 - https://jumpcloud.com/blog/what-is-ldap-authentication
 
+<br/>
+
 ### Not Yet Supported: SAML / OAuth2 / OpenID Authentication
 
 These methods are not natively supported by ArchiveBox at the moment. However it is still possible to use them with ArchiveBox by running your own [IdP (Identity Provider)](https://www.cloudflare.com/learning/access-management/what-is-an-identity-provider/) server (e.g. [Authentik](https://docs.goauthentik.io/docs/providers/saml/), [Authelia](https://www.authelia.com/configuration/identity-providers/introduction/#openid-connect-10), etc.).
@@ -63,6 +71,8 @@ The IdP server can act as a middleman gateway to authenticate users using an ext
 - https://www.authelia.com/configuration/identity-providers/introduction/#openid-connect-10
 
 > *We'd welcome PRs to add support for more providers using `django-allauth`!*
+
+<br/>
 
 ---
 
