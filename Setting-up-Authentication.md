@@ -8,6 +8,15 @@ If you encounter any issues or need help feel free to ask questions in our publi
 
 ---
 
+## Admin Web UI Permissions
+
+Make sure to set up your Web UI permissions to allow or prevent guest access to content according to your needs. See the links below for more information.
+
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview
+
+## Admin Web UI Authentication
+
 ### Username & Password (the default)
 
 ```bash
@@ -18,7 +27,9 @@ archivebox manage changepassword
 
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#admin_username--admin_password
 
-### Reverse Proxy Authentication (e.g. Authelia)
+### Reverse Proxy Authentication
+
+> Can be used with reverse proxy auth provider like [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy), [Cloudflare Zero Trust](), [Authentik](https://docs.goauthentik.io/docs/providers/proxy/), and others.
 
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#reverse_proxy_user_header
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#reverse_proxy_whitelist
@@ -27,30 +38,92 @@ archivebox manage changepassword
 
 ### LDAP Authentication
 
+> Can be used with an SSO provider like [Authentik](https://github.com/goauthentik/authentik), [Authelia](https://github.com/authelia/authelia), [Okta / Auth0](https://www.okta.com/), [Keycloak](https://www.keycloak.org/), and others.
+
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#ldap
 - https://github.com/ArchiveBox/ArchiveBox/pull/1214
 - https://github.com/django-auth-ldap/django-auth-ldap#example-configuration
 - https://jumpcloud.com/blog/what-is-ldap-authentication
 
-### API Token Authentication
+### Not Yet Supported: SAML / OAuth2 / OpenID Authentication
 
-The new REST API released in v0.8.0 supports several methods of authentication using an API token.
+These methods are not natively supported by ArchiveBox at the moment. However it is still possible to use them with ArchiveBox by running your own [IdP (Identity Provider)](https://www.cloudflare.com/learning/access-management/what-is-an-identity-provider/) server (e.g. [Authentik](https://docs.goauthentik.io/docs/providers/saml/), [Authelia](https://www.authelia.com/configuration/identity-providers/introduction/#openid-connect-10), etc.).
 
-First, generate your API key in your Admin UI: `[/admin/api/apitoken/add/`](http://127.0.0.1:8000/admin/api/apitoken/add/).
-You can read the API docs and test the authentication methods here: [`/api/v1/docs`](http://127.0.0.1:8000/api/v1/docs).
+The IdP server can act as a middleman gateway to authenticate users using an external SAML/OAuth/OpenID/etc. provider (e.g. Google, Microsoft, Github, Facebook, etc.), and then pass on the authenticated user's session info to ArchiveBox using LDAP or reverse proxy headers (as described above).
 
-- passing Bearer=xyz as a bearer token request header
-- passing `X-API-Key=xyz` as a request header
-- passing `api_key=xyz` as a GET/POST query parameter
-- fallback: passing username & password via HTTP Basic Authentication (not recommended)
+- https://www.cloudflare.com/learning/access-management/what-is-saml/
+- https://docs.goauthentik.io/docs/providers/saml/
+- https://docs.goauthentik.io/docs/providers/oauth2/
+- https://www.authelia.com/configuration/identity-providers/introduction/#openid-connect-10
 
-<img width="738" alt="Screenshot 2024-05-03 at 4 40 22 PM" src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/ad914143-f48b-4d4e-aa8c-f89a2c70cee7">
+> *We'd welcome PRs to add support for more providers using `django-allauth`!*
 
 ---
 
-## Web Server UI Permissions
+<br/>
 
-Make sure to set up your Web UI permissions to allow or prevent guest access to content according to your needs. See the links below for more information.
+## REST API
 
-- https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view
-- https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview
+The new REST API released in v0.8.0 supports several methods of authentication using an API token (or username & password).
+You can read the API docs and test the authentication methods here: [`/api/v1/docs`](http://127.0.0.1:8000/api/v1/docs).
+
+<img width="738" alt="Screenshot 2024-05-03 at 4 40 22 PM" src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/ad914143-f48b-4d4e-aa8c-f89a2c70cee7">
+
+To get started using the REST API, generate an API key for your user through the Admin Web UI: `[/admin/api/apitoken/add/`](http://127.0.0.1:8000/admin/api/apitoken/add/) or by calling the `/api/v1/auth/get_api_token` endpoint:
+
+```bash
+curl -X 'POST' \
+  'http://127.0.0.1:8000/api/v1/auth/get_api_token' \
+  -H 'Content-Type: application/json'
+  -d '{"username": "YOURUSERNAMEHERE", "password": "YOURPASSWORDHERE"}'
+```
+
+#### Further Reading
+
+- https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/api/auth.py#:~:text=API_AUTH_METHODS
+- https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/api/v1_auth.py
+- https://django-ninja.dev/guides/authentication/
+- https://swagger.io/docs/specification/authentication/
+
+### Bearer Token Authentication
+
+Pass `Bearer=YOURAPITOKENHERE` as a bearer token request header.
+
+```bash
+curl -X 'GET' \
+  'http://127.0.0.1:8000/api/v1/core/snapshots?limit=10' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer YOURAPITOKENHERE'
+```
+
+### Request Header Authentication
+
+Pass `X-API-Key=YOURAPITOKENHERE` as a request header.
+
+```bash
+curl -X 'GET' \
+  'http://127.0.0.1:8000/api/v1/core/snapshots?limit=10' \
+  -H 'accept: application/json' \
+  -H 'X-API-Key: YOURAPITOKENHERE'
+```
+
+### Query Parameter Authentication
+
+Pass `api_key=YOURAPITOKENHERE` as a GET/POST query parameter.
+
+```bash
+curl -X 'GET' \
+  'http://127.0.0.1:8000/api/v1/core/snapshots?limit=10&api_key=YOURAPITOKENHERE' \
+  -H 'accept: application/json'
+```
+
+### HTTP Basic Authentication
+
+Pass your user's username & password via HTTP Basic Authentication (not recommended).
+
+```bash
+curl -X 'GET' \
+  'http://127.0.0.1:8000/api/v1/core/snapshots?limit=10' \
+  -u 'YOURUSERNAMEHERE:YOURPASSWORDHERE'
+  -H 'accept: application/json'
+```
