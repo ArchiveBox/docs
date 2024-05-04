@@ -66,11 +66,12 @@ Urls look like: `https://demo.archivebox.io/archive/1493350273/en.wikipedia.org/
 ## Security Concerns
 
 > [!CAUTION]
-> Re-hosting untrusted archived web content on a public domain can potentially compromise *all apps hosted on that domain* (including other subdomains)!
+> Re-hosting untrusted archived content on a domain can potentially compromise *all apps on that domain*!  
+> (including other subdomains)
 
-Make sure you thoroughly understand the dangers of [hosting untrusted HTML/JS/CSS that may be captured during archiving](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy), and how viewing it can enable [CSRF attacks](https://en.wikipedia.org/wiki/Cross-site_request_forgery) across all apps on the same domain. If a logged-in user happens to visit an archived page with malicious Javascript embedded, it can hijack any cookies on the domain and pretend to be them.
+Make sure you thoroughly understand the dangers of [hosting untrusted HTML/JS/CSS that may be captured during archiving](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy), and how viewing it can enable [CSRF attacks](https://en.wikipedia.org/wiki/Cross-site_request_forgery) across all apps on the same domain. If a logged-in user happens to visit an archived page with malicious Javascript embedded, it would allow the JS to hijack any cookies on the domain and pretend to be them, potentially exfiltrating or modifying other Snapshots/data on your server.
 
-(This is why we don't support serving ArchiveBox from a subdirectory on a shared domain like `myapps.example.com/archivebox/`)
+(This is why we don't support serving ArchiveBox from a subdirectory like `myapps.example.com/archivebox/`, it's too dangerous to share domains)
 
 The industry standard approach is to use a separate domain for untrusted content, for example Github uses `githubusercontent.com` and Google uses `googleusercontent.com` for all user-uploaded files. If hosting ArchiveBox publicly, do the same and keep it on an isolated domain in order to mitigate potential damage of leaked cookies, CORS, and CSRF attack.  
 
