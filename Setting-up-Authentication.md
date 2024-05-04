@@ -87,8 +87,8 @@ The IdP server can act as a middleman gateway to authenticate users using an ext
 
 ## REST API
 
-The new REST API released in v0.8.0 supports several methods of authentication using an API token (or username & password).
-You can read the API docs and test the authentication methods here: [`/api/v1/docs`](http://127.0.0.1:8000/api/v1/docs).
+The new REST API released in v0.8.0 supports several methods of authentication for convenience.  
+You can read the API docs, test out API requests interactively, and try authentication methods by visiting this URL on your ArchiveBox server: [`/api/v1/docs`](http://127.0.0.1:8000/api/v1/docs).
 
 <img width="738" alt="Screenshot 2024-05-03 at 4 40 22 PM" src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/ad914143-f48b-4d4e-aa8c-f89a2c70cee7">
 
