@@ -21,7 +21,7 @@ open http://127.0.0.1:8000
 ```
 
 This server is enabled out-of-the-box if you're using `docker-compose` to run ArchiveBox,
-and there is a commented-out example nginx config with SSL set up as well.
+and there is a commented-out example nginx config with SSL set up as well. If hosting publicly, it's essential to place an SSL termination server in front of ArchiveBox (e.g. [`traefik`](https://github.com/traefik/traefik), [`caddy`](https://caddyserver.com/docs/automatic-https#activation), or [`cloudflared`](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/)), 
 
 > [!TIP]
 > Advanced: You can use nginx to serve the static `/archive/` dir directly from the filesystem to increase performance.
