@@ -88,9 +88,9 @@ The IdP server can act as a middleman gateway to authenticate users using an ext
 ## REST API
 
 The new REST API released in v0.8.0 supports several methods of authentication for convenience.  
-You can read the API docs, test out API requests interactively, and try authentication methods by visiting this URL on your ArchiveBox server: 
- 
-[`http://127.0.0.1:8000/api/v1/docs`](http://127.0.0.1:8000/api/v1/docs).
+  
+To see API docs, try endpoints interactively, and see how auth works, visit this URL on your ArchiveBox server:  
+[`http://127.0.0.1:8000/api/v1/docs`](http://127.0.0.1:8000/api/v1/docs)
 
 <img width="738" alt="Screenshot of django-ninja Swagger API docs page" src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/ad914143-f48b-4d4e-aa8c-f89a2c70cee7">
 
