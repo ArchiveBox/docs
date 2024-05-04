@@ -118,7 +118,7 @@ Do not run ArchiveBox as root for a number of reasons:
  - ArchiveBox does lots of HTML parsing, filesystem access, and shell command execution.  A bug in any one of those subsystems could potentially lead to deleted/damaged data on your hard drive, or full system compromise unless restricted to a user that only has permissions to access the directories needed
  - Do you really trust a project created by a Github user called `@pirate` 😉? Why give a random program off the internet root access to your entire system? (I don't have malicious intent, I'm just saying in principle you should not be running random Github projects as root)
 
-**Instead, you should run ArchiveBox as your normal user, or create a user with less privileged access:**
+**Instead, you should run ArchiveBox under a separate user account with less privileged access:**
 ```bash
 useradd -r -g archivebox -G audio,video archivebox  # the audio & video groups are used by chrome
 mkdir -p /home/archivebox/data
@@ -130,6 +130,12 @@ sudo -u archivebox archivebox add ...
 ~~If you absolutely must run it as root for some reason, a footgun is provided: you can set [`ALLOW_ROOT=True`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#ALLOW_ROOT) via environment variable or in your ArchiveBox.conf file.~~ This footgun option was removed (I'm sorry, the support burden of helping people who messed up their systems by running everything as root was too high).
 
 <img src="https://imgur.zervice.io/ca1he6I.png" width="40px" align="right"/>
+
+<br/>
+
+---
+
+<br/>
 
 ## Output Folder
 
@@ -149,7 +155,7 @@ How much are you planning to archive?  Only a few bookmarked articles, or thousa
 
 #### Purging entries
 
-Unless `--delete` is passed to `archivebox remove`, Snapshots removed from the index remain in the filesystem and their `./archive/<timestamp>` folders need to be deleted manually to be fully removed. Imported URLs are also logged separately in `./sources`, `./logs`, and the Sonic full-text index `./sonic` and should be removed manually as well to clear all traces of a URL added by accident. You can search for a URL on the filesystem you're trying to remove using `grep -a -r "https://example.com/url/to/search/for"`.
+Unless `--yes --delete` is passed to `archivebox remove`, Snapshots removed from the index remain in the filesystem and their `./archive/<timestamp>` folders need to be deleted manually to be fully removed. Imported URLs are also logged separately in `./sources`, `./logs`, and the Sonic full-text index `./sonic` and should be removed manually as well to clear all traces of a URL added by accident. You can search for a URL on the filesystem you're trying to remove using `grep -a -r "https://example.com/url/to/search/for"`.
 
 #### Permissions
 
