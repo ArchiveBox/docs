@@ -151,7 +151,7 @@ curl -X 'POST' \
 
 ### Bearer Token Authentication
 
-Pass `Bearer=YOURAPITOKENHERE` as a bearer token request header.
+Pass `Authorization=Bearer YOURAPITOKENHERE` as a request header.
 
 ```bash
 curl -X 'GET' \
@@ -183,7 +183,7 @@ curl -X 'GET' \
 
 ### HTTP Basic Authentication
 
-Pass your user's username & password via HTTP Basic Authentication (not recommended).
+Pass your ArchiveBox admin username & password via HTTP Basic Authentication.
 
 ```bash
 curl -X 'GET' \
