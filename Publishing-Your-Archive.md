@@ -77,11 +77,11 @@ Archiving for personal backups, research, and some other use-cases are covered b
 
 Please modify the [`FOOTER_INFO`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#footer_info) config variable to add your contact info to the footer of your index.
 
-Note ArchiveBox prevents search engines from indexing your archives using [`/robots.txt`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/templates/static/robots.txt#L2) by default, it's not recommended to [disable](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#custom_templates_dir) this as it often leads to a flood of automated takedown requests and abuse reports to your hosting provider (from anti-piracy bots that scan for cloned copyrighted content via search engines).
-
-#### Further Reading
+Note: ArchiveBox prevents search engines from indexing your archives using [`/robots.txt`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/templates/static/robots.txt#L2) by default. It's not recommended to [disable](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#custom_templates_dir) this as it often leads to a flood of automated takedown requests and abuse reports to your hosting provider (from anti-piracy bots that scan for cloned copyrighted content via search engines).
 
 *Keep in mind individuals, companies, schools, and libraries all have different copyright exemptions in different countries. Double check the specific laws for your situation in your own jurisdiction!*
+
+#### Further Reading: USA Copyright Law & Fair Use Exemptions
 
 - https://www.copyright.gov/title17/
 - https://help.archive.org/help/rights/
