@@ -23,6 +23,8 @@ ArchiveBox supports several types of authentication for users logging in via the
 
 ## Admin Web UI Authentication Methods
 
+<br/>
+
 ### Username & Password (the default)
 
 Make sure you have an admin User created first, you can run the commands below to create/edit a user from the CLI:
@@ -37,18 +39,21 @@ archivebox manage changepassword <username>
 
 If using Docker or Docker Compose, you can alternatively configure [`ADMIN_USERNAME` & `ADMIN_PASSWORD`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#admin_username--admin_password) to create an admin user automatically on first run.
 
-Existing users can be managed from the Admin UI here: `/admin/auth/user/`, and you can change your password in the UI here: `/admin/password_change/`.
+Existing users can be managed from the Admin UI here: `/admin/auth/user/`,  
+and you can change your password in the UI here: `/admin/password_change/`.
 
 <br/>
 
 ### Reverse Proxy Authentication
 
-> Can be used with reverse proxy auth provider like [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy), [Cloudflare Zero Trust](https://developers.cloudflare.com/cloudflare-one/tutorials/access-workers/#create-a-worker-with-custom-headers), [Authentik](https://docs.goauthentik.io/docs/providers/proxy/), and others.
+> Can be used with a reverse proxy auth provider like [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy), [Cloudflare Zero Trust](https://developers.cloudflare.com/cloudflare-one/tutorials/access-workers/#create-a-worker-with-custom-headers), [Authentik](https://docs.goauthentik.io/docs/providers/proxy/), and others.
 
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#reverse_proxy_user_header
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#reverse_proxy_whitelist
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#logout_redirect_url
 - https://github.com/ArchiveBox/ArchiveBox/pull/866
+
+<br/>
 
 ### LDAP Authentication
 
@@ -103,6 +108,8 @@ curl -X 'POST' \
 - https://django-ninja.dev/guides/authentication/
 - https://swagger.io/docs/specification/authentication/
 
+<br/>
+
 ### Bearer Token Authentication
 
 Pass `Bearer=YOURAPITOKENHERE` as a bearer token request header.
@@ -144,4 +151,15 @@ curl -X 'GET' \
   'http://127.0.0.1:8000/api/v1/core/snapshots?limit=10' \
   -u 'YOURUSERNAMEHERE:YOURPASSWORDHERE'
   -H 'accept: application/json'
+```
+
+### Session Cookie Authentication
+
+Log in via the Admin Web UI: `/admin/login/`, you can then re-use your login session id (stored in the `sessionid` cookie) for REST API requests. This makes it convenient to test API requests from a browser environment where you're already logged in.
+
+```bash
+curl -X 'GET' \
+  'http://127.0.0.1:8000/api/v1/core/snapshots?limit=10' \
+  -H 'accept: application/json' \
+  -H 'Cookie: sessionid=YOURSESSIONIDVALUEHERE'
 ```
