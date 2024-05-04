@@ -77,7 +77,7 @@ Archiving for personal backups, research, and some other use-cases are covered b
 
 Please modify the [`FOOTER_INFO`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#footer_info) config variable to add your contact info to the footer of your index.
 
-Note ArchiveBox prevents search engines from indexing your archives using `/robots.txt` by default, it's not recommended to disable this as it often leads to a flood of automated takedown requests from bots that check for cloned content online.
+Note ArchiveBox prevents search engines from indexing your archives using [`/robots.txt`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/templates/static/robots.txt#L2) by default, it's not recommended to [disable](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#custom_templates_dir) this as it often leads to a flood of automated takedown requests and abuse reports to your hosting provider (from bots that periodically scan for cloned content online).
 
 #### Further Reading
 
