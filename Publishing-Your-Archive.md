@@ -75,7 +75,7 @@ Archiving for personal backups, research, and some other use-cases are covered b
 - The copying cannot be systematic (e.g., to replace subscriptions)
 - All copies made must include a notice stating that the materials may be protected under copyright.
 
-Please modify the `FOOTER_INFO` config variable to add your contact info to the footer of your index.
+Please modify the [`FOOTER_INFO`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#footer_info) config variable to add your contact info to the footer of your index.
 
 You may also want to blacklist your archive in `/robots.txt` if you don't want to be publicly associated with all the links you archive via search engine results.
 
