@@ -1,8 +1,8 @@
 ArchiveBox supports several types of authentication for users logging in to the Web UI or using the REST API.
 
 > [!WARNING]
-> This page is a work in progress, follow the links to learn more about each authentication setup below.
-> *To help make this page better, submit a pull request here: [`ArchiveBox/docs/Setting-Up-Authentication.md`](https://github.com/ArchiveBox/docs/blob/master/Setting-up-Authentication.md).
+> *This page is a work in progress, follow the links to learn more about each authentication setup below.*  
+> To help make this page better, submit a pull request here: [`ArchiveBox/docs/Setting-Up-Authentication.md`](https://github.com/ArchiveBox/docs/blob/master/Setting-up-Authentication.md).
 
 If you encounter any issues or need help feel free to ask questions in our public forum: https://zulip.archivebox.io
 
