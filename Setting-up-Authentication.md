@@ -39,8 +39,8 @@ archivebox manage changepassword <username>
 
 If using Docker or Docker Compose, you can alternatively configure [`ADMIN_USERNAME` & `ADMIN_PASSWORD`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#admin_username--admin_password) to create an admin user automatically on first run.
 
-Existing users can be managed from the Admin UI here: `/admin/auth/user/`,  
-and you can change your password in the UI here: `/admin/password_change/`.
+Existing users can be managed from the Admin UI here: `http://127.0.0.1:8000/admin/auth/user/`,  
+and you can change your password in the UI here: `http://127.0.0.1:8000/admin/password_change/`.
 
 <br/>
 
@@ -88,11 +88,13 @@ The IdP server can act as a middleman gateway to authenticate users using an ext
 ## REST API
 
 The new REST API released in v0.8.0 supports several methods of authentication for convenience.  
-You can read the API docs, test out API requests interactively, and try authentication methods by visiting this URL on your ArchiveBox server: [`/api/v1/docs`](http://127.0.0.1:8000/api/v1/docs).
+You can read the API docs, test out API requests interactively, and try authentication methods by visiting this URL on your ArchiveBox server: 
+ 
+[`http://127.0.0.1:8000/api/v1/docs`](http://127.0.0.1:8000/api/v1/docs).
 
-<img width="738" alt="Screenshot 2024-05-03 at 4 40 22 PM" src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/ad914143-f48b-4d4e-aa8c-f89a2c70cee7">
+<img width="738" alt="Screenshot of django-ninja Swagger API docs page" src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/ad914143-f48b-4d4e-aa8c-f89a2c70cee7">
 
-To get started using the REST API, generate an API key for your user through the Admin Web UI: `[/admin/api/apitoken/add/`](http://127.0.0.1:8000/admin/api/apitoken/add/) or by calling the `/api/v1/auth/get_api_token` endpoint:
+To get started using the REST API, generate an API key for your user through the Admin Web UI: `[http://127.0.0.1:8000/admin/api/apitoken/add/`](http://127.0.0.1:8000/admin/api/apitoken/add/) or by calling the `http://127.0.0.1:8000/api/v1/auth/get_api_token` endpoint:
 
 ```bash
 curl -X 'POST' \
