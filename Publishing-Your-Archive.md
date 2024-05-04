@@ -64,8 +64,29 @@ More info:
 
 ## Copyright Concerns
 
-Be aware that some sites you archive may not allow you to rehost their content publicly for copyright reasons, it's up to you to host responsibly and respond to takedown requests appropriately.
+> [!WARNING]
+> Be aware that some sites you archive may not allow you to rehost their content publicly for copyright reasons, it's up to you to host responsibly and respond to takedown requests appropriately.
+
+Archiving for personal backups, research, and some other use-cases are covered by [fair use copyright exemptions](https://guides.library.oregonstate.edu/copyright/libraries) in the USA, but if your archive can deprive the original author of revenue (e.g. if you rehost it publicly), then your use case might no longer be covered and you have to respond to DMCA takedown notices.
+
+- Copies cannot be made for commercial purposes
+- The copying cannot be systematic (e.g., to replace subscriptions)
+- All copies made must include a notice stating that the materials may be protected under copyright.
 
 You may also want to blacklist your archive in `/robots.txt` if you don't want to be publicly associated with all the links you archive via search engine results.
 
 Please modify the `FOOTER_INFO` config variable to add your contact info to the footer of your index.
+
+#### Further Reading
+
+*Keep in mind individuals, companies, schools, and libraries all have different copyright exemptions in different countries. Double check the specific laws for your situation in your own jurisdiction!*
+
+- https://www.copyright.gov/title17/
+- https://help.archive.org/help/rights/
+- https://blog.archive.org/2024/03/01/fair-use-in-action-at-the-internet-archive/
+- https://www.lib.ncsu.edu/workshops/understanding-copyright-and-fair-use-archival-research
+- https://libguides.colorado.edu/c.php?g=1154758&p=8428124
+- https://fairuse.stanford.edu/2003/11/10/digital_preservation_and_copyr/
+- https://guides.library.oregonstate.edu/copyright/libraries
+- https://www.clir.org/pubs/reports/pub112/body/
+- https://github.com/pirate/internet-archiving-talk
