@@ -48,6 +48,21 @@ and you can change your password in the UI here: `http://127.0.0.1:8000/admin/pa
 
 > Can be used with a reverse proxy auth provider like [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy), [Cloudflare Zero Trust](https://developers.cloudflare.com/cloudflare-one/tutorials/access-workers/#create-a-worker-with-custom-headers), [Authentik](https://docs.goauthentik.io/docs/providers/proxy/), and others.
 
+Set these ArchiveBox configuration values to based on your reverse proxy setup and needs:
+```bash
+# REQUIRED: the header where your upstream reverse proxy will place the authenticated user's username/email
+# EXAMPLE: Cf-Access-Authenticated-User-Email (if using Cloudflare)
+REVERSE_PROXY_USER_HEADER=X-Remote-User
+
+# REQUIRED: the IP/CIDR of your upstream reverse proxy server
+# WARNING: make sure this range contains ONLY your reverse proxy server!
+# ArchiveBox will completely trust any IP in this range for authentication
+REVERSE_PROXY_WHITELIST=192.0.2.3/32
+
+# OPTIONAL: redirect users to an external URL after they log out
+LOGOUT_REDIRECT_URL=https://auth.yourcompany.example.com/after/logout
+```
+
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#reverse_proxy_user_header
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#reverse_proxy_whitelist
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#logout_redirect_url
@@ -58,6 +73,26 @@ and you can change your password in the UI here: `http://127.0.0.1:8000/admin/pa
 ### LDAP Authentication
 
 > Can be used with an SSO provider like [Authentik](https://github.com/goauthentik/authentik), [Authelia](https://github.com/authelia/authelia), [Okta / Auth0](https://www.okta.com/), [Keycloak](https://www.keycloak.org/), and others.
+
+```bash
+# first, install optional ldap addon to use this feature
+pip install archivebox[ldap]
+```
+
+Then set these configuration values to finish configuring LDAP:
+```bash
+LDAP=True
+LDAP_SERVER_URI="ldap://ldap.example.com:3389"
+LDAP_BIND_DN="ou=archivebox,ou=services,dc=ldap.example.com"
+LDAP_BIND_PASSWORD="secret-bind-user-password"
+LDAP_USER_BASE="ou=users,ou=archivebox,ou=services,dc=ldap.example.com"
+LDAP_USER_FILTER="(objectClass=user)"
+
+LDAP_USERNAME_ATTR="uid"
+LDAP_FIRSTNAME_ATTR="givenName"
+LDAP_LASTNAME_ATTR="sn"
+LDAP_EMAIL_ATTR="mail"
+```
 
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#ldap
 - https://github.com/ArchiveBox/ArchiveBox/pull/1214
