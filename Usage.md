@@ -384,7 +384,7 @@ You can interact with ArchiveBox as a Python library from external scripts or pr
 
 This API is a *local* API, designed to be used on the same machine as the ArchiveBox collection.
 
-For example you could create and a script `add_archivebox_url.py` like so:
+For example you could creat a script `add_archivebox_url.py` like so:
 ```python
 import os
 DATA_DIR = '~/archivebox/data'
