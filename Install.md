@@ -171,7 +171,11 @@ playwright install --with-deps chromium
 #### FreeBSD
 
 ```bash
-sudo pkg install python node wget curl git yt-dlp ffmpeg ripgrep chromium-browser
+sudo pkg install python git wget curl youtube_dl ripgrep py311-pip py311-sqlite3 npm ffmpeg
+sudo pkg install chromium
+
+# or for older versions:
+# sudo pkg install python node wget curl git yt-dlp ffmpeg ripgrep chromium-browser
 ```
 
 #### OpenBSD
