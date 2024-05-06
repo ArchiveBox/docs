@@ -103,6 +103,8 @@ LDAP_EMAIL_ATTR="mail"
 
 ### Not Yet Supported: SAML / OAuth2 / OpenID Authentication
 
+> *We'd welcome PRs to add support for these using `django-allauth`!*
+
 These methods are not natively supported by ArchiveBox at the moment. However it is still possible to use them with ArchiveBox by running your own [IdP (Identity Provider)](https://www.cloudflare.com/learning/access-management/what-is-an-identity-provider/) server (e.g. [Authentik](https://docs.goauthentik.io/docs/providers/saml/), [Authelia](https://www.authelia.com/configuration/identity-providers/introduction/#openid-connect-10), etc.).
 
 The IdP server can act as a middleman gateway to authenticate users using an external SAML/OAuth/OpenID/etc. provider (e.g. Google, Microsoft, Github, Facebook, etc.), and then pass on the authenticated user's session info to ArchiveBox using LDAP or reverse proxy headers (as described above).
@@ -111,8 +113,6 @@ The IdP server can act as a middleman gateway to authenticate users using an ext
 - https://docs.goauthentik.io/docs/providers/saml/
 - https://docs.goauthentik.io/docs/providers/oauth2/
 - https://www.authelia.com/configuration/identity-providers/introduction/#openid-connect-10
-
-> *We'd welcome PRs to add support for more providers using `django-allauth`!*
 
 <br/>
 
