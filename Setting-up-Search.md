@@ -121,20 +121,22 @@ archivebox config --set RIPGREP_BINARY=ugrep+
 
 ### `sonic` ⭐️ (the recommended upgrade path for most people)
 
-Sonic is a fast, lightweight, rust-based alternative to super-heavy traditional search backends like Elasticsearch. It is capable of normalizing natural language search queries, fuzzy matching, and searching Unicode, without needing to maintain a duplicate document store index of all the searchable text. Instead it works as an index store, storing only the IDs of the Snapshots with a super-compressed internal index. This allows it to scale to searching terabytes of archive data while maintaining an index only a fraction of that size.
+[Sonic](https://github.com/valeriansaliou/sonic) is a fast, lightweight, rust-based alternative to super-heavy traditional search backends like Elasticsearch. It is capable of normalizing natural language search queries, fuzzy matching, and searching Unicode, without needing to maintain a duplicate document store index of all the searchable text.
 
-It is the recommended backend for most ArchiveBox users who need to scale beyond what `ripgrep` can provide.
+Internally it functions as an index store, storing only the original IDs of the Snapshots with a super-compressed representation of the text. This allows it to scale to searching terabytes of archive data while maintaining an index only a fraction of that size.
 
-Using sonic with ArchiveBox in Docker Compose is the easiest way to get started, though you can also use it without Docker.
+*ArchiveBox has supported Sonic for years, and it is the most thoroughly tested and recommended backend for ArchiveBox users that need to scale beyond `ripgrep`.*
+
+Using [sonic with ArchiveBox in Docker Compose](https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml) is the easiest way to get started, though you can also use it without Docker by [installing it manually](https://github.com/valeriansaliou/sonic#installation).
 
 ```bash
-# edit docker-compose.yml and uncomment the lines related to sonic
+# edit docker-compose.yml to uncomment the lines that enable sonic
 nano docker-compose.yml
 
-# make sure ArchiveBox is configured to use Sonic
+# make sure ArchiveBox is configured to use the Sonic backend
 docker compose run archivebox config --set SEARCH_BACKEND_ENGINE=sonic
 
-# restart all the containers to apply the changes
+# restart the containers to apply changes and start the Sonic worker
 docker compose down
 docker compose up
 
@@ -142,7 +144,7 @@ docker compose up
 docker compose logs sonic
 docker compose run archivebox version
 
-# add any existing archivebox data to the new Sonic index (may take an hour or longer depending on storage speed and collection size)
+# backfill any existing archivebox data into the Sonic index (may take an hour or longer depending on storage speed and collection size)
 docker compose run archivebox update --index-only
 
 # then test it out:
