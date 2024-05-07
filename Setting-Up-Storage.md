@@ -21,6 +21,7 @@ services:
 <li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#output-folder">Wiki: Security Overview (Output Folder)</a></li>
 <li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Publishing-Your-Archive">Wiki: Publishing Your Archive</a></li>
 <li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives">Wiki: Upgrading or Merging Archives</a></li>
+<li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Troubleshooting#other-database-or-filesystem-issues">Wiki: Troubleshooting Filesystem Issues</a></li>
 </ul>
 
 ---
