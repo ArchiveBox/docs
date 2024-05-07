@@ -174,7 +174,7 @@ docker compose run archivebox list --filter-type=search 'some text to search'
 
 ### `SQLite FTS5`
 
-This is a recently added experimental option that uses a separate SQLite3 Database (similar to the one archivebox already uses for Snapshot records) to provide full-text search.
+This is a [recently added](https://github.com/ArchiveBox/ArchiveBox/pull/1241) experimental option that uses a separate SQLite3 Database (similar to the one ArchiveBox already uses for Snapshot metadata) to provide full-text search.
 
 ```bash
 archivebox config --set SEARCH_BACKEND_ENGINE=sqlite
