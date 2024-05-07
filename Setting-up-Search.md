@@ -163,7 +163,7 @@ docker compose run archivebox list --filter-type=search 'some text to search'
 - maintains lightweight, compressed search index that is minuscule compared to original data
 - all-in-one binary written in rust, available cross-platform and easy to deploy
 - supports advanced full-text search features like normalization, stemming, etc.
-- supports indexing and querying on a remote server (many separate ArchiveBox instances can share a single `sonic` instance)
+- supports indexing and querying on a remote server (many ArchiveBox instances can share a single `sonic` instance)
 
 #### Cons
 
