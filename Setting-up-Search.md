@@ -35,7 +35,7 @@ archivebox config --get SEARCH_BACKEND_ENGINE
 
 ArchiveBox provides search functionality out-of-the-box using a simple but efficient tool called [`ripgrep`](https://github.com/BurntSushi/ripgrep).
 
-Ripgrep is the fastest currently available filesystem search tool that scans over the raw data directly. We chose it as the default so that beginners and 95% users with small collections can have an experience that "just works" without needing to install and maintain complex additional dependencies or background workers.
+Ripgrep is the fastest currently available filesystem search tool that scans over the raw data directly. We chose it as the default so that beginners and 95% of users with small collections can have an experience that "just works", without needing to install and maintain complex additional dependencies or background workers.
 
 However, there are some fundamental limitations of scanning through every file on disk each time a search is done, so ArchiveBox provides a number of additional search backend options that users can choose from when they outgrow the `ripgrep` default.
 
