@@ -28,7 +28,7 @@ You can search your ArchiveBox data in a number of ways:
 # this setting controls which search backend ArchiveBox uses
 archivebox config --set SEARCH_BACKEND_ENGINE=[ripgrep]|sonic|sqlite
 
-# to information about the backend you are currently using, run:
+# to see information about the backend you are currently using, run:
 archivebox version
 archivebox config --get SEARCH_BACKEND_ENGINE
 ```
