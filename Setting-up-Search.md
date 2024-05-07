@@ -14,6 +14,7 @@ You can search your ArchiveBox data in a number of ways:
 > This will be [improved in the future](https://zulip.archivebox.io/#narrow/stream/154-support/topic/Full.20Text.20Search.20works.2E.2E.2E.20but.20is.20there.20a.20UI.3F) to highlight the *specific paragraph/line/area that matched* within a Snapshot.  
 > For now we recommend using Ctl+F in the browser or one of the external tools listed above to further filter for a term within a Snapshot's contents.
 
+
 <br/>
 
 ---
@@ -151,6 +152,8 @@ docker compose run archivebox update --index-only
 docker compose run archivebox list --filter-type=search 'some text to search'
 ```
 
+*Fore more detailed instructions [see here](https://github.com/ArchiveBox/ArchiveBox/issues/956#issuecomment-1320587158)...*
+
 #### Pros
 
 - extremely fast, most queries complete in microseconds even with 100k+ snapshots
@@ -211,3 +214,19 @@ archivebox config --set FTS_SQLITE_MAX_LENGTH=1000000000
 - Maintains a (compressed, but still potentially large) duplicate copy of all searchable text in `search.sqlite3` db
 - Does not support searching binary files PDFs, eBooks, compressed archives, etc.
 - Search indexing and querying must be performed on same server as ArchiveBox data (we don't yet support sending FTS5 queries to a remote server)
+
+<br/>
+
+---
+
+<br/>
+
+### Further Reading
+
+### Further Reading
+
+- https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml#:~:text=SEARCH_BACKEND_ENGINE
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#ripgrep_binary
+
+* [#1139 Feature Request: Add AI-assisted summarization, tagging, search, and more using LLMs / RAG](https://github.com/ArchiveBox/ArchiveBox/issues/1139)
+* 
