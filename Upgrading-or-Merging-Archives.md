@@ -80,7 +80,7 @@ docker ps -a -q  --filter ancestor=archivebox/archivebox  # find any currently r
 docker kill <image>    # stop any currently running archivebox versions
 
 docker pull archivebox/archivebox
-docker run -v $PWD:/data -it archivebox/archivebox init --setup  # upgrade the collection to the latest version
+docker run -v $PWD:/data -it archivebox/archivebox init  # upgrade the collection to the latest version
 
 # restart the archivebox server container if needed
 docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox server 0.0.0.0:8000
@@ -138,11 +138,11 @@ Two or more existing ArchiveBox collection dirs can be merged together by simply
   pip install --upgrade archivebox   # or follow instructions above for upgrading w/ Docker
 
   cd /path/to/archivebox1/data
-  archivebox init --setup
+  archivebox init
   archivebox status
 
   cd /path/to/archivebox2/data
-  archivebox init --setup
+  archivebox init
   archivebox status
 
   # ... repeat the same for each collection if merging more than two
@@ -152,7 +152,7 @@ Two or more existing ArchiveBox collection dirs can be merged together by simply
   ```bash
   mkdir /path/to/archivebox_new
   cd /path/to/archivebox_new
-  archivebox init --setup
+  archivebox init
   ```
 
 3. Copy everything under `./archive/*` in each old collection into the new collection's `./archive/` folder
@@ -165,7 +165,7 @@ Two or more existing ArchiveBox collection dirs can be merged together by simply
 4. Run `archivebox init` in the new merged collection to regenerate the new index
   ```bash
   cd /path/to/archivebox_new
-  archivebox init --setup
+  archivebox init
   ```
 
 5. The new collection should now contain all the entries from the old collections combined
