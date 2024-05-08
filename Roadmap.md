@@ -92,7 +92,7 @@ To see how this spec has been scheduled / implemented / released so far, read th
  - ✅ [v0.4.x](https://github.com/ArchiveBox/ArchiveBox/pull/207) (~2019/04)
  - ✅ [v0.5.x](https://github.com/ArchiveBox/ArchiveBox/pull/552) (~2020/11)
  - ✅ [v0.6.x](https://github.com/ArchiveBox/ArchiveBox/pull/680) (~2021/03)
- - 🏖️ sabbatical / coding hiatus for 2022 / mostly answered tickets + merged PRs
+ - 🏖️ `sabbatical / coding hiatus during 2022`
  - ✅ [v0.7.x](https://github.com/ArchiveBox/ArchiveBox/pull/721) (~2023/11)
  - 🛠 [v0.8.x](https://github.com/ArchiveBox/ArchiveBox/pull/1311) (~2024/05)
  - 📅 v0.9.x up next...
