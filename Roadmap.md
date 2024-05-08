@@ -93,8 +93,9 @@ To see how this spec has been scheduled / implemented / released so far, read th
  - ✅ [v0.5.x](https://github.com/ArchiveBox/ArchiveBox/pull/552) (~2020/11)
  - ✅ [v0.6.x](https://github.com/ArchiveBox/ArchiveBox/pull/680) (~2021/03)
  - 🏖️ sabbatical / coding hiatus for 2022 / mostly answered tickets + merged PRs
- - 🛠 v0.7.x next ... (planned for 2023)
-
+ - ✅ [v0.7.x](https://github.com/ArchiveBox/ArchiveBox/pull/721) (~2023/11)
+ - 🛠 [v0.8.x](https://github.com/ArchiveBox/ArchiveBox/pull/1311) (~2024/05)
+ - 📅 v0.9.x up next...
 
 ---
 
@@ -116,8 +117,8 @@ To see how this spec has been scheduled / implemented / released so far, read th
 - `aria2`: https://github.com/ArchiveBox/ArchiveBox/issues/1355
 - `podcast-archiver`: https://github.com/ArchiveBox/ArchiveBox/issues/1357
 - `bdfr`: https://github.com/ArchiveBox/ArchiveBox/issues/778
-- sourcemap downloader: https://github.com/ArchiveBox/ArchiveBox/issues/1291
 - `cutycapt` screenshots: https://github.com/ArchiveBox/ArchiveBox/issues/253
+- sourcemap downloader: https://github.com/ArchiveBox/ArchiveBox/issues/1291
 
 [ArchiveBox Developer Documentation: Contributing a New Extractor](https://github.com/ArchiveBox/ArchiveBox#contributing-a-new-extractor)
 
