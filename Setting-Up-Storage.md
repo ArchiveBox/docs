@@ -209,7 +209,7 @@ rclone mount
 See here for full more detailed instructions here: [RClone Documentation: The `rclone mount` command](https://rclone.org/commands/rclone_mount/)
 
 > [!TIP]
-> You can use any RClone FUSE mounts as a normal volumes (bind mount) for Docker ArchiveBox, no storage plugin is needed as long as `allow-other` is setup properly.
+> You can use any RClone FUSE mounts as a normal volumes (bind mount) for Docker ArchiveBox, typically no storage plugin is needed as long as `allow-other` is setup properly.
 
 `docker run -v $PWD:/data -v /opt/archivebox/data/archive:/data/archive`
 
@@ -227,7 +227,7 @@ services:
 
 #### Option B: Running RClone with Docker Storage Plugin
 
-*This is only needed if you are unable to `Option A` for compatibility or performance reasons.*
+*This is only needed if you are unable to `Option A` for compatibility or performance reasons, or if you prefer defining your remote storage config in `docker-compose.yml` instead of `rclone.conf`.*
 
 See here for full instructions: [RClone Documentation: Docker Plugin](https://rclone.org/docker/)
 
