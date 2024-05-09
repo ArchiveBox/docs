@@ -26,11 +26,6 @@ Use these three options to set up your desired permissions for non-admin guest u
 <br/>
 <br/>
 
-> [!WARNING]
-> Configuring advanced auth methods below is pointless if your Web UI permissions allow unrestricted access to guests!
-
-<br/>
-
 ## Admin Web UI Authentication Methods
 
 
