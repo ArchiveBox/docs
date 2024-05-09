@@ -133,7 +133,7 @@ The IdP server can act as a middleman gateway to authenticate users using an ext
 
 ## REST API
 
-The new REST API released in v0.8.0 supports several methods of authentication for convenience.  
+The REST API (available starting in v0.8.0) supports several methods of authentication for convenience.  
   
 To see API docs, try endpoints interactively, and see how auth works, visit this URL on your ArchiveBox server:  
 [`http://127.0.0.1:8000/api/v1/docs`](http://127.0.0.1:8000/api/v1/docs)
@@ -162,6 +162,9 @@ curl -X 'POST' \
 
 ### API Bearer Token Authentication
 
+> [!TIP]
+> Bearer Tokens are the recommended method for the best balance of security and usability.
+
 Pass `Authorization=Bearer YOURAPITOKENHERE` as a request header.
 
 ```bash
@@ -184,6 +187,9 @@ curl -X 'GET' \
 
 ### API Query Parameter Authentication
 
+> [!WARNING]
+> This method is sometimes known as ["Capability URLs"](https://w3ctag.github.io/capability-urls/) and comes with several [important security caveats](https://security.stackexchange.com/questions/118975/is-it-safe-to-include-an-api-key-in-a-requests-url).
+
 Pass `api_key=YOURAPITOKENHERE` as a GET/POST query parameter.
 
 ```bash
@@ -204,6 +210,13 @@ curl -X 'GET' \
 ```
 
 ### API Session Cookie Authentication
+
+> [!WARNING]
+> We recommend sticking to header-based authentication and not using this method unless you fully understand the security risks.
+>
+> Browsers enforce that requests made to the ArchiveBox API from *other domains* will not include any session cookies by default. This is is an important security principle that protects you from CSRF/CORS attacks originating from JS served to users on websites you don't control.
+>
+> You can tell browsers to allow incoming POST requests from specific domains you trust using the [`CSRF_TRUSTED_ORIGINS`](https://docs.djangoproject.com/en/5.0/ref/settings/#csrf-trusted-origins) option. but 
 
 Log in via the Admin Web UI: `/admin/login/`, you can then re-use your login session id (stored in the `sessionid` cookie) for REST API requests. This makes it convenient to test API requests from a browser environment where you're already logged in.
 
