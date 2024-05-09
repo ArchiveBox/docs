@@ -28,7 +28,7 @@
 
  - [[Scheduled Archiving]]
  - [[Setting up Storage]] <small>(NFS/SMB/S3/etc)</small>
- - [[Setting up Authentication]] <small>(SSO/LDAP/OAuth)</small>
+ - [[Setting up Authentication]] <small>(SSO/LDAP/etc)</small>
  - [[Setting up Search]]
  - [[Publishing Your Archive]]
  - [[Chromium Install]]
