@@ -160,10 +160,11 @@ curl -X 'POST' \
 
 <br/>
 
-### API Bearer Token Authentication
-
 > [!TIP]
-> Bearer Tokens are the recommended method for the best balance of security and usability.
+> Bearer Tokens are the recommended method for the best balance of security and convenience.
+
+
+### API Bearer Token Authentication
 
 Pass `Authorization=Bearer YOURAPITOKENHERE` as a request header.
 
@@ -185,10 +186,12 @@ curl -X 'GET' \
   -H 'X-API-Key: YOURAPITOKENHERE'
 ```
 
+<br/>
+
 ### API Query Parameter Authentication
 
 > [!WARNING]
-> This method is sometimes known as ["Capability URLs"](https://w3ctag.github.io/capability-urls/) and comes with several [important security caveats](https://security.stackexchange.com/questions/118975/is-it-safe-to-include-an-api-key-in-a-requests-url).
+> This method is sometimes known as ["Capability URLs"](https://w3ctag.github.io/capability-urls/) because anyone who knows the URL can perform API actions. It comes with several [important security caveats](https://security.stackexchange.com/questions/118975/is-it-safe-to-include-an-api-key-in-a-requests-url) and is not recommended unless you fully understand the risks.
 
 Pass `api_key=YOURAPITOKENHERE` as a GET/POST query parameter.
 
@@ -198,21 +201,10 @@ curl -X 'GET' \
   -H 'accept: application/json'
 ```
 
-### API HTTP Basic Authentication
-
-Pass your ArchiveBox admin username & password via HTTP Basic Authentication.
-
-```bash
-curl -X 'GET' \
-  'http://127.0.0.1:8000/api/v1/core/snapshots?limit=10' \
-  -u 'YOURUSERNAMEHERE:YOURPASSWORDHERE'
-  -H 'accept: application/json'
-```
-
 ### API Session Cookie Authentication
 
 > [!CAUTION]
-> We recommend sticking to header-based authentication and not using this method unless you fully understand the security risks.
+> We recommend sticking to header-based authentication and not using this method unless you fully understand the CSRF/CORS security risks.
 
 Browsers enforce that requests made to the ArchiveBox API from *other domains* will not include any session cookies by default. This is is an [important security principle](https://docs.djangoproject.com/en/5.0/ref/csrf/) that protects you from API requests being initiated from JS served to users on websites you don't control (aka CSRF/CORS attacks).
 
@@ -225,4 +217,19 @@ curl -X 'GET' \
   'http://127.0.0.1:8000/api/v1/core/snapshots?limit=10' \
   -H 'accept: application/json' \
   -H 'Cookie: sessionid=YOURSESSIONIDVALUEHERE'
+```
+
+### API HTTP Basic Authentication
+
+> [!WARNING]
+> Use of this method is fairly uncommon and is only useful in a few niche situations where other methods are not available.  
+> We may remove this method in future ArchiveBox releases.
+
+Pass your ArchiveBox admin username & password via HTTP Basic Authentication.
+
+```bash
+curl -X 'GET' \
+  'http://127.0.0.1:8000/api/v1/core/snapshots?limit=10' \
+  -u 'YOURUSERNAMEHERE:YOURPASSWORDHERE'
+  -H 'accept: application/json'
 ```
