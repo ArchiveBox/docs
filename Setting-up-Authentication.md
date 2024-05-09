@@ -1,6 +1,6 @@
 ArchiveBox supports several types of authentication for users logging in via the Admin Web UI or REST API.
 
-💬 If you need help securing ArchiveBox for an institutional or corporate deployment, we offer [consulting services](https://zulip.archivebox.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102) to provide this and more!
+*💬 If you need help securing ArchiveBox for a corporate environment, we offer [consulting services](https://zulip.archivebox.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102) to provide this and more!
 
 ---
 
