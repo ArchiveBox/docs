@@ -152,7 +152,7 @@ volumes:
 # install the RClone and FUSE packages on your host
 apt install rclone fuse     # or brew install
 
-# IMPORTANT: allow sharing FUSE volumes between Docker and Host
+# IMPORTANT: needed to allow FUSE drives to be shared with Docker
 echo 'user_allow_other' >> /etc/fuse.conf
 ```
 
