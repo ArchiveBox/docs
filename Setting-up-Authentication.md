@@ -203,13 +203,13 @@ curl -X 'GET' \
 
 > [!CAUTION]
 > We recommend sticking to header-based authentication and not using this method unless you deeply understand the CSRF/CORS security risks.
-> This method is mostly useful when testing API requests from the browser devtools or CLI tools, as it lets you skip having to pass an API key with every request.
+> This method is mostly useful when testing API requests from the browser devtools or external tools where CSRF/CORS is not a concern (e.g. `wget`, `curl`), as it lets you skip having to pass an API key with every request.
 
 > Browsers enforce that requests made to the ArchiveBox API from *other domains* will not include any session cookies by default. This is is an [important security principle](https://docs.djangoproject.com/en/5.0/ref/csrf/) that protects you from API requests being initiated from JS served to users on websites you don't control (aka CSRF/CORS attacks).
 >
 > To allow incoming POST requests from other domains **that you trust**, you must add them to [`CSRF_TRUSTED_ORIGINS`](https://docs.djangoproject.com/en/5.0/ref/settings/#csrf-trusted-origins) in the `archivebox/core/settings.py` source code on your machine ([open an issue](https://github.com/ArchiveBox/ArchiveBox/issues/new/choose) and explain your use-case if you want us to expose this as normal configuration option).
 
-Log in via the Admin Web UI: `/admin/login/`, you can then re-use your login session id (stored in the `sessionid` cookie) for REST API requests. By default, this only allows you to make requests from the same domain ArchiveBox is being served on (e.g. from browser devtools open on an ArchiveBox page).
+Log in via the Admin Web UI: `/admin/login/`, you can then re-use your login session id (stored in the `sessionid` cookie) for REST API requests. By default, this only allows you to make requests from the same domain ArchiveBox is being served on (e.g. from browser devtools open on an ArchiveBox page or CLI tools).
 
 ```bash
 curl -X 'GET' \
@@ -217,8 +217,6 @@ curl -X 'GET' \
   -H 'accept: application/json' \
   -H 'Cookie: sessionid=YOURSESSIONIDVALUEHERE'
 ```
-
-<small>This method can also be used for requests <i>outside a browser environment</i> (where CSRF/CORS is not a concern),<br/>e.g. many CLI tools like `curl` or `wget` or apps like Postman can use cookies for request authentication.</small>
 
 <br/>
 
