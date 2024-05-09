@@ -152,14 +152,14 @@ volumes:
 # install the RClone and FUSE packages on your host
 apt install rclone fuse     # or brew install
 
-# allow sharing FUSE volumes between Docker and Host
+# IMPORTANT: allow sharing FUSE volumes between Docker and Host
 echo 'user_allow_other' >> /etc/fuse.conf
 ```
 
 Then define your remote storage config `~/.config/rclone/rclone.conf`:
 
 > [!TIP]
-> You can also create it using the RClone Web GUI: `rclone rcd --rc-web-gui`
+> You can also create `rclone.conf` using the RClone Web GUI: `rclone rcd --rc-web-gui`
 
 ```ini
 # Example rclone.conf using Amazon S3 for storage:
