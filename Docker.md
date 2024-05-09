@@ -65,8 +65,9 @@ mkdir -p ~/archivebox/data && cd ~/archivebox
 curl -fsSL 'https://docker-compose.archivebox.io' > docker-compose.yml
 # (shortcut for getting https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/stable/docker-compose.yml)
 
-# run setup to choose an admin username+password (or set ADMIN_USERNAME/ADMIN_PASSWORD env vars)
-docker compose run archivebox init --setup
+# initialize your collection and create an admin user for the Web UI (or set ADMIN_USERNAME/ADMIN_PASSWORD env vars)
+docker compose run archivebox init
+docker compose run archivebox manage createsuperuser
 ```
 
 To use [Sonic](https://github.com/valeriansaliou/sonic) for improved full-text search, download this config & uncomment the sonic service in `docker-compose.yml`:
