@@ -1,4 +1,4 @@
-> *💬 We offer [consulting services](https://docs.monadical.com/s/archivebox-consulting-services) to set up and secure ArchiveBox on your organization's own storage infrastructure.*
+> *💬 We offer [consulting services](https://docs.monadical.com/s/archivebox-consulting-services) to set up and secure ArchiveBox on your organization's own storage infrastructure.*  
 > <sub>We use this revenue (from mostly corporate clients who can afford to pay) to support open source development.</sub>
 
 ArchiveBox supports a wide range of local and remote filesystems using `rclone` and/or Docker storage plugins. The examples below use [Docker Compose bind mounts](https://docs.docker.com/storage/bind-mounts/) to demonstrate the concepts, you can adapt them to your OS and environment needs.
