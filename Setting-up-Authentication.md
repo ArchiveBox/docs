@@ -152,8 +152,7 @@ curl -X 'POST' \
 
 #### Further Reading
 
-- https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/api/auth.py#:~:text=API_AUTH_METHODS
-- https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/api/v1_auth.py
+- ArchiveBox API auth implementation source code: [`archivebox/api/auth.py`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/api/auth.py#:~:text=API_AUTH_METHODS) + [`archivebox/api/v1_auth.py`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/api/v1_auth.py)
 - https://django-ninja.dev/guides/authentication/
 - https://swagger.io/docs/specification/authentication/
 
