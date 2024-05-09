@@ -207,7 +207,7 @@ curl -X 'GET' \
 
 > Browsers enforce that requests made to the ArchiveBox API from *other domains* will not include any session cookies by default. This is is an [important security principle](https://docs.djangoproject.com/en/5.0/ref/csrf/) that protects you from API requests being initiated from JS served to users on websites you don't control (aka CSRF/CORS attacks).
 >
-> To allow incoming POST requests from other domains **that you trust**, you must add them to [`CSRF_TRUSTED_ORIGINS`](https://docs.djangoproject.com/en/5.0/ref/settings/#csrf-trusted-origins) in the `archivebox/core/settings.py` source code on your machine ([open an issue](https://github.com/ArchiveBox/ArchiveBox/issues/new/choose) and explain your use-case if you want us to expose this as normal configuration option).
+> To allow incoming POST requests from other domains **that you trust**, you must add them to [`CSRF_TRUSTED_ORIGINS`](https://docs.djangoproject.com/en/5.0/ref/settings/#csrf-trusted-origins) in the `archivebox/core/settings.py` source code on your machine ([open an issue](https://github.com/ArchiveBox/ArchiveBox/issues/new/choose) and explain your use-case for help).
 
 Log in via the Admin Web UI: `/admin/login/`, you can then re-use your login session id (stored in the `sessionid` cookie) for REST API requests. By default, this only allows you to make requests from the same domain ArchiveBox is being served on (e.g. from browser devtools open on an ArchiveBox page or CLI tools).
 
