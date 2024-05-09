@@ -239,5 +239,5 @@ curl -X 'GET' \
 #### Further Reading
 
 - The ArchiveBox API auth implementation: [`archivebox/api/auth.py`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/api/auth.py#:~:text=API_AUTH_METHODS) + [`archivebox/api/v1_auth.py`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/api/v1_auth.py)
-- The [`django-ninja` auth docs](https://django-ninja.dev/guides/authentication/) (which powers our API)
-- The [Swagger auth docs](https://swagger.io/docs/specification/authentication/) for the interactive API Docs UI
+- The [`django-ninja` auth documentation](https://django-ninja.dev/guides/authentication/) (which powers our API)
+- The [Swagger auth documentation](https://swagger.io/docs/specification/authentication/) for the interactive API Docs UI
