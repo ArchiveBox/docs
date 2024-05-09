@@ -181,7 +181,7 @@ curl -X 'GET' \
 
 ### API Request Header Authentication
 
-> This method is provided in case you have a reverse proxy in front of ArchiveBox that consumes bearer headers.
+> This method is provided in case you have a reverse proxy in front of ArchiveBox that consumes the bearer header.
 
 Pass `X-ArchiveBox-API-Key=YOURAPITOKENHERE` as a request header.
 
