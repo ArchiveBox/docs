@@ -211,7 +211,7 @@ curl -X 'GET' \
 
 > Browsers enforce that requests made to the ArchiveBox API from *other domains* will not include any session cookies by default. This is is an [important security principle](https://docs.djangoproject.com/en/5.0/ref/csrf/) that protects you from API requests being initiated from JS served to users on websites you don't control (aka CSRF/CORS attacks).
 
-Log in via the Admin Web UI: `/admin/login/`, you can then re-use your login session id (stored in the `sessionid` cookie) for REST API requests. By default, this only allows you to make requests from the same domain ArchiveBox is being served on (e.g. from browser devtools open on an ArchiveBox page. To allow incoming POST requests from other domains **that you trust**, you must add them to the [`CSRF_TRUSTED_ORIGINS`](https://docs.djangoproject.com/en/5.0/ref/settings/#csrf-trusted-origins) config option.
+Log in via the Admin Web UI: `/admin/login/`, you can then re-use your login session id (stored in the `sessionid` cookie) for REST API requests. By default, this only allows you to make requests from the same domain ArchiveBox is being served on (e.g. from browser devtools open on an ArchiveBox page). To allow incoming POST requests from other domains **that you trust**, you must add them to the [`CSRF_TRUSTED_ORIGINS`](https://docs.djangoproject.com/en/5.0/ref/settings/#csrf-trusted-origins) config option.
 
 ```bash
 curl -X 'GET' \
@@ -219,6 +219,8 @@ curl -X 'GET' \
   -H 'accept: application/json' \
   -H 'Cookie: sessionid=YOURSESSIONIDVALUEHERE'
 ```
+
+<small>This method can also be used safely for requests <i>outside a browser environment</i> (where CSRF/CORS restrictions do not apply),<br/>e.g. many tools like `curl`, `wget`, Postman, etc. can use cookies for request authentication.</small>
 
 <br/>
 
