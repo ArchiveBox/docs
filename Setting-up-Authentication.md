@@ -45,7 +45,8 @@ archivebox manage changepassword <username>
 # equivalent: docker run -v $PWD:/data archivebox/archivebox manage [...]
 ```
 
-If using Docker or Docker Compose, you can alternatively configure [`ADMIN_USERNAME` & `ADMIN_PASSWORD`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#admin_username--admin_password) to create an admin user automatically on first run.
+> [!TIP]
+> If using Docker or Docker Compose, you can alternatively configure [`ADMIN_USERNAME` & `ADMIN_PASSWORD`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#admin_username--admin_password) to create an admin user automatically on first run.
 
 Existing users can be managed from the Admin UI here: `http://127.0.0.1:8000/admin/auth/user/`,  
 and you can change your password in the UI here: `http://127.0.0.1:8000/admin/password_change/`.
