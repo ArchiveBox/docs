@@ -1,6 +1,6 @@
 ArchiveBox supports several types of authentication for users logging in via the Admin Web UI or REST API.
 
-*💬 We offer [consulting services](https://zulip.archivebox.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102) to help set up ArchiveBox for corporate environments!*
+> *💬 We offer [consulting services](https://zulip.archivebox.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102) to set up and secure ArchiveBox for corporate environments, provide ongoing support, and provide custom development to capture difficult sites.!*
 
 ---
 
@@ -11,14 +11,14 @@ ArchiveBox supports several types of authentication for users logging in via the
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/024913f0-ad2c-463c-aa4a-eb3d0ec8eb64" alt="Non-admin user permissions are only available to paying ArchiveBox clients" width="200px" align="right">
 
 Use these three options to set up your desired permissions for non-admin guest users:
-- `PUBLIC_INDEX=[True]|False`: Default allows non-logged-in users to see the list of all Snapshots
-- `PUBLIC_SNAPSHOTS=[True]|False`: Default allows non-logged-in users to see archived Snapshot content by default
-- `PUBLIC_ADD_VIEW=True|[False]`: Default doesn't allow non-logged-in users to submit new URLs to archive
+- [`PUBLIC_INDEX=[True]|False`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view): Default *allows* non-logged-in users to see the list of all Snapshots
+- [`PUBLIC_SNAPSHOTS=[True]|False`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view): Default *allows* non-logged-in users to see archived Snapshot content by default
+- [`PUBLIC_ADD_VIEW=True|[False]`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view): Default *doesn't allow* non-logged-in users to submit new URLs to archive
 
 > [!IMPORTANT]
-> *Free ArchiveBox does not currently support setting up **non-admin** users* with more granular read-only permissions. We do offer this feature to [paying clients](https://docs.monadical.com/s/archivebox-consulting-services) that hire us to set up a server for their company. We use this revenue (from mostly large corporate clients who can afford to pay for things) to support ArchiveBox open source development.
+> *Free ArchiveBox does not currently support setting up **non-admin** users* with more granular read-only permissions.* We do offer this feature to [paying clients](https://docs.monadical.com/s/archivebox-consulting-services) that hire us to set up a server for their company. We use this revenue (from mostly large corporate clients who can afford to pay for things) to support ArchiveBox open source development.
 
-- [Wiki: Configuration (`PUBLIC_ADD_VIEW`, `PUBLIC_SNAPSHOTS`, `PUBLIC_INDEX`)](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view)
+- [Wiki: Configuration (`PUBLIC_ADD_VIEW`, `PUBLIC_SNAPSHOTS`, `PUBLIC_INDEX`)]()
 - [Wiki: Security Overview](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview)
 
 <br/>
