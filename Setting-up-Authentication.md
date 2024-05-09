@@ -1,4 +1,4 @@
-> *💬 We offer [consulting services](https://docs.monadical.com/s/archivebox-consulting-services) to set up and integrate ArchiveBox with your organization's existing cloud infrastructure. If you or your org want ongoing support, advanced development to capture difficult sites, and more, we can provide it!*  
+> *💬 We offer [consulting services](https://docs.monadical.com/s/archivebox-consulting-services) to set up and integrate ArchiveBox with your organization's existing infrastructure. If you or your org want ongoing support, advanced development to capture difficult sites, SSO help, and more, we can provide it!*  
 > <sub>We use this revenue (from corporate clients who can afford to pay) to support open source development.</sub>
 
 ---
