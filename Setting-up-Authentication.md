@@ -144,7 +144,7 @@ To see API docs, try endpoints interactively, and see how auth works, visit this
 To get started using the REST API, you can generate an API key for your user in the Admin Web UI:  
 [`http://127.0.0.1:8000/admin/api/apitoken/add/`](http://127.0.0.1:8000/admin/api/apitoken/add/)  
   
-or by calling the `http://127.0.0.1:8000/api/v1/auth/get_api_token` endpoint:
+or by calling the `http://127.0.0.1:8000/api/v1/auth/get_api_token` endpoint with a username & pass:
 ```bash
 curl -X 'POST' \
   'http://127.0.0.1:8000/api/v1/auth/get_api_token' \
