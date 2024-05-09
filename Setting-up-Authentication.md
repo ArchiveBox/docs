@@ -1,12 +1,9 @@
-ArchiveBox supports several types of authentication for users logging in via the Admin Web UI or REST API.
-
-> *💬 We offer [consulting services](https://docs.monadical.com/s/archivebox-consulting-services) to set up and secure ArchiveBox for corporate environments. If you or your organization want ongoing support and advanced development to capture difficult sites, we can provide it!*
-> 
-> We use this revenue (from mostly corporate clients who can afford to pay) to support open source development.
+> *💬 We offer [consulting services](https://docs.monadical.com/s/archivebox-consulting-services) to set up and integrate ArchiveBox with your existing organization's infrastructure. If you or your org want ongoing support, advanced development to capture difficult sites, and more, we can provide it!*  
+> <sub>We use this revenue (from mostly corporate clients who can afford to pay) to support open source development.</sub>
 
 ---
 
-<br/>
+ArchiveBox supports several types of authentication for users logging in via the Admin Web UI or REST API.
 
 ## Set Up Admin Web UI Permissions
 
