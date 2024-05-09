@@ -210,10 +210,8 @@ curl -X 'GET' \
 > This method is mostly useful when testing API requests from the browser devtools, as it lets you skip having to pass an API key with every request.
 
 > Browsers enforce that requests made to the ArchiveBox API from *other domains* will not include any session cookies by default. This is is an [important security principle](https://docs.djangoproject.com/en/5.0/ref/csrf/) that protects you from API requests being initiated from JS served to users on websites you don't control (aka CSRF/CORS attacks).
->
-> You can tell browsers to allow incoming POST requests from specific domains you trust using the [`CSRF_TRUSTED_ORIGINS`](https://docs.djangoproject.com/en/5.0/ref/settings/#csrf-trusted-origins) option. but 
 
-Log in via the Admin Web UI: `/admin/login/`, you can then re-use your login session id (stored in the `sessionid` cookie) for REST API requests. This makes it convenient to test API requests from a browser environment where you're already logged in.
+Log in via the Admin Web UI: `/admin/login/`, you can then re-use your login session id (stored in the `sessionid` cookie) for REST API requests. By default, this only allows you to make requests from the same domain ArchiveBox is being served on (e.g. from browser devtools open on an ArchiveBox page. To allow incoming POST requests from other domains **that you trust**, you must add them to the [`CSRF_TRUSTED_ORIGINS`](https://docs.djangoproject.com/en/5.0/ref/settings/#csrf-trusted-origins) config option.
 
 ```bash
 curl -X 'GET' \
