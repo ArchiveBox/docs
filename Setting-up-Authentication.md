@@ -17,7 +17,7 @@ Use these three options to set up your desired permissions for non-admin guest u
 - [`PUBLIC_SNAPSHOTS=True`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view): Default *allows* non-logged-in users to see Snapshot content
 - [`PUBLIC_ADD_VIEW=False`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view): Default *doesn't allow* non-logged-in users to submit new URLs
 
-> [!IMPORTANT]
+> [!NOTE]
 > **Free ArchiveBox does not currently support setting up *non-admin* users** with more granular read-only permissions. We do offer this feature and more to [paying clients](https://docs.monadical.com/s/archivebox-consulting-services).
 
 - [Wiki: Configuration (`PUBLIC_ADD_VIEW`, `PUBLIC_SNAPSHOTS`, `PUBLIC_INDEX`)]()
