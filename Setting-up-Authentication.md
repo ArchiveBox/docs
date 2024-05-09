@@ -27,7 +27,6 @@ Use these three options to set up your desired permissions for non-admin guest u
 <br/>
 
 > [!WARNING]
-> Make sure you've **set up your [Web UI permissions](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view) first above** to restrict public access.  
 > Configuring advanced auth methods below is pointless if your Web UI permissions allow unrestricted access to guests!
 
 <br/>
