@@ -1,4 +1,4 @@
-> *💬 We offer [consulting services](https://docs.monadical.com/s/archivebox-consulting-services) to set up, secure, and maintain ArchiveBox on your preferred storage infrastructure.*  
+> *💬 We offer [consulting services](https://docs.monadical.com/s/archivebox-consulting-services) to set up, secure, and maintain ArchiveBox on your preferred storage provider.*  
 > <sub>We use this revenue (from corporate clients who can afford to pay) to support open source development and keep ArchiveBox free.</sub>
 
 <br/>
