@@ -35,7 +35,7 @@ Use these three options to set up your desired permissions for non-admin guest u
 
 ### Username & Password (the default)
 
-Make sure you have an admin User created first, you can run the commands below to create/edit a user from the CLI:
+You need an admin account to access the Web UI, you can run the commands below to create/edit a user from the CLI:
 
 ```bash
 archivebox manage createsuperuser
