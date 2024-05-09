@@ -10,6 +10,9 @@ ArchiveBox supports several types of authentication for users logging in via the
 
 <br/>
 
+
+<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/024913f0-ad2c-463c-aa4a-eb3d0ec8eb64" width="200px" float="right">
+
 ## Set Up Admin Web UI Permissions
 
 > [!IMPORTANT]
@@ -17,9 +20,6 @@ ArchiveBox supports several types of authentication for users logging in via the
 > Configuring advanced auth methods below wont help you if your archive is set up to be visible to the public!
 
 *Note, free ArchiveBox does not currently support setting up non-admin users* with more granular read-only permissions. We do offer this feature to [paying clients](https://docs.monadical.com/s/archivebox-consulting-services) that hire us to set up a server for their company. We use this revenue (from mostly large corporate clients who can afford to pay for things) to support ArchiveBox open source development.
-
-<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/593b5378-f6f5-400e-b531-91720a2d4e1a" width="200px">
-
 
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview
