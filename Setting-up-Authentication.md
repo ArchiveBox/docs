@@ -2,7 +2,7 @@ ArchiveBox supports several types of authentication for users logging in via the
 
 > *💬 We offer [consulting services](https://zulip.archivebox.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102) to set up and secure ArchiveBox for corporate environments. If you or your organization want ongoing support and advanced development to capture difficult sites, we can provide it!*
 > 
-> We use this revenue (from mostly large corporate clients who can afford to pay for things) to support ArchiveBox open source development.
+> We use this revenue (from mostly corporate clients who can afford to pay) to support open source development.
 
 ---
 
