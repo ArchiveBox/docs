@@ -27,7 +27,7 @@ Use these three options to set up your desired permissions for non-admin guest u
 
 ## Admin Web UI Authentication Methods
 
-> [!CAUTION]
+> [!WARNING]
 > Make sure you've **set up your [Web UI permissions](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view) first above** to restrict public access.  
 > Configuring advanced auth methods below is pointless if your Web UI permissions allow unrestricted access to guests!
 
@@ -160,7 +160,7 @@ curl -X 'POST' \
 
 <br/>
 
-### Bearer Token Authentication
+### API Bearer Token Authentication
 
 Pass `Authorization=Bearer YOURAPITOKENHERE` as a request header.
 
@@ -171,7 +171,7 @@ curl -X 'GET' \
   -H 'Authorization: Bearer YOURAPITOKENHERE'
 ```
 
-### Request Header Authentication
+### API Request Header Authentication
 
 Pass `X-API-Key=YOURAPITOKENHERE` as a request header.
 
@@ -182,7 +182,7 @@ curl -X 'GET' \
   -H 'X-API-Key: YOURAPITOKENHERE'
 ```
 
-### Query Parameter Authentication
+### API Query Parameter Authentication
 
 Pass `api_key=YOURAPITOKENHERE` as a GET/POST query parameter.
 
@@ -192,7 +192,7 @@ curl -X 'GET' \
   -H 'accept: application/json'
 ```
 
-### HTTP Basic Authentication
+### API HTTP Basic Authentication
 
 Pass your ArchiveBox admin username & password via HTTP Basic Authentication.
 
@@ -203,7 +203,7 @@ curl -X 'GET' \
   -H 'accept: application/json'
 ```
 
-### Session Cookie Authentication
+### API Session Cookie Authentication
 
 Log in via the Admin Web UI: `/admin/login/`, you can then re-use your login session id (stored in the `sessionid` cookie) for REST API requests. This makes it convenient to test API requests from a browser environment where you're already logged in.
 
