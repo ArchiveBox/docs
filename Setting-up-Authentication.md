@@ -10,10 +10,10 @@ ArchiveBox supports several types of authentication for users logging in via the
 
 <br/>
 
+## Set Up Admin Web UI Permissions
 
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/024913f0-ad2c-463c-aa4a-eb3d0ec8eb64" alt="Non-admin user permissions are only available to paying ArchiveBox clients" width="200px" align="right">
 
-## Set Up Admin Web UI Permissions
 
 > [!IMPORTANT]
 > Make sure to **set up your Web UI permissions first** to allow/restrict public access according to your needs.  
