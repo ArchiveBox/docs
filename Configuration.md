@@ -123,6 +123,7 @@ Password (again): <ADMIN_PASSWORD>
 
 More info:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Docker#configuration
 
 *Related options:*  
 [`PUBLIC_INDEX / PUBLIC_SNAPSHOTS / PUBLIC_ADD_VIEW`](#public_index)
@@ -149,7 +150,7 @@ archivebox config --set PUBLIC_ADD_VIEW=False    # True = allow users to submit 
 
 More info:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
-- https://github.com/ArchiveBox/ArchiveBox#-web-ui-usage
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#ui-usage
 
 ---
 #### `CUSTOM_TEMPLATES_DIR`
@@ -183,7 +184,9 @@ archivebox config --set CUSTOM_TEMPLATES_DIR=~/archivebox/data/custom_templates
 
 HTTP header containing user name from authenticated proxy.
 
-More info: https://github.com/ArchiveBox/ArchiveBox/pull/866
+More info:
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
+- https://github.com/ArchiveBox/ArchiveBox/pull/866
 
 *Related options:*
 [`REVERSE_PROXY_WHITELIST`](#REVERSE_PROXY_WHITELIST), [`LOGOUT_REDIRECT_URL`](#LOGOUT_REDIRECT_URL)
