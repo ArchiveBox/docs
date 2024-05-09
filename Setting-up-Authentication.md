@@ -220,7 +220,7 @@ curl -X 'GET' \
   -H 'Cookie: sessionid=YOURSESSIONIDVALUEHERE'
 ```
 
-<small>This method can also be used safely for requests <i>outside a browser environment</i> (where CSRF/CORS restrictions do not apply),<br/>e.g. many tools like `curl`, `wget`, Postman, etc. can use cookies for request authentication.</small>
+<small>This method can also be used for requests <i>outside a browser environment</i> (where CSRF/CORS does not apply),<br/>e.g. many CLI tools like `curl` or `wget` or apps like Postman can use cookies for request authentication.</small>
 
 <br/>
 
