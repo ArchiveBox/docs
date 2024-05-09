@@ -40,8 +40,8 @@ Published [Docker tags](https://hub.docker.com/r/archivebox/archivebox/tags):
 <br/>
 
 > [!IMPORTANT]
-> *Make sure you have **[Docker installed](https://docs.docker.com/install/#supported-platforms)** before following any instructions below!*  ➡️  
-> `docker --version` (check installed version, must be `>=17.04.0`)
+> *Make sure Docker is **[installed](https://docs.docker.com/install/#supported-platforms)** and up-to-date before following any instructions below!*  ➡️  
+> To check installed version, run: `docker --version` (must be `>=17.04.0`)
 
 <br/>
 
