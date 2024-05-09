@@ -203,7 +203,7 @@ curl -X 'GET' \
 
 > [!CAUTION]
 > We recommend sticking to header-based authentication and not using this method unless you deeply understand the CSRF/CORS security risks.
-> This method is mostly useful when testing API requests from the browser devtools or external tools where CSRF/CORS is not a concern (e.g. `wget`, `curl`), as it lets you skip having to pass an API key with every request.
+> This method is mostly useful when testing the API from browser devtools or external apps where CSRF/CORS is not a concern (e.g. `wget`, `curl`).
 
 > Browsers enforce that requests made to the ArchiveBox API from *other domains* will not include any session cookies by default. This is is an [important security principle](https://docs.djangoproject.com/en/5.0/ref/csrf/) that protects you from API requests being initiated from JS served to users on websites you don't control (aka CSRF/CORS attacks).
 >
