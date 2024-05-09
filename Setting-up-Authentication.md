@@ -211,12 +211,12 @@ curl -X 'GET' \
 
 ### API Session Cookie Authentication
 
-> [!WARNING]
+> [!DANGER]
 > We recommend sticking to header-based authentication and not using this method unless you fully understand the security risks.
->
-> Browsers enforce that requests made to the ArchiveBox API from *other domains* will not include any session cookies by default. This is is an important security principle that protects you from CSRF/CORS attacks originating from JS served to users on websites you don't control.
->
-> You can tell browsers to allow incoming POST requests from specific domains you trust using the [`CSRF_TRUSTED_ORIGINS`](https://docs.djangoproject.com/en/5.0/ref/settings/#csrf-trusted-origins) option. but 
+
+Browsers enforce that requests made to the ArchiveBox API from *other domains* will not include any session cookies by default. This is is an important security principle that protects you from CSRF/CORS attacks originating from JS served to users on websites you don't control.
+
+You can tell browsers to allow incoming POST requests from specific domains you trust using the [`CSRF_TRUSTED_ORIGINS`](https://docs.djangoproject.com/en/5.0/ref/settings/#csrf-trusted-origins) option. but 
 
 Log in via the Admin Web UI: `/admin/login/`, you can then re-use your login session id (stored in the `sessionid` cookie) for REST API requests. This makes it convenient to test API requests from a browser environment where you're already logged in.
 
