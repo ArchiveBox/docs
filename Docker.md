@@ -78,7 +78,7 @@ curl -fsSL 'https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/dev/etc/soni
 # then uncomment the sonic-related sections in docker-compose.yml
 nano docker-compose.yml
 
-# to backfill previously added snapshots into the full text index, run:
+# to backfill any existing archive data into the search index, run:
 docker compose run archivebox update --index-only
 ```
 
