@@ -121,6 +121,9 @@ Password: <ADMIN_PASSWORD>
 Password (again): <ADMIN_PASSWORD>
 ```
 
+More info:
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
+
 *Related options:*  
 [`PUBLIC_INDEX / PUBLIC_SNAPSHOTS / PUBLIC_ADD_VIEW`](#public_index)
 
@@ -143,7 +146,10 @@ archivebox config --set PUBLIC_INDEX=True        # True = allow users to view ma
 archivebox config --set PUBLIC_SNAPSHOTS=True    # True = allow users to view snapshot content without logging in
 archivebox config --set PUBLIC_ADD_VIEW=False    # True = allow users to submit new URLs to archive without logging in
 ```
-https://github.com/ArchiveBox/ArchiveBox#-web-ui-usage
+
+More info:
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
+- https://github.com/ArchiveBox/ArchiveBox#-web-ui-usage
 
 ---
 #### `CUSTOM_TEMPLATES_DIR`
@@ -188,7 +194,9 @@ More info: https://github.com/ArchiveBox/ArchiveBox/pull/866
 
 Comma separated list of IP CIDRs which are allowed to use reverse proxy authentication. Both IPv4 and IPv6 IPs can be used next to each other. Empty string means "deny all".
 
-More info: https://github.com/ArchiveBox/ArchiveBox/pull/866
+More info:
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
+- https://github.com/ArchiveBox/ArchiveBox/pull/866
 
 *Related options:*
 [`REVERSE_PROXY_USER_HEADER`](#REVERSE_PROXY_USER_HEADER), [`LOGOUT_REDIRECT_URL`](#LOGOUT_REDIRECT_URL)
@@ -199,7 +207,9 @@ More info: https://github.com/ArchiveBox/ArchiveBox/pull/866
 
 URL to redirect users back to on logout when using reverse proxy authentication.
 
-More info: https://github.com/ArchiveBox/ArchiveBox/pull/866
+More info:
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
+- https://github.com/ArchiveBox/ArchiveBox/pull/866
 
 *Related options:*
 [`REVERSE_PROXY_USER_HEADER`](#REVERSE_PROXY_USER_HEADER), [`REVERSE_PROXY_WHITELIST`](#REVERSE_PROXY_WHITELIST)
@@ -231,6 +241,7 @@ LDAP_EMAIL_ATTR: "mail"
 ```
 
 More info:
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
 - https://github.com/ArchiveBox/ArchiveBox/pull/1214
 - https://github.com/django-auth-ldap/django-auth-ldap#example-configuration
 - https://jumpcloud.com/blog/what-is-ldap-authentication
