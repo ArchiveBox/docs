@@ -27,15 +27,12 @@ Use these three options to set up your desired permissions for non-admin guest u
 
 ## Admin Web UI Authentication Methods
 
-> [!WARNING]
-> Make sure you've **set up your [Web UI permissions](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view) first above** to restrict public access.  
-> Configuring advanced auth methods below is pointless if your Web UI permissions allow unrestricted access to guests!
 
 <br/>
 
 ### Username & Password (the default)
 
-You need an admin account to access the Web UI, you can run the commands below to create/edit a user from the CLI:
+You need a user account to access the Admin UI, you can run the commands below to create/edit a user from the CLI:
 
 ```bash
 archivebox manage createsuperuser
@@ -50,6 +47,12 @@ archivebox manage changepassword <username>
 
 Existing users can be managed from the Admin UI here: `http://127.0.0.1:8000/admin/auth/user/`,  
 and you can change your password in the UI here: `http://127.0.0.1:8000/admin/password_change/`.
+
+<br/>
+
+> [!WARNING]
+> Make sure you've **set up your [Web UI permissions](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view) first above** to restrict public access.  
+> Configuring advanced auth methods below is pointless if your Web UI permissions allow unrestricted access to guests!
 
 <br/>
 
