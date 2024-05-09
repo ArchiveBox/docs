@@ -264,7 +264,7 @@ volumes:
 
 To start the container and verify the filesystem is accessible within it:
 ```bash
-docker compose run archivebox /bin/bash 'ls -lah /data/archive/'
+docker compose run archivebox /bin/bash 'ls -lah /data/archive/ | tee /data/archive/.write_test.txt'
 ```
 
 <br/>
