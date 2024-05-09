@@ -191,7 +191,7 @@ curl -X 'GET' \
 ### API Query Parameter Authentication
 
 > [!WARNING]
-> This method is sometimes known as ["Capability URLs"](https://w3ctag.github.io/capability-urls/) because anyone who knows the URL can perform API actions. It comes with several [important security caveats](https://security.stackexchange.com/questions/118975/is-it-safe-to-include-an-api-key-in-a-requests-url) and is not recommended unless you fully understand the risks.
+> This method is sometimes known as ["Capability URLs"](https://w3ctag.github.io/capability-urls/) because anyone in possession of the URL can perform API actions. It comes with several [important security caveats](https://security.stackexchange.com/questions/118975/is-it-safe-to-include-an-api-key-in-a-requests-url) and is not recommended unless you fully understand the risks.
 
 Pass `api_key=YOURAPITOKENHERE` as a GET/POST query parameter.
 
@@ -201,11 +201,13 @@ curl -X 'GET' \
   -H 'accept: application/json'
 ```
 
+<br/>
+
 ### API Session Cookie Authentication
 
 > [!CAUTION]
 > We recommend sticking to header-based authentication and not using this method unless you deeply understand the CSRF/CORS security risks.
-> This method is mostly useful when testing API requests in the browser during development, as it lets you avoid having to manually attach a key to every request.
+> This method is mostly useful when testing API requests from the browser devtools, as it lets you skip having to pass an API key with every request.
 
 > Browsers enforce that requests made to the ArchiveBox API from *other domains* will not include any session cookies by default. This is is an [important security principle](https://docs.djangoproject.com/en/5.0/ref/csrf/) that protects you from API requests being initiated from JS served to users on websites you don't control (aka CSRF/CORS attacks).
 >
@@ -220,11 +222,14 @@ curl -X 'GET' \
   -H 'Cookie: sessionid=YOURSESSIONIDVALUEHERE'
 ```
 
+<br/>
+
 ### API HTTP Basic Authentication
 
-> [!WARNING]
-> Use of this method is fairly uncommon and is only useful in a few niche situations where other methods are not available.  
-> We may remove this method in future ArchiveBox releases.
+> [!CAUTION]
+> This method is fairly uncommon and is only useful in a few niche situations where the other methods are not available.  
+> **We will likely remove this method in a future ArchiveBox release if nobody uses it.**  
+> *If you rely on this method and want us to keep it, please [open an issue](https://github.com/ArchiveBox/ArchiveBox/issues/new/choose) and explain your use-case!* 
 
 Pass your ArchiveBox admin username & password via HTTP Basic Authentication.
 
