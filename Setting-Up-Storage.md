@@ -1,8 +1,8 @@
 ArchiveBox supports a wide range of local and remote filesystems, both in Docker and on bare metal. The examples below use [Docker Compose bind mounts](https://docs.docker.com/storage/bind-mounts/) to demonstrate the concepts, you can adapt them to your OS and environment needs.
 
-> *💬 We offer [consulting services](https://docs.monadical.com/s/archivebox-consulting-services) to set up and secure ArchiveBox on your organization's own storage infrastructure.
+> *💬 We offer [consulting services](https://docs.monadical.com/s/archivebox-consulting-services) to set up and secure ArchiveBox on your organization's own storage infrastructure.*
 > 
-> We use this revenue (from mostly corporate clients who can afford to pay) to support open source development.
+> <sub>We use this revenue (from mostly corporate clients who can afford to pay) to support open source development.</sub>
 
 
 Example [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml) storage setup:
