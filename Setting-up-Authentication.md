@@ -1,10 +1,6 @@
 ArchiveBox supports several types of authentication for users logging in via the Admin Web UI or REST API.
 
-> [!WARNING]
-> *This page is a work in progress, follow the links to learn more about each authentication setup below.*  
-> To help make this page better, submit a pull request here: [`ArchiveBox/docs/Setting-Up-Authentication.md`](https://github.com/ArchiveBox/docs/blob/master/Setting-up-Authentication.md).
-
-💬 If you encounter any issues or need help feel free to ask questions in our public forum: https://zulip.archivebox.io
+💬 If you need help securing ArchiveBox for an institutional or corporate deployment, we offer [consulting services](https://zulip.archivebox.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102) to provide this and more!
 
 ---
 
@@ -20,7 +16,7 @@ Use these three options to set up your desired permissions for non-admin guest u
 - `PUBLIC_ADD_VIEW=True|[False]`: Default doesn't allow non-logged-in users to submit new URLs to archive
 
 > [!IMPORTANT]
-> Free ArchiveBox does not currently support setting up **non-admin** users* with more granular read-only permissions. We do offer this feature to [paying clients](https://docs.monadical.com/s/archivebox-consulting-services) that hire us to set up a server for their company. We use this revenue (from mostly large corporate clients who can afford to pay for things) to support ArchiveBox open source development.
+> *Free ArchiveBox does not currently support setting up **non-admin** users* with more granular read-only permissions. We do offer this feature to [paying clients](https://docs.monadical.com/s/archivebox-consulting-services) that hire us to set up a server for their company. We use this revenue (from mostly large corporate clients who can afford to pay for things) to support ArchiveBox open source development.
 
 - [Wiki: Configuration (`PUBLIC_ADD_VIEW`, `PUBLIC_SNAPSHOTS`, `PUBLIC_INDEX`)](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view)
 - [Wiki: Security Overview](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview)
