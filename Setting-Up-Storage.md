@@ -35,10 +35,14 @@ services:
 
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/45abfe78-87c4-4c87-ab11-9dae2f3b2518" alt="local filesystem icon" width="80px" align="right"/>
 
+<a name="ext4"></a><a name="apfs"></a>
+
 ### `EXT4` (default on Linux), `APFS` (default on macOS)
 
 > [!TIP]
 > These default filesystems are fully supported by ArchiveBox on Linux and macOS (w/wo Docker).
+
+<a name="zfs"></a>
 
 ### `ZFS` (recommended for best experience on Linux/BSD) ⭐️
 
@@ -80,10 +84,14 @@ zfs create \
     -o keysource=passphrase,prompt \
 ```
 
+<a name="ntfs"></a><a name="hfs"></a><a name="btrfs"></a>
+
 ### `NTFS`, `HFS+`, `BTRFS`
 
 > [!WARNING]
 > These filesystems are likely supported, but are not officially tested.
+
+<a name="ext2"></a><a name="ext3"></a><a name="fat32"></a><a name="exfat"></a>
 
 ### `EXT2`, `EXT3`, `FAT32`, `exFAT`
 
@@ -95,6 +103,7 @@ zfs create \
 ---
 
 <br/>
+<a name="remote-filesystems"></a>
 
 ## Supported Remote Filesystems
 
@@ -110,6 +119,8 @@ The `data/archive/` subfolder contains the bulk archived content, and it support
 > [!TIP]
 > If you use a remote filesystem, you should switch ArchiveBox's search backend from [`ripgrep`](https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Search#ripgrep) to [`sonic`](https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Search#sonic) (or [`FTS5`](https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Search#fts5)).  
 > <sub>(`ripgrep` scans over every byte in the archive to do each search, which is **slow and potentially costly** on remote cloud storage)</sub>
+
+<a name="nfs"></a>
 
 ### `NFS` (Docker Driver)
 
@@ -128,6 +139,8 @@ volumes:
             o: "addr=some-remote-server.example.com,nolock,soft,rw,nfsvers=4"
             device: ":/archivebox-archive"
 ```
+
+<a name="smb"></a><a name="ceph"></a>
 
 ### `SMB` / `Ceph` (Docker CIFS Driver)
 
@@ -151,6 +164,8 @@ volumes:
 <br/>
 
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/0a159c27-5d54-46b9-814b-480f239ed27e" alt="local filesystem icon" height="80px" align="right"/><img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/5ca561b4-4597-401f-84b6-d53042fd7359" alt="local filesystem icon" height="80px" align="right"/>
+
+<a name="s3"></a><a name="b2"></a><a name="gdrive"></a><a name="rclone"></a>
 
 ### Amazon S3 / Backblaze B2 / Google Drive / etc. (RClone)
 
