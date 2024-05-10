@@ -27,7 +27,7 @@ ArchiveBox search works by doing substring matches in `Snapshot` metadata fields
 
 ## ArchiveBox Search Backends
 
-ArchiveBox provides a number of "Search Backend Engines" to tune the performance and behavior of search for different use-cases.
+ArchiveBox provides a number of "Search Backend Engines" to tune its performance & behavior for different use-cases.
 ```bash
 # this setting controls which search backend ArchiveBox uses
 archivebox config --set SEARCH_BACKEND_ENGINE=[ripgrep]|sonic|sqlite
