@@ -109,7 +109,7 @@ The `data/archive/` subfolder contains the bulk archived content, and it support
 
 > [!TIP]
 > If you use a remote filesystem, you should switch ArchiveBox's search backend from `ripgrep` to [`sonic`](https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Search#sonic-%EF%B8%8F-the-recommended-upgrade-path-for-most-people) (or [`FTS5`](https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Search#sqlite-fts5)).  
-> <sub>(`ripgrep` scans over every byte in the archive to do each search, which is slow and potentially costly on remote storage)</sub>
+> <sub>(`ripgrep` scans over every byte in the archive to do each search, which is **slow and potentially costly** on remote cloud storage)</sub>
 
 ### `NFS` (Docker Driver)
 
