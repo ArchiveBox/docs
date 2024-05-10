@@ -57,7 +57,7 @@ and you can change your password in the UI here: [`/admin/password_change/`](htt
 Set these ArchiveBox configuration values to based on your reverse proxy setup and needs:
 ```bash
 # REQUIRED: the header where your upstream reverse proxy will place the authenticated user's username/email
-# EXAMPLE: Cf-Access-Authenticated-User-Email (if using Cloudflare)
+# EXAMPLE: Cf-Access-Authenticated-User-Email (if using Cloudflare Access / Zero Trust)
 REVERSE_PROXY_USER_HEADER=X-Remote-User
 
 # REQUIRED: the IP/CIDR of your upstream reverse proxy server
