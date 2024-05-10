@@ -11,17 +11,16 @@ You can search your ArchiveBox data in a number of ways:
 
 <br/>
 
+---
+
+## How Search Works
+
+ArchiveBox search works by doing substring matches in `Snapshot` metadata fields (`url`, `title`, `timestamp`, `tags`), and by searching the full archived content within each Snapshot (using the selected search backend below). You can find the search implementation source code here: [`archivebox/core/views.py: PublicIndex.get_queryset()`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/core/views.py#:~:text=title__icontains).
+
 > *Note: ArchiveBox currently only returns the bare list of snapshots that match when performing a search.*  
 >   
 > This will be [improved in the future](https://zulip.archivebox.io/#narrow/stream/154-support/topic/Full.20Text.20Search.20works.2E.2E.2E.20but.20is.20there.20a.20UI.3F) to highlight the *specific paragraph/line/area that matched* within a Snapshot.  
 > For now we recommend using Ctl+F in the browser or one of the external tools listed above to further filter for a term within a Snapshot's contents.
-
-
-<br/>
-
----
-
-ArchiveBox search works by doing substring matches in `Snapshot` metadata fields (`url`, `title`, `timestamp`, `tags`), and by searching the full archived content within each Snapshot (using the selected search backend below). You can find the search implementation source code here: [`archivebox/core/views.py: PublicIndex.get_queryset()`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/core/views.py#:~:text=title__icontains).
 
 <br/>
 
