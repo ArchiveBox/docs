@@ -24,7 +24,8 @@ This server is enabled out-of-the-box if you're using `docker-compose` to run Ar
 and there is a commented-out example nginx config with SSL set up as well. If hosting publicly, it's essential to place an SSL termination server in front of ArchiveBox (e.g. [`traefik`](https://github.com/traefik/traefik), [`caddy`](https://caddyserver.com/docs/automatic-https#activation), or [`cloudflared`](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/)), 
 
 > [!TIP]
-> Advanced: You can use nginx to serve the static `/archive/` dir directly from the filesystem to increase performance.
+> Advanced: You can use nginx to serve the static `/archive/` dir directly from the filesystem to increase performance.  
+> To protect the `/admin/` dashboard, it should ideally be served from a [different domain](#security-concerns) using redirects.
 
 <br/>
 
