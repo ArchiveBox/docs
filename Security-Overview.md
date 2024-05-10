@@ -3,17 +3,11 @@
 ## Web UI Permissions
 
 ```bash
-# require login to access the list of Snapshots
-archivebox config --set PUBLIC_INDEX=False
+archivebox config --set PUBLIC_INDEX=False      # require login to access the list of Snapshots
+archivebox config --set PUBLIC_SNAPSHOTS=False  # require login to access Snapshot content
+archivebox config --set PUBLIC_ADD_VIEW=False   # require log-in to submit new URLs for archiving
 
-# require login to access Snapshot content
-archivebox config --set PUBLIC_SNAPSHOTS=False
-
-# require log-in to submit new URLs for archiving
-archivebox config --set PUBLIC_ADD_VIEW=False
-
-# create/modify admin UI users
-archivebox manage [createsuperuser|changepassword] --help
+archivebox manage [createsuperuser|changepassword] # create/modify admin UI users
 ```
 
 See [[Setting Up Authentication]] for more...
