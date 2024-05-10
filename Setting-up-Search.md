@@ -9,7 +9,7 @@ You can search your ArchiveBox data in a number of ways:
 
 ![image](https://github.com/ArchiveBox/ArchiveBox/assets/511499/637675ee-bf4a-49f9-b936-c2da1bd64410)
 
-ArchiveBox search finds matches in the `Snapshot` metadata fields (`url`, `title`, `timestamp`, `tags`), and the archived content using the selected search backend (below). You can find the search implementation here: [`archivebox/core/views.py: PublicIndex.get_queryset()`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/core/views.py#:~:text=title__icontains).
+ArchiveBox search works by finding matches in `Snapshot` metadata fields (`url`, `title`, `timestamp`, `tags`), and the actual archived content (using the selected search backend below). You can find the search implementation here: [`archivebox/core/views.py: PublicIndex.get_queryset()`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/core/views.py#:~:text=title__icontains).
 
 <br/>
 
