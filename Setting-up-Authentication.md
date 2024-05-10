@@ -80,7 +80,7 @@ LOGOUT_REDIRECT_URL=https://auth.yourcompany.example.com/after/logout
 
 > Can be used with an SSO provider like [Authentik](https://github.com/goauthentik/authentik), [Authelia](https://github.com/authelia/authelia), [Okta / Auth0](https://www.okta.com/), [Keycloak](https://www.keycloak.org/), and others.
 
-First, `pip`-install the `ldap` add-on to use this feature (not needed if using Docker).
+First, `pip`-install the `ldap` add-on to use this feature (not needed for Docker Archivebox).
 ```bash
 pip install archivebox[ldap]
 ```
