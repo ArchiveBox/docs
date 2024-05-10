@@ -2,7 +2,7 @@
 
 You can search your ArchiveBox data in a number of ways:
 
-- using the CLI: `archivebox list --filter-type=search 'text to search'`
+- using the CLI: `archivebox list --filter-type=search 'text to search'` (`archivebox list --help` for more)
 - using the Web UI: both the `/public` index and `/admin/core/snapshot` pages provide a search box
 - using the REST API: `/api/v1/list?filter_type=search` provides the same search interface as the CLI  
 - by searching the archive data folder directly with external tools (e.g. macOS Spotlight, [Cerebro](https://www.cerebroapp.com/), `ag`, [Yacy](https://yacy.net/), etc.)
