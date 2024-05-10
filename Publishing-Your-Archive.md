@@ -76,6 +76,8 @@ Make sure you thoroughly understand the dangers of [hosting untrusted HTML/JS/CS
 
 The industry standard approach is to use a separate domain for untrusted content, for example Github uses `githubusercontent.com` and Google uses `googleusercontent.com` for all user-uploaded files. If hosting ArchiveBox publicly, do the same and keep it on an isolated domain in order to mitigate potential damage of leaked cookies, CORS, and CSRF attack.  
 
+### Protecting the Admin Dashboard
+
 To protect the Admin dashboard, it's also recommended to serve all content under `/archive/` on a separate domain from `/admin/`. We do this on our servers using a simple redirect rule in nginx/cloudflare like so:
 
 - https://demo.archivebox.io: only serves `/`, redirects `/archive/*` to `demo-static.`
@@ -83,6 +85,7 @@ To protect the Admin dashboard, it's also recommended to serve all content under
 
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/8d855976-3b4a-4fa8-ad52-999b3c3deba4" width="800px" alt="Cloudflare redirect rule for /archive/ to another domain"/>
 
+> Note: This is still recommended, but less critical if your `/archive/` folder does not contain any archived JS that could execute on replay (e.g. if you [set `SAVE_WGET=False` and `SAVE_DOM=False`](https://github.com/ArchiveBox/ArchiveBox#security-risks-of-viewing-archived-js)).
 
 More info:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview
