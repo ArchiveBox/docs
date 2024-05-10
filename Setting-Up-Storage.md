@@ -108,7 +108,7 @@ The `data/archive/` subfolder contains the bulk archived content, and it support
 > `data/index.sqlite3` is your main archive DB, *it must be on a fast, reliable, local filesystem* which supports [FSYNC](https://stackoverflow.com/questions/40849596/git-clone-fsync-input-output-error-in-linux#:~:text=Some%20filesystems%20%2D%20especially%20remote%20filesystems%20like%20NFS%2C%20sshfs%2C&text=do%20not%20support%20fsync()%20but%20git%20has%20no%20flag%20to%20disable%20these%20calls) (SSD/NVMe recommended for best experience).
 
 > [!TIP]
-> If you use a remote filesystem, you should switch ArchiveBox's search backend from `ripgrep` to [`sonic`](https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Search#sonic-%EF%B8%8F-the-recommended-upgrade-path-for-most-people) (or [`FTS5`](https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Search#sqlite-fts5)) instead.  
+> If you use a remote filesystem, you should switch ArchiveBox's search backend from `ripgrep` to [`sonic`](https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Search#sonic-%EF%B8%8F-the-recommended-upgrade-path-for-most-people) (or [`FTS5`](https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Search#sqlite-fts5)).  
 > <sub>(`ripgrep` scans over every byte in the archive to do each search, which is slow and potentially costly on remote storage)</sub>
 
 ### `NFS` (Docker Driver)
