@@ -21,10 +21,13 @@ You can search your ArchiveBox data in a number of ways:
 
 ---
 
-## ArchiveBox Search Backends
-
 ArchiveBox search works by doing substring matches in `Snapshot` metadata fields (`url`, `title`, `timestamp`, `tags`), and by searching the full archived content within each Snapshot (using the selected search backend below). You can find the search implementation source code here: [`archivebox/core/views.py: PublicIndex.get_queryset()`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/core/views.py#:~:text=title__icontains).
 
+<br/>
+
+## ArchiveBox Search Backends
+
+ArchiveBox provides a number of "Search Backend Engines" to tune the performance and behavior of search for different use-cases.
 ```bash
 # this setting controls which search backend ArchiveBox uses
 archivebox config --set SEARCH_BACKEND_ENGINE=[ripgrep]|sonic|sqlite
