@@ -1,4 +1,4 @@
-> *💬 We offer [consulting services](https://docs.monadical.com/s/archivebox-consulting-services) to set up, integrate, and maintain ArchiveBox in your preferred hosting environment.  
+> *💬 We offer [consulting services](https://docs.monadical.com/s/archivebox-consulting-services) to set up, integrate, and maintain ArchiveBox with your preferred auth & hosting.  
 > If you need support, advanced development to capture difficult sites, audit logging, and more, we can provide it!*  
 > <sub>We use this revenue (from corporate clients who can afford to pay) to support open source development and keep ArchiveBox free.</sub>
 
