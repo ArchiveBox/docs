@@ -80,7 +80,7 @@ To protect the Admin dashboard, it's also recommended to serve all content under
 - https://demo.archivebox.io: only serves `/`, redirects `/archive/*` to `demo-static.`
 - https://demo-static.archivebox.io: only serves `/archive/`, redirects everything else to `demo.`
 
-<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/8d855976-3b4a-4fa8-ad52-999b3c3deba4" width="600px" alt="Cloudflare redirect rule for /archive/ to another domain"/>
+<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/8d855976-3b4a-4fa8-ad52-999b3c3deba4" width="800px" alt="Cloudflare redirect rule for /archive/ to another domain"/>
 
 
 More info:
