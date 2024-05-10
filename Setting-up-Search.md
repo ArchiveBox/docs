@@ -37,7 +37,7 @@ archivebox version
 archivebox config --get SEARCH_BACKEND_ENGINE
 ```
 
-By default out-of-the-box, it uses a simple but efficient tool similar to `grep -r` called [`ripgrep`](https://github.com/BurntSushi/ripgrep).
+By default out-of-the-box, the selected engine is a simple but efficient tool similar to `grep -r` called [`ripgrep`](https://github.com/BurntSushi/ripgrep).
 
 Ripgrep is currently the fastest available *filesystem search* tool that scans over the raw disk bytes on every search. We chose it as the default so that beginners and 95% of users with small collections can have an experience that "just works", without needing to install and maintain complex additional dependencies or background workers.
 
