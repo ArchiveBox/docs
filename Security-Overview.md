@@ -75,6 +75,7 @@ To protect the Admin dashboard, it's also recommended to serve all content under
 - https://demo.archivebox.io: only serves `/`, redirects `/archive/*` to `demo-static.`
 - https://demo-static.archivebox.io: only serves `/archive/`, redirects everything else to `demo.`
 
+<img width="400" alt="Cloudflare redirect rule for /archive/ to be served by a separate domain" src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/9c77f503-0d97-4a8d-810f-1f4400c7aa3e">
 
 Published archives automatically include a `robots.txt` `Dissallow: /` to block search engines from indexing them. You may still wish to publish your contact info in the index footer though using [`FOOTER_INFO`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#FOOTER_INFO) so that you can respond to any DMCA and copyright takedown notices if you accidentally rehost copyrighted content.
 
