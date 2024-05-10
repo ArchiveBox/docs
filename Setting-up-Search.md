@@ -48,6 +48,8 @@ However, there are some fundamental limitations of scanning through every file o
 
 <br/>
 
+<a name="ripgrep"></a>
+
 ### `ripgrep` *(the default)*
 
 If you do not already have `ripgrep` installed, follow the [instructions here](https://github.com/BurntSushi/ripgrep#installation) to get it.
@@ -78,6 +80,8 @@ archivebox list --filter-type=search 'text to search for'
 
 <br/>
 
+<a name="ripgrep-all"></a>
+
 ### `ripgrep-all` (aka `rga`)
 
 The same as ripgrep except that it supports searching more binary filetypes like PDFs, eBooks, Office documents, zip, tar.gz, etc.
@@ -96,6 +100,8 @@ archivebox list --filter-type=search 'text to search for'
 ```
 
 <br/>
+
+<a name="ugrep"></a>
 
 ### `ugrep`
 
@@ -122,6 +128,8 @@ archivebox config --set RIPGREP_BINARY=ugrep+
 - not all of its features are fully integrated with ArchiveBox yet
 
 <br/><br/>
+
+<a name="sonic"></a>
 
 ### `sonic` ⭐️ (the recommended upgrade path for most people)
 
@@ -171,6 +179,8 @@ docker compose run archivebox list --filter-type=search 'some text to search'
 - does not support searching binary files like PDFs, eBooks, compressed archives, etc.
 
 <br/>
+
+<a name="fts5"></a>
 
 ### `SQLite FTS5`
 
