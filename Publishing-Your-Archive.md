@@ -85,7 +85,7 @@ To protect the Admin dashboard, it's also recommended to serve all content under
 
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/8d855976-3b4a-4fa8-ad52-999b3c3deba4" width="800px" alt="Cloudflare redirect rule for /archive/ to another domain"/>
 
-> Note: This is still recommended, but less critical if your `/archive/` folder does not contain any archived JS that could execute on replay (e.g. if you [set `SAVE_WGET=False` and `SAVE_DOM=False`](https://github.com/ArchiveBox/ArchiveBox#security-risks-of-viewing-archived-js)).
+> Note: This is still recommended, but less critical if your `/archive/` folder does not contain any archived JS (e.g. if you [set `SAVE_WGET=False` and `SAVE_DOM=False`](https://github.com/ArchiveBox/ArchiveBox#security-risks-of-viewing-archived-js)).
 
 More info:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview
