@@ -13,7 +13,11 @@ archivebox manage [createsuperuser|changepassword] # create/modify admin UI user
 
 See [[Setting Up Authentication]] for more...
 
+<br/>
+
 ## ArchiveBox Use-Cases
+
+<br/>
 
 <img src="https://imgur.zervice.io/K3dZcjG.png" width="50px" align="right"/>
 
@@ -22,6 +26,8 @@ See [[Setting Up Authentication]] for more...
 This is the default (lax) mode, intended for archiving public (non-secret) URLs without authenticating the headless browser.  This is the mode used if you're archiving news articles, audio, video, etc. browser bookmarks to a folder published on your webserver. This allows you to access and link to content on `http://your.archive.com/archive...` after the originals go down.
 
 This mode should not be used for archiving entire browser history or authenticated private content like Google Docs, paywalled content, invite-only subreddits, private photo share urls, etc.
+
+<br/>
 
 #### Archiving Content Behind Log-Ins 🚨 `[Advanced users only]`
 
