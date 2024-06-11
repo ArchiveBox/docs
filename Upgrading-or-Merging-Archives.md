@@ -133,6 +133,9 @@ More info:
 
 Two or more existing ArchiveBox collection dirs can be merged together by simply combining the contents of `archive/*` and re-running `archivebox init` to pull the new Snapshots into the index.
 
+> [!WARNING]
+> Snapshot folders are identified by their timestamp (in milliseconds), this is normally not a problem for archives collected on one machine, but when merging archives from two different instances that ran at the same time it means there is a small chance of conflicts. Check the contents of `archive/` before merging, and backup any directories that may conflict before proceeding.
+
 1. Upgrade both old collections to the most recent ArchiveBox version (following instructions above)
   ```bash
   pip install --upgrade archivebox   # or follow instructions above for upgrading w/ Docker
