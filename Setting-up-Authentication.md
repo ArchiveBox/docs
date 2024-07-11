@@ -54,7 +54,7 @@ and you can change your password in the UI here: [`/admin/password_change/`](htt
 
 > Can be used with a reverse proxy auth provider like [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy), [Cloudflare Zero Trust](https://developers.cloudflare.com/cloudflare-one/tutorials/access-workers/#create-a-worker-with-custom-headers), [Authentik](https://docs.goauthentik.io/docs/providers/proxy/), and others.
 
-Set these ArchiveBox configuration values to based on your reverse proxy setup and needs:
+Set these ArchiveBox configuration values based on your reverse proxy setup and needs:
 ```bash
 # REQUIRED: the header where your upstream reverse proxy will place the authenticated user's username/email
 # EXAMPLE: Cf-Access-Authenticated-User-Email (if using Cloudflare Access / Zero Trust)
