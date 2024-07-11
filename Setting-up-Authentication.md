@@ -16,7 +16,7 @@ Use these three options to set up your desired permissions for non-admin guest u
 - [`PUBLIC_ADD_VIEW=False`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view): Default *doesn't allow* non-logged-in users to submit new URLs
 
 > [!NOTE]
-> **Open source ArchiveBox does not support setting up *non-admin* users** with individual read/write permissions. We do offer this feature, audit logging, and more to [paying clients](https://docs.monadical.com/s/archivebox-consulting-services).
+> **Open source ArchiveBox does not support setting up *non-admin* users** & groups with custom permissions. We do offer this feature, audit logging, and more to [paying clients](https://docs.monadical.com/s/archivebox-consulting-services).
 
 - [Wiki: Configuration (`PUBLIC_ADD_VIEW`, `PUBLIC_SNAPSHOTS`, `PUBLIC_INDEX`)]()
 - [Wiki: Security Overview](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview)
