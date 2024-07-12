@@ -26,12 +26,12 @@
 
 # Guides
 
- - [[Scheduled Archiving]]
+ - [[Chromium Install]]
  - [[Setting up Storage]] <small>(NFS/SMB/S3/etc)</small>
  - [[Setting up Authentication]] <small>(SSO/LDAP/etc)</small>
  - [[Setting up Search]]
+ - [[Scheduled Archiving]]
  - [[Publishing Your Archive]]
- - [[Chromium Install]]
  - [Cookies & Sessions Setup](https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#setting-up-a-chromium-user-profile)
  - [[Upgrading or Merging Archives]]
  - [[Troubleshooting]]
