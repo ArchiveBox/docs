@@ -82,12 +82,14 @@ You may choose to set up a Chrome/Chromium user profile in order to use your coo
 >
 > For this reason, it's best to set up dedicated fake profile accounts for each site you want to archive, and consider them burned if you ever share any of your archived snapshots of those sites with untrusted people.
 
-### Docker Setup
+<a name="docker-setup"></a>
+<a name="Docker-Setup"></a>
 
-If using ArchiveBox in Docker, the easiest way to set up session credentials is by attaching the ArchiveBox browser to a virtual window server in a sidecar container, and logging in to your sites over VNC (less complicated than it sounds).
+### Docker VNC Setup
 
-1. Add a `novnc` container and these settings to your `docker-compose.yml`.  
-   ([`novnc`](https://github.com/theasp/docker-novnc) runs an [Xvfb](https://www.x.org/releases/X11R7.6/doc/man/man1/Xvfb.1.xhtml) + [Fluxbox](http://www.fluxbox.org/) desktop environment that lets you remote-control ArchiveBox's Chrome via VNC)
+If using ArchiveBox in Docker, the easiest way to set up session credentials is by remote controlling the ArchiveBox Chrome browser over VNC, and using it to log in to the sites you want to save.
+
+1. Enable the `novnc` server using these settings in your `docker-compose.yml`:
 
 `docker-compose.yml`:
 ```yaml
@@ -139,6 +141,7 @@ docker compose run archivebox add 'https://private.example.com/some/site/requiri
 # make sure the content appears as your logged-in user would see it
 ```
 
+Under the hood this uses [Xvfb](https://www.x.org/releases/X11R7.6/doc/man/man1/Xvfb.1.xhtml) + [Fluxbox](http://www.fluxbox.org/) + [`novnc`](https://github.com/theasp/docker-novnc) to provide a virtual display, window manager, and VNC server + novnc websocket viewer.
 <br/>
 
 ### Non-Docker Setup (Local Host)
