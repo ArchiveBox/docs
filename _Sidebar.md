@@ -33,7 +33,8 @@
  - [[Scheduled Archiving]]
  - [[Publishing Your Archive]]
  - [Cookies & Sessions Setup](https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#setting-up-a-chromium-user-profile)
- - [[Upgrading or Merging Archives]]
+ - [[Upgrading Archives]]
+ - [[Merging Archives]]
  - [[Troubleshooting]]
 
 # More Info
