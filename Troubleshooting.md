@@ -9,7 +9,7 @@ What are you having an issue with?:
 - [Configuring ArchiveBox](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration)
 - [Archiving content with ArchiveBox](#Archiving)
 - [Hosting your collection publicly](#Hosting-the-Archive)
-- [Database and filesystem issues](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#database-troubleshooting)
+- [Database and filesystem issues](#Database)
 
 ---
 
