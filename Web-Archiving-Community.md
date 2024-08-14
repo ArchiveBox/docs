@@ -180,6 +180,8 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ### Other ArchiveBox Alternatives
 
+> *There are lots more projects listed here too: https://github.com/stars/pirate/lists/internet-archiving*
+
  - **[browsertrix-crawler](https://github.com/webrecorder/browsertrix-crawler) / [ArchiveWeb.page](https://github.com/webrecorder/archiveweb.page) + [ReplayWeb.page](https://github.com/webrecorder/replayweb.page) + [pywb](https://github.com/webrecorder/pywb) Webrecorder.io's archiving suite has the highest fidelity, and can flawlessly archive YouTube, Twitter, FB and other complex, JS-heavy SPAs**
  - **[SingleFile](https://github.com/gildas-lormeau/SingleFile/) Web Extension / CLI util for Firefox and Chrome to save a web page as a single HTML file**
  - **[Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a beautiful, user-friendly browser extension that archives all history with full-text search, annotation support, and more**
