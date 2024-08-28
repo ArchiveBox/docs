@@ -21,17 +21,31 @@ See [[Setting Up Authentication]] for more...
 
 <img src="https://imgur.zervice.io/K3dZcjG.png" width="50px" align="right"/>
 
-#### Archiving Public Content Only ⭐️ `[Recommended for most people]`
+#### Archiving Public Content Only ⭐️ `[Default, recommended for most people]`
 
 This is the default (lax) mode, intended for archiving public (non-secret) URLs without authenticating the headless browser.  This is the mode used if you're archiving news articles, audio, video, etc. browser bookmarks to a folder published on your webserver. This allows you to access and link to content on `http://your.archive.com/archive...` after the originals go down.
 
-This mode should not be used for archiving entire browser history or authenticated private content like Google Docs, paywalled content, invite-only subreddits, private photo share urls, etc.
+The default mode should not be used for archiving entire browser history or authenticated private content like Google Docs, paywalled content, invite-only subreddits, private photo share urls, etc.
+
+```bash
+# (these are the defaults)
+archivebox config --set SAVE_ARCHIVE_DOT_ORG=True
+archivebox config --set CHROME_USER_DATA_DIR=None
+archivebox config --set COOKIES_FILE=None
+```
+
 
 <br/>
 
 #### Archiving Content Behind Log-Ins 🚨 `[Advanced users only]`
 
 ArchiveBox is able to archive content that requires authentication or cookies, but it comes with some caveats. Create dedicated logins for archiving to access paywalled content, private forums, LAN-only content, etc. then share them with ArchiveBox via Chrome profile + cookies.txt file.
+
+```bash
+archivebox config --set SAVE_ARCHIVE_DOT_ORG=False
+archivebox config --set CHROME_USER_DATA_DIR=/path/to/chrome/profile
+archivebox config --set COOKIES_FILE=/path/to/cookies.txt
+```
 
 To get started, set [`CHROME_USER_DATA_DIR`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#chrome_user_data_dir) and [`COOKIES_FILE`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#COOKIES_FILE) to point to a Chrome user folder that has your sessions and a wget `cookies.txt` file respectively.
 
