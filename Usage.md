@@ -281,7 +281,7 @@ cd ~/archivebox/data
 sqlite3 index.sqlite3
 
 # example usage:
-SELECT * FROM snapshot;
+SELECT * FROM core_snapshot;
 UPDATE auth_user SET email = 'someNewEmail@example.com' WHERE username = 'someUsernameHere';
 ...
 ```
