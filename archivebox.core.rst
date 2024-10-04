@@ -59,13 +59,6 @@ archivebox.core.views module
     :undoc-members:
     :show-inheritance:
 
-archivebox.core.welcome\_message module
----------------------------------------
-
-.. automodule:: archivebox.core.welcome_message
-    :members:
-    :undoc-members:
-    :show-inheritance:
 
 archivebox.core.wsgi module
 ---------------------------

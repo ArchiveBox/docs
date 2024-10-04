@@ -48,6 +48,29 @@ archivebox.util module
     :undoc-members:
     :show-inheritance:
 
+archivebox.machine module
+------------------------
+
+.. automodule:: archivebox.machine
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+archivebox.abx module
+------------------------
+
+.. automodule:: archivebox.abx
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+archivebox.queues module
+------------------------
+
+.. automodule:: archivebox.queues
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
 Module contents
 ---------------
