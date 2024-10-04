@@ -391,7 +391,7 @@ DATA_DIR = '~/archivebox/data'
 os.chdir(DATA_DIR)
 
 # you must import and setup django first to establish a DB connection
-from archivebox.config import setup_django
+from archivebox.config.legacy import setup_django
 setup_django()
 
 # then you can import all the main functions
