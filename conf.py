@@ -12,9 +12,13 @@
 #
 
 import os
+import sys
+from pathlib import Path
+
 import recommonmark                                   # noqa: F401
 from recommonmark.transform import AutoStructify
 
+sys.path.append(str(Path('.').resolve()))
 os.environ['USE_CHROME'] = 'False'
 
 import archivebox
