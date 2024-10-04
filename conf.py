@@ -10,30 +10,19 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
+
 import os
-import sys
-import json
-import django
-
-from pathlib import Path
-
 import recommonmark                                   # noqa: F401
 from recommonmark.transform import AutoStructify
 
 os.environ['USE_CHROME'] = 'False'
 
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
-PACKAGE_DIR = os.path.join(ROOT_DIR, 'archivebox')
+import archivebox
+from archivebox.config.legacy import setup_django
 
-os.chdir(ROOT_DIR)
+setup_django()
 
-sys.path.insert(0, os.path.abspath('.'))
-sys.path.insert(0, os.path.abspath('..'))
-sys.path.insert(0, PACKAGE_DIR)
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
-django.setup()
-
-VERSION = json.loads((Path(ROOT_DIR) / 'package.json').read_text().strip())['version']
+VERSION = archivebox.VERSION
 
 # -- Project information -----------------------------------------------------
 
