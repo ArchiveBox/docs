@@ -1,4 +1,4 @@
-## Upgrade your ArchiveBox collection to a new version
+# Upgrading Versions
 
 ```bash
 # cd /path/to/your/archivebox/data
@@ -127,7 +127,7 @@ More info:
 - https://aur.archlinux.org/packages/archivebox
 - https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/misc/archivebox/default.nix
 
----
+<hr/>
 
 ## Merge two or more existing archives
 
@@ -135,7 +135,7 @@ See [[Merging Collections]]...
 
 <br/>
 
----
+<hr/>
 
 ## Related Documents
 

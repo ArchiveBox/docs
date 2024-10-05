@@ -1,3 +1,5 @@
+# Setting Up Search
+
 ## How to Search in ArchiveBox
 
 You can search your ArchiveBox data in a number of ways:

@@ -1,0 +1,81 @@
+# {py:mod}`archivebox.machine.apps`
+
+```{py:module} archivebox.machine.apps
+```
+
+```{autodoc2-docstring} archivebox.machine.apps
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`MachineConfig <archivebox.machine.apps.MachineConfig>`
+  -
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`__package__ <archivebox.machine.apps.__package__>`
+  - ```{autodoc2-docstring} archivebox.machine.apps.__package__
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} __package__
+:canonical: archivebox.machine.apps.__package__
+:value: >
+   'archivebox.machine'
+
+```{autodoc2-docstring} archivebox.machine.apps.__package__
+```
+
+````
+
+`````{py:class} MachineConfig(app_name, app_module)
+:canonical: archivebox.machine.apps.MachineConfig
+
+Bases: {py:obj}`django.apps.AppConfig`
+
+````{py:attribute} default_auto_field
+:canonical: archivebox.machine.apps.MachineConfig.default_auto_field
+:value: >
+   'django.db.models.BigAutoField'
+
+```{autodoc2-docstring} archivebox.machine.apps.MachineConfig.default_auto_field
+```
+
+````
+
+````{py:attribute} name
+:canonical: archivebox.machine.apps.MachineConfig.name
+:value: >
+   'machine'
+
+```{autodoc2-docstring} archivebox.machine.apps.MachineConfig.name
+```
+
+````
+
+````{py:attribute} verbose_name
+:canonical: archivebox.machine.apps.MachineConfig.verbose_name
+:value: >
+   'Machine Info'
+
+```{autodoc2-docstring} archivebox.machine.apps.MachineConfig.verbose_name
+```
+
+````
+
+`````

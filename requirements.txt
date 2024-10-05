@@ -1,4 +1,5 @@
--e .
-recommonmark
 sphinx
 sphinx-rtd-theme
+myst-parser
+sphinx-autodoc2
+linkify-it-py

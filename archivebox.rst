@@ -1,81 +1,25 @@
 archivebox package
 ==================
-
-Subpackages
------------
-
 .. toctree::
+   archivebox.core
+   archivebox.cli
+   archivebox.api
+   archivebox.machine
+   archivebox.extractors
+   archivebox.index
+   archivebox.parsers
+   archivebox.misc
+   archivebox.abid_utils
+   archivebox.queues
+   archivebox.plugins_extractor
+   archivebox.plugins_pkg
+   archivebox.plugins_auth
+   archivebox.plugins_search
 
-    archivebox.cli
-    archivebox.config
-    archivebox.core
-    archivebox.extractors
-    archivebox.index
-    archivebox.parsers
 
-Submodules
-----------
-
-archivebox.main module
-----------------------
-
-.. automodule:: archivebox.main
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-archivebox.manage module
-------------------------
-
-.. automodule:: archivebox.manage
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-archivebox.system module
-------------------------
-
-.. automodule:: archivebox.system
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-archivebox.util module
-----------------------
-
-.. automodule:: archivebox.util
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-archivebox.machine module
-------------------------
-
-.. automodule:: archivebox.machine
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-archivebox.abx module
-------------------------
-
-.. automodule:: archivebox.abx
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-archivebox.queues module
-------------------------
-
-.. automodule:: archivebox.queues
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-Module contents
+archivebox.main
 ---------------
-
-.. automodule:: archivebox
-    :members:
-    :undoc-members:
-    :show-inheritance:
+.. automodule:: archivebox.main
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,5 +1,8 @@
-Intro
-#####
+Contents
+########
+
+Overview
+########
 
 .. toctree::
     :maxdepth: 1
@@ -11,49 +14,46 @@ Getting Started
 ###############
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     Quickstart.md
     Install.md
     Docker.md
-
-
-General
-#######
+    Configuration.md
+    Security-Overview.md
 
 .. toctree::
     :maxdepth: 2
 
     Usage.md
-    Configuration.md
-    Troubleshooting.md
-    Security-Overview.md
+
+Guides
+######
+
+.. toctree::
+    :maxdepth: 1
+
+    Setting-Up-Storage.md
+    Setting-up-Authentication.md
+    Setting-up-Search.md
     Publishing-Your-Archive.md
     Scheduled-Archiving.md
     Chromium-Install.md
-    Upgrading-or-Merging-Archives.md
+    Upgrading.md
+    Merging-Collections.md
+    Troubleshooting.md
 
 
 API Reference
 #############
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 3
 
-    Configuration Options <Configuration.md>
-    Data Folder Layout <Usage.md>
-    Command Line Interface <Usage.md>
-    Web Interface <Usage.md>
-    Python API <modules>
-    REST API <modules>
-
-.. - [Configuration Options](Configuration.md)
-.. - [Data Folder Layout](Configuration.md)
-.. - [Command Line Interface](Usage.md)
-.. - [Web Interface](Usage.md)
-.. - [Python API](modules)
-.. - REST API (Coming soon...)
-
+    Filesystem <https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#disk-layout>
+    SQL API <https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#sql-shell-usage>
+    REST API <https://demo.archivebox.io/api>
+    Python API <apidocs/index>
 
 Meta
 ####

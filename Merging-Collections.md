@@ -1,4 +1,4 @@
-## Merging two or more existing archives
+# Merging Collections
 
 Two or more existing ArchiveBox collection dirs can be merged together by simply combining the contents of `archive/*` and re-running `archivebox init` to pull the new Snapshots into the index.
 

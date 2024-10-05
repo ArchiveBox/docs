@@ -13,20 +13,22 @@
 
 import os
 import sys
+import django
 from pathlib import Path
 
-import recommonmark                                   # noqa: F401
-from recommonmark.transform import AutoStructify
+# import recommonmark                                   # noqa: F401
+# from recommonmark.transform import AutoStructify
 
-sys.path.append(str(Path('.').resolve()))
-os.environ['USE_CHROME'] = 'False'
+sys.path.append(str(Path(__file__).parent.parent))
+sys.path.append(str(Path(__file__).parent.parent / 'archivebox'))
+# os.environ['DJANGO_SETTINGS_MODULE'] = 'core.settings'
+# import archivebox
+# os.chdir(archivebox.PACKAGE_DIR)
 
-import archivebox
-from archivebox.config.legacy import setup_django
+# django.setup()
+# from archivebox.config.legacy import setup_django
 
-setup_django()
-
-VERSION = archivebox.VERSION
+# setup_django()
 
 # -- Project information -----------------------------------------------------
 
@@ -38,7 +40,7 @@ github_doc_root = 'https://github.com/ArchiveBox/docs/tree/master/docs/'
 language = 'en'
 
 # The full version, including alpha/beta/rc tags
-release = VERSION
+release = (Path(__file__).parent.parent / 'pyproject.toml').read_text().split('version = ', 1)[-1].split('\n', 1)[0]
 
 
 # -- General configuration ---------------------------------------------------
@@ -50,8 +52,35 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',
-    'recommonmark',
+    'sphinx.ext.autosummary',
+    'myst_parser',                       # pip install myst-parser
+    'autodoc2',
+    # 'recommonmark',
 ]
+autodoc2_packages = [
+    {
+        "path": "../archivebox",
+        "module": "archivebox",
+        "exclude_dirs": [
+            '__pycache__',
+            'migrations',
+            'vendor',
+            'typings',
+            'templates',
+            'static',
+        ],
+        "exclude_files": [
+            'tests.py',  
+        ],
+    },
+]
+autodoc2_output_dir = 'apidocs'
+autodoc2_render_plugin = "myst"
+autodoc2_skip_module_regexes = [
+    r'.*migrations.*',
+    r'.*vendor.*',
+]
+myst_enable_extensions = ['linkify']     # pip install linkify-it-py
 
 source_suffix = {
     '.rst': 'restructuredtext',
@@ -73,13 +102,13 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
     '_build',
-    'Thumbs.db',
-    '.DS_Store',
-    'data',
-    'output',
-    'templates',
-    'tests',
-    'migrations',
+    '**/Thumbs.db',
+    '**/.DS_Store',
+    'data*',
+    '**/requirements.txt',
+    '**/tests/**',
+    '**/templates/**',
+    '**/migrations/**',
 ]
 
 
@@ -105,8 +134,7 @@ texinfo_documents = [
 
 autodoc_default_flags = ['members']
 autodoc_member_order = 'bysource'
-extensions += ['sphinx.ext.autosummary',]
-autosummary_gerenerate = True
+autosummary_generate = True
 
 pygments_style = 'sphinx'
 
@@ -114,7 +142,6 @@ pygments_style = 'sphinx'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-
 
 man_pages = [
     (master_doc, 'archivebox', 'archivebox Documentation',
@@ -125,9 +152,9 @@ man_pages = [
 
 
 # At the bottom of conf.py
-def setup(app):
-    app.add_config_value('recommonmark_config', {
-            # 'url_resolver': lambda url: github_doc_root + url,
-            'auto_toc_tree_section': 'Documentation',
-            }, True)
-    app.add_transform(AutoStructify)
+# def setup(app):
+#     app.add_config_value('recommonmark_config', {
+#             # 'url_resolver': lambda url: github_doc_root + url,
+#             'auto_toc_tree_section': 'Documentation',
+#             }, True)
+#     app.add_transform(AutoStructify)
