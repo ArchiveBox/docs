@@ -9,26 +9,12 @@
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
 
-import os
 import sys
-import django
 from pathlib import Path
-
-# import recommonmark                                   # noqa: F401
-# from recommonmark.transform import AutoStructify
 
 sys.path.append(str(Path(__file__).parent.parent))
 sys.path.append(str(Path(__file__).parent.parent / 'archivebox'))
-# os.environ['DJANGO_SETTINGS_MODULE'] = 'core.settings'
-# import archivebox
-# os.chdir(archivebox.PACKAGE_DIR)
-
-# django.setup()
-# from archivebox.config.legacy import setup_django
-
-# setup_django()
 
 # -- Project information -----------------------------------------------------
 
