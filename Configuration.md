@@ -57,7 +57,8 @@ This is useful when running ArchiveBox inside Docker as root and you need to exp
 
 **Possible Values:** [`911`]/`1000`/...
 
-*Note: Only applicable for Docker users, settable via environment varaibles only.* (not `ArchiveBox.conf` , `archivebox config --set ...`)
+*Note: Only applicable for Docker users, settable via environment varaibles only.*   
+(not `ArchiveBox.conf` , `archivebox config --set ...`)
 
 User and Group ID that the data directory should be owned by. We recommend leaving this as the default `911` and running `chown -R 911:$(id -g) ./data` outside Docker, this will make sure your data is writable by both ArchiveBox inside Docker and host users in your group outside of Docker.
 
