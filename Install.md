@@ -126,18 +126,16 @@ See our [Dependencies](https://github.com/ArchiveBox/ArchiveBox#dependencies) do
 Make sure you have [Homebrew](https://brew.sh/) installed first.
 
 ```bash
-# Install everything automatically with our official ArchiveBox brew package
-brew tap archivebox/archivebox
-brew install archivebox
-# OR Install ArchiveBox's dependencies manually (instead of using the all-in-one brew package)
-# brew tap homebrew-ffmpeg/ffmpeg
-# brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
-# brew install python3 node git wget curl yt-dlp ripgrep
+# Install ArchiveBox's dependencies manually (instead of using the all-in-one brew package)
+brew install python3 node git wget curl ffmpeg yt-dlp ripgrep sonic
+pip install archivebox
+archivebox install
 
-# Skip this if you already have Google Chrome/Chromium installed in /Applications/
-pip3 install --upgrade playwright
-playwright install --with-deps chromium
-# OR install chrome as a brew cask
+# Optional: get FFMPEG with the AAC addon
+# brew tap homebrew-ffmpeg/ffmpeg
+# brew uninstall ffmpeg; brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
+
+# Optional: get Chromium with brew (not needed if you already have /Applications/{Google Chrome,Chromium}.app)
 # brew install --cask chromium
 ```
 
@@ -152,16 +150,12 @@ Make sure `apt` and `dpkg` are available on your system.
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 
 # Install base system dependencies manually (check ArchiveBox/Dockerfile for more if needed)
-sudo apt install python3 python3-pip python3-minimal python3-distutils nodejs libatomic1 zlib1g-dev libssl-dev libldap2-dev libsasl2-dev python3-ldap python3-msgpack python3-mutagen python3-regex python3-pycryptodome procps wget curl git yt-dlp ffmpeg ripgrep
-# OR install them using the (outdated) official ArchiveBox apt package
-# echo "deb http://ppa.launchpad.net/archivebox/archivebox/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/archivebox.list
-# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C258F79DCC02E369
-# sudo apt-get update && sudo apt-get install archivebox
+sudo apt install python3 python3-pip python3-minimal python3-distutils nodejs libatomic1 zlib1g-dev libssl-dev libldap2-dev libsasl2-dev python3-ldap python3-msgpack python3-mutagen python3-regex python3-pycryptodome procps dnsutils wget curl git yt-dlp ffmpeg ripgrep
 
-# Make sure to install Chromium as well (can be skipped if you already have chrome installed and in your $PATH)
-pip install --upgrade playwright
-playwright install --with-deps chromium
-# OR install chromium and its dependencies manually with apt
+# Optional: get Chromium with pip (skip if you already have chromium-browser/google-chrome installed and in your $PATH)
+# pip install --upgrade playwright
+# playwright install --with-deps chromium
+# OR: get chromium and manually with apt (not recommended, often out-of-date)
 # sudo apt install chromium fontconfig fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-symbola fonts-noto fonts-freefont-ttf
 ```
 
@@ -199,16 +193,15 @@ It's recommended to `pip`-install ArchiveBox even if you already installed `arch
 
 ```bash
 # get the latest version of archivebox from PyPI
-pip install --upgrade --ignore-installed archivebox[ldap,sonic] yt-dlp playwright
-# (takes precedence over apt/brew-installed archivebox, it's fine to have both)
+pip install --upgrade --ignore-installed archivebox[ldap,sonic]
 
-# if you see errors about ldap, install the C++ build tools + ldap headers and retry (only needed on some OSs)
+# if you see errors about ldap, install the C++ build tools + ldap headers and retry (only needed on some OSs + if you want ldap)
 # apt install build-essensial python3-ldap
 ```
 
 <br/>
 
-### 3. Install the JS dependencies using `archivebox init --setup`
+### 3. Install the JS dependencies using `archivebox setup`
 
 Finish installing the runtime JS dependencies that live inside your collection data dir (e.g. readability, singlefile, mercury).
 ```bash
@@ -221,9 +214,10 @@ archivebox init
 # auto-install all the runtime JS dependencies inside ./node_modules
 archivebox setup
 # under the hood, this does:
-# - npm install 'git+https://github.com/ArchiveBox/ArchiveBox.git#dev'
-# - playwright install chromium
-# - and a few other auto-install checks...
+# - installs npm dependencies: singlefile, readability, puppeteer, etc.
+# - installs pip dependencies: yt-dlp, playwright, etc.
+# - checks for / installs sytem dependencies: curl, wget, etc
+# if you see "permission denied" errors, run 'sudo archivebox setup'
 
 # ✅ see a final detailed breakdown of all the installed dependencies and commands available
 archivebox version
@@ -236,8 +230,6 @@ archivebox help
 
 Make sure the `pip`-installed version of `archivebox` is available in your `$PATH`.
 ```bash
-apt show archivebox      # show info about the apt-installed version of archivebox
-brew info archivebox     # show info about the brew-installed version of archivebox
 pip show archivebox      # show info about the pip-installed version of archivebox
 
 echo $PATH               # show the directories your system is searching for binaries
