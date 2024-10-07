@@ -57,13 +57,13 @@ This is useful when running ArchiveBox inside Docker as root and you need to exp
 
 **Possible Values:** [`911`]/`1000`/...
 
-User and Group ownership to set the output directory and file contents to.  **Only settable as environment variables** when using ArchiveBox in Docker.
+*Note: Only applicable for Docker users, settable via environment varaibles only.* (not `ArchiveBox.conf` , `archivebox config --set ...`)
 
-This is useful on some Docker setups when you want the data dir to be owned by the same UID/GID on the host and inside the container.
+User and Group ID that the data directory should be owned by. We recommend leaving this as the default `911` and running `chown -R 911:$(id -g) ./data` outside Docker, this will make sure your data is writable by both ArchiveBox inside Docker and host users in your group outside of Docker.
 
-`PUID=0` is not allowed ([do not run as root](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#do-not-run-as-root)), and `PGID=0` is allowed but not recommended.  `PUID`s and `PGID`s below `100` cause many issues because they're often [already in use](https://github.com/ArchiveBox/ArchiveBox/discussions/1366) by an existing linux user in docker, if the files must be owned by a low value ID e.g. `33` (`www-data`), you may need to use [`bindfs`](https://github.com/clecherbauer/docker-volume-bindfs) to remap the permissions.
+`PUID=0` is not allowed ([do not run as root](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#do-not-run-as-root)), `PGID=0` is allowed but **not recommended**.  Trying to use `PUID`s and `PGID`s below `100` is not advised and causes many issues because they're often [already in use](https://github.com/ArchiveBox/ArchiveBox/discussions/1366) by an existing system user inside docker. If for some reason you `must` use a low value ID e.g. `33` (`www-data`), you may need to use [`bindfs`](https://github.com/clecherbauer/docker-volume-bindfs) to remap the permissions for ArchiveBox.
 
-Make sure if using NFS/SMB/FUSE that the volume allows setting ownership on files (e.g. don't set `root_squash` or `all_squash` on NFS shares).
+If using NFS/SMB/FUSE, make sure that the volume allows setting ownership on files (e.g. don't set `root_squash` or `all_squash` on NFS shares).
 
 *Learn more:*  
 - https://docs.linuxserver.io/general/understanding-puid-and-pgid/
