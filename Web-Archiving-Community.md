@@ -101,20 +101,26 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ---
 
-### From the WebRecorder.io team and the Rhizome.org/Conifer team
+### From Webrecorder
 
-<img src="https://quintagroup.com/cms/python/images/webrecorder.jpeg" width="150px" align="right" style="float: right; margin: 5px"/>
-<img src="http://web.archive.org/web/20201025154037im_/https://blog.conifer.rhizome.org/assets/Conifer%20Rhiz%20Horizontal%20@2x.png" alttext="Conifer by Rhizome Logo, previously Know as WebRecorder.io" width="150px" align="right" style="float: right; margin: 5px"/>
+[Webrecorder](https://webrecorder.net/) develops a suite of open source tools, to capture websites and replay them at a later time as accurately as possible. Webrecorder also publishes the [WACZ file format spec](https://specs.webrecorder.net/wacz/latest).
 
- - [ArchiveWeb.page](https://archiveweb.page) + [ReplayWeb.page](https://replayweb.page) single-page self-contained archiving + replay webapp
- - **[Browsertrix](https://browsertrix.com/) aka [Browsertrix-Crawler](https://github.com/webrecorder/browsertrix-crawler) + [Browsertrix Cloud](https://github.com/webrecorder/browsertrix-cloud)** fully-fledged web app to save + curate high-fidelity web archives
- - **[Webrecorder.net](https://webrecorder.net/) Suite of open source projects and tools, led by [Ilya Kreymer](https://github.com/ikreymer), to capture interactive websites and replay them at a later time as accurately as possible**
- - **[Conifer by Rhizome.org](https://conifer.rhizome.org/)** **An open-source personal archiving server that uses pywb under the hood** [no longer affiliated with Webrecorder.io](https://blog.conifer.rhizome.org/2020/06/11/webrecorder-conifer.html) 
- - **[pywb](https://github.com/webrecorder/pywb) The python wayback machine, the codebase forked off archive.org that powers webrecorder**
- - [warcit](https://github.com/webrecorder/warcit) Create a warc file out of a folder full of assets
- - [WebArchivePlayer](https://github.com/ikreymer/webarchiveplayer#auto-load-warcs) A tool for replaying web archives
- - [warcio](https://github.com/webrecorder/warcio) fast streaming asynchronous WARC reader and writer
- - [More on their Github...](https://github.com/webrecorder)
+- **[Browsertrix](https://webrecorder.net/browsertrix)** Fully integrated (self hostable) SaaS web archiving platform
+- **[ArchiveWeb.page](https://webrecorder.net/archivewebpage)** Chrome extension for manual, interactive archiving of websites as you browse the web. Good for capturing high-fidelity complex interactions
+- **[ReplayWeb.page](https://webrecorder.net/replaywebpage)** Web archive viewer that runs entirely in the browser and doesn't require any server-hosted component to view WARC and WACZ files. Also available as a standalone electron app for local desktop use
+- **[Browsertrix Crawler](https://github.com/webrecorder/browsertrix-crawler)** Command-line crawling application that powers Browsertrix's core crawling features
+- [pywb](https://github.com/webrecorder/pywb) aka *Python Wayback*, the open source toolkit forked from archive.org for self-hosting your own wayback machine among other web archiving tools
+- [warcit](https://github.com/webrecorder/warcit) Create a WARC file out of a folder full of assets
+- [warcio](https://github.com/webrecorder/warcio) fast streaming asynchronous WARC reader and writer
+- [More on their GitHub...](https://github.com/webrecorder)
+
+---
+
+### From Rhizome.org (Conifer)
+
+<img src="http://web.archive.org/web/20201025154037im_/https://blog.conifer.rhizome.org/assets/Conifer%20Rhiz%20Horizontal%20@2x.png" alttext="Conifer by Rhizome Logo" width="150px" align="right" style="float: right; margin: 5px"/>
+
+- **[Conifer by Rhizome.org](https://conifer.rhizome.org/)** **An open-source personal archiving server that uses pywb under the hood.** [Previously affiliated with Webrecorder](https://blog.conifer.rhizome.org/2020/06/11/webrecorder-conifer.html)
 
 ---
 
@@ -182,7 +188,6 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 > *There are lots more projects listed here too: https://github.com/stars/pirate/lists/internet-archiving*
 
- - **[browsertrix-crawler](https://github.com/webrecorder/browsertrix-crawler) / [ArchiveWeb.page](https://github.com/webrecorder/archiveweb.page) + [ReplayWeb.page](https://github.com/webrecorder/replayweb.page) + [pywb](https://github.com/webrecorder/pywb) Webrecorder.io's archiving suite has the highest fidelity, and can flawlessly archive YouTube, Twitter, FB and other complex, JS-heavy SPAs**
  - **[SingleFile](https://github.com/gildas-lormeau/SingleFile/) Web Extension / CLI util for Firefox and Chrome to save a web page as a single HTML file**
  - **[Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a beautiful, user-friendly browser extension that archives all history with full-text search, annotation support, and more**
  - **[Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content**
@@ -193,6 +198,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
  - **[LinkWarden](https://github.com/linkwarden/linkwarden) Link archival and curation web app, very similar to ArchiveBox**
  - **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support**
  - **[Scoop](https://github.com/harvard-lil/scoop)** Create high-fidelity WARC/WACZ captures using a playwright browser, with support for signing, media extraction, PDFs, etc. ([by the perma.cc team](https://lil.law.harvard.edu/blog/2023/04/13/scoop-witnessing-the-web/))
+- **[Browsertrix](https://webrecorder.net/browsertrix) + [ArchiveWeb.page](https://webrecorder.net/archivewebpage) + [ReplayWeb.page](https://webrecorder.net/replaywebpage) Webrecorder's archiving suite has the highest fidelity, and can flawlessly archive YouTube, X, Facebook, and other complex, JS-heavy SPAs**
 
 Ones I haven't personally vetted:
 
