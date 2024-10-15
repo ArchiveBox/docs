@@ -1,4 +1,4 @@
-# Chromium Install
+# Chrome / Chromium Setup
 
 By default, ArchiveBox looks for any existing installed version of Chrome/Chromium and uses it if found.  You can optionally install a specific version and set the environment variable `CHROME_BINARY` to force ArchiveBox to use that one, e.g.:  
 
