@@ -98,9 +98,9 @@ services:
         ...
         volumes:
             ...
-            - ./chrome_profile:/home/archivebox/chrome_profile
+            - ./data/personas/Default:/data/personas/Default
         environment:
-            - CHROME_USER_DATA_DIR=/home/archivebox/chrome_profile
+            - CHROME_USER_DATA_DIR=/data/personas/Default/chrome_profile
             - DISPLAY=novnc:0.0
             
     novnc:
@@ -121,13 +121,13 @@ docker compose up -d novnc
 
 3. Start ArchiveBox's Chrome inside Docker
 ```bash
-docker compose run archivebox /usr/bin/chromium-browser --user-data-dir=/home/archivebox/chrome_profile --profile-directory=Default --disable-gpu --disable-features=dbus --disable-dev-shm-usage --start-maximized --no-sandbox --disable-setuid-sandbox --no-zygote --disable-sync --no-first-run
+docker compose run archivebox /usr/bin/chromium-browser --user-data-dir=/data/personas/Default/chrome_profile --profile-directory=Default --disable-gpu --disable-features=dbus --disable-dev-shm-usage --start-maximized --no-sandbox --disable-setuid-sandbox --no-zygote --disable-sync --no-first-run
 ```
 <small>(make sure you set `DISPLAY` & `CHROME_USER_DATA_DIR` and added the line to `volumes:` above first!)</small>
 
 4. Open [`http://localhost:8080/vnc.html`](http://localhost:8080/vnc.html) in your browser. You should see a remote linux desktop shown with Chrome open, allowing you to remote-control ArchiveBox's browser. Use it to log into any sites where you want to save credentials.
 
-5. ✅ Close the browser, stop & remove novnc, and then run archivebox normally. It will use the profile stored in `CHROME_USER_DATA_DIR=/home/archivebox/chrome_profile` going forward, you should now be able to archive sites as if you were logged in!
+5. ✅ Close the browser, stop & remove novnc, and then run archivebox normally. It will use the profile stored in `CHROME_USER_DATA_DIR=/data/personas/Default/chrome_profile` going forward, you should now be able to archive sites as if you were logged in!
 
 ```bash
 # stop the archivebox and novnc containers
@@ -159,13 +159,13 @@ Then run Chrome (with that profile dir) to open a visible browser window where y
 
 ```bash
 # find your CHROME_BINARY path by running
-archivebox version | grep CHROME_BINARY
+archivebox version | grep -i chrome
 
 # macOS example (using Google Chrome.app)
-/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=/Users/alice/.archivebox_chrome
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=~/ArchiveBox/personas/Default/chrome_profile
 
 # Linux example (using Playwright Chromium)
-/root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --user-data-dir=/Users/alice/.archivebox_chrome
+/root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --user-data-dir=~/archivebox/data/personas/Default/chrome_profile
 ```
 
 Once it's open, log in to all the sites you want to be logged in to for archiving, then close/quit Chrome.
