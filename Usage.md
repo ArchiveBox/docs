@@ -212,6 +212,8 @@ Set up the official [ArchiveBox Browser Extension](https://github.com/ArchiveBox
 
 The `OUTPUT_DIR` folder (usually whatever folder you run the `archivebox` command in), contains the UI HTML and archived data with the structure outlined below.
 
+Simply back up the entire `data/` folder to back up your archive, e.g. `zip -r data.backup.zip data`.
+
 ```yaml
  - data/
    - index.sqlite3        # Main index of all archived URLs
