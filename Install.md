@@ -81,7 +81,7 @@ If you're on Linux with `apt`, FreeBSD with `pkg`, or macOS with `brew` there is
 *(or scroll further down for manual install instructions)*
 
 ```bash
-curl -fsSL 'https://get.archivebox.io' | sh
+curl -fsSL 'https://get.archivebox.io' | bash
 # shortcut to run https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/stable/bin/setup.sh
 ``` 
 The script explains what it installs beforehand, and will prompt for user confirmation before making any changes to your system. The script uses Docker if already installed, but you can decline and it will attempt to auto-install everything using `apt`/`brew`/`pkg` + `pip` instead.
