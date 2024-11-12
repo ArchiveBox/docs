@@ -6,7 +6,7 @@
 
 ▶️ *It only takes about 5 minutes to get up and running with ArchiveBox.*
 
-ArchiveBox [officially supports](https://github.com/ArchiveBox/ArchiveBox/wiki/Install#supported-systems) **macOS**, **Ubuntu/Debian**, and **BSD**, but likely runs on many other systems.  You can run it on any system that supports **Docker** and/or Python. Windows is not officially supported but user have reported success getting it running using Docker, Docker in WSL2, bare WSL/WS2, or batch/powershell (advanced users only).
+ArchiveBox [officially supports](https://github.com/ArchiveBox/ArchiveBox/wiki/Install#supported-systems) **macOS**, **Ubuntu/Debian**, and **BSD**, but likely runs on many other systems.  You can run it on any system that supports **Docker** and/or Python. Windows *is not supported* unless you run it inside Docker Desktop, Docker in WSL2, or WSL2.
 
 For more detailed Docker and Docker Compose-specific instructions, see the [[Docker]] page.
 
@@ -45,14 +45,14 @@ Pass in URLs directly, import a list of links from a file, or import from a feed
 ```bash
 archivebox add < your_urls.txt
 
-# or if using docker
+# or if using plain Docker
 docker run -v $PWD:/data -it archivebox/archivebox add < your_urls.txt
 
-# or if using docker-compose
+# or if using Docker Compose
 docker compose run -T archivebox add < your_urls.txt
 
 # any text containing URLs can ingested via stdin or as args
-curl https://getpocket.com/users/YOURUSERNAME/feed/all | archivebox add
+curl -fsSL 'https://getpocket.com/users/YOURUSERNAME/feed/all' | archivebox add
 archivebox add 'https://example.com'
 ```
 
@@ -62,9 +62,13 @@ Open `./archive` to view your archive data in the filesystem.
 
 You can also use the interactive Web UI to view/manage/add links to your archive:
 ```bash
-# with docker:
+# with plain Docker:
 docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox
-# or without docker:
+
+# with Docker Compose:
+docker compose up -d
+
+# or without Docker:
 archivebox server
 
 open http://127.0.0.1:8000
