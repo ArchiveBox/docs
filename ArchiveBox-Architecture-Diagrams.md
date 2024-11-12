@@ -160,6 +160,8 @@ stateDiagram-v2
 - `core/models.py`: `ArchiveResult`
 - `core/statemachines.py`: `ArchiveResultMachine`
 
+<img width="1740" alt="image" src="https://github.com/user-attachments/assets/23d596ab-6c8a-440a-b49b-a2432f37abb3">
+
 ```mermaid
 stateDiagram-v2
     QUEUED --> QUEUED: tick [!can_start]
