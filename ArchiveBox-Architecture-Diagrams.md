@@ -4,7 +4,7 @@
 
 ```mermaid
 stateDiagram-v2
-    cli.main(sys.argv)
+    archivebox.cli.main(sys.argv)
     state Supervisord {
         Scheduler
         state Orchestrator {
@@ -16,13 +16,13 @@ stateDiagram-v2
         }
     }
 
-    note left of cli.main(sys.argv)
+    note left of archivebox.cli.main(sys.argv)
         archivebox entrypoint
     end note
 
     state "archivebox.cli.SUBCOMMAND" as MAIN_THREAD
 
-    cli.main(sys.argv) --> run_subcommand(sys.argv)
+    archivebox.cli.main(sys.argv) --> run_subcommand(sys.argv)
     run_subcommand(sys.argv) --> setup_django()
     setup_django() --> Supervisord: spawns in background
     setup_django() --> MAIN_THREAD: runs in foreground   
@@ -115,10 +115,11 @@ stateDiagram-v2
 
 ```mermaid
 stateDiagram-v2
-    QUEUED --> QUEUED: tick [!can_start]
-    QUEUED --> STARTED: tick [can_start]
-    STARTED --> STARTED: tick [!is_finished]
     STARTED --> SEALED: tick [is_finished]
+    STARTED --> STARTED: tick [!is_finished]    
+    QUEUED --> STARTED: tick [can_start]
+    QUEUED --> QUEUED: tick [!can_start]
+
     
     note left of QUEUED
         Crawl created
@@ -138,10 +139,10 @@ stateDiagram-v2
 
 ```mermaid
 stateDiagram-v2
-    QUEUED --> QUEUED: tick [!can_start]
-    QUEUED --> STARTED: tick [can_start]
-    STARTED --> STARTED: tick [!is_finished]
     STARTED --> SEALED: tick [is_finished]
+    STARTED --> STARTED: tick [!is_finished]
+    QUEUED --> STARTED: tick [can_start]
+    QUEUED --> QUEUED: tick [!can_start]
     
     note left of QUEUED
         Snapshot created
