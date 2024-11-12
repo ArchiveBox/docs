@@ -23,6 +23,7 @@
  - 💿 [Disk Layout](https://github.com/ArchiveBox/ArchiveBox#archive-layout)
  - 🔒 [[Security Overview]]
  - 📝 [Developer Documentation](https://github.com/ArchiveBox/ArchiveBox#archivebox-development)
+ - ፨ [Internal Architecture](https://github.com/ArchiveBox/ArchiveBox/wiki/ArchiveBox-Architecture-Diagrams)
 
 # Guides
 
