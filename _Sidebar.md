@@ -23,7 +23,6 @@
  - 💿 [Disk Layout](https://github.com/ArchiveBox/ArchiveBox#archive-layout)
  - 🔒 [[Security Overview]]
  - 📝 [Developer Documentation](https://github.com/ArchiveBox/ArchiveBox#archivebox-development)
- - ፨ [Internal Architecture](https://github.com/ArchiveBox/ArchiveBox/wiki/ArchiveBox-Architecture-Diagrams)
 
 # Guides
 
@@ -43,6 +42,7 @@
  - ⭐️ [[Web Archiving Community]]
  - [Background & Motivation](https://github.com/ArchiveBox/ArchiveBox#background--motivation)
  - [Comparison to Other Tools](https://github.com/ArchiveBox/ArchiveBox#comparison-to-other-projects)
+ - [Architecture Diagram](https://github.com/ArchiveBox/ArchiveBox/wiki/ArchiveBox-Architecture-Diagrams)
  - [Changelog](https://github.com/ArchiveBox/ArchiveBox/releases) & [[Roadmap]]
 
 ---
