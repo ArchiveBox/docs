@@ -23,6 +23,7 @@ copyright = '2024 ©️ ArchiveBox ™️'
 author = 'Nick Sweeting'
 github_url = 'https://github.com/ArchiveBox/ArchiveBox'
 github_doc_root = 'https://github.com/ArchiveBox/docs/tree/master/'
+vendor_dir = 'archivebox/pkgs'
 language = 'en'
 
 # The full version, including alpha/beta/rc tags
@@ -31,7 +32,7 @@ tag = release
 
 # 0.8.5 -> v0.8.5
 if release[0].isdigit():
-    tag = f"v{release}".split('rc')[0]
+    tag = f"v{release}"    # .split('rc')[0]
 
 # -- General configuration ---------------------------------------------------
 
@@ -65,7 +66,48 @@ autodoc2_packages = [
             'tests.py',  
         ],
     },
+    # {
+    #     "path": "../archivebox/pkgs/abx",
+    #     "module": "archivebox.pkgs.abx",
+    #     "exclude_dirs": [
+    #         '__pycache__',
+    #         'migrations',
+    #     ],
+    # },
 ]
+
+# add all vendored plugin packages to autodoc2_packages
+pkgs_dir = Path(__file__).parent.parent / vendor_dir
+vendor_pkgs = {}
+for pkg in pkgs_dir.glob("*"):
+    if not pkg.is_dir():
+        continue
+    if not (pkg / 'pyproject.toml').exists():
+        continue
+    
+    dunder_name = pkg.name.replace('-', '_')
+    if (pkg / f'{dunder_name}.py').exists():
+        path = f'../{vendor_dir}/{pkg.name}/{dunder_name}.py'
+    elif (pkg / dunder_name / '__init__.py').exists():
+        path = f'../{vendor_dir}/{pkg.name}/{dunder_name}'
+    elif (pkg / 'src' / '__init__.py').exists():
+        path = f'../{vendor_dir}/{pkg.name}/src'
+    else:
+        continue
+    
+    vendor_pkgs[dunder_name] = path
+    autodoc2_packages.append({
+        "path": path,            # ../archivebox/pkgs/abx-plugin-ldap-auth/abx_plugin_ldap_auth
+        "module": dunder_name,   # abx_plugin_ldap_auth
+        "exclude_dirs": [
+            '__pycache__',
+            'migrations',
+        ],
+        "exclude_files": [
+            'tests.py',
+        ],
+    })
+
 autodoc2_output_dir = 'apidocs'
 autodoc2_render_plugin = "myst"
 autodoc2_skip_module_regexes = [
@@ -148,18 +190,26 @@ man_pages = [
 ]
 
 def linkcode_resolve(domain, info):
-    fallback_url = f'https://github.com/search?q=repo%3AArchiveBox%2FArchiveBox%20{info["fullname"]}&type=code'
-    if domain != 'py' or not info['module']:
+    module_name = str(info['module'] or '').replace('archivebox.pkgs.', '')
+    package_name = module_name.split('.', 1)[0]
+    symbol_name = str(info['fullname'] or '').rsplit('.', 1)[-1]  # ArchiveResult
+    
+    fallback_url = f'https://github.com/search?type=code&q=repo%3AArchiveBox%2FArchiveBox%20{package_name}%20{symbol_name}'
+    if not module_name:
         return fallback_url
     
     # archivebox.crawls.models
     # -> https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/crawls/models.py
-    file_path = info['module'].replace('.', '/')
     
-    if not file_path.startswith('archivebox/'):
-        return fallback_url
+    if package_name in vendor_pkgs:
+        package_path = vendor_pkgs[package_name].strip('../').strip('/')  # archivebox/pkgs/abx-plugin-title/abx_plugin_title
+        submodule_path = module_name.split(f'{package_name}.', 1)[-1].replace('.', '/')  # extractors/title
+        file_path = f'{package_path}/{submodule_path}'
+    else:
+        file_path = module_name.replace('.', '/')
+        if not file_path.startswith('archivebox/'):
+            return fallback_url
     
-    # add hotlink to symbol within page content
-    symbol_name = str(info['fullname'] or '').rsplit('.', 1)[-1]  # e.g. #:~:text=ArchiveResult
+    file_path = file_path.strip('/').strip('.py')
 
     return f"{github_url}/blob/{tag}/{file_path}.py#:~:text={symbol_name}"
