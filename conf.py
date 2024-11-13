@@ -19,7 +19,7 @@ sys.path.append(str(Path(__file__).parent.parent / 'archivebox'))
 # -- Project information -----------------------------------------------------
 
 project = 'ArchiveBox'
-copyright = '2023 ©️ ArchiveBox ™️'
+copyright = '2024 ©️ ArchiveBox ™️'
 author = 'Nick Sweeting'
 github_url = 'https://github.com/ArchiveBox/ArchiveBox'
 github_doc_root = 'https://github.com/ArchiveBox/docs/tree/master/docs/'
@@ -27,7 +27,11 @@ language = 'en'
 
 # The full version, including alpha/beta/rc tags
 release = (Path(__file__).parent.parent / 'pyproject.toml').read_text().split('version = ', 1)[-1].split('\n', 1)[0]
+tag = release
 
+# 0.8.5 -> v0.8.5
+if release[0].isdigit():
+    tag = f"v{release}"
 
 # -- General configuration ---------------------------------------------------
 
@@ -37,8 +41,10 @@ release = (Path(__file__).parent.parent / 'pyproject.toml').read_text().split('v
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
-    'sphinx.ext.viewcode',
+    'sphinx.ext.linkcode',
     'sphinx.ext.autosummary',
+    # 'sphinx.ext.graphviz',
+    # 'sphinx.ext.inheritance_diagram'
     'myst_parser',                       # pip install myst-parser
     'autodoc2',
     # 'recommonmark',
@@ -109,13 +115,21 @@ html_theme_options = {
     'navigation_depth': 5,
     'collapse_navigation': False,
     'sticky_navigation': True,
+    'version_selector': False,
+    'language_selector': False,
+    'style_external_links': True,
+}
+html_context = {
+    "display_github": True,
+    "github_user": "ArchiveBox",
+    "github_repo": "docs",
+    "github_version": "master",
+    "conf_py_path": "/",
 }
 html_show_sphinx = False
 
 texinfo_documents = [
-    (master_doc, 'archivebox', 'archivebox Documentation',
-     author, 'archivebox', 'The open-source self-hosted internet archive.',
-     'Miscellaneous'),
+    (master_doc, 'archivebox', 'archivebox Documentation', author, 'archivebox', 'The open-source self-hosted internet archive.', 'Miscellaneous'),
 ]
 
 autodoc_default_flags = ['members']
@@ -134,6 +148,19 @@ man_pages = [
      [author], 1)
 ]
 
+def linkcode_resolve(domain, info):
+    fallback_url = f'https://github.com/search?q=repo%3AArchiveBox%2FArchiveBox%20{info["fullname"]}&type=code'
+    if domain != 'py' or not info['module']:
+        return fallback_url
+    
+    # archivebox.crawls.models
+    # -> https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/crawls/models.py
+    file_path = info['module'].replace('.', '/')
+    
+    if not file_path.startswith('archivebox/'):
+        return fallback_url
+
+    return f"https://github.com/ArchiveBox/ArchiveBox/blob/{tag}/{file_path}.py"
 
 
 

@@ -12,8 +12,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section {
 
 audio,canvas,video {
     display: inline-block;
-    *display: inline;
-    *zoom:1}
+    display: inline;
+    zoom: 1;
+}
 
 [hidden],audio:not([controls]) {
     display: none
@@ -146,7 +147,7 @@ button,input,select,textarea {
     font-size: 100%;
     margin: 0;
     vertical-align: baseline;
-    *vertical-align: middle
+    vertical-align: middle;
 }
 
 button,input {
@@ -156,7 +157,7 @@ button,input {
 button,input[type=button],input[type=reset],input[type=submit] {
     cursor: pointer;
     -webkit-appearance: button;
-    *overflow: visible
+    overflow: visible;
 }
 
 button[disabled],input[disabled] {
@@ -199,7 +200,7 @@ td {
     background-repeat: no-repeat;
     text-align: left;
     direction: ltr;
-    *line-height: 0
+    line-height: 0;
 }
 
 .ir br {
@@ -298,7 +299,8 @@ big,small {
 }
 
 .clearfix {
-    *zoom:1}
+    zoom: 1;
+}
 
 .clearfix:after,.clearfix:before {
     display: table;
