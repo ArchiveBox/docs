@@ -41,10 +41,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.api.v1_api.__package__>`
-  - ```{autodoc2-docstring} archivebox.api.v1_api.__package__
-    :summary:
-    ```
 * - {py:obj}`COMMIT_HASH <archivebox.api.v1_api.COMMIT_HASH>`
   - ```{autodoc2-docstring} archivebox.api.v1_api.COMMIT_HASH
     :summary:
@@ -64,16 +60,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.api.v1_api.__package__
-:value: >
-   'archivebox.api'
-
-```{autodoc2-docstring} archivebox.api.v1_api.__package__
-```
-
-````
 
 ````{py:data} COMMIT_HASH
 :canonical: archivebox.api.v1_api.COMMIT_HASH

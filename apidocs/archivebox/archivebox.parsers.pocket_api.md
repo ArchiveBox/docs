@@ -47,10 +47,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.parsers.pocket_api.__package__>`
-  - ```{autodoc2-docstring} archivebox.parsers.pocket_api.__package__
-    :summary:
-    ```
 * - {py:obj}`COUNT_PER_PAGE <archivebox.parsers.pocket_api.COUNT_PER_PAGE>`
   - ```{autodoc2-docstring} archivebox.parsers.pocket_api.COUNT_PER_PAGE
     :summary:
@@ -78,16 +74,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.parsers.pocket_api.__package__
-:value: >
-   'archivebox.parsers'
-
-```{autodoc2-docstring} archivebox.parsers.pocket_api.__package__
-```
-
-````
 
 ````{py:data} COUNT_PER_PAGE
 :canonical: archivebox.parsers.pocket_api.COUNT_PER_PAGE

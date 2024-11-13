@@ -27,10 +27,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.core.admin_snapshots.__package__>`
-  - ```{autodoc2-docstring} archivebox.core.admin_snapshots.__package__
-    :summary:
-    ```
 * - {py:obj}`GLOBAL_CONTEXT <archivebox.core.admin_snapshots.GLOBAL_CONTEXT>`
   - ```{autodoc2-docstring} archivebox.core.admin_snapshots.GLOBAL_CONTEXT
     :summary:
@@ -38,16 +34,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.core.admin_snapshots.__package__
-:value: >
-   'archivebox.core'
-
-```{autodoc2-docstring} archivebox.core.admin_snapshots.__package__
-```
-
-````
 
 ````{py:data} GLOBAL_CONTEXT
 :canonical: archivebox.core.admin_snapshots.GLOBAL_CONTEXT

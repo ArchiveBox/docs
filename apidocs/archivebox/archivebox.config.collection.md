@@ -45,29 +45,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.config.collection.__package__>`
-  - ```{autodoc2-docstring} archivebox.config.collection.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.config.collection.__package__
-:value: >
-   'archivebox.config'
-
-```{autodoc2-docstring} archivebox.config.collection.__package__
-```
-
-````
 
 ````{py:function} get_real_name(key: str) -> str
 :canonical: archivebox.config.collection.get_real_name

@@ -61,29 +61,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.core.views.__package__>`
-  - ```{autodoc2-docstring} archivebox.core.views.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.core.views.__package__
-:value: >
-   'archivebox.core'
-
-```{autodoc2-docstring} archivebox.core.views.__package__
-```
-
-````
 
 `````{py:class} HomepageView(**kwargs)
 :canonical: archivebox.core.views.HomepageView

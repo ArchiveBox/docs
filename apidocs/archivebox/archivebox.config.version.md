@@ -35,10 +35,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.config.version.__package__>`
-  - ```{autodoc2-docstring} archivebox.config.version.__package__
-    :summary:
-    ```
 * - {py:obj}`IN_DOCKER <archivebox.config.version.IN_DOCKER>`
   - ```{autodoc2-docstring} archivebox.config.version.IN_DOCKER
     :summary:
@@ -62,16 +58,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.config.version.__package__
-:value: >
-   'archivebox.config'
-
-```{autodoc2-docstring} archivebox.config.version.__package__
-```
-
-````
 
 ````{py:data} IN_DOCKER
 :canonical: archivebox.config.version.IN_DOCKER

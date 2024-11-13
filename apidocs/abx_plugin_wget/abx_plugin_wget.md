@@ -52,10 +52,6 @@ abx_plugin_wget.wget
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_plugin_wget.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_wget.__package__
-    :summary:
-    ```
 * - {py:obj}`__label__ <abx_plugin_wget.__label__>`
   - ```{autodoc2-docstring} abx_plugin_wget.__label__
     :summary:
@@ -63,16 +59,6 @@ abx_plugin_wget.wget
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_wget.__package__
-:value: >
-   'abx_plugin_wget'
-
-```{autodoc2-docstring} abx_plugin_wget.__package__
-```
-
-````
 
 ````{py:data} __label__
 :canonical: abx_plugin_wget.__label__

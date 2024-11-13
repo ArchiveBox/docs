@@ -25,10 +25,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_plugin_readability.binaries.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_readability.binaries.__package__
-    :summary:
-    ```
 * - {py:obj}`READABILITY_PACKAGE_NAME <abx_plugin_readability.binaries.READABILITY_PACKAGE_NAME>`
   - ```{autodoc2-docstring} abx_plugin_readability.binaries.READABILITY_PACKAGE_NAME
     :summary:
@@ -40,16 +36,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_readability.binaries.__package__
-:value: >
-   'abx_plugin_readability'
-
-```{autodoc2-docstring} abx_plugin_readability.binaries.__package__
-```
-
-````
 
 ````{py:data} READABILITY_PACKAGE_NAME
 :canonical: abx_plugin_readability.binaries.READABILITY_PACKAGE_NAME

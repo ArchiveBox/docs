@@ -35,29 +35,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.machine.admin.__package__>`
-  - ```{autodoc2-docstring} archivebox.machine.admin.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.machine.admin.__package__
-:value: >
-   'archivebox.machine'
-
-```{autodoc2-docstring} archivebox.machine.admin.__package__
-```
-
-````
 
 `````{py:class} MachineAdmin(model, admin_site)
 :canonical: archivebox.machine.admin.MachineAdmin

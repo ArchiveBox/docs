@@ -27,10 +27,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.monkey_patches.__package__>`
-  - ```{autodoc2-docstring} archivebox.monkey_patches.__package__
-    :summary:
-    ```
 * - {py:obj}`TERM_WIDTH <archivebox.monkey_patches.TERM_WIDTH>`
   - ```{autodoc2-docstring} archivebox.monkey_patches.TERM_WIDTH
     :summary:
@@ -38,16 +34,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.monkey_patches.__package__
-:value: >
-   'archivebox'
-
-```{autodoc2-docstring} archivebox.monkey_patches.__package__
-```
-
-````
 
 ````{py:data} TERM_WIDTH
 :canonical: archivebox.monkey_patches.TERM_WIDTH

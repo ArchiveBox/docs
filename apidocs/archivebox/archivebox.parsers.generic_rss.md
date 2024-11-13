@@ -27,10 +27,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.parsers.generic_rss.__package__>`
-  - ```{autodoc2-docstring} archivebox.parsers.generic_rss.__package__
-    :summary:
-    ```
 * - {py:obj}`KEY <archivebox.parsers.generic_rss.KEY>`
   - ```{autodoc2-docstring} archivebox.parsers.generic_rss.KEY
     :summary:
@@ -46,16 +42,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.parsers.generic_rss.__package__
-:value: >
-   'archivebox.parsers'
-
-```{autodoc2-docstring} archivebox.parsers.generic_rss.__package__
-```
-
-````
 
 ````{py:function} parse_generic_rss_export(rss_file: typing.IO[str], **_kwargs) -> typing.Iterable[archivebox.index.schema.Link]
 :canonical: archivebox.parsers.generic_rss.parse_generic_rss_export

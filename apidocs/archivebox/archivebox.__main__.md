@@ -15,10 +15,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.__main__.__package__>`
-  - ```{autodoc2-docstring} archivebox.__main__.__package__
-    :summary:
-    ```
 * - {py:obj}`ASCII_LOGO_MINI <archivebox.__main__.ASCII_LOGO_MINI>`
   - ```{autodoc2-docstring} archivebox.__main__.ASCII_LOGO_MINI
     :summary:
@@ -26,16 +22,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.__main__.__package__
-:value: >
-   'archivebox'
-
-```{autodoc2-docstring} archivebox.__main__.__package__
-```
-
-````
 
 ````{py:data} ASCII_LOGO_MINI
 :canonical: archivebox.__main__.ASCII_LOGO_MINI

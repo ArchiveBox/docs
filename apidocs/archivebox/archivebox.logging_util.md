@@ -171,10 +171,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.logging_util.__package__>`
-  - ```{autodoc2-docstring} archivebox.logging_util.__package__
-    :summary:
-    ```
 * - {py:obj}`_LAST_RUN_STATS <archivebox.logging_util._LAST_RUN_STATS>`
   - ```{autodoc2-docstring} archivebox.logging_util._LAST_RUN_STATS
     :summary:
@@ -182,16 +178,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.logging_util.__package__
-:value: >
-   'archivebox'
-
-```{autodoc2-docstring} archivebox.logging_util.__package__
-```
-
-````
 
 `````{py:class} RuntimeStats
 :canonical: archivebox.logging_util.RuntimeStats

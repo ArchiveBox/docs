@@ -27,10 +27,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.core.settings.__package__>`
-  - ```{autodoc2-docstring} archivebox.core.settings.__package__
-    :summary:
-    ```
 * - {py:obj}`IS_MIGRATING <archivebox.core.settings.IS_MIGRATING>`
   - ```{autodoc2-docstring} archivebox.core.settings.IS_MIGRATING
     :summary:
@@ -294,16 +290,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.core.settings.__package__
-:value: >
-   'archivebox.core'
-
-```{autodoc2-docstring} archivebox.core.settings.__package__
-```
-
-````
 
 ````{py:data} IS_MIGRATING
 :canonical: archivebox.core.settings.IS_MIGRATING

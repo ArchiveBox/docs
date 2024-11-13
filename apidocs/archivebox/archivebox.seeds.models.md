@@ -21,29 +21,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.seeds.models.__package__>`
-  - ```{autodoc2-docstring} archivebox.seeds.models.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.seeds.models.__package__
-:value: >
-   'archivebox.seeds'
-
-```{autodoc2-docstring} archivebox.seeds.models.__package__
-```
-
-````
 
 ``````{py:class} Seed(*args: typing.Any, **kwargs: typing.Any)
 :canonical: archivebox.seeds.models.Seed

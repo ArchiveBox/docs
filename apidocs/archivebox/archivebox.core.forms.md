@@ -35,10 +35,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.core.forms.__package__>`
-  - ```{autodoc2-docstring} archivebox.core.forms.__package__
-    :summary:
-    ```
 * - {py:obj}`PARSER_CHOICES <archivebox.core.forms.PARSER_CHOICES>`
   - ```{autodoc2-docstring} archivebox.core.forms.PARSER_CHOICES
     :summary:
@@ -54,16 +50,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.core.forms.__package__
-:value: >
-   'archivebox.core'
-
-```{autodoc2-docstring} archivebox.core.forms.__package__
-```
-
-````
 
 ````{py:data} PARSER_CHOICES
 :canonical: archivebox.core.forms.PARSER_CHOICES

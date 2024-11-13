@@ -15,10 +15,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.misc.shell_welcome_message.__package__>`
-  - ```{autodoc2-docstring} archivebox.misc.shell_welcome_message.__package__
-    :summary:
-    ```
 * - {py:obj}`CONFIG <archivebox.misc.shell_welcome_message.CONFIG>`
   - ```{autodoc2-docstring} archivebox.misc.shell_welcome_message.CONFIG
     :summary:
@@ -30,16 +26,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.misc.shell_welcome_message.__package__
-:value: >
-   'archivebox.core'
-
-```{autodoc2-docstring} archivebox.misc.shell_welcome_message.__package__
-```
-
-````
 
 ````{py:data} CONFIG
 :canonical: archivebox.misc.shell_welcome_message.CONFIG

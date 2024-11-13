@@ -31,29 +31,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.crawls.admin.__package__>`
-  - ```{autodoc2-docstring} archivebox.crawls.admin.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.crawls.admin.__package__
-:value: >
-   'archivebox.crawls'
-
-```{autodoc2-docstring} archivebox.crawls.admin.__package__
-```
-
-````
 
 `````{py:class} CrawlAdmin(model, admin_site)
 :canonical: archivebox.crawls.admin.CrawlAdmin

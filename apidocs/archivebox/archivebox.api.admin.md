@@ -33,29 +33,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.api.admin.__package__>`
-  - ```{autodoc2-docstring} archivebox.api.admin.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.api.admin.__package__
-:value: >
-   'archivebox.api'
-
-```{autodoc2-docstring} archivebox.api.admin.__package__
-```
-
-````
 
 `````{py:class} APITokenAdmin(model, admin_site)
 :canonical: archivebox.api.admin.APITokenAdmin

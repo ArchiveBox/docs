@@ -45,10 +45,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.machine.models.__package__>`
-  - ```{autodoc2-docstring} archivebox.machine.models.__package__
-    :summary:
-    ```
 * - {py:obj}`_CURRENT_MACHINE <archivebox.machine.models._CURRENT_MACHINE>`
   - ```{autodoc2-docstring} archivebox.machine.models._CURRENT_MACHINE
     :summary:
@@ -76,16 +72,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.machine.models.__package__
-:value: >
-   'archivebox.machine'
-
-```{autodoc2-docstring} archivebox.machine.models.__package__
-```
-
-````
 
 ````{py:data} _CURRENT_MACHINE
 :canonical: archivebox.machine.models._CURRENT_MACHINE

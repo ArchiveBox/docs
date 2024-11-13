@@ -53,10 +53,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_plugin_sqlitefts_search.searchbackend.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_sqlitefts_search.searchbackend.__package__
-    :summary:
-    ```
 * - {py:obj}`SQLITEFTS_SEARCH_BACKEND <abx_plugin_sqlitefts_search.searchbackend.SQLITEFTS_SEARCH_BACKEND>`
   - ```{autodoc2-docstring} abx_plugin_sqlitefts_search.searchbackend.SQLITEFTS_SEARCH_BACKEND
     :summary:
@@ -64,16 +60,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_sqlitefts_search.searchbackend.__package__
-:value: >
-   'abx_plugin_sqlitefts_search'
-
-```{autodoc2-docstring} abx_plugin_sqlitefts_search.searchbackend.__package__
-```
-
-````
 
 ````{py:function} _escape_sqlite3(value: str, *, quote: str, errors='strict') -> str
 :canonical: abx_plugin_sqlitefts_search.searchbackend._escape_sqlite3

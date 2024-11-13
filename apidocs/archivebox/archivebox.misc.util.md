@@ -83,10 +83,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.misc.util.__package__>`
-  - ```{autodoc2-docstring} archivebox.misc.util.__package__
-    :summary:
-    ```
 * - {py:obj}`scheme <archivebox.misc.util.scheme>`
   - ```{autodoc2-docstring} archivebox.misc.util.scheme
     :summary:
@@ -194,16 +190,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.misc.util.__package__
-:value: >
-   'archivebox.misc'
-
-```{autodoc2-docstring} archivebox.misc.util.__package__
-```
-
-````
 
 ````{py:data} scheme
 :canonical: archivebox.misc.util.scheme

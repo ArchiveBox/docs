@@ -29,29 +29,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <abx_plugin_curl.headers.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_curl.headers.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_curl.headers.__package__
-:value: >
-   'abx_plugin_curl'
-
-```{autodoc2-docstring} abx_plugin_curl.headers.__package__
-```
-
-````
 
 ````{py:function} get_output_path()
 :canonical: abx_plugin_curl.headers.get_output_path

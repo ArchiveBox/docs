@@ -45,10 +45,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.parsers.generic_html.__package__>`
-  - ```{autodoc2-docstring} archivebox.parsers.generic_html.__package__
-    :summary:
-    ```
 * - {py:obj}`KEY <archivebox.parsers.generic_html.KEY>`
   - ```{autodoc2-docstring} archivebox.parsers.generic_html.KEY
     :summary:
@@ -64,16 +60,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.parsers.generic_html.__package__
-:value: >
-   'archivebox.parsers'
-
-```{autodoc2-docstring} archivebox.parsers.generic_html.__package__
-```
-
-````
 
 `````{py:class} HrefParser()
 :canonical: archivebox.parsers.generic_html.HrefParser

@@ -71,10 +71,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.abid_utils.abid.__package__>`
-  - ```{autodoc2-docstring} archivebox.abid_utils.abid.__package__
-    :summary:
-    ```
 * - {py:obj}`ABID_PREFIX_LEN <archivebox.abid_utils.abid.ABID_PREFIX_LEN>`
   - ```{autodoc2-docstring} archivebox.abid_utils.abid.ABID_PREFIX_LEN
     :summary:
@@ -114,16 +110,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.abid_utils.abid.__package__
-:value: >
-   'archivebox.abid_utils'
-
-```{autodoc2-docstring} archivebox.abid_utils.abid.__package__
-```
-
-````
 
 ````{py:data} ABID_PREFIX_LEN
 :canonical: archivebox.abid_utils.abid.ABID_PREFIX_LEN

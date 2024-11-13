@@ -172,10 +172,6 @@ archivebox.index.schema
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.index.__package__>`
-  - ```{autodoc2-docstring} archivebox.index.__package__
-    :summary:
-    ```
 * - {py:obj}`LINK_FILTERS <archivebox.index.LINK_FILTERS>`
   - ```{autodoc2-docstring} archivebox.index.LINK_FILTERS
     :summary:
@@ -183,16 +179,6 @@ archivebox.index.schema
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.index.__package__
-:value: >
-   'archivebox.index'
-
-```{autodoc2-docstring} archivebox.index.__package__
-```
-
-````
 
 ````{py:function} merge_links(a: archivebox.index.schema.Link, b: archivebox.index.schema.Link) -> archivebox.index.schema.Link
 :canonical: archivebox.index.merge_links

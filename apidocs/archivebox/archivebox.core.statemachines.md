@@ -25,29 +25,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.core.statemachines.__package__>`
-  - ```{autodoc2-docstring} archivebox.core.statemachines.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.core.statemachines.__package__
-:value: >
-   'archivebox.snapshots'
-
-```{autodoc2-docstring} archivebox.core.statemachines.__package__
-```
-
-````
 
 `````{py:class} SnapshotMachine(snapshot, *args, **kwargs)
 :canonical: archivebox.core.statemachines.SnapshotMachine

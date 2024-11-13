@@ -45,29 +45,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.misc.checks.__package__>`
-  - ```{autodoc2-docstring} archivebox.misc.checks.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.misc.checks.__package__
-:value: >
-   'archivebox.misc'
-
-```{autodoc2-docstring} archivebox.misc.checks.__package__
-```
-
-````
 
 ````{py:function} check_data_folder() -> None
 :canonical: archivebox.misc.checks.check_data_folder

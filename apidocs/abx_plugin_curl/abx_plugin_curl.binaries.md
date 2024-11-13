@@ -25,10 +25,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_plugin_curl.binaries.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_curl.binaries.__package__
-    :summary:
-    ```
 * - {py:obj}`CURL_BINARY <abx_plugin_curl.binaries.CURL_BINARY>`
   - ```{autodoc2-docstring} abx_plugin_curl.binaries.CURL_BINARY
     :summary:
@@ -36,16 +32,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_curl.binaries.__package__
-:value: >
-   'abx_plugin_curl'
-
-```{autodoc2-docstring} abx_plugin_curl.binaries.__package__
-```
-
-````
 
 `````{py:class} CurlBinary(/, **data: typing.Any)
 :canonical: abx_plugin_curl.binaries.CurlBinary

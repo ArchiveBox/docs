@@ -25,29 +25,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <abx_plugin_wget.wget_util.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_wget.wget_util.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_wget.wget_util.__package__
-:value: >
-   'archivebox.extractors'
-
-```{autodoc2-docstring} abx_plugin_wget.wget_util.__package__
-```
-
-````
 
 ````{py:function} unsafe_wget_output_path(link) -> typing.Optional[str]
 :canonical: abx_plugin_wget.wget_util.unsafe_wget_output_path

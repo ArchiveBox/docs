@@ -23,6 +23,7 @@ copyright = '2024 ©️ ArchiveBox ™️'
 author = 'Nick Sweeting'
 github_url = 'https://github.com/ArchiveBox/ArchiveBox'
 github_doc_root = 'https://github.com/ArchiveBox/docs/tree/master/'
+github_view_style = 'blob'
 vendor_dir = 'archivebox/pkgs'
 language = 'en'
 
@@ -84,21 +85,26 @@ for pkg in pkgs_dir.glob("*"):
         continue
     if not (pkg / 'pyproject.toml').exists():
         continue
-    
-    dunder_name = pkg.name.replace('-', '_')
-    if (pkg / f'{dunder_name}.py').exists():
-        path = f'../{vendor_dir}/{pkg.name}/{dunder_name}.py'
-    elif (pkg / dunder_name / '__init__.py').exists():
-        path = f'../{vendor_dir}/{pkg.name}/{dunder_name}'
+
+    dunder_name = pkg.name.replace('-', '_')                          # abx_plugin_ldap_auth
+    if (pkg / dunder_name / '__init__.py').exists():
+        # archivebox/pkgs/abx-plugin-ldap-auth/abx_plugin_ldap_auth   (package is in a subdir called package_name)
+        path = f'{vendor_dir}/{pkg.name}/{dunder_name}'
+        submodule_to_path = lambda submodule, prefix=path: f'{prefix}/{(submodule or "__init__").replace(".", "/")}.py'
     elif (pkg / 'src' / '__init__.py').exists():
-        path = f'../{vendor_dir}/{pkg.name}/src'
+        # archivebox/pkgs/abx-plugin-htmltotext/src                   (package is in a subdir called src)
+        path = f'{vendor_dir}/{pkg.name}/src'
+        submodule_to_path = lambda submodule, prefix=path: f'{prefix}/{(submodule or "__init__").replace(".", "/")}.py'
+    elif (pkg / f'{dunder_name}.py').exists():
+        # archivebox/pkgs/abx/abx.py                                  (package is all in a single file in the root)
+        path = f'{vendor_dir}/{pkg.name}/{dunder_name}.py'
+        submodule_to_path = lambda submodule, prefix=path: prefix
     else:
         continue
     
-    vendor_pkgs[dunder_name] = path
-    autodoc2_packages.append({
-        "path": path,            # ../archivebox/pkgs/abx-plugin-ldap-auth/abx_plugin_ldap_auth
-        "module": dunder_name,   # abx_plugin_ldap_auth
+    module_info = {
+        "path": f'../{path}',            # ../archivebox/pkgs/abx-plugin-ldap-auth/abx_plugin_ldap_auth
+        "module": dunder_name,           # abx_plugin_ldap_auth
         "exclude_dirs": [
             '__pycache__',
             'migrations',
@@ -106,13 +112,20 @@ for pkg in pkgs_dir.glob("*"):
         "exclude_files": [
             'tests.py',
         ],
-    })
+    }
+    vendor_pkgs[dunder_name] = submodule_to_path
+    autodoc2_packages.append(module_info)
+
 
 autodoc2_output_dir = 'apidocs'
 autodoc2_render_plugin = "myst"
 autodoc2_skip_module_regexes = [
     r'.*migrations.*',
     r'.*vendor.*',
+]
+# autodoc2_hidden_objects = ['inherited', 'dunder']
+autodoc2_hidden_regexes = [
+    r'.*__package__',
 ]
 myst_enable_extensions = ['linkify']     # pip install linkify-it-py
 
@@ -190,26 +203,45 @@ man_pages = [
 ]
 
 def linkcode_resolve(domain, info):
-    module_name = str(info['module'] or '').replace('archivebox.pkgs.', '')
-    package_name = module_name.split('.', 1)[0]
-    symbol_name = str(info['fullname'] or '').rsplit('.', 1)[-1]  # ArchiveResult
+    """
+    Calculate link to source code on Github
+    Docs: https://www.sphinx-doc.org/en/master/usage/extensions/linkcode.html
+    """
+    module_name = str(info['module'] or '').replace('archivebox.pkgs.', '')          # abx.binaries
+    package_name = module_name.split('.', 1)[0]                                      # abx
+    submodule_name = module_name.split(f'{package_name}', 1)[-1].strip('.')          # binaries
+    symbol_name = str(info['fullname'] or '')                                        # SomeBinary.INSTALLER_BIN_ABSPATH
+    full_name = f'{package_name}.{submodule_name}.{symbol_name}'.replace('..', '.')  # abx.binaries.SomeBinary.INSTALLER_BIN_ABSPATH
+    fallback_url = f'https://github.com/search?type=code&q=repo%3AArchiveBox%2FArchiveBox%20{full_name.replace(".", "%20")}'
     
-    fallback_url = f'https://github.com/search?type=code&q=repo%3AArchiveBox%2FArchiveBox%20{package_name}%20{symbol_name}'
-    if not module_name:
-        return fallback_url
-    
-    # archivebox.crawls.models
-    # -> https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/crawls/models.py
+    # 'core.models.Crawl' -> archviebox/core/models.py
+    # 'abx.get_all_plugins' -> archivebox/pkgs/abx/abx.py
+    # 'abx_plugin_htmltotext.find_plugins_in_dir' -> archivebox/pkgs/abx-plugin-htmltotext/abx_plugin_htmltotext/__init__.py
+    # 'abx_plugin_htmltotext.binproviders.PlaywrightBinProvider' -> archivebox/pkgs/abx-plugin-htmltotext/abx_plugin_htmltotext/binproviders.py
     
     if package_name in vendor_pkgs:
-        package_path = vendor_pkgs[package_name].strip('../').strip('/')  # archivebox/pkgs/abx-plugin-title/abx_plugin_title
-        submodule_path = module_name.split(f'{package_name}.', 1)[-1].replace('.', '/')  # extractors/title
-        file_path = f'{package_path}/{submodule_path}'
+        file_path = vendor_pkgs[package_name](submodule_name)                 # archivebox/pkgs/abx/abx.py
     else:
-        file_path = module_name.replace('.', '/')
-        if not file_path.startswith('archivebox/'):
-            return fallback_url
+        file_path = f'{package_name}/{submodule_name.replace(".", "/")}.py'   # archivebox/core/models.py
     
-    file_path = file_path.strip('/').strip('.py')
+    # correct for any extra / or .py
+    file_path = file_path.strip('/').strip('.py') + '.py'
+    
+    # fallback to using Github search instead if URL doesn't look like a valid file path
+    if not file_path.startswith('archivebox/'):
+        return fallback_url
+    if '//' in file_path:
+        return fallback_url
+    if file_path.count('.py') > 1:
+        return fallback_url
+    
+    # correct for archivebox/cli.py -> archivebox/cli/__init__.py
+    init_path = f'{package_name}/{submodule_name.replace(".", "/")}/__init__.py'
+    if not Path(f'../{file_path}').is_file():
+        if Path(f'../{init_path}').is_file():
+            file_path = init_path
+        else:
+            return fallback_url
 
-    return f"{github_url}/blob/{tag}/{file_path}.py#:~:text={symbol_name}"
+    # https://github.com/ArchiveBox/ArchiveBox/blob/v0.8.5/archivebox/core/models.py#archivebox.core.models.Crawl.abid_ts_src#:~:text=abid_ts_src
+    return f"{github_url}/{github_view_style}/{tag}/{file_path}#{full_name}#:~:text={symbol_name.rsplit('.', 1)[-1]}"

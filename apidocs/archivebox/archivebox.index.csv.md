@@ -25,29 +25,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.index.csv.__package__>`
-  - ```{autodoc2-docstring} archivebox.index.csv.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.index.csv.__package__
-:value: >
-   'archivebox.index'
-
-```{autodoc2-docstring} archivebox.index.csv.__package__
-```
-
-````
 
 ````{py:function} links_to_csv(links: typing.List[archivebox.index.schema.Link], cols: typing.Optional[typing.List[str]] = None, header: bool = True, separator: str = ',', ljust: int = 0) -> str
 :canonical: archivebox.index.csv.links_to_csv

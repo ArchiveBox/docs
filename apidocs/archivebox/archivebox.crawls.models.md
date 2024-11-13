@@ -29,29 +29,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.crawls.models.__package__>`
-  - ```{autodoc2-docstring} archivebox.crawls.models.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.crawls.models.__package__
-:value: >
-   'archivebox.crawls'
-
-```{autodoc2-docstring} archivebox.crawls.models.__package__
-```
-
-````
 
 `````{py:class} CrawlSchedule(*args: typing.Any, **kwargs: typing.Any)
 :canonical: archivebox.crawls.models.CrawlSchedule

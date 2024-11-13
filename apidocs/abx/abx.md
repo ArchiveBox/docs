@@ -97,10 +97,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx.__package__>`
-  - ```{autodoc2-docstring} abx.__package__
-    :summary:
-    ```
 * - {py:obj}`__id__ <abx.__id__>`
   - ```{autodoc2-docstring} abx.__id__
     :summary:
@@ -148,16 +144,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx.__package__
-:value: >
-   'abx'
-
-```{autodoc2-docstring} abx.__package__
-```
-
-````
 
 ````{py:data} __id__
 :canonical: abx.__id__

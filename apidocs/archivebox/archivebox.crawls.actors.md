@@ -21,29 +21,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.crawls.actors.__package__>`
-  - ```{autodoc2-docstring} archivebox.crawls.actors.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.crawls.actors.__package__
-:value: >
-   'archivebox.crawls'
-
-```{autodoc2-docstring} archivebox.crawls.actors.__package__
-```
-
-````
 
 `````{py:class} CrawlActor(mode: typing.Literal[thread, process] | None = None, **launch_kwargs: actors.actor.LaunchKwargs)
 :canonical: archivebox.crawls.actors.CrawlActor

@@ -47,10 +47,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_spec_config.base_configset.__package__>`
-  - ```{autodoc2-docstring} abx_spec_config.base_configset.__package__
-    :summary:
-    ```
 * - {py:obj}`AUTOFIXES_HEADER <abx_spec_config.base_configset.AUTOFIXES_HEADER>`
   - ```{autodoc2-docstring} abx_spec_config.base_configset.AUTOFIXES_HEADER
     :summary:
@@ -70,16 +66,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_spec_config.base_configset.__package__
-:value: >
-   'abx_spec_config'
-
-```{autodoc2-docstring} abx_spec_config.base_configset.__package__
-```
-
-````
 
 ````{py:data} AUTOFIXES_HEADER
 :canonical: abx_spec_config.base_configset.AUTOFIXES_HEADER

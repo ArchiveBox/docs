@@ -19,29 +19,7 @@
   -
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.core.apps.__package__>`
-  - ```{autodoc2-docstring} archivebox.core.apps.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.core.apps.__package__
-:value: >
-   'archivebox.core'
-
-```{autodoc2-docstring} archivebox.core.apps.__package__
-```
-
-````
 
 `````{py:class} CoreConfig(app_name, app_module)
 :canonical: archivebox.core.apps.CoreConfig

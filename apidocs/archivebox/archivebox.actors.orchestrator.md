@@ -27,29 +27,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.actors.orchestrator.__package__>`
-  - ```{autodoc2-docstring} archivebox.actors.orchestrator.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.actors.orchestrator.__package__
-:value: >
-   'archivebox.actors'
-
-```{autodoc2-docstring} archivebox.actors.orchestrator.__package__
-```
-
-````
 
 `````{py:class} Orchestrator(actor_types: typing.Dict[str, typing.Type[archivebox.actors.actor.ActorType]] | None = None, mode: typing.Literal[thread, process] | None = None)
 :canonical: archivebox.actors.orchestrator.Orchestrator

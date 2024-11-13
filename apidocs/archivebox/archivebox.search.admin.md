@@ -21,29 +21,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.search.admin.__package__>`
-  - ```{autodoc2-docstring} archivebox.search.admin.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.search.admin.__package__
-:value: >
-   'archivebox.search'
-
-```{autodoc2-docstring} archivebox.search.admin.__package__
-```
-
-````
 
 `````{py:class} SearchResultsAdminMixin
 :canonical: archivebox.search.admin.SearchResultsAdminMixin

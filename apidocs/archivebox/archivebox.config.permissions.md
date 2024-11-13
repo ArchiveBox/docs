@@ -31,10 +31,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.config.permissions.__package__>`
-  - ```{autodoc2-docstring} archivebox.config.permissions.__package__
-    :summary:
-    ```
 * - {py:obj}`DATA_DIR <archivebox.config.permissions.DATA_DIR>`
   - ```{autodoc2-docstring} archivebox.config.permissions.DATA_DIR
     :summary:
@@ -106,16 +102,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.config.permissions.__package__
-:value: >
-   'archivebox.config'
-
-```{autodoc2-docstring} archivebox.config.permissions.__package__
-```
-
-````
 
 ````{py:data} DATA_DIR
 :canonical: archivebox.config.permissions.DATA_DIR

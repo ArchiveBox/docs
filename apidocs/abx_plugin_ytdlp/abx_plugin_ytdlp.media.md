@@ -33,29 +33,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <abx_plugin_ytdlp.media.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_ytdlp.media.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_ytdlp.media.__package__
-:value: >
-   'abx_plugin_ytdlp'
-
-```{autodoc2-docstring} abx_plugin_ytdlp.media.__package__
-```
-
-````
 
 ````{py:function} get_output_path()
 :canonical: abx_plugin_ytdlp.media.get_output_path

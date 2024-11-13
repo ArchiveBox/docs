@@ -43,10 +43,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.actors.actor.__package__>`
-  - ```{autodoc2-docstring} archivebox.actors.actor.__package__
-    :summary:
-    ```
 * - {py:obj}`CPU_COUNT <archivebox.actors.actor.CPU_COUNT>`
   - ```{autodoc2-docstring} archivebox.actors.actor.CPU_COUNT
     :summary:
@@ -82,16 +78,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.actors.actor.__package__
-:value: >
-   'archivebox.actors'
-
-```{autodoc2-docstring} archivebox.actors.actor.__package__
-```
-
-````
 
 ````{py:exception} ActorObjectAlreadyClaimed()
 :canonical: archivebox.actors.actor.ActorObjectAlreadyClaimed

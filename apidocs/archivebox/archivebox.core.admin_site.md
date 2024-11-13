@@ -37,10 +37,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.core.admin_site.__package__>`
-  - ```{autodoc2-docstring} archivebox.core.admin_site.__package__
-    :summary:
-    ```
 * - {py:obj}`archivebox_admin <archivebox.core.admin_site.archivebox_admin>`
   - ```{autodoc2-docstring} archivebox.core.admin_site.archivebox_admin
     :summary:
@@ -48,16 +44,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.core.admin_site.__package__
-:value: >
-   'archivebox.core'
-
-```{autodoc2-docstring} archivebox.core.admin_site.__package__
-```
-
-````
 
 `````{py:class} ArchiveBoxAdmin(name='admin')
 :canonical: archivebox.core.admin_site.ArchiveBoxAdmin

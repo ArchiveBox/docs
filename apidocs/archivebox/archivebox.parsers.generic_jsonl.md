@@ -31,10 +31,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.parsers.generic_jsonl.__package__>`
-  - ```{autodoc2-docstring} archivebox.parsers.generic_jsonl.__package__
-    :summary:
-    ```
 * - {py:obj}`KEY <archivebox.parsers.generic_jsonl.KEY>`
   - ```{autodoc2-docstring} archivebox.parsers.generic_jsonl.KEY
     :summary:
@@ -50,16 +46,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.parsers.generic_jsonl.__package__
-:value: >
-   'archivebox.parsers'
-
-```{autodoc2-docstring} archivebox.parsers.generic_jsonl.__package__
-```
-
-````
 
 ````{py:function} parse_line(line: str)
 :canonical: archivebox.parsers.generic_jsonl.parse_line

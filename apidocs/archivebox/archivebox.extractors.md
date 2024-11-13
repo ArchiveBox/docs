@@ -59,10 +59,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.extractors.__package__>`
-  - ```{autodoc2-docstring} archivebox.extractors.__package__
-    :summary:
-    ```
 * - {py:obj}`ShouldSaveFunction <archivebox.extractors.ShouldSaveFunction>`
   - ```{autodoc2-docstring} archivebox.extractors.ShouldSaveFunction
     :summary:
@@ -90,16 +86,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.extractors.__package__
-:value: >
-   'archivebox.extractors'
-
-```{autodoc2-docstring} archivebox.extractors.__package__
-```
-
-````
 
 ````{py:data} ShouldSaveFunction
 :canonical: archivebox.extractors.ShouldSaveFunction

@@ -58,29 +58,7 @@ archivebox.search.admin
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.search.__package__>`
-  - ```{autodoc2-docstring} archivebox.search.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.search.__package__
-:value: >
-   'archivebox.search'
-
-```{autodoc2-docstring} archivebox.search.__package__
-```
-
-````
 
 ````{py:function} log_index_started(url)
 :canonical: archivebox.search.log_index_started

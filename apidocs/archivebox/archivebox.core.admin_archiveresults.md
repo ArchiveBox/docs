@@ -37,29 +37,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.core.admin_archiveresults.__package__>`
-  - ```{autodoc2-docstring} archivebox.core.admin_archiveresults.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.core.admin_archiveresults.__package__
-:value: >
-   'archivebox.core'
-
-```{autodoc2-docstring} archivebox.core.admin_archiveresults.__package__
-```
-
-````
 
 ````{py:function} result_url(result: huey_monitor.admin.TaskModel) -> str
 :canonical: archivebox.core.admin_archiveresults.result_url

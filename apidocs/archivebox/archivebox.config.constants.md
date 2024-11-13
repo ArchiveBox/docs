@@ -25,10 +25,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.config.constants.__package__>`
-  - ```{autodoc2-docstring} archivebox.config.constants.__package__
-    :summary:
-    ```
 * - {py:obj}`CONSTANTS <archivebox.config.constants.CONSTANTS>`
   - ```{autodoc2-docstring} archivebox.config.constants.CONSTANTS
     :summary:
@@ -40,16 +36,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.config.constants.__package__
-:value: >
-   'archivebox.config'
-
-```{autodoc2-docstring} archivebox.config.constants.__package__
-```
-
-````
 
 `````{py:class} ConstantsDict
 :canonical: archivebox.config.constants.ConstantsDict

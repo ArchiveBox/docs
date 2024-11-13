@@ -27,10 +27,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.parsers.wallabag_atom.__package__>`
-  - ```{autodoc2-docstring} archivebox.parsers.wallabag_atom.__package__
-    :summary:
-    ```
 * - {py:obj}`KEY <archivebox.parsers.wallabag_atom.KEY>`
   - ```{autodoc2-docstring} archivebox.parsers.wallabag_atom.KEY
     :summary:
@@ -46,16 +42,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.parsers.wallabag_atom.__package__
-:value: >
-   'archivebox.parsers'
-
-```{autodoc2-docstring} archivebox.parsers.wallabag_atom.__package__
-```
-
-````
 
 ````{py:function} parse_wallabag_atom_export(rss_file: typing.IO[str], **_kwargs) -> typing.Iterable[archivebox.index.schema.Link]
 :canonical: archivebox.parsers.wallabag_atom.parse_wallabag_atom_export

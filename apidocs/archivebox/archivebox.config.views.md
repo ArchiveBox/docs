@@ -53,29 +53,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.config.views.__package__>`
-  - ```{autodoc2-docstring} archivebox.config.views.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.config.views.__package__
-:value: >
-   'abx.archivebox'
-
-```{autodoc2-docstring} archivebox.config.views.__package__
-```
-
-````
 
 ````{py:function} obj_to_yaml(obj: typing.Any, indent: int = 0) -> str
 :canonical: archivebox.config.views.obj_to_yaml

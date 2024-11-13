@@ -45,10 +45,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.misc.logging.__package__>`
-  - ```{autodoc2-docstring} archivebox.misc.logging.__package__
-    :summary:
-    ```
 * - {py:obj}`CONSOLE <archivebox.misc.logging.CONSOLE>`
   - ```{autodoc2-docstring} archivebox.misc.logging.CONSOLE
     :summary:
@@ -80,16 +76,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.misc.logging.__package__
-:value: >
-   'archivebox.misc'
-
-```{autodoc2-docstring} archivebox.misc.logging.__package__
-```
-
-````
 
 ````{py:data} CONSOLE
 :canonical: archivebox.misc.logging.CONSOLE

@@ -31,29 +31,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.queues.admin.__package__>`
-  - ```{autodoc2-docstring} archivebox.queues.admin.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.queues.admin.__package__
-:value: >
-   'archivebox.queues'
-
-```{autodoc2-docstring} archivebox.queues.admin.__package__
-```
-
-````
 
 `````{py:class} CustomTaskModelAdmin(model, admin_site)
 :canonical: archivebox.queues.admin.CustomTaskModelAdmin

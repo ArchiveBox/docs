@@ -72,10 +72,6 @@ archivebox.cli.archivebox_manage
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.cli.__package__>`
-  - ```{autodoc2-docstring} archivebox.cli.__package__
-    :summary:
-    ```
 * - {py:obj}`__command__ <archivebox.cli.__command__>`
   - ```{autodoc2-docstring} archivebox.cli.__command__
     :summary:
@@ -143,16 +139,6 @@ archivebox.cli.archivebox_manage
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.cli.__package__
-:value: >
-   'archivebox.cli'
-
-```{autodoc2-docstring} archivebox.cli.__package__
-```
-
-````
 
 ````{py:data} __command__
 :canonical: archivebox.cli.__command__

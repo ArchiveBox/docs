@@ -31,10 +31,6 @@ archivebox.config.views
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.config.__package__>`
-  - ```{autodoc2-docstring} archivebox.config.__package__
-    :summary:
-    ```
 * - {py:obj}`__order__ <archivebox.config.__order__>`
   - ```{autodoc2-docstring} archivebox.config.__order__
     :summary:
@@ -42,16 +38,6 @@ archivebox.config.views
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.config.__package__
-:value: >
-   'config'
-
-```{autodoc2-docstring} archivebox.config.__package__
-```
-
-````
 
 ````{py:data} __order__
 :canonical: archivebox.config.__order__

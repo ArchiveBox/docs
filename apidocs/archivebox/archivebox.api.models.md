@@ -37,29 +37,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.api.models.__package__>`
-  - ```{autodoc2-docstring} archivebox.api.models.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.api.models.__package__
-:value: >
-   'archivebox.api'
-
-```{autodoc2-docstring} archivebox.api.models.__package__
-```
-
-````
 
 ````{py:function} generate_secret_token() -> str
 :canonical: archivebox.api.models.generate_secret_token

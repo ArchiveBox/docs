@@ -83,10 +83,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.queues.supervisor_util.__package__>`
-  - ```{autodoc2-docstring} archivebox.queues.supervisor_util.__package__
-    :summary:
-    ```
 * - {py:obj}`LOG_FILE_NAME <archivebox.queues.supervisor_util.LOG_FILE_NAME>`
   - ```{autodoc2-docstring} archivebox.queues.supervisor_util.LOG_FILE_NAME
     :summary:
@@ -114,16 +110,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.queues.supervisor_util.__package__
-:value: >
-   'archivebox.queues'
-
-```{autodoc2-docstring} archivebox.queues.supervisor_util.__package__
-```
-
-````
 
 ````{py:data} LOG_FILE_NAME
 :canonical: archivebox.queues.supervisor_util.LOG_FILE_NAME

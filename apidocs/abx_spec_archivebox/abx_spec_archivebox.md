@@ -40,10 +40,6 @@ abx_spec_archivebox.states
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_spec_archivebox.__package__>`
-  - ```{autodoc2-docstring} abx_spec_archivebox.__package__
-    :summary:
-    ```
 * - {py:obj}`__order__ <abx_spec_archivebox.__order__>`
   - ```{autodoc2-docstring} abx_spec_archivebox.__order__
     :summary:
@@ -63,16 +59,6 @@ abx_spec_archivebox.states
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_spec_archivebox.__package__
-:value: >
-   'abx_spec_archivebox'
-
-```{autodoc2-docstring} abx_spec_archivebox.__package__
-```
-
-````
 
 ````{py:data} __order__
 :canonical: abx_spec_archivebox.__order__

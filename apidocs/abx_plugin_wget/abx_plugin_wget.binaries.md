@@ -25,10 +25,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_plugin_wget.binaries.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_wget.binaries.__package__
-    :summary:
-    ```
 * - {py:obj}`WGET_BINARY <abx_plugin_wget.binaries.WGET_BINARY>`
   - ```{autodoc2-docstring} abx_plugin_wget.binaries.WGET_BINARY
     :summary:
@@ -36,16 +32,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_wget.binaries.__package__
-:value: >
-   'abx_plugin_wget'
-
-```{autodoc2-docstring} abx_plugin_wget.binaries.__package__
-```
-
-````
 
 `````{py:class} WgetBinary(/, **data: typing.Any)
 :canonical: abx_plugin_wget.binaries.WgetBinary

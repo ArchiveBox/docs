@@ -51,10 +51,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.index.html.__package__>`
-  - ```{autodoc2-docstring} archivebox.index.html.__package__
-    :summary:
-    ```
 * - {py:obj}`MAIN_INDEX_TEMPLATE <archivebox.index.html.MAIN_INDEX_TEMPLATE>`
   - ```{autodoc2-docstring} archivebox.index.html.MAIN_INDEX_TEMPLATE
     :summary:
@@ -74,16 +70,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.index.html.__package__
-:value: >
-   'archivebox.index'
-
-```{autodoc2-docstring} archivebox.index.html.__package__
-```
-
-````
 
 ````{py:data} MAIN_INDEX_TEMPLATE
 :canonical: archivebox.index.html.MAIN_INDEX_TEMPLATE

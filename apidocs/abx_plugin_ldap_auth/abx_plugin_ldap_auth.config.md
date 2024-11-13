@@ -39,10 +39,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_plugin_ldap_auth.config.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_ldap_auth.config.__package__
-    :summary:
-    ```
 * - {py:obj}`LDAP_LIB <abx_plugin_ldap_auth.config.LDAP_LIB>`
   - ```{autodoc2-docstring} abx_plugin_ldap_auth.config.LDAP_LIB
     :summary:
@@ -58,16 +54,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_ldap_auth.config.__package__
-:value: >
-   'abx_plugin_ldap_auth'
-
-```{autodoc2-docstring} abx_plugin_ldap_auth.config.__package__
-```
-
-````
 
 ````{py:data} LDAP_LIB
 :canonical: abx_plugin_ldap_auth.config.LDAP_LIB

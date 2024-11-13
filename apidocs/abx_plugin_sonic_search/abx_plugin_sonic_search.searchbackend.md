@@ -25,10 +25,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_plugin_sonic_search.searchbackend.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_sonic_search.searchbackend.__package__
-    :summary:
-    ```
 * - {py:obj}`SONIC_SEARCH_BACKEND <abx_plugin_sonic_search.searchbackend.SONIC_SEARCH_BACKEND>`
   - ```{autodoc2-docstring} abx_plugin_sonic_search.searchbackend.SONIC_SEARCH_BACKEND
     :summary:
@@ -36,16 +32,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_sonic_search.searchbackend.__package__
-:value: >
-   'plugins_search.sonic'
-
-```{autodoc2-docstring} abx_plugin_sonic_search.searchbackend.__package__
-```
-
-````
 
 `````{py:class} SonicSearchBackend
 :canonical: abx_plugin_sonic_search.searchbackend.SonicSearchBackend

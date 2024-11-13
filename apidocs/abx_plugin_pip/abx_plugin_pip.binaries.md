@@ -47,10 +47,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_plugin_pip.binaries.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_pip.binaries.__package__
-    :summary:
-    ```
 * - {py:obj}`ARCHIVEBOX_BINARY <abx_plugin_pip.binaries.ARCHIVEBOX_BINARY>`
   - ```{autodoc2-docstring} abx_plugin_pip.binaries.ARCHIVEBOX_BINARY
     :summary:
@@ -102,16 +98,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_pip.binaries.__package__
-:value: >
-   'abx_plugin_pip'
-
-```{autodoc2-docstring} abx_plugin_pip.binaries.__package__
-```
-
-````
 
 ````{py:function} get_archivebox_version()
 :canonical: abx_plugin_pip.binaries.get_archivebox_version

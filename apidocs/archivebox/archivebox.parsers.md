@@ -65,10 +65,6 @@ archivebox.parsers.pocket_api
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.parsers.__package__>`
-  - ```{autodoc2-docstring} archivebox.parsers.__package__
-    :summary:
-    ```
 * - {py:obj}`PARSERS <archivebox.parsers.PARSERS>`
   - ```{autodoc2-docstring} archivebox.parsers.PARSERS
     :summary:
@@ -76,16 +72,6 @@ archivebox.parsers.pocket_api
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.parsers.__package__
-:value: >
-   'archivebox.parsers'
-
-```{autodoc2-docstring} archivebox.parsers.__package__
-```
-
-````
 
 ````{py:data} PARSERS
 :canonical: archivebox.parsers.PARSERS

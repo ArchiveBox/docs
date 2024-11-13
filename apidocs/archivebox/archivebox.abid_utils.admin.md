@@ -35,29 +35,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.abid_utils.admin.__package__>`
-  - ```{autodoc2-docstring} archivebox.abid_utils.admin.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.abid_utils.admin.__package__
-:value: >
-   'archivebox.abid_utils'
-
-```{autodoc2-docstring} archivebox.abid_utils.admin.__package__
-```
-
-````
 
 ````{py:function} highlight_diff(display_val: typing.Any, compare_val: typing.Any, invert: bool = False, color_same: str | None = None, color_diff: str | None = None)
 :canonical: archivebox.abid_utils.admin.highlight_diff

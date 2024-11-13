@@ -53,10 +53,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_plugin_title.extractor.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_title.extractor.__package__
-    :summary:
-    ```
 * - {py:obj}`HTML_TITLE_REGEX <abx_plugin_title.extractor.HTML_TITLE_REGEX>`
   - ```{autodoc2-docstring} abx_plugin_title.extractor.HTML_TITLE_REGEX
     :summary:
@@ -64,16 +60,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_title.extractor.__package__
-:value: >
-   'abx_plugin_title'
-
-```{autodoc2-docstring} abx_plugin_title.extractor.__package__
-```
-
-````
 
 ````{py:data} HTML_TITLE_REGEX
 :canonical: abx_plugin_title.extractor.HTML_TITLE_REGEX

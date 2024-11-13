@@ -60,29 +60,7 @@ archivebox.core.wsgi
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.core.__package__>`
-  - ```{autodoc2-docstring} archivebox.core.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.core.__package__
-:value: >
-   'archivebox.core'
-
-```{autodoc2-docstring} archivebox.core.__package__
-```
-
-````
 
 ````{py:function} register_admin(admin_site)
 :canonical: archivebox.core.register_admin

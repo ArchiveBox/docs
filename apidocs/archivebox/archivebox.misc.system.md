@@ -59,10 +59,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.misc.system.__package__>`
-  - ```{autodoc2-docstring} archivebox.misc.system.__package__
-    :summary:
-    ```
 * - {py:obj}`CRON_COMMENT <archivebox.misc.system.CRON_COMMENT>`
   - ```{autodoc2-docstring} archivebox.misc.system.CRON_COMMENT
     :summary:
@@ -70,16 +66,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.misc.system.__package__
-:value: >
-   'archivebox.misc'
-
-```{autodoc2-docstring} archivebox.misc.system.__package__
-```
-
-````
 
 ````{py:function} run(cmd, *args, input=None, capture_output=True, timeout=None, check=False, text=False, start_new_session=True, **kwargs)
 :canonical: archivebox.misc.system.run

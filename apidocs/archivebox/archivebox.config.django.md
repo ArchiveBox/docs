@@ -35,10 +35,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.config.django.__package__>`
-  - ```{autodoc2-docstring} archivebox.config.django.__package__
-    :summary:
-    ```
 * - {py:obj}`STDERR <archivebox.config.django.STDERR>`
   - ```{autodoc2-docstring} archivebox.config.django.STDERR
     :summary:
@@ -58,16 +54,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.config.django.__package__
-:value: >
-   'archivebox.config'
-
-```{autodoc2-docstring} archivebox.config.django.__package__
-```
-
-````
 
 ````{py:data} STDERR
 :canonical: archivebox.config.django.STDERR

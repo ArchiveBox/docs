@@ -27,10 +27,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_plugin_ytdlp.binaries.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_ytdlp.binaries.__package__
-    :summary:
-    ```
 * - {py:obj}`YTDLP_BINARY <abx_plugin_ytdlp.binaries.YTDLP_BINARY>`
   - ```{autodoc2-docstring} abx_plugin_ytdlp.binaries.YTDLP_BINARY
     :summary:
@@ -42,16 +38,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_ytdlp.binaries.__package__
-:value: >
-   'abx_plugin_ytdlp'
-
-```{autodoc2-docstring} abx_plugin_ytdlp.binaries.__package__
-```
-
-````
 
 `````{py:class} YtdlpBinary(/, **data: typing.Any)
 :canonical: abx_plugin_ytdlp.binaries.YtdlpBinary

@@ -15,10 +15,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.api.urls.__package__>`
-  - ```{autodoc2-docstring} archivebox.api.urls.__package__
-    :summary:
-    ```
 * - {py:obj}`urlpatterns <archivebox.api.urls.urlpatterns>`
   - ```{autodoc2-docstring} archivebox.api.urls.urlpatterns
     :summary:
@@ -26,16 +22,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.api.urls.__package__
-:value: >
-   'archivebox.api'
-
-```{autodoc2-docstring} archivebox.api.urls.__package__
-```
-
-````
 
 ````{py:data} urlpatterns
 :canonical: archivebox.api.urls.urlpatterns

@@ -29,10 +29,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_plugin_npm.binaries.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_npm.binaries.__package__
-    :summary:
-    ```
 * - {py:obj}`DEFAULT_BINPROVIDERS <abx_plugin_npm.binaries.DEFAULT_BINPROVIDERS>`
   - ```{autodoc2-docstring} abx_plugin_npm.binaries.DEFAULT_BINPROVIDERS
     :summary:
@@ -64,16 +60,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_npm.binaries.__package__
-:value: >
-   'plugins_pkg.npm'
-
-```{autodoc2-docstring} abx_plugin_npm.binaries.__package__
-```
-
-````
 
 ````{py:data} DEFAULT_BINPROVIDERS
 :canonical: abx_plugin_npm.binaries.DEFAULT_BINPROVIDERS

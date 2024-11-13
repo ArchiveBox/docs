@@ -19,29 +19,7 @@
   -
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <abx_plugin_singlefile.actors.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_singlefile.actors.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_singlefile.actors.__package__
-:value: >
-   'abx_plugin_singlefile'
-
-```{autodoc2-docstring} abx_plugin_singlefile.actors.__package__
-```
-
-````
 
 `````{py:class} SinglefileActor(mode: typing.Literal[thread, process] | None = None, **launch_kwargs: actors.actor.LaunchKwargs)
 :canonical: abx_plugin_singlefile.actors.SinglefileActor

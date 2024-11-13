@@ -27,10 +27,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.core.settings_logging.__package__>`
-  - ```{autodoc2-docstring} archivebox.core.settings_logging.__package__
-    :summary:
-    ```
 * - {py:obj}`IGNORABLE_URL_PATTERNS <archivebox.core.settings_logging.IGNORABLE_URL_PATTERNS>`
   - ```{autodoc2-docstring} archivebox.core.settings_logging.IGNORABLE_URL_PATTERNS
     :summary:
@@ -58,16 +54,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.core.settings_logging.__package__
-:value: >
-   'archivebox.core'
-
-```{autodoc2-docstring} archivebox.core.settings_logging.__package__
-```
-
-````
 
 ````{py:data} IGNORABLE_URL_PATTERNS
 :canonical: archivebox.core.settings_logging.IGNORABLE_URL_PATTERNS

@@ -25,29 +25,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <abx_spec_archivebox.effects.__package__>`
-  - ```{autodoc2-docstring} abx_spec_archivebox.effects.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: abx_spec_archivebox.effects.__package__
-:value: >
-   'abx.archivebox'
-
-```{autodoc2-docstring} abx_spec_archivebox.effects.__package__
-```
-
-````
 
 ````{py:function} check_remote_seed_connection(urls, extractor, credentials, created_by)
 :canonical: abx_spec_archivebox.effects.check_remote_seed_connection

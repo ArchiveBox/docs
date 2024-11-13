@@ -47,10 +47,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.api.v1_auth.__package__>`
-  - ```{autodoc2-docstring} archivebox.api.v1_auth.__package__
-    :summary:
-    ```
 * - {py:obj}`router <archivebox.api.v1_auth.router>`
   - ```{autodoc2-docstring} archivebox.api.v1_auth.router
     :summary:
@@ -58,16 +54,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.api.v1_auth.__package__
-:value: >
-   'archivebox.api'
-
-```{autodoc2-docstring} archivebox.api.v1_auth.__package__
-```
-
-````
 
 ````{py:data} router
 :canonical: archivebox.api.v1_auth.router

@@ -21,29 +21,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.misc.paginators.__package__>`
-  - ```{autodoc2-docstring} archivebox.misc.paginators.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.misc.paginators.__package__
-:value: >
-   'archivebox.misc'
-
-```{autodoc2-docstring} archivebox.misc.paginators.__package__
-```
-
-````
 
 `````{py:class} AccelleratedPaginator(object_list, per_page, orphans=0, allow_empty_first_page=True, error_messages=None)
 :canonical: archivebox.misc.paginators.AccelleratedPaginator

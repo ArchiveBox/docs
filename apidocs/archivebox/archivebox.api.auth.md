@@ -67,10 +67,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.api.auth.__package__>`
-  - ```{autodoc2-docstring} archivebox.api.auth.__package__
-    :summary:
-    ```
 * - {py:obj}`API_AUTH_METHODS <archivebox.api.auth.API_AUTH_METHODS>`
   - ```{autodoc2-docstring} archivebox.api.auth.API_AUTH_METHODS
     :summary:
@@ -78,16 +74,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.api.auth.__package__
-:value: >
-   'archivebox.api'
-
-```{autodoc2-docstring} archivebox.api.auth.__package__
-```
-
-````
 
 ````{py:function} get_or_create_api_token(user)
 :canonical: archivebox.api.auth.get_or_create_api_token

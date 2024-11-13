@@ -31,29 +31,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.api.apps.__package__>`
-  - ```{autodoc2-docstring} archivebox.api.apps.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.api.apps.__package__
-:value: >
-   'archivebox.api'
-
-```{autodoc2-docstring} archivebox.api.apps.__package__
-```
-
-````
 
 `````{py:class} APIConfig(app_name, app_module)
 :canonical: archivebox.api.apps.APIConfig

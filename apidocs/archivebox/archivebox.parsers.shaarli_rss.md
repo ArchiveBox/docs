@@ -27,10 +27,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.parsers.shaarli_rss.__package__>`
-  - ```{autodoc2-docstring} archivebox.parsers.shaarli_rss.__package__
-    :summary:
-    ```
 * - {py:obj}`KEY <archivebox.parsers.shaarli_rss.KEY>`
   - ```{autodoc2-docstring} archivebox.parsers.shaarli_rss.KEY
     :summary:
@@ -46,16 +42,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.parsers.shaarli_rss.__package__
-:value: >
-   'archivebox.parsers'
-
-```{autodoc2-docstring} archivebox.parsers.shaarli_rss.__package__
-```
-
-````
 
 ````{py:function} parse_shaarli_rss_export(rss_file: typing.IO[str], **_kwargs) -> typing.Iterable[archivebox.index.schema.Link]
 :canonical: archivebox.parsers.shaarli_rss.parse_shaarli_rss_export

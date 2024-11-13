@@ -95,10 +95,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.main.__package__>`
-  - ```{autodoc2-docstring} archivebox.main.__package__
-    :summary:
-    ```
 * - {py:obj}`setup <archivebox.main.setup>`
   - ```{autodoc2-docstring} archivebox.main.setup
     :summary:
@@ -106,16 +102,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.main.__package__
-:value: >
-   'archivebox'
-
-```{autodoc2-docstring} archivebox.main.__package__
-```
-
-````
 
 ````{py:function} help(out_dir: pathlib.Path = DATA_DIR) -> None
 :canonical: archivebox.main.help

@@ -25,10 +25,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_plugin_puppeteer.binaries.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_puppeteer.binaries.__package__
-    :summary:
-    ```
 * - {py:obj}`PUPPETEER_BINARY <abx_plugin_puppeteer.binaries.PUPPETEER_BINARY>`
   - ```{autodoc2-docstring} abx_plugin_puppeteer.binaries.PUPPETEER_BINARY
     :summary:
@@ -36,16 +32,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_puppeteer.binaries.__package__
-:value: >
-   'abx_plugin_puppeteer'
-
-```{autodoc2-docstring} abx_plugin_puppeteer.binaries.__package__
-```
-
-````
 
 `````{py:class} PuppeteerBinary(/, **data: typing.Any)
 :canonical: abx_plugin_puppeteer.binaries.PuppeteerBinary

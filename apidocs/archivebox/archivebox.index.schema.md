@@ -31,10 +31,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.index.schema.__package__>`
-  - ```{autodoc2-docstring} archivebox.index.schema.__package__
-    :summary:
-    ```
 * - {py:obj}`LinkDict <archivebox.index.schema.LinkDict>`
   - ```{autodoc2-docstring} archivebox.index.schema.LinkDict
     :summary:
@@ -46,16 +42,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.index.schema.__package__
-:value: >
-   'archivebox.index'
-
-```{autodoc2-docstring} archivebox.index.schema.__package__
-```
-
-````
 
 ```{py:exception} ArchiveError(message, hints=None)
 :canonical: archivebox.index.schema.ArchiveError

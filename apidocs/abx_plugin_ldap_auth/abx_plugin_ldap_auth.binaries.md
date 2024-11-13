@@ -41,10 +41,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_plugin_ldap_auth.binaries.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_ldap_auth.binaries.__package__
-    :summary:
-    ```
 * - {py:obj}`LDAP_BINARY <abx_plugin_ldap_auth.binaries.LDAP_BINARY>`
   - ```{autodoc2-docstring} abx_plugin_ldap_auth.binaries.LDAP_BINARY
     :summary:
@@ -52,16 +48,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_ldap_auth.binaries.__package__
-:value: >
-   'abx_plugin_ldap_auth'
-
-```{autodoc2-docstring} abx_plugin_ldap_auth.binaries.__package__
-```
-
-````
 
 ````{py:function} get_LDAP_LIB_path(paths=())
 :canonical: abx_plugin_ldap_auth.binaries.get_LDAP_LIB_path

@@ -53,29 +53,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.index.json.__package__>`
-  - ```{autodoc2-docstring} archivebox.index.json.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.index.json.__package__
-:value: >
-   'archivebox.index'
-
-```{autodoc2-docstring} archivebox.index.json.__package__
-```
-
-````
 
 ````{py:function} generate_json_index_from_links(links: typing.List[archivebox.index.schema.Link], with_headers: bool)
 :canonical: archivebox.index.json.generate_json_index_from_links

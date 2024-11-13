@@ -21,29 +21,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.crawls.statemachines.__package__>`
-  - ```{autodoc2-docstring} archivebox.crawls.statemachines.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.crawls.statemachines.__package__
-:value: >
-   'archivebox.crawls'
-
-```{autodoc2-docstring} archivebox.crawls.statemachines.__package__
-```
-
-````
 
 `````{py:class} CrawlMachine(crawl, *args, **kwargs)
 :canonical: archivebox.crawls.statemachines.CrawlMachine

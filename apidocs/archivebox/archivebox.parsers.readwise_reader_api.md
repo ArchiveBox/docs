@@ -59,10 +59,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.parsers.readwise_reader_api.__package__>`
-  - ```{autodoc2-docstring} archivebox.parsers.readwise_reader_api.__package__
-    :summary:
-    ```
 * - {py:obj}`KEY <archivebox.parsers.readwise_reader_api.KEY>`
   - ```{autodoc2-docstring} archivebox.parsers.readwise_reader_api.KEY
     :summary:
@@ -78,16 +74,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.parsers.readwise_reader_api.__package__
-:value: >
-   'archivebox.parsers'
-
-```{autodoc2-docstring} archivebox.parsers.readwise_reader_api.__package__
-```
-
-````
 
 `````{py:class} ReadwiseReaderAPI(api_token, cursor=None)
 :canonical: archivebox.parsers.readwise_reader_api.ReadwiseReaderAPI

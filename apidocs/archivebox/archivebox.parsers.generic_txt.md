@@ -27,10 +27,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.parsers.generic_txt.__package__>`
-  - ```{autodoc2-docstring} archivebox.parsers.generic_txt.__package__
-    :summary:
-    ```
 * - {py:obj}`__description__ <archivebox.parsers.generic_txt.__description__>`
   - ```{autodoc2-docstring} archivebox.parsers.generic_txt.__description__
     :summary:
@@ -50,16 +46,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.parsers.generic_txt.__package__
-:value: >
-   'archivebox.parsers'
-
-```{autodoc2-docstring} archivebox.parsers.generic_txt.__package__
-```
-
-````
 
 ````{py:data} __description__
 :canonical: archivebox.parsers.generic_txt.__description__

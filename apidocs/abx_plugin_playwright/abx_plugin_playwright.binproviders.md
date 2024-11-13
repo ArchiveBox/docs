@@ -25,10 +25,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <abx_plugin_playwright.binproviders.__package__>`
-  - ```{autodoc2-docstring} abx_plugin_playwright.binproviders.__package__
-    :summary:
-    ```
 * - {py:obj}`USER_PLAYWRIGHT_CACHE_DIR <abx_plugin_playwright.binproviders.USER_PLAYWRIGHT_CACHE_DIR>`
   - ```{autodoc2-docstring} abx_plugin_playwright.binproviders.USER_PLAYWRIGHT_CACHE_DIR
     :summary:
@@ -52,16 +48,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: abx_plugin_playwright.binproviders.__package__
-:value: >
-   'abx_plugin_playwright'
-
-```{autodoc2-docstring} abx_plugin_playwright.binproviders.__package__
-```
-
-````
 
 ````{py:data} USER_PLAYWRIGHT_CACHE_DIR
 :canonical: abx_plugin_playwright.binproviders.USER_PLAYWRIGHT_CACHE_DIR

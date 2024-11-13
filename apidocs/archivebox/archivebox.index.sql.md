@@ -49,29 +49,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.index.sql.__package__>`
-  - ```{autodoc2-docstring} archivebox.index.sql.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.index.sql.__package__
-:value: >
-   'archivebox.index'
-
-```{autodoc2-docstring} archivebox.index.sql.__package__
-```
-
-````
 
 ````{py:function} parse_sql_main_index(out_dir: pathlib.Path = DATA_DIR) -> typing.Iterator[archivebox.index.schema.Link]
 :canonical: archivebox.index.sql.parse_sql_main_index

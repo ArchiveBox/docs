@@ -67,10 +67,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.config.paths.__package__>`
-  - ```{autodoc2-docstring} archivebox.config.paths.__package__
-    :summary:
-    ```
 * - {py:obj}`PACKAGE_DIR <archivebox.config.paths.PACKAGE_DIR>`
   - ```{autodoc2-docstring} archivebox.config.paths.PACKAGE_DIR
     :summary:
@@ -94,16 +90,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.config.paths.__package__
-:value: >
-   'archivebox.config'
-
-```{autodoc2-docstring} archivebox.config.paths.__package__
-```
-
-````
 
 ````{py:data} PACKAGE_DIR
 :canonical: archivebox.config.paths.PACKAGE_DIR

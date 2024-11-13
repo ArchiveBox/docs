@@ -37,29 +37,7 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__package__ <archivebox.queues.tasks.__package__>`
-  - ```{autodoc2-docstring} archivebox.queues.tasks.__package__
-    :summary:
-    ```
-````
-
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.queues.tasks.__package__
-:value: >
-   'archivebox.queues'
-
-```{autodoc2-docstring} archivebox.queues.tasks.__package__
-```
-
-````
 
 ````{py:function} db_task_with_parent(func)
 :canonical: archivebox.queues.tasks.db_task_with_parent

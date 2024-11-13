@@ -27,10 +27,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__package__ <archivebox.parsers.pocket_html.__package__>`
-  - ```{autodoc2-docstring} archivebox.parsers.pocket_html.__package__
-    :summary:
-    ```
 * - {py:obj}`KEY <archivebox.parsers.pocket_html.KEY>`
   - ```{autodoc2-docstring} archivebox.parsers.pocket_html.KEY
     :summary:
@@ -46,16 +42,6 @@
 ````
 
 ### API
-
-````{py:data} __package__
-:canonical: archivebox.parsers.pocket_html.__package__
-:value: >
-   'archivebox.parsers'
-
-```{autodoc2-docstring} archivebox.parsers.pocket_html.__package__
-```
-
-````
 
 ````{py:function} parse_pocket_html_export(html_file: typing.IO[str], **_kwargs) -> typing.Iterable[archivebox.index.schema.Link]
 :canonical: archivebox.parsers.pocket_html.parse_pocket_html_export
