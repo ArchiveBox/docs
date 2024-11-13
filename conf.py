@@ -22,16 +22,16 @@ project = 'ArchiveBox'
 copyright = '2024 ©️ ArchiveBox ™️'
 author = 'Nick Sweeting'
 github_url = 'https://github.com/ArchiveBox/ArchiveBox'
-github_doc_root = 'https://github.com/ArchiveBox/docs/tree/master/docs/'
+github_doc_root = 'https://github.com/ArchiveBox/docs/tree/master/'
 language = 'en'
 
 # The full version, including alpha/beta/rc tags
-release = (Path(__file__).parent.parent / 'pyproject.toml').read_text().split('version = ', 1)[-1].split('\n', 1)[0]
+release = (Path(__file__).parent.parent / 'pyproject.toml').read_text().split('version = ', 1)[-1].split('\n', 1)[0].strip('"').strip("'")
 tag = release
 
 # 0.8.5 -> v0.8.5
 if release[0].isdigit():
-    tag = f"v{release}"
+    tag = f"v{release}".split('rc')[0]
 
 # -- General configuration ---------------------------------------------------
 
@@ -144,8 +144,7 @@ pygments_style = 'sphinx'
 html_static_path = ['_static']
 
 man_pages = [
-    (master_doc, 'archivebox', 'archivebox Documentation',
-     [author], 1)
+    (master_doc, 'archivebox', 'archivebox Documentation', [author], 1)
 ]
 
 def linkcode_resolve(domain, info):
@@ -159,15 +158,8 @@ def linkcode_resolve(domain, info):
     
     if not file_path.startswith('archivebox/'):
         return fallback_url
+    
+    # add hotlink to symbol within page content
+    symbol_name = str(info['fullname'] or '').rsplit('.', 1)[-1]  # e.g. #:~:text=ArchiveResult
 
-    return f"https://github.com/ArchiveBox/ArchiveBox/blob/{tag}/{file_path}.py"
-
-
-
-# At the bottom of conf.py
-# def setup(app):
-#     app.add_config_value('recommonmark_config', {
-#             # 'url_resolver': lambda url: github_doc_root + url,
-#             'auto_toc_tree_section': 'Documentation',
-#             }, True)
-#     app.add_transform(AutoStructify)
+    return f"{github_url}/blob/{tag}/{file_path}.py#:~:text={symbol_name}"

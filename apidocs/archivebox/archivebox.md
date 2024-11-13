@@ -38,7 +38,6 @@ archivebox.extractors
 :titlesonly:
 :maxdepth: 1
 
-archivebox.abx_spec_test
 archivebox.monkey_patches
 archivebox.logging_util
 archivebox.manage
