@@ -43,84 +43,16 @@
   - ```{autodoc2-docstring} archivebox.core.settings.IS_SHELL
     :summary:
     ```
-* - {py:obj}`PLUGIN_HOOKSPECS <archivebox.core.settings.PLUGIN_HOOKSPECS>`
-  - ```{autodoc2-docstring} archivebox.core.settings.PLUGIN_HOOKSPECS
-    :summary:
-    ```
-* - {py:obj}`BUILTIN_PLUGIN_DIRS <archivebox.core.settings.BUILTIN_PLUGIN_DIRS>`
-  - ```{autodoc2-docstring} archivebox.core.settings.BUILTIN_PLUGIN_DIRS
-    :summary:
-    ```
-* - {py:obj}`USER_PLUGIN_DIRS <archivebox.core.settings.USER_PLUGIN_DIRS>`
-  - ```{autodoc2-docstring} archivebox.core.settings.USER_PLUGIN_DIRS
-    :summary:
-    ```
-* - {py:obj}`BUILTIN_PLUGINS <archivebox.core.settings.BUILTIN_PLUGINS>`
-  - ```{autodoc2-docstring} archivebox.core.settings.BUILTIN_PLUGINS
-    :summary:
-    ```
-* - {py:obj}`PIP_PLUGINS <archivebox.core.settings.PIP_PLUGINS>`
-  - ```{autodoc2-docstring} archivebox.core.settings.PIP_PLUGINS
-    :summary:
-    ```
-* - {py:obj}`USER_PLUGINS <archivebox.core.settings.USER_PLUGINS>`
-  - ```{autodoc2-docstring} archivebox.core.settings.USER_PLUGINS
+* - {py:obj}`IS_GETTING_VERSION_OR_HELP <archivebox.core.settings.IS_GETTING_VERSION_OR_HELP>`
+  - ```{autodoc2-docstring} archivebox.core.settings.IS_GETTING_VERSION_OR_HELP
     :summary:
     ```
 * - {py:obj}`ALL_PLUGINS <archivebox.core.settings.ALL_PLUGINS>`
   - ```{autodoc2-docstring} archivebox.core.settings.ALL_PLUGINS
     :summary:
     ```
-* - {py:obj}`PLUGIN_MANAGER <archivebox.core.settings.PLUGIN_MANAGER>`
-  - ```{autodoc2-docstring} archivebox.core.settings.PLUGIN_MANAGER
-    :summary:
-    ```
-* - {py:obj}`PLUGINS <archivebox.core.settings.PLUGINS>`
-  - ```{autodoc2-docstring} archivebox.core.settings.PLUGINS
-    :summary:
-    ```
-* - {py:obj}`HOOKS <archivebox.core.settings.HOOKS>`
-  - ```{autodoc2-docstring} archivebox.core.settings.HOOKS
-    :summary:
-    ```
-* - {py:obj}`CONFIGS <archivebox.core.settings.CONFIGS>`
-  - ```{autodoc2-docstring} archivebox.core.settings.CONFIGS
-    :summary:
-    ```
-* - {py:obj}`FLAT_CONFIG <archivebox.core.settings.FLAT_CONFIG>`
-  - ```{autodoc2-docstring} archivebox.core.settings.FLAT_CONFIG
-    :summary:
-    ```
-* - {py:obj}`BINPROVIDERS <archivebox.core.settings.BINPROVIDERS>`
-  - ```{autodoc2-docstring} archivebox.core.settings.BINPROVIDERS
-    :summary:
-    ```
-* - {py:obj}`BINARIES <archivebox.core.settings.BINARIES>`
-  - ```{autodoc2-docstring} archivebox.core.settings.BINARIES
-    :summary:
-    ```
-* - {py:obj}`EXTRACTORS <archivebox.core.settings.EXTRACTORS>`
-  - ```{autodoc2-docstring} archivebox.core.settings.EXTRACTORS
-    :summary:
-    ```
-* - {py:obj}`REPLAYERS <archivebox.core.settings.REPLAYERS>`
-  - ```{autodoc2-docstring} archivebox.core.settings.REPLAYERS
-    :summary:
-    ```
-* - {py:obj}`CHECKS <archivebox.core.settings.CHECKS>`
-  - ```{autodoc2-docstring} archivebox.core.settings.CHECKS
-    :summary:
-    ```
-* - {py:obj}`ADMINDATAVIEWS <archivebox.core.settings.ADMINDATAVIEWS>`
-  - ```{autodoc2-docstring} archivebox.core.settings.ADMINDATAVIEWS
-    :summary:
-    ```
-* - {py:obj}`QUEUES <archivebox.core.settings.QUEUES>`
-  - ```{autodoc2-docstring} archivebox.core.settings.QUEUES
-    :summary:
-    ```
-* - {py:obj}`SEARCHBACKENDS <archivebox.core.settings.SEARCHBACKENDS>`
-  - ```{autodoc2-docstring} archivebox.core.settings.SEARCHBACKENDS
+* - {py:obj}`LOADED_PLUGINS <archivebox.core.settings.LOADED_PLUGINS>`
+  - ```{autodoc2-docstring} archivebox.core.settings.LOADED_PLUGINS
     :summary:
     ```
 * - {py:obj}`WSGI_APPLICATION <archivebox.core.settings.WSGI_APPLICATION>`
@@ -175,6 +107,10 @@
   - ```{autodoc2-docstring} archivebox.core.settings.TEMPLATES_DIR_NAME
     :summary:
     ```
+* - {py:obj}`CUSTOM_TEMPLATES_ENABLED <archivebox.core.settings.CUSTOM_TEMPLATES_ENABLED>`
+  - ```{autodoc2-docstring} archivebox.core.settings.CUSTOM_TEMPLATES_ENABLED
+    :summary:
+    ```
 * - {py:obj}`STATICFILES_DIRS <archivebox.core.settings.STATICFILES_DIRS>`
   - ```{autodoc2-docstring} archivebox.core.settings.STATICFILES_DIRS
     :summary:
@@ -187,16 +123,8 @@
   - ```{autodoc2-docstring} archivebox.core.settings.TEMPLATES
     :summary:
     ```
-* - {py:obj}`DATABASE_FILE <archivebox.core.settings.DATABASE_FILE>`
-  - ```{autodoc2-docstring} archivebox.core.settings.DATABASE_FILE
-    :summary:
-    ```
 * - {py:obj}`DATABASE_NAME <archivebox.core.settings.DATABASE_NAME>`
   - ```{autodoc2-docstring} archivebox.core.settings.DATABASE_NAME
-    :summary:
-    ```
-* - {py:obj}`QUEUE_DATABASE_NAME <archivebox.core.settings.QUEUE_DATABASE_NAME>`
-  - ```{autodoc2-docstring} archivebox.core.settings.QUEUE_DATABASE_NAME
     :summary:
     ```
 * - {py:obj}`SQLITE_CONNECTION_OPTIONS <archivebox.core.settings.SQLITE_CONNECTION_OPTIONS>`
@@ -213,14 +141,6 @@
     ```
 * - {py:obj}`DEFAULT_AUTO_FIELD <archivebox.core.settings.DEFAULT_AUTO_FIELD>`
   - ```{autodoc2-docstring} archivebox.core.settings.DEFAULT_AUTO_FIELD
-    :summary:
-    ```
-* - {py:obj}`HUEY <archivebox.core.settings.HUEY>`
-  - ```{autodoc2-docstring} archivebox.core.settings.HUEY
-    :summary:
-    ```
-* - {py:obj}`DJANGO_HUEY <archivebox.core.settings.DJANGO_HUEY>`
-  - ```{autodoc2-docstring} archivebox.core.settings.DJANGO_HUEY
     :summary:
     ```
 * - {py:obj}`DATABASE_ROUTERS <archivebox.core.settings.DATABASE_ROUTERS>`
@@ -415,62 +335,12 @@
 
 ````
 
-````{py:data} PLUGIN_HOOKSPECS
-:canonical: archivebox.core.settings.PLUGIN_HOOKSPECS
-:value: >
-   ['abx.django.hookspec', 'abx.pydantic_pkgr.hookspec', 'abx.archivebox.hookspec']
-
-```{autodoc2-docstring} archivebox.core.settings.PLUGIN_HOOKSPECS
-```
-
-````
-
-````{py:data} BUILTIN_PLUGIN_DIRS
-:canonical: archivebox.core.settings.BUILTIN_PLUGIN_DIRS
+````{py:data} IS_GETTING_VERSION_OR_HELP
+:canonical: archivebox.core.settings.IS_GETTING_VERSION_OR_HELP
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.core.settings.BUILTIN_PLUGIN_DIRS
-```
-
-````
-
-````{py:data} USER_PLUGIN_DIRS
-:canonical: archivebox.core.settings.USER_PLUGIN_DIRS
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.core.settings.USER_PLUGIN_DIRS
-```
-
-````
-
-````{py:data} BUILTIN_PLUGINS
-:canonical: archivebox.core.settings.BUILTIN_PLUGINS
-:value: >
-   'get_plugins_in_dirs(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.BUILTIN_PLUGINS
-```
-
-````
-
-````{py:data} PIP_PLUGINS
-:canonical: archivebox.core.settings.PIP_PLUGINS
-:value: >
-   'get_pip_installed_plugins(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.PIP_PLUGINS
-```
-
-````
-
-````{py:data} USER_PLUGINS
-:canonical: archivebox.core.settings.USER_PLUGINS
-:value: >
-   'get_plugins_in_dirs(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.USER_PLUGINS
+```{autodoc2-docstring} archivebox.core.settings.IS_GETTING_VERSION_OR_HELP
 ```
 
 ````
@@ -485,132 +355,12 @@
 
 ````
 
-````{py:data} PLUGIN_MANAGER
-:canonical: archivebox.core.settings.PLUGIN_MANAGER
+````{py:data} LOADED_PLUGINS
+:canonical: archivebox.core.settings.LOADED_PLUGINS
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.core.settings.PLUGIN_MANAGER
-```
-
-````
-
-````{py:data} PLUGINS
-:canonical: archivebox.core.settings.PLUGINS
-:value: >
-   'load_archivebox_plugins(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.PLUGINS
-```
-
-````
-
-````{py:data} HOOKS
-:canonical: archivebox.core.settings.HOOKS
-:value: >
-   'get_HOOKS(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.HOOKS
-```
-
-````
-
-````{py:data} CONFIGS
-:canonical: archivebox.core.settings.CONFIGS
-:value: >
-   'get_CONFIGS(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.CONFIGS
-```
-
-````
-
-````{py:data} FLAT_CONFIG
-:canonical: archivebox.core.settings.FLAT_CONFIG
-:value: >
-   'get_FLAT_CONFIG(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.FLAT_CONFIG
-```
-
-````
-
-````{py:data} BINPROVIDERS
-:canonical: archivebox.core.settings.BINPROVIDERS
-:value: >
-   'get_BINPROVIDERS(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.BINPROVIDERS
-```
-
-````
-
-````{py:data} BINARIES
-:canonical: archivebox.core.settings.BINARIES
-:value: >
-   'get_BINARIES(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.BINARIES
-```
-
-````
-
-````{py:data} EXTRACTORS
-:canonical: archivebox.core.settings.EXTRACTORS
-:value: >
-   'get_EXTRACTORS(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.EXTRACTORS
-```
-
-````
-
-````{py:data} REPLAYERS
-:canonical: archivebox.core.settings.REPLAYERS
-:value: >
-   'get_REPLAYERS(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.REPLAYERS
-```
-
-````
-
-````{py:data} CHECKS
-:canonical: archivebox.core.settings.CHECKS
-:value: >
-   'get_CHECKS(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.CHECKS
-```
-
-````
-
-````{py:data} ADMINDATAVIEWS
-:canonical: archivebox.core.settings.ADMINDATAVIEWS
-:value: >
-   'get_ADMINDATAVIEWS(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.ADMINDATAVIEWS
-```
-
-````
-
-````{py:data} QUEUES
-:canonical: archivebox.core.settings.QUEUES
-:value: >
-   'get_QUEUES(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.QUEUES
-```
-
-````
-
-````{py:data} SEARCHBACKENDS
-:canonical: archivebox.core.settings.SEARCHBACKENDS
-:value: >
-   'get_SEARCHBACKENDS(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.SEARCHBACKENDS
+```{autodoc2-docstring} archivebox.core.settings.LOADED_PLUGINS
 ```
 
 ````
@@ -745,6 +495,16 @@
 
 ````
 
+````{py:data} CUSTOM_TEMPLATES_ENABLED
+:canonical: archivebox.core.settings.CUSTOM_TEMPLATES_ENABLED
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.settings.CUSTOM_TEMPLATES_ENABLED
+```
+
+````
+
 ````{py:data} STATICFILES_DIRS
 :canonical: archivebox.core.settings.STATICFILES_DIRS
 :value: >
@@ -775,32 +535,12 @@
 
 ````
 
-````{py:data} DATABASE_FILE
-:canonical: archivebox.core.settings.DATABASE_FILE
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.core.settings.DATABASE_FILE
-```
-
-````
-
 ````{py:data} DATABASE_NAME
 :canonical: archivebox.core.settings.DATABASE_NAME
 :value: >
    'get(...)'
 
 ```{autodoc2-docstring} archivebox.core.settings.DATABASE_NAME
-```
-
-````
-
-````{py:data} QUEUE_DATABASE_NAME
-:canonical: archivebox.core.settings.QUEUE_DATABASE_NAME
-:value: >
-   'replace(...)'
-
-```{autodoc2-docstring} archivebox.core.settings.QUEUE_DATABASE_NAME
 ```
 
 ````
@@ -841,26 +581,6 @@
    'django.db.models.BigAutoField'
 
 ```{autodoc2-docstring} archivebox.core.settings.DEFAULT_AUTO_FIELD
-```
-
-````
-
-````{py:data} HUEY
-:canonical: archivebox.core.settings.HUEY
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.core.settings.HUEY
-```
-
-````
-
-````{py:data} DJANGO_HUEY
-:canonical: archivebox.core.settings.DJANGO_HUEY
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.core.settings.DJANGO_HUEY
 ```
 
 ````

@@ -21,8 +21,6 @@
     ```
 * - {py:obj}`SnapshotTag <archivebox.core.models.SnapshotTag>`
   -
-* - {py:obj}`Crawl <archivebox.core.models.Crawl>`
-  -
 * - {py:obj}`SnapshotManager <archivebox.core.models.SnapshotManager>`
   - ```{autodoc2-docstring} archivebox.core.models.SnapshotManager
     :summary:
@@ -216,17 +214,6 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`
 
 ````
 
-````{py:attribute} crawl_set
-:canonical: archivebox.core.models.Tag.crawl_set
-:type: django.db.models.Manager[Crawl]
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.core.models.Tag.crawl_set
-```
-
-````
-
 `````{py:class} Meta
 :canonical: archivebox.core.models.Tag.Meta
 
@@ -264,6 +251,11 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ```{autodoc2-docstring} archivebox.core.models.Tag.slugify
 ```
+
+````
+
+````{py:method} clean(*args, **kwargs)
+:canonical: archivebox.core.models.Tag.clean
 
 ````
 
@@ -351,223 +343,6 @@ Bases: {py:obj}`django.db.models.Model`
 
 ``````
 
-``````{py:class} Crawl(*args: typing.Any, **kwargs: typing.Any)
-:canonical: archivebox.core.models.Crawl
-
-Bases: {py:obj}`abid_utils.models.ABIDModel`
-
-````{py:attribute} abid_prefix
-:canonical: archivebox.core.models.Crawl.abid_prefix
-:value: >
-   'crl_'
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.abid_prefix
-```
-
-````
-
-````{py:attribute} abid_ts_src
-:canonical: archivebox.core.models.Crawl.abid_ts_src
-:value: >
-   'self.created_at'
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.abid_ts_src
-```
-
-````
-
-````{py:attribute} abid_uri_src
-:canonical: archivebox.core.models.Crawl.abid_uri_src
-:value: >
-   'self.urls'
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.abid_uri_src
-```
-
-````
-
-````{py:attribute} abid_subtype_src
-:canonical: archivebox.core.models.Crawl.abid_subtype_src
-:value: >
-   'self.crawler'
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.abid_subtype_src
-```
-
-````
-
-````{py:attribute} abid_rand_src
-:canonical: archivebox.core.models.Crawl.abid_rand_src
-:value: >
-   'self.id'
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.abid_rand_src
-```
-
-````
-
-````{py:attribute} abid_drift_allowed
-:canonical: archivebox.core.models.Crawl.abid_drift_allowed
-:value: >
-   True
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.abid_drift_allowed
-```
-
-````
-
-````{py:attribute} PARSER_CHOICES
-:canonical: archivebox.core.models.Crawl.PARSER_CHOICES
-:value: >
-   (('auto', 'auto'),)
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.PARSER_CHOICES
-```
-
-````
-
-````{py:attribute} id
-:canonical: archivebox.core.models.Crawl.id
-:value: >
-   'UUIDField(...)'
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.id
-```
-
-````
-
-````{py:attribute} abid
-:canonical: archivebox.core.models.Crawl.abid
-:value: >
-   'ABIDField(...)'
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.abid
-```
-
-````
-
-````{py:attribute} created_by
-:canonical: archivebox.core.models.Crawl.created_by
-:value: >
-   'ForeignKey(...)'
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.created_by
-```
-
-````
-
-````{py:attribute} created_at
-:canonical: archivebox.core.models.Crawl.created_at
-:value: >
-   'AutoDateTimeField(...)'
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.created_at
-```
-
-````
-
-````{py:attribute} modified_at
-:canonical: archivebox.core.models.Crawl.modified_at
-:value: >
-   'DateTimeField(...)'
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.modified_at
-```
-
-````
-
-````{py:attribute} urls
-:canonical: archivebox.core.models.Crawl.urls
-:value: >
-   'TextField(...)'
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.urls
-```
-
-````
-
-````{py:attribute} depth
-:canonical: archivebox.core.models.Crawl.depth
-:value: >
-   'PositiveSmallIntegerField(...)'
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.depth
-```
-
-````
-
-````{py:attribute} parser
-:canonical: archivebox.core.models.Crawl.parser
-:value: >
-   'CharField(...)'
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.parser
-```
-
-````
-
-`````{py:class} Meta
-:canonical: archivebox.core.models.Crawl.Meta
-
-Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
-
-````{py:attribute} verbose_name
-:canonical: archivebox.core.models.Crawl.Meta.verbose_name
-:value: >
-   'Crawl'
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.Meta.verbose_name
-```
-
-````
-
-````{py:attribute} verbose_name_plural
-:canonical: archivebox.core.models.Crawl.Meta.verbose_name_plural
-:value: >
-   'Crawls'
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.Meta.verbose_name_plural
-```
-
-````
-
-`````
-
-````{py:method} __str__()
-:canonical: archivebox.core.models.Crawl.__str__
-
-````
-
-````{py:method} crawl_dir()
-:canonical: archivebox.core.models.Crawl.crawl_dir
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.crawl_dir
-```
-
-````
-
-````{py:property} api_url
-:canonical: archivebox.core.models.Crawl.api_url
-:type: str
-
-````
-
-````{py:property} api_docs_url
-:canonical: archivebox.core.models.Crawl.api_docs_url
-:type: str
-
-````
-
-````{py:method} crawl()
-:canonical: archivebox.core.models.Crawl.crawl
-
-```{autodoc2-docstring} archivebox.core.models.Crawl.crawl
-```
-
-````
-
-``````
-
 `````{py:class} SnapshotManager
 :canonical: archivebox.core.models.SnapshotManager
 
@@ -589,7 +364,7 @@ Bases: {py:obj}`django.db.models.Manager`
 `````{py:class} Snapshot(*args: typing.Any, **kwargs: typing.Any)
 :canonical: archivebox.core.models.Snapshot
 
-Bases: {py:obj}`abid_utils.models.ABIDModel`
+Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`actors.models.ModelWithStateMachine`
 
 ````{py:attribute} abid_prefix
 :canonical: archivebox.core.models.Snapshot.abid_prefix
@@ -651,6 +426,56 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`
 
 ````
 
+````{py:attribute} state_machine_name
+:canonical: archivebox.core.models.Snapshot.state_machine_name
+:value: >
+   'core.statemachines.SnapshotMachine'
+
+```{autodoc2-docstring} archivebox.core.models.Snapshot.state_machine_name
+```
+
+````
+
+````{py:attribute} state_field_name
+:canonical: archivebox.core.models.Snapshot.state_field_name
+:value: >
+   'status'
+
+```{autodoc2-docstring} archivebox.core.models.Snapshot.state_field_name
+```
+
+````
+
+````{py:attribute} retry_at_field_name
+:canonical: archivebox.core.models.Snapshot.retry_at_field_name
+:value: >
+   'retry_at'
+
+```{autodoc2-docstring} archivebox.core.models.Snapshot.retry_at_field_name
+```
+
+````
+
+````{py:attribute} StatusChoices
+:canonical: archivebox.core.models.Snapshot.StatusChoices
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.models.Snapshot.StatusChoices
+```
+
+````
+
+````{py:attribute} active_state
+:canonical: archivebox.core.models.Snapshot.active_state
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.models.Snapshot.active_state
+```
+
+````
+
 ````{py:attribute} id
 :canonical: archivebox.core.models.Snapshot.id
 :value: >
@@ -701,6 +526,26 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`
 
 ````
 
+````{py:attribute} status
+:canonical: archivebox.core.models.Snapshot.status
+:value: >
+   'StatusField(...)'
+
+```{autodoc2-docstring} archivebox.core.models.Snapshot.status
+```
+
+````
+
+````{py:attribute} retry_at
+:canonical: archivebox.core.models.Snapshot.retry_at
+:value: >
+   'RetryAtField(...)'
+
+```{autodoc2-docstring} archivebox.core.models.Snapshot.retry_at
+```
+
+````
+
 ````{py:attribute} bookmarked_at
 :canonical: archivebox.core.models.Snapshot.bookmarked_at
 :value: >
@@ -717,6 +562,17 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`
    'DateTimeField(...)'
 
 ```{autodoc2-docstring} archivebox.core.models.Snapshot.downloaded_at
+```
+
+````
+
+````{py:attribute} crawl
+:canonical: archivebox.core.models.Snapshot.crawl
+:type: crawls.models.Crawl
+:value: >
+   'ForeignKey(...)'
+
+```{autodoc2-docstring} archivebox.core.models.Snapshot.crawl
 ```
 
 ````
@@ -1012,6 +868,22 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`
 
 ````
 
+````{py:method} has_pending_archiveresults() -> bool
+:canonical: archivebox.core.models.Snapshot.has_pending_archiveresults
+
+```{autodoc2-docstring} archivebox.core.models.Snapshot.has_pending_archiveresults
+```
+
+````
+
+````{py:method} create_pending_archiveresults() -> list[archivebox.core.models.ArchiveResult]
+:canonical: archivebox.core.models.Snapshot.create_pending_archiveresults
+
+```{autodoc2-docstring} archivebox.core.models.Snapshot.create_pending_archiveresults
+```
+
+````
+
 `````
 
 `````{py:class} ArchiveResultManager
@@ -1035,7 +907,7 @@ Bases: {py:obj}`django.db.models.Manager`
 ``````{py:class} ArchiveResult(*args: typing.Any, **kwargs: typing.Any)
 :canonical: archivebox.core.models.ArchiveResult
 
-Bases: {py:obj}`abid_utils.models.ABIDModel`
+Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`actors.models.ModelWithStateMachine`
 
 ````{py:attribute} abid_prefix
 :canonical: archivebox.core.models.ArchiveResult.abid_prefix
@@ -1097,22 +969,119 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`
 
 ````
 
+`````{py:class} StatusChoices(*args, **kwds)
+:canonical: archivebox.core.models.ArchiveResult.StatusChoices
+
+Bases: {py:obj}`django.db.models.TextChoices`
+
+````{py:attribute} QUEUED
+:canonical: archivebox.core.models.ArchiveResult.StatusChoices.QUEUED
+:value: >
+   ('queued', 'Queued')
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.StatusChoices.QUEUED
+```
+
+````
+
+````{py:attribute} STARTED
+:canonical: archivebox.core.models.ArchiveResult.StatusChoices.STARTED
+:value: >
+   ('started', 'Started')
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.StatusChoices.STARTED
+```
+
+````
+
+````{py:attribute} BACKOFF
+:canonical: archivebox.core.models.ArchiveResult.StatusChoices.BACKOFF
+:value: >
+   ('backoff', 'Waiting to retry')
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.StatusChoices.BACKOFF
+```
+
+````
+
+````{py:attribute} SUCCEEDED
+:canonical: archivebox.core.models.ArchiveResult.StatusChoices.SUCCEEDED
+:value: >
+   ('succeeded', 'Succeeded')
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.StatusChoices.SUCCEEDED
+```
+
+````
+
+````{py:attribute} FAILED
+:canonical: archivebox.core.models.ArchiveResult.StatusChoices.FAILED
+:value: >
+   ('failed', 'Failed')
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.StatusChoices.FAILED
+```
+
+````
+
+````{py:attribute} SKIPPED
+:canonical: archivebox.core.models.ArchiveResult.StatusChoices.SKIPPED
+:value: >
+   ('skipped', 'Skipped')
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.StatusChoices.SKIPPED
+```
+
+````
+
+`````
+
+````{py:attribute} state_machine_name
+:canonical: archivebox.core.models.ArchiveResult.state_machine_name
+:value: >
+   'core.statemachines.ArchiveResultMachine'
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.state_machine_name
+```
+
+````
+
+````{py:attribute} retry_at_field_name
+:canonical: archivebox.core.models.ArchiveResult.retry_at_field_name
+:value: >
+   'retry_at'
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.retry_at_field_name
+```
+
+````
+
+````{py:attribute} state_field_name
+:canonical: archivebox.core.models.ArchiveResult.state_field_name
+:value: >
+   'status'
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.state_field_name
+```
+
+````
+
+````{py:attribute} active_state
+:canonical: archivebox.core.models.ArchiveResult.active_state
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.active_state
+```
+
+````
+
 ````{py:attribute} EXTRACTOR_CHOICES
 :canonical: archivebox.core.models.ArchiveResult.EXTRACTOR_CHOICES
 :value: >
    (('htmltotext', 'htmltotext'), ('git', 'git'), ('singlefile', 'singlefile'), ('media', 'media'), ('a...
 
 ```{autodoc2-docstring} archivebox.core.models.ArchiveResult.EXTRACTOR_CHOICES
-```
-
-````
-
-````{py:attribute} STATUS_CHOICES
-:canonical: archivebox.core.models.ArchiveResult.STATUS_CHOICES
-:value: >
-   [('succeeded', 'succeeded'), ('failed', 'failed'), ('skipped', 'skipped')]
-
-```{autodoc2-docstring} archivebox.core.models.ArchiveResult.STATUS_CHOICES
 ```
 
 ````
@@ -1167,8 +1136,29 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`
 
 ````
 
+````{py:attribute} status
+:canonical: archivebox.core.models.ArchiveResult.status
+:value: >
+   'StatusField(...)'
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.status
+```
+
+````
+
+````{py:attribute} retry_at
+:canonical: archivebox.core.models.ArchiveResult.retry_at
+:value: >
+   'RetryAtField(...)'
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.retry_at
+```
+
+````
+
 ````{py:attribute} snapshot
 :canonical: archivebox.core.models.ArchiveResult.snapshot
+:type: archivebox.core.models.Snapshot
 :value: >
    'ForeignKey(...)'
 
@@ -1247,16 +1237,6 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`
 
 ````
 
-````{py:attribute} status
-:canonical: archivebox.core.models.ArchiveResult.status
-:value: >
-   'CharField(...)'
-
-```{autodoc2-docstring} archivebox.core.models.ArchiveResult.status
-```
-
-````
-
 ````{py:attribute} objects
 :canonical: archivebox.core.models.ArchiveResult.objects
 :value: >
@@ -1294,16 +1274,13 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 `````
 
-````{py:method} __str__()
-:canonical: archivebox.core.models.ArchiveResult.__str__
+````{py:method} __repr__()
+:canonical: archivebox.core.models.ArchiveResult.__repr__
 
 ````
 
-````{py:method} machine()
-:canonical: archivebox.core.models.ArchiveResult.machine
-
-```{autodoc2-docstring} archivebox.core.models.ArchiveResult.machine
-```
+````{py:method} __str__()
+:canonical: archivebox.core.models.ArchiveResult.__str__
 
 ````
 
@@ -1311,6 +1288,14 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 :canonical: archivebox.core.models.ArchiveResult.snapshot_dir
 
 ```{autodoc2-docstring} archivebox.core.models.ArchiveResult.snapshot_dir
+```
+
+````
+
+````{py:method} url()
+:canonical: archivebox.core.models.ArchiveResult.url
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.url
 ```
 
 ````
@@ -1371,6 +1356,14 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 :canonical: archivebox.core.models.ArchiveResult.output_exists
 
 ```{autodoc2-docstring} archivebox.core.models.ArchiveResult.output_exists
+```
+
+````
+
+````{py:method} create_output_dir()
+:canonical: archivebox.core.models.ArchiveResult.create_output_dir
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.create_output_dir
 ```
 
 ````

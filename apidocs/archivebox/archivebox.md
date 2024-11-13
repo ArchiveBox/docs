@@ -13,23 +13,23 @@
 :titlesonly:
 :maxdepth: 3
 
-archivebox.plugins_extractor
-archivebox.abx
 archivebox.misc
-archivebox.plugins_pkg
 archivebox.parsers
 archivebox.core
 archivebox.config
 archivebox.abid_utils
-archivebox.plugins_auth
+archivebox.crawls
 archivebox.cli
 archivebox.search
+archivebox.personas
+archivebox.pkgs
+archivebox.seeds
 archivebox.machine
+archivebox.actors
 archivebox.queues
 archivebox.api
 archivebox.index
 archivebox.extractors
-archivebox.plugins_search
 ```
 
 ## Submodules
@@ -38,6 +38,7 @@ archivebox.plugins_search
 :titlesonly:
 :maxdepth: 1
 
+archivebox.abx_spec_test
 archivebox.monkey_patches
 archivebox.logging_util
 archivebox.manage
@@ -61,12 +62,32 @@ archivebox.__main__
   - ```{autodoc2-docstring} archivebox.ASCII_LOGO
     :summary:
     ```
-* - {py:obj}`SYSTEM_TMP_DIR <archivebox.SYSTEM_TMP_DIR>`
-  - ```{autodoc2-docstring} archivebox.SYSTEM_TMP_DIR
-    :summary:
-    ```
 * - {py:obj}`PACKAGE_DIR <archivebox.PACKAGE_DIR>`
   - ```{autodoc2-docstring} archivebox.PACKAGE_DIR
+    :summary:
+    ```
+* - {py:obj}`pm <archivebox.pm>`
+  - ```{autodoc2-docstring} archivebox.pm
+    :summary:
+    ```
+* - {py:obj}`ABX_ECOSYSTEM_PLUGINS <archivebox.ABX_ECOSYSTEM_PLUGINS>`
+  - ```{autodoc2-docstring} archivebox.ABX_ECOSYSTEM_PLUGINS
+    :summary:
+    ```
+* - {py:obj}`ARCHIVEBOX_BUILTIN_PLUGINS <archivebox.ARCHIVEBOX_BUILTIN_PLUGINS>`
+  - ```{autodoc2-docstring} archivebox.ARCHIVEBOX_BUILTIN_PLUGINS
+    :summary:
+    ```
+* - {py:obj}`USER_PLUGINS <archivebox.USER_PLUGINS>`
+  - ```{autodoc2-docstring} archivebox.USER_PLUGINS
+    :summary:
+    ```
+* - {py:obj}`ALL_PLUGINS <archivebox.ALL_PLUGINS>`
+  - ```{autodoc2-docstring} archivebox.ALL_PLUGINS
+    :summary:
+    ```
+* - {py:obj}`LOADED_PLUGINS <archivebox.LOADED_PLUGINS>`
+  - ```{autodoc2-docstring} archivebox.LOADED_PLUGINS
     :summary:
     ```
 * - {py:obj}`__version__ <archivebox.__version__>`
@@ -108,22 +129,72 @@ archivebox.__main__
 
 ````
 
-````{py:data} SYSTEM_TMP_DIR
-:canonical: archivebox.SYSTEM_TMP_DIR
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.SYSTEM_TMP_DIR
-```
-
-````
-
 ````{py:data} PACKAGE_DIR
 :canonical: archivebox.PACKAGE_DIR
 :value: >
    None
 
 ```{autodoc2-docstring} archivebox.PACKAGE_DIR
+```
+
+````
+
+````{py:data} pm
+:canonical: archivebox.pm
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.pm
+```
+
+````
+
+````{py:data} ABX_ECOSYSTEM_PLUGINS
+:canonical: archivebox.ABX_ECOSYSTEM_PLUGINS
+:value: >
+   'get_pip_installed_plugins(...)'
+
+```{autodoc2-docstring} archivebox.ABX_ECOSYSTEM_PLUGINS
+```
+
+````
+
+````{py:data} ARCHIVEBOX_BUILTIN_PLUGINS
+:canonical: archivebox.ARCHIVEBOX_BUILTIN_PLUGINS
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.ARCHIVEBOX_BUILTIN_PLUGINS
+```
+
+````
+
+````{py:data} USER_PLUGINS
+:canonical: archivebox.USER_PLUGINS
+:value: >
+   'find_plugins_in_dir(...)'
+
+```{autodoc2-docstring} archivebox.USER_PLUGINS
+```
+
+````
+
+````{py:data} ALL_PLUGINS
+:canonical: archivebox.ALL_PLUGINS
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.ALL_PLUGINS
+```
+
+````
+
+````{py:data} LOADED_PLUGINS
+:canonical: archivebox.LOADED_PLUGINS
+:value: >
+   'load_plugins(...)'
+
+```{autodoc2-docstring} archivebox.LOADED_PLUGINS
 ```
 
 ````
@@ -141,7 +212,7 @@ archivebox.__main__
 ````{py:data} __author__
 :canonical: archivebox.__author__
 :value: >
-   'Nick Sweeting'
+   'ArchiveBox'
 
 ```{autodoc2-docstring} archivebox.__author__
 ```

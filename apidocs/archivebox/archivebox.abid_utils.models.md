@@ -21,6 +21,8 @@
   - ```{autodoc2-docstring} archivebox.abid_utils.models.ABIDModel
     :summary:
     ```
+* - {py:obj}`ModelWithHealthStats <archivebox.abid_utils.models.ModelWithHealthStats>`
+  -
 ````
 
 ### Functions
@@ -330,6 +332,84 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 :canonical: archivebox.abid_utils.models.ABIDModel.get_absolute_url
 
 ```{autodoc2-docstring} archivebox.abid_utils.models.ABIDModel.get_absolute_url
+```
+
+````
+
+``````
+
+``````{py:class} ModelWithHealthStats(*args, **kwargs)
+:canonical: archivebox.abid_utils.models.ModelWithHealthStats
+
+Bases: {py:obj}`django.db.models.Model`
+
+````{py:attribute} num_uses_failed
+:canonical: archivebox.abid_utils.models.ModelWithHealthStats.num_uses_failed
+:value: >
+   'PositiveIntegerField(...)'
+
+```{autodoc2-docstring} archivebox.abid_utils.models.ModelWithHealthStats.num_uses_failed
+```
+
+````
+
+````{py:attribute} num_uses_succeeded
+:canonical: archivebox.abid_utils.models.ModelWithHealthStats.num_uses_succeeded
+:value: >
+   'PositiveIntegerField(...)'
+
+```{autodoc2-docstring} archivebox.abid_utils.models.ModelWithHealthStats.num_uses_succeeded
+```
+
+````
+
+`````{py:class} Meta
+:canonical: archivebox.abid_utils.models.ModelWithHealthStats.Meta
+
+```{autodoc2-docstring} archivebox.abid_utils.models.ModelWithHealthStats.Meta
+```
+
+````{py:attribute} abstract
+:canonical: archivebox.abid_utils.models.ModelWithHealthStats.Meta.abstract
+:value: >
+   True
+
+```{autodoc2-docstring} archivebox.abid_utils.models.ModelWithHealthStats.Meta.abstract
+```
+
+````
+
+`````
+
+````{py:method} record_health_failure() -> None
+:canonical: archivebox.abid_utils.models.ModelWithHealthStats.record_health_failure
+
+```{autodoc2-docstring} archivebox.abid_utils.models.ModelWithHealthStats.record_health_failure
+```
+
+````
+
+````{py:method} record_health_success() -> None
+:canonical: archivebox.abid_utils.models.ModelWithHealthStats.record_health_success
+
+```{autodoc2-docstring} archivebox.abid_utils.models.ModelWithHealthStats.record_health_success
+```
+
+````
+
+````{py:method} reset_health() -> None
+:canonical: archivebox.abid_utils.models.ModelWithHealthStats.reset_health
+
+```{autodoc2-docstring} archivebox.abid_utils.models.ModelWithHealthStats.reset_health
+```
+
+````
+
+````{py:property} health
+:canonical: archivebox.abid_utils.models.ModelWithHealthStats.health
+:type: int
+
+```{autodoc2-docstring} archivebox.abid_utils.models.ModelWithHealthStats.health
 ```
 
 ````

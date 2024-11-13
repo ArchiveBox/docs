@@ -63,10 +63,6 @@
   - ```{autodoc2-docstring} archivebox.parsers.readwise_reader_api.__package__
     :summary:
     ```
-* - {py:obj}`API_DB_PATH <archivebox.parsers.readwise_reader_api.API_DB_PATH>`
-  - ```{autodoc2-docstring} archivebox.parsers.readwise_reader_api.API_DB_PATH
-    :summary:
-    ```
 * - {py:obj}`KEY <archivebox.parsers.readwise_reader_api.KEY>`
   - ```{autodoc2-docstring} archivebox.parsers.readwise_reader_api.KEY
     :summary:
@@ -89,16 +85,6 @@
    'archivebox.parsers'
 
 ```{autodoc2-docstring} archivebox.parsers.readwise_reader_api.__package__
-```
-
-````
-
-````{py:data} API_DB_PATH
-:canonical: archivebox.parsers.readwise_reader_api.API_DB_PATH
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.parsers.readwise_reader_api.API_DB_PATH
 ```
 
 ````

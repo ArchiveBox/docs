@@ -13,12 +13,13 @@
 :titlesonly:
 :maxdepth: 1
 
-archivebox.config.legacy
+archivebox.config.django
+archivebox.config.version
+archivebox.config.paths
 archivebox.config.constants
-archivebox.config.apps
-archivebox.config.check_for_update
-archivebox.config.defaults
-archivebox.config.config_stubs
+archivebox.config.common
+archivebox.config.collection
+archivebox.config.permissions
 archivebox.config.views
 ```
 
@@ -34,8 +35,8 @@ archivebox.config.views
   - ```{autodoc2-docstring} archivebox.config.__package__
     :summary:
     ```
-* - {py:obj}`__all__ <archivebox.config.__all__>`
-  - ```{autodoc2-docstring} archivebox.config.__all__
+* - {py:obj}`__order__ <archivebox.config.__order__>`
+  - ```{autodoc2-docstring} archivebox.config.__order__
     :summary:
     ```
 ````
@@ -45,19 +46,19 @@ archivebox.config.views
 ````{py:data} __package__
 :canonical: archivebox.config.__package__
 :value: >
-   'archivebox.config'
+   'config'
 
 ```{autodoc2-docstring} archivebox.config.__package__
 ```
 
 ````
 
-````{py:data} __all__
-:canonical: archivebox.config.__all__
+````{py:data} __order__
+:canonical: archivebox.config.__order__
 :value: >
-   ['CONSTANTS', 'PACKAGE_DIR', 'DATA_DIR', 'ARCHIVE_DIR', 'VERSION', 'SHELL_CONFIG', 'STORAGE_CONFIG',...
+   200
 
-```{autodoc2-docstring} archivebox.config.__all__
+```{autodoc2-docstring} archivebox.config.__order__
 ```
 
 ````

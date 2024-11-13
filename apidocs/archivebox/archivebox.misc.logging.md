@@ -53,6 +53,10 @@
   - ```{autodoc2-docstring} archivebox.misc.logging.CONSOLE
     :summary:
     ```
+* - {py:obj}`STDERR <archivebox.misc.logging.STDERR>`
+  - ```{autodoc2-docstring} archivebox.misc.logging.STDERR
+    :summary:
+    ```
 * - {py:obj}`IS_TTY <archivebox.misc.logging.IS_TTY>`
   - ```{autodoc2-docstring} archivebox.misc.logging.IS_TTY
     :summary:
@@ -93,6 +97,16 @@
    'Console(...)'
 
 ```{autodoc2-docstring} archivebox.misc.logging.CONSOLE
+```
+
+````
+
+````{py:data} STDERR
+:canonical: archivebox.misc.logging.STDERR
+:value: >
+   'Console(...)'
+
+```{autodoc2-docstring} archivebox.misc.logging.STDERR
 ```
 
 ````

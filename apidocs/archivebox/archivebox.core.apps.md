@@ -61,6 +61,9 @@ Bases: {py:obj}`django.apps.AppConfig`
 ````{py:method} ready()
 :canonical: archivebox.core.apps.CoreConfig.ready
 
+```{autodoc2-docstring} archivebox.core.apps.CoreConfig.ready
+```
+
 ````
 
 `````

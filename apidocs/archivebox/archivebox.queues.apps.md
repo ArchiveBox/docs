@@ -19,6 +19,18 @@
   -
 ````
 
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`register_admin <archivebox.queues.apps.register_admin>`
+  - ```{autodoc2-docstring} archivebox.queues.apps.register_admin
+    :summary:
+    ```
+````
+
 ### API
 
 `````{py:class} QueuesConfig(app_name, app_module)
@@ -47,3 +59,10 @@ Bases: {py:obj}`django.apps.AppConfig`
 ````
 
 `````
+
+````{py:function} register_admin(admin_site)
+:canonical: archivebox.queues.apps.register_admin
+
+```{autodoc2-docstring} archivebox.queues.apps.register_admin
+```
+````

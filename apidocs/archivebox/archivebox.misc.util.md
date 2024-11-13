@@ -198,7 +198,7 @@
 ````{py:data} __package__
 :canonical: archivebox.misc.util.__package__
 :value: >
-   'archivebox'
+   'archivebox.misc'
 
 ```{autodoc2-docstring} archivebox.misc.util.__package__
 ```
@@ -494,7 +494,7 @@
 ```
 ````
 
-````{py:function} parse_date(date: typing.Any) -> typing.Optional[datetime.datetime]
+````{py:function} parse_date(date: typing.Any) -> datetime.datetime
 :canonical: archivebox.misc.util.parse_date
 
 ```{autodoc2-docstring} archivebox.misc.util.parse_date
@@ -508,7 +508,7 @@
 ```
 ````
 
-````{py:function} get_headers(url: str, timeout: int = None) -> str
+````{py:function} get_headers(url: str, timeout: int | None = None) -> str
 :canonical: archivebox.misc.util.get_headers
 
 ```{autodoc2-docstring} archivebox.misc.util.get_headers

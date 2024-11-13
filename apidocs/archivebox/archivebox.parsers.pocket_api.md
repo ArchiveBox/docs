@@ -119,7 +119,7 @@
 
 ````
 
-````{py:function} get_pocket_articles(api: pocket.Pocket, since=None, page=0)
+````{py:function} get_pocket_articles(api, since=None, page=0)
 :canonical: archivebox.parsers.pocket_api.get_pocket_articles
 
 ```{autodoc2-docstring} archivebox.parsers.pocket_api.get_pocket_articles

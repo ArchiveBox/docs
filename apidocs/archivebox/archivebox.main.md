@@ -124,7 +124,7 @@
 ```
 ````
 
-````{py:function} version(quiet: bool = False, out_dir: pathlib.Path = DATA_DIR) -> None
+````{py:function} version(quiet: bool = False, out_dir: pathlib.Path = DATA_DIR, binproviders: typing.Optional[typing.List[str]] = None, binaries: typing.Optional[typing.List[str]] = None) -> None
 :canonical: archivebox.main.version
 
 ```{autodoc2-docstring} archivebox.main.version
@@ -201,7 +201,7 @@
 ```
 ````
 
-````{py:function} install(out_dir: pathlib.Path = DATA_DIR) -> None
+````{py:function} install(out_dir: pathlib.Path = DATA_DIR, binproviders: typing.Optional[typing.List[str]] = None, binaries: typing.Optional[typing.List[str]] = None, dry_run: bool = False) -> None
 :canonical: archivebox.main.install
 
 ```{autodoc2-docstring} archivebox.main.install
@@ -218,7 +218,7 @@
 
 ````
 
-````{py:function} config(config_options_str: typing.Optional[str] = None, config_options: typing.Optional[typing.List[str]] = None, get: bool = False, set: bool = False, reset: bool = False, out_dir: pathlib.Path = DATA_DIR) -> None
+````{py:function} config(config_options_str: typing.Optional[str] = None, config_options: typing.Optional[typing.List[str]] = None, get: bool = False, set: bool = False, search: bool = False, reset: bool = False, out_dir: pathlib.Path = DATA_DIR) -> None
 :canonical: archivebox.main.config
 
 ```{autodoc2-docstring} archivebox.main.config

@@ -15,6 +15,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`db_task_with_parent <archivebox.queues.tasks.db_task_with_parent>`
+  - ```{autodoc2-docstring} archivebox.queues.tasks.db_task_with_parent
+    :summary:
+    ```
 * - {py:obj}`bg_add <archivebox.queues.tasks.bg_add>`
   - ```{autodoc2-docstring} archivebox.queues.tasks.bg_add
     :summary:
@@ -55,6 +59,13 @@
 ```{autodoc2-docstring} archivebox.queues.tasks.__package__
 ```
 
+````
+
+````{py:function} db_task_with_parent(func)
+:canonical: archivebox.queues.tasks.db_task_with_parent
+
+```{autodoc2-docstring} archivebox.queues.tasks.db_task_with_parent
+```
 ````
 
 ````{py:function} bg_add(add_kwargs, task=None, parent_task_id=None)

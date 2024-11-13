@@ -7,28 +7,6 @@
 :allowtitles:
 ```
 
-## Submodules
-
-```{toctree}
-:titlesonly:
-:maxdepth: 1
-
-archivebox.extractors.htmltotext
-archivebox.extractors.git
-archivebox.extractors.singlefile
-archivebox.extractors.media
-archivebox.extractors.archive_org
-archivebox.extractors.readability
-archivebox.extractors.mercury
-archivebox.extractors.favicon
-archivebox.extractors.pdf
-archivebox.extractors.headers
-archivebox.extractors.screenshot
-archivebox.extractors.dom
-archivebox.extractors.title
-archivebox.extractors.wget
-```
-
 ## Package Contents
 
 ### Classes

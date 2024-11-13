@@ -16,6 +16,6 @@
 archivebox.queues.tasks
 archivebox.queues.semaphores
 archivebox.queues.apps
-archivebox.queues.settings
+archivebox.queues.admin
 archivebox.queues.supervisor_util
 ```

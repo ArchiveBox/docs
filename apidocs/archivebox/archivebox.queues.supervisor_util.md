@@ -15,6 +15,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`get_sock_file <archivebox.queues.supervisor_util.get_sock_file>`
+  - ```{autodoc2-docstring} archivebox.queues.supervisor_util.get_sock_file
+    :summary:
+    ```
 * - {py:obj}`follow <archivebox.queues.supervisor_util.follow>`
   - ```{autodoc2-docstring} archivebox.queues.supervisor_util.follow
     :summary:
@@ -47,20 +51,20 @@
   - ```{autodoc2-docstring} archivebox.queues.supervisor_util.start_worker
     :summary:
     ```
-* - {py:obj}`watch_worker <archivebox.queues.supervisor_util.watch_worker>`
-  - ```{autodoc2-docstring} archivebox.queues.supervisor_util.watch_worker
-    :summary:
-    ```
-* - {py:obj}`tail_worker_logs <archivebox.queues.supervisor_util.tail_worker_logs>`
-  - ```{autodoc2-docstring} archivebox.queues.supervisor_util.tail_worker_logs
-    :summary:
-    ```
 * - {py:obj}`get_worker <archivebox.queues.supervisor_util.get_worker>`
   - ```{autodoc2-docstring} archivebox.queues.supervisor_util.get_worker
     :summary:
     ```
 * - {py:obj}`stop_worker <archivebox.queues.supervisor_util.stop_worker>`
   - ```{autodoc2-docstring} archivebox.queues.supervisor_util.stop_worker
+    :summary:
+    ```
+* - {py:obj}`tail_worker_logs <archivebox.queues.supervisor_util.tail_worker_logs>`
+  - ```{autodoc2-docstring} archivebox.queues.supervisor_util.tail_worker_logs
+    :summary:
+    ```
+* - {py:obj}`watch_worker <archivebox.queues.supervisor_util.watch_worker>`
+  - ```{autodoc2-docstring} archivebox.queues.supervisor_util.watch_worker
     :summary:
     ```
 * - {py:obj}`start_server_workers <archivebox.queues.supervisor_util.start_server_workers>`
@@ -83,6 +87,30 @@
   - ```{autodoc2-docstring} archivebox.queues.supervisor_util.__package__
     :summary:
     ```
+* - {py:obj}`LOG_FILE_NAME <archivebox.queues.supervisor_util.LOG_FILE_NAME>`
+  - ```{autodoc2-docstring} archivebox.queues.supervisor_util.LOG_FILE_NAME
+    :summary:
+    ```
+* - {py:obj}`CONFIG_FILE_NAME <archivebox.queues.supervisor_util.CONFIG_FILE_NAME>`
+  - ```{autodoc2-docstring} archivebox.queues.supervisor_util.CONFIG_FILE_NAME
+    :summary:
+    ```
+* - {py:obj}`PID_FILE_NAME <archivebox.queues.supervisor_util.PID_FILE_NAME>`
+  - ```{autodoc2-docstring} archivebox.queues.supervisor_util.PID_FILE_NAME
+    :summary:
+    ```
+* - {py:obj}`WORKERS_DIR_NAME <archivebox.queues.supervisor_util.WORKERS_DIR_NAME>`
+  - ```{autodoc2-docstring} archivebox.queues.supervisor_util.WORKERS_DIR_NAME
+    :summary:
+    ```
+* - {py:obj}`SCHEDULER_WORKER <archivebox.queues.supervisor_util.SCHEDULER_WORKER>`
+  - ```{autodoc2-docstring} archivebox.queues.supervisor_util.SCHEDULER_WORKER
+    :summary:
+    ```
+* - {py:obj}`COMMAND_WORKER <archivebox.queues.supervisor_util.COMMAND_WORKER>`
+  - ```{autodoc2-docstring} archivebox.queues.supervisor_util.COMMAND_WORKER
+    :summary:
+    ```
 ````
 
 ### API
@@ -95,6 +123,73 @@
 ```{autodoc2-docstring} archivebox.queues.supervisor_util.__package__
 ```
 
+````
+
+````{py:data} LOG_FILE_NAME
+:canonical: archivebox.queues.supervisor_util.LOG_FILE_NAME
+:value: >
+   'supervisord.log'
+
+```{autodoc2-docstring} archivebox.queues.supervisor_util.LOG_FILE_NAME
+```
+
+````
+
+````{py:data} CONFIG_FILE_NAME
+:canonical: archivebox.queues.supervisor_util.CONFIG_FILE_NAME
+:value: >
+   'supervisord.conf'
+
+```{autodoc2-docstring} archivebox.queues.supervisor_util.CONFIG_FILE_NAME
+```
+
+````
+
+````{py:data} PID_FILE_NAME
+:canonical: archivebox.queues.supervisor_util.PID_FILE_NAME
+:value: >
+   'supervisord.pid'
+
+```{autodoc2-docstring} archivebox.queues.supervisor_util.PID_FILE_NAME
+```
+
+````
+
+````{py:data} WORKERS_DIR_NAME
+:canonical: archivebox.queues.supervisor_util.WORKERS_DIR_NAME
+:value: >
+   'workers'
+
+```{autodoc2-docstring} archivebox.queues.supervisor_util.WORKERS_DIR_NAME
+```
+
+````
+
+````{py:data} SCHEDULER_WORKER
+:canonical: archivebox.queues.supervisor_util.SCHEDULER_WORKER
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.queues.supervisor_util.SCHEDULER_WORKER
+```
+
+````
+
+````{py:data} COMMAND_WORKER
+:canonical: archivebox.queues.supervisor_util.COMMAND_WORKER
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.queues.supervisor_util.COMMAND_WORKER
+```
+
+````
+
+````{py:function} get_sock_file()
+:canonical: archivebox.queues.supervisor_util.get_sock_file
+
+```{autodoc2-docstring} archivebox.queues.supervisor_util.get_sock_file
+```
 ````
 
 ````{py:function} follow(file, sleep_sec=0.1) -> typing.Iterator[str]
@@ -153,20 +248,6 @@
 ```
 ````
 
-````{py:function} watch_worker(supervisor, daemon_name, interval=5)
-:canonical: archivebox.queues.supervisor_util.watch_worker
-
-```{autodoc2-docstring} archivebox.queues.supervisor_util.watch_worker
-```
-````
-
-````{py:function} tail_worker_logs(log_path: str)
-:canonical: archivebox.queues.supervisor_util.tail_worker_logs
-
-```{autodoc2-docstring} archivebox.queues.supervisor_util.tail_worker_logs
-```
-````
-
 ````{py:function} get_worker(supervisor, daemon_name)
 :canonical: archivebox.queues.supervisor_util.get_worker
 
@@ -178,6 +259,20 @@
 :canonical: archivebox.queues.supervisor_util.stop_worker
 
 ```{autodoc2-docstring} archivebox.queues.supervisor_util.stop_worker
+```
+````
+
+````{py:function} tail_worker_logs(log_path: str)
+:canonical: archivebox.queues.supervisor_util.tail_worker_logs
+
+```{autodoc2-docstring} archivebox.queues.supervisor_util.tail_worker_logs
+```
+````
+
+````{py:function} watch_worker(supervisor, daemon_name, interval=5)
+:canonical: archivebox.queues.supervisor_util.watch_worker
+
+```{autodoc2-docstring} archivebox.queues.supervisor_util.watch_worker
 ```
 ````
 

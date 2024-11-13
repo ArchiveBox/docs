@@ -19,18 +19,6 @@
   -
 ````
 
-### Functions
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`_detect_installed_version <archivebox.config.constants._detect_installed_version>`
-  - ```{autodoc2-docstring} archivebox.config.constants._detect_installed_version
-    :summary:
-    ```
-````
-
 ### Data
 
 ````{list-table}
@@ -39,26 +27,6 @@
 
 * - {py:obj}`__package__ <archivebox.config.constants.__package__>`
   - ```{autodoc2-docstring} archivebox.config.constants.__package__
-    :summary:
-    ```
-* - {py:obj}`PACKAGE_DIR <archivebox.config.constants.PACKAGE_DIR>`
-  - ```{autodoc2-docstring} archivebox.config.constants.PACKAGE_DIR
-    :summary:
-    ```
-* - {py:obj}`DATA_DIR <archivebox.config.constants.DATA_DIR>`
-  - ```{autodoc2-docstring} archivebox.config.constants.DATA_DIR
-    :summary:
-    ```
-* - {py:obj}`ARCHIVE_DIR <archivebox.config.constants.ARCHIVE_DIR>`
-  - ```{autodoc2-docstring} archivebox.config.constants.ARCHIVE_DIR
-    :summary:
-    ```
-* - {py:obj}`VERSION <archivebox.config.constants.VERSION>`
-  - ```{autodoc2-docstring} archivebox.config.constants.VERSION
-    :summary:
-    ```
-* - {py:obj}`DATA_DIR_TMP_DIR <archivebox.config.constants.DATA_DIR_TMP_DIR>`
-  - ```{autodoc2-docstring} archivebox.config.constants.DATA_DIR_TMP_DIR
     :summary:
     ```
 * - {py:obj}`CONSTANTS <archivebox.config.constants.CONSTANTS>`
@@ -83,111 +51,10 @@
 
 ````
 
-````{py:data} PACKAGE_DIR
-:canonical: archivebox.config.constants.PACKAGE_DIR
-:type: pathlib.Path
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.constants.PACKAGE_DIR
-```
-
-````
-
-````{py:data} DATA_DIR
-:canonical: archivebox.config.constants.DATA_DIR
-:type: pathlib.Path
-:value: >
-   'resolve(...)'
-
-```{autodoc2-docstring} archivebox.config.constants.DATA_DIR
-```
-
-````
-
-````{py:data} ARCHIVE_DIR
-:canonical: archivebox.config.constants.ARCHIVE_DIR
-:type: pathlib.Path
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.constants.ARCHIVE_DIR
-```
-
-````
-
-````{py:function} _detect_installed_version(PACKAGE_DIR: pathlib.Path)
-:canonical: archivebox.config.constants._detect_installed_version
-
-```{autodoc2-docstring} archivebox.config.constants._detect_installed_version
-```
-````
-
-````{py:data} VERSION
-:canonical: archivebox.config.constants.VERSION
-:type: str
-:value: >
-   '_detect_installed_version(...)'
-
-```{autodoc2-docstring} archivebox.config.constants.VERSION
-```
-
-````
-
-````{py:data} DATA_DIR_TMP_DIR
-:canonical: archivebox.config.constants.DATA_DIR_TMP_DIR
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.constants.DATA_DIR_TMP_DIR
-```
-
-````
-
 `````{py:class} ConstantsDict
 :canonical: archivebox.config.constants.ConstantsDict
 
 Bases: {py:obj}`collections.abc.Mapping`
-
-````{py:attribute} IN_DOCKER
-:canonical: archivebox.config.constants.ConstantsDict.IN_DOCKER
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.IN_DOCKER
-```
-
-````
-
-````{py:attribute} OS
-:canonical: archivebox.config.constants.ConstantsDict.OS
-:value: >
-   'lower(...)'
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.OS
-```
-
-````
-
-````{py:attribute} ARCH
-:canonical: archivebox.config.constants.ConstantsDict.ARCH
-:value: >
-   'lower(...)'
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.ARCH
-```
-
-````
-
-````{py:attribute} LIB_DIR_SCOPE
-:canonical: archivebox.config.constants.ConstantsDict.LIB_DIR_SCOPE
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.LIB_DIR_SCOPE
-```
-
-````
 
 ````{py:attribute} PACKAGE_DIR
 :canonical: archivebox.config.constants.ConstantsDict.PACKAGE_DIR
@@ -222,13 +89,145 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
+````{py:attribute} MACHINE_TYPE
+:canonical: archivebox.config.constants.ConstantsDict.MACHINE_TYPE
+:type: str
+:value: >
+   'get_machine_type(...)'
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.MACHINE_TYPE
+```
+
+````
+
+````{py:attribute} MACHINE_ID
+:canonical: archivebox.config.constants.ConstantsDict.MACHINE_ID
+:type: str
+:value: >
+   'get_machine_id(...)'
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.MACHINE_ID
+```
+
+````
+
+````{py:attribute} COLLECTION_ID
+:canonical: archivebox.config.constants.ConstantsDict.COLLECTION_ID
+:type: str
+:value: >
+   'get_collection_id(...)'
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.COLLECTION_ID
+```
+
+````
+
 ````{py:attribute} VERSION
 :canonical: archivebox.config.constants.ConstantsDict.VERSION
 :type: str
 :value: >
-   None
+   'detect_installed_version(...)'
 
 ```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.VERSION
+```
+
+````
+
+````{py:attribute} IN_DOCKER
+:canonical: archivebox.config.constants.ConstantsDict.IN_DOCKER
+:type: bool
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.IN_DOCKER
+```
+
+````
+
+````{py:attribute} IS_ROOT
+:canonical: archivebox.config.constants.ConstantsDict.IS_ROOT
+:type: bool
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.IS_ROOT
+```
+
+````
+
+````{py:attribute} ARCHIVEBOX_USER
+:canonical: archivebox.config.constants.ConstantsDict.ARCHIVEBOX_USER
+:type: int
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.ARCHIVEBOX_USER
+```
+
+````
+
+````{py:attribute} ARCHIVEBOX_GROUP
+:canonical: archivebox.config.constants.ConstantsDict.ARCHIVEBOX_GROUP
+:type: int
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.ARCHIVEBOX_GROUP
+```
+
+````
+
+````{py:attribute} RUNNING_AS_UID
+:canonical: archivebox.config.constants.ConstantsDict.RUNNING_AS_UID
+:type: int
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.RUNNING_AS_UID
+```
+
+````
+
+````{py:attribute} RUNNING_AS_GID
+:canonical: archivebox.config.constants.ConstantsDict.RUNNING_AS_GID
+:type: int
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.RUNNING_AS_GID
+```
+
+````
+
+````{py:attribute} DEFAULT_PUID
+:canonical: archivebox.config.constants.ConstantsDict.DEFAULT_PUID
+:type: int
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DEFAULT_PUID
+```
+
+````
+
+````{py:attribute} DEFAULT_PGID
+:canonical: archivebox.config.constants.ConstantsDict.DEFAULT_PGID
+:type: int
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DEFAULT_PGID
+```
+
+````
+
+````{py:attribute} IS_INSIDE_VENV
+:canonical: archivebox.config.constants.ConstantsDict.IS_INSIDE_VENV
+:type: bool
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.IS_INSIDE_VENV
 ```
 
 ````
@@ -266,6 +265,17 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
+````{py:attribute} STATIC_DIR_NAME
+:canonical: archivebox.config.constants.ConstantsDict.STATIC_DIR_NAME
+:type: str
+:value: >
+   'static'
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.STATIC_DIR_NAME
+```
+
+````
+
 ````{py:attribute} STATIC_DIR
 :canonical: archivebox.config.constants.ConstantsDict.STATIC_DIR
 :type: pathlib.Path
@@ -273,28 +283,6 @@ Bases: {py:obj}`collections.abc.Mapping`
    None
 
 ```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.STATIC_DIR
-```
-
-````
-
-````{py:attribute} USER_PLUGINS_DIR_NAME
-:canonical: archivebox.config.constants.ConstantsDict.USER_PLUGINS_DIR_NAME
-:type: str
-:value: >
-   'user_plugins'
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.USER_PLUGINS_DIR_NAME
-```
-
-````
-
-````{py:attribute} CUSTOM_TEMPLATES_DIR_NAME
-:canonical: archivebox.config.constants.ConstantsDict.CUSTOM_TEMPLATES_DIR_NAME
-:type: str
-:value: >
-   'user_templates'
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.CUSTOM_TEMPLATES_DIR_NAME
 ```
 
 ````
@@ -365,46 +353,24 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
-````{py:attribute} LIB_DIR_NAME
-:canonical: archivebox.config.constants.ConstantsDict.LIB_DIR_NAME
+````{py:attribute} USER_PLUGINS_DIR_NAME
+:canonical: archivebox.config.constants.ConstantsDict.USER_PLUGINS_DIR_NAME
 :type: str
 :value: >
-   'lib'
+   'user_plugins'
 
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.LIB_DIR_NAME
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.USER_PLUGINS_DIR_NAME
 ```
 
 ````
 
-````{py:attribute} TMP_DIR_NAME
-:canonical: archivebox.config.constants.ConstantsDict.TMP_DIR_NAME
+````{py:attribute} CUSTOM_TEMPLATES_DIR_NAME
+:canonical: archivebox.config.constants.ConstantsDict.CUSTOM_TEMPLATES_DIR_NAME
 :type: str
 :value: >
-   'tmp'
+   'user_templates'
 
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.TMP_DIR_NAME
-```
-
-````
-
-````{py:attribute} SYSTEM_TMP_DIR
-:canonical: archivebox.config.constants.ConstantsDict.SYSTEM_TMP_DIR
-:type: pathlib.Path
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.SYSTEM_TMP_DIR
-```
-
-````
-
-````{py:attribute} DATA_DIR_TMP_DIR
-:canonical: archivebox.config.constants.ConstantsDict.DATA_DIR_TMP_DIR
-:type: pathlib.Path
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DATA_DIR_TMP_DIR
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.CUSTOM_TEMPLATES_DIR_NAME
 ```
 
 ````
@@ -431,17 +397,6 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
-````{py:attribute} CACHE_DIR
-:canonical: archivebox.config.constants.ConstantsDict.CACHE_DIR
-:type: pathlib.Path
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.CACHE_DIR
-```
-
-````
-
 ````{py:attribute} LOGS_DIR
 :canonical: archivebox.config.constants.ConstantsDict.LOGS_DIR
 :type: pathlib.Path
@@ -453,24 +408,13 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
-````{py:attribute} LIB_DIR
-:canonical: archivebox.config.constants.ConstantsDict.LIB_DIR
+````{py:attribute} CACHE_DIR
+:canonical: archivebox.config.constants.ConstantsDict.CACHE_DIR
 :type: pathlib.Path
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.LIB_DIR
-```
-
-````
-
-````{py:attribute} TMP_DIR
-:canonical: archivebox.config.constants.ConstantsDict.TMP_DIR
-:type: pathlib.Path
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.TMP_DIR
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.CACHE_DIR
 ```
 
 ````
@@ -497,61 +441,6 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
-````{py:attribute} LIB_PIP_DIR
-:canonical: archivebox.config.constants.ConstantsDict.LIB_PIP_DIR
-:type: pathlib.Path
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.LIB_PIP_DIR
-```
-
-````
-
-````{py:attribute} LIB_NPM_DIR
-:canonical: archivebox.config.constants.ConstantsDict.LIB_NPM_DIR
-:type: pathlib.Path
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.LIB_NPM_DIR
-```
-
-````
-
-````{py:attribute} LIB_BROWSERS_DIR
-:canonical: archivebox.config.constants.ConstantsDict.LIB_BROWSERS_DIR
-:type: pathlib.Path
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.LIB_BROWSERS_DIR
-```
-
-````
-
-````{py:attribute} LIB_BIN_DIR
-:canonical: archivebox.config.constants.ConstantsDict.LIB_BIN_DIR
-:type: pathlib.Path
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.LIB_BIN_DIR
-```
-
-````
-
-````{py:attribute} BIN_DIR
-:canonical: archivebox.config.constants.ConstantsDict.BIN_DIR
-:type: pathlib.Path
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.BIN_DIR
-```
-
-````
-
 ````{py:attribute} CONFIG_FILENAME
 :canonical: archivebox.config.constants.ConstantsDict.CONFIG_FILENAME
 :type: str
@@ -570,6 +459,17 @@ Bases: {py:obj}`collections.abc.Mapping`
    'index.sqlite3'
 
 ```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.SQL_INDEX_FILENAME
+```
+
+````
+
+````{py:attribute} QUEUE_DATABASE_FILENAME
+:canonical: archivebox.config.constants.ConstantsDict.QUEUE_DATABASE_FILENAME
+:type: str
+:value: >
+   'queue.sqlite3'
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.QUEUE_DATABASE_FILENAME
 ```
 
 ````
@@ -651,6 +551,50 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
+````{py:attribute} TMP_DIR_NAME
+:canonical: archivebox.config.constants.ConstantsDict.TMP_DIR_NAME
+:type: str
+:value: >
+   'tmp'
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.TMP_DIR_NAME
+```
+
+````
+
+````{py:attribute} DEFAULT_TMP_DIR
+:canonical: archivebox.config.constants.ConstantsDict.DEFAULT_TMP_DIR
+:type: pathlib.Path
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DEFAULT_TMP_DIR
+```
+
+````
+
+````{py:attribute} LIB_DIR_NAME
+:canonical: archivebox.config.constants.ConstantsDict.LIB_DIR_NAME
+:type: str
+:value: >
+   'lib'
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.LIB_DIR_NAME
+```
+
+````
+
+````{py:attribute} DEFAULT_LIB_DIR
+:canonical: archivebox.config.constants.ConstantsDict.DEFAULT_LIB_DIR
+:type: pathlib.Path
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DEFAULT_LIB_DIR
+```
+
+````
+
 ````{py:attribute} TIMEZONE
 :canonical: archivebox.config.constants.ConstantsDict.TIMEZONE
 :type: str
@@ -706,17 +650,6 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
-````{py:attribute} INGORED_PATHS
-:canonical: archivebox.config.constants.ConstantsDict.INGORED_PATHS
-:type: frozenset[str]
-:value: >
-   'frozenset(...)'
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.INGORED_PATHS
-```
-
-````
-
 ````{py:attribute} PIP_RELATED_NAMES
 :canonical: archivebox.config.constants.ConstantsDict.PIP_RELATED_NAMES
 :type: frozenset[str]
@@ -739,39 +672,6 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
-````{py:attribute} DATA_DIR_NAMES
-:canonical: archivebox.config.constants.ConstantsDict.DATA_DIR_NAMES
-:type: frozenset[str]
-:value: >
-   'frozenset(...)'
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DATA_DIR_NAMES
-```
-
-````
-
-````{py:attribute} DATA_DIRS
-:canonical: archivebox.config.constants.ConstantsDict.DATA_DIRS
-:type: frozenset[pathlib.Path]
-:value: >
-   'frozenset(...)'
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DATA_DIRS
-```
-
-````
-
-````{py:attribute} DATA_FILE_NAMES
-:canonical: archivebox.config.constants.ConstantsDict.DATA_FILE_NAMES
-:type: frozenset[str]
-:value: >
-   'frozenset(...)'
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DATA_FILE_NAMES
-```
-
-````
-
 ````{py:attribute} ALLOWED_IN_DATA_DIR
 :canonical: archivebox.config.constants.ConstantsDict.ALLOWED_IN_DATA_DIR
 :type: frozenset[str]
@@ -779,26 +679,6 @@ Bases: {py:obj}`collections.abc.Mapping`
    'frozenset(...)'
 
 ```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.ALLOWED_IN_DATA_DIR
-```
-
-````
-
-````{py:attribute} CODE_LOCATIONS
-:canonical: archivebox.config.constants.ConstantsDict.CODE_LOCATIONS
-:value: >
-   'benedict(...)'
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.CODE_LOCATIONS
-```
-
-````
-
-````{py:attribute} DATA_LOCATIONS
-:canonical: archivebox.config.constants.ConstantsDict.DATA_LOCATIONS
-:value: >
-   'benedict(...)'
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DATA_LOCATIONS
 ```
 
 ````

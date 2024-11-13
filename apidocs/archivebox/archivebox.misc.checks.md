@@ -23,6 +23,26 @@
   - ```{autodoc2-docstring} archivebox.misc.checks.check_migrations
     :summary:
     ```
+* - {py:obj}`check_io_encoding <archivebox.misc.checks.check_io_encoding>`
+  - ```{autodoc2-docstring} archivebox.misc.checks.check_io_encoding
+    :summary:
+    ```
+* - {py:obj}`check_not_root <archivebox.misc.checks.check_not_root>`
+  - ```{autodoc2-docstring} archivebox.misc.checks.check_not_root
+    :summary:
+    ```
+* - {py:obj}`check_data_dir_permissions <archivebox.misc.checks.check_data_dir_permissions>`
+  - ```{autodoc2-docstring} archivebox.misc.checks.check_data_dir_permissions
+    :summary:
+    ```
+* - {py:obj}`check_tmp_dir <archivebox.misc.checks.check_tmp_dir>`
+  - ```{autodoc2-docstring} archivebox.misc.checks.check_tmp_dir
+    :summary:
+    ```
+* - {py:obj}`check_lib_dir <archivebox.misc.checks.check_lib_dir>`
+  - ```{autodoc2-docstring} archivebox.misc.checks.check_lib_dir
+    :summary:
+    ```
 ````
 
 ### Data
@@ -60,5 +80,40 @@
 :canonical: archivebox.misc.checks.check_migrations
 
 ```{autodoc2-docstring} archivebox.misc.checks.check_migrations
+```
+````
+
+````{py:function} check_io_encoding()
+:canonical: archivebox.misc.checks.check_io_encoding
+
+```{autodoc2-docstring} archivebox.misc.checks.check_io_encoding
+```
+````
+
+````{py:function} check_not_root()
+:canonical: archivebox.misc.checks.check_not_root
+
+```{autodoc2-docstring} archivebox.misc.checks.check_not_root
+```
+````
+
+````{py:function} check_data_dir_permissions()
+:canonical: archivebox.misc.checks.check_data_dir_permissions
+
+```{autodoc2-docstring} archivebox.misc.checks.check_data_dir_permissions
+```
+````
+
+````{py:function} check_tmp_dir(tmp_dir=None, throw=False, quiet=False, must_exist=True)
+:canonical: archivebox.misc.checks.check_tmp_dir
+
+```{autodoc2-docstring} archivebox.misc.checks.check_tmp_dir
+```
+````
+
+````{py:function} check_lib_dir(lib_dir: pathlib.Path | None = None, throw=False, quiet=False, must_exist=True)
+:canonical: archivebox.misc.checks.check_lib_dir
+
+```{autodoc2-docstring} archivebox.misc.checks.check_lib_dir
 ```
 ````

@@ -15,6 +15,7 @@
 
 archivebox.machine.models
 archivebox.machine.apps
+archivebox.machine.admin
 archivebox.machine.detect
 ```
 

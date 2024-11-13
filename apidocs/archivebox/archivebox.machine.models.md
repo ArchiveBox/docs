@@ -15,20 +15,22 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`ModelWithHealthStats <archivebox.machine.models.ModelWithHealthStats>`
-  -
 * - {py:obj}`MachineManager <archivebox.machine.models.MachineManager>`
   - ```{autodoc2-docstring} archivebox.machine.models.MachineManager
     :summary:
     ```
 * - {py:obj}`Machine <archivebox.machine.models.Machine>`
-  -
+  - ```{autodoc2-docstring} archivebox.machine.models.Machine
+    :summary:
+    ```
 * - {py:obj}`NetworkInterfaceManager <archivebox.machine.models.NetworkInterfaceManager>`
   - ```{autodoc2-docstring} archivebox.machine.models.NetworkInterfaceManager
     :summary:
     ```
 * - {py:obj}`NetworkInterface <archivebox.machine.models.NetworkInterface>`
-  -
+  - ```{autodoc2-docstring} archivebox.machine.models.NetworkInterface
+    :summary:
+    ```
 * - {py:obj}`InstalledBinaryManager <archivebox.machine.models.InstalledBinaryManager>`
   - ```{autodoc2-docstring} archivebox.machine.models.InstalledBinaryManager
     :summary:
@@ -47,16 +49,16 @@
   - ```{autodoc2-docstring} archivebox.machine.models.__package__
     :summary:
     ```
-* - {py:obj}`CURRENT_MACHINE <archivebox.machine.models.CURRENT_MACHINE>`
-  - ```{autodoc2-docstring} archivebox.machine.models.CURRENT_MACHINE
+* - {py:obj}`_CURRENT_MACHINE <archivebox.machine.models._CURRENT_MACHINE>`
+  - ```{autodoc2-docstring} archivebox.machine.models._CURRENT_MACHINE
     :summary:
     ```
-* - {py:obj}`CURRENT_INTERFACE <archivebox.machine.models.CURRENT_INTERFACE>`
-  - ```{autodoc2-docstring} archivebox.machine.models.CURRENT_INTERFACE
+* - {py:obj}`_CURRENT_INTERFACE <archivebox.machine.models._CURRENT_INTERFACE>`
+  - ```{autodoc2-docstring} archivebox.machine.models._CURRENT_INTERFACE
     :summary:
     ```
-* - {py:obj}`CURRENT_BINARIES <archivebox.machine.models.CURRENT_BINARIES>`
-  - ```{autodoc2-docstring} archivebox.machine.models.CURRENT_BINARIES
+* - {py:obj}`_CURRENT_BINARIES <archivebox.machine.models._CURRENT_BINARIES>`
+  - ```{autodoc2-docstring} archivebox.machine.models._CURRENT_BINARIES
     :summary:
     ```
 * - {py:obj}`MACHINE_RECHECK_INTERVAL <archivebox.machine.models.MACHINE_RECHECK_INTERVAL>`
@@ -85,32 +87,32 @@
 
 ````
 
-````{py:data} CURRENT_MACHINE
-:canonical: archivebox.machine.models.CURRENT_MACHINE
+````{py:data} _CURRENT_MACHINE
+:canonical: archivebox.machine.models._CURRENT_MACHINE
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.machine.models.CURRENT_MACHINE
+```{autodoc2-docstring} archivebox.machine.models._CURRENT_MACHINE
 ```
 
 ````
 
-````{py:data} CURRENT_INTERFACE
-:canonical: archivebox.machine.models.CURRENT_INTERFACE
+````{py:data} _CURRENT_INTERFACE
+:canonical: archivebox.machine.models._CURRENT_INTERFACE
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.machine.models.CURRENT_INTERFACE
+```{autodoc2-docstring} archivebox.machine.models._CURRENT_INTERFACE
 ```
 
 ````
 
-````{py:data} CURRENT_BINARIES
-:canonical: archivebox.machine.models.CURRENT_BINARIES
+````{py:data} _CURRENT_BINARIES
+:canonical: archivebox.machine.models._CURRENT_BINARIES
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.machine.models.CURRENT_BINARIES
+```{autodoc2-docstring} archivebox.machine.models._CURRENT_BINARIES
 ```
 
 ````
@@ -145,84 +147,6 @@
 
 ````
 
-``````{py:class} ModelWithHealthStats(*args, **kwargs)
-:canonical: archivebox.machine.models.ModelWithHealthStats
-
-Bases: {py:obj}`django.db.models.Model`
-
-````{py:attribute} num_uses_failed
-:canonical: archivebox.machine.models.ModelWithHealthStats.num_uses_failed
-:value: >
-   'PositiveIntegerField(...)'
-
-```{autodoc2-docstring} archivebox.machine.models.ModelWithHealthStats.num_uses_failed
-```
-
-````
-
-````{py:attribute} num_uses_succeeded
-:canonical: archivebox.machine.models.ModelWithHealthStats.num_uses_succeeded
-:value: >
-   'PositiveIntegerField(...)'
-
-```{autodoc2-docstring} archivebox.machine.models.ModelWithHealthStats.num_uses_succeeded
-```
-
-````
-
-`````{py:class} Meta
-:canonical: archivebox.machine.models.ModelWithHealthStats.Meta
-
-```{autodoc2-docstring} archivebox.machine.models.ModelWithHealthStats.Meta
-```
-
-````{py:attribute} abstract
-:canonical: archivebox.machine.models.ModelWithHealthStats.Meta.abstract
-:value: >
-   True
-
-```{autodoc2-docstring} archivebox.machine.models.ModelWithHealthStats.Meta.abstract
-```
-
-````
-
-`````
-
-````{py:method} record_health_failure() -> None
-:canonical: archivebox.machine.models.ModelWithHealthStats.record_health_failure
-
-```{autodoc2-docstring} archivebox.machine.models.ModelWithHealthStats.record_health_failure
-```
-
-````
-
-````{py:method} record_health_success() -> None
-:canonical: archivebox.machine.models.ModelWithHealthStats.record_health_success
-
-```{autodoc2-docstring} archivebox.machine.models.ModelWithHealthStats.record_health_success
-```
-
-````
-
-````{py:method} reset_health() -> None
-:canonical: archivebox.machine.models.ModelWithHealthStats.reset_health
-
-```{autodoc2-docstring} archivebox.machine.models.ModelWithHealthStats.reset_health
-```
-
-````
-
-````{py:property} health
-:canonical: archivebox.machine.models.ModelWithHealthStats.health
-:type: int
-
-```{autodoc2-docstring} archivebox.machine.models.ModelWithHealthStats.health
-```
-
-````
-
-``````
-
 `````{py:class} MachineManager
 :canonical: archivebox.machine.models.MachineManager
 
@@ -244,7 +168,16 @@ Bases: {py:obj}`django.db.models.Manager`
 `````{py:class} Machine(*args: typing.Any, **kwargs: typing.Any)
 :canonical: archivebox.machine.models.Machine
 
-Bases: {py:obj}`archivebox.abid_utils.models.ABIDModel`, {py:obj}`archivebox.machine.models.ModelWithHealthStats`
+Bases: {py:obj}`archivebox.abid_utils.models.ABIDModel`, {py:obj}`archivebox.abid_utils.models.ModelWithHealthStats`
+
+```{autodoc2-docstring} archivebox.machine.models.Machine
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} archivebox.machine.models.Machine.__init__
+```
 
 ````{py:attribute} abid_prefix
 :canonical: archivebox.machine.models.Machine.abid_prefix
@@ -521,7 +454,16 @@ Bases: {py:obj}`django.db.models.Manager`
 ``````{py:class} NetworkInterface(*args: typing.Any, **kwargs: typing.Any)
 :canonical: archivebox.machine.models.NetworkInterface
 
-Bases: {py:obj}`archivebox.abid_utils.models.ABIDModel`, {py:obj}`archivebox.machine.models.ModelWithHealthStats`
+Bases: {py:obj}`archivebox.abid_utils.models.ABIDModel`, {py:obj}`archivebox.abid_utils.models.ModelWithHealthStats`
+
+```{autodoc2-docstring} archivebox.machine.models.NetworkInterface
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} archivebox.machine.models.NetworkInterface.__init__
+```
 
 ````{py:attribute} abid_prefix
 :canonical: archivebox.machine.models.NetworkInterface.abid_prefix
@@ -772,7 +714,7 @@ Bases: {py:obj}`django.db.models.Manager`
 ```{autodoc2-docstring} archivebox.machine.models.InstalledBinaryManager
 ```
 
-````{py:method} get_from_db_or_cache(binary: abx.archivebox.base_binary.BaseBinary) -> archivebox.machine.models.InstalledBinary
+````{py:method} get_from_db_or_cache(binary: pydantic_pkgr.Binary) -> archivebox.machine.models.InstalledBinary
 :canonical: archivebox.machine.models.InstalledBinaryManager.get_from_db_or_cache
 
 ```{autodoc2-docstring} archivebox.machine.models.InstalledBinaryManager.get_from_db_or_cache
@@ -785,7 +727,7 @@ Bases: {py:obj}`django.db.models.Manager`
 ``````{py:class} InstalledBinary(*args: typing.Any, **kwargs: typing.Any)
 :canonical: archivebox.machine.models.InstalledBinary
 
-Bases: {py:obj}`archivebox.abid_utils.models.ABIDModel`, {py:obj}`archivebox.machine.models.ModelWithHealthStats`
+Bases: {py:obj}`archivebox.abid_utils.models.ABIDModel`, {py:obj}`archivebox.abid_utils.models.ModelWithHealthStats`
 
 ````{py:attribute} abid_prefix
 :canonical: archivebox.machine.models.InstalledBinary.abid_prefix
@@ -1006,7 +948,7 @@ Bases: {py:obj}`archivebox.abid_utils.models.ABIDModel`, {py:obj}`archivebox.mac
 
 ````
 
-````{py:method} BINARY() -> abx.archivebox.base_binary.BaseBinary
+````{py:method} BINARY() -> pydantic_pkgr.Binary
 :canonical: archivebox.machine.models.InstalledBinary.BINARY
 
 ```{autodoc2-docstring} archivebox.machine.models.InstalledBinary.BINARY
@@ -1014,7 +956,7 @@ Bases: {py:obj}`archivebox.abid_utils.models.ABIDModel`, {py:obj}`archivebox.mac
 
 ````
 
-````{py:method} BINPROVIDER() -> abx.archivebox.base_binary.BaseBinProvider
+````{py:method} BINPROVIDER() -> pydantic_pkgr.BinProvider
 :canonical: archivebox.machine.models.InstalledBinary.BINPROVIDER
 
 ```{autodoc2-docstring} archivebox.machine.models.InstalledBinary.BINPROVIDER
@@ -1022,7 +964,7 @@ Bases: {py:obj}`archivebox.abid_utils.models.ABIDModel`, {py:obj}`archivebox.mac
 
 ````
 
-````{py:method} load_from_db() -> abx.archivebox.base_binary.BaseBinary
+````{py:method} load_from_db() -> pydantic_pkgr.Binary
 :canonical: archivebox.machine.models.InstalledBinary.load_from_db
 
 ```{autodoc2-docstring} archivebox.machine.models.InstalledBinary.load_from_db
@@ -1030,7 +972,7 @@ Bases: {py:obj}`archivebox.abid_utils.models.ABIDModel`, {py:obj}`archivebox.mac
 
 ````
 
-````{py:method} load_fresh() -> abx.archivebox.base_binary.BaseBinary
+````{py:method} load_fresh() -> pydantic_pkgr.Binary
 :canonical: archivebox.machine.models.InstalledBinary.load_fresh
 
 ```{autodoc2-docstring} archivebox.machine.models.InstalledBinary.load_fresh

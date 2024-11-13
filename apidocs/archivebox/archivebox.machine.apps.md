@@ -19,6 +19,18 @@
   -
 ````
 
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`register_admin <archivebox.machine.apps.register_admin>`
+  - ```{autodoc2-docstring} archivebox.machine.apps.register_admin
+    :summary:
+    ```
+````
+
 ### Data
 
 ````{list-table}
@@ -79,3 +91,10 @@ Bases: {py:obj}`django.apps.AppConfig`
 ````
 
 `````
+
+````{py:function} register_admin(admin_site)
+:canonical: archivebox.machine.apps.register_admin
+
+```{autodoc2-docstring} archivebox.machine.apps.register_admin
+```
+````

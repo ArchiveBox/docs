@@ -7,6 +7,15 @@
 :allowtitles:
 ```
 
+## Submodules
+
+```{toctree}
+:titlesonly:
+:maxdepth: 1
+
+archivebox.search.admin
+```
+
 ## Package Contents
 
 ### Functions

@@ -20,6 +20,7 @@ archivebox.api.models
 archivebox.api.v1_cli
 archivebox.api.v1_core
 archivebox.api.apps
+archivebox.api.admin
 archivebox.api.urls
 ```
 

@@ -112,8 +112,8 @@ archivebox.cli.archivebox_manage
   - ```{autodoc2-docstring} archivebox.cli.meta_cmds
     :summary:
     ```
-* - {py:obj}`main_cmds <archivebox.cli.main_cmds>`
-  - ```{autodoc2-docstring} archivebox.cli.main_cmds
+* - {py:obj}`setup_cmds <archivebox.cli.setup_cmds>`
+  - ```{autodoc2-docstring} archivebox.cli.setup_cmds
     :summary:
     ```
 * - {py:obj}`archive_cmds <archivebox.cli.archive_cmds>`
@@ -290,12 +290,12 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
-````{py:data} main_cmds
-:canonical: archivebox.cli.main_cmds
+````{py:data} setup_cmds
+:canonical: archivebox.cli.setup_cmds
 :value: >
-   ('init', 'config', 'setup', 'install')
+   ('init', 'setup', 'install')
 
-```{autodoc2-docstring} archivebox.cli.main_cmds
+```{autodoc2-docstring} archivebox.cli.setup_cmds
 ```
 
 ````
@@ -303,7 +303,7 @@ Bases: {py:obj}`collections.abc.Mapping`
 ````{py:data} archive_cmds
 :canonical: archivebox.cli.archive_cmds
 :value: >
-   ('add', 'remove', 'update', 'list', 'status')
+   ('add', 'remove', 'update', 'list', 'status', 'schedule', 'server', 'shell', 'manage')
 
 ```{autodoc2-docstring} archivebox.cli.archive_cmds
 ```

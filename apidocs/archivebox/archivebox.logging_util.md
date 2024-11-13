@@ -538,7 +538,7 @@ Bases: {py:obj}`django.core.management.base.DjangoHelpFormatter`, {py:obj}`rich_
 ```
 ````
 
-````{py:function} pretty_path(path: typing.Union[pathlib.Path, str], pwd: typing.Union[pathlib.Path, str] = DATA_DIR) -> str
+````{py:function} pretty_path(path: typing.Union[pathlib.Path, str], pwd: typing.Union[pathlib.Path, str] = DATA_DIR, color: bool = True) -> str
 :canonical: archivebox.logging_util.pretty_path
 
 ```{autodoc2-docstring} archivebox.logging_util.pretty_path
