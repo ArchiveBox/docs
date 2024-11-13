@@ -1,6 +1,6 @@
 <div align="center">
 
-[✏️ Help improve our documentation...](https://github.com/ArchiveBox/ArchiveBox/issues/new?assignees=&labels=&template=documentation_change.md&title=)
+[✏️ Help improve our documentation...](https://github.com/ArchiveBox/ArchiveBox/issues/new?template=3-documentation_change.yml)
 
 </div>
 
