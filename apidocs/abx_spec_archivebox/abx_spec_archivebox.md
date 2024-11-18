@@ -73,7 +73,7 @@ abx_spec_archivebox.states
 ````{py:class} ArchiveBoxPluginSpec
 :canonical: abx_spec_archivebox.ArchiveBoxPluginSpec
 
-Bases: {py:obj}`abx_spec_config.ConfigPluginSpec`, {py:obj}`abx_spec_pydantic_pkgr.PydanticPkgrPluginSpec`, {py:obj}`abx_spec_django.DjangoPluginSpec`, {py:obj}`abx_spec_searchbackend.SearchBackendPluginSpec`
+Bases: {py:obj}`abx_spec_config.ConfigPluginSpec`, {py:obj}`abx_spec_abx_pkg.AbxPkgPluginSpec`, {py:obj}`abx_spec_django.DjangoPluginSpec`, {py:obj}`abx_spec_searchbackend.SearchBackendPluginSpec`
 
 ```{autodoc2-docstring} abx_spec_archivebox.ArchiveBoxPluginSpec
 ```

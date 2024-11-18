@@ -36,11 +36,11 @@
 `````{py:class} PuppeteerBinary(/, **data: typing.Any)
 :canonical: abx_plugin_puppeteer.binaries.PuppeteerBinary
 
-Bases: {py:obj}`pydantic_pkgr.Binary`
+Bases: {py:obj}`abx_pkg.Binary`
 
 ````{py:attribute} name
 :canonical: abx_plugin_puppeteer.binaries.PuppeteerBinary.name
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    'puppeteer'
 
@@ -51,7 +51,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} binproviders_supported
 :canonical: abx_plugin_puppeteer.binaries.PuppeteerBinary.binproviders_supported
-:type: typing.List[pydantic.InstanceOf[pydantic_pkgr.BinProvider]]
+:type: typing.List[pydantic.InstanceOf[abx_pkg.BinProvider]]
 :value: >
    None
 

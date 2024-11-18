@@ -31,10 +31,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__order__ <abx_spec_django.__order__>`
-  - ```{autodoc2-docstring} abx_spec_django.__order__
-    :summary:
-    ```
 * - {py:obj}`PLUGIN_SPEC <abx_spec_django.PLUGIN_SPEC>`
   - ```{autodoc2-docstring} abx_spec_django.PLUGIN_SPEC
     :summary:
@@ -51,21 +47,21 @@
 
 ### API
 
-````{py:data} __order__
-:canonical: abx_spec_django.__order__
-:value: >
-   300
-
-```{autodoc2-docstring} abx_spec_django.__order__
-```
-
-````
-
 `````{py:class} DjangoPluginSpec
 :canonical: abx_spec_django.DjangoPluginSpec
 
 ```{autodoc2-docstring} abx_spec_django.DjangoPluginSpec
 ```
+
+````{py:attribute} __order__
+:canonical: abx_spec_django.DjangoPluginSpec.__order__
+:value: >
+   10
+
+```{autodoc2-docstring} abx_spec_django.DjangoPluginSpec.__order__
+```
+
+````
 
 ````{py:method} get_INSTALLED_APPS() -> typing.List[str]
 :canonical: abx_spec_django.DjangoPluginSpec.get_INSTALLED_APPS

@@ -29,6 +29,10 @@
   -
 * - {py:obj}`TagSchema <archivebox.api.v1_core.TagSchema>`
   -
+* - {py:obj}`SeedSchema <archivebox.api.v1_core.SeedSchema>`
+  -
+* - {py:obj}`CrawlSchema <archivebox.api.v1_core.CrawlSchema>`
+  -
 ````
 
 ### Functions
@@ -59,6 +63,22 @@
     ```
 * - {py:obj}`get_tag <archivebox.api.v1_core.get_tag>`
   - ```{autodoc2-docstring} archivebox.api.v1_core.get_tag
+    :summary:
+    ```
+* - {py:obj}`get_seeds <archivebox.api.v1_core.get_seeds>`
+  - ```{autodoc2-docstring} archivebox.api.v1_core.get_seeds
+    :summary:
+    ```
+* - {py:obj}`get_seed <archivebox.api.v1_core.get_seed>`
+  - ```{autodoc2-docstring} archivebox.api.v1_core.get_seed
+    :summary:
+    ```
+* - {py:obj}`get_crawls <archivebox.api.v1_core.get_crawls>`
+  - ```{autodoc2-docstring} archivebox.api.v1_core.get_crawls
+    :summary:
+    ```
+* - {py:obj}`get_crawl <archivebox.api.v1_core.get_crawl>`
+  - ```{autodoc2-docstring} archivebox.api.v1_core.get_crawl
     :summary:
     ```
 * - {py:obj}`get_any <archivebox.api.v1_core.get_any>`
@@ -268,24 +288,24 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
-````{py:attribute} modified_at
-:canonical: archivebox.api.v1_core.MinimalArchiveResultSchema.modified_at
-:type: datetime.datetime
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.api.v1_core.MinimalArchiveResultSchema.modified_at
-```
-
-````
-
 ````{py:attribute} created_at
 :canonical: archivebox.api.v1_core.MinimalArchiveResultSchema.created_at
-:type: datetime.datetime
+:type: datetime.datetime | None
 :value: >
    None
 
 ```{autodoc2-docstring} archivebox.api.v1_core.MinimalArchiveResultSchema.created_at
+```
+
+````
+
+````{py:attribute} modified_at
+:canonical: archivebox.api.v1_core.MinimalArchiveResultSchema.modified_at
+:type: datetime.datetime | None
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.MinimalArchiveResultSchema.modified_at
 ```
 
 ````
@@ -312,6 +332,28 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
+````{py:attribute} status
+:canonical: archivebox.api.v1_core.MinimalArchiveResultSchema.status
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.MinimalArchiveResultSchema.status
+```
+
+````
+
+````{py:attribute} retry_at
+:canonical: archivebox.api.v1_core.MinimalArchiveResultSchema.retry_at
+:type: datetime.datetime | None
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.MinimalArchiveResultSchema.retry_at
+```
+
+````
+
 ````{py:attribute} extractor
 :canonical: archivebox.api.v1_core.MinimalArchiveResultSchema.extractor
 :type: str
@@ -325,7 +367,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} cmd_version
 :canonical: archivebox.api.v1_core.MinimalArchiveResultSchema.cmd_version
-:type: typing.Optional[str]
+:type: str | None
 :value: >
    None
 
@@ -336,7 +378,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} cmd
 :canonical: archivebox.api.v1_core.MinimalArchiveResultSchema.cmd
-:type: typing.List[str]
+:type: list[str] | None
 :value: >
    None
 
@@ -347,7 +389,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} pwd
 :canonical: archivebox.api.v1_core.MinimalArchiveResultSchema.pwd
-:type: str
+:type: str | None
 :value: >
    None
 
@@ -356,20 +398,9 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
-````{py:attribute} status
-:canonical: archivebox.api.v1_core.MinimalArchiveResultSchema.status
-:type: str
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.api.v1_core.MinimalArchiveResultSchema.status
-```
-
-````
-
 ````{py:attribute} output
 :canonical: archivebox.api.v1_core.MinimalArchiveResultSchema.output
-:type: str
+:type: str | None
 :value: >
    None
 
@@ -380,7 +411,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} start_ts
 :canonical: archivebox.api.v1_core.MinimalArchiveResultSchema.start_ts
-:type: typing.Optional[datetime.datetime]
+:type: datetime.datetime | None
 :value: >
    None
 
@@ -391,7 +422,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} end_ts
 :canonical: archivebox.api.v1_core.MinimalArchiveResultSchema.end_ts
-:type: typing.Optional[datetime.datetime]
+:type: datetime.datetime | None
 :value: >
    None
 
@@ -409,7 +440,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
-````{py:method} resolve_created_by_username(obj)
+````{py:method} resolve_created_by_username(obj) -> str
 :canonical: archivebox.api.v1_core.MinimalArchiveResultSchema.resolve_created_by_username
 :staticmethod:
 
@@ -423,15 +454,6 @@ Bases: {py:obj}`ninja.Schema`
 :staticmethod:
 
 ```{autodoc2-docstring} archivebox.api.v1_core.MinimalArchiveResultSchema.resolve_abid
-```
-
-````
-
-````{py:method} resolve_created_at(obj)
-:canonical: archivebox.api.v1_core.MinimalArchiveResultSchema.resolve_created_at
-:staticmethod:
-
-```{autodoc2-docstring} archivebox.api.v1_core.MinimalArchiveResultSchema.resolve_created_at
 ```
 
 ````
@@ -809,6 +831,28 @@ Bases: {py:obj}`ninja.Schema`
    None
 
 ```{autodoc2-docstring} archivebox.api.v1_core.SnapshotSchema.modified_at
+```
+
+````
+
+````{py:attribute} status
+:canonical: archivebox.api.v1_core.SnapshotSchema.status
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SnapshotSchema.status
+```
+
+````
+
+````{py:attribute} retry_at
+:canonical: archivebox.api.v1_core.SnapshotSchema.retry_at
+:type: datetime.datetime | None
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SnapshotSchema.retry_at
 ```
 
 ````
@@ -1351,6 +1395,324 @@ Bases: {py:obj}`ninja.Schema`
 :canonical: archivebox.api.v1_core.get_tag
 
 ```{autodoc2-docstring} archivebox.api.v1_core.get_tag
+```
+````
+
+`````{py:class} SeedSchema(/, **data: typing.Any)
+:canonical: archivebox.api.v1_core.SeedSchema
+
+Bases: {py:obj}`ninja.Schema`
+
+````{py:attribute} TYPE
+:canonical: archivebox.api.v1_core.SeedSchema.TYPE
+:type: str
+:value: >
+   'seeds.models.Seed'
+
+```{autodoc2-docstring} archivebox.api.v1_core.SeedSchema.TYPE
+```
+
+````
+
+````{py:attribute} id
+:canonical: archivebox.api.v1_core.SeedSchema.id
+:type: uuid.UUID
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SeedSchema.id
+```
+
+````
+
+````{py:attribute} abid
+:canonical: archivebox.api.v1_core.SeedSchema.abid
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SeedSchema.abid
+```
+
+````
+
+````{py:attribute} modified_at
+:canonical: archivebox.api.v1_core.SeedSchema.modified_at
+:type: datetime.datetime
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SeedSchema.modified_at
+```
+
+````
+
+````{py:attribute} created_at
+:canonical: archivebox.api.v1_core.SeedSchema.created_at
+:type: datetime.datetime
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SeedSchema.created_at
+```
+
+````
+
+````{py:attribute} created_by_id
+:canonical: archivebox.api.v1_core.SeedSchema.created_by_id
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SeedSchema.created_by_id
+```
+
+````
+
+````{py:attribute} created_by_username
+:canonical: archivebox.api.v1_core.SeedSchema.created_by_username
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SeedSchema.created_by_username
+```
+
+````
+
+````{py:attribute} uri
+:canonical: archivebox.api.v1_core.SeedSchema.uri
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SeedSchema.uri
+```
+
+````
+
+````{py:attribute} tags_str
+:canonical: archivebox.api.v1_core.SeedSchema.tags_str
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SeedSchema.tags_str
+```
+
+````
+
+````{py:attribute} config
+:canonical: archivebox.api.v1_core.SeedSchema.config
+:type: dict
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SeedSchema.config
+```
+
+````
+
+````{py:method} resolve_created_by_id(obj)
+:canonical: archivebox.api.v1_core.SeedSchema.resolve_created_by_id
+:staticmethod:
+
+```{autodoc2-docstring} archivebox.api.v1_core.SeedSchema.resolve_created_by_id
+```
+
+````
+
+````{py:method} resolve_created_by_username(obj)
+:canonical: archivebox.api.v1_core.SeedSchema.resolve_created_by_username
+:staticmethod:
+
+```{autodoc2-docstring} archivebox.api.v1_core.SeedSchema.resolve_created_by_username
+```
+
+````
+
+`````
+
+````{py:function} get_seeds(request)
+:canonical: archivebox.api.v1_core.get_seeds
+
+```{autodoc2-docstring} archivebox.api.v1_core.get_seeds
+```
+````
+
+````{py:function} get_seed(request, seed_id: str)
+:canonical: archivebox.api.v1_core.get_seed
+
+```{autodoc2-docstring} archivebox.api.v1_core.get_seed
+```
+````
+
+`````{py:class} CrawlSchema(/, **data: typing.Any)
+:canonical: archivebox.api.v1_core.CrawlSchema
+
+Bases: {py:obj}`ninja.Schema`
+
+````{py:attribute} TYPE
+:canonical: archivebox.api.v1_core.CrawlSchema.TYPE
+:type: str
+:value: >
+   'core.models.Crawl'
+
+```{autodoc2-docstring} archivebox.api.v1_core.CrawlSchema.TYPE
+```
+
+````
+
+````{py:attribute} id
+:canonical: archivebox.api.v1_core.CrawlSchema.id
+:type: uuid.UUID
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.CrawlSchema.id
+```
+
+````
+
+````{py:attribute} abid
+:canonical: archivebox.api.v1_core.CrawlSchema.abid
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.CrawlSchema.abid
+```
+
+````
+
+````{py:attribute} modified_at
+:canonical: archivebox.api.v1_core.CrawlSchema.modified_at
+:type: datetime.datetime
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.CrawlSchema.modified_at
+```
+
+````
+
+````{py:attribute} created_at
+:canonical: archivebox.api.v1_core.CrawlSchema.created_at
+:type: datetime.datetime
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.CrawlSchema.created_at
+```
+
+````
+
+````{py:attribute} created_by_id
+:canonical: archivebox.api.v1_core.CrawlSchema.created_by_id
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.CrawlSchema.created_by_id
+```
+
+````
+
+````{py:attribute} created_by_username
+:canonical: archivebox.api.v1_core.CrawlSchema.created_by_username
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.CrawlSchema.created_by_username
+```
+
+````
+
+````{py:attribute} status
+:canonical: archivebox.api.v1_core.CrawlSchema.status
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.CrawlSchema.status
+```
+
+````
+
+````{py:attribute} retry_at
+:canonical: archivebox.api.v1_core.CrawlSchema.retry_at
+:type: datetime.datetime | None
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.CrawlSchema.retry_at
+```
+
+````
+
+````{py:attribute} seed
+:canonical: archivebox.api.v1_core.CrawlSchema.seed
+:type: archivebox.api.v1_core.SeedSchema
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.CrawlSchema.seed
+```
+
+````
+
+````{py:attribute} max_depth
+:canonical: archivebox.api.v1_core.CrawlSchema.max_depth
+:type: int
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.CrawlSchema.max_depth
+```
+
+````
+
+````{py:method} resolve_created_by_id(obj)
+:canonical: archivebox.api.v1_core.CrawlSchema.resolve_created_by_id
+:staticmethod:
+
+```{autodoc2-docstring} archivebox.api.v1_core.CrawlSchema.resolve_created_by_id
+```
+
+````
+
+````{py:method} resolve_created_by_username(obj)
+:canonical: archivebox.api.v1_core.CrawlSchema.resolve_created_by_username
+:staticmethod:
+
+```{autodoc2-docstring} archivebox.api.v1_core.CrawlSchema.resolve_created_by_username
+```
+
+````
+
+````{py:method} resolve_snapshots(obj, context)
+:canonical: archivebox.api.v1_core.CrawlSchema.resolve_snapshots
+:staticmethod:
+
+```{autodoc2-docstring} archivebox.api.v1_core.CrawlSchema.resolve_snapshots
+```
+
+````
+
+`````
+
+````{py:function} get_crawls(request)
+:canonical: archivebox.api.v1_core.get_crawls
+
+```{autodoc2-docstring} archivebox.api.v1_core.get_crawls
+```
+````
+
+````{py:function} get_crawl(request, crawl_id: str, with_snapshots: bool = False, with_archiveresults: bool = False)
+:canonical: archivebox.api.v1_core.get_crawl
+
+```{autodoc2-docstring} archivebox.api.v1_core.get_crawl
 ```
 ````
 

@@ -137,6 +137,17 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
+````{py:attribute} result_format
+:canonical: archivebox.api.v1_cli.CLICommandResponseSchema.result_format
+:type: str
+:value: >
+   'str'
+
+```{autodoc2-docstring} archivebox.api.v1_cli.CLICommandResponseSchema.result_format
+```
+
+````
+
 ````{py:attribute} stdout
 :canonical: archivebox.api.v1_cli.CLICommandResponseSchema.stdout
 :type: str
@@ -755,7 +766,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} as_csv
 :canonical: archivebox.api.v1_cli.ListCommandSchema.as_csv
-:type: str | bool
+:type: str | None
 :value: >
    'timestamp,url'
 

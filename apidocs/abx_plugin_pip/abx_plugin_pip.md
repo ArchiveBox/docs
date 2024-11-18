@@ -50,6 +50,10 @@ abx_plugin_pip.binproviders
   - ```{autodoc2-docstring} abx_plugin_pip.__label__
     :summary:
     ```
+* - {py:obj}`__order__ <abx_plugin_pip.__order__>`
+  - ```{autodoc2-docstring} abx_plugin_pip.__order__
+    :summary:
+    ```
 ````
 
 ### API
@@ -60,6 +64,16 @@ abx_plugin_pip.binproviders
    'PIP'
 
 ```{autodoc2-docstring} abx_plugin_pip.__label__
+```
+
+````
+
+````{py:data} __order__
+:canonical: abx_plugin_pip.__order__
+:value: >
+   200
+
+```{autodoc2-docstring} abx_plugin_pip.__order__
 ```
 
 ````

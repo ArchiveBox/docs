@@ -142,11 +142,11 @@
 `````{py:class} SystemPipBinProvider(/, **data: typing.Any)
 :canonical: abx_plugin_pip.binproviders.SystemPipBinProvider
 
-Bases: {py:obj}`pydantic_pkgr.PipProvider`
+Bases: {py:obj}`abx_pkg.PipProvider`
 
 ````{py:attribute} name
 :canonical: abx_plugin_pip.binproviders.SystemPipBinProvider.name
-:type: pydantic_pkgr.BinProviderName
+:type: abx_pkg.BinProviderName
 :value: >
    'sys_pip'
 
@@ -157,7 +157,7 @@ Bases: {py:obj}`pydantic_pkgr.PipProvider`
 
 ````{py:attribute} INSTALLER_BIN
 :canonical: abx_plugin_pip.binproviders.SystemPipBinProvider.INSTALLER_BIN
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    'pip'
 
@@ -190,11 +190,11 @@ Bases: {py:obj}`pydantic_pkgr.PipProvider`
 `````{py:class} SystemPipxBinProvider(/, **data: typing.Any)
 :canonical: abx_plugin_pip.binproviders.SystemPipxBinProvider
 
-Bases: {py:obj}`pydantic_pkgr.PipProvider`
+Bases: {py:obj}`abx_pkg.PipProvider`
 
 ````{py:attribute} name
 :canonical: abx_plugin_pip.binproviders.SystemPipxBinProvider.name
-:type: pydantic_pkgr.BinProviderName
+:type: abx_pkg.BinProviderName
 :value: >
    'pipx'
 
@@ -205,7 +205,7 @@ Bases: {py:obj}`pydantic_pkgr.PipProvider`
 
 ````{py:attribute} INSTALLER_BIN
 :canonical: abx_plugin_pip.binproviders.SystemPipxBinProvider.INSTALLER_BIN
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    'pipx'
 
@@ -240,11 +240,11 @@ Bases: {py:obj}`pydantic_pkgr.PipProvider`
 `````{py:class} VenvPipBinProvider(/, **data: typing.Any)
 :canonical: abx_plugin_pip.binproviders.VenvPipBinProvider
 
-Bases: {py:obj}`pydantic_pkgr.PipProvider`
+Bases: {py:obj}`abx_pkg.PipProvider`
 
 ````{py:attribute} name
 :canonical: abx_plugin_pip.binproviders.VenvPipBinProvider.name
-:type: pydantic_pkgr.BinProviderName
+:type: abx_pkg.BinProviderName
 :value: >
    'venv_pip'
 
@@ -255,7 +255,7 @@ Bases: {py:obj}`pydantic_pkgr.PipProvider`
 
 ````{py:attribute} INSTALLER_BIN
 :canonical: abx_plugin_pip.binproviders.VenvPipBinProvider.INSTALLER_BIN
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    'pip'
 
@@ -288,11 +288,11 @@ Bases: {py:obj}`pydantic_pkgr.PipProvider`
 `````{py:class} LibPipBinProvider(/, **data: typing.Any)
 :canonical: abx_plugin_pip.binproviders.LibPipBinProvider
 
-Bases: {py:obj}`pydantic_pkgr.PipProvider`
+Bases: {py:obj}`abx_pkg.PipProvider`
 
 ````{py:attribute} name
 :canonical: abx_plugin_pip.binproviders.LibPipBinProvider.name
-:type: pydantic_pkgr.BinProviderName
+:type: abx_pkg.BinProviderName
 :value: >
    'lib_pip'
 
@@ -303,7 +303,7 @@ Bases: {py:obj}`pydantic_pkgr.PipProvider`
 
 ````{py:attribute} INSTALLER_BIN
 :canonical: abx_plugin_pip.binproviders.LibPipBinProvider.INSTALLER_BIN
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    'pip'
 

@@ -19,17 +19,11 @@
   - ```{autodoc2-docstring} archivebox.actors.orchestrator.Orchestrator
     :summary:
     ```
-* - {py:obj}`FaviconActor <archivebox.actors.orchestrator.FaviconActor>`
-  -
-* - {py:obj}`ExtractorsOrchestrator <archivebox.actors.orchestrator.ExtractorsOrchestrator>`
-  - ```{autodoc2-docstring} archivebox.actors.orchestrator.ExtractorsOrchestrator
-    :summary:
-    ```
 ````
 
 ### API
 
-`````{py:class} Orchestrator(actor_types: typing.Dict[str, typing.Type[archivebox.actors.actor.ActorType]] | None = None, mode: typing.Literal[thread, process] | None = None)
+`````{py:class} Orchestrator(actor_types: typing.Dict[str, typing.Type[archivebox.actors.actor.ActorType]] | None = None, mode: typing.Literal[thread, process] | None = None, exit_on_idle: bool = True)
 :canonical: archivebox.actors.orchestrator.Orchestrator
 
 ```{autodoc2-docstring} archivebox.actors.orchestrator.Orchestrator
@@ -81,6 +75,17 @@
    'process'
 
 ```{autodoc2-docstring} archivebox.actors.orchestrator.Orchestrator.mode
+```
+
+````
+
+````{py:attribute} exit_on_idle
+:canonical: archivebox.actors.orchestrator.Orchestrator.exit_on_idle
+:type: bool
+:value: >
+   True
+
+```{autodoc2-docstring} archivebox.actors.orchestrator.Orchestrator.exit_on_idle
 ```
 
 ````
@@ -145,6 +150,15 @@
 
 ````
 
+````{py:method} has_future_objects(all_queues) -> bool
+:canonical: archivebox.actors.orchestrator.Orchestrator.has_future_objects
+:classmethod:
+
+```{autodoc2-docstring} archivebox.actors.orchestrator.Orchestrator.has_future_objects
+```
+
+````
+
 ````{py:method} on_startup()
 :canonical: archivebox.actors.orchestrator.Orchestrator.on_startup
 
@@ -189,85 +203,6 @@
 :canonical: archivebox.actors.orchestrator.Orchestrator.runloop
 
 ```{autodoc2-docstring} archivebox.actors.orchestrator.Orchestrator.runloop
-```
-
-````
-
-`````
-
-`````{py:class} FaviconActor(mode: typing.Literal[thread, process] | None = None, **launch_kwargs: archivebox.actors.actor.LaunchKwargs)
-:canonical: archivebox.actors.orchestrator.FaviconActor
-
-Bases: {py:obj}`archivebox.actors.actor.ActorType`\[{py:obj}`core.models.ArchiveResult`\]
-
-````{py:attribute} CLAIM_ORDER
-:canonical: archivebox.actors.orchestrator.FaviconActor.CLAIM_ORDER
-:type: typing.ClassVar[str]
-:value: >
-   'created_at DESC'
-
-```{autodoc2-docstring} archivebox.actors.orchestrator.FaviconActor.CLAIM_ORDER
-```
-
-````
-
-````{py:attribute} CLAIM_WHERE
-:canonical: archivebox.actors.orchestrator.FaviconActor.CLAIM_WHERE
-:type: typing.ClassVar[str]
-:value: >
-   'status = "queued" AND extractor = "favicon"'
-
-```{autodoc2-docstring} archivebox.actors.orchestrator.FaviconActor.CLAIM_WHERE
-```
-
-````
-
-````{py:attribute} CLAIM_SET
-:canonical: archivebox.actors.orchestrator.FaviconActor.CLAIM_SET
-:type: typing.ClassVar[str]
-:value: >
-   'status = "started"'
-
-```{autodoc2-docstring} archivebox.actors.orchestrator.FaviconActor.CLAIM_SET
-```
-
-````
-
-````{py:method} QUERYSET() -> django.db.models.QuerySet
-:canonical: archivebox.actors.orchestrator.FaviconActor.QUERYSET
-
-```{autodoc2-docstring} archivebox.actors.orchestrator.FaviconActor.QUERYSET
-```
-
-````
-
-````{py:method} tick(obj: core.models.ArchiveResult)
-:canonical: archivebox.actors.orchestrator.FaviconActor.tick
-
-````
-
-`````
-
-`````{py:class} ExtractorsOrchestrator(actor_types: typing.Dict[str, typing.Type[archivebox.actors.actor.ActorType]] | None = None, mode: typing.Literal[thread, process] | None = None)
-:canonical: archivebox.actors.orchestrator.ExtractorsOrchestrator
-
-Bases: {py:obj}`archivebox.actors.orchestrator.Orchestrator`
-
-```{autodoc2-docstring} archivebox.actors.orchestrator.ExtractorsOrchestrator
-```
-
-```{rubric} Initialization
-```
-
-```{autodoc2-docstring} archivebox.actors.orchestrator.ExtractorsOrchestrator.__init__
-```
-
-````{py:attribute} actor_types
-:canonical: archivebox.actors.orchestrator.ExtractorsOrchestrator.actor_types
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.actors.orchestrator.ExtractorsOrchestrator.actor_types
 ```
 
 ````

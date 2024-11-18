@@ -55,7 +55,7 @@
 
 ### API
 
-````{py:function} generate_json_index_from_links(links: typing.List[archivebox.index.schema.Link], with_headers: bool)
+````{py:function} generate_json_index_from_links(links: typing.List[archivebox.index.schema.Link], with_headers: bool = False)
 :canonical: archivebox.index.json.generate_json_index_from_links
 
 ```{autodoc2-docstring} archivebox.index.json.generate_json_index_from_links
@@ -111,7 +111,7 @@ Bases: {py:obj}`json.JSONEncoder`
 
 `````
 
-````{py:function} to_json(obj: typing.Any, indent: typing.Optional[int] = 4, sort_keys: bool = True, cls=ExtendedEncoder) -> str
+````{py:function} to_json(obj: typing.Any, indent: typing.Optional[int] = 4, sort_keys: bool = True, cls=ExtendedEncoder, default=None) -> str
 :canonical: archivebox.index.json.to_json
 
 ```{autodoc2-docstring} archivebox.index.json.to_json

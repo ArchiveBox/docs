@@ -35,6 +35,18 @@
   -
 ````
 
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`validate_timestamp <archivebox.core.models.validate_timestamp>`
+  - ```{autodoc2-docstring} archivebox.core.models.validate_timestamp
+    :summary:
+    ```
+````
+
 ### API
 
 ``````{py:class} Tag(*args: typing.Any, **kwargs: typing.Any)
@@ -321,6 +333,13 @@ Bases: {py:obj}`django.db.models.Model`
 
 ``````
 
+````{py:function} validate_timestamp(value)
+:canonical: archivebox.core.models.validate_timestamp
+
+```{autodoc2-docstring} archivebox.core.models.validate_timestamp
+```
+````
+
 `````{py:class} SnapshotManager
 :canonical: archivebox.core.models.SnapshotManager
 
@@ -524,6 +543,16 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`actors.models.ModelWithSt
 
 ````
 
+````{py:attribute} notes
+:canonical: archivebox.core.models.Snapshot.notes
+:value: >
+   'TextField(...)'
+
+```{autodoc2-docstring} archivebox.core.models.Snapshot.notes
+```
+
+````
+
 ````{py:attribute} bookmarked_at
 :canonical: archivebox.core.models.Snapshot.bookmarked_at
 :value: >
@@ -598,7 +627,7 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`actors.models.ModelWithSt
 ````{py:attribute} keys
 :canonical: archivebox.core.models.Snapshot.keys
 :value: >
-   ('url', 'timestamp', 'title', 'tags', 'downloaded_at')
+   ('url', 'timestamp', 'title', 'tags', 'downloaded_at', 'created_at', 'status', 'retry_at', 'abid', '...
 
 ```{autodoc2-docstring} archivebox.core.models.Snapshot.keys
 ```
@@ -846,10 +875,10 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`actors.models.ModelWithSt
 
 ````
 
-````{py:method} has_pending_archiveresults() -> bool
-:canonical: archivebox.core.models.Snapshot.has_pending_archiveresults
+````{py:method} pending_archiveresults() -> django.db.models.QuerySet[archivebox.core.models.ArchiveResult]
+:canonical: archivebox.core.models.Snapshot.pending_archiveresults
 
-```{autodoc2-docstring} archivebox.core.models.Snapshot.has_pending_archiveresults
+```{autodoc2-docstring} archivebox.core.models.Snapshot.pending_archiveresults
 ```
 
 ````
@@ -1215,12 +1244,32 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
+````{py:attribute} notes
+:canonical: archivebox.core.models.ArchiveResult.notes
+:value: >
+   'TextField(...)'
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.notes
+```
+
+````
+
 ````{py:attribute} objects
 :canonical: archivebox.core.models.ArchiveResult.objects
 :value: >
    'ArchiveResultManager(...)'
 
 ```{autodoc2-docstring} archivebox.core.models.ArchiveResult.objects
+```
+
+````
+
+````{py:attribute} keys
+:canonical: archivebox.core.models.ArchiveResult.keys
+:value: >
+   ('snapshot_id', 'extractor', 'cmd', 'pwd', 'cmd_version', 'output', 'start_ts', 'end_ts', 'created_a...
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.keys
 ```
 
 ````
@@ -1262,6 +1311,11 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````
 
+````{py:method} save(*args, **kwargs)
+:canonical: archivebox.core.models.ArchiveResult.save
+
+````
+
 ````{py:method} snapshot_dir()
 :canonical: archivebox.core.models.ArchiveResult.snapshot_dir
 
@@ -1300,13 +1354,14 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````{py:property} extractor_module
 :canonical: archivebox.core.models.ArchiveResult.extractor_module
+:type: typing.Any | None
 
 ```{autodoc2-docstring} archivebox.core.models.ArchiveResult.extractor_module
 ```
 
 ````
 
-````{py:method} output_path() -> str
+````{py:method} output_path() -> str | None
 :canonical: archivebox.core.models.ArchiveResult.output_path
 
 ```{autodoc2-docstring} archivebox.core.models.ArchiveResult.output_path
@@ -1314,7 +1369,7 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````
 
-````{py:method} embed_path() -> str
+````{py:method} embed_path() -> str | None
 :canonical: archivebox.core.models.ArchiveResult.embed_path
 
 ```{autodoc2-docstring} archivebox.core.models.ArchiveResult.embed_path
@@ -1342,6 +1397,14 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 :canonical: archivebox.core.models.ArchiveResult.create_output_dir
 
 ```{autodoc2-docstring} archivebox.core.models.ArchiveResult.create_output_dir
+```
+
+````
+
+````{py:method} as_json(*args) -> dict
+:canonical: archivebox.core.models.ArchiveResult.as_json
+
+```{autodoc2-docstring} archivebox.core.models.ArchiveResult.as_json
 ```
 
 ````

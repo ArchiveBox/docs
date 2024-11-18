@@ -104,18 +104,18 @@ Bases: {py:obj}`statemachine.StateMachine`
 
 ````
 
-````{py:method} on_started()
-:canonical: archivebox.crawls.statemachines.CrawlMachine.on_started
+````{py:method} enter_started()
+:canonical: archivebox.crawls.statemachines.CrawlMachine.enter_started
 
-```{autodoc2-docstring} archivebox.crawls.statemachines.CrawlMachine.on_started
+```{autodoc2-docstring} archivebox.crawls.statemachines.CrawlMachine.enter_started
 ```
 
 ````
 
-````{py:method} on_sealed()
-:canonical: archivebox.crawls.statemachines.CrawlMachine.on_sealed
+````{py:method} enter_sealed()
+:canonical: archivebox.crawls.statemachines.CrawlMachine.enter_sealed
 
-```{autodoc2-docstring} archivebox.crawls.statemachines.CrawlMachine.on_sealed
+```{autodoc2-docstring} archivebox.crawls.statemachines.CrawlMachine.enter_sealed
 ```
 
 ````

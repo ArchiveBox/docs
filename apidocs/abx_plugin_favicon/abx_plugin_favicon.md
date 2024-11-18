@@ -14,7 +14,10 @@
 :maxdepth: 1
 
 abx_plugin_favicon.config
+abx_plugin_favicon.models
+abx_plugin_favicon.extractors
 abx_plugin_favicon.favicon
+abx_plugin_favicon.actors
 ```
 
 ## Package Contents
@@ -27,6 +30,10 @@ abx_plugin_favicon.favicon
 
 * - {py:obj}`get_CONFIG <abx_plugin_favicon.get_CONFIG>`
   - ```{autodoc2-docstring} abx_plugin_favicon.get_CONFIG
+    :summary:
+    ```
+* - {py:obj}`get_EXTRACTORS <abx_plugin_favicon.get_EXTRACTORS>`
+  - ```{autodoc2-docstring} abx_plugin_favicon.get_EXTRACTORS
     :summary:
     ```
 ````
@@ -115,5 +122,12 @@ abx_plugin_favicon.favicon
 :canonical: abx_plugin_favicon.get_CONFIG
 
 ```{autodoc2-docstring} abx_plugin_favicon.get_CONFIG
+```
+````
+
+````{py:function} get_EXTRACTORS()
+:canonical: abx_plugin_favicon.get_EXTRACTORS
+
+```{autodoc2-docstring} abx_plugin_favicon.get_EXTRACTORS
 ```
 ````

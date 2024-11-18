@@ -96,11 +96,11 @@
 `````{py:class} PlaywrightBinProvider(/, **data: typing.Any)
 :canonical: abx_plugin_playwright.binproviders.PlaywrightBinProvider
 
-Bases: {py:obj}`pydantic_pkgr.BinProvider`
+Bases: {py:obj}`abx_pkg.BinProvider`
 
 ````{py:attribute} name
 :canonical: abx_plugin_playwright.binproviders.PlaywrightBinProvider.name
-:type: pydantic_pkgr.BinProviderName
+:type: abx_pkg.BinProviderName
 :value: >
    'playwright'
 
@@ -111,7 +111,7 @@ Bases: {py:obj}`pydantic_pkgr.BinProvider`
 
 ````{py:attribute} INSTALLER_BIN
 :canonical: abx_plugin_playwright.binproviders.PlaywrightBinProvider.INSTALLER_BIN
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    None
 
@@ -122,7 +122,7 @@ Bases: {py:obj}`pydantic_pkgr.BinProvider`
 
 ````{py:attribute} PATH
 :canonical: abx_plugin_playwright.binproviders.PlaywrightBinProvider.PATH
-:type: pydantic_pkgr.PATHStr
+:type: abx_pkg.PATHStr
 :value: >
    None
 
@@ -155,7 +155,7 @@ Bases: {py:obj}`pydantic_pkgr.BinProvider`
 
 ````{py:attribute} packages_handler
 :canonical: abx_plugin_playwright.binproviders.PlaywrightBinProvider.packages_handler
-:type: pydantic_pkgr.BinProviderOverrides
+:type: abx_pkg.BinProviderOverrides
 :value: >
    'Field(...)'
 
@@ -166,7 +166,7 @@ Bases: {py:obj}`pydantic_pkgr.BinProvider`
 
 ````{py:attribute} _browser_abspaths
 :canonical: abx_plugin_playwright.binproviders.PlaywrightBinProvider._browser_abspaths
-:type: typing.ClassVar[typing.Dict[str, pydantic_pkgr.HostBinPath]]
+:type: typing.ClassVar[typing.Dict[str, abx_pkg.HostBinPath]]
 :value: >
    None
 
@@ -177,7 +177,7 @@ Bases: {py:obj}`pydantic_pkgr.BinProvider`
 
 ````{py:property} INSTALLER_BIN_ABSPATH
 :canonical: abx_plugin_playwright.binproviders.PlaywrightBinProvider.INSTALLER_BIN_ABSPATH
-:type: pydantic_pkgr.HostBinPath | None
+:type: abx_pkg.HostBinPath | None
 
 ````
 
@@ -194,7 +194,7 @@ Bases: {py:obj}`pydantic_pkgr.BinProvider`
 
 ````
 
-````{py:method} default_abspath_handler(bin_name: pydantic_pkgr.BinName, **context) -> typing.Optional[pydantic_pkgr.HostBinPath]
+````{py:method} default_abspath_handler(bin_name: abx_pkg.BinName, **context) -> typing.Optional[abx_pkg.HostBinPath]
 :canonical: abx_plugin_playwright.binproviders.PlaywrightBinProvider.default_abspath_handler
 
 ```{autodoc2-docstring} abx_plugin_playwright.binproviders.PlaywrightBinProvider.default_abspath_handler
@@ -202,7 +202,7 @@ Bases: {py:obj}`pydantic_pkgr.BinProvider`
 
 ````
 
-````{py:method} default_install_handler(bin_name: str, packages: typing.Optional[pydantic_pkgr.InstallArgs] = None, **context) -> str
+````{py:method} default_install_handler(bin_name: str, packages: typing.Optional[abx_pkg.InstallArgs] = None, **context) -> str
 :canonical: abx_plugin_playwright.binproviders.PlaywrightBinProvider.default_install_handler
 
 ```{autodoc2-docstring} abx_plugin_playwright.binproviders.PlaywrightBinProvider.default_install_handler

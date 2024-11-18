@@ -14,6 +14,7 @@ This page contains auto-generated API reference documentation [#f1]_.
    abx_spec_django/abx_spec_django
    abx_plugin_default_binproviders/abx_plugin_default_binproviders
    abx_plugin_sonic_search/abx_plugin_sonic_search
+   abx_spec_abx_pkg/abx_spec_abx_pkg
    abx_plugin_chrome/abx_plugin_chrome
    abx_spec_searchbackend/abx_spec_searchbackend
    abx_plugin_singlefile/abx_plugin_singlefile
@@ -21,7 +22,6 @@ This page contains auto-generated API reference documentation [#f1]_.
    abx_plugin_ripgrep_search/abx_plugin_ripgrep_search
    abx_plugin_readwise/abx_plugin_readwise
    abx_spec_extractor/abx_spec_extractor
-   abx_spec_pydantic_pkgr/abx_spec_pydantic_pkgr
    abx_plugin_pip/abx_plugin_pip
    abx_plugin_htmltotext/abx_plugin_htmltotext
    abx_plugin_ytdlp/abx_plugin_ytdlp

@@ -700,7 +700,7 @@ Bases: {py:obj}`django.db.models.Manager`
 ```{autodoc2-docstring} archivebox.machine.models.InstalledBinaryManager
 ```
 
-````{py:method} get_from_db_or_cache(binary: pydantic_pkgr.Binary) -> archivebox.machine.models.InstalledBinary
+````{py:method} get_from_db_or_cache(binary: abx_pkg.Binary) -> archivebox.machine.models.InstalledBinary
 :canonical: archivebox.machine.models.InstalledBinaryManager.get_from_db_or_cache
 
 ```{autodoc2-docstring} archivebox.machine.models.InstalledBinaryManager.get_from_db_or_cache
@@ -934,7 +934,7 @@ Bases: {py:obj}`archivebox.abid_utils.models.ABIDModel`, {py:obj}`archivebox.abi
 
 ````
 
-````{py:method} BINARY() -> pydantic_pkgr.Binary
+````{py:method} BINARY() -> abx_pkg.Binary
 :canonical: archivebox.machine.models.InstalledBinary.BINARY
 
 ```{autodoc2-docstring} archivebox.machine.models.InstalledBinary.BINARY
@@ -942,7 +942,7 @@ Bases: {py:obj}`archivebox.abid_utils.models.ABIDModel`, {py:obj}`archivebox.abi
 
 ````
 
-````{py:method} BINPROVIDER() -> pydantic_pkgr.BinProvider
+````{py:method} BINPROVIDER() -> abx_pkg.BinProvider
 :canonical: archivebox.machine.models.InstalledBinary.BINPROVIDER
 
 ```{autodoc2-docstring} archivebox.machine.models.InstalledBinary.BINPROVIDER
@@ -950,7 +950,7 @@ Bases: {py:obj}`archivebox.abid_utils.models.ABIDModel`, {py:obj}`archivebox.abi
 
 ````
 
-````{py:method} load_from_db() -> pydantic_pkgr.Binary
+````{py:method} load_from_db() -> abx_pkg.Binary
 :canonical: archivebox.machine.models.InstalledBinary.load_from_db
 
 ```{autodoc2-docstring} archivebox.machine.models.InstalledBinary.load_from_db
@@ -958,7 +958,7 @@ Bases: {py:obj}`archivebox.abid_utils.models.ABIDModel`, {py:obj}`archivebox.abi
 
 ````
 
-````{py:method} load_fresh() -> pydantic_pkgr.Binary
+````{py:method} load_fresh() -> abx_pkg.Binary
 :canonical: archivebox.machine.models.InstalledBinary.load_fresh
 
 ```{autodoc2-docstring} archivebox.machine.models.InstalledBinary.load_fresh

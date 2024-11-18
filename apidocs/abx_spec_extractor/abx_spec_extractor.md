@@ -51,6 +51,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`__order__ <abx_spec_extractor.__order__>`
+  - ```{autodoc2-docstring} abx_spec_extractor.__order__
+    :summary:
+    ```
 * - {py:obj}`ExtractorName <abx_spec_extractor.ExtractorName>`
   - ```{autodoc2-docstring} abx_spec_extractor.ExtractorName
     :summary:
@@ -66,6 +70,16 @@
 ````
 
 ### API
+
+````{py:data} __order__
+:canonical: abx_spec_extractor.__order__
+:value: >
+   10
+
+```{autodoc2-docstring} abx_spec_extractor.__order__
+```
+
+````
 
 ````{py:function} assert_no_empty_args(args: typing.List[str]) -> typing.List[str]
 :canonical: abx_spec_extractor.assert_no_empty_args
@@ -144,7 +158,7 @@
 
 ````{py:attribute} binary
 :canonical: abx_spec_extractor.BaseExtractor.binary
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    None
 

@@ -166,7 +166,7 @@
 ```
 ````
 
-````{py:function} list_all(filter_patterns_str: typing.Optional[str] = None, filter_patterns: typing.Optional[typing.List[str]] = None, filter_type: str = 'exact', status: typing.Optional[str] = None, after: typing.Optional[float] = None, before: typing.Optional[float] = None, sort: typing.Optional[str] = None, csv: typing.Optional[str] = None, json: bool = False, html: bool = False, with_headers: bool = False, out_dir: pathlib.Path = DATA_DIR) -> typing.Iterable[archivebox.index.schema.Link]
+````{py:function} list_all(filter_patterns_str: typing.Optional[str] = None, filter_patterns: typing.Optional[typing.List[str]] = None, filter_type: str = 'exact', status: typing.Optional[str] = None, after: typing.Optional[float] = None, before: typing.Optional[float] = None, sort: typing.Optional[str] = None, csv: typing.Optional[str] = None, json: bool = False, html: bool = False, with_headers: bool = False, out_dir: pathlib.Path = DATA_DIR)
 :canonical: archivebox.main.list_all
 
 ```{autodoc2-docstring} archivebox.main.list_all

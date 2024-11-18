@@ -88,11 +88,11 @@
 `````{py:class} SystemNpmBinProvider(/, **data: typing.Any)
 :canonical: abx_plugin_npm.binproviders.SystemNpmBinProvider
 
-Bases: {py:obj}`pydantic_pkgr.NpmProvider`
+Bases: {py:obj}`abx_pkg.NpmProvider`
 
 ````{py:attribute} name
 :canonical: abx_plugin_npm.binproviders.SystemNpmBinProvider.name
-:type: pydantic_pkgr.BinProviderName
+:type: abx_pkg.BinProviderName
 :value: >
    'sys_npm'
 
@@ -117,11 +117,11 @@ Bases: {py:obj}`pydantic_pkgr.NpmProvider`
 `````{py:class} LibNpmBinProvider(/, **data: typing.Any)
 :canonical: abx_plugin_npm.binproviders.LibNpmBinProvider
 
-Bases: {py:obj}`pydantic_pkgr.NpmProvider`
+Bases: {py:obj}`abx_pkg.NpmProvider`
 
 ````{py:attribute} name
 :canonical: abx_plugin_npm.binproviders.LibNpmBinProvider.name
-:type: pydantic_pkgr.BinProviderName
+:type: abx_pkg.BinProviderName
 :value: >
    'lib_npm'
 
@@ -132,7 +132,7 @@ Bases: {py:obj}`pydantic_pkgr.NpmProvider`
 
 ````{py:attribute} PATH
 :canonical: abx_plugin_npm.binproviders.LibNpmBinProvider.PATH
-:type: pydantic_pkgr.PATHStr
+:type: abx_pkg.PATHStr
 :value: >
    None
 

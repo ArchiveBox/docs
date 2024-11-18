@@ -66,7 +66,7 @@
 `````{py:class} LdapBinary(/, **data: typing.Any)
 :canonical: abx_plugin_ldap_auth.binaries.LdapBinary
 
-Bases: {py:obj}`pydantic_pkgr.Binary`
+Bases: {py:obj}`abx_pkg.Binary`
 
 ````{py:attribute} name
 :canonical: abx_plugin_ldap_auth.binaries.LdapBinary.name
@@ -92,7 +92,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} binproviders_supported
 :canonical: abx_plugin_ldap_auth.binaries.LdapBinary.binproviders_supported
-:type: typing.List[pydantic.InstanceOf[pydantic_pkgr.BinProvider]]
+:type: typing.List[pydantic.InstanceOf[abx_pkg.BinProvider]]
 :value: >
    None
 
@@ -103,7 +103,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} overrides
 :canonical: abx_plugin_ldap_auth.binaries.LdapBinary.overrides
-:type: pydantic_pkgr.BinaryOverrides
+:type: abx_pkg.BinaryOverrides
 :value: >
    None
 

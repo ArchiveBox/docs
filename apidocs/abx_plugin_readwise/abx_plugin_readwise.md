@@ -116,7 +116,7 @@
 ````{py:data} __homepage__
 :canonical: abx_plugin_readwise.__homepage__
 :value: >
-   'https://github.com/ArchiveBox/ArchiveBox/tree/dev/archivebox/plugins_extractor/readwise'
+   'https://github.com/ArchiveBox/ArchiveBox/tree/dev/archivebox/pkgs/abx-plugin-readwise-extractor'
 
 ```{autodoc2-docstring} abx_plugin_readwise.__homepage__
 ```

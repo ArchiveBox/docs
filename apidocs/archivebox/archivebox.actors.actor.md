@@ -231,7 +231,7 @@ Bases: {py:obj}`typing.Generic`\[{py:obj}`archivebox.actors.actor.ModelType`\]
 :canonical: archivebox.actors.actor.ActorType.STATE_FIELD_NAME
 :type: typing.ClassVar[str]
 :value: >
-   None
+   'status'
 
 ```{autodoc2-docstring} archivebox.actors.actor.ActorType.STATE_FIELD_NAME
 ```
@@ -242,7 +242,7 @@ Bases: {py:obj}`typing.Generic`\[{py:obj}`archivebox.actors.actor.ModelType`\]
 :canonical: archivebox.actors.actor.ActorType.ACTIVE_STATE
 :type: typing.ClassVar[archivebox.actors.actor.ObjectState]
 :value: >
-   None
+   'started'
 
 ```{autodoc2-docstring} archivebox.actors.actor.ActorType.ACTIVE_STATE
 ```
@@ -586,6 +586,7 @@ Bases: {py:obj}`typing.Generic`\[{py:obj}`archivebox.actors.actor.ModelType`\]
 
 ````{py:method} get_update_kwargs_to_claim_obj() -> dict[str, typing.Any]
 :canonical: archivebox.actors.actor.ActorType.get_update_kwargs_to_claim_obj
+:classmethod:
 
 ```{autodoc2-docstring} archivebox.actors.actor.ActorType.get_update_kwargs_to_claim_obj
 ```

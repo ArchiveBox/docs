@@ -107,6 +107,14 @@
   - ```{autodoc2-docstring} archivebox.queues.supervisor_util.COMMAND_WORKER
     :summary:
     ```
+* - {py:obj}`ORCHESTRATOR_WORKER <archivebox.queues.supervisor_util.ORCHESTRATOR_WORKER>`
+  - ```{autodoc2-docstring} archivebox.queues.supervisor_util.ORCHESTRATOR_WORKER
+    :summary:
+    ```
+* - {py:obj}`SERVER_WORKER <archivebox.queues.supervisor_util.SERVER_WORKER>`
+  - ```{autodoc2-docstring} archivebox.queues.supervisor_util.SERVER_WORKER
+    :summary:
+    ```
 ````
 
 ### API
@@ -167,6 +175,26 @@
    None
 
 ```{autodoc2-docstring} archivebox.queues.supervisor_util.COMMAND_WORKER
+```
+
+````
+
+````{py:data} ORCHESTRATOR_WORKER
+:canonical: archivebox.queues.supervisor_util.ORCHESTRATOR_WORKER
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.queues.supervisor_util.ORCHESTRATOR_WORKER
+```
+
+````
+
+````{py:data} SERVER_WORKER
+:canonical: archivebox.queues.supervisor_util.SERVER_WORKER
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.queues.supervisor_util.SERVER_WORKER
 ```
 
 ````

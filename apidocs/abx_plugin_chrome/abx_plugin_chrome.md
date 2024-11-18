@@ -14,6 +14,7 @@
 :maxdepth: 1
 
 abx_plugin_chrome.config
+abx_plugin_chrome.extractors
 abx_plugin_chrome.binaries
 abx_plugin_chrome.pdf
 abx_plugin_chrome.screenshot
@@ -38,6 +39,10 @@ abx_plugin_chrome.dom
     ```
 * - {py:obj}`ready <abx_plugin_chrome.ready>`
   - ```{autodoc2-docstring} abx_plugin_chrome.ready
+    :summary:
+    ```
+* - {py:obj}`get_EXTRACTORS <abx_plugin_chrome.get_EXTRACTORS>`
+  - ```{autodoc2-docstring} abx_plugin_chrome.get_EXTRACTORS
     :summary:
     ```
 ````
@@ -98,5 +103,12 @@ abx_plugin_chrome.dom
 :canonical: abx_plugin_chrome.ready
 
 ```{autodoc2-docstring} abx_plugin_chrome.ready
+```
+````
+
+````{py:function} get_EXTRACTORS()
+:canonical: abx_plugin_chrome.get_EXTRACTORS
+
+```{autodoc2-docstring} abx_plugin_chrome.get_EXTRACTORS
 ```
 ````

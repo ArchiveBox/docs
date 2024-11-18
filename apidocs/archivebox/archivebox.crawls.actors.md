@@ -94,7 +94,7 @@ Bases: {py:obj}`actors.actor.ActorType`\[{py:obj}`crawls.models.Crawl`\]
 :canonical: archivebox.crawls.actors.CrawlActor.MAX_CONCURRENT_ACTORS
 :type: typing.ClassVar[int]
 :value: >
-   3
+   1
 
 ```{autodoc2-docstring} archivebox.crawls.actors.CrawlActor.MAX_CONCURRENT_ACTORS
 ```

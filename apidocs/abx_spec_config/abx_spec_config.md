@@ -79,6 +79,7 @@ abx_spec_config.toml_util
 
 ````{py:method} get_collection_config_path() -> pathlib.Path
 :canonical: abx_spec_config.ConfigPluginSpec.get_collection_config_path
+:staticmethod:
 
 ```{autodoc2-docstring} abx_spec_config.ConfigPluginSpec.get_collection_config_path
 ```
@@ -87,94 +88,106 @@ abx_spec_config.toml_util
 
 ````{py:method} get_system_config_path() -> pathlib.Path
 :canonical: abx_spec_config.ConfigPluginSpec.get_system_config_path
+:staticmethod:
 
 ```{autodoc2-docstring} abx_spec_config.ConfigPluginSpec.get_system_config_path
 ```
 
 ````
 
-````{py:method} get_CONFIG() -> typing.Dict[abx.PluginId, abx_spec_config.base_configset.BaseConfigSet]
+````{py:method} get_CONFIG() -> dict[abx.PluginId, BaseConfigSet | ConstantsDict]
 :canonical: abx_spec_config.ConfigPluginSpec.get_CONFIG
+:staticmethod:
 
 ```{autodoc2-docstring} abx_spec_config.ConfigPluginSpec.get_CONFIG
 ```
 
 ````
 
-````{py:method} get_CONFIGS() -> typing.Dict[abx.PluginId, abx_spec_config.base_configset.BaseConfigSet]
+````{py:method} get_CONFIGS() -> dict[abx.PluginId, abx_spec_config.base_configset.BaseConfigSet]
 :canonical: abx_spec_config.ConfigPluginSpec.get_CONFIGS
+:staticmethod:
 
 ```{autodoc2-docstring} abx_spec_config.ConfigPluginSpec.get_CONFIGS
 ```
 
 ````
 
-````{py:method} get_FLAT_CONFIG() -> typing.Dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
+````{py:method} get_FLAT_CONFIG() -> dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
 :canonical: abx_spec_config.ConfigPluginSpec.get_FLAT_CONFIG
+:staticmethod:
 
 ```{autodoc2-docstring} abx_spec_config.ConfigPluginSpec.get_FLAT_CONFIG
 ```
 
 ````
 
-````{py:method} get_SCOPE_CONFIG(extra=None, archiveresult=None, snapshot=None, crawl=None, user=None, collection=..., environment=..., machine=..., default=...) -> typing.Dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
+````{py:method} get_SCOPE_CONFIG(extra=None, archiveresult=None, snapshot=None, crawl=None, user=None, collection=..., environment=..., machine=..., default=...) -> dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
 :canonical: abx_spec_config.ConfigPluginSpec.get_SCOPE_CONFIG
+:staticmethod:
 
 ```{autodoc2-docstring} abx_spec_config.ConfigPluginSpec.get_SCOPE_CONFIG
 ```
 
 ````
 
-````{py:method} get_archiveresult_config(archiveresult) -> typing.Dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
+````{py:method} get_archiveresult_config(archiveresult) -> dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
 :canonical: abx_spec_config.ConfigPluginSpec.get_archiveresult_config
+:staticmethod:
 
 ```{autodoc2-docstring} abx_spec_config.ConfigPluginSpec.get_archiveresult_config
 ```
 
 ````
 
-````{py:method} get_snapshot_config(snapshot) -> typing.Dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
+````{py:method} get_snapshot_config(snapshot) -> dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
 :canonical: abx_spec_config.ConfigPluginSpec.get_snapshot_config
+:staticmethod:
 
 ```{autodoc2-docstring} abx_spec_config.ConfigPluginSpec.get_snapshot_config
 ```
 
 ````
 
-````{py:method} get_crawl_config(crawl) -> typing.Dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
+````{py:method} get_crawl_config(crawl) -> dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
 :canonical: abx_spec_config.ConfigPluginSpec.get_crawl_config
+:staticmethod:
 
 ```{autodoc2-docstring} abx_spec_config.ConfigPluginSpec.get_crawl_config
 ```
 
 ````
 
-````{py:method} get_user_config(user=None) -> typing.Dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
+````{py:method} get_user_config(user=None) -> dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
 :canonical: abx_spec_config.ConfigPluginSpec.get_user_config
+:staticmethod:
 
 ```{autodoc2-docstring} abx_spec_config.ConfigPluginSpec.get_user_config
 ```
 
 ````
 
-````{py:method} get_collection_config(collection=...) -> typing.Dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
+````{py:method} get_collection_config(collection=...) -> dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
 :canonical: abx_spec_config.ConfigPluginSpec.get_collection_config
+:staticmethod:
 
 ```{autodoc2-docstring} abx_spec_config.ConfigPluginSpec.get_collection_config
 ```
 
 ````
 
-````{py:method} get_environment_config(environment=...) -> typing.Dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
+````{py:method} get_environment_config(environment=...) -> dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
 :canonical: abx_spec_config.ConfigPluginSpec.get_environment_config
+:staticmethod:
 
 ```{autodoc2-docstring} abx_spec_config.ConfigPluginSpec.get_environment_config
 ```
 
 ````
 
-````{py:method} get_default_config(default=...) -> typing.Dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
+````{py:method} get_default_config(default=...) -> dict[abx_spec_config.base_configset.ConfigKeyStr, typing.Any]
 :canonical: abx_spec_config.ConfigPluginSpec.get_default_config
+:staticmethod:
 
 ```{autodoc2-docstring} abx_spec_config.ConfigPluginSpec.get_default_config
 ```

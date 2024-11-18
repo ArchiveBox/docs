@@ -15,6 +15,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`update <archivebox.cli.archivebox_update.update>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_update.update
+    :summary:
+    ```
 * - {py:obj}`main <archivebox.cli.archivebox_update.main>`
   - ```{autodoc2-docstring} archivebox.cli.archivebox_update.main
     :summary:
@@ -43,6 +47,13 @@
 ```{autodoc2-docstring} archivebox.cli.archivebox_update.__command__
 ```
 
+````
+
+````{py:function} update()
+:canonical: archivebox.cli.archivebox_update.update
+
+```{autodoc2-docstring} archivebox.cli.archivebox_update.update
+```
 ````
 
 ````{py:function} main(args: typing.Optional[typing.List[str]] = None, stdin: typing.Optional[typing.IO] = None, pwd: typing.Optional[str] = None) -> None

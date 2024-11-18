@@ -42,11 +42,11 @@
 `````{py:class} YtdlpBinary(/, **data: typing.Any)
 :canonical: abx_plugin_ytdlp.binaries.YtdlpBinary
 
-Bases: {py:obj}`pydantic_pkgr.Binary`
+Bases: {py:obj}`abx_pkg.Binary`
 
 ````{py:attribute} name
 :canonical: abx_plugin_ytdlp.binaries.YtdlpBinary.name
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    None
 
@@ -57,7 +57,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} binproviders_supported
 :canonical: abx_plugin_ytdlp.binaries.YtdlpBinary.binproviders_supported
-:type: typing.List[pydantic.InstanceOf[pydantic_pkgr.BinProvider]]
+:type: typing.List[pydantic.InstanceOf[abx_pkg.BinProvider]]
 :value: >
    None
 
@@ -81,11 +81,11 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 `````{py:class} FfmpegBinary(/, **data: typing.Any)
 :canonical: abx_plugin_ytdlp.binaries.FfmpegBinary
 
-Bases: {py:obj}`pydantic_pkgr.Binary`
+Bases: {py:obj}`abx_pkg.Binary`
 
 ````{py:attribute} name
 :canonical: abx_plugin_ytdlp.binaries.FfmpegBinary.name
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    'ffmpeg'
 
@@ -96,7 +96,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} binproviders_supported
 :canonical: abx_plugin_ytdlp.binaries.FfmpegBinary.binproviders_supported
-:type: typing.List[pydantic.InstanceOf[pydantic_pkgr.BinProvider]]
+:type: typing.List[pydantic.InstanceOf[abx_pkg.BinProvider]]
 :value: >
    None
 
@@ -107,7 +107,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} overrides
 :canonical: abx_plugin_ytdlp.binaries.FfmpegBinary.overrides
-:type: pydantic_pkgr.BinaryOverrides
+:type: abx_pkg.BinaryOverrides
 :value: >
    None
 

@@ -109,11 +109,11 @@
 `````{py:class} ArchiveboxBinary(/, **data: typing.Any)
 :canonical: abx_plugin_pip.binaries.ArchiveboxBinary
 
-Bases: {py:obj}`pydantic_pkgr.Binary`
+Bases: {py:obj}`abx_pkg.Binary`
 
 ````{py:attribute} name
 :canonical: abx_plugin_pip.binaries.ArchiveboxBinary.name
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    'archivebox'
 
@@ -124,7 +124,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} binproviders_supported
 :canonical: abx_plugin_pip.binaries.ArchiveboxBinary.binproviders_supported
-:type: typing.List[pydantic.InstanceOf[pydantic_pkgr.BinProvider]]
+:type: typing.List[pydantic.InstanceOf[abx_pkg.BinProvider]]
 :value: >
    None
 
@@ -135,7 +135,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} overrides
 :canonical: abx_plugin_pip.binaries.ArchiveboxBinary.overrides
-:type: pydantic_pkgr.BinaryOverrides
+:type: abx_pkg.BinaryOverrides
 :value: >
    None
 
@@ -175,11 +175,11 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 `````{py:class} PythonBinary(/, **data: typing.Any)
 :canonical: abx_plugin_pip.binaries.PythonBinary
 
-Bases: {py:obj}`pydantic_pkgr.Binary`
+Bases: {py:obj}`abx_pkg.Binary`
 
 ````{py:attribute} name
 :canonical: abx_plugin_pip.binaries.PythonBinary.name
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    'python'
 
@@ -190,7 +190,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} binproviders_supported
 :canonical: abx_plugin_pip.binaries.PythonBinary.binproviders_supported
-:type: typing.List[pydantic.InstanceOf[pydantic_pkgr.BinProvider]]
+:type: typing.List[pydantic.InstanceOf[abx_pkg.BinProvider]]
 :value: >
    None
 
@@ -201,7 +201,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} overrides
 :canonical: abx_plugin_pip.binaries.PythonBinary.overrides
-:type: pydantic_pkgr.BinaryOverrides
+:type: abx_pkg.BinaryOverrides
 :value: >
    None
 
@@ -271,11 +271,11 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 `````{py:class} SqliteBinary(/, **data: typing.Any)
 :canonical: abx_plugin_pip.binaries.SqliteBinary
 
-Bases: {py:obj}`pydantic_pkgr.Binary`
+Bases: {py:obj}`abx_pkg.Binary`
 
 ````{py:attribute} name
 :canonical: abx_plugin_pip.binaries.SqliteBinary.name
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    'sqlite'
 
@@ -286,7 +286,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} binproviders_supported
 :canonical: abx_plugin_pip.binaries.SqliteBinary.binproviders_supported
-:type: typing.List[pydantic.InstanceOf[pydantic_pkgr.BinProvider]]
+:type: typing.List[pydantic.InstanceOf[abx_pkg.BinProvider]]
 :value: >
    'Field(...)'
 
@@ -297,7 +297,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} overrides
 :canonical: abx_plugin_pip.binaries.SqliteBinary.overrides
-:type: pydantic_pkgr.BinaryOverrides
+:type: abx_pkg.BinaryOverrides
 :value: >
    None
 
@@ -375,11 +375,11 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 `````{py:class} DjangoBinary(/, **data: typing.Any)
 :canonical: abx_plugin_pip.binaries.DjangoBinary
 
-Bases: {py:obj}`pydantic_pkgr.Binary`
+Bases: {py:obj}`abx_pkg.Binary`
 
 ````{py:attribute} name
 :canonical: abx_plugin_pip.binaries.DjangoBinary.name
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    'django'
 
@@ -390,7 +390,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} binproviders_supported
 :canonical: abx_plugin_pip.binaries.DjangoBinary.binproviders_supported
-:type: typing.List[pydantic.InstanceOf[pydantic_pkgr.BinProvider]]
+:type: typing.List[pydantic.InstanceOf[abx_pkg.BinProvider]]
 :value: >
    'Field(...)'
 
@@ -401,7 +401,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} overrides
 :canonical: abx_plugin_pip.binaries.DjangoBinary.overrides
-:type: pydantic_pkgr.BinaryOverrides
+:type: abx_pkg.BinaryOverrides
 :value: >
    None
 
@@ -441,11 +441,11 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 `````{py:class} PipBinary(/, **data: typing.Any)
 :canonical: abx_plugin_pip.binaries.PipBinary
 
-Bases: {py:obj}`pydantic_pkgr.Binary`
+Bases: {py:obj}`abx_pkg.Binary`
 
 ````{py:attribute} name
 :canonical: abx_plugin_pip.binaries.PipBinary.name
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    'pip'
 
@@ -456,7 +456,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} binproviders_supported
 :canonical: abx_plugin_pip.binaries.PipBinary.binproviders_supported
-:type: typing.List[pydantic.InstanceOf[pydantic_pkgr.BinProvider]]
+:type: typing.List[pydantic.InstanceOf[abx_pkg.BinProvider]]
 :value: >
    None
 
@@ -496,11 +496,11 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 `````{py:class} PipxBinary(/, **data: typing.Any)
 :canonical: abx_plugin_pip.binaries.PipxBinary
 
-Bases: {py:obj}`pydantic_pkgr.Binary`
+Bases: {py:obj}`abx_pkg.Binary`
 
 ````{py:attribute} name
 :canonical: abx_plugin_pip.binaries.PipxBinary.name
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    'pipx'
 
@@ -511,7 +511,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} binproviders_supported
 :canonical: abx_plugin_pip.binaries.PipxBinary.binproviders_supported
-:type: typing.List[pydantic.InstanceOf[pydantic_pkgr.BinProvider]]
+:type: typing.List[pydantic.InstanceOf[abx_pkg.BinProvider]]
 :value: >
    None
 

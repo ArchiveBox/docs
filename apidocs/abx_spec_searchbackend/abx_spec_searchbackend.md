@@ -103,8 +103,19 @@ Bases: {py:obj}`abc.ABC`
 ```{autodoc2-docstring} abx_spec_searchbackend.SearchBackendPluginSpec
 ```
 
+````{py:attribute} __order__
+:canonical: abx_spec_searchbackend.SearchBackendPluginSpec.__order__
+:value: >
+   10
+
+```{autodoc2-docstring} abx_spec_searchbackend.SearchBackendPluginSpec.__order__
+```
+
+````
+
 ````{py:method} get_SEARCHBACKENDS() -> typing.Dict[abx.PluginId, abx_spec_searchbackend.BaseSearchBackend]
 :canonical: abx_spec_searchbackend.SearchBackendPluginSpec.get_SEARCHBACKENDS
+:staticmethod:
 
 ```{autodoc2-docstring} abx_spec_searchbackend.SearchBackendPluginSpec.get_SEARCHBACKENDS
 ```

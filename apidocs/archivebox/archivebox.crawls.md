@@ -20,3 +20,48 @@ archivebox.crawls.statemachines
 archivebox.crawls.actors
 archivebox.crawls.views
 ```
+
+## Package Contents
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`register_admin <archivebox.crawls.register_admin>`
+  - ```{autodoc2-docstring} archivebox.crawls.register_admin
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`__order__ <archivebox.crawls.__order__>`
+  - ```{autodoc2-docstring} archivebox.crawls.__order__
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} __order__
+:canonical: archivebox.crawls.__order__
+:value: >
+   100
+
+```{autodoc2-docstring} archivebox.crawls.__order__
+```
+
+````
+
+````{py:function} register_admin(admin_site)
+:canonical: archivebox.crawls.register_admin
+
+```{autodoc2-docstring} archivebox.crawls.register_admin
+```
+````

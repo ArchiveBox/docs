@@ -31,7 +31,7 @@
 
 ### API
 
-`````{py:class} CrawlSchedule(*args: typing.Any, **kwargs: typing.Any)
+``````{py:class} CrawlSchedule(*args: typing.Any, **kwargs: typing.Any)
 :canonical: archivebox.crawls.models.CrawlSchedule
 
 Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWithHealthStats`
@@ -48,7 +48,7 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 ````{py:attribute} abid_prefix
 :canonical: archivebox.crawls.models.CrawlSchedule.abid_prefix
 :value: >
-   'sch_'
+   'cws_'
 
 ```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.abid_prefix
 ```
@@ -95,6 +95,26 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 
 ````
 
+````{py:attribute} id
+:canonical: archivebox.crawls.models.CrawlSchedule.id
+:value: >
+   'UUIDField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.id
+```
+
+````
+
+````{py:attribute} abid
+:canonical: archivebox.crawls.models.CrawlSchedule.abid
+:value: >
+   'ABIDField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.abid
+```
+
+````
+
 ````{py:attribute} schedule
 :canonical: archivebox.crawls.models.CrawlSchedule.schedule
 :value: >
@@ -105,12 +125,43 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 
 ````
 
-````{py:attribute} is_enabled
-:canonical: archivebox.crawls.models.CrawlSchedule.is_enabled
+````{py:attribute} label
+:canonical: archivebox.crawls.models.CrawlSchedule.label
 :value: >
-   'BooleanField(...)'
+   'CharField(...)'
 
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.is_enabled
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.label
+```
+
+````
+
+````{py:attribute} notes
+:canonical: archivebox.crawls.models.CrawlSchedule.notes
+:value: >
+   'TextField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.notes
+```
+
+````
+
+````{py:attribute} template
+:canonical: archivebox.crawls.models.CrawlSchedule.template
+:type: Crawl
+:value: >
+   'ForeignKey(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.template
+```
+
+````
+
+````{py:attribute} created_by
+:canonical: archivebox.crawls.models.CrawlSchedule.created_by
+:value: >
+   'ForeignKey(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.created_by
 ```
 
 ````
@@ -135,12 +186,12 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 
 ````
 
-````{py:attribute} created_by
-:canonical: archivebox.crawls.models.CrawlSchedule.created_by
+````{py:attribute} is_enabled
+:canonical: archivebox.crawls.models.CrawlSchedule.is_enabled
 :value: >
-   'ForeignKey(...)'
+   'BooleanField(...)'
 
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.created_by
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.is_enabled
 ```
 
 ````
@@ -156,15 +207,65 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 
 ````
 
-````{py:property} template
-:canonical: archivebox.crawls.models.CrawlSchedule.template
+`````{py:class} Meta
+:canonical: archivebox.crawls.models.CrawlSchedule.Meta
 
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.template
+Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
+
+````{py:attribute} verbose_name
+:canonical: archivebox.crawls.models.CrawlSchedule.Meta.verbose_name
+:value: >
+   'Scheduled Crawl'
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.Meta.verbose_name
+```
+
+````
+
+````{py:attribute} verbose_name_plural
+:canonical: archivebox.crawls.models.CrawlSchedule.Meta.verbose_name_plural
+:value: >
+   'Scheduled Crawls'
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.Meta.verbose_name_plural
 ```
 
 ````
 
 `````
+
+````{py:method} __str__() -> str
+:canonical: archivebox.crawls.models.CrawlSchedule.__str__
+
+````
+
+````{py:property} api_url
+:canonical: archivebox.crawls.models.CrawlSchedule.api_url
+:type: str
+
+````
+
+````{py:property} api_docs_url
+:canonical: archivebox.crawls.models.CrawlSchedule.api_docs_url
+:type: str
+
+````
+
+````{py:method} save(*args, **kwargs)
+:canonical: archivebox.crawls.models.CrawlSchedule.save
+
+````
+
+````{py:property} snapshot_set
+:canonical: archivebox.crawls.models.CrawlSchedule.snapshot_set
+:type: django.db.models.QuerySet[core.models.Snapshot]
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.snapshot_set
+```
+
+````
+
+``````
 
 ``````{py:class} Crawl(*args: typing.Any, **kwargs: typing.Any)
 :canonical: archivebox.crawls.models.Crawl
@@ -183,7 +284,7 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 ````{py:attribute} abid_prefix
 :canonical: archivebox.crawls.models.Crawl.abid_prefix
 :value: >
-   'crl_'
+   'cwl_'
 
 ```{autodoc2-docstring} archivebox.crawls.models.Crawl.abid_prefix
 ```
@@ -370,6 +471,26 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 
 ````
 
+````{py:attribute} label
+:canonical: archivebox.crawls.models.Crawl.label
+:value: >
+   'CharField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.label
+```
+
+````
+
+````{py:attribute} notes
+:canonical: archivebox.crawls.models.Crawl.notes
+:value: >
+   'TextField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.notes
+```
+
+````
+
 ````{py:attribute} max_depth
 :canonical: archivebox.crawls.models.Crawl.max_depth
 :value: >
@@ -458,6 +579,20 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 `````
 
+````{py:method} __str__()
+:canonical: archivebox.crawls.models.Crawl.__str__
+
+````
+
+````{py:method} from_seed(seed: seeds.models.Seed, max_depth: int = 0, persona: str = 'Default', tags_str: str = '', config: dict | None = None, created_by: int | None = None)
+:canonical: archivebox.crawls.models.Crawl.from_seed
+:classmethod:
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.from_seed
+```
+
+````
+
 ````{py:property} template
 :canonical: archivebox.crawls.models.Crawl.template
 
@@ -478,10 +613,18 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````
 
-````{py:method} has_pending_archiveresults() -> bool
-:canonical: archivebox.crawls.models.Crawl.has_pending_archiveresults
+````{py:method} pending_snapshots() -> django.db.models.QuerySet[core.models.Snapshot]
+:canonical: archivebox.crawls.models.Crawl.pending_snapshots
 
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.has_pending_archiveresults
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.pending_snapshots
+```
+
+````
+
+````{py:method} pending_archiveresults() -> django.db.models.QuerySet[core.models.ArchiveResult]
+:canonical: archivebox.crawls.models.Crawl.pending_archiveresults
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.pending_archiveresults
 ```
 
 ````

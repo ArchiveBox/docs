@@ -221,6 +221,14 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 `````
 
+````{py:method} TYPE() -> str
+:canonical: archivebox.abid_utils.models.ABIDModel.TYPE
+
+```{autodoc2-docstring} archivebox.abid_utils.models.ABIDModel.TYPE
+```
+
+````
+
 ````{py:method} __str__() -> str
 :canonical: archivebox.abid_utils.models.ABIDModel.__str__
 

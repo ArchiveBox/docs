@@ -155,6 +155,10 @@
   - ```{autodoc2-docstring} archivebox.core.settings.STORAGES
     :summary:
     ```
+* - {py:obj}`CHANNEL_LAYERS <archivebox.core.settings.CHANNEL_LAYERS>`
+  - ```{autodoc2-docstring} archivebox.core.settings.CHANNEL_LAYERS
+    :summary:
+    ```
 * - {py:obj}`SECRET_KEY <archivebox.core.settings.SECRET_KEY>`
   - ```{autodoc2-docstring} archivebox.core.settings.SECRET_KEY
     :summary:
@@ -657,6 +661,16 @@
    None
 
 ```{autodoc2-docstring} archivebox.core.settings.STORAGES
+```
+
+````
+
+````{py:data} CHANNEL_LAYERS
+:canonical: archivebox.core.settings.CHANNEL_LAYERS
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.settings.CHANNEL_LAYERS
 ```
 
 ````

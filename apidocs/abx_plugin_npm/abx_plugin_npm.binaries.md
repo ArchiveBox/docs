@@ -104,11 +104,11 @@
 `````{py:class} NodeBinary(/, **data: typing.Any)
 :canonical: abx_plugin_npm.binaries.NodeBinary
 
-Bases: {py:obj}`pydantic_pkgr.Binary`
+Bases: {py:obj}`abx_pkg.Binary`
 
 ````{py:attribute} name
 :canonical: abx_plugin_npm.binaries.NodeBinary.name
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    'node'
 
@@ -119,7 +119,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} binproviders_supported
 :canonical: abx_plugin_npm.binaries.NodeBinary.binproviders_supported
-:type: typing.List[pydantic.InstanceOf[pydantic_pkgr.BinProvider]]
+:type: typing.List[pydantic.InstanceOf[abx_pkg.BinProvider]]
 :value: >
    None
 
@@ -130,7 +130,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} overrides
 :canonical: abx_plugin_npm.binaries.NodeBinary.overrides
-:type: pydantic_pkgr.BinaryOverrides
+:type: abx_pkg.BinaryOverrides
 :value: >
    None
 
@@ -154,11 +154,11 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 `````{py:class} NpmBinary(/, **data: typing.Any)
 :canonical: abx_plugin_npm.binaries.NpmBinary
 
-Bases: {py:obj}`pydantic_pkgr.Binary`
+Bases: {py:obj}`abx_pkg.Binary`
 
 ````{py:attribute} name
 :canonical: abx_plugin_npm.binaries.NpmBinary.name
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    'npm'
 
@@ -169,7 +169,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} binproviders_supported
 :canonical: abx_plugin_npm.binaries.NpmBinary.binproviders_supported
-:type: typing.List[pydantic.InstanceOf[pydantic_pkgr.BinProvider]]
+:type: typing.List[pydantic.InstanceOf[abx_pkg.BinProvider]]
 :value: >
    None
 
@@ -180,7 +180,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} overrides
 :canonical: abx_plugin_npm.binaries.NpmBinary.overrides
-:type: pydantic_pkgr.BinaryOverrides
+:type: abx_pkg.BinaryOverrides
 :value: >
    None
 
@@ -204,11 +204,11 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 `````{py:class} NpxBinary(/, **data: typing.Any)
 :canonical: abx_plugin_npm.binaries.NpxBinary
 
-Bases: {py:obj}`pydantic_pkgr.Binary`
+Bases: {py:obj}`abx_pkg.Binary`
 
 ````{py:attribute} name
 :canonical: abx_plugin_npm.binaries.NpxBinary.name
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    'npx'
 
@@ -219,7 +219,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} binproviders_supported
 :canonical: abx_plugin_npm.binaries.NpxBinary.binproviders_supported
-:type: typing.List[pydantic.InstanceOf[pydantic_pkgr.BinProvider]]
+:type: typing.List[pydantic.InstanceOf[abx_pkg.BinProvider]]
 :value: >
    None
 
@@ -230,7 +230,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} overrides
 :canonical: abx_plugin_npm.binaries.NpxBinary.overrides
-:type: pydantic_pkgr.BinaryOverrides
+:type: abx_pkg.BinaryOverrides
 :value: >
    None
 

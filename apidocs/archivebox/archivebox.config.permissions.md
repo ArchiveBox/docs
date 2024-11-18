@@ -71,6 +71,10 @@
   - ```{autodoc2-docstring} archivebox.config.permissions.USER
     :summary:
     ```
+* - {py:obj}`HOSTNAME <archivebox.config.permissions.HOSTNAME>`
+  - ```{autodoc2-docstring} archivebox.config.permissions.HOSTNAME
+    :summary:
+    ```
 * - {py:obj}`IS_ROOT <archivebox.config.permissions.IS_ROOT>`
   - ```{autodoc2-docstring} archivebox.config.permissions.IS_ROOT
     :summary:
@@ -200,6 +204,17 @@
    None
 
 ```{autodoc2-docstring} archivebox.config.permissions.USER
+```
+
+````
+
+````{py:data} HOSTNAME
+:canonical: archivebox.config.permissions.HOSTNAME
+:type: str
+:value: >
+   'max(...)'
+
+```{autodoc2-docstring} archivebox.config.permissions.HOSTNAME
 ```
 
 ````

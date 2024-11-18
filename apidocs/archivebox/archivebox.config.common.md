@@ -614,6 +614,17 @@ Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
 
 ````
 
+````{py:attribute} DEFAULT_PERSONA
+:canonical: archivebox.config.common.ArchivingConfig.DEFAULT_PERSONA
+:type: str
+:value: >
+   'Field(...)'
+
+```{autodoc2-docstring} archivebox.config.common.ArchivingConfig.DEFAULT_PERSONA
+```
+
+````
+
 ````{py:method} validate()
 :canonical: archivebox.config.common.ArchivingConfig.validate
 

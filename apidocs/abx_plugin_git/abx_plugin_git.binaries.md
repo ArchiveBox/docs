@@ -36,11 +36,11 @@
 `````{py:class} GitBinary(/, **data: typing.Any)
 :canonical: abx_plugin_git.binaries.GitBinary
 
-Bases: {py:obj}`pydantic_pkgr.Binary`
+Bases: {py:obj}`abx_pkg.Binary`
 
 ````{py:attribute} name
 :canonical: abx_plugin_git.binaries.GitBinary.name
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    None
 
@@ -51,7 +51,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} binproviders_supported
 :canonical: abx_plugin_git.binaries.GitBinary.binproviders_supported
-:type: typing.List[pydantic.InstanceOf[pydantic_pkgr.BinProvider]]
+:type: typing.List[pydantic.InstanceOf[abx_pkg.BinProvider]]
 :value: >
    None
 

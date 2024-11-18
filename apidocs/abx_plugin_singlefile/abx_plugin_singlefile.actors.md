@@ -16,15 +16,20 @@
 :align: left
 
 * - {py:obj}`SinglefileActor <abx_plugin_singlefile.actors.SinglefileActor>`
-  -
+  - ```{autodoc2-docstring} abx_plugin_singlefile.actors.SinglefileActor
+    :summary:
+    ```
 ````
 
 ### API
 
-`````{py:class} SinglefileActor(mode: typing.Literal[thread, process] | None = None, **launch_kwargs: actors.actor.LaunchKwargs)
+`````{py:class} SinglefileActor
 :canonical: abx_plugin_singlefile.actors.SinglefileActor
 
 Bases: {py:obj}`actors.actor.ActorType`\[{py:obj}`abx_plugin_singlefile.models.SinglefileResult`\]
+
+```{autodoc2-docstring} abx_plugin_singlefile.actors.SinglefileActor
+```
 
 ````{py:attribute} CLAIM_ORDER
 :canonical: abx_plugin_singlefile.actors.SinglefileActor.CLAIM_ORDER
@@ -69,6 +74,9 @@ Bases: {py:obj}`actors.actor.ActorType`\[{py:obj}`abx_plugin_singlefile.models.S
 
 ````{py:method} tick(obj: abx_plugin_singlefile.models.SinglefileResult)
 :canonical: abx_plugin_singlefile.actors.SinglefileActor.tick
+
+```{autodoc2-docstring} abx_plugin_singlefile.actors.SinglefileActor.tick
+```
 
 ````
 

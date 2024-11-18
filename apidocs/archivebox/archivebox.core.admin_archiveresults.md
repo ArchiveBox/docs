@@ -201,7 +201,7 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} list_display
 :canonical: archivebox.core.admin_archiveresults.ArchiveResultAdmin.list_display
 :value: >
-   ('start_ts', 'snapshot_info', 'tags_str', 'extractor', 'cmd_str', 'status', 'output_str')
+   ('abid', 'created_by', 'created_at', 'snapshot_info', 'tags_str', 'status', 'extractor', 'cmd_str', ...
 
 ```{autodoc2-docstring} archivebox.core.admin_archiveresults.ArchiveResultAdmin.list_display
 ```
@@ -211,7 +211,7 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} sort_fields
 :canonical: archivebox.core.admin_archiveresults.ArchiveResultAdmin.sort_fields
 :value: >
-   ('start_ts', 'extractor', 'status')
+   ('abid', 'created_by', 'created_at', 'extractor', 'status')
 
 ```{autodoc2-docstring} archivebox.core.admin_archiveresults.ArchiveResultAdmin.sort_fields
 ```
@@ -241,7 +241,7 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} fields
 :canonical: archivebox.core.admin_archiveresults.ArchiveResultAdmin.fields
 :value: >
-   ('snapshot', 'extractor', 'status', 'output', 'pwd', 'start_ts', 'end_ts', 'created_by', 'cmd_versio...
+   ('snapshot', 'extractor', 'status', 'retry_at', 'start_ts', 'end_ts', 'created_by', 'pwd', 'cmd_vers...
 
 ```{autodoc2-docstring} archivebox.core.admin_archiveresults.ArchiveResultAdmin.fields
 ```

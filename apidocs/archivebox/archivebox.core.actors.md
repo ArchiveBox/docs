@@ -16,9 +16,13 @@
 :align: left
 
 * - {py:obj}`SnapshotActor <archivebox.core.actors.SnapshotActor>`
-  -
+  - ```{autodoc2-docstring} archivebox.core.actors.SnapshotActor
+    :summary:
+    ```
 * - {py:obj}`ArchiveResultActor <archivebox.core.actors.ArchiveResultActor>`
-  -
+  - ```{autodoc2-docstring} archivebox.core.actors.ArchiveResultActor
+    :summary:
+    ```
 ````
 
 ### API
@@ -27,6 +31,15 @@
 :canonical: archivebox.core.actors.SnapshotActor
 
 Bases: {py:obj}`actors.actor.ActorType`\[{py:obj}`core.models.Snapshot`\]
+
+```{autodoc2-docstring} archivebox.core.actors.SnapshotActor
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} archivebox.core.actors.SnapshotActor.__init__
+```
 
 ````{py:attribute} Model
 :canonical: archivebox.core.actors.SnapshotActor.Model
@@ -85,7 +98,7 @@ Bases: {py:obj}`actors.actor.ActorType`\[{py:obj}`core.models.Snapshot`\]
 :canonical: archivebox.core.actors.SnapshotActor.MAX_CONCURRENT_ACTORS
 :type: typing.ClassVar[int]
 :value: >
-   3
+   1
 
 ```{autodoc2-docstring} archivebox.core.actors.SnapshotActor.MAX_CONCURRENT_ACTORS
 ```
@@ -120,6 +133,15 @@ Bases: {py:obj}`actors.actor.ActorType`\[{py:obj}`core.models.Snapshot`\]
 :canonical: archivebox.core.actors.ArchiveResultActor
 
 Bases: {py:obj}`actors.actor.ActorType`\[{py:obj}`core.models.ArchiveResult`\]
+
+```{autodoc2-docstring} archivebox.core.actors.ArchiveResultActor
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} archivebox.core.actors.ArchiveResultActor.__init__
+```
 
 ````{py:attribute} Model
 :canonical: archivebox.core.actors.ArchiveResultActor.Model
@@ -178,7 +200,7 @@ Bases: {py:obj}`actors.actor.ActorType`\[{py:obj}`core.models.ArchiveResult`\]
 :canonical: archivebox.core.actors.ArchiveResultActor.MAX_CONCURRENT_ACTORS
 :type: typing.ClassVar[int]
 :value: >
-   6
+   1
 
 ```{autodoc2-docstring} archivebox.core.actors.ArchiveResultActor.MAX_CONCURRENT_ACTORS
 ```

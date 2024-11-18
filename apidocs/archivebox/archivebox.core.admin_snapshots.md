@@ -70,7 +70,7 @@ Bases: {py:obj}`archivebox.search.admin.SearchResultsAdminMixin`, {py:obj}`archi
 ````{py:attribute} list_display
 :canonical: archivebox.core.admin_snapshots.SnapshotAdmin.list_display
 :value: >
-   ('created_at', 'title_str', 'files', 'size', 'url_str')
+   ('created_at', 'title_str', 'status', 'files', 'size', 'url_str')
 
 ```{autodoc2-docstring} archivebox.core.admin_snapshots.SnapshotAdmin.list_display
 ```
@@ -80,7 +80,7 @@ Bases: {py:obj}`archivebox.search.admin.SearchResultsAdminMixin`, {py:obj}`archi
 ````{py:attribute} sort_fields
 :canonical: archivebox.core.admin_snapshots.SnapshotAdmin.sort_fields
 :value: >
-   ('title_str', 'url_str', 'created_at')
+   ('title_str', 'url_str', 'created_at', 'status', 'crawl')
 
 ```{autodoc2-docstring} archivebox.core.admin_snapshots.SnapshotAdmin.sort_fields
 ```
@@ -120,7 +120,7 @@ Bases: {py:obj}`archivebox.search.admin.SearchResultsAdminMixin`, {py:obj}`archi
 ````{py:attribute} fields
 :canonical: archivebox.core.admin_snapshots.SnapshotAdmin.fields
 :value: >
-   ('url', 'title', 'created_by', 'bookmarked_at')
+   ('url', 'title', 'created_by', 'bookmarked_at', 'status', 'retry_at', 'crawl')
 
 ```{autodoc2-docstring} archivebox.core.admin_snapshots.SnapshotAdmin.fields
 ```

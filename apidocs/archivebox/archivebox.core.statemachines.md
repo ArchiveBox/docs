@@ -108,18 +108,34 @@ Bases: {py:obj}`statemachine.StateMachine`
 
 ````
 
-````{py:method} on_started()
-:canonical: archivebox.core.statemachines.SnapshotMachine.on_started
+````{py:method} on_transition(event, state)
+:canonical: archivebox.core.statemachines.SnapshotMachine.on_transition
 
-```{autodoc2-docstring} archivebox.core.statemachines.SnapshotMachine.on_started
+```{autodoc2-docstring} archivebox.core.statemachines.SnapshotMachine.on_transition
 ```
 
 ````
 
-````{py:method} on_sealed()
-:canonical: archivebox.core.statemachines.SnapshotMachine.on_sealed
+````{py:method} enter_queued()
+:canonical: archivebox.core.statemachines.SnapshotMachine.enter_queued
 
-```{autodoc2-docstring} archivebox.core.statemachines.SnapshotMachine.on_sealed
+```{autodoc2-docstring} archivebox.core.statemachines.SnapshotMachine.enter_queued
+```
+
+````
+
+````{py:method} enter_started()
+:canonical: archivebox.core.statemachines.SnapshotMachine.enter_started
+
+```{autodoc2-docstring} archivebox.core.statemachines.SnapshotMachine.enter_started
+```
+
+````
+
+````{py:method} enter_sealed()
+:canonical: archivebox.core.statemachines.SnapshotMachine.enter_sealed
+
+```{autodoc2-docstring} archivebox.core.statemachines.SnapshotMachine.enter_sealed
 ```
 
 ````
@@ -251,42 +267,42 @@ Bases: {py:obj}`statemachine.StateMachine`
 
 ````
 
-````{py:method} on_started()
-:canonical: archivebox.core.statemachines.ArchiveResultMachine.on_started
+````{py:method} enter_queued()
+:canonical: archivebox.core.statemachines.ArchiveResultMachine.enter_queued
 
-```{autodoc2-docstring} archivebox.core.statemachines.ArchiveResultMachine.on_started
+```{autodoc2-docstring} archivebox.core.statemachines.ArchiveResultMachine.enter_queued
 ```
 
 ````
 
-````{py:method} on_backoff()
-:canonical: archivebox.core.statemachines.ArchiveResultMachine.on_backoff
+````{py:method} enter_started()
+:canonical: archivebox.core.statemachines.ArchiveResultMachine.enter_started
 
-```{autodoc2-docstring} archivebox.core.statemachines.ArchiveResultMachine.on_backoff
+```{autodoc2-docstring} archivebox.core.statemachines.ArchiveResultMachine.enter_started
 ```
 
 ````
 
-````{py:method} on_succeeded()
-:canonical: archivebox.core.statemachines.ArchiveResultMachine.on_succeeded
+````{py:method} enter_backoff()
+:canonical: archivebox.core.statemachines.ArchiveResultMachine.enter_backoff
 
-```{autodoc2-docstring} archivebox.core.statemachines.ArchiveResultMachine.on_succeeded
+```{autodoc2-docstring} archivebox.core.statemachines.ArchiveResultMachine.enter_backoff
 ```
 
 ````
 
-````{py:method} on_failed()
-:canonical: archivebox.core.statemachines.ArchiveResultMachine.on_failed
+````{py:method} enter_succeeded()
+:canonical: archivebox.core.statemachines.ArchiveResultMachine.enter_succeeded
 
-```{autodoc2-docstring} archivebox.core.statemachines.ArchiveResultMachine.on_failed
+```{autodoc2-docstring} archivebox.core.statemachines.ArchiveResultMachine.enter_succeeded
 ```
 
 ````
 
-````{py:method} after_transition(event: str, source: statemachine.State, target: statemachine.State)
-:canonical: archivebox.core.statemachines.ArchiveResultMachine.after_transition
+````{py:method} enter_failed()
+:canonical: archivebox.core.statemachines.ArchiveResultMachine.enter_failed
 
-```{autodoc2-docstring} archivebox.core.statemachines.ArchiveResultMachine.after_transition
+```{autodoc2-docstring} archivebox.core.statemachines.ArchiveResultMachine.enter_failed
 ```
 
 ````

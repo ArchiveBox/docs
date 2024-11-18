@@ -164,11 +164,11 @@
 `````{py:class} ChromeBinary(/, **data: typing.Any)
 :canonical: abx_plugin_chrome.binaries.ChromeBinary
 
-Bases: {py:obj}`pydantic_pkgr.Binary`
+Bases: {py:obj}`abx_pkg.Binary`
 
 ````{py:attribute} name
 :canonical: abx_plugin_chrome.binaries.ChromeBinary.name
-:type: pydantic_pkgr.BinName
+:type: abx_pkg.BinName
 :value: >
    None
 
@@ -179,7 +179,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} binproviders_supported
 :canonical: abx_plugin_chrome.binaries.ChromeBinary.binproviders_supported
-:type: typing.List[pydantic.InstanceOf[pydantic_pkgr.BinProvider]]
+:type: typing.List[pydantic.InstanceOf[abx_pkg.BinProvider]]
 :value: >
    None
 
@@ -190,7 +190,7 @@ Bases: {py:obj}`pydantic_pkgr.Binary`
 
 ````{py:attribute} overrides
 :canonical: abx_plugin_chrome.binaries.ChromeBinary.overrides
-:type: pydantic_pkgr.BinaryOverrides
+:type: abx_pkg.BinaryOverrides
 :value: >
    None
 

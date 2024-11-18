@@ -127,6 +127,26 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 
 ````
 
+````{py:attribute} label
+:canonical: archivebox.seeds.models.Seed.label
+:value: >
+   'CharField(...)'
+
+```{autodoc2-docstring} archivebox.seeds.models.Seed.label
+```
+
+````
+
+````{py:attribute} notes
+:canonical: archivebox.seeds.models.Seed.notes
+:value: >
+   'TextField(...)'
+
+```{autodoc2-docstring} archivebox.seeds.models.Seed.notes
+```
+
+````
+
 ````{py:attribute} extractor
 :canonical: archivebox.seeds.models.Seed.extractor
 :value: >
@@ -187,10 +207,13 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 
 ````
 
-````{py:property} source_type
-:canonical: archivebox.seeds.models.Seed.source_type
+````{py:attribute} crawl_set
+:canonical: archivebox.seeds.models.Seed.crawl_set
+:type: django.db.models.Manager[crawls.models.Crawl]
+:value: >
+   None
 
-```{autodoc2-docstring} archivebox.seeds.models.Seed.source_type
+```{autodoc2-docstring} archivebox.seeds.models.Seed.crawl_set
 ```
 
 ````
@@ -232,5 +255,52 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 ````
 
 `````
+
+````{py:method} from_file(source_file: pathlib.Path, label: str = '', parser: str = 'auto', tag: str = '', created_by: int | None = None, config: dict | None = None)
+:canonical: archivebox.seeds.models.Seed.from_file
+:classmethod:
+
+```{autodoc2-docstring} archivebox.seeds.models.Seed.from_file
+```
+
+````
+
+````{py:property} source_type
+:canonical: archivebox.seeds.models.Seed.source_type
+
+```{autodoc2-docstring} archivebox.seeds.models.Seed.source_type
+```
+
+````
+
+````{py:property} api_url
+:canonical: archivebox.seeds.models.Seed.api_url
+:type: str
+
+````
+
+````{py:property} api_docs_url
+:canonical: archivebox.seeds.models.Seed.api_docs_url
+:type: str
+
+````
+
+````{py:property} scheduled_crawl_set
+:canonical: archivebox.seeds.models.Seed.scheduled_crawl_set
+:type: django.db.models.QuerySet[crawls.models.CrawlSchedule]
+
+```{autodoc2-docstring} archivebox.seeds.models.Seed.scheduled_crawl_set
+```
+
+````
+
+````{py:property} snapshot_set
+:canonical: archivebox.seeds.models.Seed.snapshot_set
+:type: django.db.models.QuerySet[core.models.Snapshot]
+
+```{autodoc2-docstring} archivebox.seeds.models.Seed.snapshot_set
+```
+
+````
 
 ``````
