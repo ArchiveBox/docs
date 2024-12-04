@@ -305,7 +305,7 @@ More info:
 
 Explore the Python API a bit to see whats available using the archivebox shell:
 
-**Python API Documentation:** https://docs.archivebox.io/en/master/archivebox.html#module-archivebox.main
+**Python API Documentation:** https://docs.archivebox.io/dev/apidocs/index.html
 
 ```bash
 $ archivebox shell
@@ -347,7 +347,7 @@ from archivebox import *
 
 [i] Welcome to the ArchiveBox Shell!
     https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#Shell-Usage
-    https://docs.archivebox.io/en/master/archivebox.html#module-archivebox.main
+    https://docs.archivebox.io/dev/apidocs/index.html
 
     Hint: Example use:
         print(Snapshot.objects.filter(is_archived=True).count())
@@ -406,6 +406,6 @@ server(...)
 ```
 
 For more information see:
-- [ArchiveBox Python API Reference (ReadTheDocs)](https://docs.archivebox.io/en/latest/archivebox.html)
+- [ArchiveBox Python API Reference (ReadTheDocs)](https://docs.archivebox.io/dev/apidocs/index.html)
 - [ArchiveBox Developer Documentation](https://github.com/ArchiveBox/ArchiveBox#archivebox-development)
 - [ArchiveBox Python source code](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/)
