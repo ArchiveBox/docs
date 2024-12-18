@@ -150,7 +150,8 @@ Make sure `apt` and `dpkg` are available on your system.
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 
 # Install base system dependencies manually (check ArchiveBox/Dockerfile for more if needed)
-sudo apt install python3 python3-pip python3-minimal python3-distutils nodejs libatomic1 zlib1g-dev libssl-dev libldap2-dev libsasl2-dev python3-ldap python3-msgpack python3-mutagen python3-regex python3-pycryptodome procps dnsutils wget curl git yt-dlp ffmpeg ripgrep
+sudo apt install python3 python3-pip python3-minimal nodejs libatomic1 zlib1g-dev libssl-dev libldap2-dev libsasl2-dev python3-ldap python3-msgpack python3-mutagen python3-regex python3-pycryptodome procps dnsutils wget curl git yt-dlp ffmpeg ripgrep
+sudo apt install python3-setuptools  # or: python3-distutils on older systems
 
 # Optional: get Chromium with pip (skip if you already have chromium-browser/google-chrome installed and in your $PATH)
 # pip install --upgrade playwright
