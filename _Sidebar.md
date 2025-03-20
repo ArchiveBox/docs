@@ -48,12 +48,11 @@
 ---
 
 <p align="center">
-<a href="https://archivebox.io"><img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/fd4d3161-3860-4b31-a4e9-251c05f75cdf" height="30px"/></a><br/><br/>
-<a href="https://github.com/ArchiveBox/ArchiveBox"><img src="https://img.shields.io/github/stars/ArchiveBox/ArchiveBox.svg?logo=github&label=Stars&logoColor=blue"/></a> &nbsp;
-<a href="https://archivebox-shop.fourthwall.com/"><img src="https://img.shields.io/badge/Merch-%23903851.svg"/></a><br/>
-
+<a href="https://archivebox.io"><img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/fd4d3161-3860-4b31-a4e9-251c05f75cdf" height="30px"/></a>
+<br/><br/>
+<a href="https://github.com/ArchiveBox/ArchiveBox"><img src="https://img.shields.io/github/stars/ArchiveBox/ArchiveBox.svg?logo=github&label=Stars&logoColor=blue"/></a> &nbsp; <a href="https://archivebox-shop.fourthwall.com/"><img src="https://img.shields.io/badge/Merch-%23903851.svg"/></a>
+<br/>
 <a href="https://hcb.hackclub.com/donations/start/archivebox"><img src="https://img.shields.io/badge/Donate-Directly-%13DE5D26.svg"/></a> &nbsp; <a href="https://github.com/sponsors/pirate"><img src="https://img.shields.io/badge/Github_Sponsors-%23B7CDFE.svg"/></a>
-
 <br/><br/>
 <a href="https://zulip.archivebox.io"><img src="https://img.shields.io/badge/Community_Chat_Forum-Zulip-%2328A745.svg"/></a>
 </p>
