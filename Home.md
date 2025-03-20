@@ -30,7 +30,7 @@
 <br/>
 <hr/>
 
-**🏛️ [Contact us for professional support](https://docs.sweeting.me/s/archivebox-consulting-services) 💬**
+**🏛️ [Need professional support? Hire Us](https://docs.sweeting.me/s/archivebox-consulting-services) 💬**
 
 <br/>
 
