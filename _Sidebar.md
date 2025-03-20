@@ -52,7 +52,6 @@
 <a href="https://github.com/ArchiveBox/ArchiveBox"><img src="https://img.shields.io/github/stars/ArchiveBox/ArchiveBox.svg?logo=github&label=Stars&logoColor=blue"/></a> &nbsp;
 <a href="https://hcb.hackclub.com/donations/start/archivebox"><img src="https://img.shields.io/badge/Donate-Directly-%13DE5D26.svg"/></a><br/><br/>
 <a href="https://github.com/sponsors/pirate"><img src="https://img.shields.io/badge/Github_Sponsors-%23B7CDFE.svg"/></a> &nbsp;
-<a href="https://www.patreon.com/theSquashSH"><img src="https://img.shields.io/badge/Patreon-%23DD5D76.svg"/></a> &nbsp;
 <a href="https://archivebox-shop.fourthwall.com/"><img src="https://img.shields.io/badge/Merch-%23903851.svg"/></a>
 <br/><br/>
 <a href="https://zulip.archivebox.io"><img src="https://img.shields.io/badge/Community_Chat_Forum-Zulip-%2328A745.svg"/></a>
