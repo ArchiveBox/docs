@@ -52,6 +52,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
  - **[COPTR Wiki of Web Archiving Tools](http://coptr.digipres.org/Category:Tools) (COPTR)**  
  - **[Awesome Web Archiving Tools](https://github.com/iipc/awesome-web-archiving) (IIPC)**  
+ - **[My up-to-date list of starred archiving github projects](https://github.com/stars/pirate/lists/internet-archiving)**
  - [Spreadsheet Comparison of Archiving Tools](https://github.com/datatogether/research/tree/master/web_archiving) (DataTogether)
  - [Awesome Web Crawling Tools](https://github.com/BruceDone/awesome-crawler)
  - [Awesome Web Scraping Tools](https://github.com/duyetdev/awesome-web-scraper)
