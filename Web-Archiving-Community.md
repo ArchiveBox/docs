@@ -74,6 +74,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 ### Bookmarking Services
 
 - **[Linkwarden](https://github.com/linkwarden/linkwarden)** Modern bookmarking UI with singlefile archiving
+- [Hoarder](https://github.com/hoarder-app/hoarder)
 - [Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla
 - **[Pinboard](https://pinboard.in) Bookmarking tool that provides archiving in a paid version, run by a single independent developer**
 - **[Raindrop](https://raindrop.io) Bookmarking tool with archiving in their paid version, run by a company est. 2011**
@@ -187,7 +188,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ### Other ArchiveBox Alternatives
 
-> *There are lots more projects listed here too: https://github.com/stars/pirate/lists/internet-archiving*
+> *There are **much more recent** projects listed here: https://github.com/stars/pirate/lists/internet-archiving*
 
 - **[Browsertrix](https://webrecorder.net/browsertrix) + [ArchiveWeb.page](https://webrecorder.net/archivewebpage) + [ReplayWeb.page](https://webrecorder.net/replaywebpage) Webrecorder's archiving suite has the highest fidelity, and can flawlessly archive YouTube, X, Facebook, and other complex, JS-heavy SPAs**
 - **[SingleFile](https://github.com/gildas-lormeau/SingleFile/) Web Extension / CLI util for Firefox and Chrome to save a web page as a single HTML file**
