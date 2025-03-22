@@ -12,9 +12,9 @@
 
 ---
 
-The internet archiving community is surprisingly far-reaching and almost universally friendly!
+The internet archiving community is surprisingly far-reaching and almost universally friendly! It has some overlap with the scraping and OSINT worlds, but it's also kinda its own thing.
 
-Whether you want to learn which organizations are the big players in the web archiving space, want to find a specific open source tool for your web archiving need, or just want to see where archivists hang out online, this is my attempt at an index of the entire web archiving community.
+Whether you want to learn which organizations are the big players in the web archiving space, want to find a specific open source tool for your web archiving need, or just want to see where archivists hang out online, this is my attempt at an index of the entire web archiving community. I cant promise that this list is up-to-date, the bulk of it was written in ~2022.
 
 <img src="https://imgur.zervice.io/duS8Lm7.png" width="200px" align="right" style="float: right; margin: 5px"/>
 
