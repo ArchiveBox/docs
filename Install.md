@@ -76,7 +76,7 @@ It's also recommended to use a filesystem with compression and/or [deduplication
 
 ## Option B. Automatic Setup Script
 
-If you're on Linux with `apt`, FreeBSD with `pkg`, or macOS with `brew` there is an optional auto-setup script provided.
+If you're on Linux with `apt` or FreeBSD with `pkg` there is an optional auto-setup script provided.
 
 *(or scroll further down for manual install instructions)*
 
@@ -85,6 +85,8 @@ curl -fsSL 'https://get.archivebox.io' | bash
 # shortcut to run https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/stable/bin/setup.sh
 ``` 
 The script explains what it installs beforehand, and will prompt for user confirmation before making any changes to your system. The script uses Docker if already installed, but you can decline and it will attempt to auto-install everything using `apt`/`brew`/`pkg` + `pip` instead.
+
+<sub>Note: The script will currently still attempt to install via `brew` on macOS. This will fail as ArchiveBox is no longer distributed as a Homebrew formula.</sub>
 
 <img src="https://imgur.zervice.io/VMTzm0G.png" width="99%"/>
 
@@ -190,7 +192,7 @@ See the [Quickstart](https://github.com/ArchiveBox/ArchiveBox#-package-manager-s
 
 ### 2. Install the Python dependencies using `pip`
 
-It's recommended to `pip`-install ArchiveBox even if you already installed `archivebox` with one of our official `apt`/`brew` packages above (sometimes the `pip` version is newer). This step also ensures you have the latest `yt-dlp` and `playwright` versions.
+It's recommended to `pip`-install ArchiveBox even if you already installed `archivebox` with one of our official `apt`/`pkg` packages above (sometimes the `pip` version is newer). This step also ensures you have the latest `yt-dlp` and `playwright` versions.
 
 ```bash
 # get the latest version of archivebox from PyPI
