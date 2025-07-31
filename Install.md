@@ -24,7 +24,7 @@ ArchiveBox is primarily distributed as a Python package via `pip`, but it also d
 **CPU Architectures:** `amd64` (`x86_64`), `arm64` (`aarch64`), `arm7`  
 *(Including 64-bit Intel/AMD, M1/M2/etc. Macs, Rasberry Pi >= 3)*
 
-* [**macOS:**](#macos) >=10.12 (with `brew`)
+* [**macOS:**](#macos) >=10.12 (with `pip`)
 * [**Linux:**](#ubuntudebian) Ubuntu (>= 18.04), Debian (>= 10), etc. (with `apt`)
 * [**BSD:**](#bsd) FreeBSD, OpenBSD, NetBSD etc (with `pkg`)
 
