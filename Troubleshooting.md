@@ -308,7 +308,7 @@ mv repaired_index.sqlite3 index.sqlite3
 ```
 
 More info:
-- https://github.com/ArchiveBox/ArchiveBox/issues/955
+- https://github.com/ArchiveBox/ArchiveBox/issues/955 and https://github.com/ArchiveBox/ArchiveBox/issues/1699
 - https://stackoverflow.com/questions/5274202/sqlite3-database-or-disk-is-full-the-database-disk-image-is-malformed
 
 
