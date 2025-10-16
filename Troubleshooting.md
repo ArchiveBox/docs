@@ -266,9 +266,9 @@ More info:
 
 #### Repairing a corrupted SQLite3 database file
 
-A corrupted database file can theoretically only happen if an external process or filesystem error corrupts the SQLite3 database (there has only been [one report](https://github.com/ArchiveBox/ArchiveBox/issues/955) of a user encountering this in real life). If you ever need to repair a corrupted ArchiveBox index you can run the following steps.
+A corrupted database file can theoretically only happen if an external process or filesystem error corrupts the SQLite3 database (there have only been [two](https://github.com/ArchiveBox/ArchiveBox/issues/1699) [reports](https://github.com/ArchiveBox/ArchiveBox/issues/955) of a user encountering this in real life). If you ever need to repair a corrupted ArchiveBox index you can run the following steps.
 
-Note this is specific to this error, these steps do not apply to other migrations/db errors (see below for other issues):
+Note this is specific to this error, these steps do not apply to other migrations/db errors (see above/below for other issues):
 ```bash
 sqlite3.DatabaseError: database disk image is malformed    
 ```
