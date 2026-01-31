@@ -75,7 +75,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 - **[Linkwarden](https://github.com/linkwarden/linkwarden)** Modern bookmarking UI with singlefile archiving
 - [Hoarder](https://github.com/hoarder-app/hoarder)
-- **[Gosuki](https://github.com/blob42/gosuki/releases/tag/v1.3.0) A lightweight, open-source, privacy-first bookmark manager that unifies your bookmarks across multiple browsers
+- **[Gosuki](https://github.com/blob42/gosuki/releases/tag/v1.3.0) A lightweight, open-source, privacy-first bookmark manager that unifies bookmarks across multiple browsers**
 - ~[Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla~
 - **[Pinboard](https://pinboard.in) Bookmarking tool that provides archiving in a paid version, run by a single independent developer**
 - **[Raindrop](https://raindrop.io) Bookmarking tool with archiving in their paid version, run by a company est. 2011**
