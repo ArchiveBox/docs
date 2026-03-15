@@ -10,6 +10,8 @@
 
 - ⭐️ **Github Sponsors:** https://github.com/sponsors/pirate
 
+- 👕 **Buy some swag:** https://archivebox-shop.fourthwall.com/
+
 - **Patreon:** https://www.patreon.com/theSquashSH
 
 - **Paypal:** https://paypal.me/NicholasSweeting

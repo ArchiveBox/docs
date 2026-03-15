@@ -12,9 +12,9 @@
 
 ---
 
-The internet archiving community is surprisingly far-reaching and almost universally friendly!
+The internet archiving community is surprisingly far-reaching and almost universally friendly! It has some overlap with the scraping and OSINT worlds, but it's also kinda its own thing.
 
-Whether you want to learn which organizations are the big players in the web archiving space, want to find a specific open source tool for your web archiving need, or just want to see where archivists hang out online, this is my attempt at an index of the entire web archiving community.
+Whether you want to learn which organizations are the big players in the web archiving space, want to find a specific open source tool for your web archiving need, or just want to see where archivists hang out online, this is my attempt at an index of the entire web archiving community. I cant promise that this list is up-to-date, the bulk of it was written in ~2022.
 
 <img src="https://imgur.zervice.io/duS8Lm7.png" width="200px" align="right" style="float: right; margin: 5px"/>
 
@@ -52,6 +52,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
  - **[COPTR Wiki of Web Archiving Tools](http://coptr.digipres.org/Category:Tools) (COPTR)**  
  - **[Awesome Web Archiving Tools](https://github.com/iipc/awesome-web-archiving) (IIPC)**  
+ - **[My up-to-date list of starred archiving github projects](https://github.com/stars/pirate/lists/internet-archiving)**
  - [Spreadsheet Comparison of Archiving Tools](https://github.com/datatogether/research/tree/master/web_archiving) (DataTogether)
  - [Awesome Web Crawling Tools](https://github.com/BruceDone/awesome-crawler)
  - [Awesome Web Scraping Tools](https://github.com/duyetdev/awesome-web-scraper)
@@ -72,7 +73,10 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ### Bookmarking Services
 
-- **[Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla**
+- **[Linkwarden](https://github.com/linkwarden/linkwarden)** Modern bookmarking UI with singlefile archiving
+- [Hoarder](https://github.com/hoarder-app/hoarder)
+- **[Gosuki](https://github.com/blob42/gosuki/releases/tag/v1.3.0) A lightweight, open-source, privacy-first bookmark manager that unifies bookmarks across multiple browsers**
+- ~[Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla~
 - **[Pinboard](https://pinboard.in) Bookmarking tool that provides archiving in a paid version, run by a single independent developer**
 - **[Raindrop](https://raindrop.io) Bookmarking tool with archiving in their paid version, run by a company est. 2011**
 - [Instapaper](https://www.instapaper.com) Bookmarking alternative to Pocket/Pinboard (with no archiving)
@@ -185,7 +189,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ### Other ArchiveBox Alternatives
 
-> *There are lots more projects listed here too: https://github.com/stars/pirate/lists/internet-archiving*
+> *There are **much more recent** projects listed here: https://github.com/stars/pirate/lists/internet-archiving*
 
 - **[Browsertrix](https://webrecorder.net/browsertrix) + [ArchiveWeb.page](https://webrecorder.net/archivewebpage) + [ReplayWeb.page](https://webrecorder.net/replaywebpage) Webrecorder's archiving suite has the highest fidelity, and can flawlessly archive YouTube, X, Facebook, and other complex, JS-heavy SPAs**
 - **[SingleFile](https://github.com/gildas-lormeau/SingleFile/) Web Extension / CLI util for Firefox and Chrome to save a web page as a single HTML file**
