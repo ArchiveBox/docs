@@ -516,41 +516,119 @@ Enable the Chrome/Chromium browser integration. This is required for screenshot,
 
 These extractors run inside Chrome during the page load and capture additional metadata:
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| `DNS_ENABLED` | `True` | Record DNS queries during page load |
-| `SSL_ENABLED` | `True` | Capture SSL certificate info |
-| `HEADERS_ENABLED` | `True` | Capture HTTP response headers |
-| `REDIRECTS_ENABLED` | `True` | Capture redirect chains |
-| `RESPONSES_ENABLED` | `True` | Capture HTTP response bodies |
-| `CONSOLELOG_ENABLED` | `True` | Capture browser console.log output |
-| `ACCESSIBILITY_ENABLED` | `True` | Capture accessibility tree |
-| `SEO_ENABLED` | `True` | Extract SEO metadata |
-| `HASHES_ENABLED` | `True` | Generate merkle tree hashes of content |
-| `STATICFILE_ENABLED` | `True` | Detect and directly download static file URLs |
+---
+#### `DNS_ENABLED`
+**Possible Values:** [`True`]/`False`
+Record DNS queries during page load.
+
+---
+#### `SSL_ENABLED`
+**Possible Values:** [`True`]/`False`
+Capture SSL certificate info.
+
+---
+#### `HEADERS_ENABLED`
+**Possible Values:** [`True`]/`False`
+Capture HTTP response headers.
+
+---
+#### `REDIRECTS_ENABLED`
+**Possible Values:** [`True`]/`False`
+Capture redirect chains.
+
+---
+#### `RESPONSES_ENABLED`
+**Possible Values:** [`True`]/`False`
+Capture HTTP response bodies.
+
+---
+#### `CONSOLELOG_ENABLED`
+**Possible Values:** [`True`]/`False`
+Capture browser console.log output.
+
+---
+#### `ACCESSIBILITY_ENABLED`
+**Possible Values:** [`True`]/`False`
+Capture accessibility tree.
+
+---
+#### `SEO_ENABLED`
+**Possible Values:** [`True`]/`False`
+Extract SEO metadata.
+
+---
+#### `HASHES_ENABLED`
+**Possible Values:** [`True`]/`False`
+Generate merkle tree hashes of content.
+
+---
+#### `STATICFILE_ENABLED`
+**Possible Values:** [`True`]/`False`
+Detect and directly download static file URLs.
+
+---
 
 #### Chrome Extension Toggles
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| `UBLOCK_ENABLED` | `True` | Enable uBlock Origin ad blocking extension |
-| `ISTILLDONTCAREABOUTCOOKIES_ENABLED` | `True` | Enable cookie banner dismissal extension |
-| `TWOCAPTCHA_ENABLED` | `True` | Enable 2captcha CAPTCHA solver extension |
-| `MODALCLOSER_ENABLED` | `True` | Enable automatic modal/dialog closing |
-| `INFINISCROLL_ENABLED` | `True` | Enable infinite scroll page expansion |
+#### `UBLOCK_ENABLED`
+**Possible Values:** [`True`]/`False`
+Enable uBlock Origin ad blocking extension.
+
+---
+#### `ISTILLDONTCAREABOUTCOOKIES_ENABLED`
+**Possible Values:** [`True`]/`False`
+Enable cookie banner dismissal extension.
+
+---
+#### `TWOCAPTCHA_ENABLED`
+**Possible Values:** [`True`]/`False`
+Enable 2captcha CAPTCHA solver extension.
+
+---
+#### `MODALCLOSER_ENABLED`
+**Possible Values:** [`True`]/`False`
+Enable automatic modal/dialog closing.
+
+---
+#### `INFINISCROLL_ENABLED`
+**Possible Values:** [`True`]/`False`
+Enable infinite scroll page expansion.
+
+---
 
 #### URL Parser Toggles
 
 These post-process archived content to extract URLs for recursive crawling:
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| `PARSE_DOM_OUTLINKS_ENABLED` | `True` | Extract outlinks from DOM via CDP |
-| `PARSE_HTML_URLS_ENABLED` | `True` | Parse URLs from HTML files |
-| `PARSE_JSONL_URLS_ENABLED` | `True` | Parse URLs from JSONL files |
-| `PARSE_NETSCAPE_URLS_ENABLED` | `True` | Parse Netscape bookmark format |
-| `PARSE_TXT_URLS_ENABLED` | `True` | Parse URLs from plain text |
-| `PARSE_RSS_URLS_ENABLED` | `True` | Parse URLs from RSS/Atom feeds |
+---
+#### `PARSE_DOM_OUTLINKS_ENABLED`
+**Possible Values:** [`True`]/`False`
+Extract outlinks from DOM via CDP.
+
+---
+#### `PARSE_HTML_URLS_ENABLED`
+**Possible Values:** [`True`]/`False`
+Parse URLs from HTML files.
+
+---
+#### `PARSE_JSONL_URLS_ENABLED`
+**Possible Values:** [`True`]/`False`
+Parse URLs from JSONL files.
+
+---
+#### `PARSE_NETSCAPE_URLS_ENABLED`
+**Possible Values:** [`True`]/`False`
+Parse Netscape bookmark format.
+
+---
+#### `PARSE_TXT_URLS_ENABLED`
+**Possible Values:** [`True`]/`False`
+Parse URLs from plain text.
+
+---
+#### `PARSE_RSS_URLS_ENABLED`
+**Possible Values:** [`True`]/`False`
+Parse URLs from RSS/Atom feeds.
 
 ---
 
@@ -754,57 +832,125 @@ Path or name of the ripgrep binary for full-text search.
 
 When using `SEARCH_BACKEND_ENGINE=sonic`:
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| `SEARCH_BACKEND_SONIC_HOST_NAME` | `127.0.0.1` | Sonic server hostname |
-| `SEARCH_BACKEND_SONIC_PORT` | `1491` | Sonic server port |
-| `SEARCH_BACKEND_SONIC_PASSWORD` | `SecretPassword` | Sonic server password |
-| `SEARCH_BACKEND_SONIC_COLLECTION` | `archivebox` | Sonic collection name |
-| `SEARCH_BACKEND_SONIC_BUCKET` | `snapshots` | Sonic bucket name |
+---
+#### `SEARCH_BACKEND_SONIC_HOST_NAME`
+**Default:** [`127.0.0.1`]
+Sonic server hostname.
+
+---
+#### `SEARCH_BACKEND_SONIC_PORT`
+**Default:** [`1491`]
+Sonic server port.
+
+---
+#### `SEARCH_BACKEND_SONIC_PASSWORD`
+**Default:** [`SecretPassword`]
+Sonic server password.
+
+---
+#### `SEARCH_BACKEND_SONIC_COLLECTION`
+**Default:** [`archivebox`]
+Sonic collection name.
+
+---
+#### `SEARCH_BACKEND_SONIC_BUCKET`
+**Default:** [`snapshots`]
+Sonic bucket name.
+
+---
 
 #### SQLite FTS Search Backend
 
 When using `SEARCH_BACKEND_ENGINE=sqlite`:
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| `SEARCH_BACKEND_SQLITE_DB` | `search.sqlite3` | FTS database filename |
-| `SEARCH_BACKEND_SQLITE_SEPARATE_DATABASE` | `True` | Use separate DB file for FTS |
-| `SEARCH_BACKEND_SQLITE_TOKENIZERS` | `porter unicode61 remove_diacritics 2` | FTS5 tokenizer config |
+---
+#### `SEARCH_BACKEND_SQLITE_DB`
+**Default:** [`search.sqlite3`]
+SQLite FTS database filename.
+
+---
+#### `SEARCH_BACKEND_SQLITE_SEPARATE_DATABASE`
+**Default:** [`True`]
+Use separate database file for FTS index.
+
+---
+#### `SEARCH_BACKEND_SQLITE_TOKENIZERS`
+**Default:** [`porter unicode61 remove_diacritics 2`]
+FTS5 tokenizer configuration.
 
 ---
 
 ### Infinite Scroll Options
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| `INFINISCROLL_SCROLL_LIMIT` | `10` | Maximum number of scroll steps |
-| `INFINISCROLL_SCROLL_DISTANCE` | `1600` | Distance per scroll step (px) |
-| `INFINISCROLL_SCROLL_DELAY` | `2000` | Delay between scrolls (ms) |
-| `INFINISCROLL_MIN_HEIGHT` | `16000` | Minimum page height to scroll to (px) |
-| `INFINISCROLL_EXPAND_DETAILS` | `True` | Expand `<details>` elements and click "load more" buttons |
-| `INFINISCROLL_TIMEOUT` | `120` | Maximum timeout (falls back to `TIMEOUT`) |
+#### `INFINISCROLL_SCROLL_LIMIT`
+**Default:** [`10`]
+Maximum number of scroll steps.
+
+---
+#### `INFINISCROLL_SCROLL_DISTANCE`
+**Default:** [`1600`]
+Distance to scroll per step in pixels.
+
+---
+#### `INFINISCROLL_SCROLL_DELAY`
+**Default:** [`2000`]
+Delay between scrolls in milliseconds.
+
+---
+#### `INFINISCROLL_MIN_HEIGHT`
+**Default:** [`16000`]
+Minimum page height to scroll to in pixels.
+
+---
+#### `INFINISCROLL_EXPAND_DETAILS`
+**Default:** [`True`]
+Expand `<details>` elements and click "load more" buttons.
+
+---
+#### `INFINISCROLL_TIMEOUT`
+**Default:** [`120`] *(falls back to [`TIMEOUT`](#timeout))*
+Maximum timeout for scrolling in seconds.
 
 ---
 
 ### 2captcha Options
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| `TWOCAPTCHA_API_KEY` | `""` | 2captcha API key (get from https://2captcha.com) |
-| `TWOCAPTCHA_AUTO_SUBMIT` | `False` | Auto-submit forms after solving |
-| `TWOCAPTCHA_RETRY_COUNT` | `3` | Number of solving retries |
-| `TWOCAPTCHA_RETRY_DELAY` | `5` | Delay between retries (seconds) |
-| `TWOCAPTCHA_TIMEOUT` | `60` | Solving timeout (falls back to `TIMEOUT`) |
+#### `TWOCAPTCHA_API_KEY`
+**Default:** [`""`]
+2captcha API key for CAPTCHA solving service (get from https://2captcha.com).
+
+---
+#### `TWOCAPTCHA_AUTO_SUBMIT`
+**Default:** [`False`]
+Automatically submit forms after CAPTCHA is solved.
+
+---
+#### `TWOCAPTCHA_RETRY_COUNT`
+**Default:** [`3`]
+Number of times to retry CAPTCHA solving on error.
+
+---
+#### `TWOCAPTCHA_RETRY_DELAY`
+**Default:** [`5`]
+Delay in seconds between CAPTCHA solving retries.
+
+---
+#### `TWOCAPTCHA_TIMEOUT`
+**Default:** [`60`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for CAPTCHA solving in seconds.
 
 ---
 
 ### Modal Closer Options
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| `MODALCLOSER_POLL_INTERVAL` | `500` | How often to check for CSS modals (ms) |
-| `MODALCLOSER_TIMEOUT` | `1250` | Delay before auto-closing dialogs (ms) |
+#### `MODALCLOSER_POLL_INTERVAL`
+**Default:** [`500`]
+How often to check for CSS modals (ms).
+
+---
+#### `MODALCLOSER_TIMEOUT`
+**Default:** [`1250`]
+Delay before auto-closing dialogs (ms).
 
 ---
 
@@ -874,19 +1020,55 @@ LDAP_EMAIL_ATTR: "mail"
 LDAP_CREATE_SUPERUSER: False
 ```
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| `LDAP_ENABLED` | `False` | Enable LDAP authentication |
-| `LDAP_SERVER_URI` | `None` | LDAP server URI (e.g. `ldap://ldap.example.com:389`) |
-| `LDAP_BIND_DN` | `None` | DN to bind for searching |
-| `LDAP_BIND_PASSWORD` | `None` | Password for bind DN |
-| `LDAP_USER_BASE` | `None` | Base DN for user searches |
-| `LDAP_USER_FILTER` | `(uid=%(user)s)` | LDAP search filter for users |
-| `LDAP_USERNAME_ATTR` | `username` | LDAP attribute for username |
-| `LDAP_FIRSTNAME_ATTR` | `givenName` | LDAP attribute for first name |
-| `LDAP_LASTNAME_ATTR` | `sn` | LDAP attribute for last name |
-| `LDAP_EMAIL_ATTR` | `mail` | LDAP attribute for email |
-| `LDAP_CREATE_SUPERUSER` | `False` | Auto-create superuser accounts for LDAP users |
+---
+#### `LDAP_SERVER_URI`
+**Default:** [`None`]
+LDAP server URI (e.g. `ldap://ldap.example.com:389`).
+
+---
+#### `LDAP_BIND_DN`
+**Default:** [`None`]
+DN to bind for searching.
+
+---
+#### `LDAP_BIND_PASSWORD`
+**Default:** [`None`]
+Password for bind DN.
+
+---
+#### `LDAP_USER_BASE`
+**Default:** [`None`]
+Base DN for user searches.
+
+---
+#### `LDAP_USER_FILTER`
+**Default:** [`(uid=%(user)s)`]
+LDAP search filter for users.
+
+---
+#### `LDAP_USERNAME_ATTR`
+**Default:** [`username`]
+LDAP attribute for username.
+
+---
+#### `LDAP_FIRSTNAME_ATTR`
+**Default:** [`givenName`]
+LDAP attribute for first name.
+
+---
+#### `LDAP_LASTNAME_ATTR`
+**Default:** [`sn`]
+LDAP attribute for last name.
+
+---
+#### `LDAP_EMAIL_ATTR`
+**Default:** [`mail`]
+LDAP attribute for email.
+
+---
+#### `LDAP_CREATE_SUPERUSER`
+**Default:** [`False`]
+Auto-create superuser accounts for LDAP users.
 
 More info:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
