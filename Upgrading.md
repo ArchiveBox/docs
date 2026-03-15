@@ -102,9 +102,6 @@ killall archivebox     # stop the currently running archivebox version
 # upgrade ArchiveBox using the package manager you originally used to install it
 pip install --upgrade --ignore-installed archivebox
 # or
-brew update
-brew upgrade archivebox
-# or
 apt install --upgrade archivebox
 # or with the optional auto-installer script
 curl -sSL 'https://get.archivebox.io' | sh

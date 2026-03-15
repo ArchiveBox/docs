@@ -89,8 +89,8 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ### From the Archive.org & Archive-It teams
 
-<img src="https://docs.monadical.com/uploads/9b9d97d4-eaa4-4399-b7e2-628f1ef81675.png" width="115px" align="right" style="float:right; margin: 5px"/>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Internet_Archive_logo_and_wordmark.svg/250px-Internet_Archive_logo_and_wordmark.svg.png" width="100px" align="right" style="float:right; margin: 5px"/>
+<img src="https://github.com/internetarchive.png" width="128px" align="right" style="float: right; margin: 5px"/>
+
 
 - **[Archive.org](https://archive.org) The O.G. Wayback Machine provided publicly by the Internet Archive (Archive.org)**
 - **[Archive.it](https://archive-it.org) commercial Wayback Machine solution**
@@ -105,6 +105,8 @@ Indexes of archiving institutions and software maintained by other people.  If t
 ---
 
 ### From Webrecorder
+
+<img src="https://github.com/webrecorder.png" width="128px" align="right" style="float: right; margin: 5px"/>
 
 [Webrecorder](https://webrecorder.net/) develops a suite of open source tools, to capture websites and replay them at a later time as accurately as possible. Webrecorder also publishes the [WACZ file format spec](https://specs.webrecorder.net/wacz/latest).
 
@@ -121,7 +123,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ### From Rhizome.org (Conifer)
 
-<img src="http://web.archive.org/web/20201025154037im_/https://blog.conifer.rhizome.org/assets/Conifer%20Rhiz%20Horizontal%20@2x.png" alttext="Conifer by Rhizome Logo" width="150px" align="right" style="float: right; margin: 5px"/>
+<img src="https://github.com/rhizome-conifer.png" width="128px" align="right" style="float: right; margin: 5px"/>
 
 - **[Conifer by Rhizome.org](https://conifer.rhizome.org/)** **An open-source personal archiving server that uses pywb under the hood.** [Previously affiliated with Webrecorder](https://blog.conifer.rhizome.org/2020/06/11/webrecorder-conifer.html)
 
@@ -129,7 +131,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ### From the Old Dominion University: Web Science Team
 
-<img src="https://avatars2.githubusercontent.com/u/4416806?s=280&v=4" width="130px" align="right" style="float: right; margin: 5px"/>
+<img src="https://github.com/oduwsdl.png" width="128px" align="right" style="float: right; margin: 5px"/>
 
 - **[ipwb](https://github.com/oduwsdl/ipwb) A distributed web archiving solution using pywb with IPFS for storage**
 - **[archivenow](https://github.com/oduwsdl/archivenow) tool that pushes urls into all the online archive services like Archive.is and Archive.org**
@@ -144,7 +146,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ### From the Archives Unleashed Team
 
-<img src="https://archivesunleashed.org/images/hairball-roboto.png" width="220px" align="right" style="float: right; margin: 5px"/>
+<img src="https://github.com/archivesunleashed.png" width="128px" align="right" style="float: right; margin: 5px"/>
 
 - [AUT](https://github.com/archivesunleashed/aut) Archives Unleashed Toolkit for analyzing web archives (formerly WarcBase) 
 - [Warclight](https://github.com/archivesunleashed/warclight) A Rails engine for finding and searching web archives
@@ -152,9 +154,9 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ---
 
-<img src="https://imgur.zervice.io/iaFQa9S.png" width="220px" align="right" style="float: right; margin: 5px"/>
-
 ### From the IIPC team
+
+<img src="https://github.com/iipc.png" width="128px" align="right" style="float: right; margin: 5px"/>
 
 - **[OpenWayback](https://github.com/iipc/openwayback/wiki) Open source project developing core Wayback Machine components**
 - **[awesome-web-archiving](https://github.com/iipc/awesome-web-archiving) Large list of archiving projects and orgs**
@@ -198,7 +200,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 - **[Reminiscence](https://github.com/kanishka-linux/reminiscence/) extremely similar to ArchiveBox, uses a Django backend + UI and provides auto-tagging and summary features with NLTK**
 - **[Shaarchiver](https://github.com/nodiscc/shaarchiver) very similar project that archives Firefox, Shaarli, or Delicious bookmarks and all linked media, generating a markdown/HTML index**
 - **[Archivy](https://github.com/archivy/archivy) Python-based self-hosted knowledge base embedded into your filesystem**
-- **[Polarized](https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline**
+- **[Polarized](https://web.archive.org/web/20221225012011/https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline**
 - **[LinkWarden](https://github.com/linkwarden/linkwarden) Link archival and curation web app, very similar to ArchiveBox**
 - **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support**
 - **[Scoop](https://github.com/harvard-lil/scoop)** Create high-fidelity WARC/WACZ captures using a playwright browser, with support for signing, media extraction, PDFs, etc. ([by the Perma.cc team](https://lil.law.harvard.edu/blog/2023/04/13/scoop-witnessing-the-web/))
