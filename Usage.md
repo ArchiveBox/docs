@@ -123,6 +123,25 @@ archivebox add < output/sources/safari_history.json
 
 <br/>
 
+### Import browser cookies into a persona
+
+To archive logged-in sites, you can import cookies from your browser into a persona. This generates a `cookies.txt` file in the persona directory (used by wget/curl/yt-dlp, etc.) and, for Chromium-based browsers, also copies the profile into the persona so Chrome-based extractors can reuse it.
+
+```bash
+archivebox persona create --import=chrome personal
+# supported: chrome/chromium/brave/edge (Chromium-based only)
+# use --profile to target a specific profile (e.g. Default, Profile 1)
+# re-running import merges/dedupes cookies.txt (by domain/path/name) but replaces chrome_user_data
+```
+
+If cookie extraction fails, you can still export a Netscape-format `cookies.txt` using a browser extension and place it at `data/personas/<NAME>/cookies.txt`.
+
+<br/>
+
+---
+
+<br/>
+
 ## UI Usage
 
 ```bash

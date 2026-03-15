@@ -516,6 +516,15 @@ Cookies file to pass to `wget`, `curl`, `yt-dlp` and other extractors that don't
 
 You can generate this `cookies.txt` file by using a number of different [browser extensions](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc) that can export your cookies in this format, or by using `wget` on the command line with `--save-cookies` + `--user=... --password=...`.
 
+Alternatively, you can create a persona and import cookies directly from your browser profile:
+
+```bash
+archivebox persona create --import=chrome personal
+# supported: chrome/chromium/brave/edge (Chromium-based only)
+# use --profile to target a specific profile (e.g. Default, Profile 1)
+# re-running import merges/dedupes cookies.txt (by domain/path/name) but replaces chrome_user_data
+```
+
 > [!WARNING]
 > **Make sure you use separate burner credentials dedicated to archiving,** e.g. don't re-use your normal daily Facebook/Instagram/Youtube/etc. account cookies as server responses often contain your name/email/PII, session tokens, etc. which then get preserved in your snapshots!  
 >  

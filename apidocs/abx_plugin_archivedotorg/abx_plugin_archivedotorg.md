@@ -13,7 +13,7 @@
 :titlesonly:
 :maxdepth: 1
 
-abx_plugin_archivedotorg.archive_org
+abx_plugin_archivedotorg.archivedotorg
 abx_plugin_archivedotorg.config
 ```
 
