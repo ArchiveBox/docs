@@ -194,6 +194,14 @@
 
 ````
 
+````{py:method} test_list_view_avoids_legacy_title_fallbacks(client, admin_user, snapshot, monkeypatch)
+:canonical: archivebox.tests.test_admin_views.TestAdminSnapshotListView.test_list_view_avoids_legacy_title_fallbacks
+
+```{autodoc2-docstring} archivebox.tests.test_admin_views.TestAdminSnapshotListView.test_list_view_avoids_legacy_title_fallbacks
+```
+
+````
+
 ````{py:method} test_grid_view_renders(client, admin_user)
 :canonical: archivebox.tests.test_admin_views.TestAdminSnapshotListView.test_grid_view_renders
 

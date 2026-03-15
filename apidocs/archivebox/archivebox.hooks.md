@@ -27,10 +27,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`extract_step <archivebox.hooks.extract_step>`
-  - ```{autodoc2-docstring} archivebox.hooks.extract_step
-    :summary:
-    ```
 * - {py:obj}`is_background_hook <archivebox.hooks.is_background_hook>`
   - ```{autodoc2-docstring} archivebox.hooks.is_background_hook
     :summary:
@@ -59,24 +55,12 @@
   - ```{autodoc2-docstring} archivebox.hooks.collect_urls_from_plugins
     :summary:
     ```
-* - {py:obj}`run_hooks <archivebox.hooks.run_hooks>`
-  - ```{autodoc2-docstring} archivebox.hooks.run_hooks
-    :summary:
-    ```
 * - {py:obj}`get_plugins <archivebox.hooks.get_plugins>`
   - ```{autodoc2-docstring} archivebox.hooks.get_plugins
     :summary:
     ```
-* - {py:obj}`get_parser_plugins <archivebox.hooks.get_parser_plugins>`
-  - ```{autodoc2-docstring} archivebox.hooks.get_parser_plugins
-    :summary:
-    ```
 * - {py:obj}`get_plugin_name <archivebox.hooks.get_plugin_name>`
   - ```{autodoc2-docstring} archivebox.hooks.get_plugin_name
-    :summary:
-    ```
-* - {py:obj}`is_parser_plugin <archivebox.hooks.is_parser_plugin>`
-  - ```{autodoc2-docstring} archivebox.hooks.is_parser_plugin
     :summary:
     ```
 * - {py:obj}`get_enabled_plugins <archivebox.hooks.get_enabled_plugins>`
@@ -109,22 +93,6 @@
     ```
 * - {py:obj}`get_plugin_icon <archivebox.hooks.get_plugin_icon>`
   - ```{autodoc2-docstring} archivebox.hooks.get_plugin_icon
-    :summary:
-    ```
-* - {py:obj}`get_all_plugin_icons <archivebox.hooks.get_all_plugin_icons>`
-  - ```{autodoc2-docstring} archivebox.hooks.get_all_plugin_icons
-    :summary:
-    ```
-* - {py:obj}`discover_plugin_templates <archivebox.hooks.discover_plugin_templates>`
-  - ```{autodoc2-docstring} archivebox.hooks.discover_plugin_templates
-    :summary:
-    ```
-* - {py:obj}`find_binary_for_cmd <archivebox.hooks.find_binary_for_cmd>`
-  - ```{autodoc2-docstring} archivebox.hooks.find_binary_for_cmd
-    :summary:
-    ```
-* - {py:obj}`create_model_record <archivebox.hooks.create_model_record>`
-  - ```{autodoc2-docstring} archivebox.hooks.create_model_record
     :summary:
     ```
 * - {py:obj}`process_hook_records <archivebox.hooks.process_hook_records>`
@@ -173,13 +141,6 @@
 ```{autodoc2-docstring} archivebox.hooks.USER_PLUGINS_DIR
 ```
 
-````
-
-````{py:function} extract_step(hook_name: str) -> int
-:canonical: archivebox.hooks.extract_step
-
-```{autodoc2-docstring} archivebox.hooks.extract_step
-```
 ````
 
 ````{py:function} is_background_hook(hook_name: str) -> bool
@@ -357,13 +318,6 @@ Bases: {py:obj}`typing.TypedDict`
 ```
 ````
 
-````{py:function} run_hooks(event_name: str, output_dir: pathlib.Path, config: typing.Dict[str, typing.Any], timeout: typing.Optional[int] = None, stop_on_failure: bool = False, **kwargs: typing.Any) -> typing.List[archivebox.hooks.HookResult]
-:canonical: archivebox.hooks.run_hooks
-
-```{autodoc2-docstring} archivebox.hooks.run_hooks
-```
-````
-
 ````{py:function} get_plugins() -> typing.List[str]
 :canonical: archivebox.hooks.get_plugins
 
@@ -371,24 +325,10 @@ Bases: {py:obj}`typing.TypedDict`
 ```
 ````
 
-````{py:function} get_parser_plugins() -> typing.List[str]
-:canonical: archivebox.hooks.get_parser_plugins
-
-```{autodoc2-docstring} archivebox.hooks.get_parser_plugins
-```
-````
-
 ````{py:function} get_plugin_name(plugin: str) -> str
 :canonical: archivebox.hooks.get_plugin_name
 
 ```{autodoc2-docstring} archivebox.hooks.get_plugin_name
-```
-````
-
-````{py:function} is_parser_plugin(plugin: str) -> bool
-:canonical: archivebox.hooks.is_parser_plugin
-
-```{autodoc2-docstring} archivebox.hooks.is_parser_plugin
 ```
 ````
 
@@ -455,34 +395,6 @@ Bases: {py:obj}`typing.TypedDict`
 :canonical: archivebox.hooks.get_plugin_icon
 
 ```{autodoc2-docstring} archivebox.hooks.get_plugin_icon
-```
-````
-
-````{py:function} get_all_plugin_icons() -> typing.Dict[str, str]
-:canonical: archivebox.hooks.get_all_plugin_icons
-
-```{autodoc2-docstring} archivebox.hooks.get_all_plugin_icons
-```
-````
-
-````{py:function} discover_plugin_templates() -> typing.Dict[str, typing.Dict[str, str]]
-:canonical: archivebox.hooks.discover_plugin_templates
-
-```{autodoc2-docstring} archivebox.hooks.discover_plugin_templates
-```
-````
-
-````{py:function} find_binary_for_cmd(cmd: typing.List[str], machine_id: str) -> typing.Optional[str]
-:canonical: archivebox.hooks.find_binary_for_cmd
-
-```{autodoc2-docstring} archivebox.hooks.find_binary_for_cmd
-```
-````
-
-````{py:function} create_model_record(record: typing.Dict[str, typing.Any]) -> typing.Any
-:canonical: archivebox.hooks.create_model_record
-
-```{autodoc2-docstring} archivebox.hooks.create_model_record
 ```
 ````
 
