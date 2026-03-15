@@ -19,10 +19,15 @@ Environment variables take precedence over the config file, which is useful if y
 
 **Available Configuration Options:**
  - [General Settings:](#general-settings) Archiving process, output format, and timing.
+ - [Server Settings:](#server-settings) Web UI, auth, and reverse proxy options.
+ - [Storage Settings:](#storage-settings) File layout, permissions, and temp directories.
+ - [Search Settings:](#search-settings) Full-text search backend configuration.
  - [Archive Method Toggles:](#archive-method-toggles) On/off switches for methods.
  - [Archive Method Options:](#archive-method-options) Method tunables and parameters.
  - [Shell Options:](#shell-options) Format & behavior of CLI output.
- - [Dependency Options:](#dependency-options) Specify exact paths to dependencies. 
+ - [Dependency Options:](#dependency-options) Specify exact paths to dependencies.
+ - [LDAP Settings:](#ldap-settings) LDAP/Active Directory authentication.
+ - [Plugin Settings:](#plugin-settings) Per-plugin configuration options.
 
 <br/>
 
@@ -30,7 +35,7 @@ Environment variables take precedence over the config file, which is useful if y
 
 <img src="https://imgur.zervice.io/iTYT7Ip.png" width="100%"/>
 <p align="center">
-<i>In case this document is ever out of date, it's recommended to read the code that loads the config directly: <a href="https://github.com/ArchiveBox/ArchiveBox/blob/master/archivebox/config.py#L27"><code>archivebox/config.py</code></a> ➡️</i>
+<i>In case this document is ever out of date, check the source code for config definitions: <a href="https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/config/common.py"><code>archivebox/config/common.py</code></a> ➡️</i>
 </p>
 
 ## General Settings
@@ -38,47 +43,8 @@ Environment variables take precedence over the config file, which is useful if y
 *General options around the archiving process, output format, and timing.*
 
 ---
-#### `OUTPUT_PERMISSIONS`
-**Possible Values:** [`755`]/`644`/...  
-Permissions to set the output directory and file contents to.  
-
-This is useful when running ArchiveBox inside Docker as root and you need to explicitly set the permissions to something that the users on the host can access.
-
-*Related options:*  
-[`PUID` / `PGID`](#puid--pgid)
-
----
-
-<a name="puid--pgid"/>
-<a name="puid"/>
-<a name="pgid"/>
-
-#### `PUID` / `PGID`
-
-**Possible Values:** [`911`]/`1000`/...
-
-*Note: Only applicable for Docker users, settable via environment varaibles only.*   
-(not `ArchiveBox.conf` , `archivebox config --set ...`)
-
-User and Group ID that the data directory should be owned by. We recommend leaving this as the default `911` and running `chown -R 911:$(id -g) ./data` outside Docker, this will make sure your data is writable by both ArchiveBox inside Docker and host users in your group outside of Docker.
-
-`PUID=0` is not allowed ([do not run as root](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#do-not-run-as-root)), `PGID=0` is allowed but **not recommended**.  Trying to use `PUID`s and `PGID`s below `100` is not advised and causes many issues because they're often [already in use](https://github.com/ArchiveBox/ArchiveBox/discussions/1366) by an existing system user inside docker. If for some reason you `must` use a low value ID e.g. `33` (`www-data`), you may need to use [`bindfs`](https://github.com/clecherbauer/docker-volume-bindfs) to remap the permissions for ArchiveBox.
-
-If using NFS/SMB/FUSE, make sure that the volume allows setting ownership on files (e.g. don't set `root_squash` or `all_squash` on NFS shares).
-
-*Learn more:*  
-- https://docs.linuxserver.io/general/understanding-puid-and-pgid/
-- https://github.com/ArchiveBox/ArchiveBox/wiki/Troubleshooting#docker-permissions-issues
-- https://github.com/ArchiveBox/ArchiveBox/issues/1304
-- https://github.com/ArchiveBox/ArchiveBox/discussions/1366
-- https://github.com/ArchiveBox/ArchiveBox/blob/main/bin/docker_entrypoint.sh
-
-*Related options:*  
-[`OUTPUT_PERMISSIONS`](#output_permissions)
-
----
 #### `ONLY_NEW`
-**Possible Values:** [`True`]/`False`  
+**Possible Values:** [`True`]/`False`
 Toggle whether or not to attempt rechecking old links when adding new ones, or leave old incomplete links alone and only archive the new links.
 
 By default, ArchiveBox will only archive new links on each import. If you want it to go back through all links in the index and download any missing files on every run, set this to `False`.
@@ -86,21 +52,121 @@ By default, ArchiveBox will only archive new links on each import. If you want i
 *Note: Regardless of how this is set, ArchiveBox will never re-download sites that have already succeeded previously. When this is `False` it only attempts to fix previous pages have *missing* archive extractor outputs, it does not re-archive pages that have already been successfully archived.*
 
 ---
-#### `TIMEOUT`
-**Possible Values:** [`60`]/`120`/...  
-Maximum allowed download time per archive method for each link in seconds.  If you have a slow network connection or are seeing frequent timeout errors, you can raise this value.
-
-*Note: Do not set this to anything less than `15` seconds as it will cause Chrome to hang indefinitely and many sites to fail completely.*
+#### `OVERWRITE`
+**Possible Values:** [`False`]/`True`
+When set to `True`, ArchiveBox will re-archive URLs even if they have already been successfully archived before, overwriting any existing output.
 
 ---
-#### `MEDIA_TIMEOUT`
-**Possible Values:** [`3600`]/`120`/...  
-Maximum allowed download time for fetching media when `SAVE_MEDIA=True` in seconds.  This timeout is separate and usually much longer than `TIMEOUT` because media downloaded with `youtube-dl` can often be quite large and take many minutes/hours to download.  Tweak this setting based on your network speed and maximum media file size you plan on downloading.
+#### `TIMEOUT`
+**Possible Values:** [`60`]/`120`/...
+Maximum allowed download time per archive method for each link in seconds.  If you have a slow network connection or are seeing frequent timeout errors, you can raise this value.
 
-*Note: Do not set this to anything less than `10` seconds as it can often take 5-10 seconds for `youtube-dl` just to parse the page before it starts downloading media files.*
+*Note: Do not set this to anything less than `5` seconds as it will cause Chrome to hang indefinitely and many sites to fail completely.*
 
-*Related options:*  
-[`SAVE_MEDIA`](#save_media)
+---
+#### `MAX_URL_ATTEMPTS`
+**Possible Values:** [`50`]/`100`/...
+Maximum number of times ArchiveBox will attempt to archive a URL before giving up. Useful for handling transient failures.
+
+---
+#### `RESOLUTION`
+**Possible Values:** [`1440,2000`]/`1024,768`/...
+Default screenshot/PDF resolution in pixels width,height. Used as the fallback for `SCREENSHOT_RESOLUTION`, `PDF_RESOLUTION`, and `CHROME_RESOLUTION`.
+
+---
+#### `CHECK_SSL_VALIDITY`
+**Possible Values:** [`True`]/`False`
+Whether to enforce HTTPS certificate and HSTS chain of trust when archiving sites.  Set this to `False` if you want to archive pages even if they have expired or invalid certificates.  Be aware that when `False` you cannot guarantee that you have not been man-in-the-middle'd while archiving content, so the content cannot be verified to be what's on the original site.
+
+---
+#### `USER_AGENT`
+**Possible Values:** [`Mozilla/5.0 ... ArchiveBox/{VERSION} ...`]/`"Mozilla/5.0 ..."`/...
+The default user agent string used during archiving. Individual extractors (wget, Chrome, curl, etc.) can override this with their own `*_USER_AGENT` settings, or fall back to this value.
+
+---
+#### `COOKIES_FILE`
+**Possible Values:** [`None`]/`/path/to/cookies.txt`/...
+
+Cookies file to pass to `wget`, `curl`, `yt-dlp` and other extractors that don't use Chrome (with its `CHROME_USER_DATA_DIR`) for authentication.  To capture sites that require a user to be logged in, you configure this option to point to a [netscape-format `cookies.txt`](http://www.cookiecentral.com/faq/#3.5) file containing all the cookies you want to use during archiving.
+
+You can generate this `cookies.txt` file by using a number of different [browser extensions](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc) that can export your cookies in this format, or by using `wget` on the command line with `--save-cookies` + `--user=... --password=...`.
+
+Alternatively, you can create a persona and import cookies directly from your browser profile:
+
+```bash
+archivebox persona create --import=chrome personal
+# supported: chrome/chromium/brave/edge (Chromium-based only)
+# use --profile to target a specific profile (e.g. Default, Profile 1)
+# re-running import merges/dedupes cookies.txt (by domain/path/name) but replaces chrome_user_data
+```
+
+> [!WARNING]
+> **Make sure you use separate burner credentials dedicated to archiving,** e.g. don't re-use your normal daily Facebook/Instagram/Youtube/etc. account cookies as server responses often contain your name/email/PII, session tokens, etc. which then get preserved in your snapshots!
+
+*Related options:*
+[`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`DEFAULT_PERSONA`](#default_persona)
+
+---
+#### `DEFAULT_PERSONA`
+**Possible Values:** [`Default`]/`personal`/`work`/...
+The persona profile to use by default when archiving. Personas allow you to have separate sets of cookies, Chrome profiles, and user agent strings for different archiving contexts.
+
+```bash
+archivebox persona create --import=chrome personal
+archivebox config --set DEFAULT_PERSONA=personal
+```
+
+---
+
+<a name="url_blacklist"/>
+
+#### `URL_DENYLIST`
+**Possible Values:** [`\.(css|js|otf|ttf|woff|woff2|gstatic\.com|googleapis\.com/css)(\?.*)?$`]/`.+\.exe$`/`http(s)?:\/\/(.+)?example.com\/.*`/...
+
+A regex expression used to exclude certain URLs from archiving.  You can use if there are certain domains, extensions, or other URL patterns that you want to ignore whenever they get imported.  Blacklisted URLs wont be included in the index, and their page content wont be archived.
+
+*Note: all assets required to render each page are still archived, `URL_DENYLIST`/`URL_ALLOWLIST` do not apply to images, css, video, etc. visible inline within the page.*
+
+*Related options:*
+[`URL_ALLOWLIST`](#URL_ALLOWLIST), [`SAVE_ALLOWLIST`](#SAVE_ALLOWLIST), [`SAVE_DENYLIST`](#SAVE_DENYLIST)
+
+---
+
+<a name="url_whitelist"/>
+
+#### `URL_ALLOWLIST`
+**Possible Values:** [`None`]/`^http(s)?:\/\/(.+)?example\.com\/?.*$`/...
+
+A regex expression used to exclude all URLs that don't match the given pattern from archiving. Useful for **recursive archiving** of all the pages under a given domain or subfolder (aka crawling/spidering), without following links to external domains / parent folders.
+
+```bash
+export URL_ALLOWLIST='^http(s)?:\/\/(.+)?example\.com\/?.*$'
+archivebox add --depth=1 'https://example.com'
+```
+
+*Related options:*
+[`URL_DENYLIST`](#URL_DENYLIST), [`SAVE_ALLOWLIST`](#SAVE_ALLOWLIST), [`SAVE_DENYLIST`](#SAVE_DENYLIST)
+
+---
+#### `SAVE_ALLOWLIST`
+**Possible Values:** [`{}`]/`{".*example\\.com.*": ["screenshot", "pdf"]}`/...
+A JSON dictionary mapping URL regex patterns to lists of archive methods. Only the specified methods will be used for URLs matching each pattern. Useful for selectively archiving certain sites with only specific extractors.
+
+---
+#### `SAVE_DENYLIST`
+**Possible Values:** [`{}`]/`{".*\\.pdf$": ["screenshot", "dom"]}`/...
+A JSON dictionary mapping URL regex patterns to lists of archive methods to *skip*. Methods listed here will be skipped for URLs matching each pattern.
+
+---
+#### `TAG_SEPARATOR_PATTERN`
+**Possible Values:** [`[,]`]/`[,;]`/...
+Regex pattern used to split tag strings into individual tags. By default, only commas are used as tag separators.
+
+---
+
+## Server Settings
+
+*Options for the web UI, authentication, and reverse proxy configuration.*
 
 ---
 
@@ -109,25 +175,20 @@ Maximum allowed download time for fetching media when `SAVE_MEDIA=True` in secon
 
 #### `ADMIN_USERNAME` / `ADMIN_PASSWORD`
 
-**Possible Values:** [`None`]/`"admin"`/...  
+**Possible Values:** [`None`]/`"admin"`/...
 
 Only used on first run / initial setup in Docker. ArchiveBox will create an admin user with the specified username and password when these options are found in the environment.
-Useful for setting up a Docker instance of ArchiveBox without needing to run a shell command to create the admin user.
 
 Equivalent to:
 ```bash
 $ archivebox manage createsuperuser
 Username: <ADMIN_USERNAME>
 Password: <ADMIN_PASSWORD>
-Password (again): <ADMIN_PASSWORD>
 ```
 
 More info:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Docker#configuration
-
-*Related options:*  
-[`PUBLIC_INDEX / PUBLIC_SNAPSHOTS / PUBLIC_ADD_VIEW`](#public_index)
 
 ---
 
@@ -151,33 +212,69 @@ archivebox config --set PUBLIC_ADD_VIEW=False    # True = allow users to submit 
 
 More info:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
-- https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#ui-usage
+
+---
+#### `SECRET_KEY`
+**Possible Values:** *auto-generated random string*
+Django's secret key for cryptographic signing (sessions, CSRF tokens, etc.). Automatically generated on first run. You should not need to change this unless you're running multiple ArchiveBox instances that need to share sessions.
+
+---
+#### `BIND_ADDR`
+**Possible Values:** [`127.0.0.1:8000`]/`0.0.0.0:8000`/...
+Address and port for the ArchiveBox web server to listen on.
+
+```bash
+archivebox config --set BIND_ADDR=0.0.0.0:8000    # listen on all interfaces
+archivebox server                                   # starts on configured address
+```
+
+---
+#### `LISTEN_HOST`
+**Possible Values:** [`archivebox.localhost:8000`]/`archive.example.com:443`/...
+The public hostname and port that ArchiveBox is accessible at. Used for generating absolute URLs in the web UI.
+
+---
+#### `ALLOWED_HOSTS`
+**Possible Values:** [`*`]/`archive.example.com,localhost`/...
+Comma-separated list of allowed HTTP Host header values. Set this to your domain name(s) in production for security. `*` allows all hosts (default, convenient for development).
+
+---
+#### `CSRF_TRUSTED_ORIGINS`
+**Possible Values:** [`http://admin.archivebox.localhost:8000`]/`https://archive.example.com`/...
+Comma-separated list of trusted origins for CSRF validation. Must include the scheme (http/https). Required when running behind a reverse proxy.
+
+---
+#### `ADMIN_BASE_URL`
+**Possible Values:** [`""`]/`/admin/`/...
+Base URL path for the Django admin interface. Leave empty to use the default.
+
+---
+#### `ARCHIVE_BASE_URL`
+**Possible Values:** [`""`]/`/archive/`/...
+Base URL path for serving archived content.
+
+---
+#### `SNAPSHOTS_PER_PAGE`
+**Possible Values:** [`40`]/`100`/...
+Maximum number of Snapshots to show per page on Snapshot list pages. Lower this value on slower machines to make the UI faster.
+
+---
+#### `PREVIEW_ORIGINALS`
+**Possible Values:** [`True`]/`False`
+Whether to show inline previews of the original URL on snapshot detail pages.
+
+---
+#### `FOOTER_INFO`
+**Possible Values:** [`Content is hosted for personal archiving purposes only.  Contact server owner for any takedown requests.`]/`Operated by ACME Co.`/...
+Some text to display in the footer of the archive index.  Useful for providing server admin contact info to respond to takedown requests.
 
 ---
 #### `CUSTOM_TEMPLATES_DIR`
-**Possible Values:** [`None`]/`/path/to/custom_templates`/...  
+**Possible Values:** [`data/custom_templates`]/`/path/to/custom_templates`/...
 
-Path to a directory containing custom html/css/images for overriding the default UI styling.  Files found in the folder at the specified path can override any of the defaults in the [`TEMPLATES_DIR`](https://github.com/ArchiveBox/ArchiveBox/tree/dev/archivebox/templates) directory (copy files from that default dir into your custom dir to get started making a custom theme).
+Path to a directory containing custom html/css/images for overriding the default UI styling.  Files found in the folder at the specified path can override any of the defaults in the [`TEMPLATES_DIR`](https://github.com/ArchiveBox/ArchiveBox/tree/dev/archivebox/templates) directory.
 
-If you've used `django` before, this works exactly the same way that `django` template overrides work (because it uses `django` under the hood).
-
-```bash
-pip show -f archivebox | grep Location: | awk '{print $2}'
-# /opt/homebrew/lib/python3.11/site-packages
-
-pip show -f archivebox | grep archivebox/templates
-# archivebox/templates/admin/app_index.html
-# archivebox/templates/admin/base.html
-# archivebox/templates/admin/login.html
-# ...
-
-# copy default templates into a directory somewhere, edit as needed, then point archivebox to it, e.g.
-cp -r /opt/homebrew/lib/python3.11/site-packages/archivebox/templates ~/archivebox/custom_templates
-archivebox config --set CUSTOM_TEMPLATES_DIR=~/archivebox/data/custom_templates
-```
-
-*Related options:*  
-[`FOOTER_INFO`](#footer_info)
+If you've used `django` before, this works exactly the same way that `django` template overrides work.
 
 ---
 #### `REVERSE_PROXY_USER_HEADER`
@@ -187,7 +284,6 @@ HTTP header containing user name from authenticated proxy.
 
 More info:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
-- https://github.com/ArchiveBox/ArchiveBox/pull/866
 
 *Related options:*
 [`REVERSE_PROXY_WHITELIST`](#REVERSE_PROXY_WHITELIST), [`LOGOUT_REDIRECT_URL`](#LOGOUT_REDIRECT_URL)
@@ -198,10 +294,6 @@ More info:
 
 Comma separated list of IP CIDRs which are allowed to use reverse proxy authentication. Both IPv4 and IPv6 IPs can be used next to each other. Empty string means "deny all".
 
-More info:
-- https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
-- https://github.com/ArchiveBox/ArchiveBox/pull/866
-
 *Related options:*
 [`REVERSE_PROXY_USER_HEADER`](#REVERSE_PROXY_USER_HEADER), [`LOGOUT_REDIRECT_URL`](#LOGOUT_REDIRECT_URL)
 
@@ -211,372 +303,508 @@ More info:
 
 URL to redirect users back to on logout when using reverse proxy authentication.
 
-More info:
-- https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
-- https://github.com/ArchiveBox/ArchiveBox/pull/866
+---
+
+## Storage Settings
+
+*Options for file layout, permissions, and temp/lib directories.*
+
+---
+#### `OUTPUT_PERMISSIONS`
+**Possible Values:** [`644`]/`755`/...
+Permissions to set output files to. This is useful when running ArchiveBox inside Docker as root and you need to explicitly set the permissions to something that the users on the host can access.
 
 *Related options:*
-[`REVERSE_PROXY_USER_HEADER`](#REVERSE_PROXY_USER_HEADER), [`REVERSE_PROXY_WHITELIST`](#REVERSE_PROXY_WHITELIST)
-
----
-#### `LDAP`
-**Possible Values:** [`False`]/`True`
-
-Whether to use an external [LDAP](https://jumpcloud.com/blog/what-is-ldap-authentication) server for authentication (e.g. OpenLDAP, MS Active Directory, OpenDJ, etc.).
-
-```bash
-# first, install optional ldap addon to use this feature
-pip install archivebox[ldap]
-```
-
-Then set these configuration values to finish configuring LDAP:
-```yaml
-LDAP: True
-LDAP_SERVER_URI: "ldap://ldap.example.com:3389"
-LDAP_BIND_DN: "ou=archivebox,ou=services,dc=ldap.example.com"
-LDAP_BIND_PASSWORD: "secret-bind-user-password"
-LDAP_USER_BASE: "ou=users,ou=archivebox,ou=services,dc=ldap.example.com"
-LDAP_USER_FILTER: "(objectClass=user)"
-
-LDAP_USERNAME_ATTR: "uid"
-LDAP_FIRSTNAME_ATTR: "givenName"
-LDAP_LASTNAME_ATTR: "sn"
-LDAP_EMAIL_ATTR: "mail"
-```
-
-More info:
-- https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
-- https://github.com/ArchiveBox/ArchiveBox/pull/1214
-- https://github.com/django-auth-ldap/django-auth-ldap#example-configuration
-- https://jumpcloud.com/blog/what-is-ldap-authentication
-
----
-#### `SNAPSHOTS_PER_PAGE`
-**Possible Values:** [`40`]/`100`/...  
-
-Maximum number of Snapshots to show per page on Snapshot list pages. Lower this value on slower machines to make the UI faster.
-
-*Related options:*  
-[`SEARCH_BACKEND_TIMEOUT`](#search_backend_timeout)
-
----
-#### `FOOTER_INFO`
-**Possible Values:** [`Content is hosted for personal archiving purposes only.  Contact server owner for any takedown requests.`]/`Operated by ACME Co.`/...  
-Some text to display in the footer of the archive index.  Useful for providing server admin contact info to respond to takedown requests.
-
-*Related options:*  
-[`TEMPLATES_DIR`](#templates_dir)
+[`PUID` / `PGID`](#puid--pgid)
 
 ---
 
-<a name="url_blacklist"/>
+<a name="puid--pgid"/>
+<a name="puid"/>
+<a name="pgid"/>
 
-#### `URL_DENYLIST`
-**Possible Values:** [`\.(css|js|otf|ttf|woff|woff2|gstatic\.com|googleapis\.com/css)(\?.*)?$`]/`.+\.exe$`/`http(s)?:\/\/(.+)?example.com\/.*`/...  
+#### `PUID` / `PGID`
 
-A regex expression used to exclude certain URLs from archiving.  You can use if there are certain domains, extensions, or other URL patterns that you want to ignore whenever they get imported.  Blacklisted URLs wont be included in the index, and their page content wont be archived.
+**Possible Values:** [`911`]/`1000`/...
 
-When building your exclusion list, you can check whether a given URL matches your regex expression in `python` like so:
-```python
->>> import re
->>> URL_DENYLIST = r'^http(s)?:\/\/(.+\.)?(youtube\.com)|(amazon\.com)\/.*$'  # replace this with your regex to test
->>> URL_DENYLIST_PTN = re.compile(URL_DENYLIST, re.IGNORECASE | re.UNICODE | re.MULTILINE)
+*Note: Only applicable for Docker users, settable via environment variables only.*
+(not `ArchiveBox.conf` , `archivebox config --set ...`)
 
->>> bool(URL_DENYLIST_PTN.search('https://test.youtube.com/example.php?abc=123'))  # replace this with the URL to test
-True   # this URL would not be archived because it matches the exclusion pattern
-```
+User and Group ID that the data directory should be owned by. We recommend leaving this as the default `911` and running `chown -R 911:$(id -g) ./data` outside Docker.
 
-*Note: all assets required to render each page are still archived, `URL_DENYLIST`/`URL_ALLOWLIST` do not apply to images, css, video, etc. visible inline within the page.*
+*Learn more:*
+- https://docs.linuxserver.io/general/understanding-puid-and-pgid/
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Troubleshooting#docker-permissions-issues
 
-<b>Note 2:</b> These options used to be called <a href="#url_whitelist"><code>URL_WHITELIST</code></a> & <a href="#url_blacklist"><code>URL_BLACKLIST</code></a> before <a href="https://github.com/ArchiveBox/ArchiveBox/releases"><code>v0.7.1</code></a>.
+---
+#### `RESTRICT_FILE_NAMES`
+**Possible Values:** [`windows`]/`unix`/`ascii`/...
+Restrict output filenames to be compatible with the given filesystem type. `windows` (default) replaces characters that are invalid on Windows filesystems.
 
-*Related options:*  
-[`URL_ALLOWLIST`](#URL_ALLOWLIST), [`SAVE_MEDIA`](#SAVE_MEDIA), [`SAVE_GIT`](#SAVE_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
+---
+#### `ENFORCE_ATOMIC_WRITES`
+**Possible Values:** [`True`]/`False`
+Whether to use atomic writes when saving files. This ensures files are never left in a half-written state, but may be slower on some filesystems.
+
+---
+#### `TMP_DIR`
+**Possible Values:** [`data/tmp/<machine_id>`]/`/tmp/archivebox/abc5d851`/...
+Path for temporary files, unix sockets, and supervisor config. Must be a local, fast, readable/writable directory. Must have a short path due to unix socket path length restrictions (<100 chars). Must NOT be a network mount or FUSE filesystem.
+
+ArchiveBox will try several fallback locations if the configured path is not usable.
+
+---
+#### `LIB_DIR`
+**Possible Values:** [`data/lib/<arch>-<os>`]/`/usr/local/share/archivebox/abc5`/...
+Path for installed binary dependencies (up to ~5GB). Must be local and fast for performance. Should not be a network mount.
+
+---
+#### `LIB_BIN_DIR`
+**Possible Values:** [`LIB_DIR/bin`]
+Path where installed binaries are symlinked for easy PATH management. Derived from `LIB_DIR / 'bin'`, prepended to PATH for all hook executions.
 
 ---
 
-<a name="url_whitelist"/>
+## Search Settings
 
-#### `URL_ALLOWLIST`
-**Possible Values:** [`None`]/`^http(s)?:\/\/(.+)?example\.com\/?.*$`/...  
+*Options for full-text search backend configuration.*
 
-A regex expression used to exclude all URLs that don't match the given pattern from archiving.  You can use if there are certain domains, extensions, or other URL patterns that you want to restrict the scope of archiving to (e.g. to only archive a single domain, subdirectory, or filetype, etc..
+---
+#### `USE_INDEXING_BACKEND`
+**Possible Values:** [`True`]/`False`
+Enable the search indexing backend. When enabled, ArchiveBox will index archived content for full-text search.
 
-When building your whitelist, you can check whether a given URL matches your regex expression in `python` like so:
-```python
->>> import re
->>> URL_ALLOWLIST = r'^http(s)?:\/\/(.+)?example\.com\/?.*$'  # replace this with your regex to test
->>> URL_ALLOWLIST_PTN = re.compile(URL_ALLOWLIST, re.IGNORECASE | re.UNICODE | re.MULTILINE)
+---
+#### `USE_SEARCHING_BACKEND`
+**Possible Values:** [`True`]/`False`
+Enable the search querying backend. When enabled, users can search through indexed content.
 
->>> bool(URL_ALLOWLIST_PTN.search('https://test.example.com/example.php?abc=123'))
-True      # this URL would be archived
+---
+#### `SEARCH_BACKEND_ENGINE`
+**Possible Values:** [`ripgrep`]/`sqlite`/`sonic`
+Which search backend engine to use for full-text search.
 
->>> bool(URL_ALLOWLIST_PTN.search('https://test.youtube.com/example.php?abc=123'))
-False     # this URL would be excluded from archiving
-```
+- **`ripgrep`** (default): Uses ripgrep to search through files on disk. No extra setup required.
+- **`sqlite`**: Uses SQLite FTS5 for full-text search. Stores index in a separate SQLite database.
+- **`sonic`**: Uses a [Sonic](https://github.com/valeriansaliou/sonic) search server. Requires running a Sonic instance.
 
-This option is useful for **recursive archiving** of all the pages under a given domain or subfolder (aka crawling/spidering), without following links to external domains / parent folders.
-```bash
-# temporarily enforce a whitelist by setting the option as an environment variable
-export URL_ALLOWLIST='^http(s)?:\/\/(.+)?example\.com\/?.*$'
+*Related options:*
+[`RIPGREP_BINARY`](#ripgrep_binary), [`SEARCH_BACKEND_SONIC_*`](#search_backend_sonic_host_name)
 
-# then run your archivebox commands in the same shell
-archivebox add --depth=1 'https://example.com'
-archivebox list https://example.com | archivebox add --depth=1
-archivebox list https://example.com | archivebox add --depth=1
-archivebox list https://example.com | archivebox add --depth=1   # repeat up to desired depth
-...
-# all URLs that don't match *.example.com will be excluded, e.g. a link to youtube.com would not be followed
-```
-
-*Note: all assets required to render each page are still archived, `URL_DENYLIST`/`URL_ALLOWLIST` do not apply to images, css, video, etc. visible inline within the page.*
-
-*Related options:*  
-[`URL_DENYLIST`](#URL_DENYLIST), [`SAVE_MEDIA`](#SAVE_MEDIA), [`SAVE_GIT`](#SAVE_GIT), [`GIT_DOMAINS`](#GIT_DOMAINS)
+---
+#### `SEARCH_PROCESS_HTML`
+**Possible Values:** [`True`]/`False`
+Whether to strip HTML tags before indexing content for search. When `True`, only the text content is indexed.
 
 ---
 
 ## Archive Method Toggles
 
-*High-level on/off switches for all the various methods used to archive URLs.*
+*High-level on/off switches for all the various methods used to archive URLs. In the new plugin architecture, each extractor has its own `*_ENABLED` toggle.*
 
 ---
-#### `SAVE_TITLE`
-**Possible Values:** [`True`]/`False`  
-By default ArchiveBox uses the title provided by the import file, but not all types of imports provide titles (e.g. Plain texts lists of URLs).  When this is True, ArchiveBox downloads the page (and follows all redirects), then it attempts to parse the link's title from the first `<title></title>` tag found in the response.  It may be buggy or not work for certain sites that use JS to set the title, disabling it will lead to links imported without a title showing up with their URL as the title in the UI.
-
-*Related options:*  
-[`ONLY_NEW`](#only_new), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
+#### `TITLE_ENABLED`
+**Possible Values:** [`True`]/`False`
+Extract the page title from the HTML `<title>` tag.
 
 ---
-#### `SAVE_FAVICON`
-**Possible Values:** [`True`]/`False`  
-Fetch and save favicon for the URL from Google's public favicon service: `https://www.google.com/s2/favicons?domain={domain}`.  Set this to `FALSE` if you don't need favicons.
-
-*Related options:*  
-[`TEMPLATES_DIR`](#templates_dir), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CURL_BINARY`](#curl_binary)
+#### `FAVICON_ENABLED`
+**Possible Values:** [`True`]/`False`
+Fetch and save the favicon for each archived URL.
 
 ---
-#### `SAVE_WGET`
-**Possible Values:** [`True`]/`False`  
-Fetch page with wget, and save responses into folders for each domain, e.g. `example.com/index.html`, with `.html` appended if not present.  For a full list of options used during the `wget` download process, see the `archivebox/archive_methods.py:save_wget(...)` function.
+#### `WGET_ENABLED`
+**Possible Values:** [`True`]/`False`
+Fetch page with wget and save responses into folders for each domain, with support for page requisites (CSS, JS, images).
 
-*Related options:*  
-[`TIMEOUT`](#timeout), [`SAVE_WGET_REQUISITES`](#save_wget_requisites), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`COOKIES_FILE`](#cookies_file), [`WGET_USER_AGENT`](#wget_user_agent), [`SAVE_WARC`](#save_warc), [`WGET_BINARY`](#wget_binary)
-
----
-#### `SAVE_WARC`
-**Possible Values:** [`True`]/`False`  
-Save a timestamped WARC archive of all the page requests and responses during the wget archive process.
-
-*Related options:*  
-[`TIMEOUT`](#timeout), [`SAVE_WGET_REQUISITES`](#save_wget_requisites), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`COOKIES_FILE`](#cookies_file), [`WGET_USER_AGENT`](#wget_user_agent), [`SAVE_WGET`](#save_wget), [`WGET_BINARY`](#wget_binary)
+*Related options:*
+[`WGET_WARC_ENABLED`](#wget_warc_enabled), [`WGET_TIMEOUT`](#wget_timeout), [`WGET_BINARY`](#wget_binary), [`WGET_ARGS`](#wget_args)
 
 ---
-#### `SAVE_PDF`
-**Possible Values:** [`True`]/`False`  
-Print page as PDF.
-
-*Related options:*  
-[`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary)
+#### `WGET_WARC_ENABLED`
+**Possible Values:** [`True`]/`False`
+Save a timestamped WARC archive of all page requests and responses during the wget download.
 
 ---
-#### `SAVE_SCREENSHOT`
-**Possible Values:** [`True`]/`False`  
-Fetch a screenshot of the page.
+#### `SCREENSHOT_ENABLED`
+**Possible Values:** [`True`]/`False`
+Capture a full-page screenshot using Chrome.
 
-*Related options:*  
-[`RESOLUTION`](#resolution), [`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary)
-
----
-#### `SAVE_DOM`
-**Possible Values:** [`True`]/`False`  
-Fetch a DOM dump of the page.
-
-*Related options:*  
-[`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary)
+*Related options:*
+[`SCREENSHOT_RESOLUTION`](#screenshot_resolution), [`SCREENSHOT_TIMEOUT`](#screenshot_timeout)
 
 ---
-#### `SAVE_SINGLEFILE`
-**Possible Values:** [`True`]/`False`  
-Fetch an HTML file with all assets embedded using [Single File](https://github.com/gildas-lormeau/SingleFile).
+#### `PDF_ENABLED`
+**Possible Values:** [`True`]/`False`
+Print page as PDF using Chrome.
 
-*Related options:*  
-[`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary), [`SINGLEFILE_BINARY`](#singlefile_binary)
+*Related options:*
+[`PDF_RESOLUTION`](#pdf_resolution), [`PDF_TIMEOUT`](#pdf_timeout)
 
 ---
-#### `SAVE_READABILITY`
-**Possible Values:** [`True`]/`False`  
+#### `DOM_ENABLED`
+**Possible Values:** [`True`]/`False`
+Capture a DOM snapshot of the page using Chrome.
+
+---
+#### `SINGLEFILE_ENABLED`
+**Possible Values:** [`True`]/`False`
+Fetch an HTML file with all assets embedded using [SingleFile](https://github.com/gildas-lormeau/SingleFile).
+
+*Related options:*
+[`SINGLEFILE_BINARY`](#singlefile_binary), [`SINGLEFILE_ARGS`](#singlefile_args), [`SINGLEFILE_TIMEOUT`](#singlefile_timeout)
+
+---
+#### `READABILITY_ENABLED`
+**Possible Values:** [`True`]/`False`
 Extract article text, summary, and byline using Mozilla's [Readability](https://github.com/mozilla/readability) library.
-Unlike the other methods, this does not download any additional files, so it's practically free from a disk usage perspective. It works by using any existing downloaded HTML version (e.g. wget, DOM dump, singlefile) and piping it into readability.
-
-*Related options:*  
-[`TIMEOUT`](#timeout), [`SAVE_WGET`](#save_wget), [`SAVE_DOM`](#save_dom), [`SAVE_SINGLEFILE`](#save_singlefile), [`SAVE_MERCURY`](#save_mercury)
 
 ---
-#### `SAVE_MERCURY`
-**Possible Values:** [`True`]/`False`  
-Extract article text, summary, and byline using the [Mercury](https://github.com/postlight/mercury-parser) library.
-Unlike the other methods, this does not download any additional files, so it's practically free from a disk usage perspective. It works by using any existing downloaded HTML version (e.g. wget, DOM dump, singlefile) and piping it into Mercury.
-
-*Related options:*  
-[`TIMEOUT`](#timeout), [`SAVE_WGET`](#save_wget), [`SAVE_DOM`](#save_dom), [`SAVE_SINGLEFILE`](#save_singlefile), [`SAVE_READABILITY`](#save_readability)
-
+#### `MERCURY_ENABLED`
+**Possible Values:** [`True`]/`False`
+Extract article text, summary, and byline using the [Mercury](https://github.com/postlight/mercury-parser) parser.
 
 ---
-#### `SAVE_GIT`
-**Possible Values:** [`True`]/`False`  
-Fetch any git repositories on the page.
-
-*Related options:*  
-[`TIMEOUT`](#timeout), [`GIT_DOMAINS`](#git_domains), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`GIT_BINARY`](#git_binary)
+#### `DEFUDDLE_ENABLED`
+**Possible Values:** [`True`]/`False`
+Extract article text using the [Defuddle](https://github.com/nicolo-ribaudo/defuddle) library, a newer alternative to Readability.
 
 ---
-#### `SAVE_MEDIA`
-**Possible Values:** [`True`]/`False`  
-Fetch all audio, video, annotations, and media metadata on the page using `youtube-dl`.  Warning, this can use up *a lot* of storage very quickly.
-
-*Related options:*  
-[`MEDIA_TIMEOUT`](#media_timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`YOUTUBEDL_BINARY`](#youtubedl_binary)
+#### `HTMLTOTEXT_ENABLED`
+**Possible Values:** [`True`]/`False`
+Convert archived HTML pages to plain text.
 
 ---
-#### `SAVE_ARCHIVE_DOT_ORG`
-**Possible Values:** [`True`]/`False`  
-Submit the page's URL to be archived on Archive.org. (The Internet Archive) 
+#### `TRAFILATURA_ENABLED`
+**Possible Values:** [`True`]/`False`
+Extract article text using [Trafilatura](https://trafilatura.readthedocs.io/), a Python library for web text extraction. Can output in multiple formats (text, markdown, HTML, JSON, XML, CSV).
 
-*Related options:*  
-[`TIMEOUT`](#timeout), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CURL_BINARY`](#curl_binary)
+---
+#### `GIT_ENABLED`
+**Possible Values:** [`True`]/`False`
+Clone any git repositories found on the page.
+
+*Related options:*
+[`GIT_DOMAINS`](#git_domains), [`GIT_BINARY`](#git_binary), [`GIT_ARGS`](#git_args)
+
+---
+#### `YTDLP_ENABLED`
+**Possible Values:** [`True`]/`False`
+Download audio, video, annotations, and media metadata using `yt-dlp`. Warning, this can use up *a lot* of storage very quickly.
+
+*Related options:*
+[`YTDLP_BINARY`](#ytdlp_binary), [`YTDLP_ARGS`](#ytdlp_args), [`YTDLP_MAX_SIZE`](#ytdlp_max_size)
+
+---
+#### `GALLERYDL_ENABLED`
+**Possible Values:** [`True`]/`False`
+Download image galleries using [gallery-dl](https://github.com/mikf/gallery-dl). Supports many image hosting sites.
+
+---
+#### `ARCHIVEDOTORG_ENABLED`
+**Possible Values:** [`True`]/`False`
+Submit the page's URL to be archived on Archive.org (The Internet Archive).
+
+---
+#### `CHROME_ENABLED`
+**Possible Values:** [`True`]/`False`
+Enable the Chrome/Chromium browser integration. This is required for screenshot, PDF, DOM, SingleFile, and many other extractors that depend on a browser.
+
+---
+
+#### Chrome Subextractor Toggles
+
+These extractors run inside Chrome during the page load and capture additional metadata:
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `DNS_ENABLED` | `True` | Record DNS queries during page load |
+| `SSL_ENABLED` | `True` | Capture SSL certificate info |
+| `HEADERS_ENABLED` | `True` | Capture HTTP response headers |
+| `REDIRECTS_ENABLED` | `True` | Capture redirect chains |
+| `RESPONSES_ENABLED` | `True` | Capture HTTP response bodies |
+| `CONSOLELOG_ENABLED` | `True` | Capture browser console.log output |
+| `ACCESSIBILITY_ENABLED` | `True` | Capture accessibility tree |
+| `SEO_ENABLED` | `True` | Extract SEO metadata |
+| `HASHES_ENABLED` | `True` | Generate merkle tree hashes of content |
+| `STATICFILE_ENABLED` | `True` | Detect and directly download static file URLs |
+
+#### Chrome Extension Toggles
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `UBLOCK_ENABLED` | `True` | Enable uBlock Origin ad blocking extension |
+| `ISTILLDONTCAREABOUTCOOKIES_ENABLED` | `True` | Enable cookie banner dismissal extension |
+| `TWOCAPTCHA_ENABLED` | `True` | Enable 2captcha CAPTCHA solver extension |
+| `MODALCLOSER_ENABLED` | `True` | Enable automatic modal/dialog closing |
+| `INFINISCROLL_ENABLED` | `True` | Enable infinite scroll page expansion |
+
+#### URL Parser Toggles
+
+These post-process archived content to extract URLs for recursive crawling:
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `PARSE_DOM_OUTLINKS_ENABLED` | `True` | Extract outlinks from DOM via CDP |
+| `PARSE_HTML_URLS_ENABLED` | `True` | Parse URLs from HTML files |
+| `PARSE_JSONL_URLS_ENABLED` | `True` | Parse URLs from JSONL files |
+| `PARSE_NETSCAPE_URLS_ENABLED` | `True` | Parse Netscape bookmark format |
+| `PARSE_TXT_URLS_ENABLED` | `True` | Parse URLs from plain text |
+| `PARSE_RSS_URLS_ENABLED` | `True` | Parse URLs from RSS/Atom feeds |
 
 ---
 
 ## Archive Method Options
 
-*Specific options for individual archive methods above. Some of these are shared between multiple archive methods, others are specific to a single method.*
+*Specific options for individual archive methods. Most extractors follow a naming convention: `PLUGINNAME_TIMEOUT`, `PLUGINNAME_ARGS`, `PLUGINNAME_BINARY`, etc.*
 
 ---
-#### `CHECK_SSL_VALIDITY`
-**Possible Values:** [`True`]/`False`  
-Whether to enforce HTTPS certificate and HSTS chain of trust when archiving sites.  Set this to `False` if you want to archive pages even if they have expired or invalid certificates.  Be aware that when `False` you cannot guarantee that you have not been man-in-the-middle'd while archiving content, so the content cannot be verified to be what's on the original site.
 
----
-#### `SAVE_WGET_REQUISITES`
-**Possible Values:** [`True`]/`False`  
-Fetch images/css/js with wget. (True is highly recommended, otherwise your won't download many critical assets to render the page, like images, js, css, etc.)
+### Chrome Options
 
-*Related options:*  
-[`TIMEOUT`](#timeout), [`SAVE_WGET`](#save_wget), [`SAVE_WARC`](#save_warc), [`WGET_BINARY`](#wget_binary)
-
----
-#### `RESOLUTION`
-**Possible Values:** [`1440,2000`]/`1024,768`/...  
-Screenshot resolution in pixels width,height.  
-
-*Related options:*  
-[`SAVE_SCREENSHOT`](#save_screenshot)
-
----
-#### `CURL_USER_AGENT`
-**Possible Values:** [`Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/) curl/{CURL_VERSION}`]/`"Mozilla/5.0 ..."`/...  
-This is the user agent to use during curl archiving.  You can set this to impersonate a more common browser like Chrome or Firefox if you're getting blocked by servers for having an unknown/blacklisted user agent.
-
-*Related options:*  
-[`USE_CURL`](#use_curl), [`SAVE_TITLE`](#save_title), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CURL_BINARY`](#curl_binary), [`WGET_USER_AGENT`](#wget_user_agent), [`CHROME_USER_AGENT`](#chrome_user_agent)
-
----
-#### `WGET_USER_AGENT`
-**Possible Values:** [`Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/) wget/{WGET_VERSION}`]/`"Mozilla/5.0 ..."`/...  
-This is the user agent to use during wget archiving.  You can set this to impersonate a more common browser like Chrome or Firefox if you're getting blocked by servers for having an unknown/blacklisted user agent.
-
-*Related options:*  
-[`SAVE_WGET`](#save_wget), [`SAVE_WARC`](#save_warc), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`WGET_BINARY`](#wget_binary), [`CHROME_USER_AGENT`](#chrome_user_agent)
-
----
-#### `CHROME_USER_AGENT`
-**Possible Values:** [`Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)`]/`"Mozilla/5.0 ..."`/...  
-
-This is the user agent to use during Chrome headless archiving.  If you're experiencing being blocked by many sites, you can set this to hide the `Headless` string that reveals to servers that you're using a headless browser.
-
-*Related options:*  
-[`SAVE_PDF`](#save_pdf), [`SAVE_SCREENSHOT`](#save_screenshot), [`SAVE_DOM`](#save_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_BINARY`](#chrome_binary), [`WGET_USER_AGENT`](#wget_user_agent)
-
-
----
-####  `GIT_DOMAINS`
-**Possible Values:** [`github.com,bitbucket.org,gitlab.com,gist.github.com,codeberg.org,gitea.com,git.sr.ht`]/`git.example.com`/...  
-Domains to attempt download of git repositories on using `git clone`.
-
-*Related options:*  
-[`SAVE_GIT`](#save_git), [`CHECK_SSL_VALIDITY`](#check_ssl_validity)
-
----
-#### `COOKIES_FILE`
-**Possible Values:** [`None`]/`/path/to/cookies.txt`/...  
-
-Cookies file to pass to `wget`, `curl`, `yt-dlp` and other extractors that don't use Chrome (with its `CHROME_USER_DATA_DIR`) for authentication.  To capture sites that require a user to be logged in, you configure this option to point to a [netscape-format `cookies.txt`](http://www.cookiecentral.com/faq/#3.5) file containing all the cookies you want to use during archiving.
-
-You can generate this `cookies.txt` file by using a number of different [browser extensions](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc) that can export your cookies in this format, or by using `wget` on the command line with `--save-cookies` + `--user=... --password=...`.
-
-Alternatively, you can create a persona and import cookies directly from your browser profile:
-
-```bash
-archivebox persona create --import=chrome personal
-# supported: chrome/chromium/brave/edge (Chromium-based only)
-# use --profile to target a specific profile (e.g. Default, Profile 1)
-# re-running import merges/dedupes cookies.txt (by domain/path/name) but replaces chrome_user_data
-```
-
-> [!WARNING]
-> **Make sure you use separate burner credentials dedicated to archiving,** e.g. don't re-use your normal daily Facebook/Instagram/Youtube/etc. account cookies as server responses often contain your name/email/PII, session tokens, etc. which then get preserved in your snapshots!  
->  
-> Future viewers of your archive may be able to use any reflected [archived session tokens](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#%EF%B8%8F-things-to-watch-out-for-%EF%B8%8F) to log in as you, or at the very least, associate the content with your real identity. Even if this tradeoff seems acceptable now or you plan to keep your archive data private, you may want to share a snapshot with others in the future, and snapshots are very hard to sanitize/anonymize after-the-fact!
-
-*Related options:*  
-[`SAVE_WGET`](#save_wget), [`SAVE_WARC`](#save_warc), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`WGET_BINARY`](#wget_binary)
-
----
-#### `CHROME_USER_DATA_DIR`
-
-**Possible Values:** [`~/.config/google-chrome`]/`/tmp/chrome-profile`/...  
-
-Path to a [Chrome user profile directory](https://chromium.googlesource.com/chromium/src/+/HEAD/docs/user_data_dir.md).  To capture sites that require a user to be logged in, you can specify a path to a Chrome user profile (which loads the cookies needed for the user to be logged in).  If you don't have an existing Chrome profile, create one with `chromium-browser --user-data-dir=/tmp/chrome-profile`, and log into the sites you need.  Then set `CHROME_USER_DATA_DIR=/tmp/chrome-profile` to make ArchiveBox use that profile.  
-
-For a guide on how to set this up, see our [Chromium Install: Setting up a profile](https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#setting-up-a-chromium-user-profile) wiki.
-
-*Note: Make sure the path does not have `Default` at the end (it should the the parent folder of `Default`), e.g. set it to `CHROME_USER_DATA_DIR=~/.config/chromium` and not `CHROME_USER_DATA_DIR=~/.config/chromium/Default`.* 
-
-> [!WARNING]
-> **Make sure you use separate burner credentials dedicated to archiving,** e.g. don't log in with your normal daily Facebook/Instagram/Youtube/etc. accounts as server responses and page content will often contain your name/email/PII, session cookies, private tokens, etc. which then get preserved in your snapshots!  
->  
-> Future viewers of your archive may be able to use any reflected [archived session tokens](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#%EF%B8%8F-things-to-watch-out-for-%EF%B8%8F) to log in as you, or at the very least, associate the content with your real identity. Even if this tradeoff seems acceptable now or you plan to keep your archive data private, you may want to share a snapshot with others in the future, and snapshots are very hard to sanitize/anonymize after-the-fact!
-
-<small>When set to `None`, ArchiveBox `<v0.7.2` used to try to find any existing profile on your system automatically, but this behavior has been disabled in later versions for security reasons, it must now be set explicitly if you want to use a profile.</small>
-
-*Related options:*  
-[`SAVE_PDF`](#save_pdf), [`SAVE_SCREENSHOT`](#save_screenshot), [`SAVE_DOM`](#save_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_BINARY`](#chrome_binary), [`COOKIES_FILE`](#cookies_file)
+#### `CHROME_BINARY`
+**Possible Values:** [`chromium`]/`/usr/local/bin/google-chrome`/...
+Path or name of the Chrome/Chromium binary to use for all headless browser archive methods.
 
 ---
 #### `CHROME_HEADLESS`
-**Possible Values:** [`True`]/`False`  
-Whether or not to use Chrome/Chromium in `--headless` mode (no browser UI displayed).  When set to `False`, the full Chrome UI will be launched each time it's used to archive a page, which greatly slows down the process but allows you to watch in real-time as it saves each page.  
-
-*Related options:*  
-[`SAVE_PDF`](#save_pdf), [`SAVE_SCREENSHOT`](#save_screenshot), [`SAVE_DOM`](#save_dom), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_BINARY`](#chrome_binary)
+**Possible Values:** [`True`]/`False`
+Whether to run Chrome in `--headless` mode. When `False`, the full Chrome UI will be launched each time.
 
 ---
 #### `CHROME_SANDBOX`
-**Possible Values:** [`True`]/`False`  
-Whether or not to use the Chrome sandbox when archiving.  
+**Possible Values:** [`True`]/`False`
+Whether to use the Chrome sandbox. Only set to `False` if running inside a container or VM.
 
-If you see an error message like this, it means you are trying to run ArchiveBox as root:  
-```bash
-:ERROR:zygote_host_impl_linux.cc(89)] Running as root without --no-sandbox is not supported. See https://crbug.com/638180
-```
+*Note: Do not run ArchiveBox as root! The solution is to create a non-root user, not to disable the sandbox.*
 
-*Note: **Do not run ArchiveBox as root!** The solution to this error is not to override it by setting `CHROME_SANDBOX=False`, it's to use create another user (e.g. `www-data`) and run ArchiveBox under that new, less privileged user. This is a security-critical setting, only set this to `False` if you're running ArchiveBox inside a container or VM where it doesn't have access to the rest of your system!
+---
+#### `CHROME_USER_DATA_DIR`
+**Possible Values:** [`""`]/`~/.config/google-chrome`/`/tmp/chrome-profile`/...
+Path to a Chrome user data directory for persistent sessions (cookies, logins). If not set, derived from the active persona's Chrome profile.
 
-*Related options:*  
-[`SAVE_PDF`](#save_pdf), [`SAVE_SCREENSHOT`](#save_screenshot), [`SAVE_DOM`](#save_dom), [`CHECK_SSL_VALIDITY`](#check_ssl_validity), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_BINARY`](#chrome_binary)
+> [!WARNING]
+> Use separate burner credentials dedicated to archiving. Don't re-use your normal daily accounts.
 
+---
+#### `CHROME_USER_AGENT`
+**Possible Values:** [`""`] *(falls back to `USER_AGENT`)*
+User agent string for Chrome. If empty, uses the global `USER_AGENT` setting.
+
+---
+#### `CHROME_TIMEOUT`
+**Possible Values:** [`60`]/`120`/... *(falls back to `TIMEOUT`)*
+Timeout for Chrome operations in seconds.
+
+---
+#### `CHROME_PAGELOAD_TIMEOUT`
+**Possible Values:** [`60`]/`120`/... *(falls back to `CHROME_TIMEOUT`)*
+Timeout specifically for page navigation/load in seconds.
+
+---
+#### `CHROME_RESOLUTION`
+**Possible Values:** [`1440,2000`] *(falls back to `RESOLUTION`)*
+Browser viewport resolution (width,height).
+
+---
+#### `CHROME_WAIT_FOR`
+**Possible Values:** [`networkidle2`]/`domcontentloaded`/`load`/`networkidle0`
+Puppeteer page load completion condition:
+- `domcontentloaded`: Wait for DOMContentLoaded event
+- `load`: Wait for load event
+- `networkidle0`: No network connections for 500ms
+- `networkidle2`: No more than 2 network connections for 500ms
+
+---
+#### `CHROME_DELAY_AFTER_LOAD`
+**Possible Values:** [`0`]/`2`/`5`/...
+Extra delay in seconds after page load completes before archiving. Useful for JS-heavy single page apps that need extra time to render.
+
+---
+#### `CHROME_ARGS`
+**Possible Values:** *long list of default Chrome flags*
+Default Chrome command-line arguments. These are carefully tuned for archiving — only override if you know what you're doing.
+
+---
+#### `CHROME_ARGS_EXTRA`
+**Possible Values:** [`[]`]/`["--proxy-server=socks5://127.0.0.1:9050"]`/...
+Extra arguments to append to the Chrome command. Use this instead of overriding `CHROME_ARGS` to add custom flags while keeping the defaults.
+
+---
+
+### Wget Options
+
+#### `WGET_BINARY`
+**Possible Values:** [`wget`]/`/usr/local/bin/wget`/...
+Path or name of the wget binary.
+
+---
+#### `WGET_TIMEOUT`
+**Possible Values:** [`60`] *(falls back to `TIMEOUT`)*
+Timeout for wget operations in seconds.
+
+---
+#### `WGET_USER_AGENT`
+**Possible Values:** [`""`] *(falls back to `USER_AGENT`)*
+User agent string for wget.
+
+---
+#### `WGET_ARGS`
+**Possible Values:** *default args for archiving*
+Default wget arguments. Includes flags for page requisites, link conversion, and Windows-compatible filenames.
+
+---
+#### `WGET_ARGS_EXTRA`
+**Possible Values:** [`[]`]/`["--limit-rate=1m"]`/...
+Extra arguments to append to the wget command.
+
+---
+
+### SingleFile Options
+
+#### `SINGLEFILE_BINARY`
+**Possible Values:** [`single-file`]/`./node_modules/single-file/cli/single-file`/...
+Path or name of the SingleFile binary.
+
+---
+#### `SINGLEFILE_TIMEOUT`
+**Possible Values:** [`60`] *(falls back to `TIMEOUT`)*
+Timeout for SingleFile in seconds.
+
+---
+#### `SINGLEFILE_ARGS` / `SINGLEFILE_ARGS_EXTRA`
+**Possible Values:** [`["--browser-headless"]`]/...
+Default and extra arguments for SingleFile.
+
+---
+
+### yt-dlp Options
+
+#### `YTDLP_BINARY`
+**Possible Values:** [`yt-dlp`]/`/usr/local/bin/yt-dlp`/...
+Path or name of the yt-dlp binary (replacement for youtube-dl).
+
+---
+#### `YTDLP_TIMEOUT`
+**Possible Values:** [`3600`] *(falls back to `TIMEOUT`)*
+Timeout for yt-dlp downloads in seconds. Default is 1 hour since media downloads can be large.
+
+---
+#### `YTDLP_MAX_SIZE`
+**Possible Values:** [`750m`]/`2g`/...
+Maximum file size for yt-dlp downloads.
+
+---
+#### `YTDLP_ARGS` / `YTDLP_ARGS_EXTRA`
+Default and extra arguments for yt-dlp. The defaults include options for subtitles, thumbnails, metadata, etc.
+
+---
+
+### Git Options
+
+#### `GIT_BINARY`
+**Possible Values:** [`git`]/`/usr/local/bin/git`/...
+Path or name of the git binary.
+
+---
+#### `GIT_DOMAINS`
+**Possible Values:** [`github.com,gitlab.com,bitbucket.org,gist.github.com,codeberg.org,gitea.com,git.sr.ht`]/`git.example.com`/...
+Comma-separated list of domains to attempt `git clone` on.
+
+---
+#### `GIT_ARGS` / `GIT_ARGS_EXTRA`
+**Possible Values:** [`["clone", "--depth=1", "--recursive"]`]/...
+Default and extra arguments for git operations.
+
+---
+
+### Other Extractor Options
+
+#### `READABILITY_BINARY`
+**Possible Values:** [`readability-extractor`]/...
+Path to the Readability extractor binary.
+
+---
+#### `MERCURY_BINARY`
+**Possible Values:** [`postlight-parser`]/...
+Path to the Mercury/Postlight parser binary.
+
+---
+#### `DEFUDDLE_BINARY`
+**Possible Values:** [`defuddle`]/...
+Path to the Defuddle binary.
+
+---
+#### `TRAFILATURA_BINARY`
+**Possible Values:** [`trafilatura`]/...
+Path to the Trafilatura binary.
+
+---
+#### `RIPGREP_BINARY`
+**Possible Values:** [`rg`]/`rga`/...
+Path or name of the ripgrep binary for full-text search.
+
+---
+
+### Search Backend Options
+
+<a name="search_backend_sonic_host_name"/>
+
+#### Sonic Search Backend
+
+When using `SEARCH_BACKEND_ENGINE=sonic`:
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `SEARCH_BACKEND_SONIC_HOST_NAME` | `127.0.0.1` | Sonic server hostname |
+| `SEARCH_BACKEND_SONIC_PORT` | `1491` | Sonic server port |
+| `SEARCH_BACKEND_SONIC_PASSWORD` | `SecretPassword` | Sonic server password |
+| `SEARCH_BACKEND_SONIC_COLLECTION` | `archivebox` | Sonic collection name |
+| `SEARCH_BACKEND_SONIC_BUCKET` | `snapshots` | Sonic bucket name |
+
+#### SQLite FTS Search Backend
+
+When using `SEARCH_BACKEND_ENGINE=sqlite`:
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `SEARCH_BACKEND_SQLITE_DB` | `search.sqlite3` | FTS database filename |
+| `SEARCH_BACKEND_SQLITE_SEPARATE_DATABASE` | `True` | Use separate DB file for FTS |
+| `SEARCH_BACKEND_SQLITE_TOKENIZERS` | `porter unicode61 remove_diacritics 2` | FTS5 tokenizer config |
+
+---
+
+### Infinite Scroll Options
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `INFINISCROLL_SCROLL_LIMIT` | `10` | Maximum number of scroll steps |
+| `INFINISCROLL_SCROLL_DISTANCE` | `1600` | Distance per scroll step (px) |
+| `INFINISCROLL_SCROLL_DELAY` | `2000` | Delay between scrolls (ms) |
+| `INFINISCROLL_MIN_HEIGHT` | `16000` | Minimum page height to scroll to (px) |
+| `INFINISCROLL_EXPAND_DETAILS` | `True` | Expand `<details>` elements and click "load more" buttons |
+| `INFINISCROLL_TIMEOUT` | `120` | Maximum timeout (falls back to `TIMEOUT`) |
+
+---
+
+### 2captcha Options
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `TWOCAPTCHA_API_KEY` | `""` | 2captcha API key (get from https://2captcha.com) |
+| `TWOCAPTCHA_AUTO_SUBMIT` | `False` | Auto-submit forms after solving |
+| `TWOCAPTCHA_RETRY_COUNT` | `3` | Number of solving retries |
+| `TWOCAPTCHA_RETRY_DELAY` | `5` | Delay between retries (seconds) |
+| `TWOCAPTCHA_TIMEOUT` | `60` | Solving timeout (falls back to `TIMEOUT`) |
+
+---
+
+### Modal Closer Options
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `MODALCLOSER_POLL_INTERVAL` | `500` | How often to check for CSS modals (ms) |
+| `MODALCLOSER_TIMEOUT` | `1250` | Delay before auto-closing dialogs (ms) |
 
 ---
 
@@ -585,171 +813,105 @@ If you see an error message like this, it means you are trying to run ArchiveBox
 *Options around the format of the CLI output.*
 
 ---
-#### `USE_COLOR`
-**Possible Values:** [`True`]/`False`  
-Colorize console output. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
+#### `DEBUG`
+**Possible Values:** [`False`]/`True`
+Enable debug mode. Automatically set to `True` if `--debug` is passed on the command line.
 
-<img src="https://imgur.zervice.io/BDPfWxk.png" width="48%"/>
-<img src="https://imgur.zervice.io/kIL8zSD.png" width="48%"/>
+---
+#### `IS_TTY`
+**Possible Values:** *auto-detected*
+Whether stdout is a TTY (interactive terminal). Auto-detected, but can be overridden.
+
+---
+#### `USE_COLOR`
+**Possible Values:** [`True`]/`False`
+Colorize console output. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False`.
 
 ---
 #### `SHOW_PROGRESS`
-**Possible Values:** [`True`]/`False`  
-Show real-time progress bar in console output. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False` (e.g. if run in a script or piped into a file).
+**Possible Values:** [`True`]/`False`
+Show real-time progress bar in console output. Defaults to `True` if stdin is a TTY (interactive session), otherwise `False`.
 
-*Note: We use [asymptotic progress bars](https://gist.github.com/pirate/c89b7d42be148e9180d8c7cf81e734c8) because most tasks complete quickly! ✨*
+---
+#### `IN_DOCKER`
+**Possible Values:** [`False`]/`True`
+Whether ArchiveBox is running inside a Docker container. Auto-detected from the `IN_DOCKER` environment variable.
 
-<img src="https://imgur.zervice.io/XY2E7AR.png" width="99%"/>
+---
+#### `IN_QEMU`
+**Possible Values:** [`False`]/`True`
+Whether ArchiveBox is running inside QEMU emulation. This may affect performance expectations.
 
 ---
 
-## Dependency Options
+## LDAP Settings
 
-*Options for defining which binaries to use for the various archive method dependencies.*
-
----
-#### `CHROME_BINARY`
-**Possible Values:** [`chromium-browser`]/`/usr/local/bin/google-chrome`/...  
-Path or name of the Google Chrome / Chromium binary to use for all the headless browser archive methods.
-
-Without setting this environment variable, ArchiveBox by default look for the following binaries in `$PATH` in this order:
- - `chromium-browser`
- - `chromium`
- - `google-chrome`
- - `google-chrome-stable`
- - `google-chrome-unstable`
- - `google-chrome-beta`
- - `google-chrome-canary`
- - `google-chrome-dev`
-
-You can override the default behavior to search for any available bin by setting the environment variable to your preferred Chrome binary name or path.
-
-The chrome/chromium dependency is _optional_ and only required for screenshots, PDF, and DOM dump output, it can be safely ignored if those three methods are disabled.
-
-*Related options:*  
-[`SAVE_PDF`](#save_pdf), [`SAVE_SCREENSHOT`](#save_screenshot), [`SAVE_DOM`](#save_dom), [`SAVE_SINGLEFILE`](#save_singlefile), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_SANDBOX`](#chrome_sandbox)
+*Options for LDAP/Active Directory authentication. Requires `pip install archivebox[ldap]`.*
 
 ---
-#### `WGET_BINARY`
-**Possible Values:** [`wget`]/`/usr/local/bin/wget`/...  
-Path or name of the wget binary to use.
+#### `LDAP_ENABLED`
+**Possible Values:** [`False`]/`True`
 
-*Related options:*  
-[`SAVE_WGET`](#save_wget), [`SAVE_WARC`](#save_warc)
+Whether to use an external [LDAP](https://jumpcloud.com/blog/what-is-ldap-authentication) server for authentication (e.g. OpenLDAP, MS Active Directory, OpenDJ, etc.).
 
----
-#### `YOUTUBEDL_BINARY`
-**Possible Values:** [`youtube-dl`]/`/usr/local/bin/youtube-dl`/...  
-Path or name of the [youtube-dl](https://github.com/rg3/youtube-dl) binary to use.
+```bash
+pip install archivebox[ldap]
+```
 
-*Related options:*  
-[`SAVE_MEDIA`](#save_media)
+Then set these configuration values:
+```yaml
+LDAP_ENABLED: True
+LDAP_SERVER_URI: "ldap://ldap.example.com:3389"
+LDAP_BIND_DN: "ou=archivebox,ou=services,dc=ldap.example.com"
+LDAP_BIND_PASSWORD: "secret-bind-user-password"
+LDAP_USER_BASE: "ou=users,ou=archivebox,ou=services,dc=ldap.example.com"
+LDAP_USER_FILTER: "(uid=%(user)s)"
 
----
-#### `GIT_BINARY`
-**Possible Values:** [`git`]/`/usr/local/bin/git`/...  
-Path or name of the git binary to use.
+LDAP_USERNAME_ATTR: "username"
+LDAP_FIRSTNAME_ATTR: "givenName"
+LDAP_LASTNAME_ATTR: "sn"
+LDAP_EMAIL_ATTR: "mail"
+LDAP_CREATE_SUPERUSER: False
+```
 
-*Related options:*  
-[`SAVE_GIT`](#save_git)
+| Option | Default | Description |
+|--------|---------|-------------|
+| `LDAP_ENABLED` | `False` | Enable LDAP authentication |
+| `LDAP_SERVER_URI` | `None` | LDAP server URI (e.g. `ldap://ldap.example.com:389`) |
+| `LDAP_BIND_DN` | `None` | DN to bind for searching |
+| `LDAP_BIND_PASSWORD` | `None` | Password for bind DN |
+| `LDAP_USER_BASE` | `None` | Base DN for user searches |
+| `LDAP_USER_FILTER` | `(uid=%(user)s)` | LDAP search filter for users |
+| `LDAP_USERNAME_ATTR` | `username` | LDAP attribute for username |
+| `LDAP_FIRSTNAME_ATTR` | `givenName` | LDAP attribute for first name |
+| `LDAP_LASTNAME_ATTR` | `sn` | LDAP attribute for last name |
+| `LDAP_EMAIL_ATTR` | `mail` | LDAP attribute for email |
+| `LDAP_CREATE_SUPERUSER` | `False` | Auto-create superuser accounts for LDAP users |
 
----
-#### `CURL_BINARY`
-**Possible Values:** [`curl`]/`/usr/local/bin/curl`/...  
-Path or name of the curl binary to use.
-
-*Related options:*  
-[`SAVE_FAVICON`](#save_favicon), [`SAVE_ARCHIVE_DOT_ORG`](#save_archive_dot_org)
-
----
-#### `SINGLEFILE_BINARY`
-**Possible Values:** [`single-file`]/`./node_modules/single-file/cli/single-file`/...  
-Path or name of the SingleFile binary to use.
-
-This can be installed using `npm install --no-audit --no-fund 'git+https://github.com/gildas-lormeau/SingleFile.git'`.
-
-*Related options:*  
-[`SAVE_SINGLEFILE`](#save_singlefile), [`CHROME_BINARY`](#chrome_binary), [`CHROME_USER_DATA_DIR`](#chrome_user_data_dir), [`CHROME_HEADLESS`](#chrome_headless), [`CHROME_SANDBOX`](#chrome_sandbox)
-
----
-#### `READABILITY_BINARY`
-**Possible Values:** [`readability-extractor`]/`./node_modules/readability-extractor/readability-extractor`/...  
-Path or name of the Readability extrator binary to use.
-
-This can be installed using `npm install --no-audit --no-fund 'git+https://github.com/ArchiveBox/readability-extractor.git'`.
-
-*Related options:*  
-[`SAVE_READABILITY`](#save_readability)
+More info:
+- https://github.com/ArchiveBox/ArchiveBox/wiki/Setting-up-Authentication
+- https://github.com/django-auth-ldap/django-auth-ldap#example-configuration
 
 ---
-#### `MERCURY_BINARY`
-**Possible Values:** [`mercury-parser`]/`./node_modules/@postlight/mercury-parser/cli.js`/...  
-Path or name of the Mercury parser extractor binary to use.
 
-This can be installed using `npm install --no-audit --no-fund '@postlight/mercury-parser'`.
+## Plugin Settings
 
-*Related options:*  
-[`SAVE_MERCURY`](#save_mercury)
+ArchiveBox uses a plugin system where each extractor defines its own configuration via `config.json` files. Plugin config options follow a consistent naming convention:
 
----
-#### `RIPGREP_BINARY`
-**Possible Values:** [`rg`]/`rga`/...  
+- **`PLUGINNAME_ENABLED`**: Enable/disable the plugin (`True`/`False`)
+- **`PLUGINNAME_TIMEOUT`**: Timeout in seconds (usually falls back to global `TIMEOUT`)
+- **`PLUGINNAME_BINARY`**: Path to the plugin's binary dependency
+- **`PLUGINNAME_ARGS`**: Default command-line arguments (JSON array)
+- **`PLUGINNAME_ARGS_EXTRA`**: Extra arguments to append (JSON array)
 
-Path or name of the ripgrep binary to use for full text search.
+All plugin config options can be set the same way as core options — via environment variables, `ArchiveBox.conf`, or `archivebox config --set`.
 
-This can be installed using your system package manager, e.g. `apt install ripgrep` or `brew install ripgrep`.
+To see all available plugin config options for your installation:
+```bash
+archivebox config
+```
 
-Optionally switch this to use `ripgrep-all` for full-text search support across more filetypes (e.g. PDF): https://github.com/phiresky/ripgrep-all.
-
-*Related options:*  
-[`SEARCH_BACKEND_ENGINE`](#search_backend_engine)
-
----
-#### `SINGLEFILE_ARGS`
-**Possible Values:** [`["--back-end=playwright-firefox","--load-deferred-images-dispatch-scroll-event=true"]`]/..
-
-Arguments that are passed to the SingleFile binary. The values should be a valid JSON string.
-
-*Related options:*  
-[`SINGLEFILE_BINARY`](#singlefile_binary)
-
----
-#### `CURL_ARGS`
-**Possible Values:** [`["--tlsv1.3","--http2"]`]/..
-
-Arguments that are passed to the curl binary. The values should be a valid JSON string.
-
-*Related options:*  
-[`CURL_BINARY`](#curl_binary)
-
----
-#### `WGET_ARGS`
-**Possible Values:** [`["--https-only"]`]/..
-
-Arguments that are passed to the wget binary. The values should be a valid JSON string.
-
-*Related options:*  
-[`WGET_BINARY`](#wget_binary)
-
----
-#### `YOUTUBEDL_ARGS`
-**Possible Values:** [`["--limit-rate=10M"]`]/..
-
-Arguments that are passed to the [youtube-dl](https://github.com/rg3/youtube-dl) binary. The values should be a valid JSON string.
-
-*Related options:*  
-[`YOUTUBEDL_BINARY`](#youtubedl_binary)
-
----
-#### `GIT_ARGS`
-**Possible Values:** [`["--depth=1"]`]
-
-Arguments that are passed to the `git clone` subcommand. The values should be a valid JSON string.
-
-*Related options:*  
-[`GIT_BINARY`](#git_binary)
+For the full list of plugins and their config schemas, see the [abx-plugins repository](https://github.com/ArchiveBox/abx-plugins).
 
 
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/5a4dd576-387a-4a1f-9dfa-407eac87078c" width="100%"/>
-
-▶️ *Looking for more? Sometimes this document is out of date. Check the source code for extra undocumented options: [`archivebox/config.py`](https://github.com/ArchiveBox/ArchiveBox/blob/master/archivebox/config.py#L27).*
