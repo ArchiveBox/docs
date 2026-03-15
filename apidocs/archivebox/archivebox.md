@@ -14,22 +14,20 @@
 :maxdepth: 3
 
 archivebox.misc
-archivebox.parsers
 archivebox.core
 archivebox.config
-archivebox.abid_utils
+archivebox.ldap
+archivebox.tests
+archivebox.mcp
 archivebox.crawls
 archivebox.cli
 archivebox.search
 archivebox.personas
-archivebox.pkgs
-archivebox.seeds
 archivebox.machine
-archivebox.actors
-archivebox.queues
 archivebox.api
-archivebox.index
-archivebox.extractors
+archivebox.workers
+archivebox.ideas
+archivebox.base_models
 ```
 
 ## Submodules
@@ -38,10 +36,9 @@ archivebox.extractors
 :titlesonly:
 :maxdepth: 1
 
-archivebox.monkey_patches
-archivebox.logging_util
+archivebox.hooks
+archivebox.uuid_compat
 archivebox.manage
-archivebox.main
 archivebox.__main__
 ```
 
@@ -61,20 +58,12 @@ archivebox.__main__
   - ```{autodoc2-docstring} archivebox.PACKAGE_DIR
     :summary:
     ```
-* - {py:obj}`pm <archivebox.pm>`
-  - ```{autodoc2-docstring} archivebox.pm
+* - {py:obj}`BUILTIN_PLUGINS_DIR <archivebox.BUILTIN_PLUGINS_DIR>`
+  - ```{autodoc2-docstring} archivebox.BUILTIN_PLUGINS_DIR
     :summary:
     ```
-* - {py:obj}`ABX_ECOSYSTEM_PLUGINS <archivebox.ABX_ECOSYSTEM_PLUGINS>`
-  - ```{autodoc2-docstring} archivebox.ABX_ECOSYSTEM_PLUGINS
-    :summary:
-    ```
-* - {py:obj}`ARCHIVEBOX_BUILTIN_PLUGINS <archivebox.ARCHIVEBOX_BUILTIN_PLUGINS>`
-  - ```{autodoc2-docstring} archivebox.ARCHIVEBOX_BUILTIN_PLUGINS
-    :summary:
-    ```
-* - {py:obj}`USER_PLUGINS <archivebox.USER_PLUGINS>`
-  - ```{autodoc2-docstring} archivebox.USER_PLUGINS
+* - {py:obj}`USER_PLUGINS_DIR <archivebox.USER_PLUGINS_DIR>`
+  - ```{autodoc2-docstring} archivebox.USER_PLUGINS_DIR
     :summary:
     ```
 * - {py:obj}`ALL_PLUGINS <archivebox.ALL_PLUGINS>`
@@ -124,42 +113,22 @@ archivebox.__main__
 
 ````
 
-````{py:data} pm
-:canonical: archivebox.pm
+````{py:data} BUILTIN_PLUGINS_DIR
+:canonical: archivebox.BUILTIN_PLUGINS_DIR
+:value: >
+   'resolve(...)'
+
+```{autodoc2-docstring} archivebox.BUILTIN_PLUGINS_DIR
+```
+
+````
+
+````{py:data} USER_PLUGINS_DIR
+:canonical: archivebox.USER_PLUGINS_DIR
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.pm
-```
-
-````
-
-````{py:data} ABX_ECOSYSTEM_PLUGINS
-:canonical: archivebox.ABX_ECOSYSTEM_PLUGINS
-:value: >
-   'get_pip_installed_plugins(...)'
-
-```{autodoc2-docstring} archivebox.ABX_ECOSYSTEM_PLUGINS
-```
-
-````
-
-````{py:data} ARCHIVEBOX_BUILTIN_PLUGINS
-:canonical: archivebox.ARCHIVEBOX_BUILTIN_PLUGINS
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.ARCHIVEBOX_BUILTIN_PLUGINS
-```
-
-````
-
-````{py:data} USER_PLUGINS
-:canonical: archivebox.USER_PLUGINS
-:value: >
-   'find_plugins_in_dir(...)'
-
-```{autodoc2-docstring} archivebox.USER_PLUGINS
+```{autodoc2-docstring} archivebox.USER_PLUGINS_DIR
 ```
 
 ````
@@ -177,7 +146,7 @@ archivebox.__main__
 ````{py:data} LOADED_PLUGINS
 :canonical: archivebox.LOADED_PLUGINS
 :value: >
-   'load_plugins(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.LOADED_PLUGINS
 ```

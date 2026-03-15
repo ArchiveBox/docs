@@ -15,33 +15,43 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`SessionsConfig <archivebox.personas.apps.SessionsConfig>`
+* - {py:obj}`PersonasConfig <archivebox.personas.apps.PersonasConfig>`
   -
 ````
 
 ### API
 
-`````{py:class} SessionsConfig(app_name, app_module)
-:canonical: archivebox.personas.apps.SessionsConfig
+`````{py:class} PersonasConfig(app_name, app_module)
+:canonical: archivebox.personas.apps.PersonasConfig
 
 Bases: {py:obj}`django.apps.AppConfig`
 
 ````{py:attribute} default_auto_field
-:canonical: archivebox.personas.apps.SessionsConfig.default_auto_field
+:canonical: archivebox.personas.apps.PersonasConfig.default_auto_field
 :value: >
    'django.db.models.BigAutoField'
 
-```{autodoc2-docstring} archivebox.personas.apps.SessionsConfig.default_auto_field
+```{autodoc2-docstring} archivebox.personas.apps.PersonasConfig.default_auto_field
 ```
 
 ````
 
 ````{py:attribute} name
-:canonical: archivebox.personas.apps.SessionsConfig.name
+:canonical: archivebox.personas.apps.PersonasConfig.name
+:value: >
+   'archivebox.personas'
+
+```{autodoc2-docstring} archivebox.personas.apps.PersonasConfig.name
+```
+
+````
+
+````{py:attribute} label
+:canonical: archivebox.personas.apps.PersonasConfig.label
 :value: >
    'personas'
 
-```{autodoc2-docstring} archivebox.personas.apps.SessionsConfig.name
+```{autodoc2-docstring} archivebox.personas.apps.PersonasConfig.label
 ```
 
 ````

@@ -45,7 +45,7 @@
 
 ````
 
-````{py:function} main(args: typing.Optional[typing.List[str]] = None, stdin: typing.Optional[typing.IO] = None, pwd: typing.Optional[str] = None) -> None
+````{py:function} main(status: typing.Optional[str], url__icontains: typing.Optional[str], url__istartswith: typing.Optional[str], tag: typing.Optional[str], crawl_id: typing.Optional[str], limit: typing.Optional[int]) -> None
 :canonical: archivebox.cli.archivebox_list.main
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_list.main

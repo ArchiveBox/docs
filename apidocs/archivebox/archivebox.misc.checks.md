@@ -31,6 +31,10 @@
   - ```{autodoc2-docstring} archivebox.misc.checks.check_not_root
     :summary:
     ```
+* - {py:obj}`check_not_inside_source_dir <archivebox.misc.checks.check_not_inside_source_dir>`
+  - ```{autodoc2-docstring} archivebox.misc.checks.check_not_inside_source_dir
+    :summary:
+    ```
 * - {py:obj}`check_data_dir_permissions <archivebox.misc.checks.check_data_dir_permissions>`
   - ```{autodoc2-docstring} archivebox.misc.checks.check_data_dir_permissions
     :summary:
@@ -72,6 +76,13 @@
 :canonical: archivebox.misc.checks.check_not_root
 
 ```{autodoc2-docstring} archivebox.misc.checks.check_not_root
+```
+````
+
+````{py:function} check_not_inside_source_dir()
+:canonical: archivebox.misc.checks.check_not_inside_source_dir
+
+```{autodoc2-docstring} archivebox.misc.checks.check_not_inside_source_dir
 ```
 ````
 

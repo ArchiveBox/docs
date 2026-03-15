@@ -2,7 +2,7 @@
 
 ArchiveBox contains a built-in scheduler that supports pulling in URLs regularly from the web or from the local filesystem.
 
-```bash
+```text
 $ cd ~/archivebox/data          # cd into your data directory first
 $ archivebox schedule --help
 [i] [2024-01-04 20:58:15] ArchiveBox v0.7.2: archivebox schedule --help

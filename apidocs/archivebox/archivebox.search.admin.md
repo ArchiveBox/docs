@@ -16,18 +16,15 @@
 :align: left
 
 * - {py:obj}`SearchResultsAdminMixin <archivebox.search.admin.SearchResultsAdminMixin>`
-  - ```{autodoc2-docstring} archivebox.search.admin.SearchResultsAdminMixin
-    :summary:
-    ```
+  -
 ````
 
 ### API
 
-`````{py:class} SearchResultsAdminMixin
+`````{py:class} SearchResultsAdminMixin(model, admin_site)
 :canonical: archivebox.search.admin.SearchResultsAdminMixin
 
-```{autodoc2-docstring} archivebox.search.admin.SearchResultsAdminMixin
-```
+Bases: {py:obj}`django.contrib.admin.ModelAdmin`
 
 ````{py:method} get_search_results(request, queryset, search_term: str)
 :canonical: archivebox.search.admin.SearchResultsAdminMixin.get_search_results

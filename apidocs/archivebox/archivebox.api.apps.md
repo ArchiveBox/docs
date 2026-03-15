@@ -41,9 +41,19 @@ Bases: {py:obj}`django.apps.AppConfig`
 ````{py:attribute} name
 :canonical: archivebox.api.apps.APIConfig.name
 :value: >
-   'api'
+   'archivebox.api'
 
 ```{autodoc2-docstring} archivebox.api.apps.APIConfig.name
+```
+
+````
+
+````{py:attribute} label
+:canonical: archivebox.api.apps.APIConfig.label
+:value: >
+   'api'
+
+```{autodoc2-docstring} archivebox.api.apps.APIConfig.label
 ```
 
 ````

@@ -63,10 +63,21 @@
 
 ### API
 
-`````{py:class} ShellConfig(_case_sensitive: bool | None = None, _nested_model_default_partial_update: bool | None = None, _env_prefix: str | None = None, _env_file: pydantic_settings.sources.DotenvType | None = ENV_FILE_SENTINEL, _env_file_encoding: str | None = None, _env_ignore_empty: bool | None = None, _env_nested_delimiter: str | None = None, _env_parse_none_str: str | None = None, _env_parse_enums: bool | None = None, _cli_prog_name: str | None = None, _cli_parse_args: bool | list[str] | tuple[str, ...] | None = None, _cli_settings_source: pydantic_settings.sources.CliSettingsSource[typing.Any] | None = None, _cli_parse_none_str: str | None = None, _cli_hide_none_type: bool | None = None, _cli_avoid_json: bool | None = None, _cli_enforce_required: bool | None = None, _cli_use_class_docs_for_groups: bool | None = None, _cli_exit_on_error: bool | None = None, _cli_prefix: str | None = None, _cli_flag_prefix_char: str | None = None, _cli_implicit_flags: bool | None = None, _cli_ignore_unknown_args: bool | None = None, _secrets_dir: pydantic_settings.sources.PathType | None = None, **values: typing.Any)
+`````{py:class} ShellConfig(_case_sensitive: bool | None = None, _nested_model_default_partial_update: bool | None = None, _env_prefix: str | None = None, _env_prefix_target: pydantic_settings.sources.EnvPrefixTarget | None = None, _env_file: pydantic_settings.sources.DotenvType | None = ENV_FILE_SENTINEL, _env_file_encoding: str | None = None, _env_ignore_empty: bool | None = None, _env_nested_delimiter: str | None = None, _env_nested_max_split: int | None = None, _env_parse_none_str: str | None = None, _env_parse_enums: bool | None = None, _cli_prog_name: str | None = None, _cli_parse_args: bool | list[str] | tuple[str, ...] | None = None, _cli_settings_source: pydantic_settings.sources.CliSettingsSource[typing.Any] | None = None, _cli_parse_none_str: str | None = None, _cli_hide_none_type: bool | None = None, _cli_avoid_json: bool | None = None, _cli_enforce_required: bool | None = None, _cli_use_class_docs_for_groups: bool | None = None, _cli_exit_on_error: bool | None = None, _cli_prefix: str | None = None, _cli_flag_prefix_char: str | None = None, _cli_implicit_flags: bool | typing.Literal[dual, toggle] | None = None, _cli_ignore_unknown_args: bool | None = None, _cli_kebab_case: bool | typing.Literal[all, no_enums] | None = None, _cli_shortcuts: collections.abc.Mapping[str, str | list[str]] | None = None, _secrets_dir: pydantic_settings.sources.PathType | None = None, _build_sources: tuple[tuple[pydantic_settings.sources.PydanticBaseSettingsSource, ...], dict[str, typing.Any]] | None = None, **values: typing.Any)
 :canonical: archivebox.config.common.ShellConfig
 
-Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
+Bases: {py:obj}`archivebox.config.configset.BaseConfigSet`
+
+````{py:attribute} toml_section_header
+:canonical: archivebox.config.common.ShellConfig.toml_section_header
+:type: str
+:value: >
+   'SHELL_CONFIG'
+
+```{autodoc2-docstring} archivebox.config.common.ShellConfig.toml_section_header
+```
+
+````
 
 ````{py:attribute} DEBUG
 :canonical: archivebox.config.common.ShellConfig.DEBUG
@@ -184,10 +195,21 @@ Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
 
 ````
 
-`````{py:class} StorageConfig(_case_sensitive: bool | None = None, _nested_model_default_partial_update: bool | None = None, _env_prefix: str | None = None, _env_file: pydantic_settings.sources.DotenvType | None = ENV_FILE_SENTINEL, _env_file_encoding: str | None = None, _env_ignore_empty: bool | None = None, _env_nested_delimiter: str | None = None, _env_parse_none_str: str | None = None, _env_parse_enums: bool | None = None, _cli_prog_name: str | None = None, _cli_parse_args: bool | list[str] | tuple[str, ...] | None = None, _cli_settings_source: pydantic_settings.sources.CliSettingsSource[typing.Any] | None = None, _cli_parse_none_str: str | None = None, _cli_hide_none_type: bool | None = None, _cli_avoid_json: bool | None = None, _cli_enforce_required: bool | None = None, _cli_use_class_docs_for_groups: bool | None = None, _cli_exit_on_error: bool | None = None, _cli_prefix: str | None = None, _cli_flag_prefix_char: str | None = None, _cli_implicit_flags: bool | None = None, _cli_ignore_unknown_args: bool | None = None, _secrets_dir: pydantic_settings.sources.PathType | None = None, **values: typing.Any)
+`````{py:class} StorageConfig(_case_sensitive: bool | None = None, _nested_model_default_partial_update: bool | None = None, _env_prefix: str | None = None, _env_prefix_target: pydantic_settings.sources.EnvPrefixTarget | None = None, _env_file: pydantic_settings.sources.DotenvType | None = ENV_FILE_SENTINEL, _env_file_encoding: str | None = None, _env_ignore_empty: bool | None = None, _env_nested_delimiter: str | None = None, _env_nested_max_split: int | None = None, _env_parse_none_str: str | None = None, _env_parse_enums: bool | None = None, _cli_prog_name: str | None = None, _cli_parse_args: bool | list[str] | tuple[str, ...] | None = None, _cli_settings_source: pydantic_settings.sources.CliSettingsSource[typing.Any] | None = None, _cli_parse_none_str: str | None = None, _cli_hide_none_type: bool | None = None, _cli_avoid_json: bool | None = None, _cli_enforce_required: bool | None = None, _cli_use_class_docs_for_groups: bool | None = None, _cli_exit_on_error: bool | None = None, _cli_prefix: str | None = None, _cli_flag_prefix_char: str | None = None, _cli_implicit_flags: bool | typing.Literal[dual, toggle] | None = None, _cli_ignore_unknown_args: bool | None = None, _cli_kebab_case: bool | typing.Literal[all, no_enums] | None = None, _cli_shortcuts: collections.abc.Mapping[str, str | list[str]] | None = None, _secrets_dir: pydantic_settings.sources.PathType | None = None, _build_sources: tuple[tuple[pydantic_settings.sources.PydanticBaseSettingsSource, ...], dict[str, typing.Any]] | None = None, **values: typing.Any)
 :canonical: archivebox.config.common.StorageConfig
 
-Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
+Bases: {py:obj}`archivebox.config.configset.BaseConfigSet`
+
+````{py:attribute} toml_section_header
+:canonical: archivebox.config.common.StorageConfig.toml_section_header
+:type: str
+:value: >
+   'STORAGE_CONFIG'
+
+```{autodoc2-docstring} archivebox.config.common.StorageConfig.toml_section_header
+```
+
+````
 
 ````{py:attribute} TMP_DIR
 :canonical: archivebox.config.common.StorageConfig.TMP_DIR
@@ -207,6 +229,28 @@ Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
    'Field(...)'
 
 ```{autodoc2-docstring} archivebox.config.common.StorageConfig.LIB_DIR
+```
+
+````
+
+````{py:attribute} LIB_BIN_DIR
+:canonical: archivebox.config.common.StorageConfig.LIB_BIN_DIR
+:type: pathlib.Path
+:value: >
+   'Field(...)'
+
+```{autodoc2-docstring} archivebox.config.common.StorageConfig.LIB_BIN_DIR
+```
+
+````
+
+````{py:attribute} CUSTOM_TEMPLATES_DIR
+:canonical: archivebox.config.common.StorageConfig.CUSTOM_TEMPLATES_DIR
+:type: pathlib.Path
+:value: >
+   'Field(...)'
+
+```{autodoc2-docstring} archivebox.config.common.StorageConfig.CUSTOM_TEMPLATES_DIR
 ```
 
 ````
@@ -267,10 +311,21 @@ Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
 
 ````
 
-`````{py:class} GeneralConfig(_case_sensitive: bool | None = None, _nested_model_default_partial_update: bool | None = None, _env_prefix: str | None = None, _env_file: pydantic_settings.sources.DotenvType | None = ENV_FILE_SENTINEL, _env_file_encoding: str | None = None, _env_ignore_empty: bool | None = None, _env_nested_delimiter: str | None = None, _env_parse_none_str: str | None = None, _env_parse_enums: bool | None = None, _cli_prog_name: str | None = None, _cli_parse_args: bool | list[str] | tuple[str, ...] | None = None, _cli_settings_source: pydantic_settings.sources.CliSettingsSource[typing.Any] | None = None, _cli_parse_none_str: str | None = None, _cli_hide_none_type: bool | None = None, _cli_avoid_json: bool | None = None, _cli_enforce_required: bool | None = None, _cli_use_class_docs_for_groups: bool | None = None, _cli_exit_on_error: bool | None = None, _cli_prefix: str | None = None, _cli_flag_prefix_char: str | None = None, _cli_implicit_flags: bool | None = None, _cli_ignore_unknown_args: bool | None = None, _secrets_dir: pydantic_settings.sources.PathType | None = None, **values: typing.Any)
+`````{py:class} GeneralConfig(_case_sensitive: bool | None = None, _nested_model_default_partial_update: bool | None = None, _env_prefix: str | None = None, _env_prefix_target: pydantic_settings.sources.EnvPrefixTarget | None = None, _env_file: pydantic_settings.sources.DotenvType | None = ENV_FILE_SENTINEL, _env_file_encoding: str | None = None, _env_ignore_empty: bool | None = None, _env_nested_delimiter: str | None = None, _env_nested_max_split: int | None = None, _env_parse_none_str: str | None = None, _env_parse_enums: bool | None = None, _cli_prog_name: str | None = None, _cli_parse_args: bool | list[str] | tuple[str, ...] | None = None, _cli_settings_source: pydantic_settings.sources.CliSettingsSource[typing.Any] | None = None, _cli_parse_none_str: str | None = None, _cli_hide_none_type: bool | None = None, _cli_avoid_json: bool | None = None, _cli_enforce_required: bool | None = None, _cli_use_class_docs_for_groups: bool | None = None, _cli_exit_on_error: bool | None = None, _cli_prefix: str | None = None, _cli_flag_prefix_char: str | None = None, _cli_implicit_flags: bool | typing.Literal[dual, toggle] | None = None, _cli_ignore_unknown_args: bool | None = None, _cli_kebab_case: bool | typing.Literal[all, no_enums] | None = None, _cli_shortcuts: collections.abc.Mapping[str, str | list[str]] | None = None, _secrets_dir: pydantic_settings.sources.PathType | None = None, _build_sources: tuple[tuple[pydantic_settings.sources.PydanticBaseSettingsSource, ...], dict[str, typing.Any]] | None = None, **values: typing.Any)
 :canonical: archivebox.config.common.GeneralConfig
 
-Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
+Bases: {py:obj}`archivebox.config.configset.BaseConfigSet`
+
+````{py:attribute} toml_section_header
+:canonical: archivebox.config.common.GeneralConfig.toml_section_header
+:type: str
+:value: >
+   'GENERAL_CONFIG'
+
+```{autodoc2-docstring} archivebox.config.common.GeneralConfig.toml_section_header
+```
+
+````
 
 ````{py:attribute} TAG_SEPARATOR_PATTERN
 :canonical: archivebox.config.common.GeneralConfig.TAG_SEPARATOR_PATTERN
@@ -295,10 +350,21 @@ Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
 
 ````
 
-`````{py:class} ServerConfig(_case_sensitive: bool | None = None, _nested_model_default_partial_update: bool | None = None, _env_prefix: str | None = None, _env_file: pydantic_settings.sources.DotenvType | None = ENV_FILE_SENTINEL, _env_file_encoding: str | None = None, _env_ignore_empty: bool | None = None, _env_nested_delimiter: str | None = None, _env_parse_none_str: str | None = None, _env_parse_enums: bool | None = None, _cli_prog_name: str | None = None, _cli_parse_args: bool | list[str] | tuple[str, ...] | None = None, _cli_settings_source: pydantic_settings.sources.CliSettingsSource[typing.Any] | None = None, _cli_parse_none_str: str | None = None, _cli_hide_none_type: bool | None = None, _cli_avoid_json: bool | None = None, _cli_enforce_required: bool | None = None, _cli_use_class_docs_for_groups: bool | None = None, _cli_exit_on_error: bool | None = None, _cli_prefix: str | None = None, _cli_flag_prefix_char: str | None = None, _cli_implicit_flags: bool | None = None, _cli_ignore_unknown_args: bool | None = None, _secrets_dir: pydantic_settings.sources.PathType | None = None, **values: typing.Any)
+`````{py:class} ServerConfig(_case_sensitive: bool | None = None, _nested_model_default_partial_update: bool | None = None, _env_prefix: str | None = None, _env_prefix_target: pydantic_settings.sources.EnvPrefixTarget | None = None, _env_file: pydantic_settings.sources.DotenvType | None = ENV_FILE_SENTINEL, _env_file_encoding: str | None = None, _env_ignore_empty: bool | None = None, _env_nested_delimiter: str | None = None, _env_nested_max_split: int | None = None, _env_parse_none_str: str | None = None, _env_parse_enums: bool | None = None, _cli_prog_name: str | None = None, _cli_parse_args: bool | list[str] | tuple[str, ...] | None = None, _cli_settings_source: pydantic_settings.sources.CliSettingsSource[typing.Any] | None = None, _cli_parse_none_str: str | None = None, _cli_hide_none_type: bool | None = None, _cli_avoid_json: bool | None = None, _cli_enforce_required: bool | None = None, _cli_use_class_docs_for_groups: bool | None = None, _cli_exit_on_error: bool | None = None, _cli_prefix: str | None = None, _cli_flag_prefix_char: str | None = None, _cli_implicit_flags: bool | typing.Literal[dual, toggle] | None = None, _cli_ignore_unknown_args: bool | None = None, _cli_kebab_case: bool | typing.Literal[all, no_enums] | None = None, _cli_shortcuts: collections.abc.Mapping[str, str | list[str]] | None = None, _secrets_dir: pydantic_settings.sources.PathType | None = None, _build_sources: tuple[tuple[pydantic_settings.sources.PydanticBaseSettingsSource, ...], dict[str, typing.Any]] | None = None, **values: typing.Any)
 :canonical: archivebox.config.common.ServerConfig
 
-Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
+Bases: {py:obj}`archivebox.config.configset.BaseConfigSet`
+
+````{py:attribute} toml_section_header
+:canonical: archivebox.config.common.ServerConfig.toml_section_header
+:type: str
+:value: >
+   'SERVER_CONFIG'
+
+```{autodoc2-docstring} archivebox.config.common.ServerConfig.toml_section_header
+```
+
+````
 
 ````{py:attribute} SECRET_KEY
 :canonical: archivebox.config.common.ServerConfig.SECRET_KEY
@@ -318,6 +384,39 @@ Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
    'Field(...)'
 
 ```{autodoc2-docstring} archivebox.config.common.ServerConfig.BIND_ADDR
+```
+
+````
+
+````{py:attribute} LISTEN_HOST
+:canonical: archivebox.config.common.ServerConfig.LISTEN_HOST
+:type: str
+:value: >
+   'Field(...)'
+
+```{autodoc2-docstring} archivebox.config.common.ServerConfig.LISTEN_HOST
+```
+
+````
+
+````{py:attribute} ADMIN_BASE_URL
+:canonical: archivebox.config.common.ServerConfig.ADMIN_BASE_URL
+:type: str
+:value: >
+   'Field(...)'
+
+```{autodoc2-docstring} archivebox.config.common.ServerConfig.ADMIN_BASE_URL
+```
+
+````
+
+````{py:attribute} ARCHIVE_BASE_URL
+:canonical: archivebox.config.common.ServerConfig.ARCHIVE_BASE_URL
+:type: str
+:value: >
+   'Field(...)'
+
+```{autodoc2-docstring} archivebox.config.common.ServerConfig.ARCHIVE_BASE_URL
 ```
 
 ````
@@ -412,7 +511,7 @@ Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
 
 ````{py:attribute} ADMIN_USERNAME
 :canonical: archivebox.config.common.ServerConfig.ADMIN_USERNAME
-:type: str
+:type: typing.Optional[str]
 :value: >
    'Field(...)'
 
@@ -423,7 +522,7 @@ Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
 
 ````{py:attribute} ADMIN_PASSWORD
 :canonical: archivebox.config.common.ServerConfig.ADMIN_PASSWORD
-:type: str
+:type: typing.Optional[str]
 :value: >
    'Field(...)'
 
@@ -477,10 +576,21 @@ Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
 
 ````
 
-`````{py:class} ArchivingConfig(_case_sensitive: bool | None = None, _nested_model_default_partial_update: bool | None = None, _env_prefix: str | None = None, _env_file: pydantic_settings.sources.DotenvType | None = ENV_FILE_SENTINEL, _env_file_encoding: str | None = None, _env_ignore_empty: bool | None = None, _env_nested_delimiter: str | None = None, _env_parse_none_str: str | None = None, _env_parse_enums: bool | None = None, _cli_prog_name: str | None = None, _cli_parse_args: bool | list[str] | tuple[str, ...] | None = None, _cli_settings_source: pydantic_settings.sources.CliSettingsSource[typing.Any] | None = None, _cli_parse_none_str: str | None = None, _cli_hide_none_type: bool | None = None, _cli_avoid_json: bool | None = None, _cli_enforce_required: bool | None = None, _cli_use_class_docs_for_groups: bool | None = None, _cli_exit_on_error: bool | None = None, _cli_prefix: str | None = None, _cli_flag_prefix_char: str | None = None, _cli_implicit_flags: bool | None = None, _cli_ignore_unknown_args: bool | None = None, _secrets_dir: pydantic_settings.sources.PathType | None = None, **values: typing.Any)
+`````{py:class} ArchivingConfig(_case_sensitive: bool | None = None, _nested_model_default_partial_update: bool | None = None, _env_prefix: str | None = None, _env_prefix_target: pydantic_settings.sources.EnvPrefixTarget | None = None, _env_file: pydantic_settings.sources.DotenvType | None = ENV_FILE_SENTINEL, _env_file_encoding: str | None = None, _env_ignore_empty: bool | None = None, _env_nested_delimiter: str | None = None, _env_nested_max_split: int | None = None, _env_parse_none_str: str | None = None, _env_parse_enums: bool | None = None, _cli_prog_name: str | None = None, _cli_parse_args: bool | list[str] | tuple[str, ...] | None = None, _cli_settings_source: pydantic_settings.sources.CliSettingsSource[typing.Any] | None = None, _cli_parse_none_str: str | None = None, _cli_hide_none_type: bool | None = None, _cli_avoid_json: bool | None = None, _cli_enforce_required: bool | None = None, _cli_use_class_docs_for_groups: bool | None = None, _cli_exit_on_error: bool | None = None, _cli_prefix: str | None = None, _cli_flag_prefix_char: str | None = None, _cli_implicit_flags: bool | typing.Literal[dual, toggle] | None = None, _cli_ignore_unknown_args: bool | None = None, _cli_kebab_case: bool | typing.Literal[all, no_enums] | None = None, _cli_shortcuts: collections.abc.Mapping[str, str | list[str]] | None = None, _secrets_dir: pydantic_settings.sources.PathType | None = None, _build_sources: tuple[tuple[pydantic_settings.sources.PydanticBaseSettingsSource, ...], dict[str, typing.Any]] | None = None, **values: typing.Any)
 :canonical: archivebox.config.common.ArchivingConfig
 
-Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
+Bases: {py:obj}`archivebox.config.configset.BaseConfigSet`
+
+````{py:attribute} toml_section_header
+:canonical: archivebox.config.common.ArchivingConfig.toml_section_header
+:type: str
+:value: >
+   'ARCHIVING_CONFIG'
+
+```{autodoc2-docstring} archivebox.config.common.ArchivingConfig.toml_section_header
+```
+
+````
 
 ````{py:attribute} ONLY_NEW
 :canonical: archivebox.config.common.ArchivingConfig.ONLY_NEW
@@ -489,6 +599,17 @@ Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
    'Field(...)'
 
 ```{autodoc2-docstring} archivebox.config.common.ArchivingConfig.ONLY_NEW
+```
+
+````
+
+````{py:attribute} OVERWRITE
+:canonical: archivebox.config.common.ArchivingConfig.OVERWRITE
+:type: bool
+:value: >
+   'Field(...)'
+
+```{autodoc2-docstring} archivebox.config.common.ArchivingConfig.OVERWRITE
 ```
 
 ````
@@ -504,24 +625,13 @@ Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
 
 ````
 
-````{py:attribute} MEDIA_TIMEOUT
-:canonical: archivebox.config.common.ArchivingConfig.MEDIA_TIMEOUT
+````{py:attribute} MAX_URL_ATTEMPTS
+:canonical: archivebox.config.common.ArchivingConfig.MAX_URL_ATTEMPTS
 :type: int
 :value: >
    'Field(...)'
 
-```{autodoc2-docstring} archivebox.config.common.ArchivingConfig.MEDIA_TIMEOUT
-```
-
-````
-
-````{py:attribute} MEDIA_MAX_SIZE
-:canonical: archivebox.config.common.ArchivingConfig.MEDIA_MAX_SIZE
-:type: str
-:value: >
-   'Field(...)'
-
-```{autodoc2-docstring} archivebox.config.common.ArchivingConfig.MEDIA_MAX_SIZE
+```{autodoc2-docstring} archivebox.config.common.ArchivingConfig.MAX_URL_ATTEMPTS
 ```
 
 ````
@@ -628,6 +738,9 @@ Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
 ````{py:method} validate()
 :canonical: archivebox.config.common.ArchivingConfig.validate
 
+```{autodoc2-docstring} archivebox.config.common.ArchivingConfig.validate
+```
+
 ````
 
 ````{py:method} validate_check_ssl_validity(v)
@@ -686,10 +799,21 @@ Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
 
 ````
 
-`````{py:class} SearchBackendConfig(_case_sensitive: bool | None = None, _nested_model_default_partial_update: bool | None = None, _env_prefix: str | None = None, _env_file: pydantic_settings.sources.DotenvType | None = ENV_FILE_SENTINEL, _env_file_encoding: str | None = None, _env_ignore_empty: bool | None = None, _env_nested_delimiter: str | None = None, _env_parse_none_str: str | None = None, _env_parse_enums: bool | None = None, _cli_prog_name: str | None = None, _cli_parse_args: bool | list[str] | tuple[str, ...] | None = None, _cli_settings_source: pydantic_settings.sources.CliSettingsSource[typing.Any] | None = None, _cli_parse_none_str: str | None = None, _cli_hide_none_type: bool | None = None, _cli_avoid_json: bool | None = None, _cli_enforce_required: bool | None = None, _cli_use_class_docs_for_groups: bool | None = None, _cli_exit_on_error: bool | None = None, _cli_prefix: str | None = None, _cli_flag_prefix_char: str | None = None, _cli_implicit_flags: bool | None = None, _cli_ignore_unknown_args: bool | None = None, _secrets_dir: pydantic_settings.sources.PathType | None = None, **values: typing.Any)
+`````{py:class} SearchBackendConfig(_case_sensitive: bool | None = None, _nested_model_default_partial_update: bool | None = None, _env_prefix: str | None = None, _env_prefix_target: pydantic_settings.sources.EnvPrefixTarget | None = None, _env_file: pydantic_settings.sources.DotenvType | None = ENV_FILE_SENTINEL, _env_file_encoding: str | None = None, _env_ignore_empty: bool | None = None, _env_nested_delimiter: str | None = None, _env_nested_max_split: int | None = None, _env_parse_none_str: str | None = None, _env_parse_enums: bool | None = None, _cli_prog_name: str | None = None, _cli_parse_args: bool | list[str] | tuple[str, ...] | None = None, _cli_settings_source: pydantic_settings.sources.CliSettingsSource[typing.Any] | None = None, _cli_parse_none_str: str | None = None, _cli_hide_none_type: bool | None = None, _cli_avoid_json: bool | None = None, _cli_enforce_required: bool | None = None, _cli_use_class_docs_for_groups: bool | None = None, _cli_exit_on_error: bool | None = None, _cli_prefix: str | None = None, _cli_flag_prefix_char: str | None = None, _cli_implicit_flags: bool | typing.Literal[dual, toggle] | None = None, _cli_ignore_unknown_args: bool | None = None, _cli_kebab_case: bool | typing.Literal[all, no_enums] | None = None, _cli_shortcuts: collections.abc.Mapping[str, str | list[str]] | None = None, _secrets_dir: pydantic_settings.sources.PathType | None = None, _build_sources: tuple[tuple[pydantic_settings.sources.PydanticBaseSettingsSource, ...], dict[str, typing.Any]] | None = None, **values: typing.Any)
 :canonical: archivebox.config.common.SearchBackendConfig
 
-Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
+Bases: {py:obj}`archivebox.config.configset.BaseConfigSet`
+
+````{py:attribute} toml_section_header
+:canonical: archivebox.config.common.SearchBackendConfig.toml_section_header
+:type: str
+:value: >
+   'SEARCH_BACKEND_CONFIG'
+
+```{autodoc2-docstring} archivebox.config.common.SearchBackendConfig.toml_section_header
+```
+
+````
 
 ````{py:attribute} USE_INDEXING_BACKEND
 :canonical: archivebox.config.common.SearchBackendConfig.USE_INDEXING_BACKEND
@@ -731,17 +855,6 @@ Bases: {py:obj}`abx_spec_config.base_configset.BaseConfigSet`
    'Field(...)'
 
 ```{autodoc2-docstring} archivebox.config.common.SearchBackendConfig.SEARCH_PROCESS_HTML
-```
-
-````
-
-````{py:attribute} SEARCH_BACKEND_TIMEOUT
-:canonical: archivebox.config.common.SearchBackendConfig.SEARCH_BACKEND_TIMEOUT
-:type: int
-:value: >
-   'Field(...)'
-
-```{autodoc2-docstring} archivebox.config.common.SearchBackendConfig.SEARCH_BACKEND_TIMEOUT
 ```
 
 ````

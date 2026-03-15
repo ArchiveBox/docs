@@ -29,59 +29,50 @@
     ```
 ````
 
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`get_plugin_choices <archivebox.core.forms.get_plugin_choices>`
+  - ```{autodoc2-docstring} archivebox.core.forms.get_plugin_choices
+    :summary:
+    ```
+````
+
 ### Data
 
 ````{list-table}
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`PARSER_CHOICES <archivebox.core.forms.PARSER_CHOICES>`
-  - ```{autodoc2-docstring} archivebox.core.forms.PARSER_CHOICES
-    :summary:
-    ```
 * - {py:obj}`DEPTH_CHOICES <archivebox.core.forms.DEPTH_CHOICES>`
   - ```{autodoc2-docstring} archivebox.core.forms.DEPTH_CHOICES
-    :summary:
-    ```
-* - {py:obj}`ARCHIVE_METHODS <archivebox.core.forms.ARCHIVE_METHODS>`
-  - ```{autodoc2-docstring} archivebox.core.forms.ARCHIVE_METHODS
     :summary:
     ```
 ````
 
 ### API
 
-````{py:data} PARSER_CHOICES
-:canonical: archivebox.core.forms.PARSER_CHOICES
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.core.forms.PARSER_CHOICES
-```
-
-````
-
 ````{py:data} DEPTH_CHOICES
 :canonical: archivebox.core.forms.DEPTH_CHOICES
 :value: >
-   (('0', 'depth = 0 (archive just these URLs)'), ('1', 'depth = 1 (archive these URLs and all URLs one...
+   (('0', 'depth = 0 (archive just these URLs)'), ('1', 'depth = 1 (+ URLs one hop away)'), ('2', 'dept...
 
 ```{autodoc2-docstring} archivebox.core.forms.DEPTH_CHOICES
 ```
 
 ````
 
-````{py:data} ARCHIVE_METHODS
-:canonical: archivebox.core.forms.ARCHIVE_METHODS
-:value: >
-   None
+````{py:function} get_plugin_choices()
+:canonical: archivebox.core.forms.get_plugin_choices
 
-```{autodoc2-docstring} archivebox.core.forms.ARCHIVE_METHODS
+```{autodoc2-docstring} archivebox.core.forms.get_plugin_choices
 ```
-
 ````
 
-`````{py:class} AddLinkForm(data=None, files=None, auto_id='id_%s', prefix=None, initial=None, error_class=ErrorList, label_suffix=None, empty_permitted=False, field_order=None, use_required_attribute=None, renderer=None)
+`````{py:class} AddLinkForm(*args, **kwargs)
 :canonical: archivebox.core.forms.AddLinkForm
 
 Bases: {py:obj}`django.forms.Form`
@@ -92,16 +83,6 @@ Bases: {py:obj}`django.forms.Form`
    'RegexField(...)'
 
 ```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.url
-```
-
-````
-
-````{py:attribute} parser
-:canonical: archivebox.core.forms.AddLinkForm.parser
-:value: >
-   'ChoiceField(...)'
-
-```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.parser
 ```
 
 ````
@@ -126,13 +107,138 @@ Bases: {py:obj}`django.forms.Form`
 
 ````
 
-````{py:attribute} archive_methods
-:canonical: archivebox.core.forms.AddLinkForm.archive_methods
+````{py:attribute} notes
+:canonical: archivebox.core.forms.AddLinkForm.notes
+:value: >
+   'CharField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.notes
+```
+
+````
+
+````{py:attribute} chrome_plugins
+:canonical: archivebox.core.forms.AddLinkForm.chrome_plugins
 :value: >
    'MultipleChoiceField(...)'
 
-```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.archive_methods
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.chrome_plugins
 ```
+
+````
+
+````{py:attribute} archiving_plugins
+:canonical: archivebox.core.forms.AddLinkForm.archiving_plugins
+:value: >
+   'MultipleChoiceField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.archiving_plugins
+```
+
+````
+
+````{py:attribute} parsing_plugins
+:canonical: archivebox.core.forms.AddLinkForm.parsing_plugins
+:value: >
+   'MultipleChoiceField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.parsing_plugins
+```
+
+````
+
+````{py:attribute} search_plugins
+:canonical: archivebox.core.forms.AddLinkForm.search_plugins
+:value: >
+   'MultipleChoiceField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.search_plugins
+```
+
+````
+
+````{py:attribute} binary_plugins
+:canonical: archivebox.core.forms.AddLinkForm.binary_plugins
+:value: >
+   'MultipleChoiceField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.binary_plugins
+```
+
+````
+
+````{py:attribute} extension_plugins
+:canonical: archivebox.core.forms.AddLinkForm.extension_plugins
+:value: >
+   'MultipleChoiceField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.extension_plugins
+```
+
+````
+
+````{py:attribute} schedule
+:canonical: archivebox.core.forms.AddLinkForm.schedule
+:value: >
+   'CharField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.schedule
+```
+
+````
+
+````{py:attribute} persona
+:canonical: archivebox.core.forms.AddLinkForm.persona
+:value: >
+   'CharField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.persona
+```
+
+````
+
+````{py:attribute} overwrite
+:canonical: archivebox.core.forms.AddLinkForm.overwrite
+:value: >
+   'BooleanField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.overwrite
+```
+
+````
+
+````{py:attribute} update
+:canonical: archivebox.core.forms.AddLinkForm.update
+:value: >
+   'BooleanField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.update
+```
+
+````
+
+````{py:attribute} index_only
+:canonical: archivebox.core.forms.AddLinkForm.index_only
+:value: >
+   'BooleanField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.index_only
+```
+
+````
+
+````{py:attribute} config
+:canonical: archivebox.core.forms.AddLinkForm.config
+:value: >
+   'JSONField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.config
+```
+
+````
+
+````{py:method} clean()
+:canonical: archivebox.core.forms.AddLinkForm.clean
 
 ````
 

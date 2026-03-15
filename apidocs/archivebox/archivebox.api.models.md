@@ -16,13 +16,9 @@
 :align: left
 
 * - {py:obj}`APIToken <archivebox.api.models.APIToken>`
-  - ```{autodoc2-docstring} archivebox.api.models.APIToken
-    :summary:
-    ```
+  -
 * - {py:obj}`OutboundWebhook <archivebox.api.models.OutboundWebhook>`
-  - ```{autodoc2-docstring} archivebox.api.models.OutboundWebhook
-    :summary:
-    ```
+  -
 ````
 
 ### Functions
@@ -46,79 +42,10 @@
 ```
 ````
 
-``````{py:class} APIToken(*args: typing.Any, **kwargs: typing.Any)
+``````{py:class} APIToken(*args, **kwargs)
 :canonical: archivebox.api.models.APIToken
 
-Bases: {py:obj}`abid_utils.models.ABIDModel`
-
-```{autodoc2-docstring} archivebox.api.models.APIToken
-```
-
-```{rubric} Initialization
-```
-
-```{autodoc2-docstring} archivebox.api.models.APIToken.__init__
-```
-
-````{py:attribute} abid_prefix
-:canonical: archivebox.api.models.APIToken.abid_prefix
-:value: >
-   'apt_'
-
-```{autodoc2-docstring} archivebox.api.models.APIToken.abid_prefix
-```
-
-````
-
-````{py:attribute} abid_ts_src
-:canonical: archivebox.api.models.APIToken.abid_ts_src
-:value: >
-   'self.created_at'
-
-```{autodoc2-docstring} archivebox.api.models.APIToken.abid_ts_src
-```
-
-````
-
-````{py:attribute} abid_uri_src
-:canonical: archivebox.api.models.APIToken.abid_uri_src
-:value: >
-   'self.created_by_id'
-
-```{autodoc2-docstring} archivebox.api.models.APIToken.abid_uri_src
-```
-
-````
-
-````{py:attribute} abid_subtype_src
-:canonical: archivebox.api.models.APIToken.abid_subtype_src
-:value: >
-   '"01"'
-
-```{autodoc2-docstring} archivebox.api.models.APIToken.abid_subtype_src
-```
-
-````
-
-````{py:attribute} abid_rand_src
-:canonical: archivebox.api.models.APIToken.abid_rand_src
-:value: >
-   'self.id'
-
-```{autodoc2-docstring} archivebox.api.models.APIToken.abid_rand_src
-```
-
-````
-
-````{py:attribute} abid_drift_allowed
-:canonical: archivebox.api.models.APIToken.abid_drift_allowed
-:value: >
-   True
-
-```{autodoc2-docstring} archivebox.api.models.APIToken.abid_drift_allowed
-```
-
-````
+Bases: {py:obj}`django.db.models.Model`
 
 ````{py:attribute} id
 :canonical: archivebox.api.models.APIToken.id
@@ -126,16 +53,6 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`
    'UUIDField(...)'
 
 ```{autodoc2-docstring} archivebox.api.models.APIToken.id
-```
-
-````
-
-````{py:attribute} abid
-:canonical: archivebox.api.models.APIToken.abid
-:value: >
-   'ABIDField(...)'
-
-```{autodoc2-docstring} archivebox.api.models.APIToken.abid
 ```
 
 ````
@@ -153,7 +70,7 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`
 ````{py:attribute} created_at
 :canonical: archivebox.api.models.APIToken.created_at
 :value: >
-   'AutoDateTimeField(...)'
+   'DateTimeField(...)'
 
 ```{autodoc2-docstring} archivebox.api.models.APIToken.created_at
 ```
@@ -195,6 +112,16 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`
 
 Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
+````{py:attribute} app_label
+:canonical: archivebox.api.models.APIToken.Meta.app_label
+:value: >
+   'api'
+
+```{autodoc2-docstring} archivebox.api.models.APIToken.Meta.app_label
+```
+
+````
+
 ````{py:attribute} verbose_name
 :canonical: archivebox.api.models.APIToken.Meta.verbose_name
 :value: >
@@ -222,27 +149,6 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````
 
-````{py:method} __repr__() -> str
-:canonical: archivebox.api.models.APIToken.__repr__
-
-````
-
-````{py:method} __json__() -> dict
-:canonical: archivebox.api.models.APIToken.__json__
-
-```{autodoc2-docstring} archivebox.api.models.APIToken.__json__
-```
-
-````
-
-````{py:property} expires_as_iso8601
-:canonical: archivebox.api.models.APIToken.expires_as_iso8601
-
-```{autodoc2-docstring} archivebox.api.models.APIToken.expires_as_iso8601
-```
-
-````
-
 ````{py:property} token_redacted
 :canonical: archivebox.api.models.APIToken.token_redacted
 
@@ -261,79 +167,10 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ``````
 
-``````{py:class} OutboundWebhook(*args: typing.Any, **kwargs: typing.Any)
+``````{py:class} OutboundWebhook(*args, **kwargs)
 :canonical: archivebox.api.models.OutboundWebhook
 
-Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`signal_webhooks.models.WebhookBase`
-
-```{autodoc2-docstring} archivebox.api.models.OutboundWebhook
-```
-
-```{rubric} Initialization
-```
-
-```{autodoc2-docstring} archivebox.api.models.OutboundWebhook.__init__
-```
-
-````{py:attribute} abid_prefix
-:canonical: archivebox.api.models.OutboundWebhook.abid_prefix
-:value: >
-   'whk_'
-
-```{autodoc2-docstring} archivebox.api.models.OutboundWebhook.abid_prefix
-```
-
-````
-
-````{py:attribute} abid_ts_src
-:canonical: archivebox.api.models.OutboundWebhook.abid_ts_src
-:value: >
-   'self.created_at'
-
-```{autodoc2-docstring} archivebox.api.models.OutboundWebhook.abid_ts_src
-```
-
-````
-
-````{py:attribute} abid_uri_src
-:canonical: archivebox.api.models.OutboundWebhook.abid_uri_src
-:value: >
-   'self.endpoint'
-
-```{autodoc2-docstring} archivebox.api.models.OutboundWebhook.abid_uri_src
-```
-
-````
-
-````{py:attribute} abid_subtype_src
-:canonical: archivebox.api.models.OutboundWebhook.abid_subtype_src
-:value: >
-   'self.ref'
-
-```{autodoc2-docstring} archivebox.api.models.OutboundWebhook.abid_subtype_src
-```
-
-````
-
-````{py:attribute} abid_rand_src
-:canonical: archivebox.api.models.OutboundWebhook.abid_rand_src
-:value: >
-   'self.id'
-
-```{autodoc2-docstring} archivebox.api.models.OutboundWebhook.abid_rand_src
-```
-
-````
-
-````{py:attribute} abid_drift_allowed
-:canonical: archivebox.api.models.OutboundWebhook.abid_drift_allowed
-:value: >
-   True
-
-```{autodoc2-docstring} archivebox.api.models.OutboundWebhook.abid_drift_allowed
-```
-
-````
+Bases: {py:obj}`signal_webhooks.models.WebhookBase`
 
 ````{py:attribute} id
 :canonical: archivebox.api.models.OutboundWebhook.id
@@ -341,16 +178,6 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`signal_webhooks.models.We
    'UUIDField(...)'
 
 ```{autodoc2-docstring} archivebox.api.models.OutboundWebhook.id
-```
-
-````
-
-````{py:attribute} abid
-:canonical: archivebox.api.models.OutboundWebhook.abid
-:value: >
-   'ABIDField(...)'
-
-```{autodoc2-docstring} archivebox.api.models.OutboundWebhook.abid
 ```
 
 ````
@@ -368,7 +195,7 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`signal_webhooks.models.We
 ````{py:attribute} created_at
 :canonical: archivebox.api.models.OutboundWebhook.created_at
 :value: >
-   'AutoDateTimeField(...)'
+   'DateTimeField(...)'
 
 ```{autodoc2-docstring} archivebox.api.models.OutboundWebhook.created_at
 ```
@@ -392,6 +219,16 @@ Bases: {py:obj}`signal_webhooks.models.WebhookBase.Meta`
 
 ```{autodoc2-docstring} archivebox.api.models.OutboundWebhook.Meta
 ```
+
+````{py:attribute} app_label
+:canonical: archivebox.api.models.OutboundWebhook.Meta.app_label
+:value: >
+   'api'
+
+```{autodoc2-docstring} archivebox.api.models.OutboundWebhook.Meta.app_label
+```
+
+````
 
 ````{py:attribute} verbose_name
 :canonical: archivebox.api.models.OutboundWebhook.Meta.verbose_name

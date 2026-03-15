@@ -95,12 +95,12 @@ Bases: {py:obj}`django.contrib.admin.TabularInline`
 `````{py:class} TagAdmin(model, admin_site)
 :canonical: archivebox.core.admin_tags.TagAdmin
 
-Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
+Bases: {py:obj}`archivebox.base_models.admin.BaseModelAdmin`
 
 ````{py:attribute} list_display
 :canonical: archivebox.core.admin_tags.TagAdmin.list_display
 :value: >
-   ('created_at', 'created_by', 'abid', 'name', 'num_snapshots', 'snapshots')
+   ('created_at', 'created_by', 'id', 'name', 'num_snapshots', 'snapshots')
 
 ```{autodoc2-docstring} archivebox.core.admin_tags.TagAdmin.list_display
 ```
@@ -120,7 +120,7 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} sort_fields
 :canonical: archivebox.core.admin_tags.TagAdmin.sort_fields
 :value: >
-   ('name', 'slug', 'abid', 'created_by', 'created_at')
+   ('name', 'slug', 'id', 'created_by', 'created_at')
 
 ```{autodoc2-docstring} archivebox.core.admin_tags.TagAdmin.sort_fields
 ```
@@ -130,7 +130,7 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} readonly_fields
 :canonical: archivebox.core.admin_tags.TagAdmin.readonly_fields
 :value: >
-   ('slug', 'abid', 'created_at', 'modified_at', 'abid_info', 'snapshots')
+   ('slug', 'id', 'created_at', 'modified_at', 'snapshots')
 
 ```{autodoc2-docstring} archivebox.core.admin_tags.TagAdmin.readonly_fields
 ```
@@ -140,19 +140,9 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} search_fields
 :canonical: archivebox.core.admin_tags.TagAdmin.search_fields
 :value: >
-   ('abid', 'name', 'slug')
+   ('id', 'name', 'slug')
 
 ```{autodoc2-docstring} archivebox.core.admin_tags.TagAdmin.search_fields
-```
-
-````
-
-````{py:attribute} fields
-:canonical: archivebox.core.admin_tags.TagAdmin.fields
-:value: >
-   ('name', 'created_by')
-
-```{autodoc2-docstring} archivebox.core.admin_tags.TagAdmin.fields
 ```
 
 ````
@@ -173,6 +163,16 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
    ['-created_at']
 
 ```{autodoc2-docstring} archivebox.core.admin_tags.TagAdmin.ordering
+```
+
+````
+
+````{py:attribute} fieldsets
+:canonical: archivebox.core.admin_tags.TagAdmin.fieldsets
+:value: >
+   (('Tag Info',), ('Metadata',), ('Snapshots',))
+
+```{autodoc2-docstring} archivebox.core.admin_tags.TagAdmin.fieldsets
 ```
 
 ````

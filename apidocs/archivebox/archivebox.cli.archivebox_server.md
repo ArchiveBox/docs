@@ -15,37 +15,26 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`server <archivebox.cli.archivebox_server.server>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_server.server
+    :summary:
+    ```
 * - {py:obj}`main <archivebox.cli.archivebox_server.main>`
   - ```{autodoc2-docstring} archivebox.cli.archivebox_server.main
     :summary:
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__command__ <archivebox.cli.archivebox_server.__command__>`
-  - ```{autodoc2-docstring} archivebox.cli.archivebox_server.__command__
-    :summary:
-    ```
-````
-
 ### API
 
-````{py:data} __command__
-:canonical: archivebox.cli.archivebox_server.__command__
-:value: >
-   'archivebox server'
+````{py:function} server(runserver_args: typing.Iterable[str] = (SERVER_CONFIG.BIND_ADDR, ), reload: bool = False, init: bool = False, debug: bool = False, daemonize: bool = False, nothreading: bool = False) -> None
+:canonical: archivebox.cli.archivebox_server.server
 
-```{autodoc2-docstring} archivebox.cli.archivebox_server.__command__
+```{autodoc2-docstring} archivebox.cli.archivebox_server.server
 ```
-
 ````
 
-````{py:function} main(args: typing.Optional[typing.List[str]] = None, stdin: typing.Optional[typing.IO] = None, pwd: typing.Optional[str] = None) -> None
+````{py:function} main(**kwargs)
 :canonical: archivebox.cli.archivebox_server.main
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_server.main

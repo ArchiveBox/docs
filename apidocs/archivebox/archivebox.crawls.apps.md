@@ -39,9 +39,27 @@ Bases: {py:obj}`django.apps.AppConfig`
 ````{py:attribute} name
 :canonical: archivebox.crawls.apps.CrawlsConfig.name
 :value: >
-   'crawls'
+   'archivebox.crawls'
 
 ```{autodoc2-docstring} archivebox.crawls.apps.CrawlsConfig.name
+```
+
+````
+
+````{py:attribute} label
+:canonical: archivebox.crawls.apps.CrawlsConfig.label
+:value: >
+   'crawls'
+
+```{autodoc2-docstring} archivebox.crawls.apps.CrawlsConfig.label
+```
+
+````
+
+````{py:method} ready()
+:canonical: archivebox.crawls.apps.CrawlsConfig.ready
+
+```{autodoc2-docstring} archivebox.crawls.apps.CrawlsConfig.ready
 ```
 
 ````

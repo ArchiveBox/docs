@@ -15,37 +15,26 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`install <archivebox.cli.archivebox_install.install>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_install.install
+    :summary:
+    ```
 * - {py:obj}`main <archivebox.cli.archivebox_install.main>`
   - ```{autodoc2-docstring} archivebox.cli.archivebox_install.main
     :summary:
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__command__ <archivebox.cli.archivebox_install.__command__>`
-  - ```{autodoc2-docstring} archivebox.cli.archivebox_install.__command__
-    :summary:
-    ```
-````
-
 ### API
 
-````{py:data} __command__
-:canonical: archivebox.cli.archivebox_install.__command__
-:value: >
-   'archivebox install'
+````{py:function} install(binaries: tuple[str, ...] = (), binproviders: str = '*', dry_run: bool = False) -> None
+:canonical: archivebox.cli.archivebox_install.install
 
-```{autodoc2-docstring} archivebox.cli.archivebox_install.__command__
+```{autodoc2-docstring} archivebox.cli.archivebox_install.install
 ```
-
 ````
 
-````{py:function} main(args: typing.Optional[typing.List[str]] = None, stdin: typing.Optional[typing.IO] = None, pwd: typing.Optional[str] = None) -> None
+````{py:function} main(**kwargs) -> None
 :canonical: archivebox.cli.archivebox_install.main
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_install.main

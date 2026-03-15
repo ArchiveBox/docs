@@ -14,4 +14,5 @@
 :maxdepth: 1
 
 archivebox.core.templatetags.core_tags
+archivebox.core.templatetags.config_tags
 ```

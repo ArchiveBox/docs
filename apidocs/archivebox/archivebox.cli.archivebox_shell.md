@@ -15,37 +15,26 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`shell <archivebox.cli.archivebox_shell.shell>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_shell.shell
+    :summary:
+    ```
 * - {py:obj}`main <archivebox.cli.archivebox_shell.main>`
   - ```{autodoc2-docstring} archivebox.cli.archivebox_shell.main
     :summary:
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__command__ <archivebox.cli.archivebox_shell.__command__>`
-  - ```{autodoc2-docstring} archivebox.cli.archivebox_shell.__command__
-    :summary:
-    ```
-````
-
 ### API
 
-````{py:data} __command__
-:canonical: archivebox.cli.archivebox_shell.__command__
-:value: >
-   'archivebox shell'
+````{py:function} shell(args: typing.Iterable[str] = ()) -> None
+:canonical: archivebox.cli.archivebox_shell.shell
 
-```{autodoc2-docstring} archivebox.cli.archivebox_shell.__command__
+```{autodoc2-docstring} archivebox.cli.archivebox_shell.shell
 ```
-
 ````
 
-````{py:function} main(args: typing.Optional[typing.List[str]] = None, stdin: typing.Optional[typing.IO] = None, pwd: typing.Optional[str] = None) -> None
+````{py:function} main(args: typing.Iterable[str] = ()) -> None
 :canonical: archivebox.cli.archivebox_shell.main
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_shell.main

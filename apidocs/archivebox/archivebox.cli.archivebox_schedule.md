@@ -15,6 +15,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`schedule <archivebox.cli.archivebox_schedule.schedule>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_schedule.schedule
+    :summary:
+    ```
 * - {py:obj}`main <archivebox.cli.archivebox_schedule.main>`
   - ```{autodoc2-docstring} archivebox.cli.archivebox_schedule.main
     :summary:
@@ -27,25 +31,32 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`__command__ <archivebox.cli.archivebox_schedule.__command__>`
-  - ```{autodoc2-docstring} archivebox.cli.archivebox_schedule.__command__
+* - {py:obj}`CRON_COMMENT <archivebox.cli.archivebox_schedule.CRON_COMMENT>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_schedule.CRON_COMMENT
     :summary:
     ```
 ````
 
 ### API
 
-````{py:data} __command__
-:canonical: archivebox.cli.archivebox_schedule.__command__
+````{py:data} CRON_COMMENT
+:canonical: archivebox.cli.archivebox_schedule.CRON_COMMENT
 :value: >
-   'archivebox schedule'
+   'ArchiveBox'
 
-```{autodoc2-docstring} archivebox.cli.archivebox_schedule.__command__
+```{autodoc2-docstring} archivebox.cli.archivebox_schedule.CRON_COMMENT
 ```
 
 ````
 
-````{py:function} main(args: typing.Optional[typing.List[str]] = None, stdin: typing.Optional[typing.IO] = None, pwd: typing.Optional[str] = None) -> None
+````{py:function} schedule(add: bool = False, show: bool = False, clear: bool = False, foreground: bool = False, run_all: bool = False, quiet: bool = False, every: str | None = None, tag: str = '', depth: int | str = 0, overwrite: bool = False, update: bool = not ARCHIVING_CONFIG.ONLY_NEW, import_path: str | None = None, out_dir: pathlib.Path = DATA_DIR) -> None
+:canonical: archivebox.cli.archivebox_schedule.schedule
+
+```{autodoc2-docstring} archivebox.cli.archivebox_schedule.schedule
+```
+````
+
+````{py:function} main(**kwargs)
 :canonical: archivebox.cli.archivebox_schedule.main
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_schedule.main

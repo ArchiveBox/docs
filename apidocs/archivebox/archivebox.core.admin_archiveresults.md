@@ -27,8 +27,8 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`result_url <archivebox.core.admin_archiveresults.result_url>`
-  - ```{autodoc2-docstring} archivebox.core.admin_archiveresults.result_url
+* - {py:obj}`render_archiveresults_list <archivebox.core.admin_archiveresults.render_archiveresults_list>`
+  - ```{autodoc2-docstring} archivebox.core.admin_archiveresults.render_archiveresults_list
     :summary:
     ```
 * - {py:obj}`register_admin <archivebox.core.admin_archiveresults.register_admin>`
@@ -39,10 +39,10 @@
 
 ### API
 
-````{py:function} result_url(result: huey_monitor.admin.TaskModel) -> str
-:canonical: archivebox.core.admin_archiveresults.result_url
+````{py:function} render_archiveresults_list(archiveresults_qs, limit=50)
+:canonical: archivebox.core.admin_archiveresults.render_archiveresults_list
 
-```{autodoc2-docstring} archivebox.core.admin_archiveresults.result_url
+```{autodoc2-docstring} archivebox.core.admin_archiveresults.render_archiveresults_list
 ```
 ````
 
@@ -94,7 +94,7 @@ Bases: {py:obj}`django.contrib.admin.TabularInline`
 ````{py:attribute} sort_fields
 :canonical: archivebox.core.admin_archiveresults.ArchiveResultInline.sort_fields
 :value: >
-   ('end_ts', 'extractor', 'output', 'status', 'cmd_version')
+   ('end_ts', 'plugin', 'output_str', 'status', 'cmd_version')
 
 ```{autodoc2-docstring} archivebox.core.admin_archiveresults.ArchiveResultInline.sort_fields
 ```
@@ -196,12 +196,12 @@ Bases: {py:obj}`django.contrib.admin.TabularInline`
 ``````{py:class} ArchiveResultAdmin(model, admin_site)
 :canonical: archivebox.core.admin_archiveresults.ArchiveResultAdmin
 
-Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
+Bases: {py:obj}`archivebox.base_models.admin.BaseModelAdmin`
 
 ````{py:attribute} list_display
 :canonical: archivebox.core.admin_archiveresults.ArchiveResultAdmin.list_display
 :value: >
-   ('abid', 'created_by', 'created_at', 'snapshot_info', 'tags_str', 'status', 'extractor', 'cmd_str', ...
+   ('id', 'created_at', 'snapshot_info', 'tags_str', 'status', 'plugin_with_icon', 'cmd_str', 'output_s...
 
 ```{autodoc2-docstring} archivebox.core.admin_archiveresults.ArchiveResultAdmin.list_display
 ```
@@ -211,7 +211,7 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} sort_fields
 :canonical: archivebox.core.admin_archiveresults.ArchiveResultAdmin.sort_fields
 :value: >
-   ('abid', 'created_by', 'created_at', 'extractor', 'status')
+   ('id', 'created_at', 'plugin', 'status')
 
 ```{autodoc2-docstring} archivebox.core.admin_archiveresults.ArchiveResultAdmin.sort_fields
 ```
@@ -221,7 +221,7 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} readonly_fields
 :canonical: archivebox.core.admin_archiveresults.ArchiveResultAdmin.readonly_fields
 :value: >
-   ('cmd_str', 'snapshot_info', 'tags_str', 'created_at', 'modified_at', 'abid_info', 'output_summary')
+   ('cmd', 'cmd_version', 'pwd', 'cmd_str', 'snapshot_info', 'tags_str', 'created_at', 'modified_at', '...
 
 ```{autodoc2-docstring} archivebox.core.admin_archiveresults.ArchiveResultAdmin.readonly_fields
 ```
@@ -231,19 +231,9 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} search_fields
 :canonical: archivebox.core.admin_archiveresults.ArchiveResultAdmin.search_fields
 :value: >
-   ('id', 'abid', 'snapshot__url', 'extractor', 'output', 'cmd_version', 'cmd', 'snapshot__timestamp')
+   ('id', 'snapshot__url', 'plugin', 'output_str', 'cmd_version', 'cmd', 'snapshot__timestamp')
 
 ```{autodoc2-docstring} archivebox.core.admin_archiveresults.ArchiveResultAdmin.search_fields
-```
-
-````
-
-````{py:attribute} fields
-:canonical: archivebox.core.admin_archiveresults.ArchiveResultAdmin.fields
-:value: >
-   ('snapshot', 'extractor', 'status', 'retry_at', 'start_ts', 'end_ts', 'created_by', 'pwd', 'cmd_vers...
-
-```{autodoc2-docstring} archivebox.core.admin_archiveresults.ArchiveResultAdmin.fields
 ```
 
 ````
@@ -258,10 +248,20 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 
 ````
 
+````{py:attribute} fieldsets
+:canonical: archivebox.core.admin_archiveresults.ArchiveResultAdmin.fieldsets
+:value: >
+   (('Snapshot',), ('Plugin',), ('Timing',), ('Command',), ('Output',))
+
+```{autodoc2-docstring} archivebox.core.admin_archiveresults.ArchiveResultAdmin.fieldsets
+```
+
+````
+
 ````{py:attribute} list_filter
 :canonical: archivebox.core.admin_archiveresults.ArchiveResultAdmin.list_filter
 :value: >
-   ('status', 'extractor', 'start_ts', 'cmd_version')
+   ('status', 'plugin', 'start_ts')
 
 ```{autodoc2-docstring} archivebox.core.admin_archiveresults.ArchiveResultAdmin.list_filter
 ```
@@ -370,6 +370,14 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 
 ````
 
+````{py:method} plugin_with_icon(result)
+:canonical: archivebox.core.admin_archiveresults.ArchiveResultAdmin.plugin_with_icon
+
+```{autodoc2-docstring} archivebox.core.admin_archiveresults.ArchiveResultAdmin.plugin_with_icon
+```
+
+````
+
 ````{py:method} cmd_str(result)
 :canonical: archivebox.core.admin_archiveresults.ArchiveResultAdmin.cmd_str
 
@@ -378,10 +386,10 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 
 ````
 
-````{py:method} output_str(result)
-:canonical: archivebox.core.admin_archiveresults.ArchiveResultAdmin.output_str
+````{py:method} output_display(result)
+:canonical: archivebox.core.admin_archiveresults.ArchiveResultAdmin.output_display
 
-```{autodoc2-docstring} archivebox.core.admin_archiveresults.ArchiveResultAdmin.output_str
+```{autodoc2-docstring} archivebox.core.admin_archiveresults.ArchiveResultAdmin.output_display
 ```
 
 ````

@@ -96,7 +96,7 @@
 ```
 ````
 
-`````{py:class} JSONSchemaWithLambdas(by_alias: bool = True, ref_template: str = DEFAULT_REF_TEMPLATE)
+`````{py:class} JSONSchemaWithLambdas(by_alias: bool = True, ref_template: str = DEFAULT_REF_TEMPLATE, union_format: typing.Literal[any_of, primitive_type_array] = 'any_of')
 :canonical: archivebox.misc.toml_util.JSONSchemaWithLambdas
 
 Bases: {py:obj}`pydantic.json_schema.GenerateJsonSchema`

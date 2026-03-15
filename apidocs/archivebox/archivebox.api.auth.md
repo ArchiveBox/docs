@@ -39,6 +39,10 @@
   - ```{autodoc2-docstring} archivebox.api.auth.UsernameAndPasswordAuth
     :summary:
     ```
+* - {py:obj}`DjangoSessionAuth <archivebox.api.auth.DjangoSessionAuth>`
+  - ```{autodoc2-docstring} archivebox.api.auth.DjangoSessionAuth
+    :summary:
+    ```
 ````
 
 ### Functions
@@ -211,6 +215,30 @@ Bases: {py:obj}`archivebox.api.auth.UserPassAuthCheck`, {py:obj}`ninja.security.
 ```
 
 ````
+
+`````{py:class} DjangoSessionAuth
+:canonical: archivebox.api.auth.DjangoSessionAuth
+
+```{autodoc2-docstring} archivebox.api.auth.DjangoSessionAuth
+```
+
+````{py:method} __call__(request: django.http.HttpRequest) -> typing.Optional[django.contrib.auth.models.AbstractBaseUser]
+:canonical: archivebox.api.auth.DjangoSessionAuth.__call__
+
+```{autodoc2-docstring} archivebox.api.auth.DjangoSessionAuth.__call__
+```
+
+````
+
+````{py:method} authenticate(request: django.http.HttpRequest, **kwargs) -> typing.Optional[django.contrib.auth.models.AbstractBaseUser]
+:canonical: archivebox.api.auth.DjangoSessionAuth.authenticate
+
+```{autodoc2-docstring} archivebox.api.auth.DjangoSessionAuth.authenticate
+```
+
+````
+
+`````
 
 ````{py:data} API_AUTH_METHODS
 :canonical: archivebox.api.auth.API_AUTH_METHODS

@@ -1,8 +1,8 @@
+# ArchiveBox Documentation
+
 <div align="center">
 
 <img src="https://archivebox.io/icon.png" width="80px"/>
-
-<h1>ArchiveBox Documentation</h1>
 
 </div>
 

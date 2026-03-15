@@ -100,7 +100,7 @@
 ````{py:data} IS_TTY
 :canonical: archivebox.misc.logging.IS_TTY
 :value: >
-   None
+   'isatty(...)'
 
 ```{autodoc2-docstring} archivebox.misc.logging.IS_TTY
 ```

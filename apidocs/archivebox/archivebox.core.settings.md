@@ -9,18 +9,6 @@
 
 ## Module Contents
 
-### Classes
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`HueyDBRouter <archivebox.core.settings.HueyDBRouter>`
-  - ```{autodoc2-docstring} archivebox.core.settings.HueyDBRouter
-    :summary:
-    ```
-````
-
 ### Data
 
 ````{list-table}
@@ -171,6 +159,14 @@
   - ```{autodoc2-docstring} archivebox.core.settings.CSRF_TRUSTED_ORIGINS
     :summary:
     ```
+* - {py:obj}`admin_base_url <archivebox.core.settings.admin_base_url>`
+  - ```{autodoc2-docstring} archivebox.core.settings.admin_base_url
+    :summary:
+    ```
+* - {py:obj}`api_base_url <archivebox.core.settings.api_base_url>`
+  - ```{autodoc2-docstring} archivebox.core.settings.api_base_url
+    :summary:
+    ```
 * - {py:obj}`SECURE_BROWSER_XSS_FILTER <archivebox.core.settings.SECURE_BROWSER_XSS_FILTER>`
   - ```{autodoc2-docstring} archivebox.core.settings.SECURE_BROWSER_XSS_FILTER
     :summary:
@@ -197,6 +193,10 @@
     ```
 * - {py:obj}`SESSION_COOKIE_DOMAIN <archivebox.core.settings.SESSION_COOKIE_DOMAIN>`
   - ```{autodoc2-docstring} archivebox.core.settings.SESSION_COOKIE_DOMAIN
+    :summary:
+    ```
+* - {py:obj}`CSRF_COOKIE_DOMAIN <archivebox.core.settings.CSRF_COOKIE_DOMAIN>`
+  - ```{autodoc2-docstring} archivebox.core.settings.CSRF_COOKIE_DOMAIN
     :summary:
     ```
 * - {py:obj}`SESSION_COOKIE_AGE <archivebox.core.settings.SESSION_COOKIE_AGE>`
@@ -358,7 +358,7 @@
 ````{py:data} WSGI_APPLICATION
 :canonical: archivebox.core.settings.WSGI_APPLICATION
 :value: >
-   'core.wsgi.application'
+   'archivebox.core.wsgi.application'
 
 ```{autodoc2-docstring} archivebox.core.settings.WSGI_APPLICATION
 ```
@@ -368,7 +368,7 @@
 ````{py:data} ASGI_APPLICATION
 :canonical: archivebox.core.settings.ASGI_APPLICATION
 :value: >
-   'core.asgi.application'
+   'archivebox.core.asgi.application'
 
 ```{autodoc2-docstring} archivebox.core.settings.ASGI_APPLICATION
 ```
@@ -378,7 +378,7 @@
 ````{py:data} ROOT_URLCONF
 :canonical: archivebox.core.settings.ROOT_URLCONF
 :value: >
-   'core.urls'
+   'archivebox.core.urls'
 
 ```{autodoc2-docstring} archivebox.core.settings.ROOT_URLCONF
 ```
@@ -438,7 +438,7 @@
 ````{py:data} INSTALLED_APPS
 :canonical: archivebox.core.settings.INSTALLED_APPS
 :value: >
-   None
+   ['daphne', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django....
 
 ```{autodoc2-docstring} archivebox.core.settings.INSTALLED_APPS
 ```
@@ -448,7 +448,7 @@
 ````{py:data} MIDDLEWARE
 :canonical: archivebox.core.settings.MIDDLEWARE
 :value: >
-   None
+   ['archivebox.core.middleware.TimezoneMiddleware', 'django.middleware.security.SecurityMiddleware', '...
 
 ```{autodoc2-docstring} archivebox.core.settings.MIDDLEWARE
 ```
@@ -458,7 +458,7 @@
 ````{py:data} AUTHENTICATION_BACKENDS
 :canonical: archivebox.core.settings.AUTHENTICATION_BACKENDS
 :value: >
-   None
+   ['django.contrib.auth.backends.RemoteUserBackend', 'django.contrib.auth.backends.ModelBackend']
 
 ```{autodoc2-docstring} archivebox.core.settings.AUTHENTICATION_BACKENDS
 ```
@@ -575,60 +575,10 @@
 
 ````
 
-`````{py:class} HueyDBRouter
-:canonical: archivebox.core.settings.HueyDBRouter
-
-```{autodoc2-docstring} archivebox.core.settings.HueyDBRouter
-```
-
-````{py:attribute} route_app_labels
-:canonical: archivebox.core.settings.HueyDBRouter.route_app_labels
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.core.settings.HueyDBRouter.route_app_labels
-```
-
-````
-
-````{py:method} db_for_read(model, **hints)
-:canonical: archivebox.core.settings.HueyDBRouter.db_for_read
-
-```{autodoc2-docstring} archivebox.core.settings.HueyDBRouter.db_for_read
-```
-
-````
-
-````{py:method} db_for_write(model, **hints)
-:canonical: archivebox.core.settings.HueyDBRouter.db_for_write
-
-```{autodoc2-docstring} archivebox.core.settings.HueyDBRouter.db_for_write
-```
-
-````
-
-````{py:method} allow_relation(obj1, obj2, **hints)
-:canonical: archivebox.core.settings.HueyDBRouter.allow_relation
-
-```{autodoc2-docstring} archivebox.core.settings.HueyDBRouter.allow_relation
-```
-
-````
-
-````{py:method} allow_migrate(db, app_label, model_name=None, **hints)
-:canonical: archivebox.core.settings.HueyDBRouter.allow_migrate
-
-```{autodoc2-docstring} archivebox.core.settings.HueyDBRouter.allow_migrate
-```
-
-````
-
-`````
-
 ````{py:data} DATABASE_ROUTERS
 :canonical: archivebox.core.settings.DATABASE_ROUTERS
 :value: >
-   ['core.settings.HueyDBRouter']
+   []
 
 ```{autodoc2-docstring} archivebox.core.settings.DATABASE_ROUTERS
 ```
@@ -705,6 +655,26 @@
 
 ````
 
+````{py:data} admin_base_url
+:canonical: archivebox.core.settings.admin_base_url
+:value: >
+   'normalize_base_url(...)'
+
+```{autodoc2-docstring} archivebox.core.settings.admin_base_url
+```
+
+````
+
+````{py:data} api_base_url
+:canonical: archivebox.core.settings.api_base_url
+:value: >
+   'normalize_base_url(...)'
+
+```{autodoc2-docstring} archivebox.core.settings.api_base_url
+```
+
+````
+
 ````{py:data} SECURE_BROWSER_XSS_FILTER
 :canonical: archivebox.core.settings.SECURE_BROWSER_XSS_FILTER
 :value: >
@@ -771,6 +741,16 @@
    None
 
 ```{autodoc2-docstring} archivebox.core.settings.SESSION_COOKIE_DOMAIN
+```
+
+````
+
+````{py:data} CSRF_COOKIE_DOMAIN
+:canonical: archivebox.core.settings.CSRF_COOKIE_DOMAIN
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.settings.CSRF_COOKIE_DOMAIN
 ```
 
 ````
@@ -958,7 +938,7 @@
 ````{py:data} SIGNAL_WEBHOOKS_CUSTOM_MODEL
 :canonical: archivebox.core.settings.SIGNAL_WEBHOOKS_CUSTOM_MODEL
 :value: >
-   'api.models.OutboundWebhook'
+   'archivebox.api.models.OutboundWebhook'
 
 ```{autodoc2-docstring} archivebox.core.settings.SIGNAL_WEBHOOKS_CUSTOM_MODEL
 ```

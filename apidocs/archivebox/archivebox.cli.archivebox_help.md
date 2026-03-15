@@ -15,6 +15,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`help <archivebox.cli.archivebox_help.help>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_help.help
+    :summary:
+    ```
 * - {py:obj}`main <archivebox.cli.archivebox_help.main>`
   - ```{autodoc2-docstring} archivebox.cli.archivebox_help.main
     :summary:
@@ -45,7 +49,14 @@
 
 ````
 
-````{py:function} main(args: typing.Optional[typing.List[str]] = None, stdin: typing.Optional[typing.IO] = None, pwd: typing.Optional[str] = None) -> None
+````{py:function} help() -> None
+:canonical: archivebox.cli.archivebox_help.help
+
+```{autodoc2-docstring} archivebox.cli.archivebox_help.help
+```
+````
+
+````{py:function} main(**kwargs)
 :canonical: archivebox.cli.archivebox_help.main
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_help.main

@@ -37,6 +37,10 @@
   - ```{autodoc2-docstring} archivebox.core.middleware.CacheControlMiddleware
     :summary:
     ```
+* - {py:obj}`HostRoutingMiddleware <archivebox.core.middleware.HostRoutingMiddleware>`
+  - ```{autodoc2-docstring} archivebox.core.middleware.HostRoutingMiddleware
+    :summary:
+    ```
 ````
 
 ### API
@@ -59,6 +63,13 @@
 :canonical: archivebox.core.middleware.CacheControlMiddleware
 
 ```{autodoc2-docstring} archivebox.core.middleware.CacheControlMiddleware
+```
+````
+
+````{py:function} HostRoutingMiddleware(get_response)
+:canonical: archivebox.core.middleware.HostRoutingMiddleware
+
+```{autodoc2-docstring} archivebox.core.middleware.HostRoutingMiddleware
 ```
 ````
 

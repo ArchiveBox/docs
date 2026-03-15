@@ -35,10 +35,6 @@
   - ```{autodoc2-docstring} archivebox.cli.archivebox_add.__command__
     :summary:
     ```
-* - {py:obj}`ORCHESTRATOR <archivebox.cli.archivebox_add.ORCHESTRATOR>`
-  - ```{autodoc2-docstring} archivebox.cli.archivebox_add.ORCHESTRATOR
-    :summary:
-    ```
 ````
 
 ### API
@@ -53,24 +49,14 @@
 
 ````
 
-````{py:data} ORCHESTRATOR
-:canonical: archivebox.cli.archivebox_add.ORCHESTRATOR
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.cli.archivebox_add.ORCHESTRATOR
-```
-
-````
-
-````{py:function} add(urls: str | list[str], tag: str = '', depth: int = 0, update: bool = not ARCHIVING_CONFIG.ONLY_NEW, update_all: bool = False, index_only: bool = False, overwrite: bool = False, extractors: str = '', parser: str = 'auto', persona: str = 'Default', created_by_id: int | None = None) -> django.db.models.QuerySet[core.models.Snapshot]
+````{py:function} add(urls: str | list[str], depth: int | str = 0, tag: str = '', parser: str = 'auto', plugins: str = '', persona: str = 'Default', overwrite: bool = False, update: bool = not ARCHIVING_CONFIG.ONLY_NEW, index_only: bool = False, bg: bool = False, created_by_id: int | None = None) -> django.db.models.QuerySet[archivebox.core.models.Snapshot]
 :canonical: archivebox.cli.archivebox_add.add
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_add.add
 ```
 ````
 
-````{py:function} main(args: list[str] | None = None, stdin: typing.IO | None = None, pwd: str | None = None) -> None
+````{py:function} main(**kwargs)
 :canonical: archivebox.cli.archivebox_add.main
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_add.main

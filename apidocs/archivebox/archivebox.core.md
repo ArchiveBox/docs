@@ -22,6 +22,7 @@ archivebox.core.templatetags
 :titlesonly:
 :maxdepth: 1
 
+archivebox.core.host_utils
 archivebox.core.admin_archiveresults
 archivebox.core.admin_tags
 archivebox.core.models
@@ -29,10 +30,10 @@ archivebox.core.admin_users
 archivebox.core.asgi
 archivebox.core.settings_logging
 archivebox.core.apps
+archivebox.core.widgets
 archivebox.core.admin_snapshots
 archivebox.core.forms
 archivebox.core.admin
-archivebox.core.statemachines
 archivebox.core.admin_site
 archivebox.core.settings
 archivebox.core.actors

@@ -31,7 +31,6 @@ You can specify exact versions with pip like so: `pip install archivebox==0.6.3`
 
 
 ---
----
 
 **ℹ️ How it works internally:**
 

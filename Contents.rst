@@ -7,6 +7,7 @@ Overview
 .. toctree::
     :maxdepth: 1
 
+    Home.md
     README.md
 
 
@@ -40,8 +41,17 @@ Guides
     Scheduled-Archiving.md
     Chromium-Install.md
     Upgrading.md
+    Upgrading-or-Merging-Archives.md
     Merging-Collections.md
     Troubleshooting.md
+
+Architecture
+############
+
+.. toctree::
+    :maxdepth: 1
+
+    ArchiveBox-Architecture-Diagrams.md
 
 
 API Reference

@@ -24,7 +24,6 @@ author = 'Nick Sweeting'
 github_url = 'https://github.com/ArchiveBox/ArchiveBox'
 github_doc_root = 'https://github.com/ArchiveBox/docs/tree/master/'
 github_view_style = 'blob'
-vendor_dir = 'archivebox/pkgs'
 language = 'en'
 
 # The full version, including alpha/beta/rc tags
@@ -49,6 +48,7 @@ extensions = [
     # 'sphinx.ext.inheritance_diagram'
     'myst_parser',                       # pip install myst-parser
     'autodoc2',
+    'sphinxcontrib.mermaid',             # pip install sphinxcontrib-mermaid
     # 'recommonmark',
 ]
 autodoc2_packages = [
@@ -67,54 +67,7 @@ autodoc2_packages = [
             'tests.py',  
         ],
     },
-    # {
-    #     "path": "../archivebox/pkgs/abx",
-    #     "module": "archivebox.pkgs.abx",
-    #     "exclude_dirs": [
-    #         '__pycache__',
-    #         'migrations',
-    #     ],
-    # },
 ]
-
-# add all vendored plugin packages to autodoc2_packages
-pkgs_dir = Path(__file__).parent.parent / vendor_dir
-vendor_pkgs = {}
-for pkg in pkgs_dir.glob("*"):
-    if not pkg.is_dir():
-        continue
-    if not (pkg / 'pyproject.toml').exists():
-        continue
-
-    dunder_name = pkg.name.replace('-', '_')                          # abx_plugin_ldap_auth
-    if (pkg / dunder_name / '__init__.py').exists():
-        # archivebox/pkgs/abx-plugin-ldap-auth/abx_plugin_ldap_auth   (package is in a subdir called package_name)
-        path = f'{vendor_dir}/{pkg.name}/{dunder_name}'
-        submodule_to_path = lambda submodule, prefix=path: f'{prefix}/{(submodule or "__init__").replace(".", "/")}.py'
-    elif (pkg / 'src' / '__init__.py').exists():
-        # archivebox/pkgs/abx-plugin-htmltotext/src                   (package is in a subdir called src)
-        path = f'{vendor_dir}/{pkg.name}/src'
-        submodule_to_path = lambda submodule, prefix=path: f'{prefix}/{(submodule or "__init__").replace(".", "/")}.py'
-    elif (pkg / f'{dunder_name}.py').exists():
-        # archivebox/pkgs/abx/abx.py                                  (package is all in a single file in the root)
-        path = f'{vendor_dir}/{pkg.name}/{dunder_name}.py'
-        submodule_to_path = lambda submodule, prefix=path: prefix
-    else:
-        continue
-    
-    module_info = {
-        "path": f'../{path}',            # ../archivebox/pkgs/abx-plugin-ldap-auth/abx_plugin_ldap_auth
-        "module": dunder_name,           # abx_plugin_ldap_auth
-        "exclude_dirs": [
-            '__pycache__',
-            'migrations',
-        ],
-        "exclude_files": [
-            'tests.py',
-        ],
-    }
-    vendor_pkgs[dunder_name] = submodule_to_path
-    autodoc2_packages.append(module_info)
 
 
 autodoc2_output_dir = 'apidocs'
@@ -128,6 +81,7 @@ autodoc2_hidden_regexes = [
     r'.*__package__',
 ]
 myst_enable_extensions = ['linkify']     # pip install linkify-it-py
+myst_fence_as_directive = ['mermaid']   # render ```mermaid blocks via sphinxcontrib-mermaid
 
 source_suffix = {
     '.rst': 'restructuredtext',
@@ -152,10 +106,20 @@ exclude_patterns = [
     '**/Thumbs.db',
     '**/.DS_Store',
     'data*',
+    'requirements.txt',
     '**/requirements.txt',
     '**/tests/**',
     '**/templates/**',
     '**/migrations/**',
+    '_Sidebar.md',
+    '_Footer.md',
+]
+
+suppress_warnings = [
+    'myst.header',         # non-consecutive header levels (common in wiki markdown)
+    'myst.xref_missing',   # cross-reference targets from wiki-style links
+    'myst.xref_ambiguous',  # ambiguous cross-references across modules
+    'autodoc2.dup_item',   # duplicate items from Django model inheritance
 ]
 
 
@@ -207,22 +171,15 @@ def linkcode_resolve(domain, info):
     Calculate link to source code on Github
     Docs: https://www.sphinx-doc.org/en/master/usage/extensions/linkcode.html
     """
-    module_name = str(info['module'] or '').replace('archivebox.pkgs.', '')          # abx.binaries
-    package_name = module_name.split('.', 1)[0]                                      # abx
-    submodule_name = module_name.split(f'{package_name}', 1)[-1].strip('.')          # binaries
-    symbol_name = str(info['fullname'] or '')                                        # SomeBinary.INSTALLER_BIN_ABSPATH
-    full_name = f'{package_name}.{submodule_name}.{symbol_name}'.replace('..', '.')  # abx.binaries.SomeBinary.INSTALLER_BIN_ABSPATH
+    module_name = str(info['module'] or '')
+    package_name = module_name.split('.', 1)[0]                                      # archivebox
+    submodule_name = module_name.split(f'{package_name}', 1)[-1].strip('.')          # core.models
+    symbol_name = str(info['fullname'] or '')                                        # Crawl.abid_ts_src
+    full_name = f'{package_name}.{submodule_name}.{symbol_name}'.replace('..', '.')  # archivebox.core.models.Crawl.abid_ts_src
     fallback_url = f'https://github.com/search?type=code&q=repo%3AArchiveBox%2FArchiveBox%20{full_name.replace(".", "%20")}'
-    
-    # 'core.models.Crawl' -> archviebox/core/models.py
-    # 'abx.get_all_plugins' -> archivebox/pkgs/abx/abx.py
-    # 'abx_plugin_htmltotext.find_plugins_in_dir' -> archivebox/pkgs/abx-plugin-htmltotext/abx_plugin_htmltotext/__init__.py
-    # 'abx_plugin_htmltotext.binproviders.PlaywrightBinProvider' -> archivebox/pkgs/abx-plugin-htmltotext/abx_plugin_htmltotext/binproviders.py
-    
-    if package_name in vendor_pkgs:
-        file_path = vendor_pkgs[package_name](submodule_name)                 # archivebox/pkgs/abx/abx.py
-    else:
-        file_path = f'{package_name}/{submodule_name.replace(".", "/")}.py'   # archivebox/core/models.py
+
+    # 'archivebox.core.models.Crawl' -> archivebox/core/models.py
+    file_path = f'{package_name}/{submodule_name.replace(".", "/")}.py'   # archivebox/core/models.py
     
     # correct for any extra / or .py
     file_path = file_path.strip('/').strip('.py') + '.py'

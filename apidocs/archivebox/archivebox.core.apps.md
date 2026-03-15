@@ -19,7 +19,29 @@
   -
 ````
 
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_ORCHESTRATOR_BOOTSTRAPPED <archivebox.core.apps._ORCHESTRATOR_BOOTSTRAPPED>`
+  - ```{autodoc2-docstring} archivebox.core.apps._ORCHESTRATOR_BOOTSTRAPPED
+    :summary:
+    ```
+````
+
 ### API
+
+````{py:data} _ORCHESTRATOR_BOOTSTRAPPED
+:canonical: archivebox.core.apps._ORCHESTRATOR_BOOTSTRAPPED
+:value: >
+   False
+
+```{autodoc2-docstring} archivebox.core.apps._ORCHESTRATOR_BOOTSTRAPPED
+```
+
+````
 
 `````{py:class} CoreConfig(app_name, app_module)
 :canonical: archivebox.core.apps.CoreConfig
@@ -29,9 +51,19 @@ Bases: {py:obj}`django.apps.AppConfig`
 ````{py:attribute} name
 :canonical: archivebox.core.apps.CoreConfig.name
 :value: >
-   'core'
+   'archivebox.core'
 
 ```{autodoc2-docstring} archivebox.core.apps.CoreConfig.name
+```
+
+````
+
+````{py:attribute} label
+:canonical: archivebox.core.apps.CoreConfig.label
+:value: >
+   'core'
+
+```{autodoc2-docstring} archivebox.core.apps.CoreConfig.label
 ```
 
 ````

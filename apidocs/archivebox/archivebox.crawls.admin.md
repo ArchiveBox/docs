@@ -15,6 +15,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`CrawlAdminForm <archivebox.crawls.admin.CrawlAdminForm>`
+  - ```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdminForm
+    :summary:
+    ```
 * - {py:obj}`CrawlAdmin <archivebox.crawls.admin.CrawlAdmin>`
   -
 * - {py:obj}`CrawlScheduleAdmin <archivebox.crawls.admin.CrawlScheduleAdmin>`
@@ -27,6 +31,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`render_snapshots_list <archivebox.crawls.admin.render_snapshots_list>`
+  - ```{autodoc2-docstring} archivebox.crawls.admin.render_snapshots_list
+    :summary:
+    ```
 * - {py:obj}`register_admin <archivebox.crawls.admin.register_admin>`
   - ```{autodoc2-docstring} archivebox.crawls.admin.register_admin
     :summary:
@@ -35,15 +43,86 @@
 
 ### API
 
+````{py:function} render_snapshots_list(snapshots_qs, limit=20)
+:canonical: archivebox.crawls.admin.render_snapshots_list
+
+```{autodoc2-docstring} archivebox.crawls.admin.render_snapshots_list
+```
+````
+
+``````{py:class} CrawlAdminForm(data=None, files=None, auto_id='id_%s', prefix=None, initial=None, error_class=ErrorList, label_suffix=None, empty_permitted=False, instance=None, use_required_attribute=None, renderer=None)
+:canonical: archivebox.crawls.admin.CrawlAdminForm
+
+Bases: {py:obj}`django.forms.ModelForm`
+
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdminForm
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdminForm.__init__
+```
+
+`````{py:class} Meta
+:canonical: archivebox.crawls.admin.CrawlAdminForm.Meta
+
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdminForm.Meta
+```
+
+````{py:attribute} model
+:canonical: archivebox.crawls.admin.CrawlAdminForm.Meta.model
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdminForm.Meta.model
+```
+
+````
+
+````{py:attribute} fields
+:canonical: archivebox.crawls.admin.CrawlAdminForm.Meta.fields
+:value: >
+   '__all__'
+
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdminForm.Meta.fields
+```
+
+````
+
+````{py:attribute} widgets
+:canonical: archivebox.crawls.admin.CrawlAdminForm.Meta.widgets
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdminForm.Meta.widgets
+```
+
+````
+
+`````
+
+``````
+
 `````{py:class} CrawlAdmin(model, admin_site)
 :canonical: archivebox.crawls.admin.CrawlAdmin
 
-Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
+Bases: {py:obj}`archivebox.base_models.admin.ConfigEditorMixin`, {py:obj}`archivebox.base_models.admin.BaseModelAdmin`
+
+````{py:attribute} form
+:canonical: archivebox.crawls.admin.CrawlAdmin.form
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.form
+```
+
+````
 
 ````{py:attribute} list_display
 :canonical: archivebox.crawls.admin.CrawlAdmin.list_display
 :value: >
-   ('abid', 'created_at', 'created_by', 'max_depth', 'label', 'notes', 'seed_str', 'schedule_str', 'sta...
+   ('id', 'created_at', 'created_by', 'max_depth', 'label', 'notes', 'urls_preview', 'schedule_str', 's...
 
 ```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.list_display
 ```
@@ -53,7 +132,7 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} sort_fields
 :canonical: archivebox.crawls.admin.CrawlAdmin.sort_fields
 :value: >
-   ('abid', 'created_at', 'created_by', 'max_depth', 'label', 'notes', 'seed_str', 'schedule_str', 'sta...
+   ('id', 'created_at', 'created_by', 'max_depth', 'label', 'notes', 'schedule_str', 'status', 'retry_a...
 
 ```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.sort_fields
 ```
@@ -63,7 +142,7 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} search_fields
 :canonical: archivebox.crawls.admin.CrawlAdmin.search_fields
 :value: >
-   ('abid', 'created_by__username', 'max_depth', 'label', 'notes', 'seed_id', 'seed__abid', 'schedule_i...
+   ('id', 'created_by__username', 'max_depth', 'label', 'notes', 'schedule_id', 'status', 'urls')
 
 ```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.search_fields
 ```
@@ -73,19 +152,19 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} readonly_fields
 :canonical: archivebox.crawls.admin.CrawlAdmin.readonly_fields
 :value: >
-   ('created_at', 'modified_at', 'abid_info', 'snapshots', 'seed_contents')
+   ('created_at', 'modified_at', 'snapshots')
 
 ```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.readonly_fields
 ```
 
 ````
 
-````{py:attribute} fields
-:canonical: archivebox.crawls.admin.CrawlAdmin.fields
+````{py:attribute} fieldsets
+:canonical: archivebox.crawls.admin.CrawlAdmin.fieldsets
 :value: >
-   ('label', 'notes', 'status', 'retry_at', 'max_depth', 'seed', 'schedule', 'created_by')
+   (('URLs',), ('Info',), ('Settings',), ('Status',), ('Relations',), ('Timestamps',), ('Snapshots',))
 
-```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.fields
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.fieldsets
 ```
 
 ````
@@ -93,7 +172,7 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} list_filter
 :canonical: archivebox.crawls.admin.CrawlAdmin.list_filter
 :value: >
-   ('max_depth', 'seed', 'schedule', 'created_by', 'status', 'retry_at')
+   ('max_depth', 'schedule', 'created_by', 'status', 'retry_at')
 
 ```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.list_filter
 ```
@@ -123,9 +202,43 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} actions
 :canonical: archivebox.crawls.admin.CrawlAdmin.actions
 :value: >
-   ['delete_selected']
+   ['delete_selected_batched']
 
 ```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.actions
+```
+
+````
+
+````{py:attribute} change_actions
+:canonical: archivebox.crawls.admin.CrawlAdmin.change_actions
+:value: >
+   ['recrawl']
+
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.change_actions
+```
+
+````
+
+````{py:method} get_queryset(request)
+:canonical: archivebox.crawls.admin.CrawlAdmin.get_queryset
+
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.get_queryset
+```
+
+````
+
+````{py:method} delete_selected_batched(request, queryset)
+:canonical: archivebox.crawls.admin.CrawlAdmin.delete_selected_batched
+
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.delete_selected_batched
+```
+
+````
+
+````{py:method} recrawl(request, obj)
+:canonical: archivebox.crawls.admin.CrawlAdmin.recrawl
+
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.recrawl
 ```
 
 ````
@@ -154,18 +267,26 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 
 ````
 
-````{py:method} seed_str(obj)
-:canonical: archivebox.crawls.admin.CrawlAdmin.seed_str
+````{py:method} urls_preview(obj)
+:canonical: archivebox.crawls.admin.CrawlAdmin.urls_preview
 
-```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.seed_str
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.urls_preview
 ```
 
 ````
 
-````{py:method} seed_contents(obj)
-:canonical: archivebox.crawls.admin.CrawlAdmin.seed_contents
+````{py:method} health_display(obj)
+:canonical: archivebox.crawls.admin.CrawlAdmin.health_display
 
-```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.seed_contents
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.health_display
+```
+
+````
+
+````{py:method} urls_editor(obj)
+:canonical: archivebox.crawls.admin.CrawlAdmin.urls_editor
+
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlAdmin.urls_editor
 ```
 
 ````
@@ -175,12 +296,12 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 `````{py:class} CrawlScheduleAdmin(model, admin_site)
 :canonical: archivebox.crawls.admin.CrawlScheduleAdmin
 
-Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
+Bases: {py:obj}`archivebox.base_models.admin.BaseModelAdmin`
 
 ````{py:attribute} list_display
 :canonical: archivebox.crawls.admin.CrawlScheduleAdmin.list_display
 :value: >
-   ('abid', 'created_at', 'created_by', 'label', 'notes', 'template_str', 'crawls', 'num_crawls', 'num_...
+   ('id', 'created_at', 'created_by', 'label', 'notes', 'template_str', 'crawls', 'num_crawls', 'num_sn...
 
 ```{autodoc2-docstring} archivebox.crawls.admin.CrawlScheduleAdmin.list_display
 ```
@@ -190,7 +311,7 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} sort_fields
 :canonical: archivebox.crawls.admin.CrawlScheduleAdmin.sort_fields
 :value: >
-   ('abid', 'created_at', 'created_by', 'label', 'notes', 'template_str')
+   ('id', 'created_at', 'created_by', 'label', 'notes', 'template_str')
 
 ```{autodoc2-docstring} archivebox.crawls.admin.CrawlScheduleAdmin.sort_fields
 ```
@@ -200,7 +321,7 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} search_fields
 :canonical: archivebox.crawls.admin.CrawlScheduleAdmin.search_fields
 :value: >
-   ('abid', 'created_by__username', 'label', 'notes', 'schedule_id', 'schedule__abid', 'template_id', '...
+   ('id', 'created_by__username', 'label', 'notes', 'schedule_id', 'template_id', 'template__urls')
 
 ```{autodoc2-docstring} archivebox.crawls.admin.CrawlScheduleAdmin.search_fields
 ```
@@ -210,19 +331,19 @@ Bases: {py:obj}`abid_utils.admin.ABIDModelAdmin`
 ````{py:attribute} readonly_fields
 :canonical: archivebox.crawls.admin.CrawlScheduleAdmin.readonly_fields
 :value: >
-   ('created_at', 'modified_at', 'abid_info', 'crawls', 'snapshots')
+   ('created_at', 'modified_at', 'crawls', 'snapshots')
 
 ```{autodoc2-docstring} archivebox.crawls.admin.CrawlScheduleAdmin.readonly_fields
 ```
 
 ````
 
-````{py:attribute} fields
-:canonical: archivebox.crawls.admin.CrawlScheduleAdmin.fields
+````{py:attribute} fieldsets
+:canonical: archivebox.crawls.admin.CrawlScheduleAdmin.fieldsets
 :value: >
-   ('label', 'notes', 'schedule', 'template', 'created_by')
+   (('Schedule Info',), ('Configuration',), ('Metadata',), ('Crawls',), ('Snapshots',))
 
-```{autodoc2-docstring} archivebox.crawls.admin.CrawlScheduleAdmin.fields
+```{autodoc2-docstring} archivebox.crawls.admin.CrawlScheduleAdmin.fieldsets
 ```
 
 ````

@@ -9,6 +9,18 @@
 
 ## Module Contents
 
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`PluginConfigSection <archivebox.config.collection.PluginConfigSection>`
+  - ```{autodoc2-docstring} archivebox.config.collection.PluginConfigSection
+    :summary:
+    ```
+````
+
 ### Functions
 
 ````{list-table}
@@ -67,6 +79,46 @@
 ```{autodoc2-docstring} archivebox.config.collection.load_config_file
 ```
 ````
+
+`````{py:class} PluginConfigSection(key: str)
+:canonical: archivebox.config.collection.PluginConfigSection
+
+```{autodoc2-docstring} archivebox.config.collection.PluginConfigSection
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} archivebox.config.collection.PluginConfigSection.__init__
+```
+
+````{py:attribute} toml_section_header
+:canonical: archivebox.config.collection.PluginConfigSection.toml_section_header
+:value: >
+   'PLUGINS'
+
+```{autodoc2-docstring} archivebox.config.collection.PluginConfigSection.toml_section_header
+```
+
+````
+
+````{py:method} __getattr__(name: str) -> typing.Any
+:canonical: archivebox.config.collection.PluginConfigSection.__getattr__
+
+```{autodoc2-docstring} archivebox.config.collection.PluginConfigSection.__getattr__
+```
+
+````
+
+````{py:method} update_in_place(warn: bool = True, persist: bool = False, **kwargs)
+:canonical: archivebox.config.collection.PluginConfigSection.update_in_place
+
+```{autodoc2-docstring} archivebox.config.collection.PluginConfigSection.update_in_place
+```
+
+````
+
+`````
 
 ````{py:function} section_for_key(key: str) -> typing.Any
 :canonical: archivebox.config.collection.section_for_key

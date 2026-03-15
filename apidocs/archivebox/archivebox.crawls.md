@@ -16,9 +16,6 @@
 archivebox.crawls.models
 archivebox.crawls.apps
 archivebox.crawls.admin
-archivebox.crawls.statemachines
-archivebox.crawls.actors
-archivebox.crawls.views
 ```
 
 ## Package Contents

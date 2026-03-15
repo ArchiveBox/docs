@@ -193,7 +193,7 @@
 ```
 ````
 
-````{py:function} get_or_create_working_tmp_dir(autofix=True, quiet=False)
+````{py:function} get_or_create_working_tmp_dir(autofix=True, quiet=True)
 :canonical: archivebox.config.paths.get_or_create_working_tmp_dir
 
 ```{autodoc2-docstring} archivebox.config.paths.get_or_create_working_tmp_dir

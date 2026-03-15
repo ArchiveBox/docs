@@ -19,10 +19,6 @@
   - ```{autodoc2-docstring} archivebox.misc.shell_welcome_message.CONFIG
     :summary:
     ```
-* - {py:obj}`CLI_COMMAND_NAMES <archivebox.misc.shell_welcome_message.CLI_COMMAND_NAMES>`
-  - ```{autodoc2-docstring} archivebox.misc.shell_welcome_message.CLI_COMMAND_NAMES
-    :summary:
-    ```
 ````
 
 ### API
@@ -30,19 +26,9 @@
 ````{py:data} CONFIG
 :canonical: archivebox.misc.shell_welcome_message.CONFIG
 :value: >
-   'get_FLAT_CONFIG(...)'
+   'get_config(...)'
 
 ```{autodoc2-docstring} archivebox.misc.shell_welcome_message.CONFIG
-```
-
-````
-
-````{py:data} CLI_COMMAND_NAMES
-:canonical: archivebox.misc.shell_welcome_message.CLI_COMMAND_NAMES
-:value: >
-   'join(...)'
-
-```{autodoc2-docstring} archivebox.misc.shell_welcome_message.CLI_COMMAND_NAMES
 ```
 
 ````

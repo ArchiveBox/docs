@@ -339,13 +339,13 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
-````{py:attribute} USER_PLUGINS_DIR_NAME
-:canonical: archivebox.config.constants.ConstantsDict.USER_PLUGINS_DIR_NAME
+````{py:attribute} CUSTOM_PLUGINS_DIR_NAME
+:canonical: archivebox.config.constants.ConstantsDict.CUSTOM_PLUGINS_DIR_NAME
 :type: str
 :value: >
-   'user_plugins'
+   'custom_plugins'
 
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.USER_PLUGINS_DIR_NAME
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.CUSTOM_PLUGINS_DIR_NAME
 ```
 
 ````
@@ -354,7 +354,7 @@ Bases: {py:obj}`collections.abc.Mapping`
 :canonical: archivebox.config.constants.ConstantsDict.CUSTOM_TEMPLATES_DIR_NAME
 :type: str
 :value: >
-   'user_templates'
+   'custom_templates'
 
 ```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.CUSTOM_TEMPLATES_DIR_NAME
 ```
@@ -449,17 +449,6 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
-````{py:attribute} QUEUE_DATABASE_FILENAME
-:canonical: archivebox.config.constants.ConstantsDict.QUEUE_DATABASE_FILENAME
-:type: str
-:value: >
-   'queue.sqlite3'
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.QUEUE_DATABASE_FILENAME
-```
-
-````
-
 ````{py:attribute} CONFIG_FILE
 :canonical: archivebox.config.constants.ConstantsDict.CONFIG_FILE
 :type: pathlib.Path
@@ -482,17 +471,6 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
-````{py:attribute} QUEUE_DATABASE_FILE
-:canonical: archivebox.config.constants.ConstantsDict.QUEUE_DATABASE_FILE
-:type: pathlib.Path
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.QUEUE_DATABASE_FILE
-```
-
-````
-
 ````{py:attribute} JSON_INDEX_FILENAME
 :canonical: archivebox.config.constants.ConstantsDict.JSON_INDEX_FILENAME
 :type: str
@@ -500,6 +478,17 @@ Bases: {py:obj}`collections.abc.Mapping`
    'index.json'
 
 ```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.JSON_INDEX_FILENAME
+```
+
+````
+
+````{py:attribute} JSONL_INDEX_FILENAME
+:canonical: archivebox.config.constants.ConstantsDict.JSONL_INDEX_FILENAME
+:type: str
+:value: >
+   'index.jsonl'
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.JSONL_INDEX_FILENAME
 ```
 
 ````
@@ -581,6 +570,17 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
+````{py:attribute} DEFAULT_LIB_BIN_DIR
+:canonical: archivebox.config.constants.ConstantsDict.DEFAULT_LIB_BIN_DIR
+:type: pathlib.Path
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DEFAULT_LIB_BIN_DIR
+```
+
+````
+
 ````{py:attribute} TIMEZONE
 :canonical: archivebox.config.constants.ConstantsDict.TIMEZONE
 :type: str
@@ -610,6 +610,28 @@ Bases: {py:obj}`collections.abc.Mapping`
    'benedict(...)'
 
 ```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DISABLED_CLI_COLORS
+```
+
+````
+
+````{py:attribute} MAX_HOOK_RUNTIME_SECONDS
+:canonical: archivebox.config.constants.ConstantsDict.MAX_HOOK_RUNTIME_SECONDS
+:type: int
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.MAX_HOOK_RUNTIME_SECONDS
+```
+
+````
+
+````{py:attribute} MAX_SNAPSHOT_RUNTIME_SECONDS
+:canonical: archivebox.config.constants.ConstantsDict.MAX_SNAPSHOT_RUNTIME_SECONDS
+:type: int
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.MAX_SNAPSHOT_RUNTIME_SECONDS
 ```
 
 ````

@@ -16,16 +16,32 @@
 archivebox.cli.archivebox_shell
 archivebox.cli.archivebox_schedule
 archivebox.cli.archivebox_list
+archivebox.cli.archivebox_archiveresult
+archivebox.cli.archivebox_process
+archivebox.cli.archivebox_tag
 archivebox.cli.archivebox_config
+archivebox.cli.cli_utils
 archivebox.cli.archivebox_server
+archivebox.cli.tests_piping
+archivebox.cli.archivebox_binary
+archivebox.cli.archivebox_snapshot
+archivebox.cli.archivebox_pluginmap
+archivebox.cli.archivebox_crawl_compat
+archivebox.cli.archivebox_machine
 archivebox.cli.archivebox_update
+archivebox.cli.archivebox_extract
+archivebox.cli.archivebox_crawl
 archivebox.cli.archivebox_remove
 archivebox.cli.archivebox_install
+archivebox.cli.archivebox_mcp
+archivebox.cli.archivebox_search
 archivebox.cli.archivebox_version
+archivebox.cli.archivebox_persona
+archivebox.cli.archivebox_snapshot_compat
 archivebox.cli.archivebox_add
 archivebox.cli.archivebox_status
+archivebox.cli.archivebox_run
 archivebox.cli.archivebox_init
-archivebox.cli.archivebox_oneshot
 archivebox.cli.archivebox_help
 archivebox.cli.archivebox_manage
 ```
@@ -38,10 +54,8 @@ archivebox.cli.archivebox_manage
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`LazySubcommands <archivebox.cli.LazySubcommands>`
-  -
-* - {py:obj}`NotProvided <archivebox.cli.NotProvided>`
-  - ```{autodoc2-docstring} archivebox.cli.NotProvided
+* - {py:obj}`ArchiveBoxGroup <archivebox.cli.ArchiveBoxGroup>`
+  - ```{autodoc2-docstring} archivebox.cli.ArchiveBoxGroup
     :summary:
     ```
 ````
@@ -52,12 +66,8 @@ archivebox.cli.archivebox_manage
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`wait_for_bg_threads_to_exit <archivebox.cli.wait_for_bg_threads_to_exit>`
-  - ```{autodoc2-docstring} archivebox.cli.wait_for_bg_threads_to_exit
-    :summary:
-    ```
-* - {py:obj}`run_subcommand <archivebox.cli.run_subcommand>`
-  - ```{autodoc2-docstring} archivebox.cli.run_subcommand
+* - {py:obj}`cli <archivebox.cli.cli>`
+  - ```{autodoc2-docstring} archivebox.cli.cli
     :summary:
     ```
 * - {py:obj}`main <archivebox.cli.main>`
@@ -76,66 +86,6 @@ archivebox.cli.archivebox_manage
   - ```{autodoc2-docstring} archivebox.cli.__command__
     :summary:
     ```
-* - {py:obj}`BUILTIN_LIST <archivebox.cli.BUILTIN_LIST>`
-  - ```{autodoc2-docstring} archivebox.cli.BUILTIN_LIST
-    :summary:
-    ```
-* - {py:obj}`CLI_DIR <archivebox.cli.CLI_DIR>`
-  - ```{autodoc2-docstring} archivebox.cli.CLI_DIR
-    :summary:
-    ```
-* - {py:obj}`SUBCOMMAND_MODULES <archivebox.cli.SUBCOMMAND_MODULES>`
-  - ```{autodoc2-docstring} archivebox.cli.SUBCOMMAND_MODULES
-    :summary:
-    ```
-* - {py:obj}`required_attrs <archivebox.cli.required_attrs>`
-  - ```{autodoc2-docstring} archivebox.cli.required_attrs
-    :summary:
-    ```
-* - {py:obj}`is_cli_module <archivebox.cli.is_cli_module>`
-  - ```{autodoc2-docstring} archivebox.cli.is_cli_module
-    :summary:
-    ```
-* - {py:obj}`is_valid_cli_module <archivebox.cli.is_valid_cli_module>`
-  - ```{autodoc2-docstring} archivebox.cli.is_valid_cli_module
-    :summary:
-    ```
-* - {py:obj}`CLI_SUBCOMMANDS <archivebox.cli.CLI_SUBCOMMANDS>`
-  - ```{autodoc2-docstring} archivebox.cli.CLI_SUBCOMMANDS
-    :summary:
-    ```
-* - {py:obj}`meta_cmds <archivebox.cli.meta_cmds>`
-  - ```{autodoc2-docstring} archivebox.cli.meta_cmds
-    :summary:
-    ```
-* - {py:obj}`setup_cmds <archivebox.cli.setup_cmds>`
-  - ```{autodoc2-docstring} archivebox.cli.setup_cmds
-    :summary:
-    ```
-* - {py:obj}`archive_cmds <archivebox.cli.archive_cmds>`
-  - ```{autodoc2-docstring} archivebox.cli.archive_cmds
-    :summary:
-    ```
-* - {py:obj}`fake_db <archivebox.cli.fake_db>`
-  - ```{autodoc2-docstring} archivebox.cli.fake_db
-    :summary:
-    ```
-* - {py:obj}`display_first <archivebox.cli.display_first>`
-  - ```{autodoc2-docstring} archivebox.cli.display_first
-    :summary:
-    ```
-* - {py:obj}`IGNORED_BG_THREADS <archivebox.cli.IGNORED_BG_THREADS>`
-  - ```{autodoc2-docstring} archivebox.cli.IGNORED_BG_THREADS
-    :summary:
-    ```
-* - {py:obj}`Omitted <archivebox.cli.Omitted>`
-  - ```{autodoc2-docstring} archivebox.cli.Omitted
-    :summary:
-    ```
-* - {py:obj}`OMITTED <archivebox.cli.OMITTED>`
-  - ```{autodoc2-docstring} archivebox.cli.OMITTED
-    :summary:
-    ```
 ````
 
 ### API
@@ -150,246 +100,142 @@ archivebox.cli.archivebox_manage
 
 ````
 
-````{py:data} BUILTIN_LIST
-:canonical: archivebox.cli.BUILTIN_LIST
+`````{py:class} ArchiveBoxGroup(name: str | None = None, commands: collections.abc.MutableMapping[str, click.core.Command] | collections.abc.Sequence[click.core.Command] | None = None, invoke_without_command: bool = False, no_args_is_help: bool | None = None, subcommand_metavar: str | None = None, chain: bool = False, result_callback: typing.Callable[..., typing.Any] | None = None, **kwargs: typing.Any)
+:canonical: archivebox.cli.ArchiveBoxGroup
+
+Bases: {py:obj}`rich_click.Group`
+
+```{autodoc2-docstring} archivebox.cli.ArchiveBoxGroup
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} archivebox.cli.ArchiveBoxGroup.__init__
+```
+
+````{py:attribute} meta_commands
+:canonical: archivebox.cli.ArchiveBoxGroup.meta_commands
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.cli.BUILTIN_LIST
+```{autodoc2-docstring} archivebox.cli.ArchiveBoxGroup.meta_commands
 ```
 
 ````
 
-````{py:data} CLI_DIR
-:canonical: archivebox.cli.CLI_DIR
+````{py:attribute} setup_commands
+:canonical: archivebox.cli.ArchiveBoxGroup.setup_commands
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.cli.CLI_DIR
+```{autodoc2-docstring} archivebox.cli.ArchiveBoxGroup.setup_commands
 ```
 
 ````
 
-````{py:data} SUBCOMMAND_MODULES
-:canonical: archivebox.cli.SUBCOMMAND_MODULES
+````{py:attribute} model_commands
+:canonical: archivebox.cli.ArchiveBoxGroup.model_commands
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.cli.SUBCOMMAND_MODULES
+```{autodoc2-docstring} archivebox.cli.ArchiveBoxGroup.model_commands
 ```
 
 ````
 
-````{py:data} required_attrs
-:canonical: archivebox.cli.required_attrs
-:value: >
-   ('__package__', '__command__', 'main')
-
-```{autodoc2-docstring} archivebox.cli.required_attrs
-```
-
-````
-
-````{py:data} is_cli_module
-:canonical: archivebox.cli.is_cli_module
+````{py:attribute} archive_commands
+:canonical: archivebox.cli.ArchiveBoxGroup.archive_commands
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.cli.is_cli_module
+```{autodoc2-docstring} archivebox.cli.ArchiveBoxGroup.archive_commands
 ```
 
 ````
 
-````{py:data} is_valid_cli_module
-:canonical: archivebox.cli.is_valid_cli_module
+````{py:attribute} legacy_model_commands
+:canonical: archivebox.cli.ArchiveBoxGroup.legacy_model_commands
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.cli.is_valid_cli_module
+```{autodoc2-docstring} archivebox.cli.ArchiveBoxGroup.legacy_model_commands
 ```
 
 ````
 
-`````{py:class} LazySubcommands
-:canonical: archivebox.cli.LazySubcommands
+````{py:attribute} all_subcommands
+:canonical: archivebox.cli.ArchiveBoxGroup.all_subcommands
+:value: >
+   None
 
-Bases: {py:obj}`collections.abc.Mapping`
-
-````{py:method} keys()
-:canonical: archivebox.cli.LazySubcommands.keys
-
-````
-
-````{py:method} values()
-:canonical: archivebox.cli.LazySubcommands.values
-
-````
-
-````{py:method} items()
-:canonical: archivebox.cli.LazySubcommands.items
-
-````
-
-````{py:method} __getitem__(key)
-:canonical: archivebox.cli.LazySubcommands.__getitem__
-
-```{autodoc2-docstring} archivebox.cli.LazySubcommands.__getitem__
+```{autodoc2-docstring} archivebox.cli.ArchiveBoxGroup.all_subcommands
 ```
 
 ````
 
-````{py:method} __iter__()
-:canonical: archivebox.cli.LazySubcommands.__iter__
+````{py:attribute} renamed_commands
+:canonical: archivebox.cli.ArchiveBoxGroup.renamed_commands
+:value: >
+   None
 
-```{autodoc2-docstring} archivebox.cli.LazySubcommands.__iter__
+```{autodoc2-docstring} archivebox.cli.ArchiveBoxGroup.renamed_commands
 ```
 
 ````
 
-````{py:method} __len__()
-:canonical: archivebox.cli.LazySubcommands.__len__
+````{py:attribute} legacy_model_subcommands
+:canonical: archivebox.cli.ArchiveBoxGroup.legacy_model_subcommands
+:value: >
+   None
 
-```{autodoc2-docstring} archivebox.cli.LazySubcommands.__len__
+```{autodoc2-docstring} archivebox.cli.ArchiveBoxGroup.legacy_model_subcommands
+```
+
+````
+
+````{py:method} get_canonical_name(cmd_name)
+:canonical: archivebox.cli.ArchiveBoxGroup.get_canonical_name
+:classmethod:
+
+```{autodoc2-docstring} archivebox.cli.ArchiveBoxGroup.get_canonical_name
+```
+
+````
+
+````{py:method} _should_use_legacy_model_command(cmd_name: str) -> bool
+:canonical: archivebox.cli.ArchiveBoxGroup._should_use_legacy_model_command
+:classmethod:
+
+```{autodoc2-docstring} archivebox.cli.ArchiveBoxGroup._should_use_legacy_model_command
+```
+
+````
+
+````{py:method} get_command(ctx, cmd_name)
+:canonical: archivebox.cli.ArchiveBoxGroup.get_command
+
+````
+
+````{py:method} _lazy_load(cmd_name_or_path)
+:canonical: archivebox.cli.ArchiveBoxGroup._lazy_load
+:classmethod:
+
+```{autodoc2-docstring} archivebox.cli.ArchiveBoxGroup._lazy_load
 ```
 
 ````
 
 `````
 
-````{py:data} CLI_SUBCOMMANDS
-:canonical: archivebox.cli.CLI_SUBCOMMANDS
-:value: >
-   'LazySubcommands(...)'
+````{py:function} cli(ctx, help=False)
+:canonical: archivebox.cli.cli
 
-```{autodoc2-docstring} archivebox.cli.CLI_SUBCOMMANDS
-```
-
-````
-
-````{py:data} meta_cmds
-:canonical: archivebox.cli.meta_cmds
-:value: >
-   ('help', 'version')
-
-```{autodoc2-docstring} archivebox.cli.meta_cmds
-```
-
-````
-
-````{py:data} setup_cmds
-:canonical: archivebox.cli.setup_cmds
-:value: >
-   ('init', 'setup', 'install')
-
-```{autodoc2-docstring} archivebox.cli.setup_cmds
-```
-
-````
-
-````{py:data} archive_cmds
-:canonical: archivebox.cli.archive_cmds
-:value: >
-   ('add', 'remove', 'update', 'list', 'status', 'schedule', 'server', 'shell', 'manage')
-
-```{autodoc2-docstring} archivebox.cli.archive_cmds
-```
-
-````
-
-````{py:data} fake_db
-:canonical: archivebox.cli.fake_db
-:value: >
-   ('oneshot',)
-
-```{autodoc2-docstring} archivebox.cli.fake_db
-```
-
-````
-
-````{py:data} display_first
-:canonical: archivebox.cli.display_first
-:value: >
-   ()
-
-```{autodoc2-docstring} archivebox.cli.display_first
-```
-
-````
-
-````{py:data} IGNORED_BG_THREADS
-:canonical: archivebox.cli.IGNORED_BG_THREADS
-:value: >
-   ('MainThread', 'ThreadPoolExecutor', 'IPythonHistorySavingThread', 'Scheduler')
-
-```{autodoc2-docstring} archivebox.cli.IGNORED_BG_THREADS
-```
-
-````
-
-````{py:function} wait_for_bg_threads_to_exit(thread_names: typing.Iterable[str] = (), ignore_names: typing.Iterable[str] = IGNORED_BG_THREADS, timeout: int = 60) -> int
-:canonical: archivebox.cli.wait_for_bg_threads_to_exit
-
-```{autodoc2-docstring} archivebox.cli.wait_for_bg_threads_to_exit
+```{autodoc2-docstring} archivebox.cli.cli
 ```
 ````
 
-````{py:function} run_subcommand(subcommand: str, subcommand_args: typing.List[str] | None = None, stdin: typing.Optional[typing.IO] = None, pwd: typing.Union[pathlib.Path, str, None] = None) -> None
-:canonical: archivebox.cli.run_subcommand
-
-```{autodoc2-docstring} archivebox.cli.run_subcommand
-```
-````
-
-`````{py:class} NotProvided
-:canonical: archivebox.cli.NotProvided
-
-```{autodoc2-docstring} archivebox.cli.NotProvided
-```
-
-````{py:method} __len__()
-:canonical: archivebox.cli.NotProvided.__len__
-
-```{autodoc2-docstring} archivebox.cli.NotProvided.__len__
-```
-
-````
-
-````{py:method} __bool__()
-:canonical: archivebox.cli.NotProvided.__bool__
-
-```{autodoc2-docstring} archivebox.cli.NotProvided.__bool__
-```
-
-````
-
-````{py:method} __repr__()
-:canonical: archivebox.cli.NotProvided.__repr__
-
-````
-
-`````
-
-````{py:data} Omitted
-:canonical: archivebox.cli.Omitted
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.cli.Omitted
-```
-
-````
-
-````{py:data} OMITTED
-:canonical: archivebox.cli.OMITTED
-:value: >
-   'NotProvided(...)'
-
-```{autodoc2-docstring} archivebox.cli.OMITTED
-```
-
-````
-
-````{py:function} main(args: typing.List[str] | archivebox.cli.Omitted = OMITTED, stdin: typing.IO | archivebox.cli.Omitted = OMITTED, pwd: str | None = None) -> None
+````{py:function} main(args=None, prog_name=None, stdin=None)
 :canonical: archivebox.cli.main
 
 ```{autodoc2-docstring} archivebox.cli.main

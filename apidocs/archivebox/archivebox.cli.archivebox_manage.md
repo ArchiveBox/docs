@@ -15,37 +15,26 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`manage <archivebox.cli.archivebox_manage.manage>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_manage.manage
+    :summary:
+    ```
 * - {py:obj}`main <archivebox.cli.archivebox_manage.main>`
   - ```{autodoc2-docstring} archivebox.cli.archivebox_manage.main
     :summary:
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`__command__ <archivebox.cli.archivebox_manage.__command__>`
-  - ```{autodoc2-docstring} archivebox.cli.archivebox_manage.__command__
-    :summary:
-    ```
-````
-
 ### API
 
-````{py:data} __command__
-:canonical: archivebox.cli.archivebox_manage.__command__
-:value: >
-   'archivebox manage'
+````{py:function} manage(args: list[str] | None = None) -> None
+:canonical: archivebox.cli.archivebox_manage.manage
 
-```{autodoc2-docstring} archivebox.cli.archivebox_manage.__command__
+```{autodoc2-docstring} archivebox.cli.archivebox_manage.manage
 ```
-
 ````
 
-````{py:function} main(args: typing.Optional[typing.List[str]] = None, stdin: typing.Optional[typing.IO] = None, pwd: typing.Optional[str] = None) -> None
+````{py:function} main(args: list[str] | None = None) -> None
 :canonical: archivebox.cli.archivebox_manage.main
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_manage.main

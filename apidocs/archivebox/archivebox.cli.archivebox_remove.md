@@ -15,6 +15,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`remove <archivebox.cli.archivebox_remove.remove>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_remove.remove
+    :summary:
+    ```
 * - {py:obj}`main <archivebox.cli.archivebox_remove.main>`
   - ```{autodoc2-docstring} archivebox.cli.archivebox_remove.main
     :summary:
@@ -45,7 +49,14 @@
 
 ````
 
-````{py:function} main(args: typing.Optional[typing.List[str]] = None, stdin: typing.Optional[typing.IO] = None, pwd: typing.Optional[str] = None) -> None
+````{py:function} remove(filter_patterns: typing.Iterable[str] = (), filter_type: str = 'exact', snapshots: django.db.models.QuerySet | None = None, after: float | None = None, before: float | None = None, yes: bool = False, delete: bool = False, out_dir: pathlib.Path = DATA_DIR) -> django.db.models.QuerySet
+:canonical: archivebox.cli.archivebox_remove.remove
+
+```{autodoc2-docstring} archivebox.cli.archivebox_remove.remove
+```
+````
+
+````{py:function} main(**kwargs)
 :canonical: archivebox.cli.archivebox_remove.main
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_remove.main

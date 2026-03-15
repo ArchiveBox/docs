@@ -51,8 +51,8 @@
   - ```{autodoc2-docstring} archivebox.api.v1_cli.cli_schedule
     :summary:
     ```
-* - {py:obj}`cli_list <archivebox.api.v1_cli.cli_list>`
-  - ```{autodoc2-docstring} archivebox.api.v1_cli.cli_list
+* - {py:obj}`cli_search <archivebox.api.v1_cli.cli_search>`
+  - ```{autodoc2-docstring} archivebox.api.v1_cli.cli_search
     :summary:
     ```
 * - {py:obj}`cli_remove <archivebox.api.v1_cli.cli_remove>`
@@ -383,6 +383,27 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
+````{py:attribute} parser
+:canonical: archivebox.api.v1_cli.AddCommandSchema.parser
+:type: str
+:value: >
+   'auto'
+
+```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.parser
+```
+
+````
+
+````{py:attribute} plugins
+:canonical: archivebox.api.v1_cli.AddCommandSchema.plugins
+:type: str
+:value: <Multiline-String>
+
+```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.plugins
+```
+
+````
+
 ````{py:attribute} update
 :canonical: archivebox.api.v1_cli.AddCommandSchema.update
 :type: bool
@@ -390,28 +411,6 @@ Bases: {py:obj}`ninja.Schema`
    None
 
 ```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.update
-```
-
-````
-
-````{py:attribute} update_all
-:canonical: archivebox.api.v1_cli.AddCommandSchema.update_all
-:type: bool
-:value: >
-   False
-
-```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.update_all
-```
-
-````
-
-````{py:attribute} index_only
-:canonical: archivebox.api.v1_cli.AddCommandSchema.index_only
-:type: bool
-:value: >
-   False
-
-```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.index_only
 ```
 
 ````
@@ -427,34 +426,13 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
-````{py:attribute} init
-:canonical: archivebox.api.v1_cli.AddCommandSchema.init
+````{py:attribute} index_only
+:canonical: archivebox.api.v1_cli.AddCommandSchema.index_only
 :type: bool
 :value: >
    False
 
-```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.init
-```
-
-````
-
-````{py:attribute} extractors
-:canonical: archivebox.api.v1_cli.AddCommandSchema.extractors
-:type: str
-:value: <Multiline-String>
-
-```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.extractors
-```
-
-````
-
-````{py:attribute} parser
-:canonical: archivebox.api.v1_cli.AddCommandSchema.parser
-:type: str
-:value: >
-   'auto'
-
-```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.parser
+```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.index_only
 ```
 
 ````
@@ -565,12 +543,12 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
-````{py:attribute} extractors
-:canonical: archivebox.api.v1_cli.UpdateCommandSchema.extractors
+````{py:attribute} plugins
+:canonical: archivebox.api.v1_cli.UpdateCommandSchema.plugins
 :type: typing.Optional[str]
 :value: <Multiline-String>
 
-```{autodoc2-docstring} archivebox.api.v1_cli.UpdateCommandSchema.extractors
+```{autodoc2-docstring} archivebox.api.v1_cli.UpdateCommandSchema.plugins
 ```
 
 ````
@@ -700,7 +678,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} status
 :canonical: archivebox.api.v1_cli.ListCommandSchema.status
-:type: typing.Optional[archivebox.api.v1_cli.StatusChoices]
+:type: archivebox.api.v1_cli.StatusChoices
 :value: >
    None
 
@@ -871,10 +849,10 @@ Bases: {py:obj}`ninja.Schema`
 ```
 ````
 
-````{py:function} cli_list(request, args: archivebox.api.v1_cli.ListCommandSchema)
-:canonical: archivebox.api.v1_cli.cli_list
+````{py:function} cli_search(request, args: archivebox.api.v1_cli.ListCommandSchema)
+:canonical: archivebox.api.v1_cli.cli_search
 
-```{autodoc2-docstring} archivebox.api.v1_cli.cli_list
+```{autodoc2-docstring} archivebox.api.v1_cli.cli_search
 ```
 ````
 

@@ -1,3 +1,5 @@
+# Upgrading or Merging Archives
+
 Moved to:
 
 - [[Upgrading]]

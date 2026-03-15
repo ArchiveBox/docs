@@ -51,9 +51,19 @@ Bases: {py:obj}`django.apps.AppConfig`
 ````{py:attribute} name
 :canonical: archivebox.machine.apps.MachineConfig.name
 :value: >
-   'machine'
+   'archivebox.machine'
 
 ```{autodoc2-docstring} archivebox.machine.apps.MachineConfig.name
+```
+
+````
+
+````{py:attribute} label
+:canonical: archivebox.machine.apps.MachineConfig.label
+:value: >
+   'machine'
+
+```{autodoc2-docstring} archivebox.machine.apps.MachineConfig.label
 ```
 
 ````
@@ -64,6 +74,14 @@ Bases: {py:obj}`django.apps.AppConfig`
    'Machine Info'
 
 ```{autodoc2-docstring} archivebox.machine.apps.MachineConfig.verbose_name
+```
+
+````
+
+````{py:method} ready()
+:canonical: archivebox.machine.apps.MachineConfig.ready
+
+```{autodoc2-docstring} archivebox.machine.apps.MachineConfig.ready
 ```
 
 ````

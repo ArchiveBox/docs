@@ -16,84 +16,21 @@
 :align: left
 
 * - {py:obj}`CrawlSchedule <archivebox.crawls.models.CrawlSchedule>`
-  - ```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule
-    :summary:
-    ```
+  -
 * - {py:obj}`Crawl <archivebox.crawls.models.Crawl>`
-  - ```{autodoc2-docstring} archivebox.crawls.models.Crawl
-    :summary:
-    ```
-* - {py:obj}`Outlink <archivebox.crawls.models.Outlink>`
-  - ```{autodoc2-docstring} archivebox.crawls.models.Outlink
+  -
+* - {py:obj}`CrawlMachine <archivebox.crawls.models.CrawlMachine>`
+  - ```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine
     :summary:
     ```
 ````
 
 ### API
 
-``````{py:class} CrawlSchedule(*args: typing.Any, **kwargs: typing.Any)
+``````{py:class} CrawlSchedule(*args, **kwargs)
 :canonical: archivebox.crawls.models.CrawlSchedule
 
-Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWithHealthStats`
-
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule
-```
-
-```{rubric} Initialization
-```
-
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.__init__
-```
-
-````{py:attribute} abid_prefix
-:canonical: archivebox.crawls.models.CrawlSchedule.abid_prefix
-:value: >
-   'cws_'
-
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.abid_prefix
-```
-
-````
-
-````{py:attribute} abid_ts_src
-:canonical: archivebox.crawls.models.CrawlSchedule.abid_ts_src
-:value: >
-   'self.created_at'
-
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.abid_ts_src
-```
-
-````
-
-````{py:attribute} abid_uri_src
-:canonical: archivebox.crawls.models.CrawlSchedule.abid_uri_src
-:value: >
-   'self.created_by_id'
-
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.abid_uri_src
-```
-
-````
-
-````{py:attribute} abid_subtype_src
-:canonical: archivebox.crawls.models.CrawlSchedule.abid_subtype_src
-:value: >
-   'self.schedule'
-
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.abid_subtype_src
-```
-
-````
-
-````{py:attribute} abid_rand_src
-:canonical: archivebox.crawls.models.CrawlSchedule.abid_rand_src
-:value: >
-   'self.id'
-
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.abid_rand_src
-```
-
-````
+Bases: {py:obj}`archivebox.base_models.models.ModelWithUUID`, {py:obj}`archivebox.base_models.models.ModelWithNotes`
 
 ````{py:attribute} id
 :canonical: archivebox.crawls.models.CrawlSchedule.id
@@ -105,12 +42,43 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 
 ````
 
-````{py:attribute} abid
-:canonical: archivebox.crawls.models.CrawlSchedule.abid
+````{py:attribute} created_at
+:canonical: archivebox.crawls.models.CrawlSchedule.created_at
 :value: >
-   'ABIDField(...)'
+   'DateTimeField(...)'
 
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.abid
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.created_at
+```
+
+````
+
+````{py:attribute} created_by
+:canonical: archivebox.crawls.models.CrawlSchedule.created_by
+:value: >
+   'ForeignKey(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.created_by
+```
+
+````
+
+````{py:attribute} modified_at
+:canonical: archivebox.crawls.models.CrawlSchedule.modified_at
+:value: >
+   'DateTimeField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.modified_at
+```
+
+````
+
+````{py:attribute} template
+:canonical: archivebox.crawls.models.CrawlSchedule.template
+:type: Crawl
+:value: >
+   'ForeignKey(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.template
 ```
 
 ````
@@ -121,6 +89,16 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
    'CharField(...)'
 
 ```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.schedule
+```
+
+````
+
+````{py:attribute} is_enabled
+:canonical: archivebox.crawls.models.CrawlSchedule.is_enabled
+:value: >
+   'BooleanField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.is_enabled
 ```
 
 ````
@@ -145,57 +123,6 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 
 ````
 
-````{py:attribute} template
-:canonical: archivebox.crawls.models.CrawlSchedule.template
-:type: Crawl
-:value: >
-   'ForeignKey(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.template
-```
-
-````
-
-````{py:attribute} created_by
-:canonical: archivebox.crawls.models.CrawlSchedule.created_by
-:value: >
-   'ForeignKey(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.created_by
-```
-
-````
-
-````{py:attribute} created_at
-:canonical: archivebox.crawls.models.CrawlSchedule.created_at
-:value: >
-   'AutoDateTimeField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.created_at
-```
-
-````
-
-````{py:attribute} modified_at
-:canonical: archivebox.crawls.models.CrawlSchedule.modified_at
-:value: >
-   'DateTimeField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.modified_at
-```
-
-````
-
-````{py:attribute} is_enabled
-:canonical: archivebox.crawls.models.CrawlSchedule.is_enabled
-:value: >
-   'BooleanField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.is_enabled
-```
-
-````
-
 ````{py:attribute} crawl_set
 :canonical: archivebox.crawls.models.CrawlSchedule.crawl_set
 :type: django.db.models.Manager[Crawl]
@@ -211,6 +138,16 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 :canonical: archivebox.crawls.models.CrawlSchedule.Meta
 
 Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
+
+````{py:attribute} app_label
+:canonical: archivebox.crawls.models.CrawlSchedule.Meta.app_label
+:value: >
+   'crawls'
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.Meta.app_label
+```
+
+````
 
 ````{py:attribute} verbose_name
 :canonical: archivebox.crawls.models.CrawlSchedule.Meta.verbose_name
@@ -243,11 +180,8 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 :canonical: archivebox.crawls.models.CrawlSchedule.api_url
 :type: str
 
-````
-
-````{py:property} api_docs_url
-:canonical: archivebox.crawls.models.CrawlSchedule.api_docs_url
-:type: str
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.api_url
+```
 
 ````
 
@@ -256,87 +190,159 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````
 
-````{py:property} snapshot_set
-:canonical: archivebox.crawls.models.CrawlSchedule.snapshot_set
-:type: django.db.models.QuerySet[core.models.Snapshot]
-
-```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.snapshot_set
-```
-
-````
-
 ``````
 
-``````{py:class} Crawl(*args: typing.Any, **kwargs: typing.Any)
+``````{py:class} Crawl(*args, **kwargs)
 :canonical: archivebox.crawls.models.Crawl
 
-Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWithHealthStats`, {py:obj}`actors.models.ModelWithStateMachine`
+Bases: {py:obj}`archivebox.base_models.models.ModelWithOutputDir`, {py:obj}`archivebox.base_models.models.ModelWithConfig`, {py:obj}`archivebox.base_models.models.ModelWithHealthStats`, {py:obj}`archivebox.workers.models.ModelWithStateMachine`
 
-```{autodoc2-docstring} archivebox.crawls.models.Crawl
-```
-
-```{rubric} Initialization
-```
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.__init__
-```
-
-````{py:attribute} abid_prefix
-:canonical: archivebox.crawls.models.Crawl.abid_prefix
+````{py:attribute} id
+:canonical: archivebox.crawls.models.Crawl.id
 :value: >
-   'cwl_'
+   'UUIDField(...)'
 
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.abid_prefix
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.id
 ```
 
 ````
 
-````{py:attribute} abid_ts_src
-:canonical: archivebox.crawls.models.Crawl.abid_ts_src
+````{py:attribute} created_at
+:canonical: archivebox.crawls.models.Crawl.created_at
 :value: >
-   'self.created_at'
+   'DateTimeField(...)'
 
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.abid_ts_src
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.created_at
 ```
 
 ````
 
-````{py:attribute} abid_uri_src
-:canonical: archivebox.crawls.models.Crawl.abid_uri_src
+````{py:attribute} created_by
+:canonical: archivebox.crawls.models.Crawl.created_by
 :value: >
-   'self.seed.uri'
+   'ForeignKey(...)'
 
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.abid_uri_src
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.created_by
 ```
 
 ````
 
-````{py:attribute} abid_subtype_src
-:canonical: archivebox.crawls.models.Crawl.abid_subtype_src
+````{py:attribute} modified_at
+:canonical: archivebox.crawls.models.Crawl.modified_at
 :value: >
-   'self.persona'
+   'DateTimeField(...)'
 
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.abid_subtype_src
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.modified_at
 ```
 
 ````
 
-````{py:attribute} abid_rand_src
-:canonical: archivebox.crawls.models.Crawl.abid_rand_src
+````{py:attribute} urls
+:canonical: archivebox.crawls.models.Crawl.urls
 :value: >
-   'self.id'
+   'TextField(...)'
 
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.abid_rand_src
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.urls
 ```
 
 ````
 
-````{py:attribute} abid_drift_allowed
-:canonical: archivebox.crawls.models.Crawl.abid_drift_allowed
+````{py:attribute} config
+:canonical: archivebox.crawls.models.Crawl.config
 :value: >
-   True
+   'JSONField(...)'
 
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.abid_drift_allowed
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.config
+```
+
+````
+
+````{py:attribute} max_depth
+:canonical: archivebox.crawls.models.Crawl.max_depth
+:value: >
+   'PositiveSmallIntegerField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.max_depth
+```
+
+````
+
+````{py:attribute} tags_str
+:canonical: archivebox.crawls.models.Crawl.tags_str
+:value: >
+   'CharField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.tags_str
+```
+
+````
+
+````{py:attribute} persona_id
+:canonical: archivebox.crawls.models.Crawl.persona_id
+:value: >
+   'UUIDField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.persona_id
+```
+
+````
+
+````{py:attribute} label
+:canonical: archivebox.crawls.models.Crawl.label
+:value: >
+   'CharField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.label
+```
+
+````
+
+````{py:attribute} notes
+:canonical: archivebox.crawls.models.Crawl.notes
+:value: >
+   'TextField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.notes
+```
+
+````
+
+````{py:attribute} schedule
+:canonical: archivebox.crawls.models.Crawl.schedule
+:value: >
+   'ForeignKey(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.schedule
+```
+
+````
+
+````{py:attribute} output_dir
+:canonical: archivebox.crawls.models.Crawl.output_dir
+:value: >
+   'CharField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.output_dir
+```
+
+````
+
+````{py:attribute} status
+:canonical: archivebox.crawls.models.Crawl.status
+:value: >
+   'StatusField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.status
+```
+
+````
+
+````{py:attribute} retry_at
+:canonical: archivebox.crawls.models.Crawl.retry_at
+:value: >
+   'RetryAtField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.retry_at
 ```
 
 ````
@@ -344,7 +350,7 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 ````{py:attribute} state_machine_name
 :canonical: archivebox.crawls.models.Crawl.state_machine_name
 :value: >
-   'crawls.statemachines.CrawlMachine'
+   'archivebox.crawls.models.CrawlMachine'
 
 ```{autodoc2-docstring} archivebox.crawls.models.Crawl.state_machine_name
 ```
@@ -391,159 +397,9 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 
 ````
 
-````{py:attribute} id
-:canonical: archivebox.crawls.models.Crawl.id
-:value: >
-   'UUIDField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.id
-```
-
-````
-
-````{py:attribute} abid
-:canonical: archivebox.crawls.models.Crawl.abid
-:value: >
-   'ABIDField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.abid
-```
-
-````
-
-````{py:attribute} created_by
-:canonical: archivebox.crawls.models.Crawl.created_by
-:value: >
-   'ForeignKey(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.created_by
-```
-
-````
-
-````{py:attribute} created_at
-:canonical: archivebox.crawls.models.Crawl.created_at
-:value: >
-   'AutoDateTimeField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.created_at
-```
-
-````
-
-````{py:attribute} modified_at
-:canonical: archivebox.crawls.models.Crawl.modified_at
-:value: >
-   'DateTimeField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.modified_at
-```
-
-````
-
-````{py:attribute} status
-:canonical: archivebox.crawls.models.Crawl.status
-:value: >
-   'StatusField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.status
-```
-
-````
-
-````{py:attribute} retry_at
-:canonical: archivebox.crawls.models.Crawl.retry_at
-:value: >
-   'RetryAtField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.retry_at
-```
-
-````
-
-````{py:attribute} seed
-:canonical: archivebox.crawls.models.Crawl.seed
-:value: >
-   'ForeignKey(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.seed
-```
-
-````
-
-````{py:attribute} label
-:canonical: archivebox.crawls.models.Crawl.label
-:value: >
-   'CharField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.label
-```
-
-````
-
-````{py:attribute} notes
-:canonical: archivebox.crawls.models.Crawl.notes
-:value: >
-   'TextField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.notes
-```
-
-````
-
-````{py:attribute} max_depth
-:canonical: archivebox.crawls.models.Crawl.max_depth
-:value: >
-   'PositiveSmallIntegerField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.max_depth
-```
-
-````
-
-````{py:attribute} tags_str
-:canonical: archivebox.crawls.models.Crawl.tags_str
-:value: >
-   'CharField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.tags_str
-```
-
-````
-
-````{py:attribute} persona
-:canonical: archivebox.crawls.models.Crawl.persona
-:value: >
-   'CharField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.persona
-```
-
-````
-
-````{py:attribute} config
-:canonical: archivebox.crawls.models.Crawl.config
-:value: >
-   'JSONField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.config
-```
-
-````
-
-````{py:attribute} schedule
-:canonical: archivebox.crawls.models.Crawl.schedule
-:value: >
-   'ForeignKey(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.schedule
-```
-
-````
-
 ````{py:attribute} snapshot_set
 :canonical: archivebox.crawls.models.Crawl.snapshot_set
-:type: django.db.models.Manager[core.models.Snapshot]
+:type: django.db.models.Manager[archivebox.core.models.Snapshot]
 :value: >
    None
 
@@ -556,6 +412,16 @@ Bases: {py:obj}`abid_utils.models.ABIDModel`, {py:obj}`abid_utils.models.ModelWi
 :canonical: archivebox.crawls.models.Crawl.Meta
 
 Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
+
+````{py:attribute} app_label
+:canonical: archivebox.crawls.models.Crawl.Meta.app_label
+:value: >
+   'crawls'
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.Meta.app_label
+```
+
+````
 
 ````{py:attribute} verbose_name
 :canonical: archivebox.crawls.models.Crawl.Meta.verbose_name
@@ -584,20 +450,8 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````
 
-````{py:method} from_seed(seed: seeds.models.Seed, max_depth: int = 0, persona: str = 'Default', tags_str: str = '', config: dict | None = None, created_by: int | None = None)
-:canonical: archivebox.crawls.models.Crawl.from_seed
-:classmethod:
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.from_seed
-```
-
-````
-
-````{py:property} template
-:canonical: archivebox.crawls.models.Crawl.template
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.template
-```
+````{py:method} save(*args, **kwargs)
+:canonical: archivebox.crawls.models.Crawl.save
 
 ````
 
@@ -605,120 +459,182 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 :canonical: archivebox.crawls.models.Crawl.api_url
 :type: str
 
-````
-
-````{py:property} api_docs_url
-:canonical: archivebox.crawls.models.Crawl.api_docs_url
-:type: str
-
-````
-
-````{py:method} pending_snapshots() -> django.db.models.QuerySet[core.models.Snapshot]
-:canonical: archivebox.crawls.models.Crawl.pending_snapshots
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.pending_snapshots
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.api_url
 ```
 
 ````
 
-````{py:method} pending_archiveresults() -> django.db.models.QuerySet[core.models.ArchiveResult]
-:canonical: archivebox.crawls.models.Crawl.pending_archiveresults
+````{py:method} to_json() -> dict
+:canonical: archivebox.crawls.models.Crawl.to_json
 
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.pending_archiveresults
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.to_json
 ```
 
 ````
 
-````{py:method} create_root_snapshot() -> core.models.Snapshot
-:canonical: archivebox.crawls.models.Crawl.create_root_snapshot
+````{py:method} from_json(record: dict, overrides: dict = None)
+:canonical: archivebox.crawls.models.Crawl.from_json
+:staticmethod:
 
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.create_root_snapshot
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.from_json
+```
+
+````
+
+````{py:method} get_urls_list() -> list[str]
+:canonical: archivebox.crawls.models.Crawl.get_urls_list
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.get_urls_list
+```
+
+````
+
+````{py:method} add_url(entry: dict) -> bool
+:canonical: archivebox.crawls.models.Crawl.add_url
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.add_url
+```
+
+````
+
+````{py:method} create_snapshots_from_urls() -> list[archivebox.core.models.Snapshot]
+:canonical: archivebox.crawls.models.Crawl.create_snapshots_from_urls
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.create_snapshots_from_urls
+```
+
+````
+
+````{py:method} run() -> Snapshot | None
+:canonical: archivebox.crawls.models.Crawl.run
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.run
+```
+
+````
+
+````{py:method} is_finished() -> bool
+:canonical: archivebox.crawls.models.Crawl.is_finished
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.is_finished
+```
+
+````
+
+````{py:method} cleanup()
+:canonical: archivebox.crawls.models.Crawl.cleanup
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.cleanup
 ```
 
 ````
 
 ``````
 
-``````{py:class} Outlink(*args, **kwargs)
-:canonical: archivebox.crawls.models.Outlink
+`````{py:class} CrawlMachine(obj, *args, **kwargs)
+:canonical: archivebox.crawls.models.CrawlMachine
 
-Bases: {py:obj}`django.db.models.Model`
+Bases: {py:obj}`archivebox.workers.models.BaseStateMachine`
 
-```{autodoc2-docstring} archivebox.crawls.models.Outlink
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine
 ```
 
 ```{rubric} Initialization
 ```
 
-```{autodoc2-docstring} archivebox.crawls.models.Outlink.__init__
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.__init__
 ```
 
-````{py:attribute} id
-:canonical: archivebox.crawls.models.Outlink.id
+````{py:attribute} model_attr_name
+:canonical: archivebox.crawls.models.CrawlMachine.model_attr_name
 :value: >
-   'UUIDField(...)'
+   'crawl'
 
-```{autodoc2-docstring} archivebox.crawls.models.Outlink.id
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.model_attr_name
 ```
 
 ````
 
-````{py:attribute} src
-:canonical: archivebox.crawls.models.Outlink.src
+````{py:attribute} queued
+:canonical: archivebox.crawls.models.CrawlMachine.queued
 :value: >
-   'URLField(...)'
+   'State(...)'
 
-```{autodoc2-docstring} archivebox.crawls.models.Outlink.src
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.queued
 ```
 
 ````
 
-````{py:attribute} dst
-:canonical: archivebox.crawls.models.Outlink.dst
+````{py:attribute} started
+:canonical: archivebox.crawls.models.CrawlMachine.started
 :value: >
-   'URLField(...)'
+   'State(...)'
 
-```{autodoc2-docstring} archivebox.crawls.models.Outlink.dst
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.started
 ```
 
 ````
 
-````{py:attribute} crawl
-:canonical: archivebox.crawls.models.Outlink.crawl
+````{py:attribute} sealed
+:canonical: archivebox.crawls.models.CrawlMachine.sealed
 :value: >
-   'ForeignKey(...)'
+   'State(...)'
 
-```{autodoc2-docstring} archivebox.crawls.models.Outlink.crawl
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.sealed
 ```
 
 ````
 
-````{py:attribute} via
-:canonical: archivebox.crawls.models.Outlink.via
+````{py:attribute} tick
+:canonical: archivebox.crawls.models.CrawlMachine.tick
 :value: >
-   'ForeignKey(...)'
+   None
 
-```{autodoc2-docstring} archivebox.crawls.models.Outlink.via
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.tick
 ```
 
 ````
 
-`````{py:class} Meta
-:canonical: archivebox.crawls.models.Outlink.Meta
+````{py:attribute} seal
+:canonical: archivebox.crawls.models.CrawlMachine.seal
+:value: >
+   'to(...)'
 
-```{autodoc2-docstring} archivebox.crawls.models.Outlink.Meta
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.seal
 ```
 
-````{py:attribute} unique_together
-:canonical: archivebox.crawls.models.Outlink.Meta.unique_together
-:value: >
-   (('src', 'dst', 'via'),)
+````
 
-```{autodoc2-docstring} archivebox.crawls.models.Outlink.Meta.unique_together
+````{py:method} can_start() -> bool
+:canonical: archivebox.crawls.models.CrawlMachine.can_start
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.can_start
+```
+
+````
+
+````{py:method} is_finished() -> bool
+:canonical: archivebox.crawls.models.CrawlMachine.is_finished
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.is_finished
+```
+
+````
+
+````{py:method} enter_started()
+:canonical: archivebox.crawls.models.CrawlMachine.enter_started
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.enter_started
+```
+
+````
+
+````{py:method} enter_sealed()
+:canonical: archivebox.crawls.models.CrawlMachine.enter_sealed
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.enter_sealed
 ```
 
 ````
 
 `````
-
-``````

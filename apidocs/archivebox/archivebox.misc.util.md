@@ -75,6 +75,14 @@
   - ```{autodoc2-docstring} archivebox.misc.util.dedupe
     :summary:
     ```
+* - {py:obj}`to_json <archivebox.misc.util.to_json>`
+  - ```{autodoc2-docstring} archivebox.misc.util.to_json
+    :summary:
+    ```
+* - {py:obj}`chrome_cleanup <archivebox.misc.util.chrome_cleanup>`
+  - ```{autodoc2-docstring} archivebox.misc.util.chrome_cleanup
+    :summary:
+    ```
 ````
 
 ### Data
@@ -536,6 +544,13 @@ Bases: {py:obj}`json.JSONEncoder`
 
 `````
 
+````{py:function} to_json(obj: typing.Any, indent: typing.Optional[int] = 4, sort_keys: bool = True) -> str
+:canonical: archivebox.misc.util.to_json
+
+```{autodoc2-docstring} archivebox.misc.util.to_json
+```
+````
+
 ````{py:data} URL_REGEX_TESTS
 :canonical: archivebox.misc.util.URL_REGEX_TESTS
 :value: >
@@ -554,4 +569,11 @@ Bases: {py:obj}`json.JSONEncoder`
 ```{autodoc2-docstring} archivebox.misc.util._test_url_strs
 ```
 
+````
+
+````{py:function} chrome_cleanup()
+:canonical: archivebox.misc.util.chrome_cleanup
+
+```{autodoc2-docstring} archivebox.misc.util.chrome_cleanup
+```
 ````

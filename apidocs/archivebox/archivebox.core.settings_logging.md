@@ -19,6 +19,8 @@
   -
 * - {py:obj}`CustomOutboundWebhookLogFormatter <archivebox.core.settings_logging.CustomOutboundWebhookLogFormatter>`
   -
+* - {py:obj}`StripANSIColorCodesFilter <archivebox.core.settings_logging.StripANSIColorCodesFilter>`
+  -
 ````
 
 ### Data
@@ -84,6 +86,38 @@ Bases: {py:obj}`logging.Formatter`
 
 ````{py:method} format(record)
 :canonical: archivebox.core.settings_logging.CustomOutboundWebhookLogFormatter.format
+
+````
+
+`````
+
+`````{py:class} StripANSIColorCodesFilter(name='')
+:canonical: archivebox.core.settings_logging.StripANSIColorCodesFilter
+
+Bases: {py:obj}`logging.Filter`
+
+````{py:attribute} _ansi_re
+:canonical: archivebox.core.settings_logging.StripANSIColorCodesFilter._ansi_re
+:value: >
+   'compile(...)'
+
+```{autodoc2-docstring} archivebox.core.settings_logging.StripANSIColorCodesFilter._ansi_re
+```
+
+````
+
+````{py:attribute} _bare_re
+:canonical: archivebox.core.settings_logging.StripANSIColorCodesFilter._bare_re
+:value: >
+   'compile(...)'
+
+```{autodoc2-docstring} archivebox.core.settings_logging.StripANSIColorCodesFilter._bare_re
+```
+
+````
+
+````{py:method} filter(record) -> bool
+:canonical: archivebox.core.settings_logging.StripANSIColorCodesFilter.filter
 
 ````
 

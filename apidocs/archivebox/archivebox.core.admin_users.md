@@ -68,6 +68,16 @@ Bases: {py:obj}`django.contrib.auth.admin.UserAdmin`
 
 ````
 
+````{py:attribute} add_fieldsets
+:canonical: archivebox.core.admin_users.CustomUserAdmin.add_fieldsets
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.admin_users.CustomUserAdmin.add_fieldsets
+```
+
+````
+
 ````{py:attribute} fieldsets
 :canonical: archivebox.core.admin_users.CustomUserAdmin.fieldsets
 :value: >

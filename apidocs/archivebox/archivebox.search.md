@@ -24,24 +24,12 @@ archivebox.search.admin
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`log_index_started <archivebox.search.log_index_started>`
-  - ```{autodoc2-docstring} archivebox.search.log_index_started
+* - {py:obj}`get_available_backends <archivebox.search.get_available_backends>`
+  - ```{autodoc2-docstring} archivebox.search.get_available_backends
     :summary:
     ```
-* - {py:obj}`get_file_result_content <archivebox.search.get_file_result_content>`
-  - ```{autodoc2-docstring} archivebox.search.get_file_result_content
-    :summary:
-    ```
-* - {py:obj}`get_indexable_content <archivebox.search.get_indexable_content>`
-  - ```{autodoc2-docstring} archivebox.search.get_indexable_content
-    :summary:
-    ```
-* - {py:obj}`import_backend <archivebox.search.import_backend>`
-  - ```{autodoc2-docstring} archivebox.search.import_backend
-    :summary:
-    ```
-* - {py:obj}`write_search_index <archivebox.search.write_search_index>`
-  - ```{autodoc2-docstring} archivebox.search.write_search_index
+* - {py:obj}`get_backend <archivebox.search.get_backend>`
+  - ```{autodoc2-docstring} archivebox.search.get_backend
     :summary:
     ```
 * - {py:obj}`query_search_index <archivebox.search.query_search_index>`
@@ -52,66 +40,57 @@ archivebox.search.admin
   - ```{autodoc2-docstring} archivebox.search.flush_search_index
     :summary:
     ```
-* - {py:obj}`index_links <archivebox.search.index_links>`
-  - ```{autodoc2-docstring} archivebox.search.index_links
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_search_backends_cache <archivebox.search._search_backends_cache>`
+  - ```{autodoc2-docstring} archivebox.search._search_backends_cache
     :summary:
     ```
 ````
 
 ### API
 
-````{py:function} log_index_started(url)
-:canonical: archivebox.search.log_index_started
+````{py:data} _search_backends_cache
+:canonical: archivebox.search._search_backends_cache
+:type: typing.Optional[dict]
+:value: >
+   None
 
-```{autodoc2-docstring} archivebox.search.log_index_started
+```{autodoc2-docstring} archivebox.search._search_backends_cache
+```
+
+````
+
+````{py:function} get_available_backends() -> dict
+:canonical: archivebox.search.get_available_backends
+
+```{autodoc2-docstring} archivebox.search.get_available_backends
 ```
 ````
 
-````{py:function} get_file_result_content(res, extra_path, use_pwd=False)
-:canonical: archivebox.search.get_file_result_content
+````{py:function} get_backend() -> typing.Any
+:canonical: archivebox.search.get_backend
 
-```{autodoc2-docstring} archivebox.search.get_file_result_content
+```{autodoc2-docstring} archivebox.search.get_backend
 ```
 ````
 
-````{py:function} get_indexable_content(results: django.db.models.QuerySet)
-:canonical: archivebox.search.get_indexable_content
-
-```{autodoc2-docstring} archivebox.search.get_indexable_content
-```
-````
-
-````{py:function} import_backend()
-:canonical: archivebox.search.import_backend
-
-```{autodoc2-docstring} archivebox.search.import_backend
-```
-````
-
-````{py:function} write_search_index(link: archivebox.index.schema.Link, texts: typing.Union[typing.List[str], None] = None, out_dir: pathlib.Path = settings.DATA_DIR, skip_text_index: bool = False) -> None
-:canonical: archivebox.search.write_search_index
-
-```{autodoc2-docstring} archivebox.search.write_search_index
-```
-````
-
-````{py:function} query_search_index(query: str, out_dir: pathlib.Path = settings.DATA_DIR) -> django.db.models.QuerySet
+````{py:function} query_search_index(query: str) -> django.db.models.QuerySet
 :canonical: archivebox.search.query_search_index
 
 ```{autodoc2-docstring} archivebox.search.query_search_index
 ```
 ````
 
-````{py:function} flush_search_index(snapshots: django.db.models.QuerySet)
+````{py:function} flush_search_index(snapshots: django.db.models.QuerySet) -> None
 :canonical: archivebox.search.flush_search_index
 
 ```{autodoc2-docstring} archivebox.search.flush_search_index
-```
-````
-
-````{py:function} index_links(links: typing.Union[typing.List[archivebox.index.schema.Link], None], out_dir: pathlib.Path = settings.DATA_DIR)
-:canonical: archivebox.search.index_links
-
-```{autodoc2-docstring} archivebox.search.index_links
 ```
 ````
