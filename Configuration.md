@@ -896,22 +896,527 @@ More info:
 
 ## Plugin Settings
 
-ArchiveBox uses a plugin system where each extractor defines its own configuration via `config.json` files. Plugin config options follow a consistent naming convention:
+ArchiveBox uses a plugin system where each extractor defines its own configuration via `config.json` files. All plugin config options can be set the same way as core options — via environment variables, `ArchiveBox.conf`, or `archivebox config --set`.
 
-- **`PLUGINNAME_ENABLED`**: Enable/disable the plugin (`True`/`False`)
-- **`PLUGINNAME_TIMEOUT`**: Timeout in seconds (usually falls back to global `TIMEOUT`)
-- **`PLUGINNAME_BINARY`**: Path to the plugin's binary dependency
-- **`PLUGINNAME_ARGS`**: Default command-line arguments (JSON array)
-- **`PLUGINNAME_ARGS_EXTRA`**: Extra arguments to append (JSON array)
-
-All plugin config options can be set the same way as core options — via environment variables, `ArchiveBox.conf`, or `archivebox config --set`.
-
-To see all available plugin config options for your installation:
 ```bash
-archivebox config
+archivebox config                              # see all available config options
+archivebox config --set SCREENSHOT_TIMEOUT=120  # set a plugin option
 ```
 
 For the full list of plugins and their config schemas, see the [abx-plugins repository](https://github.com/ArchiveBox/abx-plugins).
+
+---
+
+### Extractor Plugins
+
+#### `TITLE_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for title extraction in seconds.
+
+---
+#### `FAVICON_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for favicon fetch in seconds.
+
+---
+#### `FAVICON_USER_AGENT`
+**Default:** [`""`] *(falls back to [`USER_AGENT`](#user_agent))*
+User agent string for favicon fetching.
+
+---
+#### `WGET_TIMEOUT`
+**Default:** [`60`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for wget operations in seconds.
+
+---
+#### `WGET_CHECK_SSL_VALIDITY`
+**Default:** [`True`] *(falls back to [`CHECK_SSL_VALIDITY`](#check_ssl_validity))*
+Whether to verify SSL certificates for wget.
+
+---
+#### `WGET_COOKIES_FILE`
+**Default:** [`""`] *(falls back to [`COOKIES_FILE`](#cookies_file))*
+Path to cookies file for wget.
+
+---
+#### `SCREENSHOT_RESOLUTION`
+**Default:** [`1440,2000`] *(falls back to [`RESOLUTION`](#resolution))*
+Screenshot resolution (width,height).
+
+---
+#### `SCREENSHOT_TIMEOUT`
+**Default:** [`60`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for screenshot capture in seconds.
+
+---
+#### `PDF_RESOLUTION`
+**Default:** [`1440,2000`] *(falls back to [`RESOLUTION`](#resolution))*
+PDF page resolution (width,height).
+
+---
+#### `PDF_TIMEOUT`
+**Default:** [`60`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for PDF generation in seconds.
+
+---
+#### `DOM_TIMEOUT`
+**Default:** [`60`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for DOM capture in seconds.
+
+---
+#### `SINGLEFILE_TIMEOUT`
+**Default:** [`60`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for SingleFile in seconds.
+
+---
+#### `SINGLEFILE_ARGS_EXTRA`
+**Default:** [`[]`]
+Extra arguments to append to SingleFile command.
+
+---
+#### `SINGLEFILE_CHECK_SSL_VALIDITY`
+**Default:** [`True`] *(falls back to [`CHECK_SSL_VALIDITY`](#check_ssl_validity))*
+Whether to verify SSL certificates for SingleFile.
+
+---
+#### `SINGLEFILE_CHROME_BINARY`
+**Default:** [`""`] *(falls back to [`CHROME_BINARY`](#chrome_binary))*
+Path to Chromium binary for SingleFile.
+
+---
+#### `SINGLEFILE_CHROME_ARGS`
+**Default:** [`[]`] *(falls back to [`CHROME_ARGS`](#chrome_args))*
+Chrome command-line arguments for SingleFile.
+
+---
+#### `SINGLEFILE_COOKIES_FILE`
+**Default:** [`""`] *(falls back to [`COOKIES_FILE`](#cookies_file))*
+Path to cookies file for SingleFile.
+
+---
+#### `SINGLEFILE_NODE_BINARY`
+**Default:** [`node`]
+Path to Node.js binary for SingleFile.
+
+---
+#### `SINGLEFILE_USER_AGENT`
+**Default:** [`""`] *(falls back to [`USER_AGENT`](#user_agent))*
+User agent string for SingleFile.
+
+---
+#### `READABILITY_ARGS`
+**Default:** [`[]`]
+Default Readability arguments.
+
+---
+#### `READABILITY_ARGS_EXTRA`
+**Default:** [`[]`]
+Extra arguments to append to Readability command.
+
+---
+#### `READABILITY_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for Readability in seconds.
+
+---
+#### `MERCURY_ARGS`
+**Default:** [`[]`]
+Default Mercury parser arguments.
+
+---
+#### `MERCURY_ARGS_EXTRA`
+**Default:** [`[]`]
+Extra arguments to append to Mercury parser command.
+
+---
+#### `MERCURY_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for Mercury in seconds.
+
+---
+#### `DEFUDDLE_ARGS`
+**Default:** [`[]`]
+Default Defuddle arguments.
+
+---
+#### `DEFUDDLE_ARGS_EXTRA`
+**Default:** [`[]`]
+Extra arguments to append to Defuddle command.
+
+---
+#### `DEFUDDLE_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for Defuddle in seconds.
+
+---
+#### `HTMLTOTEXT_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for HTML to text conversion in seconds.
+
+---
+#### `TRAFILATURA_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for Trafilatura in seconds.
+
+---
+#### `TRAFILATURA_OUTPUT_TXT`
+**Default:** [`True`]
+Write plain text output (content.txt).
+
+---
+#### `TRAFILATURA_OUTPUT_MARKDOWN`
+**Default:** [`True`]
+Write markdown output (content.md).
+
+---
+#### `TRAFILATURA_OUTPUT_HTML`
+**Default:** [`True`]
+Write HTML output (content.html).
+
+---
+#### `TRAFILATURA_OUTPUT_JSON`
+**Default:** [`False`]
+Write JSON output (content.json).
+
+---
+#### `TRAFILATURA_OUTPUT_CSV`
+**Default:** [`False`]
+Write CSV output (content.csv).
+
+---
+#### `TRAFILATURA_OUTPUT_XML`
+**Default:** [`False`]
+Write XML output (content.xml).
+
+---
+#### `TRAFILATURA_OUTPUT_XMLTEI`
+**Default:** [`False`]
+Write XML TEI output (content.xmltei).
+
+---
+#### `GIT_ARGS_EXTRA`
+**Default:** [`[]`]
+Extra arguments to append to git command.
+
+---
+#### `GIT_TIMEOUT`
+**Default:** [`120`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for git operations in seconds.
+
+---
+#### `YTDLP_ARGS_EXTRA`
+**Default:** [`[]`]
+Extra arguments to append to yt-dlp command.
+
+---
+#### `YTDLP_CHECK_SSL_VALIDITY`
+**Default:** [`True`] *(falls back to [`CHECK_SSL_VALIDITY`](#check_ssl_validity))*
+Whether to verify SSL certificates for yt-dlp.
+
+---
+#### `YTDLP_COOKIES_FILE`
+**Default:** [`""`] *(falls back to [`COOKIES_FILE`](#cookies_file))*
+Path to cookies file for yt-dlp.
+
+---
+#### `YTDLP_NODE_BINARY`
+**Default:** [`node`]
+Path to Node.js binary for yt-dlp JS runtime.
+
+---
+#### `GALLERYDL_BINARY`
+**Default:** [`gallery-dl`]
+Path to gallery-dl binary.
+
+---
+#### `GALLERYDL_ARGS`
+**Default:** [`["--write-metadata", "--write-info-json"]`]
+Default gallery-dl arguments.
+
+---
+#### `GALLERYDL_ARGS_EXTRA`
+**Default:** [`[]`]
+Extra arguments to append to gallery-dl command.
+
+---
+#### `GALLERYDL_CHECK_SSL_VALIDITY`
+**Default:** [`True`] *(falls back to [`CHECK_SSL_VALIDITY`](#check_ssl_validity))*
+Whether to verify SSL certificates for gallery-dl.
+
+---
+#### `GALLERYDL_COOKIES_FILE`
+**Default:** [`""`] *(falls back to [`COOKIES_FILE`](#cookies_file))*
+Path to cookies file for gallery-dl.
+
+---
+#### `GALLERYDL_TIMEOUT`
+**Default:** [`3600`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for gallery downloads in seconds.
+
+---
+#### `FORUMDL_ENABLED`
+**Default:** [`True`]
+Enable forum downloading with [forum-dl](https://github.com/seirl/forum-dl).
+
+---
+#### `FORUMDL_BINARY`
+**Default:** [`forum-dl`]
+Path to forum-dl binary.
+
+---
+#### `FORUMDL_ARGS`
+**Default:** [`[]`]
+Default forum-dl arguments.
+
+---
+#### `FORUMDL_ARGS_EXTRA`
+**Default:** [`[]`]
+Extra arguments to append to forum-dl command.
+
+---
+#### `FORUMDL_OUTPUT_FORMAT`
+**Default:** [`jsonl`]
+Output format for forum downloads.
+
+---
+#### `FORUMDL_TIMEOUT`
+**Default:** [`3600`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for forum downloads in seconds.
+
+---
+#### `PAPERSDL_ENABLED`
+**Default:** [`True`]
+Enable paper downloading with papers-dl.
+
+---
+#### `PAPERSDL_BINARY`
+**Default:** [`papers-dl`]
+Path to papers-dl binary.
+
+---
+#### `PAPERSDL_ARGS`
+**Default:** [`["fetch"]`]
+Default papers-dl arguments.
+
+---
+#### `PAPERSDL_ARGS_EXTRA`
+**Default:** [`[]`]
+Extra arguments to append to papers-dl command.
+
+---
+#### `PAPERSDL_TIMEOUT`
+**Default:** [`300`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for paper downloads in seconds.
+
+---
+#### `ARCHIVEDOTORG_TIMEOUT`
+**Default:** [`60`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for archive.org submission in seconds.
+
+---
+#### `ARCHIVEDOTORG_USER_AGENT`
+**Default:** [`""`] *(falls back to [`USER_AGENT`](#user_agent))*
+User agent string for archive.org requests.
+
+---
+
+### Chrome Options (Plugin)
+
+#### `CHROME_CHECK_SSL_VALIDITY`
+**Default:** [`True`] *(falls back to [`CHECK_SSL_VALIDITY`](#check_ssl_validity))*
+Whether to verify SSL certificates in Chrome (disable for self-signed certs).
+
+---
+#### `CHROME_NODE_BINARY`
+**Default:** [`node`]
+Path to Node.js binary (for Puppeteer).
+
+---
+
+### Chrome Sub-Extractors
+
+#### `DNS_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for DNS recording in seconds.
+
+---
+#### `SSL_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for SSL capture in seconds.
+
+---
+#### `HEADERS_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for headers capture in seconds.
+
+---
+#### `REDIRECTS_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for redirect capture in seconds.
+
+---
+#### `RESPONSES_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for response capture in seconds.
+
+---
+#### `CONSOLELOG_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for console log capture in seconds.
+
+---
+#### `ACCESSIBILITY_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for accessibility capture in seconds.
+
+---
+#### `SEO_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for SEO capture in seconds.
+
+---
+#### `HASHES_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for merkle tree generation in seconds.
+
+---
+#### `STATICFILE_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for static file detection in seconds.
+
+---
+
+### URL Parsers
+
+#### `PARSE_DOM_OUTLINKS_TIMEOUT`
+**Default:** [`30`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for DOM outlinks parsing in seconds.
+
+---
+
+### AI Plugins
+
+#### `ANTHROPIC_API_KEY`
+**Default:** [`""`]
+Anthropic API key (shared across all Claude plugins).
+
+---
+#### `CLAUDECODE_ENABLED`
+**Default:** [`False`]
+Enable Claude Code AI agent integration.
+
+---
+#### `CLAUDECODE_BINARY`
+**Default:** [`claude`]
+Path to Claude Code CLI binary.
+
+---
+#### `CLAUDECODE_MODEL`
+**Default:** [`sonnet`]
+Claude model to use (sonnet/opus/haiku).
+
+---
+#### `CLAUDECODE_MAX_TURNS`
+**Default:** [`10`]
+Maximum number of agentic turns per invocation.
+
+---
+#### `CLAUDECODE_TIMEOUT`
+**Default:** [`120`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for Claude Code operations in seconds.
+
+---
+#### `CLAUDECHROME_ENABLED`
+**Default:** [`False`]
+Enable Claude for Chrome browser extension for AI-driven page interaction.
+
+---
+#### `CLAUDECHROME_MODEL`
+**Default:** [`sonnet`]
+Claude model for browser interaction.
+
+---
+#### `CLAUDECHROME_MAX_ACTIONS`
+**Default:** [`15`]
+Maximum number of agentic loop iterations (screenshots + actions) per page.
+
+---
+#### `CLAUDECHROME_PROMPT`
+**Default:** *"Look at the current page. If there are any expand/show more/load more buttons, click them all..."*
+Prompt for Claude to execute on each page. Claude can click buttons, fill forms, and interact with page elements.
+
+---
+#### `CLAUDECHROME_TIMEOUT`
+**Default:** [`120`] *(falls back to [`TIMEOUT`](#timeout))*
+Timeout for Claude for Chrome operations in seconds.
+
+---
+#### `CLAUDECODEEXTRACT_ENABLED`
+**Default:** [`False`]
+Enable Claude Code AI extraction.
+
+---
+#### `CLAUDECODEEXTRACT_MODEL`
+**Default:** [`sonnet`] *(falls back to [`CLAUDECODE_MODEL`](#claudecode_model))*
+Claude model to use for extraction.
+
+---
+#### `CLAUDECODEEXTRACT_MAX_TURNS`
+**Default:** [`10`] *(falls back to [`CLAUDECODE_MAX_TURNS`](#claudecode_max_turns))*
+Maximum number of agentic turns for extraction.
+
+---
+#### `CLAUDECODEEXTRACT_PROMPT`
+**Default:** *"Read all extracted outputs and generate clean Markdown..."*
+Custom prompt defining what Claude should extract from snapshots.
+
+---
+#### `CLAUDECODEEXTRACT_TIMEOUT`
+**Default:** [`120`] *(falls back to [`CLAUDECODE_TIMEOUT`](#claudecode_timeout))*
+Timeout for Claude Code extraction in seconds.
+
+---
+#### `CLAUDECODECLEANUP_ENABLED`
+**Default:** [`False`]
+Enable Claude Code AI cleanup of snapshot files.
+
+---
+#### `CLAUDECODECLEANUP_MODEL`
+**Default:** [`sonnet`] *(falls back to [`CLAUDECODE_MODEL`](#claudecode_model))*
+Claude model to use for cleanup.
+
+---
+#### `CLAUDECODECLEANUP_MAX_TURNS`
+**Default:** [`15`] *(falls back to [`CLAUDECODE_MAX_TURNS`](#claudecode_max_turns))*
+Maximum number of agentic turns for cleanup.
+
+---
+#### `CLAUDECODECLEANUP_PROMPT`
+**Default:** *"Analyze extractor output directories, find duplicates, keep best quality..."*
+Custom prompt defining what Claude should clean up in snapshots.
+
+---
+#### `CLAUDECODECLEANUP_TIMEOUT`
+**Default:** [`120`] *(falls back to [`CLAUDECODE_TIMEOUT`](#claudecode_timeout))*
+Timeout for Claude Code cleanup in seconds.
+
+---
+
+### Search Backends
+
+#### `RIPGREP_ARGS`
+**Default:** [`["--files-with-matches", "--no-messages", "--ignore-case"]`]
+Default ripgrep arguments.
+
+---
+#### `RIPGREP_ARGS_EXTRA`
+**Default:** [`[]`]
+Extra arguments to append to ripgrep command.
+
+---
+#### `RIPGREP_TIMEOUT`
+**Default:** [`90`] *(falls back to [`TIMEOUT`](#timeout))*
+Search timeout in seconds.
 
 
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/5a4dd576-387a-4a1f-9dfa-407eac87078c" width="100%"/>
