@@ -202,6 +202,14 @@
 
 ````
 
+````{py:method} test_list_view_avoids_output_dir_lookups(client, admin_user, snapshot, monkeypatch)
+:canonical: archivebox.tests.test_admin_views.TestAdminSnapshotListView.test_list_view_avoids_output_dir_lookups
+
+```{autodoc2-docstring} archivebox.tests.test_admin_views.TestAdminSnapshotListView.test_list_view_avoids_output_dir_lookups
+```
+
+````
+
 ````{py:method} test_grid_view_renders(client, admin_user)
 :canonical: archivebox.tests.test_admin_views.TestAdminSnapshotListView.test_grid_view_renders
 

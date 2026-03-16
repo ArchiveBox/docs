@@ -151,6 +151,14 @@
 
 ````
 
+````{py:method} test_api_auth_token_endpoint_available_on_admin_and_api_hosts() -> None
+:canonical: archivebox.tests.test_urls.TestUrlRouting.test_api_auth_token_endpoint_available_on_admin_and_api_hosts
+
+```{autodoc2-docstring} archivebox.tests.test_urls.TestUrlRouting.test_api_auth_token_endpoint_available_on_admin_and_api_hosts
+```
+
+````
+
 ````{py:method} test_api_post_with_token_on_admin_and_api_hosts() -> None
 :canonical: archivebox.tests.test_urls.TestUrlRouting.test_api_post_with_token_on_admin_and_api_hosts
 

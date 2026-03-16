@@ -952,7 +952,7 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````
 
-````{py:method} icons() -> str
+````{py:method} icons(path: typing.Optional[str] = None) -> str
 :canonical: archivebox.core.models.Snapshot.icons
 
 ```{autodoc2-docstring} archivebox.core.models.Snapshot.icons
@@ -1013,6 +1013,14 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 :canonical: archivebox.core.models.Snapshot.legacy_archive_path
 
 ```{autodoc2-docstring} archivebox.core.models.Snapshot.legacy_archive_path
+```
+
+````
+
+````{py:method} archive_path_from_db() -> str
+:canonical: archivebox.core.models.Snapshot.archive_path_from_db
+
+```{autodoc2-docstring} archivebox.core.models.Snapshot.archive_path_from_db
 ```
 
 ````

@@ -22,7 +22,7 @@ project = 'ArchiveBox'
 copyright = '2024 ©️ ArchiveBox ™️'
 author = 'Nick Sweeting'
 github_url = 'https://github.com/ArchiveBox/ArchiveBox'
-github_doc_root = 'https://github.com/ArchiveBox/docs/tree/master/'
+github_doc_root = 'https://github.com/ArchiveBox/docs/tree/master/'  # docs repo uses master branch
 github_view_style = 'blob'
 language = 'en'
 
@@ -142,7 +142,7 @@ html_context = {
     "display_github": True,
     "github_user": "ArchiveBox",
     "github_repo": "docs",
-    "github_version": "master",
+    "github_version": "master",  # docs repo uses master branch
     "conf_py_path": "/",
 }
 html_show_sphinx = False
