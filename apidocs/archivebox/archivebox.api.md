@@ -21,7 +21,6 @@ archivebox.api.v1_cli
 archivebox.api.v1_core
 archivebox.api.apps
 archivebox.api.admin
-archivebox.api.v1_workers
 archivebox.api.urls
 archivebox.api.v1_machine
 archivebox.api.middleware

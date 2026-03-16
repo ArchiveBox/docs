@@ -27,6 +27,10 @@
   -
 * - {py:obj}`SnapshotUpdateSchema <archivebox.api.v1_core.SnapshotUpdateSchema>`
   -
+* - {py:obj}`SnapshotCreateSchema <archivebox.api.v1_core.SnapshotCreateSchema>`
+  -
+* - {py:obj}`SnapshotDeleteResponseSchema <archivebox.api.v1_core.SnapshotDeleteResponseSchema>`
+  -
 * - {py:obj}`SnapshotFilterSchema <archivebox.api.v1_core.SnapshotFilterSchema>`
   -
 * - {py:obj}`TagSchema <archivebox.api.v1_core.TagSchema>`
@@ -57,6 +61,10 @@
   - ```{autodoc2-docstring} archivebox.api.v1_core.get_archiveresult
     :summary:
     ```
+* - {py:obj}`normalize_tag_list <archivebox.api.v1_core.normalize_tag_list>`
+  - ```{autodoc2-docstring} archivebox.api.v1_core.normalize_tag_list
+    :summary:
+    ```
 * - {py:obj}`get_snapshots <archivebox.api.v1_core.get_snapshots>`
   - ```{autodoc2-docstring} archivebox.api.v1_core.get_snapshots
     :summary:
@@ -65,8 +73,16 @@
   - ```{autodoc2-docstring} archivebox.api.v1_core.get_snapshot
     :summary:
     ```
+* - {py:obj}`create_snapshot <archivebox.api.v1_core.create_snapshot>`
+  - ```{autodoc2-docstring} archivebox.api.v1_core.create_snapshot
+    :summary:
+    ```
 * - {py:obj}`patch_snapshot <archivebox.api.v1_core.patch_snapshot>`
   - ```{autodoc2-docstring} archivebox.api.v1_core.patch_snapshot
+    :summary:
+    ```
+* - {py:obj}`delete_snapshot <archivebox.api.v1_core.delete_snapshot>`
+  - ```{autodoc2-docstring} archivebox.api.v1_core.delete_snapshot
     :summary:
     ```
 * - {py:obj}`get_tags <archivebox.api.v1_core.get_tags>`
@@ -1079,7 +1095,149 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
+````{py:attribute} tags
+:canonical: archivebox.api.v1_core.SnapshotUpdateSchema.tags
+:type: typing.Optional[typing.List[str]]
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SnapshotUpdateSchema.tags
+```
+
+````
+
 `````
+
+`````{py:class} SnapshotCreateSchema(/, **data: typing.Any)
+:canonical: archivebox.api.v1_core.SnapshotCreateSchema
+
+Bases: {py:obj}`ninja.Schema`
+
+````{py:attribute} url
+:canonical: archivebox.api.v1_core.SnapshotCreateSchema.url
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SnapshotCreateSchema.url
+```
+
+````
+
+````{py:attribute} crawl_id
+:canonical: archivebox.api.v1_core.SnapshotCreateSchema.crawl_id
+:type: typing.Optional[str]
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SnapshotCreateSchema.crawl_id
+```
+
+````
+
+````{py:attribute} depth
+:canonical: archivebox.api.v1_core.SnapshotCreateSchema.depth
+:type: int
+:value: >
+   0
+
+```{autodoc2-docstring} archivebox.api.v1_core.SnapshotCreateSchema.depth
+```
+
+````
+
+````{py:attribute} title
+:canonical: archivebox.api.v1_core.SnapshotCreateSchema.title
+:type: typing.Optional[str]
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SnapshotCreateSchema.title
+```
+
+````
+
+````{py:attribute} tags
+:canonical: archivebox.api.v1_core.SnapshotCreateSchema.tags
+:type: typing.Optional[typing.List[str]]
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SnapshotCreateSchema.tags
+```
+
+````
+
+````{py:attribute} status
+:canonical: archivebox.api.v1_core.SnapshotCreateSchema.status
+:type: typing.Optional[str]
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SnapshotCreateSchema.status
+```
+
+````
+
+`````
+
+`````{py:class} SnapshotDeleteResponseSchema(/, **data: typing.Any)
+:canonical: archivebox.api.v1_core.SnapshotDeleteResponseSchema
+
+Bases: {py:obj}`ninja.Schema`
+
+````{py:attribute} success
+:canonical: archivebox.api.v1_core.SnapshotDeleteResponseSchema.success
+:type: bool
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SnapshotDeleteResponseSchema.success
+```
+
+````
+
+````{py:attribute} snapshot_id
+:canonical: archivebox.api.v1_core.SnapshotDeleteResponseSchema.snapshot_id
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SnapshotDeleteResponseSchema.snapshot_id
+```
+
+````
+
+````{py:attribute} crawl_id
+:canonical: archivebox.api.v1_core.SnapshotDeleteResponseSchema.crawl_id
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SnapshotDeleteResponseSchema.crawl_id
+```
+
+````
+
+````{py:attribute} deleted_count
+:canonical: archivebox.api.v1_core.SnapshotDeleteResponseSchema.deleted_count
+:type: int
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_core.SnapshotDeleteResponseSchema.deleted_count
+```
+
+````
+
+`````
+
+````{py:function} normalize_tag_list(tags: typing.Optional[typing.List[str]] = None) -> typing.List[str]
+:canonical: archivebox.api.v1_core.normalize_tag_list
+
+```{autodoc2-docstring} archivebox.api.v1_core.normalize_tag_list
+```
+````
 
 `````{py:class} SnapshotFilterSchema(/, **data: typing.Any)
 :canonical: archivebox.api.v1_core.SnapshotFilterSchema
@@ -1278,10 +1436,24 @@ Bases: {py:obj}`ninja.FilterSchema`
 ```
 ````
 
+````{py:function} create_snapshot(request, data: archivebox.api.v1_core.SnapshotCreateSchema)
+:canonical: archivebox.api.v1_core.create_snapshot
+
+```{autodoc2-docstring} archivebox.api.v1_core.create_snapshot
+```
+````
+
 ````{py:function} patch_snapshot(request, snapshot_id: str, data: archivebox.api.v1_core.SnapshotUpdateSchema)
 :canonical: archivebox.api.v1_core.patch_snapshot
 
 ```{autodoc2-docstring} archivebox.api.v1_core.patch_snapshot
+```
+````
+
+````{py:function} delete_snapshot(request, snapshot_id: str)
+:canonical: archivebox.api.v1_core.delete_snapshot
+
+```{autodoc2-docstring} archivebox.api.v1_core.delete_snapshot
 ```
 ````
 
@@ -1303,7 +1475,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} id
 :canonical: archivebox.api.v1_core.TagSchema.id
-:type: uuid.UUID
+:type: int
 :value: >
    None
 

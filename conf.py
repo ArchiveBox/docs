@@ -62,9 +62,13 @@ autodoc2_packages = [
             'typings',
             'templates',
             'static',
+            'tests',
+            'tmp',
         ],
         "exclude_files": [
-            'tests.py',  
+            'tests.py',
+            'conftest.py',
+            'fixtures.py',
         ],
     },
 ]
@@ -75,6 +79,9 @@ autodoc2_render_plugin = "myst"
 autodoc2_skip_module_regexes = [
     r'.*migrations.*',
     r'.*vendor.*',
+    r'.*\.tests($|\..*)',
+    r'.*\.conftest$',
+    r'.*\.fixtures$',
 ]
 # autodoc2_hidden_objects = ['inherited', 'dunder']
 autodoc2_hidden_regexes = [

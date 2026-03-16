@@ -19,6 +19,10 @@
   -
 * - {py:obj}`CrawlUpdateSchema <archivebox.api.v1_crawls.CrawlUpdateSchema>`
   -
+* - {py:obj}`CrawlCreateSchema <archivebox.api.v1_crawls.CrawlCreateSchema>`
+  -
+* - {py:obj}`CrawlDeleteResponseSchema <archivebox.api.v1_crawls.CrawlDeleteResponseSchema>`
+  -
 ````
 
 ### Functions
@@ -27,8 +31,16 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`normalize_tag_list <archivebox.api.v1_crawls.normalize_tag_list>`
+  - ```{autodoc2-docstring} archivebox.api.v1_crawls.normalize_tag_list
+    :summary:
+    ```
 * - {py:obj}`get_crawls <archivebox.api.v1_crawls.get_crawls>`
   - ```{autodoc2-docstring} archivebox.api.v1_crawls.get_crawls
+    :summary:
+    ```
+* - {py:obj}`create_crawl <archivebox.api.v1_crawls.create_crawl>`
+  - ```{autodoc2-docstring} archivebox.api.v1_crawls.create_crawl
     :summary:
     ```
 * - {py:obj}`get_crawl <archivebox.api.v1_crawls.get_crawl>`
@@ -37,6 +49,10 @@
     ```
 * - {py:obj}`patch_crawl <archivebox.api.v1_crawls.patch_crawl>`
   - ```{autodoc2-docstring} archivebox.api.v1_crawls.patch_crawl
+    :summary:
+    ```
+* - {py:obj}`delete_crawl <archivebox.api.v1_crawls.delete_crawl>`
+  - ```{autodoc2-docstring} archivebox.api.v1_crawls.delete_crawl
     :summary:
     ```
 ````
@@ -169,17 +185,6 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
-````{py:attribute} extractor
-:canonical: archivebox.api.v1_crawls.CrawlSchema.extractor
-:type: str
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlSchema.extractor
-```
-
-````
-
 ````{py:attribute} max_depth
 :canonical: archivebox.api.v1_crawls.CrawlSchema.max_depth
 :type: int
@@ -269,12 +274,180 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
+````{py:attribute} tags
+:canonical: archivebox.api.v1_crawls.CrawlUpdateSchema.tags
+:type: typing.Optional[typing.List[str]]
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlUpdateSchema.tags
+```
+
+````
+
+````{py:attribute} tags_str
+:canonical: archivebox.api.v1_crawls.CrawlUpdateSchema.tags_str
+:type: str | None
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlUpdateSchema.tags_str
+```
+
+````
+
 `````
+
+`````{py:class} CrawlCreateSchema(/, **data: typing.Any)
+:canonical: archivebox.api.v1_crawls.CrawlCreateSchema
+
+Bases: {py:obj}`ninja.Schema`
+
+````{py:attribute} urls
+:canonical: archivebox.api.v1_crawls.CrawlCreateSchema.urls
+:type: typing.List[str]
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlCreateSchema.urls
+```
+
+````
+
+````{py:attribute} max_depth
+:canonical: archivebox.api.v1_crawls.CrawlCreateSchema.max_depth
+:type: int
+:value: >
+   0
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlCreateSchema.max_depth
+```
+
+````
+
+````{py:attribute} tags
+:canonical: archivebox.api.v1_crawls.CrawlCreateSchema.tags
+:type: typing.Optional[typing.List[str]]
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlCreateSchema.tags
+```
+
+````
+
+````{py:attribute} tags_str
+:canonical: archivebox.api.v1_crawls.CrawlCreateSchema.tags_str
+:type: str
+:value: <Multiline-String>
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlCreateSchema.tags_str
+```
+
+````
+
+````{py:attribute} label
+:canonical: archivebox.api.v1_crawls.CrawlCreateSchema.label
+:type: str
+:value: <Multiline-String>
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlCreateSchema.label
+```
+
+````
+
+````{py:attribute} notes
+:canonical: archivebox.api.v1_crawls.CrawlCreateSchema.notes
+:type: str
+:value: <Multiline-String>
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlCreateSchema.notes
+```
+
+````
+
+````{py:attribute} config
+:canonical: archivebox.api.v1_crawls.CrawlCreateSchema.config
+:type: dict
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlCreateSchema.config
+```
+
+````
+
+`````
+
+`````{py:class} CrawlDeleteResponseSchema(/, **data: typing.Any)
+:canonical: archivebox.api.v1_crawls.CrawlDeleteResponseSchema
+
+Bases: {py:obj}`ninja.Schema`
+
+````{py:attribute} success
+:canonical: archivebox.api.v1_crawls.CrawlDeleteResponseSchema.success
+:type: bool
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlDeleteResponseSchema.success
+```
+
+````
+
+````{py:attribute} crawl_id
+:canonical: archivebox.api.v1_crawls.CrawlDeleteResponseSchema.crawl_id
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlDeleteResponseSchema.crawl_id
+```
+
+````
+
+````{py:attribute} deleted_count
+:canonical: archivebox.api.v1_crawls.CrawlDeleteResponseSchema.deleted_count
+:type: int
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlDeleteResponseSchema.deleted_count
+```
+
+````
+
+````{py:attribute} deleted_snapshots
+:canonical: archivebox.api.v1_crawls.CrawlDeleteResponseSchema.deleted_snapshots
+:type: int
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlDeleteResponseSchema.deleted_snapshots
+```
+
+````
+
+`````
+
+````{py:function} normalize_tag_list(tags: typing.Optional[typing.List[str]] = None, tags_str: str = '') -> typing.List[str]
+:canonical: archivebox.api.v1_crawls.normalize_tag_list
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.normalize_tag_list
+```
+````
 
 ````{py:function} get_crawls(request)
 :canonical: archivebox.api.v1_crawls.get_crawls
 
 ```{autodoc2-docstring} archivebox.api.v1_crawls.get_crawls
+```
+````
+
+````{py:function} create_crawl(request, data: archivebox.api.v1_crawls.CrawlCreateSchema)
+:canonical: archivebox.api.v1_crawls.create_crawl
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.create_crawl
 ```
 ````
 
@@ -289,5 +462,12 @@ Bases: {py:obj}`ninja.Schema`
 :canonical: archivebox.api.v1_crawls.patch_crawl
 
 ```{autodoc2-docstring} archivebox.api.v1_crawls.patch_crawl
+```
+````
+
+````{py:function} delete_crawl(request, crawl_id: str)
+:canonical: archivebox.api.v1_crawls.delete_crawl
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.delete_crawl
 ```
 ````

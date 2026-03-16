@@ -13,7 +13,6 @@
 :titlesonly:
 :maxdepth: 3
 
-archivebox.workers.tests
 archivebox.workers.management
 ```
 
@@ -30,7 +29,6 @@ archivebox.workers.apps
 archivebox.workers.admin
 archivebox.workers.orchestrator
 archivebox.workers.supervisord_util
-archivebox.workers.views
 ```
 
 ## Package Contents

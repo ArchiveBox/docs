@@ -17,7 +17,6 @@ archivebox.misc
 archivebox.core
 archivebox.config
 archivebox.ldap
-archivebox.tests
 archivebox.mcp
 archivebox.crawls
 archivebox.cli
