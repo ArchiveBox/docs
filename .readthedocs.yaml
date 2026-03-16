@@ -2,18 +2,23 @@
 # See https://docs.readthedocs.io/en/stable/config-file/v2.html
 #
 # RTD Version Strategy:
-#   - "latest" builds from the default branch (master) = dev docs
-#   - Tagged versions (v0.9.10, v0.8.6, etc.) build from git tags = stable docs
-#   - The "stable" alias auto-points to the latest non-prerelease tag
+#   - "stable" alias -> latest stable release tag (currently v0.7.3)
+#   - "latest" alias -> default branch (master) = current dev docs (0.9.x)
+#   - Tagged versions (v0.9.10, v0.8.6, v0.7.3, etc.) build from git tags
+#
+# Version history:
+#   - 0.7.x = last stable release series (v0.7.2, v0.7.3)
+#   - 0.8.x = dev/pre-release (never stable)
+#   - 0.9.x = dev/pre-release (current development)
 #
 # RTD Admin Settings (configure in RTD dashboard):
-#   - Default version: "stable" (so users land on latest release, not dev)
-#   - "latest" version: set to "hidden" (accessible by URL but not default)
+#   - Default version: "stable" (points to v0.7.3, the last stable release)
+#   - "latest" version: visible, shows dev docs (0.9.x) with warning banner
 #   - Enable "build on tag push" for automatic versioned releases
+#   - Once 0.9.x is declared stable, it becomes the new "stable" automatically
 #
 # To publish a new versioned docs release:
 #   git tag v0.9.10 && git push wiki v0.9.10
-#   RTD auto-detects and builds it. The "stable" alias updates automatically.
 #
 # To access dev docs:
 #   https://archivebox.readthedocs.io/en/latest/

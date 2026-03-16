@@ -36,8 +36,9 @@ if release[0].isdigit():
     tag = f"v{release}"    # .split('rc')[0]
 
 # Detect if this is a dev/pre-release build
+# 0.8.x and 0.9.x are all pre-release/dev. Last stable release was 0.7.x.
 import os
-is_dev = any(label in release for label in ('dev', 'rc', 'alpha', 'beta', 'a', 'b'))
+is_dev = not release.startswith('0.7.')
 # RTD sets READTHEDOCS_VERSION to the branch/tag name being built
 rtd_version = os.environ.get('READTHEDOCS_VERSION', '')
 if rtd_version in ('latest', 'dev', 'main', 'master'):

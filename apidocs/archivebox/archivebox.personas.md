@@ -15,6 +15,7 @@
 
 archivebox.personas.models
 archivebox.personas.apps
+archivebox.personas.runtime
 archivebox.personas.admin
 archivebox.personas.views
 ```

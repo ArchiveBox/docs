@@ -304,7 +304,7 @@ Bases: {py:obj}`typing.TypedDict`
 ```
 ````
 
-````{py:function} extract_records_from_process(process: Process) -> typing.List[typing.Dict[str, typing.Any]]
+````{py:function} extract_records_from_process(process: archivebox.machine.models.Process) -> typing.List[typing.Dict[str, typing.Any]]
 :canonical: archivebox.hooks.extract_records_from_process
 
 ```{autodoc2-docstring} archivebox.hooks.extract_records_from_process

@@ -181,7 +181,7 @@
 
 ````
 
-````{py:method} _terminate_background_hooks(background_processes: dict[str, Process], worker_type: str, indent_level: int) -> None
+````{py:method} _terminate_background_hooks(background_processes: dict[str, archivebox.machine.models.Process], worker_type: str, indent_level: int) -> None
 :canonical: archivebox.workers.worker.Worker._terminate_background_hooks
 
 ```{autodoc2-docstring} archivebox.workers.worker.Worker._terminate_background_hooks

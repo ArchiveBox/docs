@@ -349,16 +349,6 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithOutputDir`, {py:obj}`arch
 
 ````
 
-````{py:attribute} output_dir
-:canonical: archivebox.crawls.models.Crawl.output_dir
-:value: >
-   'CharField(...)'
-
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.output_dir
-```
-
-````
-
 ````{py:attribute} status
 :canonical: archivebox.crawls.models.Crawl.status
 :value: >
@@ -509,6 +499,15 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 :staticmethod:
 
 ```{autodoc2-docstring} archivebox.crawls.models.Crawl.from_json
+```
+
+````
+
+````{py:property} output_dir
+:canonical: archivebox.crawls.models.Crawl.output_dir
+:type: pathlib.Path
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.output_dir
 ```
 
 ````
