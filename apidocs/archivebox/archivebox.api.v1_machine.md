@@ -39,12 +39,12 @@
   - ```{autodoc2-docstring} archivebox.api.v1_machine.get_machines
     :summary:
     ```
-* - {py:obj}`get_machine <archivebox.api.v1_machine.get_machine>`
-  - ```{autodoc2-docstring} archivebox.api.v1_machine.get_machine
-    :summary:
-    ```
 * - {py:obj}`get_current_machine <archivebox.api.v1_machine.get_current_machine>`
   - ```{autodoc2-docstring} archivebox.api.v1_machine.get_current_machine
+    :summary:
+    ```
+* - {py:obj}`get_machine <archivebox.api.v1_machine.get_machine>`
+  - ```{autodoc2-docstring} archivebox.api.v1_machine.get_machine
     :summary:
     ```
 * - {py:obj}`get_binaries <archivebox.api.v1_machine.get_binaries>`
@@ -684,17 +684,17 @@ Bases: {py:obj}`ninja.FilterSchema`
 ```
 ````
 
-````{py:function} get_machine(request, machine_id: str)
-:canonical: archivebox.api.v1_machine.get_machine
-
-```{autodoc2-docstring} archivebox.api.v1_machine.get_machine
-```
-````
-
 ````{py:function} get_current_machine(request)
 :canonical: archivebox.api.v1_machine.get_current_machine
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.get_current_machine
+```
+````
+
+````{py:function} get_machine(request, machine_id: str)
+:canonical: archivebox.api.v1_machine.get_machine
+
+```{autodoc2-docstring} archivebox.api.v1_machine.get_machine
 ```
 ````
 

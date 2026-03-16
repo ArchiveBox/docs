@@ -190,6 +190,38 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````
 
+````{py:property} last_run_at
+:canonical: archivebox.crawls.models.CrawlSchedule.last_run_at
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.last_run_at
+```
+
+````
+
+````{py:property} next_run_at
+:canonical: archivebox.crawls.models.CrawlSchedule.next_run_at
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.next_run_at
+```
+
+````
+
+````{py:method} is_due(now=None) -> bool
+:canonical: archivebox.crawls.models.CrawlSchedule.is_due
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.is_due
+```
+
+````
+
+````{py:method} enqueue(queued_at=None) -> archivebox.crawls.models.Crawl
+:canonical: archivebox.crawls.models.CrawlSchedule.enqueue
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlSchedule.enqueue
+```
+
+````
+
 ``````
 
 ``````{py:class} Crawl(*args, **kwargs)
@@ -485,6 +517,14 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 :canonical: archivebox.crawls.models.Crawl.get_urls_list
 
 ```{autodoc2-docstring} archivebox.crawls.models.Crawl.get_urls_list
+```
+
+````
+
+````{py:method} get_system_task() -> str | None
+:canonical: archivebox.crawls.models.Crawl.get_system_task
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.get_system_task
 ```
 
 ````

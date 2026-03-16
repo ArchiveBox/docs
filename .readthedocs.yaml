@@ -1,5 +1,16 @@
 # Read the Docs configuration file for ArchiveBox docs
 # See https://docs.readthedocs.io/en/stable/config-file/v2.html
+#
+# RTD Version Strategy:
+#   - "latest" version is built from the default branch (master)
+#   - Tagged versions (v0.9.10, v0.8.6, etc.) are built from git tags
+#   - RTD auto-detects tags matching semver patterns
+#   - The version switcher flyout is shown automatically by RTD
+#
+# To activate a new version on RTD:
+#   1. Push a git tag: git tag v0.9.10 && git push wiki v0.9.10
+#   2. RTD auto-detects and builds it
+#   3. Activate the version in RTD admin if needed
 
 version: 2
 

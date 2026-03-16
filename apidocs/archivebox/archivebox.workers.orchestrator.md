@@ -195,6 +195,22 @@
 
 ````
 
+````{py:method} _should_process_schedules() -> bool
+:canonical: archivebox.workers.orchestrator.Orchestrator._should_process_schedules
+
+```{autodoc2-docstring} archivebox.workers.orchestrator.Orchestrator._should_process_schedules
+```
+
+````
+
+````{py:method} _materialize_due_schedules() -> None
+:canonical: archivebox.workers.orchestrator.Orchestrator._materialize_due_schedules
+
+```{autodoc2-docstring} archivebox.workers.orchestrator.Orchestrator._materialize_due_schedules
+```
+
+````
+
 ````{py:method} _enforce_hard_timeouts() -> None
 :canonical: archivebox.workers.orchestrator.Orchestrator._enforce_hard_timeouts
 

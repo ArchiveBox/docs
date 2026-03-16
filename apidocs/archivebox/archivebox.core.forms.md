@@ -242,6 +242,14 @@ Bases: {py:obj}`django.forms.Form`
 
 ````
 
+````{py:method} clean_schedule()
+:canonical: archivebox.core.forms.AddLinkForm.clean_schedule
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.clean_schedule
+```
+
+````
+
 `````
 
 `````{py:class} TagWidgetMixin

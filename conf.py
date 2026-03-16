@@ -19,7 +19,8 @@ sys.path.append(str(Path(__file__).parent.parent / 'archivebox'))
 # -- Project information -----------------------------------------------------
 
 project = 'ArchiveBox'
-copyright = '2024 ©️ ArchiveBox ™️'
+import datetime
+copyright = f'{datetime.date.today().year} ArchiveBox'
 author = 'Nick Sweeting'
 github_url = 'https://github.com/ArchiveBox/ArchiveBox'
 github_doc_root = 'https://github.com/ArchiveBox/docs/tree/master/'  # docs repo uses master branch
@@ -141,7 +142,7 @@ html_theme_options = {
     'navigation_depth': 5,
     'collapse_navigation': False,
     'sticky_navigation': True,
-    'version_selector': False,
+    'version_selector': True,
     'language_selector': False,
     'style_external_links': True,
 }
@@ -151,8 +152,21 @@ html_context = {
     "github_repo": "docs",
     "github_version": "master",  # docs repo uses master branch
     "conf_py_path": "/",
+    # RTD injects these automatically when building on RTD:
+    #   current_version, versions, downloads, READTHEDOCS, etc.
+    # For local/non-RTD builds, set version info explicitly:
+    "current_version": release,
+    "versions": [
+        ("latest", "/en/latest/"),
+    ],
 }
 html_show_sphinx = False
+
+# -- Version display --------------------------------------------------------
+
+# Display the version prominently so users know which docs they're reading
+version = release              # short X.Y version shown in sidebar
+# release is already set above  # full version with alpha/beta/rc tags
 
 texinfo_documents = [
     (master_doc, 'archivebox', 'archivebox Documentation', author, 'archivebox', 'The open-source self-hosted internet archive.', 'Miscellaneous'),

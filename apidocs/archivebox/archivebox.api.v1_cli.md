@@ -582,6 +582,17 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
+````{py:attribute} show
+:canonical: archivebox.api.v1_cli.ScheduleCommandSchema.show
+:type: bool
+:value: >
+   False
+
+```{autodoc2-docstring} archivebox.api.v1_cli.ScheduleCommandSchema.show
+```
+
+````
+
 ````{py:attribute} every
 :canonical: archivebox.api.v1_cli.ScheduleCommandSchema.every
 :type: typing.Optional[str]
