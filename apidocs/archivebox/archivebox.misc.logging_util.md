@@ -461,7 +461,7 @@
 ```
 ````
 
-````{py:function} log_removal_finished(all_links: int, to_remove: int)
+````{py:function} log_removal_finished(remaining_links: int, removed_links: int)
 :canonical: archivebox.misc.logging_util.log_removal_finished
 
 ```{autodoc2-docstring} archivebox.misc.logging_util.log_removal_finished

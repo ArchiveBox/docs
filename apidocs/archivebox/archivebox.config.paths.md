@@ -43,6 +43,10 @@
   - ```{autodoc2-docstring} archivebox.config.paths.create_and_chown_dir
     :summary:
     ```
+* - {py:obj}`tmp_dir_socket_path_is_short_enough <archivebox.config.paths.tmp_dir_socket_path_is_short_enough>`
+  - ```{autodoc2-docstring} archivebox.config.paths.tmp_dir_socket_path_is_short_enough
+    :summary:
+    ```
 * - {py:obj}`get_or_create_working_tmp_dir <archivebox.config.paths.get_or_create_working_tmp_dir>`
   - ```{autodoc2-docstring} archivebox.config.paths.get_or_create_working_tmp_dir
     :summary:
@@ -190,6 +194,13 @@
 :canonical: archivebox.config.paths.create_and_chown_dir
 
 ```{autodoc2-docstring} archivebox.config.paths.create_and_chown_dir
+```
+````
+
+````{py:function} tmp_dir_socket_path_is_short_enough(dir_path: pathlib.Path) -> bool
+:canonical: archivebox.config.paths.tmp_dir_socket_path_is_short_enough
+
+```{autodoc2-docstring} archivebox.config.paths.tmp_dir_socket_path_is_short_enough
 ```
 ````
 

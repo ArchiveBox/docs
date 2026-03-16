@@ -35,6 +35,14 @@ tag = release
 if release[0].isdigit():
     tag = f"v{release}"    # .split('rc')[0]
 
+# Detect if this is a dev/pre-release build
+import os
+is_dev = any(label in release for label in ('dev', 'rc', 'alpha', 'beta', 'a', 'b'))
+# RTD sets READTHEDOCS_VERSION to the branch/tag name being built
+rtd_version = os.environ.get('READTHEDOCS_VERSION', '')
+if rtd_version in ('latest', 'dev', 'main', 'master'):
+    is_dev = True
+
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -155,14 +163,9 @@ html_context = {
     # RTD injects these automatically when building on RTD:
     #   current_version, versions, downloads, READTHEDOCS, etc.
     # For local/non-RTD builds, set version info explicitly:
-    "current_version": release,
-    "versions": [
-        ("latest", "/en/latest/"),
-    ],
+    "current_version": f"{release} (dev)" if is_dev else release,
 }
 html_show_sphinx = False
-
-# -- Version display --------------------------------------------------------
 
 # Display the version prominently so users know which docs they're reading
 version = release              # short X.Y version shown in sidebar

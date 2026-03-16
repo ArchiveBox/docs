@@ -14,6 +14,7 @@
 :maxdepth: 1
 
 archivebox.cli.archivebox_shell
+archivebox.cli.archivebox_schedule
 archivebox.cli.archivebox_list
 archivebox.cli.archivebox_archiveresult
 archivebox.cli.archivebox_process

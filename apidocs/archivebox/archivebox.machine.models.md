@@ -1784,6 +1784,24 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
+````{py:property} hook_script_name
+:canonical: archivebox.machine.models.Process.hook_script_name
+:type: str | None
+
+```{autodoc2-docstring} archivebox.machine.models.Process.hook_script_name
+```
+
+````
+
+````{py:property} runtime_dir
+:canonical: archivebox.machine.models.Process.runtime_dir
+:type: pathlib.Path | None
+
+```{autodoc2-docstring} archivebox.machine.models.Process.runtime_dir
+```
+
+````
+
 ````{py:method} tail_stdout(lines: int = 50, follow: bool = False)
 :canonical: archivebox.machine.models.Process.tail_stdout
 

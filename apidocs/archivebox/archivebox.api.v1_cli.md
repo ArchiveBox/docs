@@ -593,6 +593,39 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
+````{py:attribute} foreground
+:canonical: archivebox.api.v1_cli.ScheduleCommandSchema.foreground
+:type: bool
+:value: >
+   False
+
+```{autodoc2-docstring} archivebox.api.v1_cli.ScheduleCommandSchema.foreground
+```
+
+````
+
+````{py:attribute} run_all
+:canonical: archivebox.api.v1_cli.ScheduleCommandSchema.run_all
+:type: bool
+:value: >
+   False
+
+```{autodoc2-docstring} archivebox.api.v1_cli.ScheduleCommandSchema.run_all
+```
+
+````
+
+````{py:attribute} quiet
+:canonical: archivebox.api.v1_cli.ScheduleCommandSchema.quiet
+:type: bool
+:value: >
+   False
+
+```{autodoc2-docstring} archivebox.api.v1_cli.ScheduleCommandSchema.quiet
+```
+
+````
+
 ````{py:attribute} every
 :canonical: archivebox.api.v1_cli.ScheduleCommandSchema.every
 :type: typing.Optional[str]

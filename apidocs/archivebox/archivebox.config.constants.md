@@ -306,17 +306,6 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
-````{py:attribute} CRONTABS_DIR_NAME
-:canonical: archivebox.config.constants.ConstantsDict.CRONTABS_DIR_NAME
-:type: str
-:value: >
-   'crontabs'
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.CRONTABS_DIR_NAME
-```
-
-````
-
 ````{py:attribute} CACHE_DIR_NAME
 :canonical: archivebox.config.constants.ConstantsDict.CACHE_DIR_NAME
 :type: str

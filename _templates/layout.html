@@ -1,0 +1,12 @@
+{% extends "!layout.html" %}
+
+{% block body %}
+{% if READTHEDOCS and current_version == "latest" %}
+<div class="admonition warning">
+  <p class="admonition-title">Warning</p>
+  <p>You are reading the <strong>development</strong> version of the ArchiveBox docs. These may include unreleased features.
+  Switch to the <a href="/en/stable/">stable version</a> for the latest release.</p>
+</div>
+{% endif %}
+{{ super() }}
+{% endblock %}

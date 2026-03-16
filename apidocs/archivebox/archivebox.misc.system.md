@@ -47,22 +47,6 @@
   - ```{autodoc2-docstring} archivebox.misc.system.get_dir_size
     :summary:
     ```
-* - {py:obj}`dedupe_cron_jobs <archivebox.misc.system.dedupe_cron_jobs>`
-  - ```{autodoc2-docstring} archivebox.misc.system.dedupe_cron_jobs
-    :summary:
-    ```
-````
-
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`CRON_COMMENT <archivebox.misc.system.CRON_COMMENT>`
-  - ```{autodoc2-docstring} archivebox.misc.system.CRON_COMMENT
-    :summary:
-    ```
 ````
 
 ### API
@@ -99,23 +83,6 @@
 :canonical: archivebox.misc.system.get_dir_size
 
 ```{autodoc2-docstring} archivebox.misc.system.get_dir_size
-```
-````
-
-````{py:data} CRON_COMMENT
-:canonical: archivebox.misc.system.CRON_COMMENT
-:value: >
-   'archivebox_schedule'
-
-```{autodoc2-docstring} archivebox.misc.system.CRON_COMMENT
-```
-
-````
-
-````{py:function} dedupe_cron_jobs(cron: crontab.CronTab) -> crontab.CronTab
-:canonical: archivebox.misc.system.dedupe_cron_jobs
-
-```{autodoc2-docstring} archivebox.misc.system.dedupe_cron_jobs
 ```
 ````
 
