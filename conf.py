@@ -35,11 +35,18 @@ tag = release
 if release[0].isdigit():
     tag = f"v{release}"    # .split('rc')[0]
 
-# Detect if this is a dev/pre-release build
-# 0.8.x and 0.9.x are all pre-release/dev. Last stable release was 0.7.x.
+# Detect if this is a dev/pre-release build using PEP 440 parsing.
+# A version like "0.9.10" with no suffix is stable.
+# A version like "0.9.10rc1", "0.9.10.dev1", "0.9.10a1" is pre-release.
+# When you release 0.9.0 final (no suffix), it auto-becomes stable.
 import os
-is_dev = not release.startswith('0.7.')
-# RTD sets READTHEDOCS_VERSION to the branch/tag name being built
+try:
+    from packaging.version import Version
+    is_dev = Version(release).is_prerelease or Version(release).is_devrelease
+except Exception:
+    # fallback if packaging is not installed
+    is_dev = any(label in release for label in ('dev', 'rc', 'alpha', 'beta'))
+# RTD "latest" always builds from the default branch = dev docs
 rtd_version = os.environ.get('READTHEDOCS_VERSION', '')
 if rtd_version in ('latest', 'dev', 'main', 'master'):
     is_dev = True

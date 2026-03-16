@@ -4,3 +4,4 @@ myst-parser
 sphinx-autodoc2
 linkify-it-py
 sphinxcontrib-mermaid
+packaging

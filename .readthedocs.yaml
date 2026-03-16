@@ -2,23 +2,25 @@
 # See https://docs.readthedocs.io/en/stable/config-file/v2.html
 #
 # RTD Version Strategy:
-#   - "stable" alias -> latest stable release tag (currently v0.7.3)
-#   - "latest" alias -> default branch (master) = current dev docs (0.9.x)
+#   - "stable" alias -> latest tag with no pre-release suffix (PEP 440)
+#   - "latest" alias -> default branch (master) = current dev docs
 #   - Tagged versions (v0.9.10, v0.8.6, v0.7.3, etc.) build from git tags
 #
-# Version history:
-#   - 0.7.x = last stable release series (v0.7.2, v0.7.3)
-#   - 0.8.x = dev/pre-release (never stable)
-#   - 0.9.x = dev/pre-release (current development)
+# This is fully automatic via PEP 440 version detection:
+#   - pyproject.toml version = "0.9.10"      -> stable release
+#   - pyproject.toml version = "0.9.10rc1"   -> pre-release (dev)
+#   - pyproject.toml version = "0.9.10.dev1" -> dev release
+#   - RTD "latest" from master branch        -> always dev
 #
-# RTD Admin Settings (configure in RTD dashboard):
-#   - Default version: "stable" (points to v0.7.3, the last stable release)
-#   - "latest" version: visible, shows dev docs (0.9.x) with warning banner
+# RTD Admin Settings (configure in RTD dashboard once):
+#   - Default version: "stable"
+#   - "latest" version: visible, shows dev docs with warning banner
 #   - Enable "build on tag push" for automatic versioned releases
-#   - Once 0.9.x is declared stable, it becomes the new "stable" automatically
 #
-# To publish a new versioned docs release:
-#   git tag v0.9.10 && git push wiki v0.9.10
+# To publish a new stable release:
+#   1. Set version = "0.9.10" in pyproject.toml (no rc/dev/alpha suffix)
+#   2. git tag v0.9.10 && git push wiki v0.9.10
+#   3. RTD auto-builds and "stable" alias updates to this version
 #
 # To access dev docs:
 #   https://archivebox.readthedocs.io/en/latest/
