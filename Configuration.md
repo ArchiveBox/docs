@@ -589,12 +589,6 @@ Whether to verify SSL certificates
 **Default:** [`[]`] *(falls back to [`CHROME_ARGS`](#chrome_args))*
 Chrome command-line arguments for SingleFile
 
----
-#### `SINGLEFILE_CHROME_BINARY`
-**Default:** [`""`] *(falls back to [`CHROME_BINARY`](#chrome_binary))*
-Path to Chromium binary
-
----
 #### `SINGLEFILE_COOKIES_FILE`
 **Default:** [`""`] *(falls back to [`COOKIES_FILE`](#cookies_file))*
 Path to cookies file
@@ -604,12 +598,6 @@ Path to cookies file
 **Default:** [`True`]
 Enable SingleFile archiving
 
----
-#### `SINGLEFILE_NODE_BINARY`
-**Default:** [`node`] *(falls back to [`NODE_BINARY`](#node_binary))*
-Path to Node.js binary
-
----
 #### `SINGLEFILE_TIMEOUT`
 **Default:** [`60`] *(falls back to [`TIMEOUT`](#timeout))*
 Timeout for SingleFile in seconds
@@ -833,12 +821,6 @@ Enable video/audio downloading with yt-dlp
 **Default:** [`750m`]
 Maximum file size for yt-dlp downloads
 
----
-#### `YTDLP_NODE_BINARY`
-**Default:** [`node`] *(falls back to [`NODE_BINARY`](#node_binary))*
-Path to Node.js binary for yt-dlp JS runtime
-
----
 #### `YTDLP_TIMEOUT`
 **Default:** [`3600`] *(falls back to [`TIMEOUT`](#timeout))*
 Timeout for yt-dlp downloads in seconds
@@ -993,12 +975,6 @@ Enable Chromium browser integration for archiving
 **Default:** [`True`]
 Run Chrome in headless mode
 
----
-#### `CHROME_NODE_BINARY`
-**Default:** [`node`] *(falls back to [`NODE_BINARY`](#node_binary))*
-Path to Node.js binary (for Puppeteer)
-
----
 #### `CHROME_PAGELOAD_TIMEOUT`
 **Default:** [`60`] *(falls back to [`CHROME_TIMEOUT`](#chrome_timeout))*
 Timeout for page navigation/load in seconds
@@ -1315,7 +1291,7 @@ Path to Claude Code CLI binary
 ---
 #### `CLAUDECODE_ENABLED`
 **Default:** [`False`]
-Enable Claude Code AI agent integration. Controls the crawl-time Claude binary install hook; child plugins still need the claudecode plugin installed and a working Claude binary.
+Enable Claude Code AI agent integration. Controls whether the claudecode plugin participates in crawl-time extraction; child plugins still need the claudecode plugin installed and a working Claude binary.
 
 ---
 #### `CLAUDECODE_MAX_TURNS`

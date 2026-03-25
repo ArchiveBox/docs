@@ -1068,14 +1068,6 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
-````{py:method} _get_custom_install_command() -> str | None
-:canonical: archivebox.machine.models.Binary._get_custom_install_command
-
-```{autodoc2-docstring} archivebox.machine.models.Binary._get_custom_install_command
-```
-
-````
-
 ````{py:method} run()
 :canonical: archivebox.machine.models.Binary.run
 
