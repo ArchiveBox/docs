@@ -358,13 +358,13 @@ Path for temporary files, unix sockets, and supervisor config. Must be a local, 
 
 ---
 #### `LIB_DIR`
-**Possible Values:** [`data/lib/<arch>-<os>`]/`/usr/local/share/archivebox/abc5`/...
+**Possible Values:** [`data/lib/<arch>-<os>`]/`/opt/archivebox/lib`/...
 Path for installed binary dependencies.
 
 ---
 #### `LIB_BIN_DIR`
 **Possible Values:** [`LIB_DIR/bin`]
-Path where installed binaries are symlinked for easy PATH management.
+Path where installed binaries are symlinked for convenient manual access.
 
 ---
 
