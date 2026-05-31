@@ -42,11 +42,26 @@ Environment variables take precedence over the config file, which is useful if y
 ---
 #### `ONLY_NEW`
 **Possible Values:** [`True`]/`False`
-Toggle whether or not to attempt rechecking old links when adding new ones, or leave old incomplete links alone and only archive the new links.
+Controls what happens when you `add` a URL that **already has a Snapshot** in your index.
 
-By default, ArchiveBox will only archive new links on each import. If you want it to go back through all links in the index and download any missing files on every run, set this to `False`.
+- **`True`** (default) — skip the URL entirely. No new Snapshot is created, no extractors run. The existing Snapshot is left exactly as-is.
+- **`False`** — create a **new** Snapshot for the URL (separate UUID, separate output directory) and run every enabled extractor on it. The previously archived Snapshot is preserved untouched; you end up with two side-by-side captures of the same URL.
 
-*Note: Regardless of how this is set, ArchiveBox will never re-download sites that have already succeeded previously. When this is `False` it only attempts to fix previous pages that have *missing* archive extractor outputs, it does not re-archive pages that have already been successfully archived.*
+Equivalent to the `--only-new` / `--no-only-new` flag on `archivebox add`:
+
+```bash
+archivebox add https://example.com                    # honors ONLY_NEW (default True)
+archivebox add --no-only-new https://example.com      # force a re-archive even if already in the index
+```
+
+> [!NOTE]
+> Setting `ONLY_NEW=False` (or `--no-only-new`) is the supported way to **re-capture a page that has changed since your last archive** — for example, archiving a news article, then re-archiving it later after the article was edited. Each re-archive becomes its own Snapshot row with its own timestamp.
+
+> [!NOTE]
+> Within a single crawl, URLs are deduplicated regardless of `ONLY_NEW` — submitting the same URL twice in one `add` invocation still produces only one Snapshot. `ONLY_NEW` only governs deduplication *against the existing index*.
+
+*Related options:*
+[`DEFAULT_PERSONA`](#default_persona), [`URL_DENYLIST`](#url_denylist), [`URL_ALLOWLIST`](#url_allowlist)
 
 ---
 #### `TIMEOUT`
@@ -115,7 +130,7 @@ archivebox add --persona=personal https://members.example.com/feed
 > **Use separate burner credentials dedicated to archiving** — don't re-use your normal daily Facebook/Instagram/Youtube/etc. account cookies as server responses often contain your name/email/PII and session tokens, which then get preserved in your snapshots forever!
 
 *Related options:*
-[`DEFAULT_PERSONA`](#default_persona), [`ACTIVE_PERSONA`](#active_persona), [`CHROME_USER_DATA_DIR`](https://archivebox.github.io/abx-plugins/#chrome)
+[`DEFAULT_PERSONA`](#default_persona), [`CHROME_USER_DATA_DIR`](https://archivebox.github.io/abx-plugins/#chrome)
 
 ---
 #### `DEFAULT_PERSONA`
@@ -125,17 +140,7 @@ The persona profile used when no explicit persona is selected for a crawl. Perso
 ArchiveBox auto-creates the named persona on disk if it doesn't already exist. See the [Personas wiki page](https://github.com/ArchiveBox/ArchiveBox/wiki/Personas) for the full directory layout.
 
 *Related options:*
-[`ACTIVE_PERSONA`](#active_persona), [`COOKIES_FILE`](#cookies_file)
-
----
-#### `ACTIVE_PERSONA`
-**Possible Values:** *auto-set, read-only at runtime*
-The name of the persona actually being used for the *current* crawl/snapshot. Where [`DEFAULT_PERSONA`](#default_persona) is the user-configured *fallback*, `ACTIVE_PERSONA` is **derived** — ArchiveBox sets it automatically based on the resolved persona for each Snapshot (explicit selection on the Crawl > persona on the URL > `DEFAULT_PERSONA`).
-
-You generally read this rather than write it. Plugins and templates can inspect `ACTIVE_PERSONA` to render persona-specific UI or pick persona-scoped paths. Setting it manually in `ArchiveBox.conf` has no effect — it will be overwritten on every run by the persona resolver.
-
-*Related options:*
-[`DEFAULT_PERSONA`](#default_persona)
+[`COOKIES_FILE`](#cookies_file)
 
 ---
 <a id="url_blacklist"></a>
@@ -214,7 +219,7 @@ Distinct from [`TIMEOUT`](#timeout): `TIMEOUT` caps one extractor invocation on 
 **Possible Values:** [`4`]/`1`/`8`/`16`/...
 How many Snapshots within a single crawl ArchiveBox will archive in parallel. The runner schedules up to this many extractor pipelines at once, then waits for one to finish before starting the next.
 
-Raising this speeds up large crawls on beefy hardware, but each concurrent Snapshot launches its own Chrome instance (when Chrome-based extractors are enabled) — RAM and CPU pressure scale roughly linearly. On a typical laptop, `2-4` is sane; on a dedicated server with 32GB+ RAM, `8-16` can be reasonable.
+Raising this speeds up large crawls on beefy hardware, but each concurrent Snapshot opens a new tab inside the crawl's shared Chrome instance (when Chrome-based extractors are enabled) — RAM per tab and CPU pressure scale roughly linearly with concurrency. On a typical laptop, `2-4` is sane; on a dedicated server with 32GB+ RAM, `8-16` can be reasonable.
 
 > [!NOTE]
 > This is **per-crawl** concurrency. If you run multiple crawls simultaneously, each one independently gets up to `CRAWL_MAX_CONCURRENT_SNAPSHOTS` parallel Snapshots.
@@ -694,26 +699,6 @@ Where persona state lives — Chrome user-data-dirs, cookie jars, sessionstorage
 
 > [!WARNING]
 > `PERSONAS_DIR` typically contains plaintext cookies and logged-in browser sessions. Treat it as secret material — set restrictive [`OUTPUT_PERMISSIONS`](#output_permissions) (e.g. `600`) and never commit it to git or include it in shared backups without encryption.
-
----
-#### `CRAWL_DIR`
-**Possible Values:** *runtime-injected, default `None`*
-The output directory of the *currently running crawl* (e.g. `<USERS_DIR>/<username>/crawls/YYYYMMDD/<domain>/<crawl-id>/`). Crawl-level extractors (chrome launcher, parsers, etc.) write here.
-
-You almost never set this yourself — the snapshot/crawl orchestrator injects it into the per-call config and passes it through to plugin hooks via the `CRAWL_DIR` environment variable. It is documented here for plugin authors who need to read `config.CRAWL_DIR` from inside a hook to locate sibling crawl-level outputs.
-
-*Related options:*
-[`SNAP_DIR`](#snap_dir), [`USERS_DIR`](#users_dir)
-
----
-#### `SNAP_DIR`
-**Possible Values:** *runtime-injected, default `None`*
-The output directory of the *currently running snapshot* (e.g. `<USERS_DIR>/<username>/snapshots/YYYYMMDD/<domain>/<snapshot-uuid>/`). Snapshot-level extractors (screenshot, pdf, dom, singlefile, etc.) write their output into per-plugin subdirectories of this path.
-
-Like [`CRAWL_DIR`](#crawl_dir), this is set per-call by the orchestrator and passed to hooks via the `SNAP_DIR` environment variable — it is not something users configure. Documented only so plugin authors know which config key to read inside a hook.
-
-*Related options:*
-[`CRAWL_DIR`](#crawl_dir), [`ARCHIVE_DIR`](#archive_dir)
 
 ---
 #### `ALLOW_NO_UNIX_SOCKETS`
