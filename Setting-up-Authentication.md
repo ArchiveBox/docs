@@ -12,15 +12,15 @@ ArchiveBox supports several types of authentication for users logging in via the
 
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/024913f0-ad2c-463c-aa4a-eb3d0ec8eb64" alt="Non-admin user permissions are only available to paying ArchiveBox clients" width="200px" align="right">
 
-Use these three options to set up your desired permissions for non-admin guest users:
-- [`PUBLIC_INDEX=True`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view): Default *allows* non-logged-in users to see Snapshot list
-- [`PUBLIC_SNAPSHOTS=True`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view): Default *allows* non-logged-in users to see Snapshot content
-- [`PUBLIC_ADD_VIEW=False`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view): Default *doesn't allow* non-logged-in users to submit new URLs
+Use these options to set up your desired permissions for non-admin guest users:
+- [`PUBLIC_INDEX=True`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index): Default *allows* non-logged-in users to see Snapshot list
+- [`PUBLIC_ADD_VIEW=False`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_add_view): Default *doesn't allow* non-logged-in users to submit new URLs
+- [`PERMISSIONS=public`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#permissions): Default *allows* non-logged-in users to see Snapshot content (set to `unlisted` or `private` to gate it; replaces the removed legacy `PUBLIC_SNAPSHOTS` toggle, which was a global on/off — `PERMISSIONS` is now per-Snapshot)
 
 > [!NOTE]
 > **Open source ArchiveBox does not support setting up *non-admin* users** & groups with custom permissions. We do offer this feature, audit logging, and more to [paying clients](https://docs.monadical.com/s/archivebox-consulting-services).
 
-- [Wiki: Configuration (`PUBLIC_ADD_VIEW`, `PUBLIC_SNAPSHOTS`, `PUBLIC_INDEX`)]()
+- [Wiki: Configuration](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#permissions) (`PUBLIC_INDEX`, `PUBLIC_ADD_VIEW`, `PERMISSIONS`)
 - [Wiki: Security Overview](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview)
 
 <br/>
@@ -207,7 +207,7 @@ curl -X 'GET' \
 
 > Browsers enforce that requests made to the ArchiveBox API from *other origins* will not include any session cookies by default. This is is a [foundational security principle of the web](https://docs.djangoproject.com/en/5.0/ref/csrf/) that protects you from API requests being initiated by JS on websites you don't control (aka CSRF/CORS attacks).
 >
-> To allow incoming POST/PUT/DELETE requests from other domains **that you trust**, you must add them to [`CSRF_TRUSTED_ORIGINS`](https://docs.djangoproject.com/en/5.0/ref/settings/#csrf-trusted-origins) in the `archivebox/core/settings.py` source code on your machine ([open an issue](https://github.com/ArchiveBox/ArchiveBox/issues/new/choose) and explain your use-case for help).
+> To allow incoming POST/PUT/DELETE requests from other domains **that you trust**, set [`BASE_URL`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#base_url) to the public URL of your instance — ArchiveBox derives Django's `ALLOWED_HOSTS` and `CSRF_TRUSTED_ORIGINS` from `BASE_URL` + [`SERVER_SECURITY_MODE`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#server_security_mode) automatically, including widening them to admit the admin/web/api/public subdomains. If your setup needs something the auto-derivation doesn't cover, [open an issue](https://github.com/ArchiveBox/ArchiveBox/issues/new/choose).
 
 Log in via the Admin Web UI: `/admin/login/`, you can then re-use your login session id (stored in the `sessionid` cookie) for REST API requests. By default, this only allows you to make requests from the same domain ArchiveBox is being served on (e.g. from browser devtools open on an ArchiveBox page or CLI tools).
 

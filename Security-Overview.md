@@ -7,8 +7,8 @@
 
 ```bash
 archivebox config --set PUBLIC_INDEX=False      # require login to access the list of Snapshots
-archivebox config --set PUBLIC_SNAPSHOTS=False  # require login to access Snapshot content
 archivebox config --set PUBLIC_ADD_VIEW=False   # require log-in to submit new URLs for archiving
+archivebox config --set PERMISSIONS=private     # default new snapshots to login-required (was: PUBLIC_SNAPSHOTS=False)
 
 archivebox manage [createsuperuser|changepassword] # create/modify admin UI users
 ```
@@ -31,8 +31,8 @@ The default mode should not be used for archiving entire browser history or auth
 
 ```bash
 # (these are the defaults)
-archivebox config --set SAVE_ARCHIVE_DOT_ORG=True
-archivebox config --set CHROME_USER_DATA_DIR=None
+archivebox config --set ARCHIVEDOTORG_ENABLED=True   # see https://archivebox.github.io/abx-plugins/#archivedotorg
+archivebox config --set CHROME_USER_DATA_DIR=None    # see https://archivebox.github.io/abx-plugins/#chrome
 archivebox config --set COOKIES_FILE=None
 ```
 
@@ -44,12 +44,12 @@ archivebox config --set COOKIES_FILE=None
 ArchiveBox is able to archive content that requires authentication or cookies, but it comes with some caveats. Create dedicated logins for archiving to access paywalled content, private forums, LAN-only content, etc. then share them with ArchiveBox via Chrome profile + cookies.txt file.
 
 ```bash
-archivebox config --set SAVE_ARCHIVE_DOT_ORG=False
+archivebox config --set ARCHIVEDOTORG_ENABLED=False
 archivebox config --set CHROME_USER_DATA_DIR=/path/to/chrome/profile
 archivebox config --set COOKIES_FILE=/path/to/cookies.txt
 ```
 
-To get started, set [`CHROME_USER_DATA_DIR`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#chrome_user_data_dir) and [`COOKIES_FILE`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#COOKIES_FILE) to point to a Chrome user folder that has your sessions and a wget `cookies.txt` file respectively.
+To get started, set [`CHROME_USER_DATA_DIR`](https://archivebox.github.io/abx-plugins/#chrome) and [`COOKIES_FILE`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#cookies_file) to point to a Chrome user folder that has your sessions and a wget `cookies.txt` file respectively.
 
 ➡️ For full instructions on setting up a Chromium user profile see here: https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#setting-up-a-chromium-user-profile
 
@@ -57,10 +57,10 @@ If you're importing private links or authenticated content, you probably don't w
 
 #### ⚠️ Things to watch out for: ⚠️
 
-- any cookies / secret state present in a Chrome user profile or `cookies.txt` file may be [reflected in server responses and saved in the Snapshot output (e.g. in `headers.json`)](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/extractors/headers.py) making it [visible in cleartext to anyone viewing the Snapshot](https://archive.sweeting.me/archive/1613417792.264667/headers.json), (don't use your personal Chrome profile for archiving or people viewing your archive can then authenticate as you!)
-- any secret tokens embedded in URLs (e.g. secret invite links, Google Doc URLs, etc.) will be visible on `archive.org` as the URLs are not filtered [when saving to `archive.org`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/extractors/archivedotorg.py#L46) (disable submitting to Archive.org entirely with `SAVE_ARCHIVE_DOT_ORG=False`) 
-- the domain portion in archived URLs is [sent to a favicon service](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/extractors/favicon.py#L43) in order to retrieve an icon more reliably than a janky internal implementation would be able to (if leaking domains is a concern, you can change the [`FAVICON_PROVIDER`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/config.py#:~:text=FAVICON_PROVIDER) or disable favicon fetching entirely with `SAVE_FAVICON=False`)
-- [viewing malicious archived JS could allow an attacker to access your other archive items + the admin interface (JS executes on the same origin as the admin panel right now, fix is pending, set `SAVE_WGET=False SAVE_DOM=False` to disable the risky extractors entirely or avoid viewing their output directly in a browser)](https://github.com/ArchiveBox/ArchiveBox/issues/239)
+- any cookies / secret state present in a Chrome user profile or `cookies.txt` file may be reflected in server responses and saved in the Snapshot output (e.g. in [`headers`](https://archivebox.github.io/abx-plugins/#headers) extractor output) — visible in cleartext to anyone viewing the Snapshot. **Don't use your personal Chrome profile for archiving** or people viewing your archive can then authenticate as you.
+- any secret tokens embedded in URLs (e.g. secret invite links, Google Doc URLs, etc.) will be visible on `archive.org` as the URLs are not filtered when saving to it. Disable submitting to Archive.org entirely with [`ARCHIVEDOTORG_ENABLED=False`](https://archivebox.github.io/abx-plugins/#archivedotorg).
+- the domain portion in archived URLs is sent to a favicon service in order to retrieve an icon more reliably than a janky internal implementation would be able to (if leaking domains is a concern, you can change the [`FAVICON_PROVIDER`](https://archivebox.github.io/abx-plugins/#favicon) or disable favicon fetching entirely with [`FAVICON_ENABLED=False`](https://archivebox.github.io/abx-plugins/#favicon)).
+- [viewing malicious archived JS could allow an attacker to access your other archive items + the admin interface](https://github.com/ArchiveBox/ArchiveBox/issues/239) — use the default [`SERVER_SECURITY_MODE=safe-subdomains-fullreplay`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#server_security_mode) (which scopes admin cookies away from snapshot replay subdomains), or disable risky extractors entirely with [`WGET_ENABLED=False`](https://archivebox.github.io/abx-plugins/#wget) and [`DOM_ENABLED=False`](https://archivebox.github.io/abx-plugins/#dom).
 
 <br/>
 <img src="https://imgur.zervice.io/Jszo4h2.png" width="400px"/>
@@ -93,7 +93,7 @@ To protect the Admin dashboard, it's also recommended to serve all content under
 
 <img width="400" alt="Cloudflare redirect rule for /archive/ to be served by a separate domain" src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/9c77f503-0d97-4a8d-810f-1f4400c7aa3e">
 
-Published archives automatically include a `robots.txt` `Dissallow: /` to block search engines from indexing them. You may still wish to publish your contact info in the index footer though using [`FOOTER_INFO`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#FOOTER_INFO) so that you can respond to any DMCA and copyright takedown notices if you accidentally rehost copyrighted content.
+Published archives automatically include a `robots.txt` `Disallow: /` to block search engines from indexing them. You may still wish to publish your contact info in the index footer though using [`FOOTER_INFO`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#footer_info) so that you can respond to any DMCA and copyright takedown notices if you accidentally rehost copyrighted content.
 
 ⚠️ Make sure to read all the warnings [above](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#%EF%B8%8F-things-to-watch-out-for-%EF%B8%8F) about the dangers of exposing Chrome profile data, cookies, secret tokens in URLs, and the risks of viewing archived JS on a shared origin before publishing your archive.
 
@@ -131,7 +131,7 @@ More info:
 > If you must use `exec` for some reason (e.g. if you only have access to a live container shell), you can run `su archivebox` within the shell, or add the arg `--user=archivebox` after `exec`.
 
 Do not run ArchiveBox as root for a number of reasons:
- - Chrome will execute as root and fail immediately because Chrome sandboxing is pointless when the data directory is opened as root (do not set `CHROME_SANDBOX=False` just to bypass that error!)
+ - Chrome will execute as root and fail immediately because Chrome sandboxing is pointless when the data directory is opened as root (do not set [`CHROME_SANDBOX=False`](https://archivebox.github.io/abx-plugins/#chrome) just to bypass that error!)
  - All dependencies will be run as root, if any of them have a vulnerability that's exploited by sites you're archiving you're opening yourself up to full system compromise
  - ArchiveBox does lots of HTML parsing, filesystem access, and shell command execution.  A bug in any one of those subsystems could potentially lead to deleted/damaged data on your hard drive, or full system compromise unless restricted to a user that only has permissions to access the directories needed
  - Do you really trust a project created by a Github user called `@pirate` 😉? Why give a random program off the internet root access to your entire system? (I don't have malicious intent, I'm just saying in principle you should not be running random Github projects as root)
@@ -145,7 +145,7 @@ chown -R archivebox:archivebox /home/archivebox
 sudo -u archivebox archivebox add ...
 ```
 
-~~If you absolutely must run it as root for some reason, a footgun is provided: you can set [`ALLOW_ROOT=True`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#ALLOW_ROOT) via environment variable or in your ArchiveBox.conf file.~~ This footgun option was removed (I'm sorry, the support burden of helping people who messed up their systems by running everything as root was too high).
+~~If you absolutely must run it as root for some reason, a footgun is provided: you can set `ALLOW_ROOT=True` via environment variable or in your ArchiveBox.conf file.~~ This footgun option was removed (I'm sorry, the support burden of helping people who messed up their systems by running everything as root was too high).
 
 <img src="https://imgur.zervice.io/ca1he6I.png" width="40px" align="right"/>
 
@@ -177,7 +177,7 @@ Unless `--yes --delete` is passed to `archivebox remove`, Snapshots removed from
 
 #### Permissions
 
-Consider what permissioning to apply to your archive folder carefully. Limit access to the fewest possible users by checking folder ownership and setting [`OUTPUT_PERMISSIONS`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#OUTPUT_PERMISSIONS) accordingly. Generally the `index.sqlite3` file, `archive/` folder, and `ArchiveBox.conf` file must all be owned and writable by the `archivebox` user or a dedicated non-root user.
+Consider what permissioning to apply to your archive folder carefully. Limit access to the fewest possible users by checking folder ownership and setting [`OUTPUT_PERMISSIONS`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#output_permissions) accordingly. Generally the `index.sqlite3` file, `archive/` folder, and `ArchiveBox.conf` file must all be owned and writable by the `archivebox` user or a dedicated non-root user.
 
 [`PUID` & `PGID`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#puid--pgid) can be set when running with Docker to control what user and group ArchiveBox expects to own the data directory within the container.
 

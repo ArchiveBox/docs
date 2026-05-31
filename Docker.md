@@ -151,9 +151,12 @@ ArchiveBox running with `docker compose` accepts all the same config options as 
 
 The recommended way configure ArchiveBox in Docker Compose is using `archivebox config --set ...` or by editing `ArchiveBox.conf`.
 ```bash
-docker compose run archivebox config --set MEDIA_MAX_SIZE=750mb
+docker compose run archivebox config --set TIMEOUT=120
 # OR
-echo 'MAX_MEDIA_SIZE=750mb' >> ./data/ArchiveBox.conf
+echo 'TIMEOUT=120' >> ./data/ArchiveBox.conf
+
+# plugin-specific options work the same way (see https://archivebox.github.io/abx-plugins/)
+docker compose run archivebox config --set MEDIA_MAX_SIZE=750mb
 ```
 This will apply the config to all containers or archivebox instances that access the collection.
 
@@ -263,19 +266,19 @@ docker run -it -v /media/USB_DRIVE/archivebox/data:/data -p 8000:8000 archivebox
 
 The easiest way is to use `archivebox config --set KEY=value` or edit `./ArchiveBox.conf` (in your collection dir).
 
-For example, this sets `MEDIA_TIMEOUT=120` as a persistent setting for the collection:
+For example, this sets `TIMEOUT=120` as a persistent setting for the collection:
 ```bash
-docker run -it -v $PWD:/data archivebox/archivebox config --set MEDIA_TIMEOUT=120
+docker run -it -v $PWD:/data archivebox/archivebox config --set TIMEOUT=120
 # OR
-echo 'MEDIA_TIMEOUT=120' >> ./ArchiveBox.conf
+echo 'TIMEOUT=120' >> ./ArchiveBox.conf
 ```
 
-ArchiveBox in Docker also accepts config as environment variables, see more on the [[Configuration]] page.
+ArchiveBox in Docker also accepts config as environment variables, see more on the [[Configuration]] page (and the [abx-plugins config reference](https://archivebox.github.io/abx-plugins/) for per-plugin options).
 
-For example, this applies `FETCH_SCREENSHOT=False` to a single run (without persisting for other runs):
+For example, this disables the screenshot extractor for a single run (without persisting for other runs):
 ```bash
-docker run -it -v $PWD:/data -e FETCH_SCREENSHOT=False archivebox/archivebox add 'https://example.com'
+docker run -it -v $PWD:/data -e SCREENSHOT_ENABLED=False archivebox/archivebox add 'https://example.com'
 # OR
-echo 'FETCH_SCREENSHOT=False' >> ./.env
+echo 'SCREENSHOT_ENABLED=False' >> ./.env
 docker run ... --env-file=./.env archivebox/archivebox ...
 ```

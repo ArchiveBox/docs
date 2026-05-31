@@ -49,16 +49,16 @@ You can set environment variables in your shell profile, a config file, or by us
 
 ```bash
 # set config via the CLI
-archivebox config --set MEDIA_MAX_SIZE=750mb
+archivebox config --set TIMEOUT=120
 
 # OR modify the config file directly
-echo 'MEDIA_MAX_SIZE=750mb' >> ArchiveBox.conf
+echo 'TIMEOUT=120' >> ArchiveBox.conf
 
 # OR use environment variables
-env MEDIA_MAX_SIZE=750mb archivebox add 'https://example.com'
+env TIMEOUT=120 archivebox add 'https://example.com'
 ```
 
-See [[Configuration]] page for more details about the available options and ways to pass config.  
+See [[Configuration]] page for core ArchiveBox config options and the [abx-plugins config reference](https://archivebox.github.io/abx-plugins/) for per-plugin options (e.g. `MEDIA_MAX_SIZE`, `CHROME_USER_DATA_DIR`, `WGET_ARGS`, etc.).  
 If you're using Docker, also make sure to read the Configuration section on the [[Docker]] page.
 
 > [!TIP]  
@@ -147,8 +147,8 @@ If cookie extraction fails, you can still export a Netscape-format `cookies.txt`
 ```bash
 # configure which areas you want to require login to use vs make publicly available
 archivebox config --set PUBLIC_INDEX=False
-archivebox config --set PUBLIC_SNAPSHOTS=False
 archivebox config --set PUBLIC_ADD_VIEW=False
+archivebox config --set PERMISSIONS=private        # default visibility of newly created snapshots (was: PUBLIC_SNAPSHOTS=False)
 
 archivebox manage createsuperuser  # set an admin password to use for any areas requiring login
 archivebox server 0.0.0.0:8000     # start the archivebox web server
@@ -156,7 +156,7 @@ archivebox server 0.0.0.0:8000     # start the archivebox web server
 open http://127.0.0.1:8000         # open the admin UI in a browser to view your archive
 ```
 
-*See the [Configuration Wiki](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view) and [Security Wiki](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#archiving-private-content) for more info...*
+*See the [Configuration Wiki](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#permissions) and [Security Wiki](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#archiving-private-content) for more info...*
 
 Or if you prefer to generate a [static HTML index](https://github.com/ArchiveBox/ArchiveBox#static-archive-exporting) instead of using the built-in web server, you can run `archivebox list --html --with-headers > ./index.html` and then open `./index.html` in a browser.  You should see something [like this](https://demo.archivebox.io).
 
@@ -267,7 +267,7 @@ For more info about ArchiveBox's database/filesystem layout and troubleshooting 
 I've found it takes about an hour to download 1000 articles, and they'll take up roughly 1GB.  
 Those numbers are from running it single-threaded on my i5 machine with 50mbps down. YMMV.
 
-Storage requirements go up immensely if you're using `FETCH_MEDIA=True` and are archiving many pages with audio & video.
+Storage requirements go up immensely if you're using [`MEDIA_ENABLED=True`](https://archivebox.github.io/abx-plugins/#media) (or its [`FETCH_MEDIA`](https://archivebox.github.io/abx-plugins/#ytdlp) / `YTDLP_ENABLED` aliases) and are archiving many pages with audio & video.
 
 You can try to run it in parallel by manually splitting your URLs into separate chunks (though this may not work with `database locked` errors on slower filesystems):
 ```bash
@@ -296,7 +296,7 @@ For more info about troubleshooting filesystem permissions, performance, or issu
 
 ## SQL Shell Usage
 
-Explore the SQLite3 DB a bit to see whats available using the SQLite3 shell:
+Explore the SQLite3 DB a bit to see what's available using the SQLite3 shell:
 ```bash
 cd ~/archivebox/data
 sqlite3 index.sqlite3
@@ -322,7 +322,7 @@ More info:
 
 ## Python Shell Usage
 
-Explore the Python API a bit to see whats available using the archivebox shell:
+Explore the Python API a bit to see what's available using the archivebox shell:
 
 **Python API Documentation:** https://docs.archivebox.io/dev/apidocs/index.html
 
@@ -388,8 +388,8 @@ from archivebox import *
 
 For more info and example usage:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives#example-adding-a-new-user-with-a-hashed-password
-- https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/main.py
-- https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/config.py
+- https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/cli/
+- https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/config/common.py
 - https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/core/models.py
 - https://stackoverflow.com/questions/1074212/how-can-i-see-the-raw-sql-queries-django-is-running
 

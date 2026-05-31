@@ -9,8 +9,8 @@ There are two ways to publish your archive: using the `archivebox server` or by 
 ```bash
 # set the permissions depending on how public/locked down you want it to be
 archivebox config --set PUBLIC_INDEX=True
-archivebox config --set PUBLIC_SNAPSHOTS=True
 archivebox config --set PUBLIC_ADD_VIEW=True
+archivebox config --set PERMISSIONS=public        # default visibility of newly created snapshots (was: PUBLIC_SNAPSHOTS=True)
 
 # create an admin username and password for yourself
 archivebox manage createsuperuser
@@ -85,7 +85,7 @@ To protect the Admin dashboard, it's also recommended to serve all content under
 
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/8d855976-3b4a-4fa8-ad52-999b3c3deba4" width="800px" alt="Cloudflare redirect rule for /archive/ to another domain"/>
 
-> Note: This is still recommended, but less critical if your `/archive/` folder does not contain any archived JS (e.g. if you [set `SAVE_WGET=False` and `SAVE_DOM=False`](https://github.com/ArchiveBox/ArchiveBox#security-risks-of-viewing-archived-js)).
+> Note: This is still recommended, but less critical if your `/archive/` folder does not contain any archived JS (e.g. if you set [`WGET_ENABLED=False`](https://archivebox.github.io/abx-plugins/#wget) and [`DOM_ENABLED=False`](https://archivebox.github.io/abx-plugins/#dom)).
 
 More info:
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview

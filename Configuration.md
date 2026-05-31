@@ -699,31 +699,18 @@ When mmap is enabled, SQLite reads pages directly from the OS page cache instead
 *Note: The default is `0` (disabled) inside Docker, because the container's reported memory limits often do not reflect the host page cache and large mmap regions can interact poorly with `cgroup` accounting. On bare-metal installs the default is `134217728` (128 MiB).*
 
 ---
-#### `SQLITE_TIMEOUT`
-**Possible Values:** [`30.0`]/`5.0`/`60.0`/... (seconds, float)
-Python `sqlite3` connection-level busy timeout in **seconds**, passed as the `timeout=` argument when the Django backend opens a connection. Settable as `ARCHIVEBOX_SQLITE_TIMEOUT`.
-
-This is the maximum amount of time the underlying Python driver will wait on a contended lock before raising `OperationalError: database is locked`. Raise it if you see spurious lock errors under sustained write contention and you would rather block than fail; lower it if you want callers to fail fast.
-
-*Related options:*
-[`SQLITE_BUSY_TIMEOUT`](#sqlite_busy_timeout), [`SQLITE_LOCK_RETRY_TIMEOUT`](#sqlite_lock_retry_timeout)
-
----
 #### `SQLITE_BUSY_TIMEOUT`
 **Possible Values:** [`30000`]/`5000`/`60000`/... (milliseconds, integer)
-SQLite-internal busy-wait timeout in **milliseconds**, applied via `PRAGMA busy_timeout = ...` on every new connection. Settable as `ARCHIVEBOX_SQLITE_BUSY_TIMEOUT`.
+SQLite busy-wait timeout in **milliseconds**, applied via `PRAGMA busy_timeout = ...` on every new connection and converted to seconds for the Python `sqlite3` connection-level `timeout=` argument. Settable as `ARCHIVEBOX_SQLITE_BUSY_TIMEOUT`.
 
-This is SQLite's own retry-on-busy loop, sitting one layer below [`SQLITE_TIMEOUT`](#sqlite_timeout): when a statement encounters a write lock, SQLite will sleep and retry internally for up to this many milliseconds before returning `SQLITE_BUSY` to the Python driver. The default (`30000` = 30 seconds) is deliberately matched to [`SQLITE_TIMEOUT`](#sqlite_timeout).
-
-> [!WARNING]
-> Easy to confuse with [`SQLITE_TIMEOUT`](#sqlite_timeout): this one is in **milliseconds**, that one is in **seconds**. Keep them aligned in real time when adjusting either.
+When a statement encounters a write lock, SQLite will sleep and retry internally for up to this many milliseconds before returning `SQLITE_BUSY` to the Python driver. Raise it if you see spurious lock errors under sustained write contention and you would rather block than fail; lower it if you want callers to fail fast.
 
 ---
 #### `SQLITE_LOCK_RETRY_TIMEOUT`
 **Possible Values:** [`60.0`]/`0`/`120.0`/... (seconds, float)
 Total wall-clock budget in **seconds** that ArchiveBox's own retry loop will spend re-attempting a single locked statement before aborting it. Settable as `ARCHIVEBOX_SQLITE_LOCK_RETRY_TIMEOUT`.
 
-When the SQLite driver eventually surfaces a `database is locked` error (after [`SQLITE_BUSY_TIMEOUT`](#sqlite_busy_timeout) / [`SQLITE_TIMEOUT`](#sqlite_timeout) have already elapsed), ArchiveBox wraps the cursor in a higher-level retry loop that logs the locking holders and re-issues the statement. This is the maximum total time spent in that outer loop, across all retries, before giving up and raising. Set to `0` to disable the cap and retry indefinitely.
+When the SQLite driver eventually surfaces a `database is locked` error (after [`SQLITE_BUSY_TIMEOUT`](#sqlite_busy_timeout) has already elapsed), ArchiveBox wraps the cursor in a higher-level retry loop that logs the locking holders and re-issues the statement. This is the maximum total time spent in that outer loop, across all retries, before giving up and raising. Set to `0` to disable the cap and retry indefinitely.
 
 > [!NOTE]
 > The outer retry only applies to statements that are *not* inside an explicit `transaction.atomic()` block. Statements inside an explicit transaction propagate the error to the caller immediately, since silently retrying would re-execute statements the caller already considered committed.

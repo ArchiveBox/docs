@@ -22,7 +22,7 @@ ArchiveBox is primarily distributed as a Python package via `pip`, but it also d
 <img src="https://imgur.zervice.io/Ue9BI7n.png" width="5%" align="right"/>
 
 **CPU Architectures:** `amd64` (`x86_64`), `arm64` (`aarch64`), `arm7`  
-*(Including 64-bit Intel/AMD, M1/M2/etc. Macs, Rasberry Pi >= 3)*
+*(Including 64-bit Intel/AMD, M1/M2/etc. Macs, Raspberry Pi >= 3)*
 
 * [**macOS:**](#macos) >=10.12 (with `pip`)
 * [**Linux:**](#ubuntudebian) Ubuntu (>= 18.04), Debian (>= 10), etc. (with `apt`)
@@ -40,7 +40,7 @@ Other systems are not officially supported but may work with degraded functional
 
 <br/>
 
-You will also need at least 500MB of RAM (bare minimum), 2GB or greater is recommended. You may be able to reduce the RAM requirements if you disable all the chrome-based archiving methods with `USE_CHROME=False`.
+You will also need at least 500MB of RAM (bare minimum), 2GB or greater is recommended. You may be able to reduce the RAM requirements if you disable all the chrome-based archiving methods with [`CHROME_ENABLED=False`](https://archivebox.github.io/abx-plugins/#chrome) (or its `USE_CHROME` alias).
 
 It's also recommended to use a filesystem with compression and/or [deduplication](https://www.ixsystems.com/blog/ixsystems-and-klara-systems-celebrate-valentines-day-with-a-heartfelt-donation-of-fast-dedupe-to-openzfs-and-truenas/) (e.g. [ZFS](https://openzfs.github.io/openzfs-docs/Getting%20Started/index.html) or BTRFS) for maximum efficiency.
 
@@ -104,14 +104,13 @@ After running the setup script, continue with the [Quickstart](https://github.co
 
 If you'd rather not use [Docker](https://github.com/ArchiveBox/ArchiveBox#%EF%B8%8F-easy-setup) or our [auto-install script](https://github.com/ArchiveBox/ArchiveBox#%EF%B8%8F-easy-setup), you can follow these manual setup instructions to install ArchiveBox and its dependencies using `pip` & your system package manager of choice (e.g. `apt`, `brew`, `pkg`, `nix`, etc.).
 
-See our [Dependencies](https://github.com/ArchiveBox/ArchiveBox#dependencies) documentation to see the full list of dependencies and how they're used. Not all the dependencies are required for all modes. If you disable some archive methods you can skip installing those dependencies, for example, if you set `FETCH_MEDIA=False` you don't need to install `yt-dlp`, and if you set `FETCH_[PDF,SCREENSHOT,DOM]=False` you don't need `chromium`.
+See our [Dependencies](https://github.com/ArchiveBox/ArchiveBox#dependencies) documentation to see the full list of dependencies and how they're used. Not all the dependencies are required for all modes. If you disable some archive methods you can skip installing those dependencies — for example, if you set [`MEDIA_ENABLED=False`](https://archivebox.github.io/abx-plugins/#media) you don't need to install `yt-dlp`, and if you set [`PDF_ENABLED=False`](https://archivebox.github.io/abx-plugins/#pdf), [`SCREENSHOT_ENABLED=False`](https://archivebox.github.io/abx-plugins/#screenshot), and [`DOM_ENABLED=False`](https://archivebox.github.io/abx-plugins/#dom) you don't need `chromium`.
 
 <img src="https://avatars0.githubusercontent.com/u/1503512?s=200&v=4" width="100px" align="right"/>
 
 **More info:**
  - For help installing these, see the [Manual Setup](#manual-setup), [[Troubleshooting]] and [[Chromium Install]] pages.
- - To use specific binaries for dependencies, see the [Configuration: Dependencies](Configuration#dependency-options) page.
- - To disable unwanted dependencies, see the [Configuration: Archive Method Toggles](Configuration#archive-method-toggles) page.  
+ - For per-plugin binary and enable/disable options (CHROME_BINARY, RIPGREP_BINARY, `<plugin>_ENABLED`, etc.) see the [abx-plugins config reference](https://archivebox.github.io/abx-plugins/).
 
 
 
@@ -219,7 +218,7 @@ archivebox setup
 # under the hood, this does:
 # - installs npm dependencies: singlefile, readability, puppeteer, etc.
 # - installs pip dependencies: yt-dlp, playwright, etc.
-# - checks for / installs sytem dependencies: curl, wget, etc
+# - checks for / installs system dependencies: curl, wget, etc
 # if you see "permission denied" errors, run 'sudo archivebox setup'
 
 # ✅ see a final detailed breakdown of all the installed dependencies and commands available

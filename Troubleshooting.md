@@ -62,8 +62,8 @@ If you still need help getting Python installed, [the official Python docs](http
 
 For more info, see the [[Chromium Install]] page.
 
-ArchiveBox depends on being able to access a `chromium-browser`/`google-chrome` executable.  The executable used
-defaults to `chromium-browser` but can be manually specified with the environment variable `CHROME_BINARY`:
+ArchiveBox depends on being able to access a `chromium`/`google-chrome` executable.  The executable used
+defaults to `chromium` but can be manually specified with the environment variable [`CHROME_BINARY`](https://archivebox.github.io/abx-plugins/#chrome):
 
 ```bash
 env CHROME_BINARY=/usr/local/bin/chromium-browser archivebox add ~/Downloads/bookmarks_export.html
@@ -86,9 +86,9 @@ If no version is displayed, try the setup instructions again, or confirm that yo
 3. If a version is displayed and it's `<111`, upgrade it:
 
 ```bash
-apt upgrade chromium-browser -y
+apt upgrade chromium -y          # (or `apt upgrade chromium-browser -y` on older Debian/Ubuntu)
 # OR
-brew cask upgrade chromium-browser
+brew upgrade --cask chromium
 ```
 
 4. If a version is displayed and it's `>=111`, make sure ArchiveBox is running the right one:
@@ -134,7 +134,7 @@ archivebox version     # show version full info to make sure they're loaded corr
 ### No links parsed from export file
 
 Please open an [issue](https://github.com/ArchiveBox/ArchiveBox/issues) with a description of where you got the export, and
-preferrably your export file attached (you can redact the links).  We'll fix the parser to support your format.
+preferably your export file attached (you can redact the links).  We'll fix the parser to support your format.
 
 ### Lots of skipped sites
 
@@ -256,7 +256,7 @@ Migration or upgrade issues happen occasionally with some niche setups or when s
 Always backup your archive before upgrading, but know that migrations are deterministic and atomic using Django's migration system, so a failed migration does not mean your archive is unrecoverable, you just have to downgrade to the previous stable major version then continue upgrading.
 
 ```bash
-archivebox init  # this usually applies any necesary migrations (atomically and indempotently, safe to run multiple times)
+archivebox init  # this usually applies any necessary migrations (atomically and indempotently, safe to run multiple times)
 ```
 
 - [Bug: NOT NULL constraint failed: core_archiveresult.output when upgrading v0.4.24 archive to v0.6 #705](https://github.com/ArchiveBox/ArchiveBox/issues/705)

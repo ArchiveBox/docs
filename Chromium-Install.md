@@ -202,6 +202,5 @@ You may need to run `chown -R archivebox /path/to/profile/on/remote/host` on the
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#archiving-private-content
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#%EF%B8%8F-things-to-watch-out-for-%EF%B8%8F
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#publishing
-- https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#chrome_user_data_dir
-- https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#chrome_binary
+- https://archivebox.github.io/abx-plugins/#chrome (CHROME_USER_DATA_DIR, CHROME_BINARY, etc.)
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#cookies_file

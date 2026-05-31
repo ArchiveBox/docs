@@ -68,14 +68,14 @@ archivebox schedule --every=weekly --depth=1 'https://nitter.net/ArchiveBoxApp'
 Archive a subreddit and linked discussions once a week:
 
 ```bash
-archivebox config --set URL_WHITELIST='^http(s)?:\/\/(.+)?teddit\.net\/?.*$'
-archivebox schedule --every=weekly --overwrite --depth=1 'https://teddit.net/r/DataHoarder/'
+archivebox config --set URL_ALLOWLIST='^http(s)?:\/\/(.+)?teddit\.net\/?.*$'
+archivebox schedule --every=weekly --depth=1 'https://teddit.net/r/DataHoarder/'
 ```
 
 Archive Hacker News every day:
 
 ```bash
-archivebox config --set URL_BLACKLIST='^http(s)?:\/\/(.+\.)?(youtube\.com)|(amazon\.com)\/.*$'
+archivebox config --set URL_DENYLIST='^http(s)?:\/\/(.+\.)?(youtube\.com)|(amazon\.com)\/.*$'
 archivebox schedule --every=daily --depth=1 'https://news.ycombinator.com'
 ```
 
