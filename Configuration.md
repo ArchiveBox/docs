@@ -424,9 +424,9 @@ More info:
 
 ---
 #### `SNAPSHOTS_PER_PAGE`
-**Possible Values:** [`40`]/`100`/...
+**Possible Values:** [`50`]/`25`/`100`/`200`/...
 
-Maximum number of Snapshots to render per page on the snapshot list views (both the admin index and the public index). Larger values speed up bulk browsing at the cost of heavier per-request rendering.
+Number of rows to render per page on the Snapshot and ArchiveResult list views (admin index, public index, and the Django admin changelists for both models). Lower values reduce per-request render time; higher values speed up bulk browsing at the cost of heavier rendering. Must be ≥ 1.
 
 ---
 #### `FOOTER_INFO`
