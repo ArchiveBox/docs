@@ -15,6 +15,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`_env_path <archivebox.config.paths._env_path>`
+  - ```{autodoc2-docstring} archivebox.config.paths._env_path
+    :summary:
+    ```
 * - {py:obj}`_get_collection_id <archivebox.config.paths._get_collection_id>`
   - ```{autodoc2-docstring} archivebox.config.paths._get_collection_id
     :summary:
@@ -83,6 +87,10 @@
   - ```{autodoc2-docstring} archivebox.config.paths.ARCHIVE_DIR
     :summary:
     ```
+* - {py:obj}`USERS_DIR <archivebox.config.paths.USERS_DIR>`
+  - ```{autodoc2-docstring} archivebox.config.paths.USERS_DIR
+    :summary:
+    ```
 * - {py:obj}`IN_DOCKER <archivebox.config.paths.IN_DOCKER>`
   - ```{autodoc2-docstring} archivebox.config.paths.IN_DOCKER
     :summary:
@@ -117,13 +125,31 @@
 
 ````
 
+````{py:function} _env_path(key: str, default: pathlib.Path) -> pathlib.Path
+:canonical: archivebox.config.paths._env_path
+
+```{autodoc2-docstring} archivebox.config.paths._env_path
+```
+````
+
 ````{py:data} ARCHIVE_DIR
 :canonical: archivebox.config.paths.ARCHIVE_DIR
 :type: pathlib.Path
 :value: >
-   None
+   '_env_path(...)'
 
 ```{autodoc2-docstring} archivebox.config.paths.ARCHIVE_DIR
+```
+
+````
+
+````{py:data} USERS_DIR
+:canonical: archivebox.config.paths.USERS_DIR
+:type: pathlib.Path
+:value: >
+   '_env_path(...)'
+
+```{autodoc2-docstring} archivebox.config.paths.USERS_DIR
 ```
 
 ````
@@ -204,28 +230,28 @@
 ```
 ````
 
-````{py:function} get_or_create_working_tmp_dir(autofix=True, quiet=True)
+````{py:function} get_or_create_working_tmp_dir(autofix=True, quiet=True, config: ArchiveBoxConfig | None = None, **config_kwargs)
 :canonical: archivebox.config.paths.get_or_create_working_tmp_dir
 
 ```{autodoc2-docstring} archivebox.config.paths.get_or_create_working_tmp_dir
 ```
 ````
 
-````{py:function} get_or_create_working_lib_dir(autofix=True, quiet=False)
+````{py:function} get_or_create_working_lib_dir(autofix=True, quiet=False, config: ArchiveBoxConfig | None = None, **config_kwargs)
 :canonical: archivebox.config.paths.get_or_create_working_lib_dir
 
 ```{autodoc2-docstring} archivebox.config.paths.get_or_create_working_lib_dir
 ```
 ````
 
-````{py:function} get_data_locations()
+````{py:function} get_data_locations(config: ArchiveBoxConfig | None = None, **config_kwargs)
 :canonical: archivebox.config.paths.get_data_locations
 
 ```{autodoc2-docstring} archivebox.config.paths.get_data_locations
 ```
 ````
 
-````{py:function} get_code_locations()
+````{py:function} get_code_locations(config: ArchiveBoxConfig | None = None, **config_kwargs)
 :canonical: archivebox.config.paths.get_code_locations
 
 ```{autodoc2-docstring} archivebox.config.paths.get_code_locations

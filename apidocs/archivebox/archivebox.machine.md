@@ -14,6 +14,7 @@
 :maxdepth: 1
 
 archivebox.machine.models
+archivebox.machine.env_util
 archivebox.machine.apps
 archivebox.machine.admin
 archivebox.machine.detect

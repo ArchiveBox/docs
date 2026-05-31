@@ -25,8 +25,8 @@ archivebox.personas
 archivebox.machine
 archivebox.api
 archivebox.workers
-archivebox.ideas
 archivebox.base_models
+archivebox.services
 ```
 
 ## Submodules
@@ -43,6 +43,28 @@ archivebox.__main__
 
 ## Package Contents
 
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_ReconfigurableStream <archivebox._ReconfigurableStream>`
+  -
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`__getattr__ <archivebox.__getattr__>`
+  - ```{autodoc2-docstring} archivebox.__getattr__
+    :summary:
+    ```
+````
+
 ### Data
 
 ````{list-table}
@@ -57,22 +79,6 @@ archivebox.__main__
   - ```{autodoc2-docstring} archivebox.PACKAGE_DIR
     :summary:
     ```
-* - {py:obj}`BUILTIN_PLUGINS_DIR <archivebox.BUILTIN_PLUGINS_DIR>`
-  - ```{autodoc2-docstring} archivebox.BUILTIN_PLUGINS_DIR
-    :summary:
-    ```
-* - {py:obj}`USER_PLUGINS_DIR <archivebox.USER_PLUGINS_DIR>`
-  - ```{autodoc2-docstring} archivebox.USER_PLUGINS_DIR
-    :summary:
-    ```
-* - {py:obj}`ALL_PLUGINS <archivebox.ALL_PLUGINS>`
-  - ```{autodoc2-docstring} archivebox.ALL_PLUGINS
-    :summary:
-    ```
-* - {py:obj}`LOADED_PLUGINS <archivebox.LOADED_PLUGINS>`
-  - ```{autodoc2-docstring} archivebox.LOADED_PLUGINS
-    :summary:
-    ```
 * - {py:obj}`__version__ <archivebox.__version__>`
   - ```{autodoc2-docstring} archivebox.__version__
     :summary:
@@ -85,6 +91,10 @@ archivebox.__main__
   - ```{autodoc2-docstring} archivebox.__license__
     :summary:
     ```
+* - {py:obj}`__all__ <archivebox.__all__>`
+  - ```{autodoc2-docstring} archivebox.__all__
+    :summary:
+    ```
 * - {py:obj}`ASCII_ICON <archivebox.ASCII_ICON>`
   - ```{autodoc2-docstring} archivebox.ASCII_ICON
     :summary:
@@ -92,6 +102,21 @@ archivebox.__main__
 ````
 
 ### API
+
+`````{py:class} _ReconfigurableStream
+:canonical: archivebox._ReconfigurableStream
+
+Bases: {py:obj}`typing.Protocol`
+
+````{py:method} reconfigure(*, line_buffering: bool) -> object
+:canonical: archivebox._ReconfigurableStream.reconfigure
+
+```{autodoc2-docstring} archivebox._ReconfigurableStream.reconfigure
+```
+
+````
+
+`````
 
 ````{py:data} ASCII_LOGO
 :canonical: archivebox.ASCII_LOGO
@@ -108,46 +133,6 @@ archivebox.__main__
    None
 
 ```{autodoc2-docstring} archivebox.PACKAGE_DIR
-```
-
-````
-
-````{py:data} BUILTIN_PLUGINS_DIR
-:canonical: archivebox.BUILTIN_PLUGINS_DIR
-:value: >
-   'resolve(...)'
-
-```{autodoc2-docstring} archivebox.BUILTIN_PLUGINS_DIR
-```
-
-````
-
-````{py:data} USER_PLUGINS_DIR
-:canonical: archivebox.USER_PLUGINS_DIR
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.USER_PLUGINS_DIR
-```
-
-````
-
-````{py:data} ALL_PLUGINS
-:canonical: archivebox.ALL_PLUGINS
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.ALL_PLUGINS
-```
-
-````
-
-````{py:data} LOADED_PLUGINS
-:canonical: archivebox.LOADED_PLUGINS
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.LOADED_PLUGINS
 ```
 
 ````
@@ -178,6 +163,23 @@ archivebox.__main__
    'MIT'
 
 ```{autodoc2-docstring} archivebox.__license__
+```
+
+````
+
+````{py:function} __getattr__(name: str)
+:canonical: archivebox.__getattr__
+
+```{autodoc2-docstring} archivebox.__getattr__
+```
+````
+
+````{py:data} __all__
+:canonical: archivebox.__all__
+:value: >
+   ('ASCII_LOGO', 'ASCII_ICON', 'PACKAGE_DIR', 'DATA_DIR', 'CONSTANTS', 'VERSION', 'BUILTIN_PLUGINS_DIR...
+
+```{autodoc2-docstring} archivebox.__all__
 ```
 
 ````

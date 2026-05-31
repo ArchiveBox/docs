@@ -47,6 +47,22 @@
   - ```{autodoc2-docstring} archivebox.api.v1_crawls.get_crawl
     :summary:
     ```
+* - {py:obj}`crawl_file <archivebox.api.v1_crawls.crawl_file>`
+  - ```{autodoc2-docstring} archivebox.api.v1_crawls.crawl_file
+    :summary:
+    ```
+* - {py:obj}`crawl_file_root <archivebox.api.v1_crawls.crawl_file_root>`
+  - ```{autodoc2-docstring} archivebox.api.v1_crawls.crawl_file_root
+    :summary:
+    ```
+* - {py:obj}`crawl_file_nested_1 <archivebox.api.v1_crawls.crawl_file_nested_1>`
+  - ```{autodoc2-docstring} archivebox.api.v1_crawls.crawl_file_nested_1
+    :summary:
+    ```
+* - {py:obj}`crawl_file_nested_2 <archivebox.api.v1_crawls.crawl_file_nested_2>`
+  - ```{autodoc2-docstring} archivebox.api.v1_crawls.crawl_file_nested_2
+    :summary:
+    ```
 * - {py:obj}`patch_crawl <archivebox.api.v1_crawls.patch_crawl>`
   - ```{autodoc2-docstring} archivebox.api.v1_crawls.patch_crawl
     :summary:
@@ -174,6 +190,17 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
+````{py:attribute} is_paused
+:canonical: archivebox.api.v1_crawls.CrawlSchema.is_paused
+:type: bool
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlSchema.is_paused
+```
+
+````
+
 ````{py:attribute} urls
 :canonical: archivebox.api.v1_crawls.CrawlSchema.urls
 :type: str
@@ -236,6 +263,15 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
+````{py:method} resolve_config(obj)
+:canonical: archivebox.api.v1_crawls.CrawlSchema.resolve_config
+:staticmethod:
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlSchema.resolve_config
+```
+
+````
+
 ````{py:method} resolve_snapshots(obj, context)
 :canonical: archivebox.api.v1_crawls.CrawlSchema.resolve_snapshots
 :staticmethod:
@@ -251,6 +287,17 @@ Bases: {py:obj}`ninja.Schema`
 :canonical: archivebox.api.v1_crawls.CrawlUpdateSchema
 
 Bases: {py:obj}`ninja.Schema`
+
+````{py:attribute} action
+:canonical: archivebox.api.v1_crawls.CrawlUpdateSchema.action
+:type: str | None
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.CrawlUpdateSchema.action
+```
+
+````
 
 ````{py:attribute} status
 :canonical: archivebox.api.v1_crawls.CrawlUpdateSchema.status
@@ -276,7 +323,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} tags
 :canonical: archivebox.api.v1_crawls.CrawlUpdateSchema.tags
-:type: typing.Optional[typing.List[str]]
+:type: list[str] | None
 :value: >
    None
 
@@ -305,7 +352,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} urls
 :canonical: archivebox.api.v1_crawls.CrawlCreateSchema.urls
-:type: typing.List[str]
+:type: list[str]
 :value: >
    None
 
@@ -327,7 +374,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} tags
 :canonical: archivebox.api.v1_crawls.CrawlCreateSchema.tags
-:type: typing.Optional[typing.List[str]]
+:type: list[str] | None
 :value: >
    None
 
@@ -430,42 +477,70 @@ Bases: {py:obj}`ninja.Schema`
 
 `````
 
-````{py:function} normalize_tag_list(tags: typing.Optional[typing.List[str]] = None, tags_str: str = '') -> typing.List[str]
+````{py:function} normalize_tag_list(tags: list[str] | None = None, tags_str: str = '') -> list[str]
 :canonical: archivebox.api.v1_crawls.normalize_tag_list
 
 ```{autodoc2-docstring} archivebox.api.v1_crawls.normalize_tag_list
 ```
 ````
 
-````{py:function} get_crawls(request)
+````{py:function} get_crawls(request: django.http.HttpRequest)
 :canonical: archivebox.api.v1_crawls.get_crawls
 
 ```{autodoc2-docstring} archivebox.api.v1_crawls.get_crawls
 ```
 ````
 
-````{py:function} create_crawl(request, data: archivebox.api.v1_crawls.CrawlCreateSchema)
+````{py:function} create_crawl(request: django.http.HttpRequest, data: archivebox.api.v1_crawls.CrawlCreateSchema)
 :canonical: archivebox.api.v1_crawls.create_crawl
 
 ```{autodoc2-docstring} archivebox.api.v1_crawls.create_crawl
 ```
 ````
 
-````{py:function} get_crawl(request, crawl_id: str, as_rss: bool = False, with_snapshots: bool = False, with_archiveresults: bool = False)
+````{py:function} get_crawl(request: django.http.HttpRequest, crawl_id: str, as_rss: bool = False, with_snapshots: bool = False, with_archiveresults: bool = False)
 :canonical: archivebox.api.v1_crawls.get_crawl
 
 ```{autodoc2-docstring} archivebox.api.v1_crawls.get_crawl
 ```
 ````
 
-````{py:function} patch_crawl(request, crawl_id: str, data: archivebox.api.v1_crawls.CrawlUpdateSchema)
+````{py:function} crawl_file(request: django.http.HttpRequest, crawl_id: str, path: str)
+:canonical: archivebox.api.v1_crawls.crawl_file
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.crawl_file
+```
+````
+
+````{py:function} crawl_file_root(request: django.http.HttpRequest, crawl_id: str, filename: str)
+:canonical: archivebox.api.v1_crawls.crawl_file_root
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.crawl_file_root
+```
+````
+
+````{py:function} crawl_file_nested_1(request: django.http.HttpRequest, crawl_id: str, folder: str, filename: str)
+:canonical: archivebox.api.v1_crawls.crawl_file_nested_1
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.crawl_file_nested_1
+```
+````
+
+````{py:function} crawl_file_nested_2(request: django.http.HttpRequest, crawl_id: str, folder: str, subfolder: str, filename: str)
+:canonical: archivebox.api.v1_crawls.crawl_file_nested_2
+
+```{autodoc2-docstring} archivebox.api.v1_crawls.crawl_file_nested_2
+```
+````
+
+````{py:function} patch_crawl(request: django.http.HttpRequest, crawl_id: str, data: archivebox.api.v1_crawls.CrawlUpdateSchema)
 :canonical: archivebox.api.v1_crawls.patch_crawl
 
 ```{autodoc2-docstring} archivebox.api.v1_crawls.patch_crawl
 ```
 ````
 
-````{py:function} delete_crawl(request, crawl_id: str)
+````{py:function} delete_crawl(request: django.http.HttpRequest, crawl_id: str)
 :canonical: archivebox.api.v1_crawls.delete_crawl
 
 ```{autodoc2-docstring} archivebox.api.v1_crawls.delete_crawl

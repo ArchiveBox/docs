@@ -21,18 +21,6 @@
     ```
 ````
 
-### Data
-
-````{list-table}
-:class: autosummary longtable
-:align: left
-
-* - {py:obj}`LDAP_CONFIG <archivebox.config.ldap.LDAP_CONFIG>`
-  - ```{autodoc2-docstring} archivebox.config.ldap.LDAP_CONFIG
-    :summary:
-    ```
-````
-
 ### API
 
 `````{py:class} LDAPConfig(_case_sensitive: bool | None = None, _nested_model_default_partial_update: bool | None = None, _env_prefix: str | None = None, _env_prefix_target: pydantic_settings.sources.EnvPrefixTarget | None = None, _env_file: pydantic_settings.sources.DotenvType | None = ENV_FILE_SENTINEL, _env_file_encoding: str | None = None, _env_ignore_empty: bool | None = None, _env_nested_delimiter: str | None = None, _env_nested_max_split: int | None = None, _env_parse_none_str: str | None = None, _env_parse_enums: bool | None = None, _cli_prog_name: str | None = None, _cli_parse_args: bool | list[str] | tuple[str, ...] | None = None, _cli_settings_source: pydantic_settings.sources.CliSettingsSource[typing.Any] | None = None, _cli_parse_none_str: str | None = None, _cli_hide_none_type: bool | None = None, _cli_avoid_json: bool | None = None, _cli_enforce_required: bool | None = None, _cli_use_class_docs_for_groups: bool | None = None, _cli_exit_on_error: bool | None = None, _cli_prefix: str | None = None, _cli_flag_prefix_char: str | None = None, _cli_implicit_flags: bool | typing.Literal[dual, toggle] | None = None, _cli_ignore_unknown_args: bool | None = None, _cli_kebab_case: bool | typing.Literal[all, no_enums] | None = None, _cli_shortcuts: collections.abc.Mapping[str, str | list[str]] | None = None, _secrets_dir: pydantic_settings.sources.PathType | None = None, _build_sources: tuple[tuple[pydantic_settings.sources.PydanticBaseSettingsSource, ...], dict[str, typing.Any]] | None = None, **values: typing.Any)
@@ -73,7 +61,7 @@ Bases: {py:obj}`archivebox.config.configset.BaseConfigSet`
 
 ````{py:attribute} LDAP_SERVER_URI
 :canonical: archivebox.config.ldap.LDAPConfig.LDAP_SERVER_URI
-:type: typing.Optional[str]
+:type: str | None
 :value: >
    'Field(...)'
 
@@ -84,7 +72,7 @@ Bases: {py:obj}`archivebox.config.configset.BaseConfigSet`
 
 ````{py:attribute} LDAP_BIND_DN
 :canonical: archivebox.config.ldap.LDAPConfig.LDAP_BIND_DN
-:type: typing.Optional[str]
+:type: str | None
 :value: >
    'Field(...)'
 
@@ -95,7 +83,7 @@ Bases: {py:obj}`archivebox.config.configset.BaseConfigSet`
 
 ````{py:attribute} LDAP_BIND_PASSWORD
 :canonical: archivebox.config.ldap.LDAPConfig.LDAP_BIND_PASSWORD
-:type: typing.Optional[str]
+:type: str | None
 :value: >
    'Field(...)'
 
@@ -106,7 +94,7 @@ Bases: {py:obj}`archivebox.config.configset.BaseConfigSet`
 
 ````{py:attribute} LDAP_USER_BASE
 :canonical: archivebox.config.ldap.LDAPConfig.LDAP_USER_BASE
-:type: typing.Optional[str]
+:type: str | None
 :value: >
    'Field(...)'
 
@@ -190,13 +178,3 @@ Bases: {py:obj}`archivebox.config.configset.BaseConfigSet`
 ````
 
 `````
-
-````{py:data} LDAP_CONFIG
-:canonical: archivebox.config.ldap.LDAP_CONFIG
-:value: >
-   'LDAPConfig(...)'
-
-```{autodoc2-docstring} archivebox.config.ldap.LDAP_CONFIG
-```
-
-````

@@ -41,6 +41,30 @@
   - ```{autodoc2-docstring} archivebox.workers.models.default_retry_at_field
     :summary:
     ```
+* - {py:obj}`RETRY_AT_MAX <archivebox.workers.models.RETRY_AT_MAX>`
+  - ```{autodoc2-docstring} archivebox.workers.models.RETRY_AT_MAX
+    :summary:
+    ```
+* - {py:obj}`ACTIVE_STATE_LEASE_SECONDS <archivebox.workers.models.ACTIVE_STATE_LEASE_SECONDS>`
+  - ```{autodoc2-docstring} archivebox.workers.models.ACTIVE_STATE_LEASE_SECONDS
+    :summary:
+    ```
+* - {py:obj}`logger <archivebox.workers.models.logger>`
+  - ```{autodoc2-docstring} archivebox.workers.models.logger
+    :summary:
+    ```
+* - {py:obj}`MODULE_PATH <archivebox.workers.models.MODULE_PATH>`
+  - ```{autodoc2-docstring} archivebox.workers.models.MODULE_PATH
+    :summary:
+    ```
+* - {py:obj}`REPO_ROOT <archivebox.workers.models.REPO_ROOT>`
+  - ```{autodoc2-docstring} archivebox.workers.models.REPO_ROOT
+    :summary:
+    ```
+* - {py:obj}`PACKAGE_ROOT <archivebox.workers.models.PACKAGE_ROOT>`
+  - ```{autodoc2-docstring} archivebox.workers.models.PACKAGE_ROOT
+    :summary:
+    ```
 * - {py:obj}`ObjectState <archivebox.workers.models.ObjectState>`
   - ```{autodoc2-docstring} archivebox.workers.models.ObjectState
     :summary:
@@ -74,6 +98,16 @@ Bases: {py:obj}`django.db.models.TextChoices`
    ('started', 'Started')
 
 ```{autodoc2-docstring} archivebox.workers.models.DefaultStatusChoices.STARTED
+```
+
+````
+
+````{py:attribute} PAUSED
+:canonical: archivebox.workers.models.DefaultStatusChoices.PAUSED
+:value: >
+   ('paused', 'Paused')
+
+```{autodoc2-docstring} archivebox.workers.models.DefaultStatusChoices.PAUSED
 ```
 
 ````
@@ -112,6 +146,66 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
+````{py:data} RETRY_AT_MAX
+:canonical: archivebox.workers.models.RETRY_AT_MAX
+:value: >
+   'replace(...)'
+
+```{autodoc2-docstring} archivebox.workers.models.RETRY_AT_MAX
+```
+
+````
+
+````{py:data} ACTIVE_STATE_LEASE_SECONDS
+:canonical: archivebox.workers.models.ACTIVE_STATE_LEASE_SECONDS
+:value: >
+   60
+
+```{autodoc2-docstring} archivebox.workers.models.ACTIVE_STATE_LEASE_SECONDS
+```
+
+````
+
+````{py:data} logger
+:canonical: archivebox.workers.models.logger
+:value: >
+   'getLogger(...)'
+
+```{autodoc2-docstring} archivebox.workers.models.logger
+```
+
+````
+
+````{py:data} MODULE_PATH
+:canonical: archivebox.workers.models.MODULE_PATH
+:value: >
+   'resolve(...)'
+
+```{autodoc2-docstring} archivebox.workers.models.MODULE_PATH
+```
+
+````
+
+````{py:data} REPO_ROOT
+:canonical: archivebox.workers.models.REPO_ROOT
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.workers.models.REPO_ROOT
+```
+
+````
+
+````{py:data} PACKAGE_ROOT
+:canonical: archivebox.workers.models.PACKAGE_ROOT
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.workers.models.PACKAGE_ROOT
+```
+
+````
+
 ````{py:data} ObjectState
 :canonical: archivebox.workers.models.ObjectState
 :value: >
@@ -137,20 +231,9 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 Bases: {py:obj}`django.db.models.Model`, {py:obj}`statemachine.mixins.MachineMixin`
 
-````{py:attribute} id
-:canonical: archivebox.workers.models.BaseModelWithStateMachine.id
-:type: django.db.models.UUIDField
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.workers.models.BaseModelWithStateMachine.id
-```
-
-````
-
 ````{py:attribute} StatusChoices
 :canonical: archivebox.workers.models.BaseModelWithStateMachine.StatusChoices
-:type: typing.ClassVar[typing.Type[django.db.models.TextChoices]]
+:type: typing.ClassVar[type[archivebox.workers.models.DefaultStatusChoices]]
 :value: >
    None
 
@@ -161,7 +244,7 @@ Bases: {py:obj}`django.db.models.Model`, {py:obj}`statemachine.mixins.MachineMix
 
 ````{py:attribute} state_machine_name
 :canonical: archivebox.workers.models.BaseModelWithStateMachine.state_machine_name
-:type: typing.ClassVar[str]
+:type: str | None
 :value: >
    None
 
@@ -172,7 +255,7 @@ Bases: {py:obj}`django.db.models.Model`, {py:obj}`statemachine.mixins.MachineMix
 
 ````{py:attribute} state_field_name
 :canonical: archivebox.workers.models.BaseModelWithStateMachine.state_field_name
-:type: typing.ClassVar[str]
+:type: str
 :value: >
    None
 
@@ -183,7 +266,7 @@ Bases: {py:obj}`django.db.models.Model`, {py:obj}`statemachine.mixins.MachineMix
 
 ````{py:attribute} state_machine_attr
 :canonical: archivebox.workers.models.BaseModelWithStateMachine.state_machine_attr
-:type: typing.ClassVar[str]
+:type: str
 :value: >
    'sm'
 
@@ -194,7 +277,7 @@ Bases: {py:obj}`django.db.models.Model`, {py:obj}`statemachine.mixins.MachineMix
 
 ````{py:attribute} bind_events_as_methods
 :canonical: archivebox.workers.models.BaseModelWithStateMachine.bind_events_as_methods
-:type: typing.ClassVar[bool]
+:type: bool
 :value: >
    True
 
@@ -205,7 +288,7 @@ Bases: {py:obj}`django.db.models.Model`, {py:obj}`statemachine.mixins.MachineMix
 
 ````{py:attribute} active_state
 :canonical: archivebox.workers.models.BaseModelWithStateMachine.active_state
-:type: typing.ClassVar[archivebox.workers.models.ObjectState]
+:type: archivebox.workers.models.ObjectState
 :value: >
    None
 
@@ -216,7 +299,7 @@ Bases: {py:obj}`django.db.models.Model`, {py:obj}`statemachine.mixins.MachineMix
 
 ````{py:attribute} retry_at_field_name
 :canonical: archivebox.workers.models.BaseModelWithStateMachine.retry_at_field_name
-:type: typing.ClassVar[str]
+:type: str
 :value: >
    None
 
@@ -228,8 +311,7 @@ Bases: {py:obj}`django.db.models.Model`, {py:obj}`statemachine.mixins.MachineMix
 `````{py:class} Meta
 :canonical: archivebox.workers.models.BaseModelWithStateMachine.Meta
 
-```{autodoc2-docstring} archivebox.workers.models.BaseModelWithStateMachine.Meta
-```
+Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````{py:attribute} app_label
 :canonical: archivebox.workers.models.BaseModelWithStateMachine.Meta.app_label
@@ -297,7 +379,45 @@ Bases: {py:obj}`django.db.models.Model`, {py:obj}`statemachine.mixins.MachineMix
 
 ````
 
-````{py:method} update_and_requeue(**kwargs) -> bool
+````{py:property} is_paused
+:canonical: archivebox.workers.models.BaseModelWithStateMachine.is_paused
+:type: bool
+
+```{autodoc2-docstring} archivebox.workers.models.BaseModelWithStateMachine.is_paused
+```
+
+````
+
+````{py:method} safe_update(update_fields: dict[str, typing.Any], *, refresh: bool = True, extra_filter: dict[str, typing.Any] | None = None) -> bool
+:canonical: archivebox.workers.models.BaseModelWithStateMachine.safe_update
+
+```{autodoc2-docstring} archivebox.workers.models.BaseModelWithStateMachine.safe_update
+```
+
+````
+
+````{py:method} save(*args, **kwargs)
+:canonical: archivebox.workers.models.BaseModelWithStateMachine.save
+
+````
+
+````{py:method} pause(*, save: bool = True) -> bool
+:canonical: archivebox.workers.models.BaseModelWithStateMachine.pause
+
+```{autodoc2-docstring} archivebox.workers.models.BaseModelWithStateMachine.pause
+```
+
+````
+
+````{py:method} resume(*, when: datetime.datetime | None = None, save: bool = True) -> bool
+:canonical: archivebox.workers.models.BaseModelWithStateMachine.resume
+
+```{autodoc2-docstring} archivebox.workers.models.BaseModelWithStateMachine.resume
+```
+
+````
+
+````{py:method} update_and_requeue(*, refresh: bool = True, **kwargs) -> bool
 :canonical: archivebox.workers.models.BaseModelWithStateMachine.update_and_requeue
 
 ```{autodoc2-docstring} archivebox.workers.models.BaseModelWithStateMachine.update_and_requeue
@@ -319,6 +439,22 @@ Bases: {py:obj}`django.db.models.Model`, {py:obj}`statemachine.mixins.MachineMix
 :classmethod:
 
 ```{autodoc2-docstring} archivebox.workers.models.BaseModelWithStateMachine.claim_for_worker
+```
+
+````
+
+````{py:method} claim_processing_lock(lock_seconds: int = 60) -> bool
+:canonical: archivebox.workers.models.BaseModelWithStateMachine.claim_processing_lock
+
+```{autodoc2-docstring} archivebox.workers.models.BaseModelWithStateMachine.claim_processing_lock
+```
+
+````
+
+````{py:method} tick_claimed(lock_seconds: int = 60) -> bool
+:canonical: archivebox.workers.models.BaseModelWithStateMachine.tick_claimed
+
+```{autodoc2-docstring} archivebox.workers.models.BaseModelWithStateMachine.tick_claimed
 ```
 
 ````
@@ -355,7 +491,7 @@ Bases: {py:obj}`django.db.models.Model`, {py:obj}`statemachine.mixins.MachineMix
 
 ````
 
-````{py:method} extend_choices(base_choices: typing.Type[django.db.models.TextChoices])
+````{py:method} extend_choices(base_choices: type[django.db.models.TextChoices])
 :canonical: archivebox.workers.models.BaseModelWithStateMachine.extend_choices
 :classmethod:
 
@@ -382,7 +518,7 @@ Bases: {py:obj}`django.db.models.Model`, {py:obj}`statemachine.mixins.MachineMix
 
 ````
 
-````{py:method} StateMachineClass() -> typing.Type[statemachine.StateMachine]
+````{py:method} StateMachineClass() -> type[statemachine.StateMachine]
 :canonical: archivebox.workers.models.BaseModelWithStateMachine.StateMachineClass
 
 ```{autodoc2-docstring} archivebox.workers.models.BaseModelWithStateMachine.StateMachineClass
@@ -399,7 +535,6 @@ Bases: {py:obj}`archivebox.workers.models.BaseModelWithStateMachine`
 
 ````{py:attribute} StatusChoices
 :canonical: archivebox.workers.models.ModelWithStateMachine.StatusChoices
-:type: typing.ClassVar[typing.Type[archivebox.workers.models.DefaultStatusChoices]]
 :value: >
    None
 
@@ -432,7 +567,7 @@ Bases: {py:obj}`archivebox.workers.models.BaseModelWithStateMachine`
 
 ````{py:attribute} state_machine_name
 :canonical: archivebox.workers.models.ModelWithStateMachine.state_machine_name
-:type: typing.ClassVar[str]
+:type: str | None
 :value: >
    None
 
@@ -443,7 +578,7 @@ Bases: {py:obj}`archivebox.workers.models.BaseModelWithStateMachine`
 
 ````{py:attribute} state_field_name
 :canonical: archivebox.workers.models.ModelWithStateMachine.state_field_name
-:type: typing.ClassVar[str]
+:type: str
 :value: >
    'status'
 
@@ -454,7 +589,7 @@ Bases: {py:obj}`archivebox.workers.models.BaseModelWithStateMachine`
 
 ````{py:attribute} state_machine_attr
 :canonical: archivebox.workers.models.ModelWithStateMachine.state_machine_attr
-:type: typing.ClassVar[str]
+:type: str
 :value: >
    'sm'
 
@@ -465,7 +600,7 @@ Bases: {py:obj}`archivebox.workers.models.BaseModelWithStateMachine`
 
 ````{py:attribute} bind_events_as_methods
 :canonical: archivebox.workers.models.ModelWithStateMachine.bind_events_as_methods
-:type: typing.ClassVar[bool]
+:type: bool
 :value: >
    True
 
@@ -476,7 +611,6 @@ Bases: {py:obj}`archivebox.workers.models.BaseModelWithStateMachine`
 
 ````{py:attribute} active_state
 :canonical: archivebox.workers.models.ModelWithStateMachine.active_state
-:type: typing.ClassVar[str]
 :value: >
    None
 
@@ -487,7 +621,7 @@ Bases: {py:obj}`archivebox.workers.models.BaseModelWithStateMachine`
 
 ````{py:attribute} retry_at_field_name
 :canonical: archivebox.workers.models.ModelWithStateMachine.retry_at_field_name
-:type: typing.ClassVar[str]
+:type: str
 :value: >
    'retry_at'
 
@@ -499,18 +633,7 @@ Bases: {py:obj}`archivebox.workers.models.BaseModelWithStateMachine`
 `````{py:class} Meta
 :canonical: archivebox.workers.models.ModelWithStateMachine.Meta
 
-```{autodoc2-docstring} archivebox.workers.models.ModelWithStateMachine.Meta
-```
-
-````{py:attribute} app_label
-:canonical: archivebox.workers.models.ModelWithStateMachine.Meta.app_label
-:value: >
-   'workers'
-
-```{autodoc2-docstring} archivebox.workers.models.ModelWithStateMachine.Meta.app_label
-```
-
-````
+Bases: {py:obj}`archivebox.workers.models.BaseModelWithStateMachine`
 
 ````{py:attribute} abstract
 :canonical: archivebox.workers.models.ModelWithStateMachine.Meta.abstract

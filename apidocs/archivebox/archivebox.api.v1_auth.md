@@ -81,7 +81,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} username
 :canonical: archivebox.api.v1_auth.PasswordAuthSchema.username
-:type: typing.Optional[str]
+:type: str | None
 :value: >
    None
 
@@ -92,7 +92,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} password
 :canonical: archivebox.api.v1_auth.PasswordAuthSchema.password
-:type: typing.Optional[str]
+:type: str | None
 :value: >
    None
 
@@ -103,7 +103,7 @@ Bases: {py:obj}`ninja.Schema`
 
 `````
 
-````{py:function} get_api_token(request, auth_data: archivebox.api.v1_auth.PasswordAuthSchema)
+````{py:function} get_api_token(request: django.http.HttpRequest, auth_data: archivebox.api.v1_auth.PasswordAuthSchema)
 :canonical: archivebox.api.v1_auth.get_api_token
 
 ```{autodoc2-docstring} archivebox.api.v1_auth.get_api_token
@@ -137,7 +137,7 @@ Bases: {py:obj}`ninja.Schema`
 
 `````
 
-````{py:function} check_api_token(request, token_data: archivebox.api.v1_auth.TokenAuthSchema)
+````{py:function} check_api_token(request: django.http.HttpRequest, token_data: archivebox.api.v1_auth.TokenAuthSchema)
 :canonical: archivebox.api.v1_auth.check_api_token
 
 ```{autodoc2-docstring} archivebox.api.v1_auth.check_api_token

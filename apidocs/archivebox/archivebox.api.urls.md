@@ -9,6 +9,18 @@
 
 ## Module Contents
 
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`archive_redirect_view <archivebox.api.urls.archive_redirect_view>`
+  - ```{autodoc2-docstring} archivebox.api.urls.archive_redirect_view
+    :summary:
+    ```
+````
+
 ### Data
 
 ````{list-table}
@@ -22,6 +34,13 @@
 ````
 
 ### API
+
+````{py:function} archive_redirect_view(request: django.http.HttpRequest, url: str) -> django.http.HttpResponseRedirect
+:canonical: archivebox.api.urls.archive_redirect_view
+
+```{autodoc2-docstring} archivebox.api.urls.archive_redirect_view
+```
+````
 
 ````{py:data} urlpatterns
 :canonical: archivebox.api.urls.urlpatterns

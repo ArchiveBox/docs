@@ -26,7 +26,7 @@
 `````{py:class} ArchiveBoxLDAPBackend
 :canonical: archivebox.ldap.auth.ArchiveBoxLDAPBackend
 
-Bases: {py:obj}`django_auth_ldap.backend.LDAPBackend`
+Bases: {py:obj}`archivebox.ldap.auth.BaseLDAPBackend`
 
 ```{autodoc2-docstring} archivebox.ldap.auth.ArchiveBoxLDAPBackend
 ```

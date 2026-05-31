@@ -212,7 +212,7 @@
 :canonical: archivebox.config.permissions.HOSTNAME
 :type: str
 :value: >
-   'max(...)'
+   'cast(...)'
 
 ```{autodoc2-docstring} archivebox.config.permissions.HOSTNAME
 ```

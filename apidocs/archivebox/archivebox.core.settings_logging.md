@@ -17,6 +17,14 @@
 
 * - {py:obj}`NoisyRequestsFilter <archivebox.core.settings_logging.NoisyRequestsFilter>`
   -
+* - {py:obj}`DaphneCloseTimeoutFilter <archivebox.core.settings_logging.DaphneCloseTimeoutFilter>`
+  - ```{autodoc2-docstring} archivebox.core.settings_logging.DaphneCloseTimeoutFilter
+    :summary:
+    ```
+* - {py:obj}`AsyncioCancelledShieldFilter <archivebox.core.settings_logging.AsyncioCancelledShieldFilter>`
+  - ```{autodoc2-docstring} archivebox.core.settings_logging.AsyncioCancelledShieldFilter
+    :summary:
+    ```
 * - {py:obj}`CustomOutboundWebhookLogFormatter <archivebox.core.settings_logging.CustomOutboundWebhookLogFormatter>`
   -
 * - {py:obj}`StripANSIColorCodesFilter <archivebox.core.settings_logging.StripANSIColorCodesFilter>`
@@ -74,6 +82,48 @@ Bases: {py:obj}`logging.Filter`
 
 ````{py:method} filter(record) -> bool
 :canonical: archivebox.core.settings_logging.NoisyRequestsFilter.filter
+
+````
+
+`````
+
+`````{py:class} DaphneCloseTimeoutFilter(name='')
+:canonical: archivebox.core.settings_logging.DaphneCloseTimeoutFilter
+
+Bases: {py:obj}`logging.Filter`
+
+```{autodoc2-docstring} archivebox.core.settings_logging.DaphneCloseTimeoutFilter
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} archivebox.core.settings_logging.DaphneCloseTimeoutFilter.__init__
+```
+
+````{py:method} filter(record) -> bool
+:canonical: archivebox.core.settings_logging.DaphneCloseTimeoutFilter.filter
+
+````
+
+`````
+
+`````{py:class} AsyncioCancelledShieldFilter(name='')
+:canonical: archivebox.core.settings_logging.AsyncioCancelledShieldFilter
+
+Bases: {py:obj}`logging.Filter`
+
+```{autodoc2-docstring} archivebox.core.settings_logging.AsyncioCancelledShieldFilter
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} archivebox.core.settings_logging.AsyncioCancelledShieldFilter.__init__
+```
+
+````{py:method} filter(record) -> bool
+:canonical: archivebox.core.settings_logging.AsyncioCancelledShieldFilter.filter
 
 ````
 

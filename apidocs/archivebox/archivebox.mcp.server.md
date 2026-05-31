@@ -65,21 +65,21 @@ Bases: {py:obj}`json.JSONEncoder`
 ```{autodoc2-docstring} archivebox.mcp.server.MCPJSONEncoder.__init__
 ```
 
-````{py:method} default(obj)
+````{py:method} default(o)
 :canonical: archivebox.mcp.server.MCPJSONEncoder.default
 
 ````
 
 `````
 
-````{py:function} click_type_to_json_schema_type(click_type) -> dict
+````{py:function} click_type_to_json_schema_type(click_type: click.ParamType) -> dict[str, typing.Any]
 :canonical: archivebox.mcp.server.click_type_to_json_schema_type
 
 ```{autodoc2-docstring} archivebox.mcp.server.click_type_to_json_schema_type
 ```
 ````
 
-````{py:function} click_command_to_mcp_tool(cmd_name: str, click_command: click.Command) -> dict
+````{py:function} click_command_to_mcp_tool(cmd_name: str, click_command: click.Command) -> dict[str, typing.Any]
 :canonical: archivebox.mcp.server.click_command_to_mcp_tool
 
 ```{autodoc2-docstring} archivebox.mcp.server.click_command_to_mcp_tool
@@ -105,7 +105,7 @@ Bases: {py:obj}`json.JSONEncoder`
 ```{autodoc2-docstring} archivebox.mcp.server.MCPServer.__init__
 ```
 
-````{py:method} get_click_command(cmd_name: str) -> typing.Optional[click.Command]
+````{py:method} get_click_command(cmd_name: str) -> click.Command | None
 :canonical: archivebox.mcp.server.MCPServer.get_click_command
 
 ```{autodoc2-docstring} archivebox.mcp.server.MCPServer.get_click_command

@@ -15,14 +15,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`APITokenAuthCheck <archivebox.api.auth.APITokenAuthCheck>`
-  - ```{autodoc2-docstring} archivebox.api.auth.APITokenAuthCheck
-    :summary:
-    ```
-* - {py:obj}`UserPassAuthCheck <archivebox.api.auth.UserPassAuthCheck>`
-  - ```{autodoc2-docstring} archivebox.api.auth.UserPassAuthCheck
-    :summary:
-    ```
 * - {py:obj}`HeaderTokenAuth <archivebox.api.auth.HeaderTokenAuth>`
   - ```{autodoc2-docstring} archivebox.api.auth.HeaderTokenAuth
     :summary:
@@ -33,14 +25,6 @@
     ```
 * - {py:obj}`QueryParamTokenAuth <archivebox.api.auth.QueryParamTokenAuth>`
   - ```{autodoc2-docstring} archivebox.api.auth.QueryParamTokenAuth
-    :summary:
-    ```
-* - {py:obj}`UsernameAndPasswordAuth <archivebox.api.auth.UsernameAndPasswordAuth>`
-  - ```{autodoc2-docstring} archivebox.api.auth.UsernameAndPasswordAuth
-    :summary:
-    ```
-* - {py:obj}`DjangoSessionAuth <archivebox.api.auth.DjangoSessionAuth>`
-  - ```{autodoc2-docstring} archivebox.api.auth.DjangoSessionAuth
     :summary:
     ```
 ````
@@ -63,6 +47,10 @@
   - ```{autodoc2-docstring} archivebox.api.auth.auth_using_password
     :summary:
     ```
+* - {py:obj}`_require_superuser <archivebox.api.auth._require_superuser>`
+  - ```{autodoc2-docstring} archivebox.api.auth._require_superuser
+    :summary:
+    ```
 ````
 
 ### Data
@@ -79,63 +67,38 @@
 
 ### API
 
-````{py:function} get_or_create_api_token(user)
+````{py:function} get_or_create_api_token(user: django.contrib.auth.models.User | None)
 :canonical: archivebox.api.auth.get_or_create_api_token
 
 ```{autodoc2-docstring} archivebox.api.auth.get_or_create_api_token
 ```
 ````
 
-````{py:function} auth_using_token(token, request: typing.Optional[django.http.HttpRequest] = None) -> typing.Optional[django.contrib.auth.models.AbstractBaseUser]
+````{py:function} auth_using_token(token: str | None, request: django.http.HttpRequest | None = None) -> django.contrib.auth.models.User | None
 :canonical: archivebox.api.auth.auth_using_token
 
 ```{autodoc2-docstring} archivebox.api.auth.auth_using_token
 ```
 ````
 
-````{py:function} auth_using_password(username, password, request: typing.Optional[django.http.HttpRequest] = None) -> typing.Optional[django.contrib.auth.models.AbstractBaseUser]
+````{py:function} auth_using_password(username: str | None, password: str | None, request: django.http.HttpRequest | None = None) -> django.contrib.auth.models.User | None
 :canonical: archivebox.api.auth.auth_using_password
 
 ```{autodoc2-docstring} archivebox.api.auth.auth_using_password
 ```
 ````
 
-`````{py:class} APITokenAuthCheck
-:canonical: archivebox.api.auth.APITokenAuthCheck
+````{py:function} _require_superuser(user: django.contrib.auth.models.User | None, request: django.http.HttpRequest, auth_method: str) -> django.contrib.auth.models.User | None
+:canonical: archivebox.api.auth._require_superuser
 
-```{autodoc2-docstring} archivebox.api.auth.APITokenAuthCheck
+```{autodoc2-docstring} archivebox.api.auth._require_superuser
 ```
-
-````{py:method} authenticate(request: django.http.HttpRequest, key: typing.Optional[str] = None) -> typing.Optional[django.contrib.auth.models.AbstractBaseUser]
-:canonical: archivebox.api.auth.APITokenAuthCheck.authenticate
-
-```{autodoc2-docstring} archivebox.api.auth.APITokenAuthCheck.authenticate
-```
-
 ````
-
-`````
-
-`````{py:class} UserPassAuthCheck
-:canonical: archivebox.api.auth.UserPassAuthCheck
-
-```{autodoc2-docstring} archivebox.api.auth.UserPassAuthCheck
-```
-
-````{py:method} authenticate(request: django.http.HttpRequest, username: typing.Optional[str] = None, password: typing.Optional[str] = None) -> typing.Optional[django.contrib.auth.models.AbstractBaseUser]
-:canonical: archivebox.api.auth.UserPassAuthCheck.authenticate
-
-```{autodoc2-docstring} archivebox.api.auth.UserPassAuthCheck.authenticate
-```
-
-````
-
-`````
 
 `````{py:class} HeaderTokenAuth()
 :canonical: archivebox.api.auth.HeaderTokenAuth
 
-Bases: {py:obj}`archivebox.api.auth.APITokenAuthCheck`, {py:obj}`ninja.security.APIKeyHeader`
+Bases: {py:obj}`ninja.security.APIKeyHeader`
 
 ```{autodoc2-docstring} archivebox.api.auth.HeaderTokenAuth
 ```
@@ -156,12 +119,20 @@ Bases: {py:obj}`archivebox.api.auth.APITokenAuthCheck`, {py:obj}`ninja.security.
 
 ````
 
+````{py:method} authenticate(request: django.http.HttpRequest, key: str | None) -> django.contrib.auth.models.User | None
+:canonical: archivebox.api.auth.HeaderTokenAuth.authenticate
+
+```{autodoc2-docstring} archivebox.api.auth.HeaderTokenAuth.authenticate
+```
+
+````
+
 `````
 
-````{py:class} BearerTokenAuth()
+`````{py:class} BearerTokenAuth()
 :canonical: archivebox.api.auth.BearerTokenAuth
 
-Bases: {py:obj}`archivebox.api.auth.APITokenAuthCheck`, {py:obj}`ninja.security.HttpBearer`
+Bases: {py:obj}`ninja.security.HttpBearer`
 
 ```{autodoc2-docstring} archivebox.api.auth.BearerTokenAuth
 ```
@@ -172,12 +143,20 @@ Bases: {py:obj}`archivebox.api.auth.APITokenAuthCheck`, {py:obj}`ninja.security.
 ```{autodoc2-docstring} archivebox.api.auth.BearerTokenAuth.__init__
 ```
 
+````{py:method} authenticate(request: django.http.HttpRequest, token: str) -> django.contrib.auth.models.User | None
+:canonical: archivebox.api.auth.BearerTokenAuth.authenticate
+
+```{autodoc2-docstring} archivebox.api.auth.BearerTokenAuth.authenticate
+```
+
 ````
+
+`````
 
 `````{py:class} QueryParamTokenAuth()
 :canonical: archivebox.api.auth.QueryParamTokenAuth
 
-Bases: {py:obj}`archivebox.api.auth.APITokenAuthCheck`, {py:obj}`ninja.security.APIKeyQuery`
+Bases: {py:obj}`ninja.security.APIKeyQuery`
 
 ```{autodoc2-docstring} archivebox.api.auth.QueryParamTokenAuth
 ```
@@ -198,42 +177,10 @@ Bases: {py:obj}`archivebox.api.auth.APITokenAuthCheck`, {py:obj}`ninja.security.
 
 ````
 
-`````
+````{py:method} authenticate(request: django.http.HttpRequest, key: str | None) -> django.contrib.auth.models.User | None
+:canonical: archivebox.api.auth.QueryParamTokenAuth.authenticate
 
-````{py:class} UsernameAndPasswordAuth()
-:canonical: archivebox.api.auth.UsernameAndPasswordAuth
-
-Bases: {py:obj}`archivebox.api.auth.UserPassAuthCheck`, {py:obj}`ninja.security.HttpBasicAuth`
-
-```{autodoc2-docstring} archivebox.api.auth.UsernameAndPasswordAuth
-```
-
-```{rubric} Initialization
-```
-
-```{autodoc2-docstring} archivebox.api.auth.UsernameAndPasswordAuth.__init__
-```
-
-````
-
-`````{py:class} DjangoSessionAuth
-:canonical: archivebox.api.auth.DjangoSessionAuth
-
-```{autodoc2-docstring} archivebox.api.auth.DjangoSessionAuth
-```
-
-````{py:method} __call__(request: django.http.HttpRequest) -> typing.Optional[django.contrib.auth.models.AbstractBaseUser]
-:canonical: archivebox.api.auth.DjangoSessionAuth.__call__
-
-```{autodoc2-docstring} archivebox.api.auth.DjangoSessionAuth.__call__
-```
-
-````
-
-````{py:method} authenticate(request: django.http.HttpRequest, **kwargs) -> typing.Optional[django.contrib.auth.models.AbstractBaseUser]
-:canonical: archivebox.api.auth.DjangoSessionAuth.authenticate
-
-```{autodoc2-docstring} archivebox.api.auth.DjangoSessionAuth.authenticate
+```{autodoc2-docstring} archivebox.api.auth.QueryParamTokenAuth.authenticate
 ```
 
 ````

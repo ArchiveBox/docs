@@ -20,9 +20,7 @@ archivebox.cli.archivebox_archiveresult
 archivebox.cli.archivebox_process
 archivebox.cli.archivebox_tag
 archivebox.cli.archivebox_config
-archivebox.cli.cli_utils
 archivebox.cli.archivebox_server
-archivebox.cli.tests_piping
 archivebox.cli.archivebox_binary
 archivebox.cli.archivebox_snapshot
 archivebox.cli.archivebox_pluginmap
@@ -40,6 +38,7 @@ archivebox.cli.archivebox_persona
 archivebox.cli.archivebox_snapshot_compat
 archivebox.cli.archivebox_add
 archivebox.cli.archivebox_status
+archivebox.cli.cli_util
 archivebox.cli.archivebox_run
 archivebox.cli.archivebox_init
 archivebox.cli.archivebox_help
@@ -86,6 +85,10 @@ archivebox.cli.archivebox_manage
   - ```{autodoc2-docstring} archivebox.cli.__command__
     :summary:
     ```
+* - {py:obj}`STDERR <archivebox.cli.STDERR>`
+  - ```{autodoc2-docstring} archivebox.cli.STDERR
+    :summary:
+    ```
 ````
 
 ### API
@@ -96,6 +99,16 @@ archivebox.cli.archivebox_manage
    'archivebox'
 
 ```{autodoc2-docstring} archivebox.cli.__command__
+```
+
+````
+
+````{py:data} STDERR
+:canonical: archivebox.cli.STDERR
+:value: >
+   'Console(...)'
+
+```{autodoc2-docstring} archivebox.cli.STDERR
 ```
 
 ````

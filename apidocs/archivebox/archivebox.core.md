@@ -14,6 +14,8 @@
 :maxdepth: 3
 
 archivebox.core.templatetags
+archivebox.core.management
+archivebox.core.sqlite_backend
 ```
 
 ## Submodules
@@ -22,21 +24,26 @@ archivebox.core.templatetags
 :titlesonly:
 :maxdepth: 1
 
-archivebox.core.host_utils
 archivebox.core.admin_archiveresults
 archivebox.core.admin_tags
 archivebox.core.models
 archivebox.core.admin_users
+archivebox.core.host_util
 archivebox.core.asgi
 archivebox.core.settings_logging
 archivebox.core.apps
 archivebox.core.widgets
 archivebox.core.admin_snapshots
 archivebox.core.forms
+archivebox.core.context_processors
+archivebox.core.tag_util
+archivebox.core.shutdown_util
 archivebox.core.admin
 archivebox.core.admin_site
 archivebox.core.settings
-archivebox.core.actors
+archivebox.core.permissions
+archivebox.core.recovery_util
+archivebox.core.takeover_util
 archivebox.core.urls
 archivebox.core.middleware
 archivebox.core.views
@@ -53,10 +60,6 @@ archivebox.core.wsgi
 
 * - {py:obj}`register_admin <archivebox.core.register_admin>`
   - ```{autodoc2-docstring} archivebox.core.register_admin
-    :summary:
-    ```
-* - {py:obj}`get_CONFIG <archivebox.core.get_CONFIG>`
-  - ```{autodoc2-docstring} archivebox.core.get_CONFIG
     :summary:
     ```
 ````
@@ -89,12 +92,5 @@ archivebox.core.wsgi
 :canonical: archivebox.core.register_admin
 
 ```{autodoc2-docstring} archivebox.core.register_admin
-```
-````
-
-````{py:function} get_CONFIG()
-:canonical: archivebox.core.get_CONFIG
-
-```{autodoc2-docstring} archivebox.core.get_CONFIG
 ```
 ````

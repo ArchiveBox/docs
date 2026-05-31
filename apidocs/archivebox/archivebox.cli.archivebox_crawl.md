@@ -77,21 +77,21 @@
 
 ````
 
-````{py:function} create_crawl(urls: typing.Iterable[str], depth: int = 0, tag: str = '', status: str = 'queued', created_by_id: typing.Optional[int] = None) -> int
+````{py:function} create_crawl(urls: collections.abc.Iterable[str], depth: int = 0, tag: str = '', status: str = 'queued', created_by_id: int | None = None) -> int
 :canonical: archivebox.cli.archivebox_crawl.create_crawl
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_crawl.create_crawl
 ```
 ````
 
-````{py:function} list_crawls(status: typing.Optional[str] = None, urls__icontains: typing.Optional[str] = None, max_depth: typing.Optional[int] = None, limit: typing.Optional[int] = None) -> int
+````{py:function} list_crawls(status: str | None = None, urls__icontains: str | None = None, max_depth: int | None = None, limit: int | None = None) -> int
 :canonical: archivebox.cli.archivebox_crawl.list_crawls
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_crawl.list_crawls
 ```
 ````
 
-````{py:function} update_crawls(status: typing.Optional[str] = None, max_depth: typing.Optional[int] = None) -> int
+````{py:function} update_crawls(status: str | None = None, max_depth: int | None = None) -> int
 :canonical: archivebox.cli.archivebox_crawl.update_crawls
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_crawl.update_crawls
@@ -119,14 +119,14 @@
 ```
 ````
 
-````{py:function} list_cmd(status: typing.Optional[str], urls__icontains: typing.Optional[str], max_depth: typing.Optional[int], limit: typing.Optional[int])
+````{py:function} list_cmd(status: str | None, urls__icontains: str | None, max_depth: int | None, limit: int | None)
 :canonical: archivebox.cli.archivebox_crawl.list_cmd
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_crawl.list_cmd
 ```
 ````
 
-````{py:function} update_cmd(status: typing.Optional[str], max_depth: typing.Optional[int])
+````{py:function} update_cmd(status: str | None, max_depth: int | None)
 :canonical: archivebox.cli.archivebox_crawl.update_cmd
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_crawl.update_cmd

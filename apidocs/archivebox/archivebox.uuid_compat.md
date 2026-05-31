@@ -35,7 +35,7 @@
 
 ### API
 
-````{py:function} uuid7()
+````{py:function} uuid7() -> uuid.UUID
 :canonical: archivebox.uuid_compat.uuid7
 
 ```{autodoc2-docstring} archivebox.uuid_compat.uuid7

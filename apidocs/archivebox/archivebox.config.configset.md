@@ -15,6 +15,8 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`CaseConfigParser <archivebox.config.configset.CaseConfigParser>`
+  -
 * - {py:obj}`IniConfigSettingsSource <archivebox.config.configset.IniConfigSettingsSource>`
   - ```{autodoc2-docstring} archivebox.config.configset.IniConfigSettingsSource
     :summary:
@@ -31,24 +33,8 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`get_config <archivebox.config.configset.get_config>`
-  - ```{autodoc2-docstring} archivebox.config.configset.get_config
-    :summary:
-    ```
-* - {py:obj}`get_flat_config <archivebox.config.configset.get_flat_config>`
-  - ```{autodoc2-docstring} archivebox.config.configset.get_flat_config
-    :summary:
-    ```
-* - {py:obj}`get_all_configs <archivebox.config.configset.get_all_configs>`
-  - ```{autodoc2-docstring} archivebox.config.configset.get_all_configs
-    :summary:
-    ```
-* - {py:obj}`_parse_env_value <archivebox.config.configset._parse_env_value>`
-  - ```{autodoc2-docstring} archivebox.config.configset._parse_env_value
-    :summary:
-    ```
-* - {py:obj}`get_worker_concurrency <archivebox.config.configset.get_worker_concurrency>`
-  - ```{autodoc2-docstring} archivebox.config.configset.get_worker_concurrency
+* - {py:obj}`_read_ini_config_cached <archivebox.config.configset._read_ini_config_cached>`
+  - ```{autodoc2-docstring} archivebox.config.configset._read_ini_config_cached
     :summary:
     ```
 ````
@@ -59,13 +45,60 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`DEFAULT_WORKER_CONCURRENCY <archivebox.config.configset.DEFAULT_WORKER_CONCURRENCY>`
-  - ```{autodoc2-docstring} archivebox.config.configset.DEFAULT_WORKER_CONCURRENCY
+* - {py:obj}`COMPUTED_CONFIG_KEYS <archivebox.config.configset.COMPUTED_CONFIG_KEYS>`
+  - ```{autodoc2-docstring} archivebox.config.configset.COMPUTED_CONFIG_KEYS
+    :summary:
+    ```
+* - {py:obj}`_INI_CACHE <archivebox.config.configset._INI_CACHE>`
+  - ```{autodoc2-docstring} archivebox.config.configset._INI_CACHE
     :summary:
     ```
 ````
 
 ### API
+
+````{py:data} COMPUTED_CONFIG_KEYS
+:canonical: archivebox.config.configset.COMPUTED_CONFIG_KEYS
+:value: >
+   ('TERM_WIDTH', 'COMMIT_HASH', 'BUILD_TIME', 'USES_SUBDOMAIN_ROUTING', 'ENABLES_FULL_JS_REPLAY', 'CON...
+
+```{autodoc2-docstring} archivebox.config.configset.COMPUTED_CONFIG_KEYS
+```
+
+````
+
+`````{py:class} CaseConfigParser(defaults=None, dict_type=_default_dict, allow_no_value=False, *, delimiters=('=', ':'), comment_prefixes=('#', ';'), inline_comment_prefixes=None, strict=True, empty_lines_in_values=True, default_section=DEFAULTSECT, interpolation=_UNSET, converters=_UNSET, allow_unnamed_section=False)
+:canonical: archivebox.config.configset.CaseConfigParser
+
+Bases: {py:obj}`configparser.ConfigParser`
+
+````{py:method} optionxform(optionstr: str) -> str
+:canonical: archivebox.config.configset.CaseConfigParser.optionxform
+
+```{autodoc2-docstring} archivebox.config.configset.CaseConfigParser.optionxform
+```
+
+````
+
+`````
+
+````{py:data} _INI_CACHE
+:canonical: archivebox.config.configset._INI_CACHE
+:type: dict[tuple[str, float], dict[str, typing.Any]]
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.configset._INI_CACHE
+```
+
+````
+
+````{py:function} _read_ini_config_cached(config_path_str: str) -> dict[str, typing.Any]
+:canonical: archivebox.config.configset._read_ini_config_cached
+
+```{autodoc2-docstring} archivebox.config.configset._read_ini_config_cached
+```
+````
 
 `````{py:class} IniConfigSettingsSource(settings_cls: type[pydantic_settings.main.BaseSettings])
 :canonical: archivebox.config.configset.IniConfigSettingsSource
@@ -81,12 +114,12 @@ Bases: {py:obj}`pydantic_settings.PydanticBaseSettingsSource`
 ```{autodoc2-docstring} archivebox.config.configset.IniConfigSettingsSource.__init__
 ```
 
-````{py:method} get_field_value(field: typing.Any, field_name: str) -> typing.Tuple[typing.Any, str, bool]
+````{py:method} get_field_value(field: typing.Any, field_name: str) -> tuple[typing.Any, str, bool]
 :canonical: archivebox.config.configset.IniConfigSettingsSource.get_field_value
 
 ````
 
-````{py:method} __call__() -> typing.Dict[str, typing.Any]
+````{py:method} __call__() -> dict[str, typing.Any]
 :canonical: archivebox.config.configset.IniConfigSettingsSource.__call__
 
 ```{autodoc2-docstring} archivebox.config.configset.IniConfigSettingsSource.__call__
@@ -94,7 +127,7 @@ Bases: {py:obj}`pydantic_settings.PydanticBaseSettingsSource`
 
 ````
 
-````{py:method} _load_config_file() -> typing.Dict[str, typing.Any]
+````{py:method} _load_config_file() -> dict[str, typing.Any]
 :canonical: archivebox.config.configset.IniConfigSettingsSource._load_config_file
 
 ```{autodoc2-docstring} archivebox.config.configset.IniConfigSettingsSource._load_config_file
@@ -121,14 +154,25 @@ Bases: {py:obj}`pydantic_settings.BaseSettings`
 ````{py:attribute} model_config
 :canonical: archivebox.config.configset.BaseConfigSet.model_config
 :value: >
-   'ConfigDict(...)'
+   'SettingsConfigDict(...)'
 
 ```{autodoc2-docstring} archivebox.config.configset.BaseConfigSet.model_config
 ```
 
 ````
 
-````{py:method} settings_customise_sources(settings_cls: typing.Type[pydantic_settings.BaseSettings], init_settings: pydantic_settings.PydanticBaseSettingsSource, env_settings: pydantic_settings.PydanticBaseSettingsSource, dotenv_settings: pydantic_settings.PydanticBaseSettingsSource, file_secret_settings: pydantic_settings.PydanticBaseSettingsSource) -> typing.Tuple[pydantic_settings.PydanticBaseSettingsSource, ...]
+````{py:attribute} computed_config_keys
+:canonical: archivebox.config.configset.BaseConfigSet.computed_config_keys
+:type: typing.ClassVar[tuple[str, ...]]
+:value: >
+   ()
+
+```{autodoc2-docstring} archivebox.config.configset.BaseConfigSet.computed_config_keys
+```
+
+````
+
+````{py:method} settings_customise_sources(settings_cls: type[pydantic_settings.BaseSettings], init_settings: pydantic_settings.PydanticBaseSettingsSource, env_settings: pydantic_settings.PydanticBaseSettingsSource, dotenv_settings: pydantic_settings.PydanticBaseSettingsSource, file_secret_settings: pydantic_settings.PydanticBaseSettingsSource) -> tuple[pydantic_settings.PydanticBaseSettingsSource, ...]
 :canonical: archivebox.config.configset.BaseConfigSet.settings_customise_sources
 :classmethod:
 
@@ -137,7 +181,7 @@ Bases: {py:obj}`pydantic_settings.BaseSettings`
 
 ````
 
-````{py:method} load_from_file(config_path: pathlib.Path) -> typing.Dict[str, str]
+````{py:method} load_from_file(config_path: pathlib.Path) -> dict[str, str]
 :canonical: archivebox.config.configset.BaseConfigSet.load_from_file
 :classmethod:
 
@@ -146,57 +190,76 @@ Bases: {py:obj}`pydantic_settings.BaseSettings`
 
 ````
 
-````{py:method} update_in_place(warn: bool = True, persist: bool = False, **kwargs) -> None
-:canonical: archivebox.config.configset.BaseConfigSet.update_in_place
+````{py:method} __getitem__(key: str) -> typing.Any
+:canonical: archivebox.config.configset.BaseConfigSet.__getitem__
 
-```{autodoc2-docstring} archivebox.config.configset.BaseConfigSet.update_in_place
+```{autodoc2-docstring} archivebox.config.configset.BaseConfigSet.__getitem__
+```
+
+````
+
+````{py:method} __setitem__(key: str, value: typing.Any) -> None
+:canonical: archivebox.config.configset.BaseConfigSet.__setitem__
+
+```{autodoc2-docstring} archivebox.config.configset.BaseConfigSet.__setitem__
+```
+
+````
+
+````{py:method} update(*args, **kwargs) -> None
+:canonical: archivebox.config.configset.BaseConfigSet.update
+
+```{autodoc2-docstring} archivebox.config.configset.BaseConfigSet.update
+```
+
+````
+
+````{py:method} __contains__(key: str) -> bool
+:canonical: archivebox.config.configset.BaseConfigSet.__contains__
+
+```{autodoc2-docstring} archivebox.config.configset.BaseConfigSet.__contains__
+```
+
+````
+
+````{py:method} get(key: str, default: typing.Any = None) -> typing.Any
+:canonical: archivebox.config.configset.BaseConfigSet.get
+
+```{autodoc2-docstring} archivebox.config.configset.BaseConfigSet.get
+```
+
+````
+
+````{py:method} as_dict() -> dict[str, typing.Any]
+:canonical: archivebox.config.configset.BaseConfigSet.as_dict
+
+```{autodoc2-docstring} archivebox.config.configset.BaseConfigSet.as_dict
+```
+
+````
+
+````{py:method} items()
+:canonical: archivebox.config.configset.BaseConfigSet.items
+
+```{autodoc2-docstring} archivebox.config.configset.BaseConfigSet.items
+```
+
+````
+
+````{py:method} keys()
+:canonical: archivebox.config.configset.BaseConfigSet.keys
+
+```{autodoc2-docstring} archivebox.config.configset.BaseConfigSet.keys
+```
+
+````
+
+````{py:method} values()
+:canonical: archivebox.config.configset.BaseConfigSet.values
+
+```{autodoc2-docstring} archivebox.config.configset.BaseConfigSet.values
 ```
 
 ````
 
 `````
-
-````{py:function} get_config(defaults: typing.Optional[typing.Dict] = None, persona: typing.Any = None, user: typing.Any = None, crawl: typing.Any = None, snapshot: typing.Any = None, archiveresult: typing.Any = None, machine: typing.Any = None) -> typing.Dict[str, typing.Any]
-:canonical: archivebox.config.configset.get_config
-
-```{autodoc2-docstring} archivebox.config.configset.get_config
-```
-````
-
-````{py:function} get_flat_config() -> typing.Dict[str, typing.Any]
-:canonical: archivebox.config.configset.get_flat_config
-
-```{autodoc2-docstring} archivebox.config.configset.get_flat_config
-```
-````
-
-````{py:function} get_all_configs() -> typing.Dict[str, archivebox.config.configset.BaseConfigSet]
-:canonical: archivebox.config.configset.get_all_configs
-
-```{autodoc2-docstring} archivebox.config.configset.get_all_configs
-```
-````
-
-````{py:function} _parse_env_value(value: str, default: typing.Any = None) -> typing.Any
-:canonical: archivebox.config.configset._parse_env_value
-
-```{autodoc2-docstring} archivebox.config.configset._parse_env_value
-```
-````
-
-````{py:data} DEFAULT_WORKER_CONCURRENCY
-:canonical: archivebox.config.configset.DEFAULT_WORKER_CONCURRENCY
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.configset.DEFAULT_WORKER_CONCURRENCY
-```
-
-````
-
-````{py:function} get_worker_concurrency() -> typing.Dict[str, int]
-:canonical: archivebox.config.configset.get_worker_concurrency
-
-```{autodoc2-docstring} archivebox.config.configset.get_worker_concurrency
-```
-````

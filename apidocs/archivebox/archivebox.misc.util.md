@@ -27,6 +27,26 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`filter_queryset_by_uuid_substring <archivebox.misc.util.filter_queryset_by_uuid_substring>`
+  - ```{autodoc2-docstring} archivebox.misc.util.filter_queryset_by_uuid_substring
+    :summary:
+    ```
+* - {py:obj}`ts_to_date_str <archivebox.misc.util.ts_to_date_str>`
+  - ```{autodoc2-docstring} archivebox.misc.util.ts_to_date_str
+    :summary:
+    ```
+* - {py:obj}`sanitize_extracted_url <archivebox.misc.util.sanitize_extracted_url>`
+  - ```{autodoc2-docstring} archivebox.misc.util.sanitize_extracted_url
+    :summary:
+    ```
+* - {py:obj}`validate_url_length <archivebox.misc.util.validate_url_length>`
+  - ```{autodoc2-docstring} archivebox.misc.util.validate_url_length
+    :summary:
+    ```
+* - {py:obj}`validate_url <archivebox.misc.util.validate_url>`
+  - ```{autodoc2-docstring} archivebox.misc.util.validate_url
+    :summary:
+    ```
 * - {py:obj}`parens_are_matched <archivebox.misc.util.parens_are_matched>`
   - ```{autodoc2-docstring} archivebox.misc.util.parens_are_matched
     :summary:
@@ -35,12 +55,16 @@
   - ```{autodoc2-docstring} archivebox.misc.util.fix_url_from_markdown
     :summary:
     ```
+* - {py:obj}`split_comma_separated_urls <archivebox.misc.util.split_comma_separated_urls>`
+  - ```{autodoc2-docstring} archivebox.misc.util.split_comma_separated_urls
+    :summary:
+    ```
 * - {py:obj}`find_all_urls <archivebox.misc.util.find_all_urls>`
   - ```{autodoc2-docstring} archivebox.misc.util.find_all_urls
     :summary:
     ```
-* - {py:obj}`is_static_file <archivebox.misc.util.is_static_file>`
-  - ```{autodoc2-docstring} archivebox.misc.util.is_static_file
+* - {py:obj}`parse_filesize_to_bytes <archivebox.misc.util.parse_filesize_to_bytes>`
+  - ```{autodoc2-docstring} archivebox.misc.util.parse_filesize_to_bytes
     :summary:
     ```
 * - {py:obj}`enforce_types <archivebox.misc.util.enforce_types>`
@@ -51,10 +75,6 @@
   - ```{autodoc2-docstring} archivebox.misc.util.docstring
     :summary:
     ```
-* - {py:obj}`str_between <archivebox.misc.util.str_between>`
-  - ```{autodoc2-docstring} archivebox.misc.util.str_between
-    :summary:
-    ```
 * - {py:obj}`parse_date <archivebox.misc.util.parse_date>`
   - ```{autodoc2-docstring} archivebox.misc.util.parse_date
     :summary:
@@ -63,24 +83,12 @@
   - ```{autodoc2-docstring} archivebox.misc.util.download_url
     :summary:
     ```
-* - {py:obj}`get_headers <archivebox.misc.util.get_headers>`
-  - ```{autodoc2-docstring} archivebox.misc.util.get_headers
-    :summary:
-    ```
 * - {py:obj}`ansi_to_html <archivebox.misc.util.ansi_to_html>`
   - ```{autodoc2-docstring} archivebox.misc.util.ansi_to_html
     :summary:
     ```
-* - {py:obj}`dedupe <archivebox.misc.util.dedupe>`
-  - ```{autodoc2-docstring} archivebox.misc.util.dedupe
-    :summary:
-    ```
 * - {py:obj}`to_json <archivebox.misc.util.to_json>`
   - ```{autodoc2-docstring} archivebox.misc.util.to_json
-    :summary:
-    ```
-* - {py:obj}`chrome_cleanup <archivebox.misc.util.chrome_cleanup>`
-  - ```{autodoc2-docstring} archivebox.misc.util.chrome_cleanup
     :summary:
     ```
 ````
@@ -139,18 +147,6 @@
   - ```{autodoc2-docstring} archivebox.misc.util.base_url
     :summary:
     ```
-* - {py:obj}`without_www <archivebox.misc.util.without_www>`
-  - ```{autodoc2-docstring} archivebox.misc.util.without_www
-    :summary:
-    ```
-* - {py:obj}`without_trailing_slash <archivebox.misc.util.without_trailing_slash>`
-  - ```{autodoc2-docstring} archivebox.misc.util.without_trailing_slash
-    :summary:
-    ```
-* - {py:obj}`hashurl <archivebox.misc.util.hashurl>`
-  - ```{autodoc2-docstring} archivebox.misc.util.hashurl
-    :summary:
-    ```
 * - {py:obj}`urlencode <archivebox.misc.util.urlencode>`
   - ```{autodoc2-docstring} archivebox.misc.util.urlencode
     :summary:
@@ -167,18 +163,6 @@
   - ```{autodoc2-docstring} archivebox.misc.util.htmldecode
     :summary:
     ```
-* - {py:obj}`short_ts <archivebox.misc.util.short_ts>`
-  - ```{autodoc2-docstring} archivebox.misc.util.short_ts
-    :summary:
-    ```
-* - {py:obj}`ts_to_date_str <archivebox.misc.util.ts_to_date_str>`
-  - ```{autodoc2-docstring} archivebox.misc.util.ts_to_date_str
-    :summary:
-    ```
-* - {py:obj}`ts_to_iso <archivebox.misc.util.ts_to_iso>`
-  - ```{autodoc2-docstring} archivebox.misc.util.ts_to_iso
-    :summary:
-    ```
 * - {py:obj}`COLOR_REGEX <archivebox.misc.util.COLOR_REGEX>`
   - ```{autodoc2-docstring} archivebox.misc.util.COLOR_REGEX
     :summary:
@@ -187,17 +171,36 @@
   - ```{autodoc2-docstring} archivebox.misc.util.URL_REGEX
     :summary:
     ```
-* - {py:obj}`URL_REGEX_TESTS <archivebox.misc.util.URL_REGEX_TESTS>`
-  - ```{autodoc2-docstring} archivebox.misc.util.URL_REGEX_TESTS
+* - {py:obj}`MAX_URL_LENGTH <archivebox.misc.util.MAX_URL_LENGTH>`
+  - ```{autodoc2-docstring} archivebox.misc.util.MAX_URL_LENGTH
     :summary:
     ```
-* - {py:obj}`_test_url_strs <archivebox.misc.util._test_url_strs>`
-  - ```{autodoc2-docstring} archivebox.misc.util._test_url_strs
+* - {py:obj}`QUOTE_DELIMITERS <archivebox.misc.util.QUOTE_DELIMITERS>`
+  - ```{autodoc2-docstring} archivebox.misc.util.QUOTE_DELIMITERS
+    :summary:
+    ```
+* - {py:obj}`QUOTE_ENTITY_DELIMITERS <archivebox.misc.util.QUOTE_ENTITY_DELIMITERS>`
+  - ```{autodoc2-docstring} archivebox.misc.util.QUOTE_ENTITY_DELIMITERS
+    :summary:
+    ```
+* - {py:obj}`URL_ENTITY_REPLACEMENTS <archivebox.misc.util.URL_ENTITY_REPLACEMENTS>`
+  - ```{autodoc2-docstring} archivebox.misc.util.URL_ENTITY_REPLACEMENTS
+    :summary:
+    ```
+* - {py:obj}`FILESIZE_UNITS <archivebox.misc.util.FILESIZE_UNITS>`
+  - ```{autodoc2-docstring} archivebox.misc.util.FILESIZE_UNITS
     :summary:
     ```
 ````
 
 ### API
+
+````{py:function} filter_queryset_by_uuid_substring(queryset, slug: str, field: str = 'id')
+:canonical: archivebox.misc.util.filter_queryset_by_uuid_substring
+
+```{autodoc2-docstring} archivebox.misc.util.filter_queryset_by_uuid_substring
+```
+````
 
 ````{py:data} scheme
 :canonical: archivebox.misc.util.scheme
@@ -319,36 +322,6 @@
 
 ````
 
-````{py:data} without_www
-:canonical: archivebox.misc.util.without_www
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.misc.util.without_www
-```
-
-````
-
-````{py:data} without_trailing_slash
-:canonical: archivebox.misc.util.without_trailing_slash
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.misc.util.without_trailing_slash
-```
-
-````
-
-````{py:data} hashurl
-:canonical: archivebox.misc.util.hashurl
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.misc.util.hashurl
-```
-
-````
-
 ````{py:data} urlencode
 :canonical: archivebox.misc.util.urlencode
 :value: >
@@ -389,34 +362,11 @@
 
 ````
 
-````{py:data} short_ts
-:canonical: archivebox.misc.util.short_ts
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.misc.util.short_ts
-```
-
-````
-
-````{py:data} ts_to_date_str
+````{py:function} ts_to_date_str(ts: typing.Any) -> str | None
 :canonical: archivebox.misc.util.ts_to_date_str
-:value: >
-   None
 
 ```{autodoc2-docstring} archivebox.misc.util.ts_to_date_str
 ```
-
-````
-
-````{py:data} ts_to_iso
-:canonical: archivebox.misc.util.ts_to_iso
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.misc.util.ts_to_iso
-```
-
 ````
 
 ````{py:data} COLOR_REGEX
@@ -439,6 +389,78 @@
 
 ````
 
+````{py:data} MAX_URL_LENGTH
+:canonical: archivebox.misc.util.MAX_URL_LENGTH
+:value: >
+   65535
+
+```{autodoc2-docstring} archivebox.misc.util.MAX_URL_LENGTH
+```
+
+````
+
+````{py:data} QUOTE_DELIMITERS
+:canonical: archivebox.misc.util.QUOTE_DELIMITERS
+:value: >
+   ('"', "'", '`', '“', '”', '‘', '’')
+
+```{autodoc2-docstring} archivebox.misc.util.QUOTE_DELIMITERS
+```
+
+````
+
+````{py:data} QUOTE_ENTITY_DELIMITERS
+:canonical: archivebox.misc.util.QUOTE_ENTITY_DELIMITERS
+:value: >
+   ('&quot;', '&#34;', '&#x22;', '&apos;', '&#39;', '&#x27;')
+
+```{autodoc2-docstring} archivebox.misc.util.QUOTE_ENTITY_DELIMITERS
+```
+
+````
+
+````{py:data} URL_ENTITY_REPLACEMENTS
+:canonical: archivebox.misc.util.URL_ENTITY_REPLACEMENTS
+:value: >
+   (('&amp;', '&'), ('&#38;', '&'), ('&#x26;', '&'))
+
+```{autodoc2-docstring} archivebox.misc.util.URL_ENTITY_REPLACEMENTS
+```
+
+````
+
+````{py:data} FILESIZE_UNITS
+:canonical: archivebox.misc.util.FILESIZE_UNITS
+:type: dict[str, int]
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.misc.util.FILESIZE_UNITS
+```
+
+````
+
+````{py:function} sanitize_extracted_url(url: str) -> str
+:canonical: archivebox.misc.util.sanitize_extracted_url
+
+```{autodoc2-docstring} archivebox.misc.util.sanitize_extracted_url
+```
+````
+
+````{py:function} validate_url_length(url: str) -> str
+:canonical: archivebox.misc.util.validate_url_length
+
+```{autodoc2-docstring} archivebox.misc.util.validate_url_length
+```
+````
+
+````{py:function} validate_url(url: str) -> str
+:canonical: archivebox.misc.util.validate_url
+
+```{autodoc2-docstring} archivebox.misc.util.validate_url
+```
+````
+
 ````{py:function} parens_are_matched(string: str, open_char='(', close_char=')')
 :canonical: archivebox.misc.util.parens_are_matched
 
@@ -453,6 +475,13 @@
 ```
 ````
 
+````{py:function} split_comma_separated_urls(url: str)
+:canonical: archivebox.misc.util.split_comma_separated_urls
+
+```{autodoc2-docstring} archivebox.misc.util.split_comma_separated_urls
+```
+````
+
 ````{py:function} find_all_urls(urls_str: str)
 :canonical: archivebox.misc.util.find_all_urls
 
@@ -460,10 +489,10 @@
 ```
 ````
 
-````{py:function} is_static_file(url: str)
-:canonical: archivebox.misc.util.is_static_file
+````{py:function} parse_filesize_to_bytes(value: str | int | float | None) -> int
+:canonical: archivebox.misc.util.parse_filesize_to_bytes
 
-```{autodoc2-docstring} archivebox.misc.util.is_static_file
+```{autodoc2-docstring} archivebox.misc.util.parse_filesize_to_bytes
 ```
 ````
 
@@ -474,38 +503,24 @@
 ```
 ````
 
-````{py:function} docstring(text: typing.Optional[str])
+````{py:function} docstring(text: str | None)
 :canonical: archivebox.misc.util.docstring
 
 ```{autodoc2-docstring} archivebox.misc.util.docstring
 ```
 ````
 
-````{py:function} str_between(string: str, start: str, end: str = None) -> str
-:canonical: archivebox.misc.util.str_between
-
-```{autodoc2-docstring} archivebox.misc.util.str_between
-```
-````
-
-````{py:function} parse_date(date: typing.Any) -> datetime.datetime
+````{py:function} parse_date(date: typing.Any) -> datetime.datetime | None
 :canonical: archivebox.misc.util.parse_date
 
 ```{autodoc2-docstring} archivebox.misc.util.parse_date
 ```
 ````
 
-````{py:function} download_url(url: str, timeout: int = None) -> str
+````{py:function} download_url(url: str, timeout: int | None = None, config=None, **config_kwargs) -> str
 :canonical: archivebox.misc.util.download_url
 
 ```{autodoc2-docstring} archivebox.misc.util.download_url
-```
-````
-
-````{py:function} get_headers(url: str, timeout: int | None = None) -> str
-:canonical: archivebox.misc.util.get_headers
-
-```{autodoc2-docstring} archivebox.misc.util.get_headers
 ```
 ````
 
@@ -513,13 +528,6 @@
 :canonical: archivebox.misc.util.ansi_to_html
 
 ```{autodoc2-docstring} archivebox.misc.util.ansi_to_html
-```
-````
-
-````{py:function} dedupe(options: typing.List[str]) -> typing.List[str]
-:canonical: archivebox.misc.util.dedupe
-
-```{autodoc2-docstring} archivebox.misc.util.dedupe
 ```
 ````
 
@@ -537,43 +545,16 @@ Bases: {py:obj}`json.JSONEncoder`
 ```{autodoc2-docstring} archivebox.misc.util.ExtendedEncoder.__init__
 ```
 
-````{py:method} default(obj)
+````{py:method} default(o)
 :canonical: archivebox.misc.util.ExtendedEncoder.default
 
 ````
 
 `````
 
-````{py:function} to_json(obj: typing.Any, indent: typing.Optional[int] = 4, sort_keys: bool = True) -> str
+````{py:function} to_json(obj: typing.Any, indent: int | None = 4, sort_keys: bool = True) -> str
 :canonical: archivebox.misc.util.to_json
 
 ```{autodoc2-docstring} archivebox.misc.util.to_json
-```
-````
-
-````{py:data} URL_REGEX_TESTS
-:canonical: archivebox.misc.util.URL_REGEX_TESTS
-:value: >
-   [('https://example.com', ['https://example.com']), ('http://abc-file234example.com/abc?def=abc&23423...
-
-```{autodoc2-docstring} archivebox.misc.util.URL_REGEX_TESTS
-```
-
-````
-
-````{py:data} _test_url_strs
-:canonical: archivebox.misc.util._test_url_strs
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.misc.util._test_url_strs
-```
-
-````
-
-````{py:function} chrome_cleanup()
-:canonical: archivebox.misc.util.chrome_cleanup
-
-```{autodoc2-docstring} archivebox.misc.util.chrome_cleanup
 ```
 ````

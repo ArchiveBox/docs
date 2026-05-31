@@ -90,6 +90,62 @@ Bases: {py:obj}`django.contrib.admin.AdminSite`
 
 ````
 
+````{py:method} each_context(request: django.http.HttpRequest) -> dict[str, typing.Any]
+:canonical: archivebox.core.admin_site.ArchiveBoxAdmin.each_context
+
+````
+
+````{py:method} _format_object_count(count: int) -> tuple[int, str, str]
+:canonical: archivebox.core.admin_site.ArchiveBoxAdmin._format_object_count
+:staticmethod:
+
+```{autodoc2-docstring} archivebox.core.admin_site.ArchiveBoxAdmin._format_object_count
+```
+
+````
+
+````{py:method} _set_model_object_count(models_by_table: dict[str, list[dict[str, typing.Any]]], table: str, count: int, title: str | None = None) -> None
+:canonical: archivebox.core.admin_site.ArchiveBoxAdmin._set_model_object_count
+
+```{autodoc2-docstring} archivebox.core.admin_site.ArchiveBoxAdmin._set_model_object_count
+```
+
+````
+
+````{py:method} get_app_list(request: django.http.HttpRequest, app_label: str | None = None) -> list[admin_data_views.typing.AppDict]
+:canonical: archivebox.core.admin_site.ArchiveBoxAdmin.get_app_list
+
+````
+
+````{py:method} admin_data_index_view(request: django.http.HttpRequest, **kwargs: typing.Any) -> django.template.response.TemplateResponse
+:canonical: archivebox.core.admin_site.ArchiveBoxAdmin.admin_data_index_view
+
+```{autodoc2-docstring} archivebox.core.admin_site.ArchiveBoxAdmin.admin_data_index_view
+```
+
+````
+
+````{py:method} index(request: django.http.HttpRequest, extra_context: dict[str, typing.Any] | None = None) -> django.template.response.TemplateResponse
+:canonical: archivebox.core.admin_site.ArchiveBoxAdmin.index
+
+````
+
+````{py:method} get_admin_data_urls() -> list[URLResolver | URLPattern]
+:canonical: archivebox.core.admin_site.ArchiveBoxAdmin.get_admin_data_urls
+
+```{autodoc2-docstring} archivebox.core.admin_site.ArchiveBoxAdmin.get_admin_data_urls
+```
+
+````
+
+````{py:method} get_urls() -> list[URLResolver | URLPattern]
+:canonical: archivebox.core.admin_site.ArchiveBoxAdmin.get_urls
+
+```{autodoc2-docstring} archivebox.core.admin_site.ArchiveBoxAdmin.get_urls
+```
+
+````
+
 `````
 
 ````{py:data} archivebox_admin

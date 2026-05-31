@@ -31,6 +31,14 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`_render_copy_block <archivebox.machine.admin._render_copy_block>`
+  - ```{autodoc2-docstring} archivebox.machine.admin._render_copy_block
+    :summary:
+    ```
+* - {py:obj}`_format_process_duration_seconds <archivebox.machine.admin._format_process_duration_seconds>`
+  - ```{autodoc2-docstring} archivebox.machine.admin._format_process_duration_seconds
+    :summary:
+    ```
 * - {py:obj}`register_admin <archivebox.machine.admin.register_admin>`
   - ```{autodoc2-docstring} archivebox.machine.admin.register_admin
     :summary:
@@ -38,6 +46,20 @@
 ````
 
 ### API
+
+````{py:function} _render_copy_block(text: str, *, multiline: bool = False)
+:canonical: archivebox.machine.admin._render_copy_block
+
+```{autodoc2-docstring} archivebox.machine.admin._render_copy_block
+```
+````
+
+````{py:function} _format_process_duration_seconds(started_at, ended_at) -> str
+:canonical: archivebox.machine.admin._format_process_duration_seconds
+
+```{autodoc2-docstring} archivebox.machine.admin._format_process_duration_seconds
+```
+````
 
 `````{py:class} MachineAdmin(model, admin_site)
 :canonical: archivebox.machine.admin.MachineAdmin
@@ -47,7 +69,7 @@ Bases: {py:obj}`archivebox.base_models.admin.ConfigEditorMixin`, {py:obj}`archiv
 ````{py:attribute} list_display
 :canonical: archivebox.machine.admin.MachineAdmin.list_display
 :value: >
-   ('id', 'created_at', 'hostname', 'ips', 'os_platform', 'hw_in_docker', 'hw_in_vm', 'hw_manufacturer'...
+   ('id_display', 'created_at', 'hostname', 'ips', 'os_platform', 'hw_in_docker', 'hw_in_vm', 'hw_manuf...
 
 ```{autodoc2-docstring} archivebox.machine.admin.MachineAdmin.list_display
 ```
@@ -136,6 +158,14 @@ Bases: {py:obj}`archivebox.base_models.admin.ConfigEditorMixin`, {py:obj}`archiv
 :canonical: archivebox.machine.admin.MachineAdmin.health_display
 
 ```{autodoc2-docstring} archivebox.machine.admin.MachineAdmin.health_display
+```
+
+````
+
+````{py:method} id_display(machine)
+:canonical: archivebox.machine.admin.MachineAdmin.id_display
+
+```{autodoc2-docstring} archivebox.machine.admin.MachineAdmin.id_display
 ```
 
 ````
@@ -293,7 +323,7 @@ Bases: {py:obj}`archivebox.base_models.admin.BaseModelAdmin`
 ````{py:attribute} readonly_fields
 :canonical: archivebox.machine.admin.BinaryAdmin.readonly_fields
 :value: >
-   ('created_at', 'modified_at')
+   ('created_at', 'modified_at', 'output_dir')
 
 ```{autodoc2-docstring} archivebox.machine.admin.BinaryAdmin.readonly_fields
 ```
@@ -376,7 +406,7 @@ Bases: {py:obj}`archivebox.base_models.admin.BaseModelAdmin`
 ````{py:attribute} list_display
 :canonical: archivebox.machine.admin.ProcessAdmin.list_display
 :value: >
-   ('id', 'created_at', 'machine_info', 'archiveresult_link', 'cmd_str', 'status', 'exit_code', 'pid', ...
+   ('id', 'created_at', 'machine_info', 'archiveresult_link', 'snapshot_link', 'crawl_link', 'cmd_str',...
 
 ```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.list_display
 ```
@@ -386,7 +416,7 @@ Bases: {py:obj}`archivebox.base_models.admin.BaseModelAdmin`
 ````{py:attribute} sort_fields
 :canonical: archivebox.machine.admin.ProcessAdmin.sort_fields
 :value: >
-   ('id', 'created_at', 'status', 'exit_code', 'pid')
+   ('id', 'created_at', 'machine_info', 'archiveresult_link', 'snapshot_link', 'crawl_link', 'cmd_str',...
 
 ```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.sort_fields
 ```
@@ -406,7 +436,7 @@ Bases: {py:obj}`archivebox.base_models.admin.BaseModelAdmin`
 ````{py:attribute} readonly_fields
 :canonical: archivebox.machine.admin.ProcessAdmin.readonly_fields
 :value: >
-   ('created_at', 'modified_at', 'machine', 'binary', 'iface', 'archiveresult_link')
+   ('created_at', 'modified_at', 'machine', 'binary_link', 'iface_link', 'archiveresult_link', 'snapsho...
 
 ```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.readonly_fields
 ```
@@ -456,9 +486,48 @@ Bases: {py:obj}`archivebox.base_models.admin.BaseModelAdmin`
 ````{py:attribute} actions
 :canonical: archivebox.machine.admin.ProcessAdmin.actions
 :value: >
-   ['delete_selected']
+   ['kill_processes', 'delete_selected']
 
 ```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.actions
+```
+
+````
+
+````{py:attribute} change_actions
+:canonical: archivebox.machine.admin.ProcessAdmin.change_actions
+:value: >
+   ['kill_process']
+
+```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.change_actions
+```
+
+````
+
+````{py:method} get_queryset(request)
+:canonical: archivebox.machine.admin.ProcessAdmin.get_queryset
+
+````
+
+````{py:method} _terminate_processes(request, processes)
+:canonical: archivebox.machine.admin.ProcessAdmin._terminate_processes
+
+```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin._terminate_processes
+```
+
+````
+
+````{py:method} kill_processes(request, queryset)
+:canonical: archivebox.machine.admin.ProcessAdmin.kill_processes
+
+```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.kill_processes
+```
+
+````
+
+````{py:method} kill_process(request, obj)
+:canonical: archivebox.machine.admin.ProcessAdmin.kill_process
+
+```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.kill_process
 ```
 
 ````
@@ -479,6 +548,22 @@ Bases: {py:obj}`archivebox.base_models.admin.BaseModelAdmin`
 
 ````
 
+````{py:method} binary_link(process)
+:canonical: archivebox.machine.admin.ProcessAdmin.binary_link
+
+```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.binary_link
+```
+
+````
+
+````{py:method} iface_link(process)
+:canonical: archivebox.machine.admin.ProcessAdmin.iface_link
+
+```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.iface_link
+```
+
+````
+
 ````{py:method} archiveresult_link(process)
 :canonical: archivebox.machine.admin.ProcessAdmin.archiveresult_link
 
@@ -487,10 +572,66 @@ Bases: {py:obj}`archivebox.base_models.admin.BaseModelAdmin`
 
 ````
 
+````{py:method} snapshot_link(process)
+:canonical: archivebox.machine.admin.ProcessAdmin.snapshot_link
+
+```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.snapshot_link
+```
+
+````
+
+````{py:method} crawl_link(process)
+:canonical: archivebox.machine.admin.ProcessAdmin.crawl_link
+
+```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.crawl_link
+```
+
+````
+
 ````{py:method} cmd_str(process)
 :canonical: archivebox.machine.admin.ProcessAdmin.cmd_str
 
 ```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.cmd_str
+```
+
+````
+
+````{py:method} status_badge(process)
+:canonical: archivebox.machine.admin.ProcessAdmin.status_badge
+
+```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.status_badge
+```
+
+````
+
+````{py:method} duration_display(process)
+:canonical: archivebox.machine.admin.ProcessAdmin.duration_display
+
+```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.duration_display
+```
+
+````
+
+````{py:method} output_summary(process)
+:canonical: archivebox.machine.admin.ProcessAdmin.output_summary
+
+```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.output_summary
+```
+
+````
+
+````{py:method} cmd_display(process)
+:canonical: archivebox.machine.admin.ProcessAdmin.cmd_display
+
+```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.cmd_display
+```
+
+````
+
+````{py:method} env_display(process)
+:canonical: archivebox.machine.admin.ProcessAdmin.env_display
+
+```{autodoc2-docstring} archivebox.machine.admin.ProcessAdmin.env_display
 ```
 
 ````

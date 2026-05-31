@@ -64,7 +64,7 @@
 ```
 ````
 
-````{py:function} run_plugins(args: tuple, plugins: str = '', wait: bool = True) -> int
+````{py:function} run_plugins(args: tuple, records: list[dict] | None = None, plugins: str = '', wait: bool = True, emit_results: bool = True, show_progress: bool = True) -> int
 :canonical: archivebox.cli.archivebox_extract.run_plugins
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_extract.run_plugins

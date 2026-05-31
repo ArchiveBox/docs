@@ -31,6 +31,14 @@
   - ```{autodoc2-docstring} archivebox.core.settings.IS_GETTING_VERSION_OR_HELP
     :summary:
     ```
+* - {py:obj}`CONFIG <archivebox.core.settings.CONFIG>`
+  - ```{autodoc2-docstring} archivebox.core.settings.CONFIG
+    :summary:
+    ```
+* - {py:obj}`PACKAGE_DIR <archivebox.core.settings.PACKAGE_DIR>`
+  - ```{autodoc2-docstring} archivebox.core.settings.PACKAGE_DIR
+    :summary:
+    ```
 * - {py:obj}`ALL_PLUGINS <archivebox.core.settings.ALL_PLUGINS>`
   - ```{autodoc2-docstring} archivebox.core.settings.ALL_PLUGINS
     :summary:
@@ -109,6 +117,14 @@
     ```
 * - {py:obj}`DATABASE_NAME <archivebox.core.settings.DATABASE_NAME>`
   - ```{autodoc2-docstring} archivebox.core.settings.DATABASE_NAME
+    :summary:
+    ```
+* - {py:obj}`SQLITE_JOURNAL_MODE <archivebox.core.settings.SQLITE_JOURNAL_MODE>`
+  - ```{autodoc2-docstring} archivebox.core.settings.SQLITE_JOURNAL_MODE
+    :summary:
+    ```
+* - {py:obj}`SQLITE_MMAP_SIZE <archivebox.core.settings.SQLITE_MMAP_SIZE>`
+  - ```{autodoc2-docstring} archivebox.core.settings.SQLITE_MMAP_SIZE
     :summary:
     ```
 * - {py:obj}`SQLITE_CONNECTION_OPTIONS <archivebox.core.settings.SQLITE_CONNECTION_OPTIONS>`
@@ -335,6 +351,26 @@
 
 ````
 
+````{py:data} CONFIG
+:canonical: archivebox.core.settings.CONFIG
+:value: >
+   'get_config(...)'
+
+```{autodoc2-docstring} archivebox.core.settings.CONFIG
+```
+
+````
+
+````{py:data} PACKAGE_DIR
+:canonical: archivebox.core.settings.PACKAGE_DIR
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.settings.PACKAGE_DIR
+```
+
+````
+
 ````{py:data} ALL_PLUGINS
 :canonical: archivebox.core.settings.ALL_PLUGINS
 :value: >
@@ -398,7 +434,7 @@
 ````{py:data} LOGOUT_REDIRECT_URL
 :canonical: archivebox.core.settings.LOGOUT_REDIRECT_URL
 :value: >
-   'get(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.core.settings.LOGOUT_REDIRECT_URL
 ```
@@ -528,9 +564,29 @@
 ````{py:data} DATABASE_NAME
 :canonical: archivebox.core.settings.DATABASE_NAME
 :value: >
-   'get(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.core.settings.DATABASE_NAME
+```
+
+````
+
+````{py:data} SQLITE_JOURNAL_MODE
+:canonical: archivebox.core.settings.SQLITE_JOURNAL_MODE
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.settings.SQLITE_JOURNAL_MODE
+```
+
+````
+
+````{py:data} SQLITE_MMAP_SIZE
+:canonical: archivebox.core.settings.SQLITE_MMAP_SIZE
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.settings.SQLITE_MMAP_SIZE
 ```
 
 ````
@@ -638,7 +694,7 @@
 ````{py:data} ALLOWED_HOSTS
 :canonical: archivebox.core.settings.ALLOWED_HOSTS
 :value: >
-   'split(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.core.settings.ALLOWED_HOSTS
 ```
@@ -947,6 +1003,7 @@
 
 ````{py:data} SIGNAL_WEBHOOKS
 :canonical: archivebox.core.settings.SIGNAL_WEBHOOKS
+:type: dict[str, object]
 :value: >
    None
 

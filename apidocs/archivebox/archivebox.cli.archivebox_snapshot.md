@@ -19,6 +19,10 @@
   - ```{autodoc2-docstring} archivebox.cli.archivebox_snapshot.create_snapshots
     :summary:
     ```
+* - {py:obj}`build_snapshot_queryset <archivebox.cli.archivebox_snapshot.build_snapshot_queryset>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_snapshot.build_snapshot_queryset
+    :summary:
+    ```
 * - {py:obj}`list_snapshots <archivebox.cli.archivebox_snapshot.list_snapshots>`
   - ```{autodoc2-docstring} archivebox.cli.archivebox_snapshot.list_snapshots
     :summary:
@@ -77,21 +81,28 @@
 
 ````
 
-````{py:function} create_snapshots(urls: typing.Iterable[str], tag: str = '', status: str = 'queued', depth: int = 0, created_by_id: typing.Optional[int] = None) -> int
+````{py:function} create_snapshots(urls: collections.abc.Iterable[str], tag: str = '', status: str = 'queued', depth: int = 0, created_by_id: int | None = None) -> int
 :canonical: archivebox.cli.archivebox_snapshot.create_snapshots
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_snapshot.create_snapshots
 ```
 ````
 
-````{py:function} list_snapshots(status: typing.Optional[str] = None, url__icontains: typing.Optional[str] = None, url__istartswith: typing.Optional[str] = None, tag: typing.Optional[str] = None, crawl_id: typing.Optional[str] = None, limit: typing.Optional[int] = None) -> int
+````{py:function} build_snapshot_queryset(*, status: str | None = None, url__icontains: str | None = None, url__istartswith: str | None = None, tag: str | None = None, crawl_id: str | None = None, sort: str | None = None, search: str | None = None, query: str | None = None, limit: int | None = None) -> django.db.models.QuerySet
+:canonical: archivebox.cli.archivebox_snapshot.build_snapshot_queryset
+
+```{autodoc2-docstring} archivebox.cli.archivebox_snapshot.build_snapshot_queryset
+```
+````
+
+````{py:function} list_snapshots(status: str | None = None, url__icontains: str | None = None, url__istartswith: str | None = None, tag: str | None = None, crawl_id: str | None = None, limit: int | None = None, sort: str | None = None, csv: str | None = None, with_headers: bool = False, search: str | None = None, query: str | None = None) -> int
 :canonical: archivebox.cli.archivebox_snapshot.list_snapshots
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_snapshot.list_snapshots
 ```
 ````
 
-````{py:function} update_snapshots(status: typing.Optional[str] = None, tag: typing.Optional[str] = None) -> int
+````{py:function} update_snapshots(status: str | None = None, tag: str | None = None) -> int
 :canonical: archivebox.cli.archivebox_snapshot.update_snapshots
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_snapshot.update_snapshots
@@ -119,14 +130,14 @@
 ```
 ````
 
-````{py:function} list_cmd(status: typing.Optional[str], url__icontains: typing.Optional[str], url__istartswith: typing.Optional[str], tag: typing.Optional[str], crawl_id: typing.Optional[str], limit: typing.Optional[int])
+````{py:function} list_cmd(status: str | None, url__icontains: str | None, url__istartswith: str | None, tag: str | None, crawl_id: str | None, limit: int | None, sort: str | None, csv: str | None, with_headers: bool, search: str | None, query: tuple[str, ...])
 :canonical: archivebox.cli.archivebox_snapshot.list_cmd
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_snapshot.list_cmd
 ```
 ````
 
-````{py:function} update_cmd(status: typing.Optional[str], tag: typing.Optional[str])
+````{py:function} update_cmd(status: str | None, tag: str | None)
 :canonical: archivebox.cli.archivebox_snapshot.update_cmd
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_snapshot.update_cmd

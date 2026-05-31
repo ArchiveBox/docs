@@ -15,10 +15,12 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`HookResult <archivebox.hooks.HookResult>`
-  - ```{autodoc2-docstring} archivebox.hooks.HookResult
-    :summary:
-    ```
+* - {py:obj}`ConfigLookup <archivebox.hooks.ConfigLookup>`
+  -
+* - {py:obj}`PluginSpecialConfig <archivebox.hooks.PluginSpecialConfig>`
+  -
+* - {py:obj}`ConfigDump <archivebox.hooks.ConfigDump>`
+  -
 ````
 
 ### Functions
@@ -27,6 +29,14 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`_has_config_dump <archivebox.hooks._has_config_dump>`
+  - ```{autodoc2-docstring} archivebox.hooks._has_config_dump
+    :summary:
+    ```
+* - {py:obj}`_config_to_overrides <archivebox.hooks._config_to_overrides>`
+  - ```{autodoc2-docstring} archivebox.hooks._config_to_overrides
+    :summary:
+    ```
 * - {py:obj}`is_background_hook <archivebox.hooks.is_background_hook>`
   - ```{autodoc2-docstring} archivebox.hooks.is_background_hook
     :summary:
@@ -37,6 +47,14 @@
     ```
 * - {py:obj}`iter_plugin_dirs <archivebox.hooks.iter_plugin_dirs>`
   - ```{autodoc2-docstring} archivebox.hooks.iter_plugin_dirs
+    :summary:
+    ```
+* - {py:obj}`normalize_hook_event_name <archivebox.hooks.normalize_hook_event_name>`
+  - ```{autodoc2-docstring} archivebox.hooks.normalize_hook_event_name
+    :summary:
+    ```
+* - {py:obj}`_model_output_dir_from_child_path <archivebox.hooks._model_output_dir_from_child_path>`
+  - ```{autodoc2-docstring} archivebox.hooks._model_output_dir_from_child_path
     :summary:
     ```
 * - {py:obj}`discover_hooks <archivebox.hooks.discover_hooks>`
@@ -79,10 +97,6 @@
   - ```{autodoc2-docstring} archivebox.hooks.discover_plugin_configs
     :summary:
     ```
-* - {py:obj}`get_config_defaults_from_plugins <archivebox.hooks.get_config_defaults_from_plugins>`
-  - ```{autodoc2-docstring} archivebox.hooks.get_config_defaults_from_plugins
-    :summary:
-    ```
 * - {py:obj}`get_plugin_special_config <archivebox.hooks.get_plugin_special_config>`
   - ```{autodoc2-docstring} archivebox.hooks.get_plugin_special_config
     :summary:
@@ -123,6 +137,98 @@
 
 ### API
 
+`````{py:class} ConfigLookup
+:canonical: archivebox.hooks.ConfigLookup
+
+Bases: {py:obj}`typing.Protocol`
+
+````{py:method} get(key: str, default: typing.Any = None) -> typing.Any
+:canonical: archivebox.hooks.ConfigLookup.get
+
+```{autodoc2-docstring} archivebox.hooks.ConfigLookup.get
+```
+
+````
+
+````{py:method} items() -> collections.abc.Iterable[tuple[str, typing.Any]]
+:canonical: archivebox.hooks.ConfigLookup.items
+
+```{autodoc2-docstring} archivebox.hooks.ConfigLookup.items
+```
+
+````
+
+`````
+
+`````{py:class} PluginSpecialConfig()
+:canonical: archivebox.hooks.PluginSpecialConfig
+
+Bases: {py:obj}`typing.TypedDict`
+
+````{py:attribute} enabled
+:canonical: archivebox.hooks.PluginSpecialConfig.enabled
+:type: bool
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.hooks.PluginSpecialConfig.enabled
+```
+
+````
+
+````{py:attribute} timeout
+:canonical: archivebox.hooks.PluginSpecialConfig.timeout
+:type: int
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.hooks.PluginSpecialConfig.timeout
+```
+
+````
+
+````{py:attribute} binary
+:canonical: archivebox.hooks.PluginSpecialConfig.binary
+:type: str
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.hooks.PluginSpecialConfig.binary
+```
+
+````
+
+`````
+
+`````{py:class} ConfigDump
+:canonical: archivebox.hooks.ConfigDump
+
+Bases: {py:obj}`typing.Protocol`
+
+````{py:method} as_dict() -> dict[str, typing.Any]
+:canonical: archivebox.hooks.ConfigDump.as_dict
+
+```{autodoc2-docstring} archivebox.hooks.ConfigDump.as_dict
+```
+
+````
+
+`````
+
+````{py:function} _has_config_dump(config: object) -> typing.TypeGuard[archivebox.hooks.ConfigDump]
+:canonical: archivebox.hooks._has_config_dump
+
+```{autodoc2-docstring} archivebox.hooks._has_config_dump
+```
+````
+
+````{py:function} _config_to_overrides(config: archivebox.hooks.ConfigLookup | collections.abc.Mapping[str, typing.Any] | None) -> dict[str, typing.Any]
+:canonical: archivebox.hooks._config_to_overrides
+
+```{autodoc2-docstring} archivebox.hooks._config_to_overrides
+```
+````
+
 ````{py:data} BUILTIN_PLUGINS_DIR
 :canonical: archivebox.hooks.BUILTIN_PLUGINS_DIR
 :value: >
@@ -157,168 +263,56 @@
 ```
 ````
 
-````{py:function} iter_plugin_dirs() -> typing.List[pathlib.Path]
+````{py:function} iter_plugin_dirs() -> list[pathlib.Path]
 :canonical: archivebox.hooks.iter_plugin_dirs
 
 ```{autodoc2-docstring} archivebox.hooks.iter_plugin_dirs
 ```
 ````
 
-`````{py:class} HookResult()
-:canonical: archivebox.hooks.HookResult
+````{py:function} normalize_hook_event_name(event_name: str) -> str | None
+:canonical: archivebox.hooks.normalize_hook_event_name
 
-Bases: {py:obj}`typing.TypedDict`
-
-```{autodoc2-docstring} archivebox.hooks.HookResult
+```{autodoc2-docstring} archivebox.hooks.normalize_hook_event_name
 ```
-
-```{rubric} Initialization
-```
-
-```{autodoc2-docstring} archivebox.hooks.HookResult.__init__
-```
-
-````{py:attribute} returncode
-:canonical: archivebox.hooks.HookResult.returncode
-:type: int
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.hooks.HookResult.returncode
-```
-
 ````
 
-````{py:attribute} stdout
-:canonical: archivebox.hooks.HookResult.stdout
-:type: str
-:value: >
-   None
+````{py:function} _model_output_dir_from_child_path(path: pathlib.Path, marker: str) -> pathlib.Path | None
+:canonical: archivebox.hooks._model_output_dir_from_child_path
 
-```{autodoc2-docstring} archivebox.hooks.HookResult.stdout
+```{autodoc2-docstring} archivebox.hooks._model_output_dir_from_child_path
 ```
-
 ````
 
-````{py:attribute} stderr
-:canonical: archivebox.hooks.HookResult.stderr
-:type: str
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.hooks.HookResult.stderr
-```
-
-````
-
-````{py:attribute} output_json
-:canonical: archivebox.hooks.HookResult.output_json
-:type: typing.Optional[typing.Dict[str, typing.Any]]
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.hooks.HookResult.output_json
-```
-
-````
-
-````{py:attribute} output_files
-:canonical: archivebox.hooks.HookResult.output_files
-:type: typing.List[str]
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.hooks.HookResult.output_files
-```
-
-````
-
-````{py:attribute} duration_ms
-:canonical: archivebox.hooks.HookResult.duration_ms
-:type: int
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.hooks.HookResult.duration_ms
-```
-
-````
-
-````{py:attribute} hook
-:canonical: archivebox.hooks.HookResult.hook
-:type: str
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.hooks.HookResult.hook
-```
-
-````
-
-````{py:attribute} plugin
-:canonical: archivebox.hooks.HookResult.plugin
-:type: str
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.hooks.HookResult.plugin
-```
-
-````
-
-````{py:attribute} hook_name
-:canonical: archivebox.hooks.HookResult.hook_name
-:type: str
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.hooks.HookResult.hook_name
-```
-
-````
-
-````{py:attribute} records
-:canonical: archivebox.hooks.HookResult.records
-:type: typing.List[typing.Dict[str, typing.Any]]
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.hooks.HookResult.records
-```
-
-````
-
-`````
-
-````{py:function} discover_hooks(event_name: str, filter_disabled: bool = True, config: typing.Optional[typing.Dict[str, typing.Any]] = None) -> typing.List[pathlib.Path]
+````{py:function} discover_hooks(event_name: str, filter_disabled: bool = True, config: archivebox.hooks.ConfigLookup | None = None, **config_kwargs: typing.Any) -> list[pathlib.Path]
 :canonical: archivebox.hooks.discover_hooks
 
 ```{autodoc2-docstring} archivebox.hooks.discover_hooks
 ```
 ````
 
-````{py:function} run_hook(script: pathlib.Path, output_dir: pathlib.Path, config: typing.Dict[str, typing.Any], timeout: typing.Optional[int] = None, parent: typing.Optional[archivebox.machine.models.Process] = None, **kwargs: typing.Any) -> archivebox.machine.models.Process
+````{py:function} run_hook(script: pathlib.Path, output_dir: pathlib.Path, config: archivebox.hooks.ConfigLookup | collections.abc.Mapping[str, typing.Any] | None = None, timeout: int | None = None, parent: typing.Optional[archivebox.machine.models.Process] = None, **kwargs: typing.Any) -> archivebox.machine.models.Process
 :canonical: archivebox.hooks.run_hook
 
 ```{autodoc2-docstring} archivebox.hooks.run_hook
 ```
 ````
 
-````{py:function} extract_records_from_process(process: archivebox.machine.models.Process) -> typing.List[typing.Dict[str, typing.Any]]
+````{py:function} extract_records_from_process(process: archivebox.machine.models.Process) -> list[dict[str, typing.Any]]
 :canonical: archivebox.hooks.extract_records_from_process
 
 ```{autodoc2-docstring} archivebox.hooks.extract_records_from_process
 ```
 ````
 
-````{py:function} collect_urls_from_plugins(snapshot_dir: pathlib.Path) -> typing.List[typing.Dict[str, typing.Any]]
+````{py:function} collect_urls_from_plugins(snapshot_dir: pathlib.Path) -> list[dict[str, typing.Any]]
 :canonical: archivebox.hooks.collect_urls_from_plugins
 
 ```{autodoc2-docstring} archivebox.hooks.collect_urls_from_plugins
 ```
 ````
 
-````{py:function} get_plugins() -> typing.List[str]
+````{py:function} get_plugins() -> list[str]
 :canonical: archivebox.hooks.get_plugins
 
 ```{autodoc2-docstring} archivebox.hooks.get_plugins
@@ -332,42 +326,35 @@ Bases: {py:obj}`typing.TypedDict`
 ```
 ````
 
-````{py:function} get_enabled_plugins(config: typing.Optional[typing.Dict[str, typing.Any]] = None) -> typing.List[str]
+````{py:function} get_enabled_plugins(config: archivebox.hooks.ConfigLookup | None = None, **config_kwargs: typing.Any) -> list[str]
 :canonical: archivebox.hooks.get_enabled_plugins
 
 ```{autodoc2-docstring} archivebox.hooks.get_enabled_plugins
 ```
 ````
 
-````{py:function} discover_plugins_that_provide_interface(module_name: str, required_attrs: typing.List[str], plugin_prefix: typing.Optional[str] = None) -> typing.Dict[str, typing.Any]
+````{py:function} discover_plugins_that_provide_interface(module_name: str, required_attrs: list[str], plugin_prefix: str | None = None) -> dict[str, typing.Any]
 :canonical: archivebox.hooks.discover_plugins_that_provide_interface
 
 ```{autodoc2-docstring} archivebox.hooks.discover_plugins_that_provide_interface
 ```
 ````
 
-````{py:function} get_search_backends() -> typing.Dict[str, typing.Any]
+````{py:function} get_search_backends() -> dict[str, typing.Any]
 :canonical: archivebox.hooks.get_search_backends
 
 ```{autodoc2-docstring} archivebox.hooks.get_search_backends
 ```
 ````
 
-````{py:function} discover_plugin_configs() -> typing.Dict[str, typing.Dict[str, typing.Any]]
+````{py:function} discover_plugin_configs() -> dict[str, dict[str, typing.Any]]
 :canonical: archivebox.hooks.discover_plugin_configs
 
 ```{autodoc2-docstring} archivebox.hooks.discover_plugin_configs
 ```
 ````
 
-````{py:function} get_config_defaults_from_plugins() -> typing.Dict[str, typing.Any]
-:canonical: archivebox.hooks.get_config_defaults_from_plugins
-
-```{autodoc2-docstring} archivebox.hooks.get_config_defaults_from_plugins
-```
-````
-
-````{py:function} get_plugin_special_config(plugin_name: str, config: typing.Dict[str, typing.Any]) -> typing.Dict[str, typing.Any]
+````{py:function} get_plugin_special_config(plugin_name: str, config: archivebox.hooks.ConfigLookup, _visited: set[str] | None = None) -> archivebox.hooks.PluginSpecialConfig
 :canonical: archivebox.hooks.get_plugin_special_config
 
 ```{autodoc2-docstring} archivebox.hooks.get_plugin_special_config
@@ -384,7 +371,7 @@ Bases: {py:obj}`typing.TypedDict`
 
 ````
 
-````{py:function} get_plugin_template(plugin: str, template_name: str, fallback: bool = True) -> typing.Optional[str]
+````{py:function} get_plugin_template(plugin: str, template_name: str, fallback: bool = True) -> str | None
 :canonical: archivebox.hooks.get_plugin_template
 
 ```{autodoc2-docstring} archivebox.hooks.get_plugin_template
@@ -398,7 +385,7 @@ Bases: {py:obj}`typing.TypedDict`
 ```
 ````
 
-````{py:function} process_hook_records(records: typing.List[typing.Dict[str, typing.Any]], overrides: typing.Dict[str, typing.Any] = None) -> typing.Dict[str, int]
+````{py:function} process_hook_records(records: list[dict[str, typing.Any]], overrides: dict[str, typing.Any] | None = None) -> dict[str, int]
 :canonical: archivebox.hooks.process_hook_records
 
 ```{autodoc2-docstring} archivebox.hooks.process_hook_records

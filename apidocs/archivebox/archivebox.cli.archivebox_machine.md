@@ -53,7 +53,7 @@
 
 ````
 
-````{py:function} list_machines(hostname__icontains: typing.Optional[str] = None, os_platform: typing.Optional[str] = None, limit: typing.Optional[int] = None) -> int
+````{py:function} list_machines(hostname__icontains: str | None = None, os_platform: str | None = None, limit: int | None = None) -> int
 :canonical: archivebox.cli.archivebox_machine.list_machines
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_machine.list_machines
@@ -67,7 +67,7 @@
 ```
 ````
 
-````{py:function} list_cmd(hostname__icontains: typing.Optional[str], os_platform: typing.Optional[str], limit: typing.Optional[int])
+````{py:function} list_cmd(hostname__icontains: str | None, os_platform: str | None, limit: int | None)
 :canonical: archivebox.cli.archivebox_machine.list_cmd
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_machine.list_cmd

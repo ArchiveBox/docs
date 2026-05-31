@@ -16,7 +16,9 @@
 :align: left
 
 * - {py:obj}`ConstantsDict <archivebox.config.constants.ConstantsDict>`
-  -
+  - ```{autodoc2-docstring} archivebox.config.constants.ConstantsDict
+    :summary:
+    ```
 ````
 
 ### Data
@@ -40,7 +42,8 @@
 `````{py:class} ConstantsDict
 :canonical: archivebox.config.constants.ConstantsDict
 
-Bases: {py:obj}`collections.abc.Mapping`
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict
+```
 
 ````{py:attribute} PACKAGE_DIR
 :canonical: archivebox.config.constants.ConstantsDict.PACKAGE_DIR
@@ -71,6 +74,17 @@ Bases: {py:obj}`collections.abc.Mapping`
    None
 
 ```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.ARCHIVE_DIR
+```
+
+````
+
+````{py:attribute} USERS_DIR
+:canonical: archivebox.config.constants.ConstantsDict.USERS_DIR
+:type: pathlib.Path
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.USERS_DIR
 ```
 
 ````
@@ -280,6 +294,39 @@ Bases: {py:obj}`collections.abc.Mapping`
    'archive'
 
 ```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.ARCHIVE_DIR_NAME
+```
+
+````
+
+````{py:attribute} USERS_DIR_NAME
+:canonical: archivebox.config.constants.ConstantsDict.USERS_DIR_NAME
+:type: str
+:value: >
+   'users'
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.USERS_DIR_NAME
+```
+
+````
+
+````{py:attribute} SNAPSHOTS_DIR_NAME
+:canonical: archivebox.config.constants.ConstantsDict.SNAPSHOTS_DIR_NAME
+:type: str
+:value: >
+   'snapshots'
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.SNAPSHOTS_DIR_NAME
+```
+
+````
+
+````{py:attribute} CRAWLS_DIR_NAME
+:canonical: archivebox.config.constants.ConstantsDict.CRAWLS_DIR_NAME
+:type: str
+:value: >
+   'crawls'
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.CRAWLS_DIR_NAME
 ```
 
 ````
@@ -552,7 +599,7 @@ Bases: {py:obj}`collections.abc.Mapping`
 :canonical: archivebox.config.constants.ConstantsDict.DEFAULT_LIB_DIR
 :type: pathlib.Path
 :value: >
-   None
+   '_env_path(...)'
 
 ```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DEFAULT_LIB_DIR
 ```
@@ -563,9 +610,20 @@ Bases: {py:obj}`collections.abc.Mapping`
 :canonical: archivebox.config.constants.ConstantsDict.DEFAULT_LIB_BIN_DIR
 :type: pathlib.Path
 :value: >
-   None
+   '_env_path(...)'
 
 ```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DEFAULT_LIB_BIN_DIR
+```
+
+````
+
+````{py:attribute} RESERVED_ARCHIVE_DIR_NAMES
+:canonical: archivebox.config.constants.ConstantsDict.RESERVED_ARCHIVE_DIR_NAMES
+:type: frozenset[str]
+:value: >
+   'frozenset(...)'
+
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.RESERVED_ARCHIVE_DIR_NAMES
 ```
 
 ````
@@ -583,7 +641,7 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````{py:attribute} DEFAULT_CLI_COLORS
 :canonical: archivebox.config.constants.ConstantsDict.DEFAULT_CLI_COLORS
-:type: typing.Dict[str, str]
+:type: dict[str, str]
 :value: >
    None
 
@@ -594,9 +652,9 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````{py:attribute} DISABLED_CLI_COLORS
 :canonical: archivebox.config.constants.ConstantsDict.DISABLED_CLI_COLORS
-:type: typing.Dict[str, str]
+:type: dict[str, str]
 :value: >
-   'benedict(...)'
+   'AttrDict(...)'
 
 ```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DISABLED_CLI_COLORS
 ```
@@ -689,39 +747,12 @@ Bases: {py:obj}`collections.abc.Mapping`
 
 ````
 
-````{py:method} __benedict__()
-:canonical: archivebox.config.constants.ConstantsDict.__benedict__
-:classmethod:
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.__benedict__
-```
-
-````
-
-````{py:method} __len__()
-:canonical: archivebox.config.constants.ConstantsDict.__len__
-:classmethod:
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.__len__
-```
-
-````
-
-````{py:method} __iter__()
-:canonical: archivebox.config.constants.ConstantsDict.__iter__
-:classmethod:
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.__iter__
-```
-
-````
-
 `````
 
 ````{py:data} CONSTANTS
 :canonical: archivebox.config.constants.CONSTANTS
 :value: >
-   'ConstantsDict(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.config.constants.CONSTANTS
 ```
@@ -731,7 +762,7 @@ Bases: {py:obj}`collections.abc.Mapping`
 ````{py:data} CONSTANTS_CONFIG
 :canonical: archivebox.config.constants.CONSTANTS_CONFIG
 :value: >
-   '__benedict__(...)'
+   'AttrDict(...)'
 
 ```{autodoc2-docstring} archivebox.config.constants.CONSTANTS_CONFIG
 ```

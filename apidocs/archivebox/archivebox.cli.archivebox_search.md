@@ -15,6 +15,22 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`_apply_pattern_filters <archivebox.cli.archivebox_search._apply_pattern_filters>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_search._apply_pattern_filters
+    :summary:
+    ```
+* - {py:obj}`_snapshots_to_json <archivebox.cli.archivebox_search._snapshots_to_json>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_search._snapshots_to_json
+    :summary:
+    ```
+* - {py:obj}`_snapshots_to_csv <archivebox.cli.archivebox_search._snapshots_to_csv>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_search._snapshots_to_csv
+    :summary:
+    ```
+* - {py:obj}`_snapshots_to_html <archivebox.cli.archivebox_search._snapshots_to_html>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_search._snapshots_to_html
+    :summary:
+    ```
 * - {py:obj}`get_snapshots <archivebox.cli.archivebox_search.get_snapshots>`
   - ```{autodoc2-docstring} archivebox.cli.archivebox_search.get_snapshots
     :summary:
@@ -63,6 +79,7 @@
 
 ````{py:data} LINK_FILTERS
 :canonical: archivebox.cli.archivebox_search.LINK_FILTERS
+:type: dict[str, collections.abc.Callable[[str], django.db.models.Q]]
 :value: >
    None
 
@@ -81,7 +98,35 @@
 
 ````
 
-````{py:function} get_snapshots(snapshots: typing.Optional[django.db.models.QuerySet] = None, filter_patterns: typing.Optional[typing.List[str]] = None, filter_type: str = 'substring', after: typing.Optional[float] = None, before: typing.Optional[float] = None, out_dir: pathlib.Path = DATA_DIR) -> django.db.models.QuerySet
+````{py:function} _apply_pattern_filters(snapshots: django.db.models.QuerySet[archivebox.core.models.Snapshot, archivebox.core.models.Snapshot], filter_patterns: list[str], filter_type: str) -> django.db.models.QuerySet[archivebox.core.models.Snapshot, archivebox.core.models.Snapshot]
+:canonical: archivebox.cli.archivebox_search._apply_pattern_filters
+
+```{autodoc2-docstring} archivebox.cli.archivebox_search._apply_pattern_filters
+```
+````
+
+````{py:function} _snapshots_to_json(snapshots: django.db.models.QuerySet[archivebox.core.models.Snapshot, archivebox.core.models.Snapshot], *, with_headers: bool) -> str
+:canonical: archivebox.cli.archivebox_search._snapshots_to_json
+
+```{autodoc2-docstring} archivebox.cli.archivebox_search._snapshots_to_json
+```
+````
+
+````{py:function} _snapshots_to_csv(snapshots: django.db.models.QuerySet[archivebox.core.models.Snapshot, archivebox.core.models.Snapshot], *, cols: list[str], with_headers: bool) -> str
+:canonical: archivebox.cli.archivebox_search._snapshots_to_csv
+
+```{autodoc2-docstring} archivebox.cli.archivebox_search._snapshots_to_csv
+```
+````
+
+````{py:function} _snapshots_to_html(snapshots: django.db.models.QuerySet[archivebox.core.models.Snapshot, archivebox.core.models.Snapshot], *, with_headers: bool) -> str
+:canonical: archivebox.cli.archivebox_search._snapshots_to_html
+
+```{autodoc2-docstring} archivebox.cli.archivebox_search._snapshots_to_html
+```
+````
+
+````{py:function} get_snapshots(snapshots: django.db.models.QuerySet[archivebox.core.models.Snapshot, archivebox.core.models.Snapshot] | None = None, filter_patterns: list[str] | None = None, filter_type: str = 'substring', after: float | None = None, before: float | None = None, out_dir: pathlib.Path = DATA_DIR) -> django.db.models.QuerySet[archivebox.core.models.Snapshot, archivebox.core.models.Snapshot]
 :canonical: archivebox.cli.archivebox_search.get_snapshots
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_search.get_snapshots

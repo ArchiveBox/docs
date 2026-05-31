@@ -53,12 +53,40 @@
     ```
 ````
 
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_find_existing_binary_for_reference <archivebox.machine.models._find_existing_binary_for_reference>`
+  - ```{autodoc2-docstring} archivebox.machine.models._find_existing_binary_for_reference
+    :summary:
+    ```
+* - {py:obj}`_canonical_binary_name <archivebox.machine.models._canonical_binary_name>`
+  - ```{autodoc2-docstring} archivebox.machine.models._canonical_binary_name
+    :summary:
+    ```
+* - {py:obj}`_get_process_binary_env_keys <archivebox.machine.models._get_process_binary_env_keys>`
+  - ```{autodoc2-docstring} archivebox.machine.models._get_process_binary_env_keys
+    :summary:
+    ```
+* - {py:obj}`_sanitize_machine_config <archivebox.machine.models._sanitize_machine_config>`
+  - ```{autodoc2-docstring} archivebox.machine.models._sanitize_machine_config
+    :summary:
+    ```
+````
+
 ### Data
 
 ````{list-table}
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`_psutil <archivebox.machine.models._psutil>`
+  - ```{autodoc2-docstring} archivebox.machine.models._psutil
+    :summary:
+    ```
 * - {py:obj}`_CURRENT_MACHINE <archivebox.machine.models._CURRENT_MACHINE>`
   - ```{autodoc2-docstring} archivebox.machine.models._CURRENT_MACHINE
     :summary:
@@ -95,6 +123,10 @@
   - ```{autodoc2-docstring} archivebox.machine.models.PID_REUSE_WINDOW
     :summary:
     ```
+* - {py:obj}`PROCESS_TIMEOUT_GRACE <archivebox.machine.models.PROCESS_TIMEOUT_GRACE>`
+  - ```{autodoc2-docstring} archivebox.machine.models.PROCESS_TIMEOUT_GRACE
+    :summary:
+    ```
 * - {py:obj}`START_TIME_TOLERANCE <archivebox.machine.models.START_TIME_TOLERANCE>`
   - ```{autodoc2-docstring} archivebox.machine.models.START_TIME_TOLERANCE
     :summary:
@@ -103,8 +135,20 @@
 
 ### API
 
+````{py:data} _psutil
+:canonical: archivebox.machine.models._psutil
+:type: typing.Any | None
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.machine.models._psutil
+```
+
+````
+
 ````{py:data} _CURRENT_MACHINE
 :canonical: archivebox.machine.models._CURRENT_MACHINE
+:type: archivebox.machine.models.Machine | None
 :value: >
    None
 
@@ -115,6 +159,7 @@
 
 ````{py:data} _CURRENT_INTERFACE
 :canonical: archivebox.machine.models._CURRENT_INTERFACE
+:type: archivebox.machine.models.NetworkInterface | None
 :value: >
    None
 
@@ -125,6 +170,7 @@
 
 ````{py:data} _CURRENT_BINARIES
 :canonical: archivebox.machine.models._CURRENT_BINARIES
+:type: dict[str, archivebox.machine.models.Binary]
 :value: >
    None
 
@@ -135,6 +181,7 @@
 
 ````{py:data} _CURRENT_PROCESS
 :canonical: archivebox.machine.models._CURRENT_PROCESS
+:type: archivebox.machine.models.Process | None
 :value: >
    None
 
@@ -193,6 +240,16 @@
 
 ````
 
+````{py:data} PROCESS_TIMEOUT_GRACE
+:canonical: archivebox.machine.models.PROCESS_TIMEOUT_GRACE
+:value: >
+   'timedelta(...)'
+
+```{autodoc2-docstring} archivebox.machine.models.PROCESS_TIMEOUT_GRACE
+```
+
+````
+
 ````{py:data} START_TIME_TOLERANCE
 :canonical: archivebox.machine.models.START_TIME_TOLERANCE
 :value: >
@@ -201,6 +258,34 @@
 ```{autodoc2-docstring} archivebox.machine.models.START_TIME_TOLERANCE
 ```
 
+````
+
+````{py:function} _find_existing_binary_for_reference(machine: Machine, reference: str) -> Binary | None
+:canonical: archivebox.machine.models._find_existing_binary_for_reference
+
+```{autodoc2-docstring} archivebox.machine.models._find_existing_binary_for_reference
+```
+````
+
+````{py:function} _canonical_binary_name(name: typing.Any) -> str
+:canonical: archivebox.machine.models._canonical_binary_name
+
+```{autodoc2-docstring} archivebox.machine.models._canonical_binary_name
+```
+````
+
+````{py:function} _get_process_binary_env_keys(plugin_name: str, hook_path: str, env: dict[str, typing.Any] | None) -> list[str]
+:canonical: archivebox.machine.models._get_process_binary_env_keys
+
+```{autodoc2-docstring} archivebox.machine.models._get_process_binary_env_keys
+```
+````
+
+````{py:function} _sanitize_machine_config(config: dict[str, typing.Any] | None, *, lib_dir: str | pathlib.Path | None = None) -> dict[str, typing.Any]
+:canonical: archivebox.machine.models._sanitize_machine_config
+
+```{autodoc2-docstring} archivebox.machine.models._sanitize_machine_config
+```
 ````
 
 `````{py:class} MachineManager
@@ -418,7 +503,6 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithHealthStats`
 
 ````{py:attribute} objects
 :canonical: archivebox.machine.models.Machine.objects
-:type: archivebox.machine.models.MachineManager
 :value: >
    'MachineManager(...)'
 
@@ -441,8 +525,7 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithHealthStats`
 `````{py:class} Meta
 :canonical: archivebox.machine.models.Machine.Meta
 
-```{autodoc2-docstring} archivebox.machine.models.Machine.Meta
-```
+Bases: {py:obj}`archivebox.base_models.models.ModelWithHealthStats.Meta`
 
 ````{py:attribute} app_label
 :canonical: archivebox.machine.models.Machine.Meta.app_label
@@ -456,7 +539,7 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithHealthStats`
 
 `````
 
-````{py:method} current() -> archivebox.machine.models.Machine
+````{py:method} current(refresh: bool = False) -> archivebox.machine.models.Machine
 :canonical: archivebox.machine.models.Machine.current
 :classmethod:
 
@@ -465,11 +548,11 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithHealthStats`
 
 ````
 
-````{py:method} _hydrate_config_from_sibling(machine: archivebox.machine.models.Machine) -> archivebox.machine.models.Machine
-:canonical: archivebox.machine.models.Machine._hydrate_config_from_sibling
+````{py:method} _sanitize_config(machine: archivebox.machine.models.Machine) -> archivebox.machine.models.Machine
+:canonical: archivebox.machine.models.Machine._sanitize_config
 :classmethod:
 
-```{autodoc2-docstring} archivebox.machine.models.Machine._hydrate_config_from_sibling
+```{autodoc2-docstring} archivebox.machine.models.Machine._sanitize_config
 ```
 
 ````
@@ -482,12 +565,17 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithHealthStats`
 
 ````
 
-````{py:method} from_json(record: dict, overrides: dict = None)
+````{py:method} from_json(record: dict[str, typing.Any], overrides: dict[str, typing.Any] | None = None)
 :canonical: archivebox.machine.models.Machine.from_json
 :staticmethod:
 
 ```{autodoc2-docstring} archivebox.machine.models.Machine.from_json
 ```
+
+````
+
+````{py:method} save(*args, **kwargs)
+:canonical: archivebox.machine.models.Machine.save
 
 ````
 
@@ -658,7 +746,6 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithHealthStats`
 
 ````{py:attribute} objects
 :canonical: archivebox.machine.models.NetworkInterface.objects
-:type: archivebox.machine.models.NetworkInterfaceManager
 :value: >
    'NetworkInterfaceManager(...)'
 
@@ -667,11 +754,21 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithHealthStats`
 
 ````
 
+````{py:attribute} machine_id
+:canonical: archivebox.machine.models.NetworkInterface.machine_id
+:type: uuid.UUID
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.machine.models.NetworkInterface.machine_id
+```
+
+````
+
 `````{py:class} Meta
 :canonical: archivebox.machine.models.NetworkInterface.Meta
 
-```{autodoc2-docstring} archivebox.machine.models.NetworkInterface.Meta
-```
+Bases: {py:obj}`archivebox.base_models.models.ModelWithHealthStats.Meta`
 
 ````{py:attribute} app_label
 :canonical: archivebox.machine.models.NetworkInterface.Meta.app_label
@@ -693,9 +790,19 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithHealthStats`
 
 ````
 
+````{py:attribute} constraints
+:canonical: archivebox.machine.models.NetworkInterface.Meta.constraints
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.machine.models.NetworkInterface.Meta.constraints
+```
+
+````
+
 `````
 
-````{py:method} current() -> archivebox.machine.models.NetworkInterface
+````{py:method} current(refresh: bool = False) -> archivebox.machine.models.NetworkInterface
 :canonical: archivebox.machine.models.NetworkInterface.current
 :classmethod:
 
@@ -722,7 +829,7 @@ Bases: {py:obj}`django.db.models.Manager`
 
 ````
 
-````{py:method} get_valid_binary(name: str, machine: Machine | None = None) -> Binary | None
+````{py:method} get_valid_binary(name: str, machine: archivebox.machine.models.Machine | None = None) -> archivebox.machine.models.Binary | None
 :canonical: archivebox.machine.models.BinaryManager.get_valid_binary
 
 ```{autodoc2-docstring} archivebox.machine.models.BinaryManager.get_valid_binary
@@ -923,9 +1030,20 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
+````{py:attribute} machine_id
+:canonical: archivebox.machine.models.Binary.machine_id
+:type: uuid.UUID
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.machine.models.Binary.machine_id
+```
+
+````
+
 ````{py:attribute} state_machine_name
 :canonical: archivebox.machine.models.Binary.state_machine_name
-:type: str
+:type: str | None
 :value: >
    'archivebox.machine.models.BinaryMachine'
 
@@ -947,7 +1065,6 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````{py:attribute} objects
 :canonical: archivebox.machine.models.Binary.objects
-:type: archivebox.machine.models.BinaryManager
 :value: >
    'BinaryManager(...)'
 
@@ -959,8 +1076,7 @@ Bases: {py:obj}`django.db.models.TextChoices`
 `````{py:class} Meta
 :canonical: archivebox.machine.models.Binary.Meta
 
-```{autodoc2-docstring} archivebox.machine.models.Binary.Meta
-```
+Bases: {py:obj}`archivebox.base_models.models.ModelWithHealthStats.Meta`, {py:obj}`archivebox.workers.models.ModelWithStateMachine.Meta`
 
 ````{py:attribute} app_label
 :canonical: archivebox.machine.models.Binary.Meta.app_label
@@ -1043,19 +1159,11 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
-````{py:method} from_json(record: dict, overrides: dict = None)
+````{py:method} from_json(record: dict[str, typing.Any], overrides: dict[str, typing.Any] | None = None)
 :canonical: archivebox.machine.models.Binary.from_json
 :staticmethod:
 
 ```{autodoc2-docstring} archivebox.machine.models.Binary.from_json
-```
-
-````
-
-````{py:method} update_and_requeue(**kwargs)
-:canonical: archivebox.machine.models.Binary.update_and_requeue
-
-```{autodoc2-docstring} archivebox.machine.models.Binary.update_and_requeue
 ```
 
 ````
@@ -1092,6 +1200,14 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
+````{py:method} symlink_to_lib_bin_after_commit(lib_bin_dir: str | pathlib.Path) -> None
+:canonical: archivebox.machine.models.Binary.symlink_to_lib_bin_after_commit
+
+```{autodoc2-docstring} archivebox.machine.models.Binary.symlink_to_lib_bin_after_commit
+```
+
+````
+
 ``````
 
 `````{py:class} ProcessManager
@@ -1110,7 +1226,7 @@ Bases: {py:obj}`django.db.models.Manager`
 
 ````
 
-````{py:method} get_by_pid(pid: int, machine: archivebox.machine.models.Machine = None) -> Process | None
+````{py:method} get_by_pid(pid: int, machine: archivebox.machine.models.Machine | None = None) -> archivebox.machine.models.Process | None
 :canonical: archivebox.machine.models.ProcessManager.get_by_pid
 
 ```{autodoc2-docstring} archivebox.machine.models.ProcessManager.get_by_pid
@@ -1131,7 +1247,7 @@ Bases: {py:obj}`django.db.models.Manager`
 ``````{py:class} Process(*args, **kwargs)
 :canonical: archivebox.machine.models.Process
 
-Bases: {py:obj}`django.db.models.Model`
+Bases: {py:obj}`archivebox.base_models.models.ModelWithDeleteAfter`, {py:obj}`django.db.models.Model`
 
 ```{autodoc2-docstring} archivebox.machine.models.Process
 ```
@@ -1200,6 +1316,46 @@ Bases: {py:obj}`django.db.models.TextChoices`
    ('orchestrator', 'Orchestrator')
 
 ```{autodoc2-docstring} archivebox.machine.models.Process.TypeChoices.ORCHESTRATOR
+```
+
+````
+
+````{py:attribute} SERVER
+:canonical: archivebox.machine.models.Process.TypeChoices.SERVER
+:value: >
+   ('server', 'Server')
+
+```{autodoc2-docstring} archivebox.machine.models.Process.TypeChoices.SERVER
+```
+
+````
+
+````{py:attribute} UPDATE
+:canonical: archivebox.machine.models.Process.TypeChoices.UPDATE
+:value: >
+   ('update', 'Update')
+
+```{autodoc2-docstring} archivebox.machine.models.Process.TypeChoices.UPDATE
+```
+
+````
+
+````{py:attribute} ADD
+:canonical: archivebox.machine.models.Process.TypeChoices.ADD
+:value: >
+   ('add', 'Add')
+
+```{autodoc2-docstring} archivebox.machine.models.Process.TypeChoices.ADD
+```
+
+````
+
+````{py:attribute} SEARCH
+:canonical: archivebox.machine.models.Process.TypeChoices.SEARCH
+:value: >
+   ('search', 'Search')
+
+```{autodoc2-docstring} archivebox.machine.models.Process.TypeChoices.SEARCH
 ```
 
 ````
@@ -1466,6 +1622,61 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
+````{py:attribute} machine_id
+:canonical: archivebox.machine.models.Process.machine_id
+:type: uuid.UUID
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.machine.models.Process.machine_id
+```
+
+````
+
+````{py:attribute} parent_id
+:canonical: archivebox.machine.models.Process.parent_id
+:type: uuid.UUID | None
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.machine.models.Process.parent_id
+```
+
+````
+
+````{py:attribute} binary_id
+:canonical: archivebox.machine.models.Process.binary_id
+:type: uuid.UUID | None
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.machine.models.Process.binary_id
+```
+
+````
+
+````{py:attribute} children
+:canonical: archivebox.machine.models.Process.children
+:type: django.db.models.Manager[archivebox.machine.models.Process]
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.machine.models.Process.children
+```
+
+````
+
+````{py:attribute} archiveresult
+:canonical: archivebox.machine.models.Process.archiveresult
+:type: archivebox.core.models.ArchiveResult
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.machine.models.Process.archiveresult
+```
+
+````
+
 ````{py:attribute} state_machine_name
 :canonical: archivebox.machine.models.Process.state_machine_name
 :type: str
@@ -1477,9 +1688,18 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
+````{py:attribute} delete_after_final_statuses
+:canonical: archivebox.machine.models.Process.delete_after_final_statuses
+:value: >
+   ()
+
+```{autodoc2-docstring} archivebox.machine.models.Process.delete_after_final_statuses
+```
+
+````
+
 ````{py:attribute} objects
 :canonical: archivebox.machine.models.Process.objects
-:type: archivebox.machine.models.ProcessManager
 :value: >
    'ProcessManager(...)'
 
@@ -1491,8 +1711,7 @@ Bases: {py:obj}`django.db.models.TextChoices`
 `````{py:class} Meta
 :canonical: archivebox.machine.models.Process.Meta
 
-```{autodoc2-docstring} archivebox.machine.models.Process.Meta
-```
+Bases: {py:obj}`archivebox.base_models.models.ModelWithDeleteAfter.Meta`
 
 ````{py:attribute} app_label
 :canonical: archivebox.machine.models.Process.Meta.app_label
@@ -1534,10 +1753,37 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
+````{py:attribute} constraints
+:canonical: archivebox.machine.models.Process.Meta.constraints
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.machine.models.Process.Meta.constraints
+```
+
+````
+
 `````
 
 ````{py:method} __str__() -> str
 :canonical: archivebox.machine.models.Process.__str__
+
+````
+
+````{py:method} get_delete_after_config_value()
+:canonical: archivebox.machine.models.Process.get_delete_after_config_value
+
+```{autodoc2-docstring} archivebox.machine.models.Process.get_delete_after_config_value
+```
+
+````
+
+````{py:method} missing_delete_at_candidates()
+:canonical: archivebox.machine.models.Process.missing_delete_at_candidates
+:classmethod:
+
+```{autodoc2-docstring} archivebox.machine.models.Process.missing_delete_at_candidates
+```
 
 ````
 
@@ -1585,6 +1831,14 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
+````{py:method} hydrate_binary_from_context(*, plugin_name: str = '', hook_path: str = '') -> archivebox.machine.models.Binary | None
+:canonical: archivebox.machine.models.Process.hydrate_binary_from_context
+
+```{autodoc2-docstring} archivebox.machine.models.Process.hydrate_binary_from_context
+```
+
+````
+
 ````{py:method} parse_records_from_text(text: str) -> list[dict]
 :canonical: archivebox.machine.models.Process.parse_records_from_text
 :classmethod:
@@ -1602,7 +1856,7 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
-````{py:method} from_json(record: dict, overrides: dict = None)
+````{py:method} from_json(record: dict[str, typing.Any], overrides: dict[str, typing.Any] | None = None)
 :canonical: archivebox.machine.models.Process.from_json
 :staticmethod:
 
@@ -1611,10 +1865,42 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
-````{py:method} update_and_requeue(**kwargs)
+````{py:method} safe_update(update_fields: dict[str, typing.Any], *, refresh: bool = True, extra_filter: dict[str, typing.Any] | None = None) -> bool
+:canonical: archivebox.machine.models.Process.safe_update
+
+```{autodoc2-docstring} archivebox.machine.models.Process.safe_update
+```
+
+````
+
+````{py:method} update_and_requeue(**kwargs) -> bool
 :canonical: archivebox.machine.models.Process.update_and_requeue
 
 ```{autodoc2-docstring} archivebox.machine.models.Process.update_and_requeue
+```
+
+````
+
+````{py:method} mark_running(*, process_type: str | None = None, pwd: str | pathlib.Path | None = None, url: str | None = None, worker_type: str = '', timeout: int | None = None) -> None
+:canonical: archivebox.machine.models.Process.mark_running
+
+```{autodoc2-docstring} archivebox.machine.models.Process.mark_running
+```
+
+````
+
+````{py:method} heartbeat() -> None
+:canonical: archivebox.machine.models.Process.heartbeat
+
+```{autodoc2-docstring} archivebox.machine.models.Process.heartbeat
+```
+
+````
+
+````{py:method} mark_exited(*, exit_code: int = 0) -> None
+:canonical: archivebox.machine.models.Process.mark_exited
+
+```{autodoc2-docstring} archivebox.machine.models.Process.mark_exited
 ```
 
 ````
@@ -1628,7 +1914,7 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
-````{py:method} _find_parent_process(machine: archivebox.machine.models.Machine = None) -> Process | None
+````{py:method} _find_parent_process(machine: archivebox.machine.models.Machine | None = None) -> archivebox.machine.models.Process | None
 :canonical: archivebox.machine.models.Process._find_parent_process
 :classmethod:
 
@@ -1646,7 +1932,7 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
-````{py:method} cleanup_stale_running(machine: archivebox.machine.models.Machine = None) -> int
+````{py:method} cleanup_stale_running(machine: archivebox.machine.models.Machine | None = None) -> int
 :canonical: archivebox.machine.models.Process.cleanup_stale_running
 :classmethod:
 
@@ -1740,27 +2026,9 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
-````{py:property} pid_file
-:canonical: archivebox.machine.models.Process.pid_file
-:type: pathlib.Path
-
-```{autodoc2-docstring} archivebox.machine.models.Process.pid_file
-```
-
-````
-
-````{py:property} cmd_file
-:canonical: archivebox.machine.models.Process.cmd_file
-:type: pathlib.Path
-
-```{autodoc2-docstring} archivebox.machine.models.Process.cmd_file
-```
-
-````
-
 ````{py:property} stdout_file
 :canonical: archivebox.machine.models.Process.stdout_file
-:type: pathlib.Path
+:type: pathlib.Path | None
 
 ```{autodoc2-docstring} archivebox.machine.models.Process.stdout_file
 ```
@@ -1769,7 +2037,7 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````{py:property} stderr_file
 :canonical: archivebox.machine.models.Process.stderr_file
-:type: pathlib.Path
+:type: pathlib.Path | None
 
 ```{autodoc2-docstring} archivebox.machine.models.Process.stderr_file
 ```
@@ -1822,22 +2090,6 @@ Bases: {py:obj}`django.db.models.TextChoices`
 :canonical: archivebox.machine.models.Process.pipe_stderr
 
 ```{autodoc2-docstring} archivebox.machine.models.Process.pipe_stderr
-```
-
-````
-
-````{py:method} _write_pid_file() -> None
-:canonical: archivebox.machine.models.Process._write_pid_file
-
-```{autodoc2-docstring} archivebox.machine.models.Process._write_pid_file
-```
-
-````
-
-````{py:method} _write_cmd_file() -> None
-:canonical: archivebox.machine.models.Process._write_cmd_file
-
-```{autodoc2-docstring} archivebox.machine.models.Process._write_cmd_file
 ```
 
 ````
@@ -1914,7 +2166,7 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
-````{py:method} get_running(process_type: str = None, machine: archivebox.machine.models.Machine = None) -> QuerySet[Process]
+````{py:method} get_running(process_type: str | None = None, machine: archivebox.machine.models.Machine | None = None) -> django.db.models.QuerySet[archivebox.machine.models.Process]
 :canonical: archivebox.machine.models.Process.get_running
 :classmethod:
 
@@ -1923,7 +2175,7 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
-````{py:method} get_running_count(process_type: str = None, machine: archivebox.machine.models.Machine = None) -> int
+````{py:method} get_running_count(process_type: str | None = None, machine: archivebox.machine.models.Machine | None = None) -> int
 :canonical: archivebox.machine.models.Process.get_running_count
 :classmethod:
 
@@ -1932,7 +2184,7 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
-````{py:method} stop_all(process_type: str = None, machine: archivebox.machine.models.Machine = None, graceful: bool = True) -> int
+````{py:method} stop_all(process_type: str | None = None, machine: archivebox.machine.models.Machine | None = None, graceful: bool = True) -> int
 :canonical: archivebox.machine.models.Process.stop_all
 :classmethod:
 
@@ -1941,7 +2193,7 @@ Bases: {py:obj}`django.db.models.TextChoices`
 
 ````
 
-````{py:method} get_next_worker_id(process_type: str = 'worker', machine: archivebox.machine.models.Machine = None) -> int
+````{py:method} get_next_worker_id(process_type: str = 'worker', machine: archivebox.machine.models.Machine | None = None) -> int
 :canonical: archivebox.machine.models.Process.get_next_worker_id
 :classmethod:
 
@@ -1990,6 +2242,17 @@ Bases: {py:obj}`archivebox.workers.models.BaseStateMachine`
    'binary'
 
 ```{autodoc2-docstring} archivebox.machine.models.BinaryMachine.model_attr_name
+```
+
+````
+
+````{py:attribute} binary
+:canonical: archivebox.machine.models.BinaryMachine.binary
+:type: archivebox.machine.models.Binary
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.machine.models.BinaryMachine.binary
 ```
 
 ````
@@ -2078,6 +2341,17 @@ Bases: {py:obj}`archivebox.workers.models.BaseStateMachine`
    'process'
 
 ```{autodoc2-docstring} archivebox.machine.models.ProcessMachine.model_attr_name
+```
+
+````
+
+````{py:attribute} process
+:canonical: archivebox.machine.models.ProcessMachine.process
+:type: archivebox.machine.models.Process
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.machine.models.ProcessMachine.process
 ```
 
 ````

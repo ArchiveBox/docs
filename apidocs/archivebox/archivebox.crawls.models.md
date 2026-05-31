@@ -20,9 +20,7 @@
 * - {py:obj}`Crawl <archivebox.crawls.models.Crawl>`
   -
 * - {py:obj}`CrawlMachine <archivebox.crawls.models.CrawlMachine>`
-  - ```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine
-    :summary:
-    ```
+  -
 ````
 
 ### API
@@ -137,7 +135,7 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithUUID`, {py:obj}`archivebo
 `````{py:class} Meta
 :canonical: archivebox.crawls.models.CrawlSchedule.Meta
 
-Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
+Bases: {py:obj}`archivebox.base_models.models.ModelWithUUID.Meta`, {py:obj}`archivebox.base_models.models.ModelWithNotes.Meta`
 
 ````{py:attribute} app_label
 :canonical: archivebox.crawls.models.CrawlSchedule.Meta.app_label
@@ -227,7 +225,7 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 ``````{py:class} Crawl(*args, **kwargs)
 :canonical: archivebox.crawls.models.Crawl
 
-Bases: {py:obj}`archivebox.base_models.models.ModelWithOutputDir`, {py:obj}`archivebox.base_models.models.ModelWithConfig`, {py:obj}`archivebox.base_models.models.ModelWithHealthStats`, {py:obj}`archivebox.workers.models.ModelWithStateMachine`
+Bases: {py:obj}`archivebox.base_models.models.ModelWithDeleteAfter`, {py:obj}`archivebox.base_models.models.ModelWithOutputDir`, {py:obj}`archivebox.base_models.models.ModelWithConfig`, {py:obj}`archivebox.base_models.models.ModelWithHealthStats`, {py:obj}`archivebox.workers.models.ModelWithStateMachine`
 
 ````{py:attribute} id
 :canonical: archivebox.crawls.models.Crawl.id
@@ -289,6 +287,16 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithOutputDir`, {py:obj}`arch
 
 ````
 
+````{py:attribute} permissions
+:canonical: archivebox.crawls.models.Crawl.permissions
+:value: >
+   'GeneratedField(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.permissions
+```
+
+````
+
 ````{py:attribute} max_depth
 :canonical: archivebox.crawls.models.Crawl.max_depth
 :value: >
@@ -309,12 +317,12 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithOutputDir`, {py:obj}`arch
 
 ````
 
-````{py:attribute} persona_id
-:canonical: archivebox.crawls.models.Crawl.persona_id
+````{py:attribute} persona
+:canonical: archivebox.crawls.models.Crawl.persona
 :value: >
-   'UUIDField(...)'
+   'ForeignKey(...)'
 
-```{autodoc2-docstring} archivebox.crawls.models.Crawl.persona_id
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.persona
 ```
 
 ````
@@ -419,6 +427,38 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithOutputDir`, {py:obj}`arch
 
 ````
 
+````{py:attribute} delete_after_final_statuses
+:canonical: archivebox.crawls.models.Crawl.delete_after_final_statuses
+:value: >
+   ()
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.delete_after_final_statuses
+```
+
+````
+
+````{py:attribute} schedule_id
+:canonical: archivebox.crawls.models.Crawl.schedule_id
+:type: uuid.UUID | None
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.schedule_id
+```
+
+````
+
+````{py:attribute} sm
+:canonical: archivebox.crawls.models.Crawl.sm
+:type: CrawlMachine
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.sm
+```
+
+````
+
 ````{py:attribute} snapshot_set
 :canonical: archivebox.crawls.models.Crawl.snapshot_set
 :type: django.db.models.Manager[archivebox.core.models.Snapshot]
@@ -433,7 +473,7 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithOutputDir`, {py:obj}`arch
 `````{py:class} Meta
 :canonical: archivebox.crawls.models.Crawl.Meta
 
-Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
+Bases: {py:obj}`archivebox.base_models.models.ModelWithDeleteAfter.Meta`, {py:obj}`archivebox.base_models.models.ModelWithOutputDir.Meta`, {py:obj}`archivebox.base_models.models.ModelWithConfig.Meta`, {py:obj}`archivebox.base_models.models.ModelWithHealthStats.Meta`, {py:obj}`archivebox.workers.models.ModelWithStateMachine.Meta`
 
 ````{py:attribute} app_label
 :canonical: archivebox.crawls.models.Crawl.Meta.app_label
@@ -465,10 +505,77 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````
 
+````{py:attribute} indexes
+:canonical: archivebox.crawls.models.Crawl.Meta.indexes
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.Meta.indexes
+```
+
+````
+
 `````
 
 ````{py:method} __str__()
 :canonical: archivebox.crawls.models.Crawl.__str__
+
+````
+
+````{py:method} get_delete_after_config_value()
+:canonical: archivebox.crawls.models.Crawl.get_delete_after_config_value
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.get_delete_after_config_value
+```
+
+````
+
+````{py:method} pause(*, save: bool = True) -> bool
+:canonical: archivebox.crawls.models.Crawl.pause
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.pause
+```
+
+````
+
+````{py:method} resume(*, when=None, save: bool = True) -> bool
+:canonical: archivebox.crawls.models.Crawl.resume
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.resume
+```
+
+````
+
+````{py:method} cancel() -> None
+:canonical: archivebox.crawls.models.Crawl.cancel
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.cancel
+```
+
+````
+
+````{py:method} schedule_child_snapshots_for_sealing() -> int
+:canonical: archivebox.crawls.models.Crawl.schedule_child_snapshots_for_sealing
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.schedule_child_snapshots_for_sealing
+```
+
+````
+
+````{py:method} schedule_child_snapshots_for_pause() -> int
+:canonical: archivebox.crawls.models.Crawl.schedule_child_snapshots_for_pause
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.schedule_child_snapshots_for_pause
+```
+
+````
+
+````{py:method} missing_delete_at_candidates()
+:canonical: archivebox.crawls.models.Crawl.missing_delete_at_candidates
+:classmethod:
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.missing_delete_at_candidates
+```
 
 ````
 
@@ -486,6 +593,31 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````
 
+````{py:method} parse_tag_names(tags: collections.abc.Iterable[str] | str, *, pattern: str = ',') -> list[str]
+:canonical: archivebox.crawls.models.Crawl.parse_tag_names
+:staticmethod:
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.parse_tag_names
+```
+
+````
+
+````{py:method} current_tag_names() -> list[str]
+:canonical: archivebox.crawls.models.Crawl.current_tag_names
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.current_tag_names
+```
+
+````
+
+````{py:method} apply_snapshot_tag_diff(*, added_tag_names: collections.abc.Iterable[str], removed_tag_names: collections.abc.Iterable[str]) -> None
+:canonical: archivebox.crawls.models.Crawl.apply_snapshot_tag_diff
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.apply_snapshot_tag_diff
+```
+
+````
+
 ````{py:method} to_json() -> dict
 :canonical: archivebox.crawls.models.Crawl.to_json
 
@@ -494,11 +626,19 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````
 
-````{py:method} from_json(record: dict, overrides: dict = None)
+````{py:method} from_json(record: dict, overrides: dict | None = None)
 :canonical: archivebox.crawls.models.Crawl.from_json
 :staticmethod:
 
 ```{autodoc2-docstring} archivebox.crawls.models.Crawl.from_json
+```
+
+````
+
+````{py:method} output_dir_for_config(runtime_config: collections.abc.Mapping[str, typing.Any] | typing.Any) -> pathlib.Path
+:canonical: archivebox.crawls.models.Crawl.output_dir_for_config
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.output_dir_for_config
 ```
 
 ````
@@ -520,10 +660,173 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````
 
+````{py:method} normalize_domain(value: str) -> str
+:canonical: archivebox.crawls.models.Crawl.normalize_domain
+:staticmethod:
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.normalize_domain
+```
+
+````
+
+````{py:method} split_filter_patterns(value) -> list[str]
+:canonical: archivebox.crawls.models.Crawl.split_filter_patterns
+:staticmethod:
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.split_filter_patterns
+```
+
+````
+
+````{py:method} _pattern_matches_url(url: str, pattern: str) -> bool
+:canonical: archivebox.crawls.models.Crawl._pattern_matches_url
+:classmethod:
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl._pattern_matches_url
+```
+
+````
+
+````{py:method} get_url_allowlist(*, use_effective_config: bool = False, snapshot=None) -> list[str]
+:canonical: archivebox.crawls.models.Crawl.get_url_allowlist
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.get_url_allowlist
+```
+
+````
+
+````{py:method} get_url_denylist(*, use_effective_config: bool = False, snapshot=None) -> list[str]
+:canonical: archivebox.crawls.models.Crawl.get_url_denylist
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.get_url_denylist
+```
+
+````
+
+````{py:method} url_passes_filters(url: str, *, snapshot=None, use_effective_config: bool = True) -> bool
+:canonical: archivebox.crawls.models.Crawl.url_passes_filters
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.url_passes_filters
+```
+
+````
+
+````{py:method} url_passes_compiled_filters(url: str, *, allowlist: list[str], denylist: list[str]) -> bool
+:canonical: archivebox.crawls.models.Crawl.url_passes_compiled_filters
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.url_passes_compiled_filters
+```
+
+````
+
+````{py:method} set_url_filters(allowlist, denylist) -> None
+:canonical: archivebox.crawls.models.Crawl.set_url_filters
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.set_url_filters
+```
+
+````
+
+````{py:method} apply_crawl_config_filters() -> dict[str, int]
+:canonical: archivebox.crawls.models.Crawl.apply_crawl_config_filters
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.apply_crawl_config_filters
+```
+
+````
+
+````{py:method} _iter_url_lines() -> list[tuple[str, str]]
+:canonical: archivebox.crawls.models.Crawl._iter_url_lines
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl._iter_url_lines
+```
+
+````
+
+````{py:method} count_urls_for_limit() -> int
+:canonical: archivebox.crawls.models.Crawl.count_urls_for_limit
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.count_urls_for_limit
+```
+
+````
+
+````{py:method} remaining_url_capacity() -> int | None
+:canonical: archivebox.crawls.models.Crawl.remaining_url_capacity
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.remaining_url_capacity
+```
+
+````
+
+````{py:method} has_remaining_url_capacity() -> bool
+:canonical: archivebox.crawls.models.Crawl.has_remaining_url_capacity
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.has_remaining_url_capacity
+```
+
+````
+
+````{py:method} remaining_snapshot_capacity() -> int | None
+:canonical: archivebox.crawls.models.Crawl.remaining_snapshot_capacity
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.remaining_snapshot_capacity
+```
+
+````
+
+````{py:method} has_remaining_snapshot_capacity() -> bool
+:canonical: archivebox.crawls.models.Crawl.has_remaining_snapshot_capacity
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.has_remaining_snapshot_capacity
+```
+
+````
+
+````{py:method} prune_urls(predicate) -> list[str]
+:canonical: archivebox.crawls.models.Crawl.prune_urls
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.prune_urls
+```
+
+````
+
+````{py:method} prune_url(url: str) -> int
+:canonical: archivebox.crawls.models.Crawl.prune_url
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.prune_url
+```
+
+````
+
+````{py:method} exclude_domain(domain: str) -> dict[str, int | str | bool]
+:canonical: archivebox.crawls.models.Crawl.exclude_domain
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.exclude_domain
+```
+
+````
+
 ````{py:method} get_system_task() -> str | None
 :canonical: archivebox.crawls.models.Crawl.get_system_task
 
 ```{autodoc2-docstring} archivebox.crawls.models.Crawl.get_system_task
+```
+
+````
+
+````{py:method} resolve_persona()
+:canonical: archivebox.crawls.models.Crawl.resolve_persona
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.resolve_persona
+```
+
+````
+
+````{py:method} limit_stop_reason() -> str
+:canonical: archivebox.crawls.models.Crawl.limit_stop_reason
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.limit_stop_reason
 ```
 
 ````
@@ -540,6 +843,30 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 :canonical: archivebox.crawls.models.Crawl.create_snapshots_from_urls
 
 ```{autodoc2-docstring} archivebox.crawls.models.Crawl.create_snapshots_from_urls
+```
+
+````
+
+````{py:method} create_discovered_snapshot(parent_snapshot, *, url: str, depth: int, title: str = '', tags: str = '', created_by_id: int | None = None)
+:canonical: archivebox.crawls.models.Crawl.create_discovered_snapshot
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.create_discovered_snapshot
+```
+
+````
+
+````{py:method} create_discovered_snapshots(parent_snapshot, records: collections.abc.Iterable[collections.abc.Mapping[str, typing.Any]], *, depth: int, created_by_id: int | None = None) -> list[archivebox.core.models.Snapshot]
+:canonical: archivebox.crawls.models.Crawl.create_discovered_snapshots
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.create_discovered_snapshots
+```
+
+````
+
+````{py:method} install_declared_binaries(binary_names: set[str], machine=None) -> None
+:canonical: archivebox.crawls.models.Crawl.install_declared_binaries
+
+```{autodoc2-docstring} archivebox.crawls.models.Crawl.install_declared_binaries
 ```
 
 ````
@@ -575,14 +902,16 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 Bases: {py:obj}`archivebox.workers.models.BaseStateMachine`
 
-```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine
+````{py:attribute} crawl
+:canonical: archivebox.crawls.models.CrawlMachine.crawl
+:type: archivebox.crawls.models.Crawl
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.crawl
 ```
 
-```{rubric} Initialization
-```
-
-```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.__init__
-```
+````
 
 ````{py:attribute} model_attr_name
 :canonical: archivebox.crawls.models.CrawlMachine.model_attr_name
@@ -614,6 +943,16 @@ Bases: {py:obj}`archivebox.workers.models.BaseStateMachine`
 
 ````
 
+````{py:attribute} paused
+:canonical: archivebox.crawls.models.CrawlMachine.paused
+:value: >
+   'State(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.paused
+```
+
+````
+
 ````{py:attribute} sealed
 :canonical: archivebox.crawls.models.CrawlMachine.sealed
 :value: >
@@ -637,9 +976,29 @@ Bases: {py:obj}`archivebox.workers.models.BaseStateMachine`
 ````{py:attribute} seal
 :canonical: archivebox.crawls.models.CrawlMachine.seal
 :value: >
-   'to(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.seal
+```
+
+````
+
+````{py:attribute} pause_requested
+:canonical: archivebox.crawls.models.CrawlMachine.pause_requested
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.pause_requested
+```
+
+````
+
+````{py:attribute} resume_requested
+:canonical: archivebox.crawls.models.CrawlMachine.resume_requested
+:value: >
+   'to(...)'
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.resume_requested
 ```
 
 ````
@@ -660,10 +1019,34 @@ Bases: {py:obj}`archivebox.workers.models.BaseStateMachine`
 
 ````
 
+````{py:method} has_finished_snapshots() -> bool
+:canonical: archivebox.crawls.models.CrawlMachine.has_finished_snapshots
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.has_finished_snapshots
+```
+
+````
+
+````{py:method} enter_queued()
+:canonical: archivebox.crawls.models.CrawlMachine.enter_queued
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.enter_queued
+```
+
+````
+
 ````{py:method} enter_started()
 :canonical: archivebox.crawls.models.CrawlMachine.enter_started
 
 ```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.enter_started
+```
+
+````
+
+````{py:method} enter_paused()
+:canonical: archivebox.crawls.models.CrawlMachine.enter_paused
+
+```{autodoc2-docstring} archivebox.crawls.models.CrawlMachine.enter_paused
 ```
 
 ````

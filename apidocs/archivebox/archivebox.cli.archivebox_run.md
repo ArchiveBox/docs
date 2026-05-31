@@ -19,16 +19,16 @@
   - ```{autodoc2-docstring} archivebox.cli.archivebox_run.process_stdin_records
     :summary:
     ```
-* - {py:obj}`run_orchestrator <archivebox.cli.archivebox_run.run_orchestrator>`
-  - ```{autodoc2-docstring} archivebox.cli.archivebox_run.run_orchestrator
-    :summary:
-    ```
-* - {py:obj}`run_snapshot_worker <archivebox.cli.archivebox_run.run_snapshot_worker>`
-  - ```{autodoc2-docstring} archivebox.cli.archivebox_run.run_snapshot_worker
+* - {py:obj}`run_runner <archivebox.cli.archivebox_run.run_runner>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_run.run_runner
     :summary:
     ```
 * - {py:obj}`main <archivebox.cli.archivebox_run.main>`
   - ```{autodoc2-docstring} archivebox.cli.archivebox_run.main
+    :summary:
+    ```
+* - {py:obj}`run_snapshot_worker <archivebox.cli.archivebox_run.run_snapshot_worker>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_run.run_snapshot_worker
     :summary:
     ```
 ````
@@ -64,10 +64,17 @@
 ```
 ````
 
-````{py:function} run_orchestrator(daemon: bool = False) -> int
-:canonical: archivebox.cli.archivebox_run.run_orchestrator
+````{py:function} run_runner(daemon: bool = False, crawl_id: str | None = None, maintenance_only: bool = False) -> int
+:canonical: archivebox.cli.archivebox_run.run_runner
 
-```{autodoc2-docstring} archivebox.cli.archivebox_run.run_orchestrator
+```{autodoc2-docstring} archivebox.cli.archivebox_run.run_runner
+```
+````
+
+````{py:function} main(daemon: bool, crawl_id: str, snapshot_id: str, binary_id: str, maintenance_only: bool)
+:canonical: archivebox.cli.archivebox_run.main
+
+```{autodoc2-docstring} archivebox.cli.archivebox_run.main
 ```
 ````
 
@@ -75,12 +82,5 @@
 :canonical: archivebox.cli.archivebox_run.run_snapshot_worker
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_run.run_snapshot_worker
-```
-````
-
-````{py:function} main(daemon: bool, crawl_id: str, snapshot_id: str, binary_id: str, worker_type: str)
-:canonical: archivebox.cli.archivebox_run.main
-
-```{autodoc2-docstring} archivebox.cli.archivebox_run.main
 ```
 ````

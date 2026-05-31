@@ -19,6 +19,10 @@
   - ```{autodoc2-docstring} archivebox.core.widgets.TagEditorWidget
     :summary:
     ```
+* - {py:obj}`URLFiltersWidget <archivebox.core.widgets.URLFiltersWidget>`
+  - ```{autodoc2-docstring} archivebox.core.widgets.URLFiltersWidget
+    :summary:
+    ```
 * - {py:obj}`InlineTagEditorWidget <archivebox.core.widgets.InlineTagEditorWidget>`
   - ```{autodoc2-docstring} archivebox.core.widgets.InlineTagEditorWidget
     :summary:
@@ -43,8 +47,7 @@ Bases: {py:obj}`django.forms.Widget`
 
 ````{py:attribute} template_name
 :canonical: archivebox.core.widgets.TagEditorWidget.template_name
-:value: >
-   None
+:value: <Multiline-String>
 
 ```{autodoc2-docstring} archivebox.core.widgets.TagEditorWidget.template_name
 ```
@@ -113,7 +116,42 @@ Bases: {py:obj}`django.forms.Widget`
 
 ``````
 
-`````{py:class} InlineTagEditorWidget(attrs=None, snapshot_id=None)
+`````{py:class} URLFiltersWidget(attrs=None, *, source_selector='textarea[name="url"]')
+:canonical: archivebox.core.widgets.URLFiltersWidget
+
+Bases: {py:obj}`django.forms.Widget`
+
+```{autodoc2-docstring} archivebox.core.widgets.URLFiltersWidget
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} archivebox.core.widgets.URLFiltersWidget.__init__
+```
+
+````{py:attribute} template_name
+:canonical: archivebox.core.widgets.URLFiltersWidget.template_name
+:value: <Multiline-String>
+
+```{autodoc2-docstring} archivebox.core.widgets.URLFiltersWidget.template_name
+```
+
+````
+
+````{py:method} render(name, value, attrs=None, renderer=None)
+:canonical: archivebox.core.widgets.URLFiltersWidget.render
+
+````
+
+````{py:method} value_from_datadict(data, files, name)
+:canonical: archivebox.core.widgets.URLFiltersWidget.value_from_datadict
+
+````
+
+`````
+
+`````{py:class} InlineTagEditorWidget(attrs=None, snapshot_id=None, editable=True)
 :canonical: archivebox.core.widgets.InlineTagEditorWidget
 
 Bases: {py:obj}`archivebox.core.widgets.TagEditorWidget`

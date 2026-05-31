@@ -117,7 +117,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} errors
 :canonical: archivebox.api.v1_cli.CLICommandResponseSchema.errors
-:type: typing.List[str]
+:type: list[str]
 :value: >
    None
 
@@ -353,11 +353,22 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} urls
 :canonical: archivebox.api.v1_cli.AddCommandSchema.urls
-:type: typing.List[str]
+:type: list[str]
 :value: >
    None
 
 ```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.urls
+```
+
+````
+
+````{py:attribute} snapshot_ids
+:canonical: archivebox.api.v1_cli.AddCommandSchema.snapshot_ids
+:type: list[str] | None
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.snapshot_ids
 ```
 
 ````
@@ -383,6 +394,50 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
+````{py:attribute} max_urls
+:canonical: archivebox.api.v1_cli.AddCommandSchema.max_urls
+:type: int
+:value: >
+   0
+
+```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.max_urls
+```
+
+````
+
+````{py:attribute} crawl_max_size
+:canonical: archivebox.api.v1_cli.AddCommandSchema.crawl_max_size
+:type: int
+:value: >
+   0
+
+```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.crawl_max_size
+```
+
+````
+
+````{py:attribute} crawl_timeout
+:canonical: archivebox.api.v1_cli.AddCommandSchema.crawl_timeout
+:type: int
+:value: >
+   0
+
+```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.crawl_timeout
+```
+
+````
+
+````{py:attribute} snapshot_max_size
+:canonical: archivebox.api.v1_cli.AddCommandSchema.snapshot_max_size
+:type: int
+:value: >
+   0
+
+```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.snapshot_max_size
+```
+
+````
+
 ````{py:attribute} parser
 :canonical: archivebox.api.v1_cli.AddCommandSchema.parser
 :type: str
@@ -404,24 +459,13 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
-````{py:attribute} update
-:canonical: archivebox.api.v1_cli.AddCommandSchema.update
-:type: bool
+````{py:attribute} only_new
+:canonical: archivebox.api.v1_cli.AddCommandSchema.only_new
+:type: bool | None
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.update
-```
-
-````
-
-````{py:attribute} overwrite
-:canonical: archivebox.api.v1_cli.AddCommandSchema.overwrite
-:type: bool
-:value: >
-   False
-
-```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.overwrite
+```{autodoc2-docstring} archivebox.api.v1_cli.AddCommandSchema.only_new
 ```
 
 ````
@@ -446,51 +490,18 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} resume
 :canonical: archivebox.api.v1_cli.UpdateCommandSchema.resume
-:type: typing.Optional[float]
+:type: str | None
 :value: >
-   0
+   None
 
 ```{autodoc2-docstring} archivebox.api.v1_cli.UpdateCommandSchema.resume
 ```
 
 ````
 
-````{py:attribute} only_new
-:canonical: archivebox.api.v1_cli.UpdateCommandSchema.only_new
-:type: bool
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.api.v1_cli.UpdateCommandSchema.only_new
-```
-
-````
-
-````{py:attribute} index_only
-:canonical: archivebox.api.v1_cli.UpdateCommandSchema.index_only
-:type: bool
-:value: >
-   False
-
-```{autodoc2-docstring} archivebox.api.v1_cli.UpdateCommandSchema.index_only
-```
-
-````
-
-````{py:attribute} overwrite
-:canonical: archivebox.api.v1_cli.UpdateCommandSchema.overwrite
-:type: bool
-:value: >
-   False
-
-```{autodoc2-docstring} archivebox.api.v1_cli.UpdateCommandSchema.overwrite
-```
-
-````
-
 ````{py:attribute} after
 :canonical: archivebox.api.v1_cli.UpdateCommandSchema.after
-:type: typing.Optional[float]
+:type: float | None
 :value: >
    0
 
@@ -501,7 +512,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} before
 :canonical: archivebox.api.v1_cli.UpdateCommandSchema.before
-:type: typing.Optional[float]
+:type: float | None
 :value: >
    999999999999999
 
@@ -510,20 +521,9 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
-````{py:attribute} status
-:canonical: archivebox.api.v1_cli.UpdateCommandSchema.status
-:type: typing.Optional[archivebox.api.v1_cli.StatusChoices]
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.api.v1_cli.UpdateCommandSchema.status
-```
-
-````
-
 ````{py:attribute} filter_type
 :canonical: archivebox.api.v1_cli.UpdateCommandSchema.filter_type
-:type: typing.Optional[str]
+:type: str | None
 :value: >
    None
 
@@ -534,7 +534,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} filter_patterns
 :canonical: archivebox.api.v1_cli.UpdateCommandSchema.filter_patterns
-:type: typing.Optional[typing.List[str]]
+:type: list[str] | None
 :value: >
    ['https://example.com']
 
@@ -543,12 +543,24 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
-````{py:attribute} plugins
-:canonical: archivebox.api.v1_cli.UpdateCommandSchema.plugins
-:type: typing.Optional[str]
-:value: <Multiline-String>
+````{py:attribute} batch_size
+:canonical: archivebox.api.v1_cli.UpdateCommandSchema.batch_size
+:type: int
+:value: >
+   100
 
-```{autodoc2-docstring} archivebox.api.v1_cli.UpdateCommandSchema.plugins
+```{autodoc2-docstring} archivebox.api.v1_cli.UpdateCommandSchema.batch_size
+```
+
+````
+
+````{py:attribute} continuous
+:canonical: archivebox.api.v1_cli.UpdateCommandSchema.continuous
+:type: bool
+:value: >
+   False
+
+```{autodoc2-docstring} archivebox.api.v1_cli.UpdateCommandSchema.continuous
 ```
 
 ````
@@ -562,7 +574,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} import_path
 :canonical: archivebox.api.v1_cli.ScheduleCommandSchema.import_path
-:type: typing.Optional[str]
+:type: str | None
 :value: >
    None
 
@@ -628,7 +640,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} every
 :canonical: archivebox.api.v1_cli.ScheduleCommandSchema.every
-:type: typing.Optional[str]
+:type: str | None
 :value: >
    None
 
@@ -658,24 +670,13 @@ Bases: {py:obj}`ninja.Schema`
 
 ````
 
-````{py:attribute} overwrite
-:canonical: archivebox.api.v1_cli.ScheduleCommandSchema.overwrite
-:type: bool
-:value: >
-   False
-
-```{autodoc2-docstring} archivebox.api.v1_cli.ScheduleCommandSchema.overwrite
-```
-
-````
-
-````{py:attribute} update
-:canonical: archivebox.api.v1_cli.ScheduleCommandSchema.update
-:type: bool
+````{py:attribute} only_new
+:canonical: archivebox.api.v1_cli.ScheduleCommandSchema.only_new
+:type: bool | None
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.api.v1_cli.ScheduleCommandSchema.update
+```{autodoc2-docstring} archivebox.api.v1_cli.ScheduleCommandSchema.only_new
 ```
 
 ````
@@ -700,7 +701,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} filter_patterns
 :canonical: archivebox.api.v1_cli.ListCommandSchema.filter_patterns
-:type: typing.Optional[typing.List[str]]
+:type: list[str] | None
 :value: >
    ['https://example.com']
 
@@ -733,7 +734,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} after
 :canonical: archivebox.api.v1_cli.ListCommandSchema.after
-:type: typing.Optional[float]
+:type: float | None
 :value: >
    0
 
@@ -744,7 +745,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} before
 :canonical: archivebox.api.v1_cli.ListCommandSchema.before
-:type: typing.Optional[float]
+:type: float | None
 :value: >
    999999999999999
 
@@ -815,20 +816,9 @@ Bases: {py:obj}`ninja.Schema`
 
 Bases: {py:obj}`ninja.Schema`
 
-````{py:attribute} delete
-:canonical: archivebox.api.v1_cli.RemoveCommandSchema.delete
-:type: bool
-:value: >
-   True
-
-```{autodoc2-docstring} archivebox.api.v1_cli.RemoveCommandSchema.delete
-```
-
-````
-
 ````{py:attribute} after
 :canonical: archivebox.api.v1_cli.RemoveCommandSchema.after
-:type: typing.Optional[float]
+:type: float | None
 :value: >
    0
 
@@ -839,7 +829,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} before
 :canonical: archivebox.api.v1_cli.RemoveCommandSchema.before
-:type: typing.Optional[float]
+:type: float | None
 :value: >
    999999999999999
 
@@ -861,7 +851,7 @@ Bases: {py:obj}`ninja.Schema`
 
 ````{py:attribute} filter_patterns
 :canonical: archivebox.api.v1_cli.RemoveCommandSchema.filter_patterns
-:type: typing.Optional[typing.List[str]]
+:type: list[str] | None
 :value: >
    ['https://example.com']
 
@@ -872,35 +862,35 @@ Bases: {py:obj}`ninja.Schema`
 
 `````
 
-````{py:function} cli_add(request, args: archivebox.api.v1_cli.AddCommandSchema)
+````{py:function} cli_add(request: django.http.HttpRequest, args: archivebox.api.v1_cli.AddCommandSchema)
 :canonical: archivebox.api.v1_cli.cli_add
 
 ```{autodoc2-docstring} archivebox.api.v1_cli.cli_add
 ```
 ````
 
-````{py:function} cli_update(request, args: archivebox.api.v1_cli.UpdateCommandSchema)
+````{py:function} cli_update(request: django.http.HttpRequest, args: archivebox.api.v1_cli.UpdateCommandSchema)
 :canonical: archivebox.api.v1_cli.cli_update
 
 ```{autodoc2-docstring} archivebox.api.v1_cli.cli_update
 ```
 ````
 
-````{py:function} cli_schedule(request, args: archivebox.api.v1_cli.ScheduleCommandSchema)
+````{py:function} cli_schedule(request: django.http.HttpRequest, args: archivebox.api.v1_cli.ScheduleCommandSchema)
 :canonical: archivebox.api.v1_cli.cli_schedule
 
 ```{autodoc2-docstring} archivebox.api.v1_cli.cli_schedule
 ```
 ````
 
-````{py:function} cli_search(request, args: archivebox.api.v1_cli.ListCommandSchema)
+````{py:function} cli_search(request: django.http.HttpRequest, args: archivebox.api.v1_cli.ListCommandSchema)
 :canonical: archivebox.api.v1_cli.cli_search
 
 ```{autodoc2-docstring} archivebox.api.v1_cli.cli_search
 ```
 ````
 
-````{py:function} cli_remove(request, args: archivebox.api.v1_cli.RemoveCommandSchema)
+````{py:function} cli_remove(request: django.http.HttpRequest, args: archivebox.api.v1_cli.RemoveCommandSchema)
 :canonical: archivebox.api.v1_cli.cli_remove
 
 ```{autodoc2-docstring} archivebox.api.v1_cli.cli_remove

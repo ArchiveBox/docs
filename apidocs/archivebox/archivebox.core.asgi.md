@@ -9,6 +9,18 @@
 
 ## Module Contents
 
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_patch_thread_sensitive_context_shutdown <archivebox.core.asgi._patch_thread_sensitive_context_shutdown>`
+  - ```{autodoc2-docstring} archivebox.core.asgi._patch_thread_sensitive_context_shutdown
+    :summary:
+    ```
+````
+
 ### Data
 
 ````{list-table}
@@ -22,6 +34,13 @@
 ````
 
 ### API
+
+````{py:function} _patch_thread_sensitive_context_shutdown() -> None
+:canonical: archivebox.core.asgi._patch_thread_sensitive_context_shutdown
+
+```{autodoc2-docstring} archivebox.core.asgi._patch_thread_sensitive_context_shutdown
+```
+````
 
 ````{py:data} application
 :canonical: archivebox.core.asgi.application

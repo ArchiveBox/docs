@@ -21,7 +21,29 @@
     ```
 ````
 
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`SENSITIVE_QUERY_PARAM_RE <archivebox.misc.monkey_patches.SENSITIVE_QUERY_PARAM_RE>`
+  - ```{autodoc2-docstring} archivebox.misc.monkey_patches.SENSITIVE_QUERY_PARAM_RE
+    :summary:
+    ```
+````
+
 ### API
+
+````{py:data} SENSITIVE_QUERY_PARAM_RE
+:canonical: archivebox.misc.monkey_patches.SENSITIVE_QUERY_PARAM_RE
+:value: >
+   'compile(...)'
+
+```{autodoc2-docstring} archivebox.misc.monkey_patches.SENSITIVE_QUERY_PARAM_RE
+```
+
+````
 
 `````{py:class} ModifiedAccessLogGenerator(stream)
 :canonical: archivebox.misc.monkey_patches.ModifiedAccessLogGenerator
@@ -37,7 +59,12 @@ Bases: {py:obj}`daphne.access.AccessLogGenerator`
 ```{autodoc2-docstring} archivebox.misc.monkey_patches.ModifiedAccessLogGenerator.__init__
 ```
 
-````{py:method} write_entry(host, date, request, status=None, length=None, ident=None, user=None)
+````{py:method} __call__(protocol, action, details)
+:canonical: archivebox.misc.monkey_patches.ModifiedAccessLogGenerator.__call__
+
+````
+
+````{py:method} write_entry(host, date, request, status=None, length=None, ident=None, user=None, time_taken=None)
 :canonical: archivebox.misc.monkey_patches.ModifiedAccessLogGenerator.write_entry
 
 ````

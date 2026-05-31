@@ -13,7 +13,7 @@
 :titlesonly:
 :maxdepth: 1
 
-archivebox.crawls.schedule_utils
+archivebox.crawls.schedule_util
 archivebox.crawls.models
 archivebox.crawls.apps
 archivebox.crawls.admin
