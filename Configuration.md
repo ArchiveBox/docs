@@ -133,6 +133,7 @@ archivebox add --persona=personal https://members.example.com/feed
 [`DEFAULT_PERSONA`](#default_persona), [`CHROME_USER_DATA_DIR`](https://archivebox.github.io/abx-plugins/#chrome)
 
 ---
+<a id="active_persona"></a>
 #### `DEFAULT_PERSONA`
 **Possible Values:** [`Default`]/`personal`/`work`/...
 The persona profile used when no explicit persona is selected for a crawl. Personas bundle a Chrome user-data-dir, a `cookies.txt`, auth state, a user-agent, and any other per-identity config into a single named profile, letting you swap between archiving contexts (logged-out vs. signed-into-work-account vs. signed-into-personal-account) without manually juggling files.
@@ -281,6 +282,7 @@ This option supersedes the removed `PUBLIC_SNAPSHOTS` boolean and is also driven
 [`PUBLIC_INDEX`](#public_index), [`PUBLIC_ADD_VIEW`](#public_add_view), [`DELETE_AFTER`](#delete_after)
 
 ---
+<a id="enabled_plugins"></a>
 #### `PLUGINS`
 **Possible Values:** [`""`]/`wget,favicon,screenshot`/`chrome,singlefile,dom`/...
 Comma-separated **whitelist** of plugins to load and run for this archiving run. When empty (the default), ArchiveBox uses the installed/enabled plugin set — i.e. every plugin whose `<PLUGIN>_ENABLED` config evaluates true.
@@ -291,24 +293,9 @@ When set, only the listed plugins (plus any plugins they declare as `required_pl
 archivebox add --plugins=wget,favicon,screenshot https://example.com
 ```
 
+The admin "Add" form and REST API both write to `PLUGINS` when you select extractors — there is no separate "enabled set" config knob; `PLUGINS` is the single source of truth for which plugins run on any given Crawl, Snapshot, or Persona scope.
+
 Useful for one-off runs ("just grab a screenshot and skip everything else") or for reproducible per-crawl pipelines stored on the Crawl row.
-
-*Related options:*
-[`ENABLED_PLUGINS`](#enabled_plugins)
-
----
-#### `ENABLED_PLUGINS`
-**Possible Values:** [`""`]/`wget,chrome,singlefile`/...
-Comma-separated **override** of the enabled plugin set, used primarily by the admin UI and REST API to express "these are the plugins I want enabled for this Crawl/Snapshot/Persona" without having to flip every individual `<PLUGIN>_ENABLED` flag.
-
-The distinction vs. [`PLUGINS`](#plugins):
-- `PLUGINS` is the **run-time selector** (what to actually execute on this `add` invocation, with transitive dependency expansion).
-- `ENABLED_PLUGINS` is the **persisted enabled set** (what the UI/API thinks should be on for this scope, used to compute per-plugin `<PLUGIN>_ENABLED` defaults).
-
-When both are set, `PLUGINS` wins for the actual run; `ENABLED_PLUGINS` remains as the stored default for future runs at the same scope.
-
-*Related options:*
-[`PLUGINS`](#plugins)
 
 ---
 
@@ -391,7 +378,7 @@ IPv6 literal addresses must be bracketed: `[::1]:8000`, not `::1:8000`.
 
 The canonical public URL of your ArchiveBox instance. Used to build absolute links in templates, redirects (`/admin/login/?next=...`), admin notification emails, OG/meta tags, and — in subdomain security mode — to derive the `admin.`, `web.`, `api.`, `public.`, and per-snapshot `snap-<id>.` subdomains.
 
-**When `BASE_URL` is set explicitly**, ArchiveBox treats it as the source of truth and ignores the incoming `Host` header for URL building. In `safe-subdomains-fullreplay` mode this is **required for redirects to work** — without an explicit base, the middleware can't safely emit `admin.<host>` redirects (they'd compound onto whatever subdomain the request already arrived on).
+**When `BASE_URL` is set explicitly**, ArchiveBox treats it as the source of truth and ignores the incoming `Host` header for URL building. In `safe-subdomains-fullreplay` mode setting it is **required for redirects to work correctly**.
 
 **When `BASE_URL` is empty**, the value is resolved at request time from the incoming request's `Host` header (with any leading `admin.` / `web.` / `api.` / `public.` / `snap-*.` label stripped to recover the canonical base). Loopback hostnames (`localhost`, `127.0.0.1`, `0.0.0.0`, `::`) are rewritten to `archivebox.localhost` so subdomain routing works without `/etc/hosts` edits. If there's no live request, [`BIND_ADDR`](#bind_addr) is used as a last resort.
 
@@ -400,7 +387,7 @@ The scheme is taken from the explicit `BASE_URL` if set, otherwise from the requ
 ArchiveBox automatically derives the underlying Django `ALLOWED_HOSTS` and `CSRF_TRUSTED_ORIGINS` settings from `BASE_URL` + [`SERVER_SECURITY_MODE`](#server_security_mode), so you do **not** set those directly — the system widens them as needed to admit the admin/web/api/public subdomains.
 
 > [!NOTE]
-> **In `safe-subdomains-fullreplay` mode, pin `BASE_URL` explicitly.** Without it, the misconfig banner will surface in the rendered page and host-based redirects (`/admin` → `admin.<host>`) are suppressed to avoid the `admin.admin.admin.<host>` compounding bug.
+> **Pin `BASE_URL` explicitly on any deployment using `safe-subdomains-fullreplay` mode.** A misconfig banner will surface in the rendered UI until you do.
 
 > [!NOTE]
 > **Legacy upgrade path (0.7.3 → 0.9):** older deployments that set `CSRF_TRUSTED_ORIGINS=https://archive.example.com` for their reverse-proxy login but never set `BASE_URL` still work — when exactly one CSRF origin is present and `BASE_URL` is empty, ArchiveBox uses that origin as the implicit base URL. New installs should set `BASE_URL` directly; `CSRF_TRUSTED_ORIGINS` is no longer a user-settable knob.
@@ -604,7 +591,7 @@ When `True`, every LDAP user who successfully authenticates is auto-promoted to 
 <a id="dir_output_permissions"></a>
 #### `OUTPUT_PERMISSIONS`
 **Possible Values:** [`644`]/`755`/...
-Permissions to set on output files written into the [`ARCHIVE_DIR`](#archive_dir). The directory mode is derived from this by OR-ing in the execute bits (so `644` files imply `755` dirs), which subsumes the legacy `DIR_OUTPUT_PERMISSIONS` option (formerly a separate `755`-default field) — directory mode is no longer settable on its own.
+Permissions to set on output files written into the archive directory. The directory mode is derived from this by OR-ing in the execute bits (so `644` files imply `755` dirs), which subsumes the legacy `DIR_OUTPUT_PERMISSIONS` option (formerly a separate `755`-default field) — directory mode is no longer settable on its own.
 
 > [!NOTE]
 > Set this to `600` if you want archives to be readable only by the ArchiveBox user, or `664`/`775` if you need a shared group to read/write the data dir.
@@ -632,8 +619,8 @@ Whether to write output files atomically (write to a tempfile + `rename()` into 
 
 ---
 #### `TMP_DIR`
-**Possible Values:** [`<DATA_DIR>/tmp/<machine_id>`]/`/tmp/archivebox/abc5d851`/...
-Path for temporary files, the supervisord unix socket, and generated supervisor config. The default is a per-machine subdirectory under the data dir (`tmp/<machine_id>`) so multiple machines sharing the same data dir (e.g., over NFS) don't collide on socket files.
+**Possible Values:** [`data/tmp/<machine_id>`]/`/tmp/archivebox/abc5d851`/...
+Path for temporary files, the supervisord unix socket, and generated supervisor config. The default is a per-machine subdirectory under the data folder (`tmp/<machine_id>`) so multiple machines sharing the same data dir (e.g., over NFS) don't collide on socket files.
 
 > [!WARNING]
 > `TMP_DIR` *must* be a short, local path readable/writable by the ArchiveBox user. Unix socket paths have a hard ~96-character limit, so a deeply nested `TMP_DIR` will silently break the supervisor. It also must live on a real local filesystem (tmpfs/SSD) — FUSE, network mounts, and Docker bind mounts on macOS often cannot host unix sockets at all (see [`ALLOW_NO_UNIX_SOCKETS`](#allow_no_unix_sockets)).
@@ -645,62 +632,23 @@ If ArchiveBox detects the configured `TMP_DIR` is unwritable or too long, it wil
 
 ---
 #### `LIB_DIR`
-**Possible Values:** [`<DATA_DIR>/lib/<arch>-<os>`]/`/opt/archivebox/lib`/`~/.config/abx/lib`/...
-Path for installed binary dependencies (`chromium`, `single-file`, `yt-dlp`, `ripgrep`, etc.) managed by `abxpkg`. The default is namespaced by architecture/OS (e.g. `arm64-darwin`, `x86_64-linux-docker`) so the same data dir can be safely mounted into containers with different CPU architectures without re-downloading binaries.
+**Possible Values:** [`<user-config>/abx/lib`]/`/opt/archivebox/lib`/`~/.config/abx/lib`/...
+Path for installed binary dependencies (`chromium`, `single-file`, `yt-dlp`, `ripgrep`, etc.) managed by `abxpkg`. The default is the platform-standard user-config location (`~/.config/abx/lib` on Linux, `~/Library/Application Support/abx/lib` on macOS, `%APPDATA%\abx\lib` on Windows) so a single binary installation can be shared across multiple collections on the same machine without re-downloading.
 
 > [!NOTE]
 > `LIB_DIR` can grow to several GB. Put it on a fast local disk — running extractors off a network-mounted `LIB_DIR` will be painfully slow.
 
 *Related options:*
-[`LIB_BIN_DIR`](#lib_bin_dir), [`TMP_DIR`](#tmp_dir)
+[`TMP_DIR`](#tmp_dir)
 
 ---
-#### `LIB_BIN_DIR`
-**Possible Values:** [`<LIB_DIR>/bin`]
-Path where installed binaries are symlinked for a flat, shared lookup `PATH`. Both `abxpkg` and `abx-dl` build the executable-resolution environment from this directory at exec time, so anything dropped (or symlinked) here becomes available to all extractor hooks.
-
-Almost no one needs to change this — it tracks [`LIB_DIR`](#lib_dir) automatically when `LIB_DIR` is overridden.
-
----
-#### `DATA_DIR`
-**Possible Values:** [`<cwd>`]/`/data`/`~/archivebox-data`/...
-The root of an ArchiveBox collection. Holds `index.sqlite3`, `ArchiveBox.conf`, the [`ARCHIVE_DIR`](#archive_dir), [`PERSONAS_DIR`](#personas_dir), `sources/`, `logs/`, `cache/`, etc.
-
-Normally you do *not* set this explicitly — instead you `cd` into the data folder and run `archivebox` there, and `DATA_DIR` defaults to the current working directory. The `DATA_DIR` environment variable is available as an override (used internally by the test suite and some wrappers), but if it's set it must match the cwd or ArchiveBox will refuse to start — this is a guardrail against accidentally pointing two different processes at different roots.
-
-> [!WARNING]
-> ArchiveBox refuses to run as root, refuses to run from an unwritable directory, and refuses to run when `DATA_DIR` disagrees with the current working directory. Always `cd` into your data folder first.
-
----
-#### `ARCHIVE_DIR`
-**Possible Values:** [`<DATA_DIR>/archive`]
-Where Snapshot output directories are written. This is the heavy directory — every archived URL gets a subtree here. Override it when you want index/config to live on a small fast disk but snapshot data on bulk storage:
-
-```bash
-archivebox config --set ARCHIVE_DIR=/mnt/bulk/archivebox/archive
-```
-
-Relative paths are resolved against [`DATA_DIR`](#data_dir).
-
-*Related options:*
-[`USERS_DIR`](#users_dir), [`DATA_DIR`](#data_dir)
-
----
-#### `USERS_DIR`
-**Possible Values:** [`<ARCHIVE_DIR>/users`]
-Root of the per-user namespace inside the archive. Each ArchiveBox user gets a subdir (`users/<username>/crawls/...` and `users/<username>/snapshots/...`) so multiple users sharing one collection do not collide on output paths, and per-user retention/permission policies are easy to enforce at the filesystem level.
-
-Relative paths are resolved against [`ARCHIVE_DIR`](#archive_dir).
-
----
-#### `PERSONAS_DIR`
-**Possible Values:** [`<DATA_DIR>/personas`]
-Where persona state lives — Chrome user-data-dirs, cookie jars, sessionstorage, and any other auth/profile state that should follow a "persona" across snapshots. Each persona owns a subdirectory here that gets bind-mounted (or pointed at via `CHROME_USER_DATA_DIR`) when extractors run on its behalf.
-
-> [!WARNING]
-> `PERSONAS_DIR` typically contains plaintext cookies and logged-in browser sessions. Treat it as secret material — set restrictive [`OUTPUT_PERMISSIONS`](#output_permissions) (e.g. `600`) and never commit it to git or include it in shared backups without encryption.
-
----
+<a id="lib_bin_dir"></a>
+<a id="data_dir"></a>
+<a id="archive_dir"></a>
+<a id="users_dir"></a>
+<a id="personas_dir"></a>
+<a id="crawl_dir"></a>
+<a id="snap_dir"></a>
 #### `ALLOW_NO_UNIX_SOCKETS`
 **Possible Values:** [`False`]/`True`
 **Alias:** `ARCHIVEBOX_ALLOW_NO_UNIX_SOCKETS`
@@ -730,16 +678,8 @@ ArchiveBox stores all of its index metadata in a single SQLite database file (`i
 - https://www.sqlite.org/pragma.html
 
 ---
-#### `DATABASE_NAME`
-**Possible Values:** [`<DATA_DIR>/index.sqlite3`]/`/absolute/path/to/index.sqlite3`/...
-Absolute filesystem path to the SQLite index database file. Settable as the environment variable `ARCHIVEBOX_DATABASE_NAME`.
-
-By default this resolves to `index.sqlite3` inside your data directory and you should not need to change it. Override only when you have a specific reason — e.g. pointing a temporary process at a snapshot of the DB for testing, running multiple ArchiveBox instances out of the same data directory against separate indexes, or relocating the index file onto a different volume.
-
-> [!WARNING]
-> The data directory layout (snapshots, tags, archive folders on disk) is keyed off the index database. Pointing `DATABASE_NAME` at a database that does not match the surrounding data directory will produce broken references and missing archive folders.
-
----
+<a id="database_name"></a>
+<a id="archivebox_database_name"></a>
 #### `SQLITE_JOURNAL_MODE`
 **Possible Values:** [`WAL`]/`DELETE`/`TRUNCATE`/`PERSIST`/`MEMORY`/`OFF`
 SQLite [journal mode](https://www.sqlite.org/pragma.html#pragma_journal_mode), applied via `PRAGMA journal_mode = ...` on every new connection. Settable as `ARCHIVEBOX_SQLITE_JOURNAL_MODE`.
