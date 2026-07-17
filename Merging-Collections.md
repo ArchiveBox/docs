@@ -2,9 +2,6 @@
 
 Two or more existing ArchiveBox collection dirs can be merged together by simply combining the contents of `archive/*` and re-running `archivebox init` to pull the new Snapshots into the index.
 
-> [!WARNING]
-> Snapshot folders are identified by their timestamp (in milliseconds), this is normally not a problem for archives collected on one machine, but when merging archives from two different instances that ran at the same time it means there is a small chance of conflicts. Check the contents of `archive/` before merging, and backup any directories that may conflict before proceeding.
-
 1. Upgrade both old collections to the most recent ArchiveBox version (following instructions above)
   ```bash
   pip install --upgrade archivebox   # or follow instructions above for upgrading w/ Docker
@@ -26,6 +23,16 @@ Two or more existing ArchiveBox collection dirs can be merged together by simply
   cd /path/to/archivebox_new
   archivebox init
   ```
+
+> [!WARNING]
+> ### YOU MUST CHECK FOR DUPLICATES MANUALLY WHEN MERGING OLDER VERSIONS
+> Snapshot folders from `v0.7.x` and below were identified by their `archive/<timestamp>` (in milliseconds), which are not guaranteed to be globally unique across different Collections. Check the contents of both `data/archive/` folders before merging, and backup/rename any timestamp that may conflict before proceeding.
+> ```bash
+> /path/to/archivebox2/data/archive                         # cd into one of the archive folders
+> mv OLDTIMESTAMP NEWTIMESTAMP                              # you can append .1 or .2 etc to make it unique e.g. `mv 1784314965 1784314965.1`                      
+> cd NEWTIMESTAMP/                                          # e.g. `cd 1784314965.1`
+> sed -i "" "s/OLDTIMESTAMP/NEWTIMESTAMP/g" *               # update JSON/HTML/log metadata, e.g. `s/1784314965/1784314965.1/g`
+> ```
 
 3. Copy everything under `./archive/*` in each old collection into the new collection's `./archive/` folder
   ```bash
