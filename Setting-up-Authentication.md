@@ -1,16 +1,8 @@
 # Setting Up Authentication
 
-> *💬 We offer [consulting services](https://docs.monadical.com/s/archivebox-consulting-services) to set up, integrate, and maintain ArchiveBox with your org's auth & hosting.  
-> If you need support, advanced development to capture difficult sites, audit logging, and more, we can provide it!*  
-> <sub>We use this revenue (from corporate clients who can afford to pay) to support open source development and keep ArchiveBox free.</sub>
-
----
-
 ArchiveBox supports several types of authentication for users logging in via the Admin Web UI or REST API.
 
 ## Set Up Admin Web UI Permissions
-
-<img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/024913f0-ad2c-463c-aa4a-eb3d0ec8eb64" alt="Non-admin user permissions are only available to paying ArchiveBox clients" width="200px" align="right">
 
 Use these three options to set up your desired permissions for non-admin guest users:
 - [`PUBLIC_INDEX=True`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view): Default *allows* non-logged-in users to see Snapshot list
@@ -18,7 +10,7 @@ Use these three options to set up your desired permissions for non-admin guest u
 - [`PUBLIC_ADD_VIEW=False`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view): Default *doesn't allow* non-logged-in users to submit new URLs
 
 > [!NOTE]
-> **Open source ArchiveBox does not support setting up *non-admin* users** & groups with custom permissions. We do offer this feature, audit logging, and more to [paying clients](https://docs.monadical.com/s/archivebox-consulting-services).
+> ArchiveBox does not currently support setting up *non-admin* users and groups with custom permissions.
 
 - [Wiki: Configuration (`PUBLIC_ADD_VIEW`, `PUBLIC_SNAPSHOTS`, `PUBLIC_INDEX`)]()
 - [Wiki: Security Overview](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview)
