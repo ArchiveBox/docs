@@ -26,10 +26,10 @@
 All three of these ways of running ArchiveBox are equivalent and interchangeable:
 
 - `archivebox [subcommand] [...args]`  
-  *Using the PyPI package via `pip install archivebox`*
+  *Using the Python package via the current `uv` instructions in [[Install]]*
 - `docker run ... archivebox/archivebox [subcommand] [...args]`  
   *Using the official Docker image*
-- `docker-compose run archivebox [subcommand] [...args]`  
+- `docker compose run --rm archivebox [subcommand] [...args]`
   *Using the official Docker image w/ Docker Compose*
 
 You can share a single archivebox data directory between Docker and non-Docker instances as well, allowing you to run the server in a container but still execute CLI commands on the host for example.
@@ -51,14 +51,14 @@ You can set environment variables in your shell profile, a config file, or by us
 # set config via the CLI
 archivebox config --set TIMEOUT=120
 
-# OR modify the config file directly
-echo 'TIMEOUT=120' >> ArchiveBox.conf
+# OR edit ArchiveBox.conf and add this under its existing [ARCHIVING_CONFIG] section:
+TIMEOUT=120
 
 # OR use environment variables
 env TIMEOUT=120 archivebox add 'https://example.com'
 ```
 
-See [[Configuration]] page for core ArchiveBox config options and the [abx-plugins config reference](https://archivebox.github.io/abx-plugins/) for per-plugin options (e.g. `MEDIA_MAX_SIZE`, `CHROME_USER_DATA_DIR`, `WGET_ARGS`, etc.).  
+See [[Configuration]] page for core ArchiveBox config options and the [abx-plugins config reference](https://archivebox.github.io/abx-plugins/) for per-plugin options (e.g. `YTDLP_MAX_SIZE`, `CHROME_USER_DATA_DIR`, `WGET_ARGS`, etc.).
 If you're using Docker, also make sure to read the Configuration section on the [[Docker]] page.
 
 > [!TIP]  
@@ -107,14 +107,14 @@ Look in the `bin/` folder of this repo to find a script to parse your browser's 
 Specify the type of the browser as the first argument, and optionally the path to the SQLite history file as the second argument.
 
 ```bash
-./bin/export-browser-history --chrome
-archivebox add < output/sources/chrome_history.json
+bash ./bin/export_browser_history.sh --chrome
+archivebox add < chrome_history.json
 # or
-./bin/export-browser-history --firefox
-archivebox add < output/sources/firefox_history.json
+bash ./bin/export_browser_history.sh --firefox
+archivebox add < firefox_history.json
 # or
-./bin/export-browser-history --safari
-archivebox add < output/sources/safari_history.json
+bash ./bin/export_browser_history.sh --safari
+archivebox add < safari_history.json
 ```
 
 <br/>
@@ -150,11 +150,10 @@ archivebox config --set PUBLIC_INDEX=False
 archivebox config --set PUBLIC_ADD_VIEW=False
 archivebox config --set PERMISSIONS=private        # default visibility of newly created snapshots (was: PUBLIC_SNAPSHOTS=False)
 
-archivebox manage createsuperuser  # set an admin password to use for any areas requiring login
 archivebox server 0.0.0.0:8000     # start the archivebox web server
-
-open http://127.0.0.1:8000         # open the admin UI in a browser to view your archive
 ```
+
+Open <http://admin.archivebox.localhost:8000/admin/> in a browser to create the first admin and finish web setup. To create additional accounts from the CLI, use `archivebox manage createsuperuser`.
 
 *See the [Configuration Wiki](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#permissions) and [Security Wiki](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#archiving-private-content) for more info...*
 
@@ -175,7 +174,7 @@ Click the Favicon under the "Files" column to go to the details page for each li
 
 A logged-in admin user may select ☑️ one or more snapshots from the list and perform Snapshot actions:
 
-- <kbd>Search</kbd> Search text in the Snapshot title, URL, tags, or archived content (supports regex with the default ripgrep search backend, or enable the [Sonic](https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml#L35) full-text search backend in `docker-compose.yml` and set `SEARCH_BACKEND_ENGINE=sonic`, `SEARCH_BACKEND_HOST`, `SEARCH_BACKEND_PASSWORD` for full-text fuzzy searching) https://github.com/ArchiveBox/ArchiveBox/issues/956
+- <kbd>Search</kbd> Search text in the Snapshot title, URL, tags, or archived content. [Sonic](https://github.com/valeriansaliou/sonic) is the default indexed search backend, with ripgrep enabled as the filesystem fallback and regex-search option. https://github.com/ArchiveBox/ArchiveBox/issues/956
 - <kbd>Tags</kbd> Start typing in the field to select some tags, then click `+` to add them or `-` remove them from the checked snapshots (`Tags` can be created/edited from the `/admin/core/tag/` page)
 - <kbd>Title</kbd> Pull the latest title and favicon without doing a full snapshot. (helpful to quickly ping any URLs that are stuck showing up as `Pending...` or are missing a title)
 - <kbd>Pull</kbd> Finish downloading the Snapshot, pulls any missing/failed outputs/extractors methods (pdf, wget... etc). Resumes running the same archiving steps as when you add new URL. Useful to finish pulling when previous import was paused or interrupted by a reboot or something.  https://github.com/ArchiveBox/ArchiveBox#output-formats
@@ -239,15 +238,21 @@ Simply back up the entire `data/` folder to back up your archive, e.g. `zip -r d
    - ArchiveBox.conf      # Main config file in ini format
 
    - archive/
-      - 155243135/        # Archived links are stored in folders by timestamp
-         - index.json     # Index/details page for individual archived link
-         - index.html
+      - 155243135 -> users/admin/snapshots/20210406/example.com/SNAPSHOT_UUID/
+      - users/
+         - admin/
+            - snapshots/
+               - 20210406/
+                  - example.com/
+                     - SNAPSHOT_UUID/
+                        - index.jsonl
+                        - index.html
 
-         # Archive method outputs:
-         - warc/
-         - media/
-         - git/
-         ...
+                        # Archive method outputs:
+                        - wget/warc/
+                        - ytdlp/media/
+                        - git/
+                        ...
 
    - sources/             # Each imported URL list is saved as a copy here
       - getpocket.com-1552432264.txt
@@ -269,13 +274,11 @@ Those numbers are from running it single-threaded on my i5 machine with 50mbps d
 
 Storage requirements go up immensely if you're using [`MEDIA_ENABLED=True`](https://archivebox.github.io/abx-plugins/#media) (or its [`FETCH_MEDIA`](https://archivebox.github.io/abx-plugins/#ytdlp) / `YTDLP_ENABLED` aliases) and are archiving many pages with audio & video.
 
-You can try to run it in parallel by manually splitting your URLs into separate chunks (though this may not work with `database locked` errors on slower filesystems):
+ArchiveBox's unified crawl runner handles bounded concurrency without starting competing writers:
 ```bash
-archivebox add < urls_chunk_1.txt &
-archivebox add < urls_chunk_2.txt &
-archivebox add < urls_chunk_3.txt &
+env CRAWL_MAX_CONCURRENT_SNAPSHOTS=4 archivebox add < urls_to_archive.txt
 ```
-(though this may not be faster if you have a very large collection/main index)
+Higher concurrency is not always faster on slow disks or network filesystems, so increase it gradually.
 
 Users have reported running it with 50k+ bookmarks with success (though it will take more RAM while running).
 
@@ -328,58 +331,18 @@ Explore the Python API a bit to see what's available using the archivebox shell:
 
 ```bash
 $ archivebox shell
-[i] [2020-09-17 16:57:07] ArchiveBox v0.4.21: archivebox shell
-    > /Users/squash/Documents/opt/ArchiveBox/data
+[i] ArchiveBox shell
+>>> from archivebox.core.models import Snapshot
+>>> from archivebox.cli.archivebox_add import add
 
-# Shell Plus Model Imports
-from core.models import Snapshot
-from django.contrib.admin.models import LogEntry
-from django.contrib.auth.models import Group, Permission, User
-from django.contrib.contenttypes.models import ContentType
-from django.contrib.sessions.models import Session
-# Shell Plus Django Imports
-from django.core.cache import cache
-from django.conf import settings
-from django.contrib.auth import get_user_model
-from django.db import transaction
-from django.db.models import Avg, Case, Count, F, Max, Min, Prefetch, Q, Sum, When
-from django.utils import timezone
-from django.urls import reverse
-from django.db.models import Exists, OuterRef, Subquery
-# ArchiveBox Imports
-from archivebox.core.models import Snapshot, User
-from archivebox import *
-    help
-    version
-    init
-    config
-    add
-    remove
-    update
-    list
-    shell
-    server
-    status
-    manage
-    oneshot
-    schedule
-
-[i] Welcome to the ArchiveBox Shell!
-    https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#Shell-Usage
-    https://docs.archivebox.io/dev/apidocs/index.html
-
-    Hint: Example use:
-        print(Snapshot.objects.filter(is_archived=True).count())
-        Snapshot.objects.get(url="https://example.com").as_json()
-        add("https://example.com/some/new/url")
-
-# run Python API queries/function calls directly
->>> print(Snapshot.objects.filter(is_archived=True).count())
+# count completed snapshots
+>>> print(Snapshot.objects.filter(status=Snapshot.StatusChoices.SEALED).count())
 24
 
-# get help info on an object or function
->>> help(Snapshot)
-...
+# inspect or add URLs through current APIs
+>>> Snapshot.objects.filter(url="https://example.com").first()
+<Snapshot: https://example.com>
+>>> crawl, snapshots = add(urls=["https://example.com/new"], index_only=True)
 
 # show raw SQL queries run
 >>> from django.db import connection
@@ -405,23 +368,23 @@ You can interact with ArchiveBox as a Python library from external scripts or pr
 
 This API is a *local* API, designed to be used on the same machine as the ArchiveBox collection.
 
-For example you could creat a script `add_archivebox_url.py` like so:
+For example, you could create a script `add_archivebox_url.py` like so:
 ```python
 import os
-DATA_DIR = '~/archivebox/data'
+from pathlib import Path
+
+DATA_DIR = Path("~/archivebox/data").expanduser()
 os.chdir(DATA_DIR)
 
 # you must import and setup django first to establish a DB connection
-from archivebox.config.legacy import setup_django
-setup_django()
+from archivebox.config.django import setup_django
+setup_django(check_db=True)
 
-# then you can import all the main functions
-from archivebox.main import add, remove, server
+# then import the specific API you need
+from archivebox.cli.archivebox_add import add
 
-add('https://example.com', index_only=True, out_dir=DATA_DIR)
-remove(...)
-server(...)
-...
+crawl, snapshots = add(urls=["https://example.com"], index_only=True)
+print(crawl.id, list(snapshots.values_list("id", flat=True)))
 ```
 
 For more information see:

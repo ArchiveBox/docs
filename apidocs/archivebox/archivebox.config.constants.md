@@ -199,24 +199,24 @@
 
 ````
 
-````{py:attribute} DEFAULT_PUID
-:canonical: archivebox.config.constants.ConstantsDict.DEFAULT_PUID
+````{py:attribute} DEFAULT_UID
+:canonical: archivebox.config.constants.ConstantsDict.DEFAULT_UID
 :type: int
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DEFAULT_PUID
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DEFAULT_UID
 ```
 
 ````
 
-````{py:attribute} DEFAULT_PGID
-:canonical: archivebox.config.constants.ConstantsDict.DEFAULT_PGID
+````{py:attribute} DEFAULT_GID
+:canonical: archivebox.config.constants.ConstantsDict.DEFAULT_GID
 :type: int
 :value: >
    None
 
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DEFAULT_PGID
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DEFAULT_GID
 ```
 
 ````
@@ -584,35 +584,13 @@
 
 ````
 
-````{py:attribute} LIB_DIR_NAME
-:canonical: archivebox.config.constants.ConstantsDict.LIB_DIR_NAME
-:type: str
-:value: >
-   'lib'
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.LIB_DIR_NAME
-```
-
-````
-
-````{py:attribute} DEFAULT_LIB_DIR
-:canonical: archivebox.config.constants.ConstantsDict.DEFAULT_LIB_DIR
+````{py:attribute} DEFAULT_ABXPKG_LIB_DIR
+:canonical: archivebox.config.constants.ConstantsDict.DEFAULT_ABXPKG_LIB_DIR
 :type: pathlib.Path
 :value: >
    '_env_path(...)'
 
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DEFAULT_LIB_DIR
-```
-
-````
-
-````{py:attribute} DEFAULT_LIB_BIN_DIR
-:canonical: archivebox.config.constants.ConstantsDict.DEFAULT_LIB_BIN_DIR
-:type: pathlib.Path
-:value: >
-   '_env_path(...)'
-
-```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DEFAULT_LIB_BIN_DIR
+```{autodoc2-docstring} archivebox.config.constants.ConstantsDict.DEFAULT_ABXPKG_LIB_DIR
 ```
 
 ````

@@ -23,11 +23,12 @@ ArchiveBox
 .. code-block:: bash
     
     mkdir my-archive; cd my-archive/
-    pip install archivebox
+    uv tool install --python 3.13 --prerelease explicit --upgrade 'archivebox>=0.9.0rc0,<0.10'
 
     archivebox init
+    archivebox install
     archivebox add https://example.com
-    archivebox info
+    archivebox status
 
 
 =============

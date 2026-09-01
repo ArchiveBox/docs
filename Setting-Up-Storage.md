@@ -1,18 +1,18 @@
 # Setting Up Storage
 
-ArchiveBox supports a wide range of local and remote filesystems using `rclone` and/or Docker storage plugins. The examples below use [Docker Compose bind mounts](https://docs.docker.com/storage/bind-mounts/) to demonstrate the concepts, you can adapt them to your OS and environment needs.
+ArchiveBox supports a wide range of local and remote filesystems using `rclone` and/or Docker storage plugins. The examples below use [Docker Compose bind mounts](https://docs.docker.com/storage/bind-mounts/) to demonstrate the concepts; adapt the host paths, ownership, and provider settings to your environment.
 
 Example [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml) storage setup:
 ```yaml
 services:
     archivebox:
-        ...
+        # ...other service settings...
         volumes:
             # your index db, config, logs, etc. should be stored on a local SSD (usually <10Gb)
             - ./data:/data
 
             # but bulk archive/ content can be located on an HDD or remote filesystem
-            - /mnt/archivebox-s3/data/archive:/data/archive
+            - /mnt/archivebox-archive:/data/archive
 ```
 
 <h4>Related Docs</h4>
@@ -41,12 +41,11 @@ services:
 
 <a name="zfs"></a>
 
-### `ZFS` (recommended for best experience on Linux/BSD) ⭐️
+### `ZFS` (recommended for experienced Linux/BSD operators) ⭐️
 
 > [!TIP]
-> *This is the recommended filesystem for ArchiveBox on Linux, macOS, and BSD (w/wo Docker).*  
-> [`apt install zfsutils-linux`](https://openzfs.github.io/openzfs-docs/Getting%20Started/Ubuntu/index.html)  
-> <sub>Provides RAID, compression, encryption, deduping, 0-cost point-in-time backups, remote sync, integrity verification, and more...</sub>
+> *ZFS is a good choice when you already operate OpenZFS and want checksumming, compression, snapshots, replication, and optional encryption or disk redundancy.*
+> On Ubuntu, follow the official [OpenZFS installation guide](https://openzfs.github.io/openzfs-docs/Getting%20Started/Ubuntu/index.html). macOS and BSD installation and property support differ, so use the guide for your OS.
 
 - https://openzfs.github.io/openzfs-docs/
 - https://openzfs.github.io/openzfs-docs/man/v2.2/8/zpool-create.8.html
@@ -54,31 +53,38 @@ services:
 - https://docs.docker.com/storage/storagedriver/zfs-driver/
 - https://www.ixsystems.com/blog/fast-dedup-is-a-valentines-gift-to-the-openzfs-and-truenas-communities/
 
+> [!CAUTION]
+> Creating a pool erases the selected disks. The two-disk example below creates a mirror; replace both `/dev/disk/by-id/...` placeholders with the persistent IDs of empty disks you intend to erase.
+
 ```bash
-# create a new archivebox pool to hold your dataset
-zpool create -f \
-    -O mountpoint=/mnt/archivebox \
-    -O sync=standard \
+# Create a mirrored pool without forcing ZFS's safety checks.
+sudo zpool create \
+    -O mountpoint=none \
     -O compression=lz4 \
-    -O recordsize=128K \
     -O dnodesize=auto \
     -O atime=off \
     -O xattr=sa \
     -O acltype=posixacl \
     -O aclinherit=passthrough \
-    -O utf8only=on \
-    -O normalization=formD \
-    -O casesensitivity=sensitive \
-    archivebox /dev/disk/by-uuid/disk1... /dev/disk/by-uuid/disk2...
+    archivebox mirror \
+    /dev/disk/by-id/DISK_ONE \
+    /dev/disk/by-id/DISK_TWO
 
-# create the archivebox/data ZFS dataset
-zfs create \
+# Create the unencrypted ArchiveBox data dataset.
+sudo zfs create \
     -o mountpoint=/mnt/archivebox/data \
     archivebox/data
+```
 
-# optional: add encryption
+To encrypt a new dataset, use this command **instead of** the unencrypted `zfs create` command above. ZFS encryption must be selected when the dataset is created.
+
+```bash
+sudo zfs create \
+    -o mountpoint=/mnt/archivebox/data \
     -o encryption=on \
-    -o keysource=passphrase,prompt \
+    -o keyformat=passphrase \
+    -o keylocation=prompt \
+    archivebox/data
 ```
 
 <a name="ntfs"></a><a name="hfs"></a><a name="btrfs"></a>
@@ -106,7 +112,7 @@ zfs create \
 
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/6124b92a-df5a-47c4-b3c2-006ebd28785b" alt="local filesystem icon" width="80px" align="right"/>
 
-ArchiveBox supports many common types of remote filesystems using RClone, FUSE, Docker Storage providers, and Docker Volume Plugins.  
+ArchiveBox supports many common types of remote filesystems using Rclone, FUSE, Docker storage providers, and Docker volume plugins.
 
 The `data/archive/` subfolder contains the bulk archived content, and it supports being stored on a slower remote server (SMB/NFS/SFTP/etc.) or object store (S3/B2/R2/etc.). For data integrity and performance reasons, the rest of the `data/` directory (`data/ArchiveBox.conf`, `data/logs`, etc.) must be stored locally while ArchiveBox is running.
 
@@ -131,9 +137,10 @@ services:
 
 volumes:
     archivebox-archive:
+        driver: local
         driver_opts:
             type: "nfs"
-            o: "addr=some-remote-server.example.com,nolock,soft,rw,nfsvers=4"
+            o: "addr=some-remote-server.example.com,rw,nfsvers=4"
             device: ":/archivebox-archive"
 ```
 
@@ -166,18 +173,28 @@ volumes:
 
 ### Amazon S3 / Backblaze B2 / Google Drive / etc. (RClone)
 
-```bash
-# install the RClone and FUSE packages on your host
-apt install rclone fuse     # or brew install
+ArchiveBox stores snapshot content under `data/archive/users/<user>/snapshots/<date>/<domain>/<uuid>/` and keeps backwards-compatible `data/archive/<timestamp>` symlinks. Object-storage mounts must enable Rclone's VFS symlink translation so both parts of this layout work.
 
-# IMPORTANT: needed to allow FUSE drives to be shared with Docker
-echo 'user_allow_other' >> /etc/fuse.conf
+Install the `rclone` binary through `abxpkg`:
+
+```bash
+uv tool install abxpkg
+abxpkg install rclone
+abxpkg run rclone version
+```
+
+Then install the FUSE 3 system integration supplied by your OS. For example, on Ubuntu:
+
+```bash
+sudo apt-get install fuse3
+grep -qxF user_allow_other /etc/fuse.conf ||
+    printf '%s\n' user_allow_other | sudo tee -a /etc/fuse.conf
 ```
 
 Then define your remote storage config `~/.config/rclone/rclone.conf`:
 
 > [!TIP]
-> You can also create `rclone.conf` using the RClone Web GUI: `rclone rcd --rc-web-gui`
+> You can also create `rclone.conf` using the Rclone Web GUI: `abxpkg run rclone rcd --rc-web-gui`
 
 ```ini
 # Example rclone.conf using Amazon S3 for storage:
@@ -189,7 +206,7 @@ secret_access_key = YYY
 region = us-east-1
 ```
 
-#### RClone Config Examples
+#### Rclone Config Examples
 
 - [SMB](https://rclone.org/smb/) / [Ceph](https://rclone.org/s3/#ceph) / [SFTP](https://rclone.org/sftp/) / [FTP](https://rclone.org/ftp/) / [WebDAV (e.g. Nextcloud)](https://rclone.org/webdav/)
 - [Google Drive](https://rclone.org/drive/) / [Dropbox](https://rclone.org/dropbox/) / [OneDrive](https://rclone.org/onedrive/)
@@ -207,35 +224,68 @@ region = us-east-1
 
 <br/>
 
-#### Option A: Running RClone on Bare Metal host
+#### Option A: Running Rclone on a bare-metal host
 
 1. *If Needed:* Transfer any existing local archive data to the remote volume first
+
+> [!CAUTION]
+> Stop ArchiveBox before migrating its archive directory. `rclone sync` makes the remote destination match the local source and can delete files already present at the destination. Run it with `--dry-run` first, make a separate backup, and do not move the local copy until `rclone check` succeeds.
+
 ```bash
-rclone sync --fast-list --transfers 20 --progress /opt/archivebox/data/archive/ archivebox-s3:/data/archive
+abxpkg run rclone sync \
+    --dry-run \
+    --links \
+    --fast-list \
+    --transfers 20 \
+    --progress \
+    /opt/archivebox/data/archive/ \
+    archivebox-s3:data/archive/
+
+# Remove --dry-run only after reviewing the proposed changes, then verify them.
+abxpkg run rclone sync \
+    --links \
+    --fast-list \
+    --transfers 20 \
+    --progress \
+    /opt/archivebox/data/archive/ \
+    archivebox-s3:data/archive/
+abxpkg run rclone check --links /opt/archivebox/data/archive/ archivebox-s3:data/archive/
+
 mv /opt/archivebox/data/archive /opt/archivebox/data/archive.localbackup
+mkdir -p /opt/archivebox/data/archive
 ```
 2. **Mount the remote storage volume as FUSE filesystem**
-```
-rclone mount
-    --allow-other \                # essential, allows Docker to access FUSE mounts
-    --uid 911 --gid 911 \          # 911 is the default used by ArchiveBox
-    --vfs-cache-mode=full \        # cache both file metadata and contents
-    --transfers=16 --checkers=4 \  # use 16 threads for transfers & 4 for checking
-    archivebox-s3/data/archive:/opt/archivebox/data/archive         # remote:local
+
+Run the mount as the numeric user that owns the local ArchiveBox collection. The command stays in the foreground so a service manager can supervise it.
+
+```bash
+abxpkg run rclone mount \
+    archivebox-s3:data/archive/ \
+    /opt/archivebox/data/archive/ \
+    --allow-other \
+    --vfs-cache-mode=full \
+    --vfs-links \
+    --transfers=16 \
+    --checkers=4
 ```
 
-See here for full more detailed instructions here: [RClone Documentation: The `rclone mount` command](https://rclone.org/commands/rclone_mount/)
+See [Rclone's `rclone mount` documentation](https://rclone.org/commands/rclone_mount/) for service-manager and cache-size configuration.
 
 > [!TIP]
-> You can use any RClone FUSE mounts as a normal volumes (bind mount) for Docker ArchiveBox, typically no storage plugin is needed as long as `allow-other` is setup properly.
+> You can use an existing Rclone FUSE mount as a normal Docker bind mount. A separate storage plugin is usually unnecessary when `user_allow_other` and `--allow-other` are configured correctly.
 
-`docker run -v $PWD:/data -v /opt/archivebox/data/archive:/data/archive`
+```bash
+docker run --rm \
+    -v "$PWD:/data" \
+    -v /opt/archivebox/data/archive:/data/archive \
+    archivebox/archivebox:dev status
+```
 
 `docker-compose.yml`:
 ```yaml
 services:
     archivebox:
-        ...
+        # ...other service settings...
         volumes:
             - ./data:/data
             - /opt/archivebox/data/archive:/data/archive
@@ -243,16 +293,24 @@ services:
 
 <br/>
 
-#### Option B: Running RClone with Docker Storage Plugin
+#### Option B: Running Rclone with the Docker storage plugin
 
-*This is only needed if you are unable to `Option A` for compatibility or performance reasons, or if you prefer defining your remote storage config in `docker-compose.yml` instead of `rclone.conf`.*
+*This Linux Docker Engine option is only needed if you cannot use Option A for compatibility or performance reasons, or if you prefer defining your remote storage in `docker-compose.yml`.*
 
-See here for full instructions: [RClone Documentation: Docker Plugin](https://rclone.org/docker/)
+See here for full instructions: [Rclone Documentation: Docker Plugin](https://rclone.org/docker/)
 
 1. First, install the [Rclone Docker Volume Plugin](https://rclone.org/docker/#installing-as-managed-plugin) for your CPU architecture (e.g. `amd64` or `arm64`):
+
 ```bash
+sudo mkdir -p \
+    /var/lib/docker-plugins/rclone/config \
+    /var/lib/docker-plugins/rclone/cache
+sudo install -m 600 \
+    ~/.config/rclone/rclone.conf \
+    /var/lib/docker-plugins/rclone/config/rclone.conf
+
+# Replace amd64 with arm64 on ARM hosts.
 docker plugin install rclone/docker-volume-rclone:amd64 --grant-all-permissions --alias rclone
-ln -sf ~/.config/rclone/rclone.conf /var/lib/docker-plugins/rclone/config/rclone.conf
 ```
 
 2. Then, [create a volume using the Docker CLI](https://rclone.org/docker/#creating-volumes-via-cli) or [define one using Docker Compose / Swarm](https://rclone.org/docker/#using-with-swarm-or-compose):
@@ -269,10 +327,11 @@ volumes:
     archivebox-s3:
         driver: rclone
         driver_opts:
-            remote: 'archivebox-s3/data/archive'
+            remote: 'archivebox-s3:data/archive'
             allow_other: 'true'
             vfs_cache_mode: full
-            poll_interval: 0
+            vfs_links: 'true'
+            # Match these to the numeric owner of ./data; 911:911 is the image default.
             uid: 911
             gid: 911
             transfers: 16
@@ -282,7 +341,8 @@ volumes:
 
 To start the container and verify the filesystem is accessible within it:
 ```bash
-docker compose run archivebox /bin/bash 'ls -lah /data/archive/ | tee /data/archive/.write_test.txt'
+docker compose run --rm archivebox \
+    /bin/bash -c 'touch /data/archive/.write_test && rm /data/archive/.write_test'
 ```
 
 <br/>

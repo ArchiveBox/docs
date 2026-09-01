@@ -1,17 +1,17 @@
 # Configuration
 
-Configuration of ArchiveBox is done by using the `archivebox config` command, modifying the `ArchiveBox.conf` file in the data folder, or by using environment variables. All three methods work equivalently when using Docker as well.
+Configuration of ArchiveBox is done by using the `archivebox config` command, modifying the `ArchiveBox.conf` file in the data folder, or by setting environment variables as process defaults. All three methods work in Docker as well.
 
 *Some equivalent examples of setting some configuration options:*
 ```bash
 archivebox config --set TIMEOUT=120
-# OR
-echo "TIMEOUT=120" >> ArchiveBox.conf
+# OR edit ArchiveBox.conf and add this under its existing [ARCHIVING_CONFIG] section:
+TIMEOUT=120
 # OR
 env TIMEOUT=120 archivebox add ~/Downloads/bookmarks_export.html
 ```
 
-Environment variables take precedence over the config file, which is useful if you only want to use a certain option temporarily during a single run. For more examples see [Usage: Configuration](Usage#run-archivebox-with-configuration-options)...
+Environment variables seed process-level defaults. Persisted Machine, Persona, Crawl, and Snapshot settings can override them depending on scope, and existing Crawl config is not silently overwritten by later environment changes. Runtime-derived values like crawl/snapshot output dirs are resolved fresh for each run instead of being stored in frozen crawl config. For more examples see [Usage: Configuration](Usage#run-archivebox-with-configuration-options)...
 
 <br/>
 
@@ -136,7 +136,7 @@ archivebox add --persona=personal https://members.example.com/feed
 <a id="active_persona"></a>
 #### `DEFAULT_PERSONA`
 **Possible Values:** [`Default`]/`personal`/`work`/...
-The persona profile used when no explicit persona is selected for a crawl. Personas bundle a Chrome user-data-dir, a `cookies.txt`, auth state, a user-agent, and any other per-identity config into a single named profile, letting you swap between archiving contexts (logged-out vs. signed-into-work-account vs. signed-into-personal-account) without manually juggling files.
+The persona profile used when no explicit persona is selected for a new crawl. The selected persona is stored on the Crawl row; `DEFAULT_PERSONA` is not duplicated into `Crawl.config`. Personas bundle a Chrome user-data-dir, a `cookies.txt`, auth state, a user-agent, and any other per-identity config into a single named profile, letting you swap between archiving contexts (logged-out vs. signed-into-work-account vs. signed-into-personal-account) without manually juggling files.
 
 ArchiveBox auto-creates the named persona on disk if it doesn't already exist. See the [Personas wiki page](https://github.com/ArchiveBox/ArchiveBox/wiki/Personas) for the full directory layout.
 
@@ -309,7 +309,7 @@ Useful for one-off runs ("just grab a screenshot and skip everything else") or f
 #### `ADMIN_USERNAME` / `ADMIN_PASSWORD`
 **Possible Values:** [`None`]/`"admin"`/...
 
-Only used on first run / initial setup in Docker. ArchiveBox will create an admin superuser with the specified username and password when both options are present in the environment at startup. After the user exists, changing these values has no effect — use `archivebox manage changepassword <username>` or the Django admin UI instead.
+Used on first run / initial setup in any installation method. ArchiveBox will create an admin superuser with the specified username and password when both options are present during `archivebox init`. After the user exists, changing these values has no effect — use `archivebox manage changepassword <username>` or the Django admin UI instead.
 
 > [!WARNING]
 > Setting `ADMIN_PASSWORD` via environment variable bakes the secret into your shell history, Docker inspect output, and process listings. For long-lived deployments, set it once during provisioning, create the user, then unset the variable.
@@ -360,8 +360,6 @@ The `host:port` socket the ArchiveBox web server actually listens on. **This is 
 - `127.0.0.1:8000` (default) — listen only on the loopback interface. Safest when you're running a reverse proxy on the same host and don't want the server reachable directly from the network.
 - `0.0.0.0:8000` — listen on **all** IPv4 interfaces. Required when running in Docker without `--network=host`, or when you want the server reachable from other machines on your LAN without a reverse proxy.
 - `[::]:8000` — listen on all IPv6 interfaces (most modern OSes will accept v4-mapped connections too).
-- `unix:/path/to/archivebox.sock` — bind to a Unix socket instead of a TCP port (useful for nginx/Caddy on the same host).
-
 IPv6 literal addresses must be bracketed: `[::1]:8000`, not `::1:8000`.
 
 > [!NOTE]
@@ -376,45 +374,51 @@ IPv6 literal addresses must be bracketed: `[::1]:8000`, not `::1:8000`.
 #### `BASE_URL`
 **Possible Values:** [`""`]/`https://archive.example.com`/`http://archivebox.localhost:8000`/...
 
-The canonical public URL of your ArchiveBox instance. Used to build absolute links in templates, redirects (`/admin/login/?next=...`), admin notification emails, OG/meta tags, and — in subdomain security mode — to derive the `admin.`, `web.`, `api.`, `public.`, and per-snapshot `snap-<id>.` subdomains.
+The canonical public URL of your ArchiveBox instance. Used to build absolute links in templates, redirects (`/admin/login/?next=...`), admin notification emails, OG/meta tags, and — in subdomain security mode — to derive the `admin.`, `web.`, `api.`, and per-snapshot `snap-<id>.` subdomains.
 
 **When `BASE_URL` is set explicitly**, ArchiveBox treats it as the source of truth and ignores the incoming `Host` header for URL building. In `safe-subdomains-fullreplay` mode setting it is **required for redirects to work correctly**.
 
-**When `BASE_URL` is empty**, the value is resolved at request time from the incoming request's `Host` header (with any leading `admin.` / `web.` / `api.` / `public.` / `snap-*.` label stripped to recover the canonical base). Loopback hostnames (`localhost`, `127.0.0.1`, `0.0.0.0`, `::`) are rewritten to `archivebox.localhost` so subdomain routing works without `/etc/hosts` edits. If there's no live request, [`BIND_ADDR`](#bind_addr) is used as a last resort.
+**When `BASE_URL` is empty**, the value is resolved at request time from the incoming request's `Host` header (with any leading `admin.` / `web.` / `api.` / `snap-*.` label stripped to recover the canonical base). Loopback hostnames (`localhost`, `127.0.0.1`, `0.0.0.0`, `::`) are rewritten to `archivebox.localhost` so subdomain routing works without `/etc/hosts` edits. If there's no live request, [`BIND_ADDR`](#bind_addr) is used as a last resort.
 
 The scheme is taken from the explicit `BASE_URL` if set, otherwise from the request (so put a reverse proxy in front for HTTPS and trust `X-Forwarded-Proto`).
 
-ArchiveBox automatically derives the underlying Django `ALLOWED_HOSTS` and `CSRF_TRUSTED_ORIGINS` settings from `BASE_URL` + [`SERVER_SECURITY_MODE`](#server_security_mode), so you do **not** set those directly — the system widens them as needed to admit the admin/web/api/public subdomains.
+ArchiveBox automatically derives the underlying Django `ALLOWED_HOSTS` and `CSRF_TRUSTED_ORIGINS` settings from `BASE_URL` + [`SERVER_SECURITY_MODE`](#server_security_mode), so you do **not** set those directly — the system widens them as needed to admit the admin/web/api subdomains.
 
 > [!NOTE]
 > **Pin `BASE_URL` explicitly on any deployment using `safe-subdomains-fullreplay` mode.** A misconfig banner will surface in the rendered UI until you do.
 
 > [!NOTE]
-> **Legacy upgrade path (0.7.3 → 0.9):** older deployments that set `CSRF_TRUSTED_ORIGINS=https://archive.example.com` for their reverse-proxy login but never set `BASE_URL` still work — when exactly one CSRF origin is present and `BASE_URL` is empty, ArchiveBox uses that origin as the implicit base URL. New installs should set `BASE_URL` directly; `CSRF_TRUSTED_ORIGINS` is no longer a user-settable knob.
+> **Legacy upgrade path (0.7.3 → 0.9):** `archivebox init` preserves the complete legacy config and migrates the old `ARCHIVE_BASE_URL`, `ADMIN_BASE_URL`, or documented `LISTEN_HOST` hostname to `BASE_URL`. A single non-default `CSRF_TRUSTED_ORIGINS` or `ALLOWED_HOSTS` entry is used as a fallback when those settings are absent. New installs should set `BASE_URL` directly; the legacy hostname settings are no longer user-settable knobs.
 
 *Related options:*
 [`SERVER_SECURITY_MODE`](#server_security_mode), [`BIND_ADDR`](#bind_addr)
 
 ---
 #### `SERVER_SECURITY_MODE`
-**Possible Values:** [`safe-subdomains-fullreplay`]/`safe-onedomain-nojsreplay`/`unsafe-onedomain-noadmin`/`danger-onedomain-fullreplay`
+**Possible Values:** [`auto`]/`safe-subdomains-fullreplay`/`safe-onedomain-nojsreplay`/`unsafe-onedomain-noadmin`/`danger-onedomain-fullreplay`
 
 The top-level security posture of the server. Controls how archived content is served, whether the admin/API control plane is reachable, and which host(s) the UI is split across. **This is the most important security knob** — pick the most restrictive mode that still works for your use case.
 
-ArchiveBox splits its surfaces across four logical hosts: `admin.*` (Django admin + session cookies, the entire control plane), `web.*` (logged-in browsing UI), `api.*` (REST/JSON endpoints), and `public.*` (unauthenticated browsing of `PERMISSIONS=public` snapshots). In subdomain mode each gets its own host derived from [`BASE_URL`](#base_url); session/CSRF cookies are scoped to `admin.*` only, so a compromised replay page on `snap-<id>.*` can't read admin auth.
+ArchiveBox splits its surfaces across three logical hosts: `admin.*` (Django admin + session cookies, the entire control plane), `web.*` (anonymous public browsing UI, optional public add view, and public snapshot index), and `api.*` (REST/JSON endpoints). In subdomain mode each gets its own host derived from [`BASE_URL`](#base_url); session/CSRF cookies are scoped to `admin.*` only, so `web.*`, `api.*`, and compromised replay pages on `snap-<id>.*` can't read admin auth.
 
 | Mode | Host layout | JS replay | Control plane | Use when |
 |---|---|---|---|---|
-| **`safe-subdomains-fullreplay`** *(default, recommended)* | admin/web/api/public/snap-* on separate subdomains | Full JS replay enabled | Enabled on `admin.*` only | You have wildcard DNS (`*.archive.example.com`) and a TLS cert that covers it. Archived JS runs sandboxed away from the admin origin. |
-| **`safe-onedomain-nojsreplay`** | Everything on one host | JS in replays is neutered (served as `text/plain` or stripped) | Enabled | You can't get wildcard DNS. Trades replay fidelity for same-origin safety — archived pages won't execute scripts. |
+| **`auto`** *(default, recommended)* | Subdomains for any `*.localhost` request; otherwise one host | Full raw replay on `*.localhost`; otherwise raw archived HTML uses no-JS replay. Plugins can opt into a trusted viewer with an explicit `full.html` preview template. | Enabled | The zero-configuration default. Localhost gets the highest-fidelity isolated setup; ordinary public/LAN hostnames do not require wildcard DNS or TLS. |
+| **`safe-subdomains-fullreplay`** | admin/web/api/snap-* on separate subdomains | Full JS replay enabled | Enabled on `admin.*` only | You have wildcard DNS (`*.archive.example.com`) and a TLS cert that covers it. Archived JS runs sandboxed away from the admin origin. |
+| **`safe-onedomain-nojsreplay`** | Everything on one host | Raw archived HTML cannot run JS. Explicit trusted plugin preview templates can run the JS needed by their viewer. | Enabled | You can't get wildcard DNS. Trades raw replay fidelity for same-origin safety while retaining trusted viewer formats. |
 | **`unsafe-onedomain-noadmin`** | Everything on one host | Full JS replay enabled | **Disabled** — `/admin`, `/accounts`, `/api`, `/add`, `/web` return 403; only GET/HEAD/OPTIONS allowed | Read-only public archive on a single host. Operate the instance via CLI only; the web admin is unreachable. |
 | **`danger-onedomain-fullreplay`** | Everything on one host | Full JS replay enabled | Enabled | Local dev / trusted-network only. Archived JS runs on the **same origin as the admin UI** — a malicious archived page can call admin endpoints with your session. **Do not expose this mode to the internet.** |
+
+SingleFile output is served as ordinary HTML in every mode; it remains usable in no-JS modes because SingleFile removes the page's scripts during capture. ArchiveWeb.page/ReplayWeb.page and MHTML use their existing trusted preview templates. ArchiveBox always attempts to load these viewers, including when the incoming request is plain HTTP, because HTTPS may be terminated by an upstream proxy. Browser service-worker rules still require ReplayWeb.page to be reached through HTTPS or localhost for replay to initialize.
 
 > [!WARNING]
 > Switching to any mode whose name starts with `unsafe-` or `danger-` is logged at startup and surfaces a banner in the UI. **Don't use these modes on a public hostname** — archived JavaScript will run on the same origin as your admin session.
 
 > [!NOTE]
-> Subdomain mode requires both wildcard DNS (`*.archive.example.com`) and (if using TLS) a wildcard certificate. Without those, fall back to `safe-onedomain-nojsreplay`.
+> Explicit subdomain mode requires both wildcard DNS (`*.archive.example.com`) and (if using TLS) a wildcard certificate. The default `auto` mode only selects subdomain routing for `*.localhost`, which browsers resolve locally without custom DNS or TLS setup.
+
+> [!NOTE]
+> In one-domain `auto` mode, read-only requests are accepted through any valid ingress hostname, but POST/PUT/PATCH/DELETE requests are accepted only on the canonical `BASE_URL` host. Canonical links always use `BASE_URL`. Explicit subdomain mode continues to allow state-changing requests on its derived admin/API hosts.
 
 *Related options:*
 [`BASE_URL`](#base_url), [`PERMISSIONS`](#permissions)
@@ -433,12 +437,6 @@ Number of rows to render per page on the Snapshot and ArchiveResult list views (
 **Possible Values:** [`Content is hosted for personal archiving purposes only.  Contact server owner for any takedown requests.`]/...
 
 Free-form text rendered in the footer of every archive page. Useful for adding a takedown contact, an org disclaimer, or attribution. Plain text — no HTML.
-
----
-#### `CUSTOM_TEMPLATES_DIR`
-**Possible Values:** [`data/custom_templates`]/`/path/to/custom_templates`/...
-
-Path to a directory containing custom HTML / CSS / image overrides for the default ArchiveBox templates. Files placed here shadow the built-in templates of the same path, letting you rebrand the UI without forking. See the Django template loader docs for the resolution order.
 
 ---
 #### `REVERSE_PROXY_USER_HEADER`
@@ -478,7 +476,7 @@ URL users are redirected to after logging out. The default `/` keeps users on Ar
 
 ### LDAP Settings
 
-*Options for LDAP / Active Directory authentication via [django-auth-ldap](https://github.com/django-auth-ldap/django-auth-ldap). Requires `pip install archivebox[ldap]` (which also pulls in the system `libldap` / `libsasl` headers).*
+*Options for LDAP / Active Directory authentication via [django-auth-ldap](https://github.com/django-auth-ldap/django-auth-ldap). Requires `uv tool install --python 3.13 --prerelease explicit --upgrade 'archivebox[ldap]>=0.9.0rc0,<0.10'` (which also pulls in the system `libldap` / `libsasl` headers).*
 
 ---
 #### `LDAP_ENABLED`
@@ -487,7 +485,7 @@ URL users are redirected to after logging out. The default `/` keeps users on Ar
 Master switch for LDAP authentication. When `True`, ArchiveBox loads the `django-auth-ldap` backend and validates that `LDAP_SERVER_URI`, `LDAP_BIND_DN`, `LDAP_BIND_PASSWORD`, and `LDAP_USER_BASE` are all set — startup fails fast otherwise.
 
 ```bash
-pip install archivebox[ldap]
+uv tool install --python 3.13 --prerelease explicit --upgrade 'archivebox[ldap]>=0.9.0rc0,<0.10'
 ```
 
 Then set these configuration values:
@@ -597,19 +595,7 @@ Permissions to set on output files written into the archive directory. The direc
 > Set this to `600` if you want archives to be readable only by the ArchiveBox user, or `664`/`775` if you need a shared group to read/write the data dir.
 
 *Related options:*
-[`PUID` / `PGID`](#puid--pgid), [`ENFORCE_ATOMIC_WRITES`](#enforce_atomic_writes)
-
----
-<a id="puid"></a>
-<a id="pgid"></a>
-#### `PUID` / `PGID`
-**Possible Values:** [`911`]/`1000`/...
-*Note: These are Docker-only environment variables — they only take effect when set on the Docker entrypoint at container startup. Setting them in `ArchiveBox.conf` or via `archivebox config --set` has no effect. Outside Docker the UID/GID is auto-detected from the ownership of the data directory (or the running user) and cannot be overridden.*
-
-The UID/GID that the ArchiveBox process should run as (and that all files in the data dir should be owned by). Honored by the Docker entrypoint, which `chown`s the data dir and drops privileges before running ArchiveBox. Outside Docker, ArchiveBox refuses to run as root and instead drops to the user that owns the data dir.
-
-*Learn more:*
-- https://docs.linuxserver.io/general/understanding-puid-and-pgid/
+[`ENFORCE_ATOMIC_WRITES`](#enforce_atomic_writes)
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Troubleshooting#docker-permissions-issues
 
 ---
@@ -628,15 +614,15 @@ Path for temporary files, the supervisord unix socket, and generated supervisor 
 If ArchiveBox detects the configured `TMP_DIR` is unwritable or too long, it will auto-fall-back to `/tmp/archivebox/<collection_id>` at startup.
 
 *Related options:*
-[`LIB_DIR`](#lib_dir), [`ALLOW_NO_UNIX_SOCKETS`](#allow_no_unix_sockets)
+[`ABXPKG_LIB_DIR`](#abxpkg_lib_dir), [`ALLOW_NO_UNIX_SOCKETS`](#allow_no_unix_sockets)
 
 ---
-#### `LIB_DIR`
+#### `ABXPKG_LIB_DIR`
 **Possible Values:** [`<user-config>/abx/lib`]/`/opt/archivebox/lib`/`~/.config/abx/lib`/...
 Path for installed binary dependencies (`chromium`, `single-file`, `yt-dlp`, `ripgrep`, etc.) managed by `abxpkg`. The default is the platform-standard user-config location (`~/.config/abx/lib` on Linux, `~/Library/Application Support/abx/lib` on macOS, `%APPDATA%\abx\lib` on Windows) so a single binary installation can be shared across multiple collections on the same machine without re-downloading.
 
 > [!NOTE]
-> `LIB_DIR` can grow to several GB. Put it on a fast local disk — running extractors off a network-mounted `LIB_DIR` will be painfully slow.
+> `ABXPKG_LIB_DIR` can grow to several GB. Put it on a fast local disk — running extractors off a network-mounted `ABXPKG_LIB_DIR` will be painfully slow.
 
 *Related options:*
 [`TMP_DIR`](#tmp_dir)
@@ -665,9 +651,9 @@ Skip the startup check that verifies [`TMP_DIR`](#tmp_dir) can host unix-domain 
 
 ## Database Settings
 
-*Options for tuning the SQLite index database that backs ArchiveBox's snapshot, tag, and crawl metadata.*
+*Options for choosing and tuning the index database that backs ArchiveBox's snapshot, tag, and crawl metadata.*
 
-ArchiveBox stores all of its index metadata in a single SQLite database file (`index.sqlite3` inside your data directory). The defaults are tuned for nearly all users — the knobs below mostly govern **lock-contention behavior**, which matters when multiple workers touch the database concurrently (e.g. supervised orchestrators, parallel `archivebox add` runs, container restarts that race against an in-flight write, or long-running web/admin processes alongside CLI commands).
+ArchiveBox stores all of its index metadata in a single SQLite database file (`index.sqlite3` inside your data directory) by default, or optionally in a PostgreSQL database (see [`DATABASE_ENGINE`](#database_engine)). The defaults are tuned for nearly all users — the knobs below mostly govern **lock-contention behavior**, which matters when multiple workers touch the database concurrently (e.g. supervised orchestrators, parallel `archivebox add` runs, container restarts that race against an in-flight write, or long-running web/admin processes alongside CLI commands).
 
 > [!NOTE]
 > These are advanced operator tuning options. If you are not actively diagnosing `database is locked` errors or planning a non-default storage layout, you can safely leave everything in this section at its default.
@@ -678,16 +664,66 @@ ArchiveBox stores all of its index metadata in a single SQLite database file (`i
 - https://www.sqlite.org/pragma.html
 
 ---
-<a id="database_name"></a>
-<a id="archivebox_database_name"></a>
-#### `SQLITE_JOURNAL_MODE`
-**Possible Values:** [`WAL`]/`DELETE`/`TRUNCATE`/`PERSIST`/`MEMORY`/`OFF`
-SQLite [journal mode](https://www.sqlite.org/pragma.html#pragma_journal_mode), applied via `PRAGMA journal_mode = ...` on every new connection. Settable as `ARCHIVEBOX_SQLITE_JOURNAL_MODE`.
+<a id="database_engine"></a>
+<a id="archivebox_database_engine"></a>
+#### `DATABASE_ENGINE`
+**Possible Values:** [`sqlite`]/`postgres`
+Which database backend to use for the main index. Settable as `ARCHIVEBOX_DATABASE_ENGINE` or under `[DATABASE_CONFIG]` in `ArchiveBox.conf`.
 
-The default `WAL` (Write-Ahead Logging) lets readers and a single writer operate concurrently without blocking each other — readers see a stable snapshot while a write is in progress, instead of being serialized behind it. This is a substantial win for ArchiveBox, where the web UI, admin, and CLI workers frequently read the index while an extractor is writing.
+The default `sqlite` keeps everything in a single `index.sqlite3` file inside the data directory and requires no external services. Set this to `postgres` to store the index in a PostgreSQL database instead — useful for large collections with many concurrent writers, or when the data directory lives on a filesystem where SQLite performs poorly (e.g. network mounts).
+
+With `postgres`, connection details come from the options below. `archivebox init` will create the configured database automatically if the server is reachable and the database does not exist yet. Only the *index* moves to PostgreSQL — snapshot output files stay in `./archive/` in the data directory, and plugin-owned sidecar databases (e.g. the `search.sqlite3` full-text index) are unaffected.
+
+```ini
+# example ArchiveBox.conf
+[DATABASE_CONFIG]
+DATABASE_ENGINE = postgres
+DATABASE_NAME = archivebox
+DATABASE_HOST = 127.0.0.1
+DATABASE_PORT = 5432
+DATABASE_USER = archivebox
+DATABASE_PASSWORD = s3cret
+```
 
 > [!WARNING]
-> Do not change this unless you have a specific reason. `DELETE` and `TRUNCATE` serialize all readers against any writer (much worse concurrency). `MEMORY` and `OFF` disable durable journaling and can corrupt the database on crash or power loss. `WAL` requires the database to live on a real local filesystem — it does not work correctly over network filesystems like NFS or SMB.
+> Pick a backend when you first run `archivebox init` and stick with it. There is no built-in tool (yet) to move an existing collection's index between SQLite and PostgreSQL.
+
+*Related options:*
+[`DATABASE_NAME`](#database_name), [`DATABASE_HOST`](#database_host)
+
+---
+<a id="database_host"></a>
+<a id="archivebox_database_host"></a>
+<a id="database_port"></a>
+<a id="archivebox_database_port"></a>
+<a id="database_user"></a>
+<a id="archivebox_database_user"></a>
+<a id="database_password"></a>
+<a id="archivebox_database_password"></a>
+#### `DATABASE_HOST` / `DATABASE_PORT` / `DATABASE_USER` / `DATABASE_PASSWORD`
+**Possible Values:** [`127.0.0.1`] / [`5432`] / [`archivebox`] / [empty]
+PostgreSQL connection settings, used only when [`DATABASE_ENGINE`](#database_engine)`=postgres`. Settable as `ARCHIVEBOX_DATABASE_HOST`, `ARCHIVEBOX_DATABASE_PORT`, `ARCHIVEBOX_DATABASE_USER`, and `ARCHIVEBOX_DATABASE_PASSWORD`.
+
+`DATABASE_HOST` may also be a path to a directory containing a PostgreSQL unix socket (e.g. `/var/run/postgresql`).
+
+---
+<a id="database_name"></a>
+<a id="archivebox_database_name"></a>
+#### `DATABASE_NAME`
+**Possible Values:** [`index.sqlite3`] / `archivebox` / ...
+The main index database. Settable as `ARCHIVEBOX_DATABASE_NAME`.
+
+With the default [`DATABASE_ENGINE`](#database_engine)`=sqlite`, this is the path to the SQLite index file inside the data directory (`index.sqlite3`). With `DATABASE_ENGINE=postgres`, it is the name of the PostgreSQL database instead (default: `archivebox`), created automatically by `archivebox init` if it does not exist.
+
+---
+#### `SQLITE_JOURNAL_MODE`
+**Possible Values:** [`WAL` on native installs]/[`DELETE` in Docker]/`TRUNCATE`/`PERSIST`/`MEMORY`/`OFF`
+SQLite [journal mode](https://www.sqlite.org/pragma.html#pragma_journal_mode), applied via `PRAGMA journal_mode = ...` on every new connection. Settable as `ARCHIVEBOX_SQLITE_JOURNAL_MODE`.
+
+The default is `WAL` (Write-Ahead Logging) on native installs and `DELETE` in Docker. WAL lets readers and a single writer operate concurrently without blocking each other, but its shared-memory locking is unsafe when a Docker bind mount exposes the same live database to host-side SQLite processes. Docker therefore rejects an explicit WAL override for the SQLite backend; use PostgreSQL for safe cross-runtime concurrency.
+
+> [!WARNING]
+> Do not change this unless you have a specific reason. `DELETE` and `TRUNCATE` serialize readers against writers. `MEMORY` and `OFF` disable durable journaling and can corrupt the database on crash or power loss. WAL requires one local filesystem and one locking domain; it is unsafe across network filesystems and Docker host bind mounts.
 
 ---
 #### `SQLITE_MMAP_SIZE`
@@ -734,7 +770,7 @@ Lower values retry more aggressively (useful if you expect locks to clear quickl
 
 *Options for full-text search backend configuration.*
 
-ArchiveBox can index Snapshot text/HTML output into a searchable index that powers the search bar in the Web UI and the `archivebox search <query>` CLI command. Multiple backend engines are supported — pick the one that best matches your collection size, available system resources, and tolerance for extra moving parts.
+ArchiveBox can index Snapshot text/HTML output into searchable indexes that power the search bar in the Web UI and the `archivebox search <query>` CLI command. Multiple backend engines can be enabled at once; `SEARCH_BACKEND_ENGINE` selects the default used by the UI and CLI.
 
 > [!NOTE]
 > Each backend has its own tuning knobs (e.g. [Sonic](https://archivebox.github.io/abx-plugins/#search_backend_sonic) host/port, [ripgrep](https://archivebox.github.io/abx-plugins/#search_backend_ripgrep) flags, [SQLite FTS](https://archivebox.github.io/abx-plugins/#search_backend_sqlite) database path). Those backend-specific options now live with the plugin that implements them — see the [abx-plugins docs](https://archivebox.github.io/abx-plugins/) for the full per-backend schema.
@@ -745,9 +781,9 @@ ArchiveBox can index Snapshot text/HTML output into a searchable index that powe
 
 Which search backend engine to use when running `archivebox search` and rendering the Web UI search bar.
 
-- **`ripgrep`** *(default)* — Pure filesystem grep across each Snapshot's archived output (HTML, text, metadata) via the [`search_backend_ripgrep`](https://archivebox.github.io/abx-plugins/#search_backend_ripgrep) plugin. No extra daemon, no extra database to maintain — just install `rg` and it works. Slow on very large collections (each query re-scans the disk) but always 100% correct: results reflect what's actually on disk *right now*, no stale index. Best choice for small-to-medium collections (≲50k snapshots) and for users who don't want to run extra services.
+- **`ripgrep`** — Pure filesystem grep across each Snapshot's archived output (HTML, text, metadata) via the [`search_backend_ripgrep`](https://archivebox.github.io/abx-plugins/#search_backend_ripgrep) plugin. No extra daemon, no extra database to maintain — just install `rg` and it works. Slow on very large collections (each query re-scans the disk) but always 100% correct: results reflect what's actually on disk *right now*, no stale index. ArchiveBox keeps it enabled as the fallback when Sonic is unavailable.
 
-- **`sonic`** — Fast, suggest-style fuzzy search via a running [Sonic](https://github.com/valeriansaliou/sonic) daemon (configured via the [`search_backend_sonic`](https://archivebox.github.io/abx-plugins/#search_backend_sonic) plugin). ArchiveBox pushes text into Sonic at index time and queries it at search time. Sub-millisecond queries even at very large scale, but you have to run and maintain the Sonic process (Docker compose has it built in). Best choice for large collections (≳100k snapshots) when query latency matters.
+- **`sonic`** *(default)* — Fast, suggest-style fuzzy search via a running [Sonic](https://github.com/valeriansaliou/sonic) daemon (configured via the [`search_backend_sonic`](https://archivebox.github.io/abx-plugins/#search_backend_sonic) plugin). ArchiveBox pushes text into Sonic at index time and queries it at search time. Sub-millisecond queries even at very large scale; ArchiveBox starts the managed service automatically when this backend is selected.
 
 - **`sqlite`** — FTS5 full-text index stored alongside ArchiveBox's main `index.sqlite3`, configured via the [`search_backend_sqlite`](https://archivebox.github.io/abx-plugins/#search_backend_sqlite) plugin. No extra processes, no extra binary — uses the SQLite already shipped with Python. Faster than `ripgrep` on large collections, slightly slower than `sonic`, but no daemon to babysit. Good middle ground for users who want a real index without operational overhead.
 
@@ -1058,10 +1094,9 @@ A handful of *core* options (documented above on this page) act as the **fallbac
 |---|---|
 | [`TIMEOUT`](#timeout) | [`WGET_TIMEOUT`](https://archivebox.github.io/abx-plugins/#wget), [`CHROME_TIMEOUT`](https://archivebox.github.io/abx-plugins/#chrome), [`YTDLP_TIMEOUT`](https://archivebox.github.io/abx-plugins/#ytdlp), [`SINGLEFILE_TIMEOUT`](https://archivebox.github.io/abx-plugins/#singlefile), [`TITLE_TIMEOUT`](https://archivebox.github.io/abx-plugins/#title), [`FAVICON_TIMEOUT`](https://archivebox.github.io/abx-plugins/#favicon), ... |
 | [`CHECK_SSL_VALIDITY`](#check_ssl_validity) | [`WGET_CHECK_SSL_VALIDITY`](https://archivebox.github.io/abx-plugins/#wget), [`YTDLP_CHECK_SSL_VALIDITY`](https://archivebox.github.io/abx-plugins/#ytdlp), [`GALLERYDL_CHECK_SSL_VALIDITY`](https://archivebox.github.io/abx-plugins/#gallerydl), [`CHROME_CHECK_SSL_VALIDITY`](https://archivebox.github.io/abx-plugins/#chrome), ... |
-| [`USER_AGENT`](#user_agent) | [`WGET_USER_AGENT`](https://archivebox.github.io/abx-plugins/#wget), [`CHROME_USER_AGENT`](https://archivebox.github.io/abx-plugins/#chrome), [`SINGLEFILE_USER_AGENT`](https://archivebox.github.io/abx-plugins/#singlefile), ... |
-| [`COOKIES_FILE`](#cookies_file) | [`WGET_COOKIES_FILE`](https://archivebox.github.io/abx-plugins/#wget), [`YTDLP_COOKIES_FILE`](https://archivebox.github.io/abx-plugins/#ytdlp), [`GALLERYDL_COOKIES_FILE`](https://archivebox.github.io/abx-plugins/#gallerydl), [`SINGLEFILE_COOKIES_FILE`](https://archivebox.github.io/abx-plugins/#singlefile), ... |
+| [`USER_AGENT`](#user_agent) | [`WGET_USER_AGENT`](https://archivebox.github.io/abx-plugins/#wget), [`CHROME_USER_AGENT`](https://archivebox.github.io/abx-plugins/#chrome), ... |
+| [`COOKIES_FILE`](#cookies_file) | [`WGET_COOKIES_FILE`](https://archivebox.github.io/abx-plugins/#wget), [`YTDLP_COOKIES_FILE`](https://archivebox.github.io/abx-plugins/#ytdlp), [`GALLERYDL_COOKIES_FILE`](https://archivebox.github.io/abx-plugins/#gallerydl), ... |
 | [`RESOLUTION`](#resolution) | [`SCREENSHOT_RESOLUTION`](https://archivebox.github.io/abx-plugins/#screenshot), [`PDF_RESOLUTION`](https://archivebox.github.io/abx-plugins/#pdf), [`CHROME_RESOLUTION`](https://archivebox.github.io/abx-plugins/#chrome) |
-| [`DEFAULT_PERSONA`](#default_persona) | per-plugin persona scoping (browser profile / cookie jar selection) |
 
 > [!TIP]
 > The resolution order for any plugin-tunable option is always:
