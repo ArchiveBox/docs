@@ -84,14 +84,14 @@
 ```
 ````
 
-````{py:function} list_binaries(name: typing.Optional[str] = None, abspath__icontains: typing.Optional[str] = None, version__icontains: typing.Optional[str] = None, limit: typing.Optional[int] = None) -> int
+````{py:function} list_binaries(name: str | None = None, abspath__icontains: str | None = None, version__icontains: str | None = None, limit: int | None = None) -> int
 :canonical: archivebox.cli.archivebox_binary.list_binaries
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_binary.list_binaries
 ```
 ````
 
-````{py:function} update_binaries(version: typing.Optional[str] = None, abspath: typing.Optional[str] = None) -> int
+````{py:function} update_binaries(version: str | None = None, abspath: str | None = None) -> int
 :canonical: archivebox.cli.archivebox_binary.update_binaries
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_binary.update_binaries
@@ -119,14 +119,14 @@
 ```
 ````
 
-````{py:function} list_cmd(name: typing.Optional[str], abspath__icontains: typing.Optional[str], version__icontains: typing.Optional[str], limit: typing.Optional[int])
+````{py:function} list_cmd(name: str | None, abspath__icontains: str | None, version__icontains: str | None, limit: int | None)
 :canonical: archivebox.cli.archivebox_binary.list_cmd
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_binary.list_cmd
 ```
 ````
 
-````{py:function} update_cmd(version: typing.Optional[str], abspath: typing.Optional[str])
+````{py:function} update_cmd(version: str | None, abspath: str | None)
 :canonical: archivebox.cli.archivebox_binary.update_cmd
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_binary.update_cmd

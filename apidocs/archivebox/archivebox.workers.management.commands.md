@@ -13,6 +13,6 @@
 :titlesonly:
 :maxdepth: 1
 
-archivebox.workers.management.commands.orchestrator_watch
-archivebox.workers.management.commands.orchestrator
+archivebox.workers.management.commands.runner_watch
+archivebox.workers.management.commands.supervisord_watchdog
 ```

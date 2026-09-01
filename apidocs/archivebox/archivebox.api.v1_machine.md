@@ -317,9 +317,9 @@ Bases: {py:obj}`ninja.FilterSchema`
 
 ````{py:attribute} id
 :canonical: archivebox.api.v1_machine.MachineFilterSchema.id
-:type: typing.Optional[str]
+:type: typing.Annotated[str | None, FilterLookup('id__startswith')]
 :value: >
-   'Field(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.MachineFilterSchema.id
 ```
@@ -328,9 +328,9 @@ Bases: {py:obj}`ninja.FilterSchema`
 
 ````{py:attribute} hostname
 :canonical: archivebox.api.v1_machine.MachineFilterSchema.hostname
-:type: typing.Optional[str]
+:type: typing.Annotated[str | None, FilterLookup('hostname__icontains')]
 :value: >
-   'Field(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.MachineFilterSchema.hostname
 ```
@@ -339,9 +339,9 @@ Bases: {py:obj}`ninja.FilterSchema`
 
 ````{py:attribute} os_platform
 :canonical: archivebox.api.v1_machine.MachineFilterSchema.os_platform
-:type: typing.Optional[str]
+:type: typing.Annotated[str | None, FilterLookup('os_platform__icontains')]
 :value: >
-   'Field(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.MachineFilterSchema.os_platform
 ```
@@ -350,9 +350,9 @@ Bases: {py:obj}`ninja.FilterSchema`
 
 ````{py:attribute} os_arch
 :canonical: archivebox.api.v1_machine.MachineFilterSchema.os_arch
-:type: typing.Optional[str]
+:type: typing.Annotated[str | None, FilterLookup('os_arch')]
 :value: >
-   'Field(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.MachineFilterSchema.os_arch
 ```
@@ -361,9 +361,9 @@ Bases: {py:obj}`ninja.FilterSchema`
 
 ````{py:attribute} hw_in_docker
 :canonical: archivebox.api.v1_machine.MachineFilterSchema.hw_in_docker
-:type: typing.Optional[bool]
+:type: typing.Annotated[bool | None, FilterLookup('hw_in_docker')]
 :value: >
-   'Field(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.MachineFilterSchema.hw_in_docker
 ```
@@ -372,9 +372,9 @@ Bases: {py:obj}`ninja.FilterSchema`
 
 ````{py:attribute} hw_in_vm
 :canonical: archivebox.api.v1_machine.MachineFilterSchema.hw_in_vm
-:type: typing.Optional[bool]
+:type: typing.Annotated[bool | None, FilterLookup('hw_in_vm')]
 :value: >
-   'Field(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.MachineFilterSchema.hw_in_vm
 ```
@@ -383,9 +383,9 @@ Bases: {py:obj}`ninja.FilterSchema`
 
 ````{py:attribute} bin_providers
 :canonical: archivebox.api.v1_machine.MachineFilterSchema.bin_providers
-:type: typing.Optional[str]
+:type: typing.Annotated[str | None, FilterLookup('bin_providers__icontains')]
 :value: >
-   'Field(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.MachineFilterSchema.bin_providers
 ```
@@ -611,9 +611,9 @@ Bases: {py:obj}`ninja.FilterSchema`
 
 ````{py:attribute} id
 :canonical: archivebox.api.v1_machine.BinaryFilterSchema.id
-:type: typing.Optional[str]
+:type: typing.Annotated[str | None, FilterLookup('id__startswith')]
 :value: >
-   'Field(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.BinaryFilterSchema.id
 ```
@@ -622,9 +622,9 @@ Bases: {py:obj}`ninja.FilterSchema`
 
 ````{py:attribute} name
 :canonical: archivebox.api.v1_machine.BinaryFilterSchema.name
-:type: typing.Optional[str]
+:type: typing.Annotated[str | None, FilterLookup('name__icontains')]
 :value: >
-   'Field(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.BinaryFilterSchema.name
 ```
@@ -633,9 +633,9 @@ Bases: {py:obj}`ninja.FilterSchema`
 
 ````{py:attribute} binprovider
 :canonical: archivebox.api.v1_machine.BinaryFilterSchema.binprovider
-:type: typing.Optional[str]
+:type: typing.Annotated[str | None, FilterLookup('binprovider')]
 :value: >
-   'Field(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.BinaryFilterSchema.binprovider
 ```
@@ -644,9 +644,9 @@ Bases: {py:obj}`ninja.FilterSchema`
 
 ````{py:attribute} status
 :canonical: archivebox.api.v1_machine.BinaryFilterSchema.status
-:type: typing.Optional[str]
+:type: typing.Annotated[str | None, FilterLookup('status')]
 :value: >
-   'Field(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.BinaryFilterSchema.status
 ```
@@ -655,9 +655,9 @@ Bases: {py:obj}`ninja.FilterSchema`
 
 ````{py:attribute} machine_id
 :canonical: archivebox.api.v1_machine.BinaryFilterSchema.machine_id
-:type: typing.Optional[str]
+:type: typing.Annotated[str | None, FilterLookup('machine_id__startswith')]
 :value: >
-   'Field(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.BinaryFilterSchema.machine_id
 ```
@@ -666,9 +666,9 @@ Bases: {py:obj}`ninja.FilterSchema`
 
 ````{py:attribute} version
 :canonical: archivebox.api.v1_machine.BinaryFilterSchema.version
-:type: typing.Optional[str]
+:type: typing.Annotated[str | None, FilterLookup('version__icontains')]
 :value: >
-   'Field(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.BinaryFilterSchema.version
 ```
@@ -677,42 +677,42 @@ Bases: {py:obj}`ninja.FilterSchema`
 
 `````
 
-````{py:function} get_machines(request, filters: archivebox.api.v1_machine.MachineFilterSchema = Query(...))
+````{py:function} get_machines(request: django.http.HttpRequest, filters: ninja.Query[archivebox.api.v1_machine.MachineFilterSchema])
 :canonical: archivebox.api.v1_machine.get_machines
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.get_machines
 ```
 ````
 
-````{py:function} get_current_machine(request)
+````{py:function} get_current_machine(request: django.http.HttpRequest)
 :canonical: archivebox.api.v1_machine.get_current_machine
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.get_current_machine
 ```
 ````
 
-````{py:function} get_machine(request, machine_id: str)
+````{py:function} get_machine(request: django.http.HttpRequest, machine_id: str)
 :canonical: archivebox.api.v1_machine.get_machine
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.get_machine
 ```
 ````
 
-````{py:function} get_binaries(request, filters: archivebox.api.v1_machine.BinaryFilterSchema = Query(...))
+````{py:function} get_binaries(request: django.http.HttpRequest, filters: ninja.Query[archivebox.api.v1_machine.BinaryFilterSchema])
 :canonical: archivebox.api.v1_machine.get_binaries
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.get_binaries
 ```
 ````
 
-````{py:function} get_binary(request, binary_id: str)
+````{py:function} get_binary(request: django.http.HttpRequest, binary_id: str)
 :canonical: archivebox.api.v1_machine.get_binary
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.get_binary
 ```
 ````
 
-````{py:function} get_binaries_by_name(request, name: str)
+````{py:function} get_binaries_by_name(request: django.http.HttpRequest, name: str)
 :canonical: archivebox.api.v1_machine.get_binaries_by_name
 
 ```{autodoc2-docstring} archivebox.api.v1_machine.get_binaries_by_name

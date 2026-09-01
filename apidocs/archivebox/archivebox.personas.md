@@ -14,8 +14,8 @@
 :maxdepth: 1
 
 archivebox.personas.models
+archivebox.personas.importers
 archivebox.personas.apps
-archivebox.personas.runtime
+archivebox.personas.forms
 archivebox.personas.admin
-archivebox.personas.views
 ```

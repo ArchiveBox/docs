@@ -35,12 +35,12 @@
   - ```{autodoc2-docstring} archivebox.config.permissions.DATA_DIR
     :summary:
     ```
-* - {py:obj}`DEFAULT_PUID <archivebox.config.permissions.DEFAULT_PUID>`
-  - ```{autodoc2-docstring} archivebox.config.permissions.DEFAULT_PUID
+* - {py:obj}`DEFAULT_UID <archivebox.config.permissions.DEFAULT_UID>`
+  - ```{autodoc2-docstring} archivebox.config.permissions.DEFAULT_UID
     :summary:
     ```
-* - {py:obj}`DEFAULT_PGID <archivebox.config.permissions.DEFAULT_PGID>`
-  - ```{autodoc2-docstring} archivebox.config.permissions.DEFAULT_PGID
+* - {py:obj}`DEFAULT_GID <archivebox.config.permissions.DEFAULT_GID>`
+  - ```{autodoc2-docstring} archivebox.config.permissions.DEFAULT_GID
     :summary:
     ```
 * - {py:obj}`RUNNING_AS_UID <archivebox.config.permissions.RUNNING_AS_UID>`
@@ -91,14 +91,6 @@
   - ```{autodoc2-docstring} archivebox.config.permissions.FALLBACK_GID
     :summary:
     ```
-* - {py:obj}`ARCHIVEBOX_USER <archivebox.config.permissions.ARCHIVEBOX_USER>`
-  - ```{autodoc2-docstring} archivebox.config.permissions.ARCHIVEBOX_USER
-    :summary:
-    ```
-* - {py:obj}`ARCHIVEBOX_GROUP <archivebox.config.permissions.ARCHIVEBOX_GROUP>`
-  - ```{autodoc2-docstring} archivebox.config.permissions.ARCHIVEBOX_GROUP
-    :summary:
-    ```
 * - {py:obj}`ARCHIVEBOX_USER_EXISTS <archivebox.config.permissions.ARCHIVEBOX_USER_EXISTS>`
   - ```{autodoc2-docstring} archivebox.config.permissions.ARCHIVEBOX_USER_EXISTS
     :summary:
@@ -117,22 +109,22 @@
 
 ````
 
-````{py:data} DEFAULT_PUID
-:canonical: archivebox.config.permissions.DEFAULT_PUID
+````{py:data} DEFAULT_UID
+:canonical: archivebox.config.permissions.DEFAULT_UID
 :value: >
    911
 
-```{autodoc2-docstring} archivebox.config.permissions.DEFAULT_PUID
+```{autodoc2-docstring} archivebox.config.permissions.DEFAULT_UID
 ```
 
 ````
 
-````{py:data} DEFAULT_PGID
-:canonical: archivebox.config.permissions.DEFAULT_PGID
+````{py:data} DEFAULT_GID
+:canonical: archivebox.config.permissions.DEFAULT_GID
 :value: >
    911
 
-```{autodoc2-docstring} archivebox.config.permissions.DEFAULT_PGID
+```{autodoc2-docstring} archivebox.config.permissions.DEFAULT_GID
 ```
 
 ````
@@ -212,7 +204,7 @@
 :canonical: archivebox.config.permissions.HOSTNAME
 :type: str
 :value: >
-   'max(...)'
+   'cast(...)'
 
 ```{autodoc2-docstring} archivebox.config.permissions.HOSTNAME
 ```
@@ -255,26 +247,6 @@
    None
 
 ```{autodoc2-docstring} archivebox.config.permissions.FALLBACK_GID
-```
-
-````
-
-````{py:data} ARCHIVEBOX_USER
-:canonical: archivebox.config.permissions.ARCHIVEBOX_USER
-:value: >
-   'int(...)'
-
-```{autodoc2-docstring} archivebox.config.permissions.ARCHIVEBOX_USER
-```
-
-````
-
-````{py:data} ARCHIVEBOX_GROUP
-:canonical: archivebox.config.permissions.ARCHIVEBOX_GROUP
-:value: >
-   'int(...)'
-
-```{autodoc2-docstring} archivebox.config.permissions.ARCHIVEBOX_GROUP
 ```
 
 ````

@@ -27,6 +27,10 @@
   - ```{autodoc2-docstring} archivebox.machine.detect.get_local_ip
     :summary:
     ```
+* - {py:obj}`unknown_if_blank <archivebox.machine.detect.unknown_if_blank>`
+  - ```{autodoc2-docstring} archivebox.machine.detect.unknown_if_blank
+    :summary:
+    ```
 * - {py:obj}`get_isp_info <archivebox.machine.detect.get_isp_info>`
   - ```{autodoc2-docstring} archivebox.machine.detect.get_isp_info
     :summary:
@@ -41,10 +45,6 @@
     ```
 * - {py:obj}`get_host_stats <archivebox.machine.detect.get_host_stats>`
   - ```{autodoc2-docstring} archivebox.machine.detect.get_host_stats
-    :summary:
-    ```
-* - {py:obj}`get_host_immutable_info <archivebox.machine.detect.get_host_immutable_info>`
-  - ```{autodoc2-docstring} archivebox.machine.detect.get_host_immutable_info
     :summary:
     ```
 * - {py:obj}`get_host_guid <archivebox.machine.detect.get_host_guid>`
@@ -140,6 +140,13 @@
 
 ````
 
+````{py:function} unknown_if_blank(value)
+:canonical: archivebox.machine.detect.unknown_if_blank
+
+```{autodoc2-docstring} archivebox.machine.detect.unknown_if_blank
+```
+````
+
 ````{py:function} get_isp_info(ip=None)
 :canonical: archivebox.machine.detect.get_isp_info
 
@@ -147,31 +154,24 @@
 ```
 ````
 
-````{py:function} get_host_network() -> typing.Dict[str, typing.Any]
+````{py:function} get_host_network() -> dict[str, typing.Any]
 :canonical: archivebox.machine.detect.get_host_network
 
 ```{autodoc2-docstring} archivebox.machine.detect.get_host_network
 ```
 ````
 
-````{py:function} get_os_info() -> typing.Dict[str, typing.Any]
+````{py:function} get_os_info() -> dict[str, typing.Any]
 :canonical: archivebox.machine.detect.get_os_info
 
 ```{autodoc2-docstring} archivebox.machine.detect.get_os_info
 ```
 ````
 
-````{py:function} get_host_stats() -> typing.Dict[str, typing.Any]
+````{py:function} get_host_stats() -> dict[str, typing.Any]
 :canonical: archivebox.machine.detect.get_host_stats
 
 ```{autodoc2-docstring} archivebox.machine.detect.get_host_stats
-```
-````
-
-````{py:function} get_host_immutable_info(host_info: typing.Dict[str, typing.Any]) -> typing.Dict[str, typing.Any]
-:canonical: archivebox.machine.detect.get_host_immutable_info
-
-```{autodoc2-docstring} archivebox.machine.detect.get_host_immutable_info
 ```
 ````
 

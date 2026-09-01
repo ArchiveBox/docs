@@ -110,7 +110,7 @@ Bases: {py:obj}`pydantic.json_schema.GenerateJsonSchema`
 ```{autodoc2-docstring} archivebox.misc.toml_util.JSONSchemaWithLambdas.__init__
 ```
 
-````{py:method} encode_default(default: typing.Any) -> typing.Any
+````{py:method} encode_default(dft: typing.Any) -> typing.Any
 :canonical: archivebox.misc.toml_util.JSONSchemaWithLambdas.encode_default
 
 ````

@@ -57,14 +57,14 @@
 ```
 ````
 
-````{py:function} get_dir_hashes(dir_path: pathlib.Path, pwd: pathlib.Path | None = None, filter_func: typing.Callable | None = None, max_depth: int = -1) -> dict[str, str]
+````{py:function} get_dir_hashes(dir_path: pathlib.Path, pwd: pathlib.Path | None = None, filter_func: collections.abc.Callable | None = None, max_depth: int = -1) -> dict[str, str]
 :canonical: archivebox.misc.hashing.get_dir_hashes
 
 ```{autodoc2-docstring} archivebox.misc.hashing.get_dir_hashes
 ```
 ````
 
-````{py:function} get_dir_entries(dir_path: pathlib.Path, pwd: pathlib.Path | None = None, recursive: bool = True, include_files: bool = True, include_dirs: bool = True, include_hidden: bool = False, filter_func: typing.Callable | None = None, max_depth: int = -1) -> tuple[str, ...]
+````{py:function} get_dir_entries(dir_path: pathlib.Path, pwd: pathlib.Path | None = None, recursive: bool = True, include_files: bool = True, include_dirs: bool = True, include_hidden: bool = False, filter_func: collections.abc.Callable | None = None, max_depth: int = -1) -> tuple[str, ...]
 :canonical: archivebox.misc.hashing.get_dir_entries
 
 ```{autodoc2-docstring} archivebox.misc.hashing.get_dir_entries
@@ -78,7 +78,7 @@
 ```
 ````
 
-````{py:function} get_dir_info(dir_path: pathlib.Path, pwd: pathlib.Path | None = None, filter_func: typing.Callable | None = None, max_depth: int = -1) -> dict
+````{py:function} get_dir_info(dir_path: pathlib.Path, pwd: pathlib.Path | None = None, filter_func: collections.abc.Callable | None = None, max_depth: int = -1) -> dict
 :canonical: archivebox.misc.hashing.get_dir_info
 
 ```{autodoc2-docstring} archivebox.misc.hashing.get_dir_info

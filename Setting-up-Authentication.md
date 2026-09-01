@@ -4,15 +4,15 @@ ArchiveBox supports several types of authentication for users logging in via the
 
 ## Set Up Admin Web UI Permissions
 
-Use these three options to set up your desired permissions for non-admin guest users:
-- [`PUBLIC_INDEX=True`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view): Default *allows* non-logged-in users to see Snapshot list
-- [`PUBLIC_SNAPSHOTS=True`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view): Default *allows* non-logged-in users to see Snapshot content
-- [`PUBLIC_ADD_VIEW=False`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index--public_snapshots--public_add_view): Default *doesn't allow* non-logged-in users to submit new URLs
+Use these options to set up your desired permissions for non-admin guest users:
+- [`PUBLIC_INDEX=True`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_index): Default *allows* non-logged-in users to see Snapshot list
+- [`PUBLIC_ADD_VIEW=False`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#public_add_view): Default *doesn't allow* non-logged-in users to submit new URLs
+- [`PERMISSIONS=public`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#permissions): Default *allows* non-logged-in users to see Snapshot content (set to `unlisted` or `private` to gate it; replaces the removed legacy `PUBLIC_SNAPSHOTS` toggle, which was a global on/off — `PERMISSIONS` is now per-Snapshot)
 
 > [!NOTE]
 > ArchiveBox does not currently support setting up *non-admin* users and groups with custom permissions.
 
-- [Wiki: Configuration (`PUBLIC_ADD_VIEW`, `PUBLIC_SNAPSHOTS`, `PUBLIC_INDEX`)]()
+- [Wiki: Configuration](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#permissions) (`PUBLIC_INDEX`, `PUBLIC_ADD_VIEW`, `PERMISSIONS`)
 - [Wiki: Security Overview](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview)
 
 <br/>
@@ -25,21 +25,18 @@ Use these three options to set up your desired permissions for non-admin guest u
 
 ### Username & Password (the default)
 
-You need a user account to access the Admin UI, you can run the commands below to create/edit a user from the CLI:
+On a new server, open <http://admin.archivebox.localhost:8000/admin/> to create the first admin through the setup UI. Existing users can be created or edited from the CLI:
 
 ```bash
 archivebox manage createsuperuser
 archivebox manage changepassword <username>
 
-# equivalent: docker compose run archivebox manage [...]
-# equivalent: docker run -v $PWD:/data archivebox/archivebox manage [...]
+# equivalent: docker compose run --rm archivebox manage [...]
+# equivalent: docker run -v $PWD:/data archivebox/archivebox:dev manage [...]
 ```
 
-> [!TIP]
-> If using Docker, you can set [`ADMIN_USERNAME` & `ADMIN_PASSWORD`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#admin_username--admin_password) to auto-create an admin account on first run.
-
-Existing users can be managed from the Admin UI here: [`/admin/auth/user/`](http://127.0.0.1:8000/admin/auth/user/),  
-and you can change your password in the UI here: [`/admin/password_change/`](http://127.0.0.1:8000/admin/password_change/).
+Existing users can be managed from the Admin UI here: [`/admin/auth/user/`](http://admin.archivebox.localhost:8000/admin/auth/user/),
+and you can change your password here: [`/admin/password_change/`](http://admin.archivebox.localhost:8000/admin/password_change/).
 
 <br/>
 <br/>
@@ -74,14 +71,14 @@ LOGOUT_REDIRECT_URL=https://auth.yourcompany.example.com/after/logout
 
 > Can be used with an SSO provider like [Authentik](https://github.com/goauthentik/authentik), [Authelia](https://github.com/authelia/authelia), [Okta / Auth0](https://www.okta.com/), [Keycloak](https://www.keycloak.org/), and others.
 
-First, `pip`-install the `ldap` add-on to use this feature (not needed for Docker Archivebox).
+First, install the `ldap` add-on to use this feature (not needed for Docker Archivebox).
 ```bash
-pip install archivebox[ldap]
+uv tool install --python 3.13 --prerelease explicit --upgrade 'archivebox[ldap]>=0.9.0rc0,<0.10'
 ```
 
 Then set these configuration values to finish configuring LDAP:
 ```bash
-LDAP=True
+LDAP_ENABLED=True
 LDAP_SERVER_URI="ldap://ldap.example.com:3389"
 LDAP_BIND_DN="ou=archivebox,ou=services,dc=ldap.example.com"
 LDAP_BIND_PASSWORD="secret-bind-user-password"
@@ -127,20 +124,20 @@ The IdP server can act as a middleman gateway to authenticate users using an ext
 The REST API (available starting in v0.8.0) supports several methods of authentication for convenience.  
   
 To see API docs, try endpoints interactively, and see how auth works, visit this URL on your ArchiveBox server:  
-[`http://127.0.0.1:8000/api/v1/docs`](http://127.0.0.1:8000/api/v1/docs)
+[`http://api.archivebox.localhost:8000/api/v1/docs`](http://api.archivebox.localhost:8000/api/v1/docs)
 
 <img width="500" alt="Screenshot of django-ninja Swagger API docs page" src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/ad914143-f48b-4d4e-aa8c-f89a2c70cee7">
 
 <br/><br/>
 
-To get started using the REST API, you can generate an API key for your user in the Admin Web UI:  
-[`http://127.0.0.1:8000/admin/api/apitoken/add/`](http://127.0.0.1:8000/admin/api/apitoken/add/)  
-  
-or by calling the `http://127.0.0.1:8000/api/v1/auth/get_api_token` endpoint with a username & password:
+To get started using the REST API, you can generate an API key for your user in the Admin Web UI:
+[`http://admin.archivebox.localhost:8000/admin/api/apitoken/add/`](http://admin.archivebox.localhost:8000/admin/api/apitoken/add/)
+
+or by calling the `http://api.archivebox.localhost:8000/api/v1/auth/get_api_token` endpoint with a username & password:
 ```bash
 curl -X 'POST' \
-  'http://127.0.0.1:8000/api/v1/auth/get_api_token' \
-  -H 'Content-Type: application/json'
+  'http://api.archivebox.localhost:8000/api/v1/auth/get_api_token' \
+  -H 'Content-Type: application/json' \
   -d '{"username": "YOURUSERNAMEHERE", "password": "YOURPASSWORDHERE"}'
 ```
 
@@ -156,7 +153,7 @@ Pass `Authorization=Bearer YOURAPITOKENHERE` as a request header.
 
 ```bash
 curl -X 'GET' \
-  'http://127.0.0.1:8000/api/v1/core/snapshots?limit=10' \
+  'http://api.archivebox.localhost:8000/api/v1/core/snapshots?limit=10' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer YOURAPITOKENHERE'
 ```
@@ -169,7 +166,7 @@ Pass `X-ArchiveBox-API-Key=YOURAPITOKENHERE` as a request header.
 
 ```bash
 curl -X 'GET' \
-  'http://127.0.0.1:8000/api/v1/core/snapshots?limit=10' \
+  'http://api.archivebox.localhost:8000/api/v1/core/snapshots?limit=10' \
   -H 'accept: application/json' \
   -H 'X-ArchiveBox-API-Key: YOURAPITOKENHERE'
 ```
@@ -185,46 +182,7 @@ Pass `api_key=YOURAPITOKENHERE` as a GET/POST query parameter.
 
 ```bash
 curl -X 'GET' \
-  'http://127.0.0.1:8000/api/v1/core/snapshots?limit=10&api_key=YOURAPITOKENHERE' \
-  -H 'accept: application/json'
-```
-
-<br/>
-
-### API Session Cookie Authentication
-
-> [!CAUTION]
-> We recommend sticking to header-based authentication and not using this method unless you deeply understand the CSRF/CORS security risks.
-> This method is mostly useful when accessing the API from external apps where CSRF/CORS is not a concern (e.g. `curl`, mobile apps, other servers, etc.).
-
-> Browsers enforce that requests made to the ArchiveBox API from *other origins* will not include any session cookies by default. This is is a [foundational security principle of the web](https://docs.djangoproject.com/en/5.0/ref/csrf/) that protects you from API requests being initiated by JS on websites you don't control (aka CSRF/CORS attacks).
->
-> To allow incoming POST/PUT/DELETE requests from other domains **that you trust**, you must add them to [`CSRF_TRUSTED_ORIGINS`](https://docs.djangoproject.com/en/5.0/ref/settings/#csrf-trusted-origins) in the `archivebox/core/settings.py` source code on your machine ([open an issue](https://github.com/ArchiveBox/ArchiveBox/issues/new/choose) and explain your use-case for help).
-
-Log in via the Admin Web UI: `/admin/login/`, you can then re-use your login session id (stored in the `sessionid` cookie) for REST API requests. By default, this only allows you to make requests from the same domain ArchiveBox is being served on (e.g. from browser devtools open on an ArchiveBox page or CLI tools).
-
-```bash
-curl -X 'GET' \
-  'http://127.0.0.1:8000/api/v1/core/snapshots?limit=10' \
-  -H 'accept: application/json' \
-  -H 'Cookie: sessionid=YOURSESSIONIDVALUEHERE'
-```
-
-<br/>
-
-### API HTTP Basic Authentication
-
-> [!CAUTION]
-> This method is fairly uncommon and is only useful in a few niche situations where the other methods are not available.  
-> **We will likely remove this method in a future ArchiveBox release if nobody uses it.**  
-> *If you rely on this method and want us to keep it, please [open an issue](https://github.com/ArchiveBox/ArchiveBox/issues/new/choose) and explain your use-case!* 
-
-Pass your ArchiveBox admin username & password via HTTP Basic Authentication.
-
-```bash
-curl -X 'GET' \
-  'http://127.0.0.1:8000/api/v1/core/snapshots?limit=10' \
-  -u 'YOURUSERNAMEHERE:YOURPASSWORDHERE'
+  'http://api.archivebox.localhost:8000/api/v1/core/snapshots?limit=10&api_key=YOURAPITOKENHERE' \
   -H 'accept: application/json'
 ```
 

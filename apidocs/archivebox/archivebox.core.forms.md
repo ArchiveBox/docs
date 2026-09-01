@@ -17,10 +17,6 @@
 
 * - {py:obj}`AddLinkForm <archivebox.core.forms.AddLinkForm>`
   -
-* - {py:obj}`TagWidgetMixin <archivebox.core.forms.TagWidgetMixin>`
-  - ```{autodoc2-docstring} archivebox.core.forms.TagWidgetMixin
-    :summary:
-    ```
 * - {py:obj}`TagWidget <archivebox.core.forms.TagWidget>`
   -
 * - {py:obj}`TagField <archivebox.core.forms.TagField>`
@@ -35,8 +31,16 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`get_plugin_choices <archivebox.core.forms.get_plugin_choices>`
-  - ```{autodoc2-docstring} archivebox.core.forms.get_plugin_choices
+* - {py:obj}`_split_strip <archivebox.core.forms._split_strip>`
+  - ```{autodoc2-docstring} archivebox.core.forms._split_strip
+    :summary:
+    ```
+* - {py:obj}`parse_tag_string <archivebox.core.forms.parse_tag_string>`
+  - ```{autodoc2-docstring} archivebox.core.forms.parse_tag_string
+    :summary:
+    ```
+* - {py:obj}`edit_string_for_tag_names <archivebox.core.forms.edit_string_for_tag_names>`
+  - ```{autodoc2-docstring} archivebox.core.forms.edit_string_for_tag_names
     :summary:
     ```
 ````
@@ -65,22 +69,46 @@
 
 ````
 
-````{py:function} get_plugin_choices()
-:canonical: archivebox.core.forms.get_plugin_choices
+````{py:function} _split_strip(value: str, delimiter: str) -> list[str]
+:canonical: archivebox.core.forms._split_strip
 
-```{autodoc2-docstring} archivebox.core.forms.get_plugin_choices
+```{autodoc2-docstring} archivebox.core.forms._split_strip
+```
+````
+
+````{py:function} parse_tag_string(value: str | None) -> list[str]
+:canonical: archivebox.core.forms.parse_tag_string
+
+```{autodoc2-docstring} archivebox.core.forms.parse_tag_string
+```
+````
+
+````{py:function} edit_string_for_tag_names(tags) -> str
+:canonical: archivebox.core.forms.edit_string_for_tag_names
+
+```{autodoc2-docstring} archivebox.core.forms.edit_string_for_tag_names
 ```
 ````
 
 `````{py:class} AddLinkForm(*args, **kwargs)
 :canonical: archivebox.core.forms.AddLinkForm
 
-Bases: {py:obj}`django.forms.Form`
+Bases: {py:obj}`archivebox.plugins.forms.PluginConfigFormMixin`, {py:obj}`django.forms.Form`
+
+````{py:attribute} allow_crawl_execution_config_fields
+:canonical: archivebox.core.forms.AddLinkForm.allow_crawl_execution_config_fields
+:value: >
+   False
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.allow_crawl_execution_config_fields
+```
+
+````
 
 ````{py:attribute} url
 :canonical: archivebox.core.forms.AddLinkForm.url
 :value: >
-   'RegexField(...)'
+   'CharField(...)'
 
 ```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.url
 ```
@@ -107,6 +135,76 @@ Bases: {py:obj}`django.forms.Form`
 
 ````
 
+````{py:attribute} max_urls
+:canonical: archivebox.core.forms.AddLinkForm.max_urls
+:value: >
+   'IntegerField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.max_urls
+```
+
+````
+
+````{py:attribute} crawl_max_size
+:canonical: archivebox.core.forms.AddLinkForm.crawl_max_size
+:value: >
+   'CharField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.crawl_max_size
+```
+
+````
+
+````{py:attribute} crawl_timeout
+:canonical: archivebox.core.forms.AddLinkForm.crawl_timeout
+:value: >
+   'CharField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.crawl_timeout
+```
+
+````
+
+````{py:attribute} timeout
+:canonical: archivebox.core.forms.AddLinkForm.timeout
+:value: >
+   'CharField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.timeout
+```
+
+````
+
+````{py:attribute} snapshot_max_size
+:canonical: archivebox.core.forms.AddLinkForm.snapshot_max_size
+:value: >
+   'CharField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.snapshot_max_size
+```
+
+````
+
+````{py:attribute} delete_after
+:canonical: archivebox.core.forms.AddLinkForm.delete_after
+:value: >
+   'CharField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.delete_after
+```
+
+````
+
+````{py:attribute} crawl_max_concurrent_snapshots
+:canonical: archivebox.core.forms.AddLinkForm.crawl_max_concurrent_snapshots
+:value: >
+   'IntegerField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.crawl_max_concurrent_snapshots
+```
+
+````
+
 ````{py:attribute} notes
 :canonical: archivebox.core.forms.AddLinkForm.notes
 :value: >
@@ -117,62 +215,82 @@ Bases: {py:obj}`django.forms.Form`
 
 ````
 
-````{py:attribute} chrome_plugins
-:canonical: archivebox.core.forms.AddLinkForm.chrome_plugins
+````{py:attribute} url_filters
+:canonical: archivebox.core.forms.AddLinkForm.url_filters
 :value: >
-   'MultipleChoiceField(...)'
+   'Field(...)'
 
-```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.chrome_plugins
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.url_filters
 ```
 
 ````
 
-````{py:attribute} archiving_plugins
-:canonical: archivebox.core.forms.AddLinkForm.archiving_plugins
+````{py:attribute} main_plugins
+:canonical: archivebox.core.forms.AddLinkForm.main_plugins
 :value: >
    'MultipleChoiceField(...)'
 
-```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.archiving_plugins
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.main_plugins
 ```
 
 ````
 
-````{py:attribute} parsing_plugins
-:canonical: archivebox.core.forms.AddLinkForm.parsing_plugins
+````{py:attribute} page_setup_plugins
+:canonical: archivebox.core.forms.AddLinkForm.page_setup_plugins
 :value: >
    'MultipleChoiceField(...)'
 
-```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.parsing_plugins
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.page_setup_plugins
 ```
 
 ````
 
-````{py:attribute} search_plugins
-:canonical: archivebox.core.forms.AddLinkForm.search_plugins
+````{py:attribute} media_plugins
+:canonical: archivebox.core.forms.AddLinkForm.media_plugins
 :value: >
    'MultipleChoiceField(...)'
 
-```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.search_plugins
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.media_plugins
 ```
 
 ````
 
-````{py:attribute} binary_plugins
-:canonical: archivebox.core.forms.AddLinkForm.binary_plugins
+````{py:attribute} text_plugins
+:canonical: archivebox.core.forms.AddLinkForm.text_plugins
 :value: >
    'MultipleChoiceField(...)'
 
-```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.binary_plugins
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.text_plugins
 ```
 
 ````
 
-````{py:attribute} extension_plugins
-:canonical: archivebox.core.forms.AddLinkForm.extension_plugins
+````{py:attribute} metadata_plugins
+:canonical: archivebox.core.forms.AddLinkForm.metadata_plugins
 :value: >
    'MultipleChoiceField(...)'
 
-```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.extension_plugins
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.metadata_plugins
+```
+
+````
+
+````{py:attribute} postprocessing_plugins
+:canonical: archivebox.core.forms.AddLinkForm.postprocessing_plugins
+:value: >
+   'MultipleChoiceField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.postprocessing_plugins
+```
+
+````
+
+````{py:attribute} other_plugins
+:canonical: archivebox.core.forms.AddLinkForm.other_plugins
+:value: >
+   'MultipleChoiceField(...)'
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.other_plugins
 ```
 
 ````
@@ -190,39 +308,29 @@ Bases: {py:obj}`django.forms.Form`
 ````{py:attribute} persona
 :canonical: archivebox.core.forms.AddLinkForm.persona
 :value: >
-   'CharField(...)'
+   'ModelChoiceField(...)'
 
 ```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.persona
 ```
 
 ````
 
-````{py:attribute} overwrite
-:canonical: archivebox.core.forms.AddLinkForm.overwrite
+````{py:attribute} permissions
+:canonical: archivebox.core.forms.AddLinkForm.permissions
 :value: >
-   'BooleanField(...)'
+   'ChoiceField(...)'
 
-```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.overwrite
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.permissions
 ```
 
 ````
 
-````{py:attribute} update
-:canonical: archivebox.core.forms.AddLinkForm.update
+````{py:attribute} start_paused
+:canonical: archivebox.core.forms.AddLinkForm.start_paused
 :value: >
    'BooleanField(...)'
 
-```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.update
-```
-
-````
-
-````{py:attribute} index_only
-:canonical: archivebox.core.forms.AddLinkForm.index_only
-:value: >
-   'BooleanField(...)'
-
-```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.index_only
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.start_paused
 ```
 
 ````
@@ -242,6 +350,86 @@ Bases: {py:obj}`django.forms.Form`
 
 ````
 
+````{py:method} clean_url()
+:canonical: archivebox.core.forms.AddLinkForm.clean_url
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.clean_url
+```
+
+````
+
+````{py:method} clean_url_filters()
+:canonical: archivebox.core.forms.AddLinkForm.clean_url_filters
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.clean_url_filters
+```
+
+````
+
+````{py:method} clean_max_urls()
+:canonical: archivebox.core.forms.AddLinkForm.clean_max_urls
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.clean_max_urls
+```
+
+````
+
+````{py:method} clean_crawl_max_size()
+:canonical: archivebox.core.forms.AddLinkForm.clean_crawl_max_size
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.clean_crawl_max_size
+```
+
+````
+
+````{py:method} clean_crawl_timeout()
+:canonical: archivebox.core.forms.AddLinkForm.clean_crawl_timeout
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.clean_crawl_timeout
+```
+
+````
+
+````{py:method} clean_timeout()
+:canonical: archivebox.core.forms.AddLinkForm.clean_timeout
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.clean_timeout
+```
+
+````
+
+````{py:method} _clean_timeout_seconds(raw_value, field_label: str, *, blank_value)
+:canonical: archivebox.core.forms.AddLinkForm._clean_timeout_seconds
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm._clean_timeout_seconds
+```
+
+````
+
+````{py:method} clean_snapshot_max_size()
+:canonical: archivebox.core.forms.AddLinkForm.clean_snapshot_max_size
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.clean_snapshot_max_size
+```
+
+````
+
+````{py:method} clean_delete_after()
+:canonical: archivebox.core.forms.AddLinkForm.clean_delete_after
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.clean_delete_after
+```
+
+````
+
+````{py:method} clean_crawl_max_concurrent_snapshots()
+:canonical: archivebox.core.forms.AddLinkForm.clean_crawl_max_concurrent_snapshots
+
+```{autodoc2-docstring} archivebox.core.forms.AddLinkForm.clean_crawl_max_concurrent_snapshots
+```
+
+````
+
 ````{py:method} clean_schedule()
 :canonical: archivebox.core.forms.AddLinkForm.clean_schedule
 
@@ -252,28 +440,17 @@ Bases: {py:obj}`django.forms.Form`
 
 `````
 
-`````{py:class} TagWidgetMixin
-:canonical: archivebox.core.forms.TagWidgetMixin
+`````{py:class} TagWidget(attrs=None)
+:canonical: archivebox.core.forms.TagWidget
 
-```{autodoc2-docstring} archivebox.core.forms.TagWidgetMixin
-```
+Bases: {py:obj}`django.forms.TextInput`
 
 ````{py:method} format_value(value)
-:canonical: archivebox.core.forms.TagWidgetMixin.format_value
-
-```{autodoc2-docstring} archivebox.core.forms.TagWidgetMixin.format_value
-```
+:canonical: archivebox.core.forms.TagWidget.format_value
 
 ````
 
 `````
-
-```{py:class} TagWidget(attrs=None)
-:canonical: archivebox.core.forms.TagWidget
-
-Bases: {py:obj}`archivebox.core.forms.TagWidgetMixin`, {py:obj}`django.forms.TextInput`
-
-```
 
 `````{py:class} TagField(*, max_length=None, min_length=None, strip=True, empty_value='', **kwargs)
 :canonical: archivebox.core.forms.TagField
@@ -304,7 +481,7 @@ Bases: {py:obj}`django.forms.CharField`
 
 ````
 
-````{py:method} has_changed(initial_value, data_value)
+````{py:method} has_changed(initial, data)
 :canonical: archivebox.core.forms.TagField.has_changed
 
 ````

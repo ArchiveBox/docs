@@ -2,7 +2,7 @@
 
 ## Overview
 
-Running ArchiveBox with Docker allows you to manage it in a container without exposing it to the rest of your system. ArchiveBox generally works the same in Docker as it does outside Docker. You can even use `pip`-installed ArchiveBox and Docker ArchiveBox in tandem, as they both share the same data directory format.
+Running ArchiveBox with Docker allows you to manage it in a container without exposing it to the rest of your system. ArchiveBox generally works the same in Docker as it does outside Docker. You can even use `uv`-installed ArchiveBox and Docker ArchiveBox in tandem, as they both share the same data directory format.
 
 <img src="https://imgur.zervice.io/qFAPRwC.png" width="20%" align="right"/>
 
@@ -24,24 +24,22 @@ Running ArchiveBox with Docker allows you to manage it in a container without ex
 
 **Official Docker Hub image: [`hub.docker.com/r/archivebox/archivebox`](https://hub.docker.com/r/archivebox/archivebox)**
 ```bash
-docker pull archivebox/archivebox:latest
+docker pull archivebox/archivebox:dev
 ```
 
 - [`Dockerfile`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/Dockerfile)
 - [`docker-compose.yml`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml)
-- [`archivebox-kubernetes.yml`](https://github.com/ArchiveBox/docker-archivebox/blob/master/archivebox.yml)
 
 Published [Docker tags](https://hub.docker.com/r/archivebox/archivebox/tags):
-- `:latest`, `:stable` (latest stable release, the default)
-- `:x.x` and `:x.x.x` for specific versions (e.g. `:0.7` or `:0.7.2`)
 - `:dev` for unstable alpha builds (breaks often, only for developers and willing beta testers)
+- `:x.xrcN` and `:x.x.xrcN` for specific RC versions
 - `:sha-xxxxxxx` for builds of specific git commits (to test or pin specific PRs or commits)
 
 <br/>
 
 > [!IMPORTANT]
 > *Make sure Docker is **[installed](https://docs.docker.com/install/#supported-platforms)** and up-to-date before following any instructions below!*  ➡️  
-> To check installed version, run: `docker --version` (must be `>=17.04.0`)
+> Check both commands before continuing: `docker --version` and `docker compose version` (Compose v2 is required).
 
 <br/>
 
@@ -63,23 +61,19 @@ mkdir -p ~/archivebox/data && cd ~/archivebox
 
 # download the compose file into the directory
 curl -fsSL 'https://docker-compose.archivebox.io' > docker-compose.yml
-# (shortcut for getting https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/stable/docker-compose.yml)
+# (shortcut for getting https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/dev/docker-compose.yml)
 
-# initialize your collection and create an admin user for the Web UI (or set ADMIN_USERNAME/ADMIN_PASSWORD env vars)
-docker compose run archivebox init
-docker compose run archivebox manage createsuperuser
+# pull and start the current image
+# (the server initializes a new collection automatically)
+docker compose pull
+docker compose up -d --wait
 ```
 
-To use [Sonic](https://github.com/valeriansaliou/sonic) for improved full-text search, download this config & uncomment the sonic service in `docker-compose.yml`:
+Open <http://admin.archivebox.localhost:8000> and follow the setup wizard to create the first admin and configure web access. Existing `BASE_URL` and security settings are used as-is, so configured servers skip the web-access wizard.
+
+ArchiveBox installs and enables both ripgrep and [Sonic](https://github.com/valeriansaliou/sonic). Sonic is selected by default in the UI, while ripgrep remains available as the fallback. To select ripgrep explicitly:
 ```bash
-# download the sonic config file into your data folder (e.g. ~/archivebox)
-curl -fsSL 'https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/dev/etc/sonic.cfg' > sonic.cfg
-
-# then uncomment the sonic-related sections in docker-compose.yml
-nano docker-compose.yml
-
-# to backfill any existing archive data into the search index, run:
-docker compose run archivebox update --index-only
+docker compose exec archivebox archivebox config --set SEARCH_BACKEND_ENGINE=ripgrep
 ```
 
 <br/>
@@ -92,56 +86,56 @@ See the wiki page on [Upgrading or Merging Archives: Upgrading with Docker Compo
 
 ### Usage
 
-You can use `docker compose run archivebox [subcommand]` just like the non-Docker `archivebox [subcommand]` CLI.
+With the server running from the setup steps above, use `docker compose exec archivebox archivebox [subcommand]` just like the non-Docker `archivebox [subcommand]` CLI. If the server is stopped, use `docker compose run --rm archivebox [subcommand]` instead.
 
 First, make sure you're `cd`'ed into the same folder as your `docker-compose.yml` file (e.g. `~/archivebox`):
 ```bash
-docker compose run archivebox help
+docker compose exec archivebox archivebox help
 ```
 
 To add an individual URL, pass it in as an arg or via stdin:
 ```bash
-docker compose run archivebox add 'https://example.com'
+docker compose exec archivebox archivebox add 'https://example.com'
 # OR
-echo 'https://example.com' | docker compose run -T archivebox add
+echo 'https://example.com' | docker compose exec -T archivebox archivebox add
 ```
 
 To add multiple URLs at once, pipe them in via stdin, or place them in a file inside `./data/sources` so that ArchiveBox can access it from within the container:
 ```bash
 # pipe URLs in from a file outside Docker
-docker compose run -T archivebox add < ~/Downloads/example_urls.txt
+docker compose exec -T archivebox archivebox add < ~/Downloads/example_urls.txt
 
 # OR ingest URLs from a file mounted inside Docker
-docker compose run archivebox add --depth=1 /data/sources/example_urls.txt
+docker compose exec archivebox archivebox add --depth=1 /data/sources/example_urls.txt
 
 # OR pipe in URLs from a remote source
-curl 'https://example.com/some/rss/feed.xml' | docker compose run archivebox add
-docker compose run archivebox add --depth=1 'https://example.com/some/rss/feed.xml'
+curl 'https://example.com/some/rss/feed.xml' | docker compose exec -T archivebox archivebox add
+docker compose exec archivebox archivebox add --depth=1 'https://example.com/some/rss/feed.xml'
 ```
 
 The `--depth=1` flag tells ArchiveBox to look inside the provided source and archive all the URLs within:
 ```bash
 # this archives just the RSS file itself (probably not what you want)
-docker compose run archivebox add 'https://example.com/some/feed.rss'
+docker compose exec archivebox archivebox add 'https://example.com/some/feed.rss'
 
 # this archives the RSS feed file + all the URLs mentioned inside of it
-docker compose run archivebox add --depth=1 'https://example.com/some/feed.rss'
+docker compose exec archivebox archivebox add --depth=1 'https://example.com/some/feed.rss'
 ```
 
 <br/>
 
 ### Accessing the data
 
-The outputted archive data is stored in `data/` (relative to the project root), or whatever folder path you specified in the `docker-compose.yml` `volumes:` section. Make sure the `data/` folder on the host has permissions initially set to `777` so that the ArchiveBox command is able to set it to the specified `OUTPUT_PERMISSIONS` config setting on the first run.
+The outputted archive data is stored in `data/` (relative to the project root), or whatever folder path you specified in the `docker-compose.yml` `volumes:` section. The mounted directory must be writable by its current owner; the entrypoint detects that non-root owner and runs ArchiveBox with matching permissions.
 
-To access the results directly via the filesystem, open `./data/archive/<timestamp>/index.html` (timestamp is shown in output of previous command).
+To access a result directly via the filesystem, follow its backwards-compatible `./data/archive/<timestamp>` symlink, or browse the canonical `./data/archive/users/<user>/snapshots/<date>/<domain>/<uuid>/` tree.
 
 Alternatively, to use the web UI, start the server with:
 ```bash
 docker compose up         # add -d to run in the background
 ```
 
-Then open [`http://127.0.0.1:8000`](http://127.0.0.1:8000).
+Then open [`http://web.archivebox.localhost:8000`](http://web.archivebox.localhost:8000) for the public UI or [`http://admin.archivebox.localhost:8000`](http://admin.archivebox.localhost:8000) for the admin UI.
 
 <br/>
 
@@ -151,9 +145,12 @@ ArchiveBox running with `docker compose` accepts all the same config options as 
 
 The recommended way configure ArchiveBox in Docker Compose is using `archivebox config --set ...` or by editing `ArchiveBox.conf`.
 ```bash
-docker compose run archivebox config --set MEDIA_MAX_SIZE=750mb
-# OR
-echo 'MAX_MEDIA_SIZE=750mb' >> ./data/ArchiveBox.conf
+docker compose exec archivebox archivebox config --set TIMEOUT=120
+# OR edit ./data/ArchiveBox.conf and add this under its existing [ARCHIVING_CONFIG] section:
+TIMEOUT=120
+
+# plugin-specific options work the same way (see https://archivebox.github.io/abx-plugins/)
+docker compose exec archivebox archivebox config --set YTDLP_MAX_SIZE=750m
 ```
 This will apply the config to all containers or archivebox instances that access the collection.
 
@@ -174,9 +171,14 @@ services:
         ...
 ```
 
-You can also specify an env file via CLI when running compose using `docker compose --env-file=/path/to/config.env ...` although you must specify the variables in the `environment:` section that you want to have passed down to the ArchiveBox container from the passed env file.
+For public HTTPS, start the default stack with `docker compose up -d`, use port `8000` only as the temporary setup/upstream endpoint, and follow the first-run wizard. It gives the DNS, upstream, and certificate settings to enter in Cloudflare, Nginx Proxy Manager, Caddy, Traefik, Tailscale, or your hosting platform's ingress UI, then verifies the public HTTPS URLs before saving `BASE_URL` and `SERVER_SECURITY_MODE`.
 
-If you want to access your archive server with HTTPS, put a reverse proxy like Nginx or Caddy in front of `http://127.0.0.1:8000` to do SSL termination. Here is an example [ArchiveBox nginx container](https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml#:~:text=nginx) + [`nginx.conf`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/etc/nginx.conf) that you can modify to add your preferred TLS settings.
+Use exactly one of these certificate layouts:
+
+- **Single-domain mode:** one certificate for the `BASE_URL` hostname, proxied to ArchiveBox port `8000`.
+- **Isolated-subdomain mode:** one certificate covering both the `BASE_URL` hostname and `*.BASE_URL`, normally obtained through DNS-01.
+
+Never enable on-demand TLS or request individual certificates for `snap-*` hostnames.
 
 <br/>
 
@@ -190,18 +192,20 @@ If you want to access your archive server with HTTPS, put a reverse proxy like N
 
 ### Setup
 
-Fetch and run the ArchiveBox Docker image to create your initial archive.
+Fetch and run the ArchiveBox Docker image. Starting the server creates the initial archive automatically.
 
 ```bash
-docker pull archivebox/archivebox
+docker pull archivebox/archivebox:dev
 
-mkdkir -p ~/archivebox/data && cd ~/archivebox/data
-docker run -it -v $PWD:/data archivebox/archivebox init --setup
+mkdir -p ~/archivebox/data && cd ~/archivebox/data
+docker run -d --name archivebox -v "$PWD:/data" -p 8000:8000 archivebox/archivebox:dev
 ```
+
+Then open `/admin/` on the hostname or IP used to reach ArchiveBox (local example: <http://admin.archivebox.localhost:8000/admin/>) to create the first admin. If `BASE_URL` is not configured yet, continue through the web setup wizard.
 
 *(You can create a collection in any directory you want, `~/archivebox/data` is just used as an example here)*
 
-If you encounter permissions issues, you may need configure user/group ownership explicitly with [`PUID`/`PGID`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#puid--pgid).
+If you encounter permissions issues, make sure the mounted data directory is writable by its intended owner. Docker startup automatically uses the first non-root owner detected from the existing collection, or the default `archivebox` user when the data directory is root-owned.
 
 <br/>
 
@@ -213,31 +217,31 @@ See the wiki page on [Upgrading or Merging Archives: Upgrading with plain Docker
 
 ### Usage
 
-The Docker CLI `docker run ... archivebox/archivebox [subcommand]` works just like the non-Docker `archivebox [subcommand]` CLI.
+The Docker CLI `docker run ... archivebox/archivebox:dev [subcommand]` works just like the non-Docker `archivebox [subcommand]` CLI.
 
 First, make sure you're `cd`'ed into your collection data folder (e.g. `~/archivebox/data`).
 
 ```bash
-docker run -it -v $PWD:/data archivebox/archivebox help
+docker run -it -v $PWD:/data archivebox/archivebox:dev help
 ```
 
 To add a single URL, pass it as an arg or pipe it in via stdin:
 ```bash
-docker run -it -v $PWD:/data archivebox/archivebox add 'https://example.com'
+docker run -it -v $PWD:/data archivebox/archivebox:dev add 'https://example.com'
 # OR
-echo 'https://example.com' | docker run -i -v $PWD:/data archivebox/archivebox add
+echo 'https://example.com' | docker run -i -v $PWD:/data archivebox/archivebox:dev add
 ```
 
 To archive multiple URLs at once, pass text containing URLs in via stdin:
 ```bash
-docker run -i -v $PWD:/data archivebox/archivebox add < urls.txt
+docker run -i -v $PWD:/data archivebox/archivebox:dev add < urls.txt
 # OR
-curl 'https://example.com/some/rss/feed.xml' | docker run -i -v $PWD:/data archivebox/archivebox add
+curl 'https://example.com/some/rss/feed.xml' | docker run -i -v $PWD:/data archivebox/archivebox:dev add
 ```
 
 You can also use the `--depth=1` flag to tell ArchiveBox to recursively archive the URLs within a provided source.
 ```bash
-docker run -it -v $PWD:/data archivebox/archivebox add --depth=1 'https://example.com/some/rss/feed.xml'
+docker run -it -v $PWD:/data archivebox/archivebox:dev add --depth=1 'https://example.com/some/rss/feed.xml'
 ```
 
 <br/>
@@ -248,13 +252,13 @@ The `docker run` `-v /path/on/host:/path/inside/container` flag specifies where 
 
 For example to use a folder on an external USB drive (instead of the current directory `$PWD` or `~/archivebox/data`):
 ```bash
-docker run -it -v /media/USB-DRIVE/archivebox/data:/data archivebox/archivebox ...
+docker run -it -v /media/USB-DRIVE/archivebox/data:/data archivebox/archivebox:dev ...
 ```
 
 Then to view your data, you can look in the folder on the host `/media/USB-DRIVE/archivebox/data`, or use the Web UI:
 ```bash
-docker run -it -v /media/USB_DRIVE/archivebox/data:/data -p 8000:8000 archivebox/archivebox
-# then open https://127.0.0.1:8000
+docker run -it -v /media/USB-DRIVE/archivebox/data:/data -p 8000:8000 archivebox/archivebox:dev
+# then open http://web.archivebox.localhost:8000
 ```
 
 <br/>
@@ -263,19 +267,19 @@ docker run -it -v /media/USB_DRIVE/archivebox/data:/data -p 8000:8000 archivebox
 
 The easiest way is to use `archivebox config --set KEY=value` or edit `./ArchiveBox.conf` (in your collection dir).
 
-For example, this sets `MEDIA_TIMEOUT=120` as a persistent setting for the collection:
+For example, this sets `TIMEOUT=120` as a persistent setting for the collection:
 ```bash
-docker run -it -v $PWD:/data archivebox/archivebox config --set MEDIA_TIMEOUT=120
-# OR
-echo 'MEDIA_TIMEOUT=120' >> ./ArchiveBox.conf
+docker run -it -v $PWD:/data archivebox/archivebox:dev config --set TIMEOUT=120
+# OR edit ./ArchiveBox.conf and add this under its existing [ARCHIVING_CONFIG] section:
+TIMEOUT=120
 ```
 
-ArchiveBox in Docker also accepts config as environment variables, see more on the [[Configuration]] page.
+ArchiveBox in Docker also accepts config as environment variables, see more on the [[Configuration]] page (and the [abx-plugins config reference](https://archivebox.github.io/abx-plugins/) for per-plugin options).
 
-For example, this applies `FETCH_SCREENSHOT=False` to a single run (without persisting for other runs):
+For example, this disables the screenshot extractor for a single run (without persisting for other runs):
 ```bash
-docker run -it -v $PWD:/data -e FETCH_SCREENSHOT=False archivebox/archivebox add 'https://example.com'
+docker run -it -v $PWD:/data -e SCREENSHOT_ENABLED=False archivebox/archivebox:dev add 'https://example.com'
 # OR
-echo 'FETCH_SCREENSHOT=False' >> ./.env
-docker run ... --env-file=./.env archivebox/archivebox ...
+echo 'SCREENSHOT_ENABLED=False' >> ./.env
+docker run ... --env-file=./.env archivebox/archivebox:dev ...
 ```

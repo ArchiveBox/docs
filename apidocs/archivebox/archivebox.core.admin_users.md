@@ -68,6 +68,16 @@ Bases: {py:obj}`django.contrib.auth.admin.UserAdmin`
 
 ````
 
+````{py:attribute} change_form_template
+:canonical: archivebox.core.admin_users.CustomUserAdmin.change_form_template
+:value: >
+   'admin/auth/user/change_form.html'
+
+```{autodoc2-docstring} archivebox.core.admin_users.CustomUserAdmin.change_form_template
+```
+
+````
+
 ````{py:attribute} add_fieldsets
 :canonical: archivebox.core.admin_users.CustomUserAdmin.add_fieldsets
 :value: >
@@ -85,6 +95,40 @@ Bases: {py:obj}`django.contrib.auth.admin.UserAdmin`
 
 ```{autodoc2-docstring} archivebox.core.admin_users.CustomUserAdmin.fieldsets
 ```
+
+````
+
+````{py:method} get_queryset(request)
+:canonical: archivebox.core.admin_users.CustomUserAdmin.get_queryset
+
+````
+
+````{py:method} snapshot_rss_badge(obj, api_token: str = '')
+:canonical: archivebox.core.admin_users.CustomUserAdmin.snapshot_rss_badge
+
+```{autodoc2-docstring} archivebox.core.admin_users.CustomUserAdmin.snapshot_rss_badge
+```
+
+````
+
+````{py:method} snapshot_count_badge(obj)
+:canonical: archivebox.core.admin_users.CustomUserAdmin.snapshot_count_badge
+
+```{autodoc2-docstring} archivebox.core.admin_users.CustomUserAdmin.snapshot_count_badge
+```
+
+````
+
+````{py:method} snapshot_count_column(obj)
+:canonical: archivebox.core.admin_users.CustomUserAdmin.snapshot_count_column
+
+```{autodoc2-docstring} archivebox.core.admin_users.CustomUserAdmin.snapshot_count_column
+```
+
+````
+
+````{py:method} get_list_display(request)
+:canonical: archivebox.core.admin_users.CustomUserAdmin.get_list_display
 
 ````
 

@@ -17,6 +17,8 @@
 
 * - {py:obj}`APITokenAdmin <archivebox.api.admin.APITokenAdmin>`
   -
+* - {py:obj}`OutboundWebhookAdminForm <archivebox.api.admin.OutboundWebhookAdminForm>`
+  -
 * - {py:obj}`CustomWebhookAdmin <archivebox.api.admin.CustomWebhookAdmin>`
   -
 ````
@@ -27,6 +29,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`_webhook_fields <archivebox.api.admin._webhook_fields>`
+  - ```{autodoc2-docstring} archivebox.api.admin._webhook_fields
+    :summary:
+    ```
 * - {py:obj}`register_admin <archivebox.api.admin.register_admin>`
   - ```{autodoc2-docstring} archivebox.api.admin.register_admin
     :summary:
@@ -34,6 +40,13 @@
 ````
 
 ### API
+
+````{py:function} _webhook_fields(*names: str) -> tuple[str, ...]
+:canonical: archivebox.api.admin._webhook_fields
+
+```{autodoc2-docstring} archivebox.api.admin._webhook_fields
+```
+````
 
 `````{py:class} APITokenAdmin(model, admin_site)
 :canonical: archivebox.api.admin.APITokenAdmin
@@ -122,10 +135,27 @@ Bases: {py:obj}`archivebox.base_models.admin.BaseModelAdmin`
 
 `````
 
+```{py:class} OutboundWebhookAdminForm(*args, **kwargs)
+:canonical: archivebox.api.admin.OutboundWebhookAdminForm
+
+Bases: {py:obj}`signal_webhooks.admin.WebhookModelForm`
+
+```
+
 `````{py:class} CustomWebhookAdmin(model, admin_site)
 :canonical: archivebox.api.admin.CustomWebhookAdmin
 
 Bases: {py:obj}`signal_webhooks.admin.WebhookAdmin`, {py:obj}`archivebox.base_models.admin.BaseModelAdmin`
+
+````{py:attribute} form
+:canonical: archivebox.api.admin.CustomWebhookAdmin.form
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.api.admin.CustomWebhookAdmin.form
+```
+
+````
 
 ````{py:attribute} list_display
 :canonical: archivebox.api.admin.CustomWebhookAdmin.list_display
@@ -140,7 +170,7 @@ Bases: {py:obj}`signal_webhooks.admin.WebhookAdmin`, {py:obj}`archivebox.base_mo
 ````{py:attribute} sort_fields
 :canonical: archivebox.api.admin.CustomWebhookAdmin.sort_fields
 :value: >
-   ('created_at', 'created_by', 'id', 'referenced_model', 'endpoint', 'last_success', 'last_error')
+   '_webhook_fields(...)'
 
 ```{autodoc2-docstring} archivebox.api.admin.CustomWebhookAdmin.sort_fields
 ```
@@ -150,7 +180,7 @@ Bases: {py:obj}`signal_webhooks.admin.WebhookAdmin`, {py:obj}`archivebox.base_mo
 ````{py:attribute} readonly_fields
 :canonical: archivebox.api.admin.CustomWebhookAdmin.readonly_fields
 :value: >
-   ('created_at', 'modified_at')
+   '_webhook_fields(...)'
 
 ```{autodoc2-docstring} archivebox.api.admin.CustomWebhookAdmin.readonly_fields
 ```
@@ -167,9 +197,17 @@ Bases: {py:obj}`signal_webhooks.admin.WebhookAdmin`, {py:obj}`archivebox.base_mo
 
 ````
 
+````{py:method} lookup_allowed(lookup: str, value: str, request: django.http.HttpRequest | None = None) -> bool
+:canonical: archivebox.api.admin.CustomWebhookAdmin.lookup_allowed
+
+```{autodoc2-docstring} archivebox.api.admin.CustomWebhookAdmin.lookup_allowed
+```
+
+````
+
 `````
 
-````{py:function} register_admin(admin_site)
+````{py:function} register_admin(admin_site: django.contrib.admin.AdminSite) -> None
 :canonical: archivebox.api.admin.register_admin
 
 ```{autodoc2-docstring} archivebox.api.admin.register_admin

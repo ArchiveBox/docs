@@ -77,21 +77,21 @@
 
 ````
 
-````{py:function} create_tags(names: typing.Iterable[str]) -> int
+````{py:function} create_tags(names: collections.abc.Iterable[str]) -> int
 :canonical: archivebox.cli.archivebox_tag.create_tags
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_tag.create_tags
 ```
 ````
 
-````{py:function} list_tags(name: typing.Optional[str] = None, name__icontains: typing.Optional[str] = None, limit: typing.Optional[int] = None) -> int
+````{py:function} list_tags(name: str | None = None, name__icontains: str | None = None, limit: int | None = None) -> int
 :canonical: archivebox.cli.archivebox_tag.list_tags
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_tag.list_tags
 ```
 ````
 
-````{py:function} update_tags(name: typing.Optional[str] = None) -> int
+````{py:function} update_tags(name: str | None = None) -> int
 :canonical: archivebox.cli.archivebox_tag.update_tags
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_tag.update_tags
@@ -119,14 +119,14 @@
 ```
 ````
 
-````{py:function} list_cmd(name: typing.Optional[str], name__icontains: typing.Optional[str], limit: typing.Optional[int])
+````{py:function} list_cmd(name: str | None, name__icontains: str | None, limit: int | None)
 :canonical: archivebox.cli.archivebox_tag.list_cmd
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_tag.list_cmd
 ```
 ````
 
-````{py:function} update_cmd(name: typing.Optional[str])
+````{py:function} update_cmd(name: str | None)
 :canonical: archivebox.cli.archivebox_tag.update_cmd
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_tag.update_cmd

@@ -15,6 +15,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`build_archiveresult_request <archivebox.cli.archivebox_archiveresult.build_archiveresult_request>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_archiveresult.build_archiveresult_request
+    :summary:
+    ```
 * - {py:obj}`create_archiveresults <archivebox.cli.archivebox_archiveresult.create_archiveresults>`
   - ```{autodoc2-docstring} archivebox.cli.archivebox_archiveresult.create_archiveresults
     :summary:
@@ -77,21 +81,28 @@
 
 ````
 
-````{py:function} create_archiveresults(snapshot_id: typing.Optional[str] = None, plugin: typing.Optional[str] = None, status: str = 'queued') -> int
+````{py:function} build_archiveresult_request(snapshot_id: str, plugin: str, hook_name: str = '', status: str = 'queued') -> dict
+:canonical: archivebox.cli.archivebox_archiveresult.build_archiveresult_request
+
+```{autodoc2-docstring} archivebox.cli.archivebox_archiveresult.build_archiveresult_request
+```
+````
+
+````{py:function} create_archiveresults(snapshot_id: str | None = None, plugin: str | None = None, status: str = 'queued') -> int
 :canonical: archivebox.cli.archivebox_archiveresult.create_archiveresults
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_archiveresult.create_archiveresults
 ```
 ````
 
-````{py:function} list_archiveresults(status: typing.Optional[str] = None, plugin: typing.Optional[str] = None, snapshot_id: typing.Optional[str] = None, limit: typing.Optional[int] = None) -> int
+````{py:function} list_archiveresults(status: str | None = None, plugin: str | None = None, snapshot_id: str | None = None, limit: int | None = None) -> int
 :canonical: archivebox.cli.archivebox_archiveresult.list_archiveresults
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_archiveresult.list_archiveresults
 ```
 ````
 
-````{py:function} update_archiveresults(status: typing.Optional[str] = None) -> int
+````{py:function} update_archiveresults(status: str | None = None) -> int
 :canonical: archivebox.cli.archivebox_archiveresult.update_archiveresults
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_archiveresult.update_archiveresults
@@ -112,21 +123,21 @@
 ```
 ````
 
-````{py:function} create_cmd(snapshot_id: typing.Optional[str], plugin: typing.Optional[str], status: str)
+````{py:function} create_cmd(snapshot_id: str | None, plugin: str | None, status: str)
 :canonical: archivebox.cli.archivebox_archiveresult.create_cmd
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_archiveresult.create_cmd
 ```
 ````
 
-````{py:function} list_cmd(status: typing.Optional[str], plugin: typing.Optional[str], snapshot_id: typing.Optional[str], limit: typing.Optional[int])
+````{py:function} list_cmd(status: str | None, plugin: str | None, snapshot_id: str | None, limit: int | None)
 :canonical: archivebox.cli.archivebox_archiveresult.list_cmd
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_archiveresult.list_cmd
 ```
 ````
 
-````{py:function} update_cmd(status: typing.Optional[str])
+````{py:function} update_cmd(status: str | None)
 :canonical: archivebox.cli.archivebox_archiveresult.update_cmd
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_archiveresult.update_cmd

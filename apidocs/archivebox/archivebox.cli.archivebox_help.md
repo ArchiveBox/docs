@@ -15,6 +15,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`_command_doc <archivebox.cli.archivebox_help._command_doc>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_help._command_doc
+    :summary:
+    ```
 * - {py:obj}`help <archivebox.cli.archivebox_help.help>`
   - ```{autodoc2-docstring} archivebox.cli.archivebox_help.help
     :summary:
@@ -47,6 +51,13 @@
 ```{autodoc2-docstring} archivebox.cli.archivebox_help.__command__
 ```
 
+````
+
+````{py:function} _command_doc(cmd: str, import_path: str) -> str
+:canonical: archivebox.cli.archivebox_help._command_doc
+
+```{autodoc2-docstring} archivebox.cli.archivebox_help._command_doc
+```
 ````
 
 ````{py:function} help() -> None

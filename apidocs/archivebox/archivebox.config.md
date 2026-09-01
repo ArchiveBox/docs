@@ -33,16 +33,8 @@ archivebox.config.views
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`_get_config <archivebox.config._get_config>`
-  - ```{autodoc2-docstring} archivebox.config._get_config
-    :summary:
-    ```
 * - {py:obj}`__getattr__ <archivebox.config.__getattr__>`
   - ```{autodoc2-docstring} archivebox.config.__getattr__
-    :summary:
-    ```
-* - {py:obj}`get_CONFIG <archivebox.config.get_CONFIG>`
-  - ```{autodoc2-docstring} archivebox.config.get_CONFIG
     :summary:
     ```
 ````
@@ -55,6 +47,10 @@ archivebox.config.views
 
 * - {py:obj}`__order__ <archivebox.config.__order__>`
   - ```{autodoc2-docstring} archivebox.config.__order__
+    :summary:
+    ```
+* - {py:obj}`__all__ <archivebox.config.__all__>`
+  - ```{autodoc2-docstring} archivebox.config.__all__
     :summary:
     ```
 ````
@@ -71,13 +67,6 @@ archivebox.config.views
 
 ````
 
-````{py:function} _get_config()
-:canonical: archivebox.config._get_config
-
-```{autodoc2-docstring} archivebox.config._get_config
-```
-````
-
 ````{py:function} __getattr__(name: str)
 :canonical: archivebox.config.__getattr__
 
@@ -85,9 +74,12 @@ archivebox.config.views
 ```
 ````
 
-````{py:function} get_CONFIG()
-:canonical: archivebox.config.get_CONFIG
+````{py:data} __all__
+:canonical: archivebox.config.__all__
+:value: >
+   ('CONSTANTS', 'CONSTANTS_CONFIG', 'PACKAGE_DIR', 'DATA_DIR', 'VERSION')
 
-```{autodoc2-docstring} archivebox.config.get_CONFIG
+```{autodoc2-docstring} archivebox.config.__all__
 ```
+
 ````

@@ -15,30 +15,30 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`AccelleratedPaginator <archivebox.misc.paginators.AccelleratedPaginator>`
-  - ```{autodoc2-docstring} archivebox.misc.paginators.AccelleratedPaginator
+* - {py:obj}`AcceleratedPaginator <archivebox.misc.paginators.AcceleratedPaginator>`
+  - ```{autodoc2-docstring} archivebox.misc.paginators.AcceleratedPaginator
     :summary:
     ```
 ````
 
 ### API
 
-`````{py:class} AccelleratedPaginator(object_list, per_page, orphans=0, allow_empty_first_page=True, error_messages=None)
-:canonical: archivebox.misc.paginators.AccelleratedPaginator
+`````{py:class} AcceleratedPaginator(object_list, per_page, orphans=0, allow_empty_first_page=True, error_messages=None)
+:canonical: archivebox.misc.paginators.AcceleratedPaginator
 
 Bases: {py:obj}`django.core.paginator.Paginator`
 
-```{autodoc2-docstring} archivebox.misc.paginators.AccelleratedPaginator
+```{autodoc2-docstring} archivebox.misc.paginators.AcceleratedPaginator
 ```
 
 ```{rubric} Initialization
 ```
 
-```{autodoc2-docstring} archivebox.misc.paginators.AccelleratedPaginator.__init__
+```{autodoc2-docstring} archivebox.misc.paginators.AcceleratedPaginator.__init__
 ```
 
 ````{py:method} count()
-:canonical: archivebox.misc.paginators.AccelleratedPaginator.count
+:canonical: archivebox.misc.paginators.AcceleratedPaginator.count
 
 ````
 

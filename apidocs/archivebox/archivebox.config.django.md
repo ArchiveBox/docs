@@ -15,10 +15,6 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`setup_django_minimal <archivebox.config.django.setup_django_minimal>`
-  - ```{autodoc2-docstring} archivebox.config.django.setup_django_minimal
-    :summary:
-    ```
 * - {py:obj}`setup_django <archivebox.config.django.setup_django>`
   - ```{autodoc2-docstring} archivebox.config.django.setup_django
     :summary:
@@ -31,6 +27,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`CONFIG <archivebox.config.django.CONFIG>`
+  - ```{autodoc2-docstring} archivebox.config.django.CONFIG
+    :summary:
+    ```
 * - {py:obj}`STDERR <archivebox.config.django.STDERR>`
   - ```{autodoc2-docstring} archivebox.config.django.STDERR
     :summary:
@@ -43,6 +43,16 @@
 
 ### API
 
+````{py:data} CONFIG
+:canonical: archivebox.config.django.CONFIG
+:value: >
+   'get_config(...)'
+
+```{autodoc2-docstring} archivebox.config.django.CONFIG
+```
+
+````
+
 ````{py:data} STDERR
 :canonical: archivebox.config.django.STDERR
 :value: >
@@ -51,13 +61,6 @@
 ```{autodoc2-docstring} archivebox.config.django.STDERR
 ```
 
-````
-
-````{py:function} setup_django_minimal()
-:canonical: archivebox.config.django.setup_django_minimal
-
-```{autodoc2-docstring} archivebox.config.django.setup_django_minimal
-```
 ````
 
 ````{py:data} DJANGO_SET_UP

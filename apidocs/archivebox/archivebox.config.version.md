@@ -43,14 +43,6 @@
   - ```{autodoc2-docstring} archivebox.config.version.PACKAGE_DIR
     :summary:
     ```
-* - {py:obj}`DATA_DIR <archivebox.config.version.DATA_DIR>`
-  - ```{autodoc2-docstring} archivebox.config.version.DATA_DIR
-    :summary:
-    ```
-* - {py:obj}`ARCHIVE_DIR <archivebox.config.version.ARCHIVE_DIR>`
-  - ```{autodoc2-docstring} archivebox.config.version.ARCHIVE_DIR
-    :summary:
-    ```
 * - {py:obj}`VERSION <archivebox.config.version.VERSION>`
   - ```{autodoc2-docstring} archivebox.config.version.VERSION
     :summary:
@@ -80,28 +72,6 @@
 
 ````
 
-````{py:data} DATA_DIR
-:canonical: archivebox.config.version.DATA_DIR
-:type: pathlib.Path
-:value: >
-   'resolve(...)'
-
-```{autodoc2-docstring} archivebox.config.version.DATA_DIR
-```
-
-````
-
-````{py:data} ARCHIVE_DIR
-:canonical: archivebox.config.version.ARCHIVE_DIR
-:type: pathlib.Path
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.config.version.ARCHIVE_DIR
-```
-
-````
-
 ````{py:function} detect_installed_version(PACKAGE_DIR: pathlib.Path = PACKAGE_DIR)
 :canonical: archivebox.config.version.detect_installed_version
 
@@ -109,7 +79,7 @@
 ```
 ````
 
-````{py:function} get_COMMIT_HASH() -> typing.Optional[str]
+````{py:function} get_COMMIT_HASH() -> str | None
 :canonical: archivebox.config.version.get_COMMIT_HASH
 
 ```{autodoc2-docstring} archivebox.config.version.get_COMMIT_HASH

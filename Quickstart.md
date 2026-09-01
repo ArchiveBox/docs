@@ -6,7 +6,7 @@
 
 ▶️ *It only takes about 5 minutes to get up and running with ArchiveBox.*
 
-ArchiveBox [officially supports](https://github.com/ArchiveBox/ArchiveBox/wiki/Install#supported-systems) **macOS**, **Ubuntu/Debian**, and **BSD**, but likely runs on many other systems.  You can run it on any system that supports **Docker** and/or Python. Windows *is not supported* unless you run it inside Docker Desktop, Docker in WSL2, or WSL2.
+ArchiveBox [officially supports](https://github.com/ArchiveBox/ArchiveBox/wiki/Install#supported-systems) **macOS** and **Ubuntu** on `amd64` or `arm64`, plus **Docker** on Linux and macOS. Other operating systems are not tested for this release.
 
 For more detailed Docker and Docker Compose-specific instructions, see the [[Docker]] page.
 
@@ -32,9 +32,9 @@ Follow the links here to find instructions for exporting a list of URLs from eac
  - [Safari Bookmarks](http://imgur.zervice.io/AtcvUZA.png)
  - [Opera Bookmarks](http://help.opera.com/Windows/12.10/en/importexport.html)
  - [Internet Explorer Bookmarks](https://support.microsoft.com/en-us/help/211089/how-to-import-and-export-the-internet-explorer-favorites-folder-to-a-32-bit-version-of-windows)
- - Chrome History: `./bin/export_browser_history.sh --chrome`
- - Firefox History: `./bin/export_browser_history.sh --firefox`
- - Safari History: `./bin/export_browser_history.sh --safari`
+ - Chrome History: `bash ./bin/export_browser_history.sh --chrome`
+ - Firefox History: `bash ./bin/export_browser_history.sh --firefox`
+ - Safari History: `bash ./bin/export_browser_history.sh --safari`
  - Other File or URL: (e.g. RSS feed url, text file path) pass as second argument in the next step
 
  (If any of these links are broken, please submit an issue and I'll fix it)
@@ -46,10 +46,10 @@ Pass in URLs directly, import a list of links from a file, or import from a feed
 archivebox add < your_urls.txt
 
 # or if using plain Docker
-docker run -v $PWD:/data -it archivebox/archivebox add < your_urls.txt
+docker run -v $PWD:/data -i archivebox/archivebox:dev add < your_urls.txt
 
 # or if using Docker Compose
-docker compose run -T archivebox add < your_urls.txt
+docker compose run --rm -T archivebox add < your_urls.txt
 
 # any text containing URLs can ingested via stdin or as args
 curl -fsSL 'https://getpocket.com/users/YOURUSERNAME/feed/all' | archivebox add
@@ -63,7 +63,7 @@ Open `./archive` to view your archive data in the filesystem.
 You can also use the interactive Web UI to view/manage/add links to your archive:
 ```bash
 # with plain Docker:
-docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox
+docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox:dev
 
 # with Docker Compose:
 docker compose up -d
@@ -71,7 +71,9 @@ docker compose up -d
 # or without Docker:
 archivebox server
 
-open http://127.0.0.1:8000
+# Open /admin/ on the hostname or IP used to reach ArchiveBox.
+# Local example: http://admin.archivebox.localhost:8000/admin/
+# If BASE_URL is not configured yet, continue through the web setup wizard.
 ```
 
 ---

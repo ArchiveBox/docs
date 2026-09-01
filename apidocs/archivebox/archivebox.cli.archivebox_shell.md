@@ -27,14 +27,14 @@
 
 ### API
 
-````{py:function} shell(args: typing.Iterable[str] = ()) -> None
+````{py:function} shell(args: collections.abc.Iterable[str] = ()) -> None
 :canonical: archivebox.cli.archivebox_shell.shell
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_shell.shell
 ```
 ````
 
-````{py:function} main(args: typing.Iterable[str] = ()) -> None
+````{py:function} main(args: collections.abc.Iterable[str] = ()) -> None
 :canonical: archivebox.cli.archivebox_shell.main
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_shell.main

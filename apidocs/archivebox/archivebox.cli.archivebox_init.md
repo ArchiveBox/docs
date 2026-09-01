@@ -15,6 +15,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`_display_data_path <archivebox.cli.archivebox_init._display_data_path>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_init._display_data_path
+    :summary:
+    ```
 * - {py:obj}`init <archivebox.cli.archivebox_init.init>`
   - ```{autodoc2-docstring} archivebox.cli.archivebox_init.init
     :summary:
@@ -26,6 +30,13 @@
 ````
 
 ### API
+
+````{py:function} _display_data_path(path: pathlib.Path, data_dir: pathlib.Path) -> str
+:canonical: archivebox.cli.archivebox_init._display_data_path
+
+```{autodoc2-docstring} archivebox.cli.archivebox_init._display_data_path
+```
+````
 
 ````{py:function} init(force: bool = False, quick: bool = False, install: bool = False) -> None
 :canonical: archivebox.cli.archivebox_init.init

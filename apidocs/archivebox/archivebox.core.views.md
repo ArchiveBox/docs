@@ -15,6 +15,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`SnapshotReplayAuthView <archivebox.core.views.SnapshotReplayAuthView>`
+  - ```{autodoc2-docstring} archivebox.core.views.SnapshotReplayAuthView
+    :summary:
+    ```
 * - {py:obj}`HomepageView <archivebox.core.views.HomepageView>`
   -
 * - {py:obj}`SnapshotView <archivebox.core.views.SnapshotView>`
@@ -27,8 +31,16 @@
   - ```{autodoc2-docstring} archivebox.core.views.SnapshotHostView
     :summary:
     ```
+* - {py:obj}`SnapshotReplayView <archivebox.core.views.SnapshotReplayView>`
+  - ```{autodoc2-docstring} archivebox.core.views.SnapshotReplayView
+    :summary:
+    ```
 * - {py:obj}`OriginalDomainHostView <archivebox.core.views.OriginalDomainHostView>`
   - ```{autodoc2-docstring} archivebox.core.views.OriginalDomainHostView
+    :summary:
+    ```
+* - {py:obj}`OriginalDomainReplayView <archivebox.core.views.OriginalDomainReplayView>`
+  - ```{autodoc2-docstring} archivebox.core.views.OriginalDomainReplayView
     :summary:
     ```
 * - {py:obj}`PublicIndexView <archivebox.core.views.PublicIndexView>`
@@ -53,8 +65,60 @@
   - ```{autodoc2-docstring} archivebox.core.views._files_index_target
     :summary:
     ```
+* - {py:obj}`_find_snapshot_by_ref <archivebox.core.views._find_snapshot_by_ref>`
+  - ```{autodoc2-docstring} archivebox.core.views._find_snapshot_by_ref
+    :summary:
+    ```
+* - {py:obj}`_admin_login_redirect_or_forbidden <archivebox.core.views._admin_login_redirect_or_forbidden>`
+  - ```{autodoc2-docstring} archivebox.core.views._admin_login_redirect_or_forbidden
+    :summary:
+    ```
+* - {py:obj}`_replay_cookie_name <archivebox.core.views._replay_cookie_name>`
+  - ```{autodoc2-docstring} archivebox.core.views._replay_cookie_name
+    :summary:
+    ```
+* - {py:obj}`_clean_replay_next <archivebox.core.views._clean_replay_next>`
+  - ```{autodoc2-docstring} archivebox.core.views._clean_replay_next
+    :summary:
+    ```
+* - {py:obj}`_replay_payload_is_valid <archivebox.core.views._replay_payload_is_valid>`
+  - ```{autodoc2-docstring} archivebox.core.views._replay_payload_is_valid
+    :summary:
+    ```
+* - {py:obj}`_has_replay_cookie <archivebox.core.views._has_replay_cookie>`
+  - ```{autodoc2-docstring} archivebox.core.views._has_replay_cookie
+    :summary:
+    ```
+* - {py:obj}`_private_snapshot_auth_redirect <archivebox.core.views._private_snapshot_auth_redirect>`
+  - ```{autodoc2-docstring} archivebox.core.views._private_snapshot_auth_redirect
+    :summary:
+    ```
+* - {py:obj}`_replay_auth_response <archivebox.core.views._replay_auth_response>`
+  - ```{autodoc2-docstring} archivebox.core.views._replay_auth_response
+    :summary:
+    ```
 * - {py:obj}`_safe_archive_relpath <archivebox.core.views._safe_archive_relpath>`
   - ```{autodoc2-docstring} archivebox.core.views._safe_archive_relpath
+    :summary:
+    ```
+* - {py:obj}`_resolve_archiveresult_relpath <archivebox.core.views._resolve_archiveresult_relpath>`
+  - ```{autodoc2-docstring} archivebox.core.views._resolve_archiveresult_relpath
+    :summary:
+    ```
+* - {py:obj}`_coerce_sort_timestamp <archivebox.core.views._coerce_sort_timestamp>`
+  - ```{autodoc2-docstring} archivebox.core.views._coerce_sort_timestamp
+    :summary:
+    ```
+* - {py:obj}`_snapshot_sort_key <archivebox.core.views._snapshot_sort_key>`
+  - ```{autodoc2-docstring} archivebox.core.views._snapshot_sort_key
+    :summary:
+    ```
+* - {py:obj}`_snapshot_id_from_replay_path <archivebox.core.views._snapshot_id_from_replay_path>`
+  - ```{autodoc2-docstring} archivebox.core.views._snapshot_id_from_replay_path
+    :summary:
+    ```
+* - {py:obj}`_replay_path_visible <archivebox.core.views._replay_path_visible>`
+  - ```{autodoc2-docstring} archivebox.core.views._replay_path_visible
     :summary:
     ```
 * - {py:obj}`_latest_response_match <archivebox.core.views._latest_response_match>`
@@ -65,32 +129,24 @@
   - ```{autodoc2-docstring} archivebox.core.views._latest_responses_root
     :summary:
     ```
+* - {py:obj}`_latest_snapshot_for_domain <archivebox.core.views._latest_snapshot_for_domain>`
+  - ```{autodoc2-docstring} archivebox.core.views._latest_snapshot_for_domain
+    :summary:
+    ```
+* - {py:obj}`_original_request_url <archivebox.core.views._original_request_url>`
+  - ```{autodoc2-docstring} archivebox.core.views._original_request_url
+    :summary:
+    ```
 * - {py:obj}`_serve_responses_path <archivebox.core.views._serve_responses_path>`
   - ```{autodoc2-docstring} archivebox.core.views._serve_responses_path
     :summary:
     ```
-* - {py:obj}`live_progress_view <archivebox.core.views.live_progress_view>`
-  - ```{autodoc2-docstring} archivebox.core.views.live_progress_view
+* - {py:obj}`_serve_snapshot_replay <archivebox.core.views._serve_snapshot_replay>`
+  - ```{autodoc2-docstring} archivebox.core.views._serve_snapshot_replay
     :summary:
     ```
-* - {py:obj}`find_config_section <archivebox.core.views.find_config_section>`
-  - ```{autodoc2-docstring} archivebox.core.views.find_config_section
-    :summary:
-    ```
-* - {py:obj}`find_config_default <archivebox.core.views.find_config_default>`
-  - ```{autodoc2-docstring} archivebox.core.views.find_config_default
-    :summary:
-    ```
-* - {py:obj}`find_config_type <archivebox.core.views.find_config_type>`
-  - ```{autodoc2-docstring} archivebox.core.views.find_config_type
-    :summary:
-    ```
-* - {py:obj}`key_is_safe <archivebox.core.views.key_is_safe>`
-  - ```{autodoc2-docstring} archivebox.core.views.key_is_safe
-    :summary:
-    ```
-* - {py:obj}`find_config_source <archivebox.core.views.find_config_source>`
-  - ```{autodoc2-docstring} archivebox.core.views.find_config_source
+* - {py:obj}`_serve_original_domain_replay <archivebox.core.views._serve_original_domain_replay>`
+  - ```{autodoc2-docstring} archivebox.core.views._serve_original_domain_replay
     :summary:
     ```
 * - {py:obj}`live_config_list_view <archivebox.core.views.live_config_list_view>`
@@ -103,6 +159,26 @@
     ```
 ````
 
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`REPLAY_AUTH_SALT <archivebox.core.views.REPLAY_AUTH_SALT>`
+  - ```{autodoc2-docstring} archivebox.core.views.REPLAY_AUTH_SALT
+    :summary:
+    ```
+* - {py:obj}`REPLAY_COOKIE_PREFIX <archivebox.core.views.REPLAY_COOKIE_PREFIX>`
+  - ```{autodoc2-docstring} archivebox.core.views.REPLAY_COOKIE_PREFIX
+    :summary:
+    ```
+* - {py:obj}`REPLAY_GRANT_MAX_AGE <archivebox.core.views.REPLAY_GRANT_MAX_AGE>`
+  - ```{autodoc2-docstring} archivebox.core.views.REPLAY_GRANT_MAX_AGE
+    :summary:
+    ```
+````
+
 ### API
 
 ````{py:function} _files_index_target(snapshot: archivebox.core.models.Snapshot, archivefile: str | None) -> str
@@ -111,6 +187,116 @@
 ```{autodoc2-docstring} archivebox.core.views._files_index_target
 ```
 ````
+
+````{py:function} _find_snapshot_by_ref(snapshot_ref: str) -> archivebox.core.models.Snapshot | None
+:canonical: archivebox.core.views._find_snapshot_by_ref
+
+```{autodoc2-docstring} archivebox.core.views._find_snapshot_by_ref
+```
+````
+
+````{py:function} _admin_login_redirect_or_forbidden(request: django.http.HttpRequest)
+:canonical: archivebox.core.views._admin_login_redirect_or_forbidden
+
+```{autodoc2-docstring} archivebox.core.views._admin_login_redirect_or_forbidden
+```
+````
+
+````{py:data} REPLAY_AUTH_SALT
+:canonical: archivebox.core.views.REPLAY_AUTH_SALT
+:value: >
+   'archivebox.private-snapshot-replay'
+
+```{autodoc2-docstring} archivebox.core.views.REPLAY_AUTH_SALT
+```
+
+````
+
+````{py:data} REPLAY_COOKIE_PREFIX
+:canonical: archivebox.core.views.REPLAY_COOKIE_PREFIX
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.views.REPLAY_COOKIE_PREFIX
+```
+
+````
+
+````{py:data} REPLAY_GRANT_MAX_AGE
+:canonical: archivebox.core.views.REPLAY_GRANT_MAX_AGE
+:value: >
+   60
+
+```{autodoc2-docstring} archivebox.core.views.REPLAY_GRANT_MAX_AGE
+```
+
+````
+
+````{py:function} _replay_cookie_name(snapshot: archivebox.core.models.Snapshot) -> str
+:canonical: archivebox.core.views._replay_cookie_name
+
+```{autodoc2-docstring} archivebox.core.views._replay_cookie_name
+```
+````
+
+````{py:function} _clean_replay_next(path: str | None) -> str
+:canonical: archivebox.core.views._clean_replay_next
+
+```{autodoc2-docstring} archivebox.core.views._clean_replay_next
+```
+````
+
+````{py:function} _replay_payload_is_valid(payload: dict, snapshot: archivebox.core.models.Snapshot) -> bool
+:canonical: archivebox.core.views._replay_payload_is_valid
+
+```{autodoc2-docstring} archivebox.core.views._replay_payload_is_valid
+```
+````
+
+````{py:function} _has_replay_cookie(request: django.http.HttpRequest, snapshot: archivebox.core.models.Snapshot) -> bool
+:canonical: archivebox.core.views._has_replay_cookie
+
+```{autodoc2-docstring} archivebox.core.views._has_replay_cookie
+```
+````
+
+````{py:function} _private_snapshot_auth_redirect(request: django.http.HttpRequest, snapshot: archivebox.core.models.Snapshot, path: str = '', *, preserve_query: bool = True)
+:canonical: archivebox.core.views._private_snapshot_auth_redirect
+
+```{autodoc2-docstring} archivebox.core.views._private_snapshot_auth_redirect
+```
+````
+
+````{py:function} _replay_auth_response(request: django.http.HttpRequest, snapshot: archivebox.core.models.Snapshot)
+:canonical: archivebox.core.views._replay_auth_response
+
+```{autodoc2-docstring} archivebox.core.views._replay_auth_response
+```
+````
+
+`````{py:class} SnapshotReplayAuthView(**kwargs)
+:canonical: archivebox.core.views.SnapshotReplayAuthView
+
+Bases: {py:obj}`django.views.View`
+
+```{autodoc2-docstring} archivebox.core.views.SnapshotReplayAuthView
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} archivebox.core.views.SnapshotReplayAuthView.__init__
+```
+
+````{py:method} get(request: django.http.HttpRequest)
+:canonical: archivebox.core.views.SnapshotReplayAuthView.get
+
+```{autodoc2-docstring} archivebox.core.views.SnapshotReplayAuthView.get
+```
+
+````
+
+`````
 
 `````{py:class} HomepageView(**kwargs)
 :canonical: archivebox.core.views.HomepageView
@@ -137,6 +323,15 @@ Bases: {py:obj}`django.views.View`
 :staticmethod:
 
 ```{autodoc2-docstring} archivebox.core.views.SnapshotView.find_snapshots_for_url
+```
+
+````
+
+````{py:method} find_snapshots_for_id(slug: str)
+:canonical: archivebox.core.views.SnapshotView.find_snapshots_for_id
+:staticmethod:
+
+```{autodoc2-docstring} archivebox.core.views.SnapshotView.find_snapshots_for_id
 ```
 
 ````
@@ -191,17 +386,66 @@ Bases: {py:obj}`django.views.View`
 ```
 ````
 
-````{py:function} _latest_response_match(domain: str, rel_path: str) -> tuple[pathlib.Path, pathlib.Path] | None
+````{py:function} _resolve_archiveresult_relpath(snapshot: archivebox.core.models.Snapshot, rel_path: str) -> tuple[str, bool]
+:canonical: archivebox.core.views._resolve_archiveresult_relpath
+
+```{autodoc2-docstring} archivebox.core.views._resolve_archiveresult_relpath
+```
+````
+
+````{py:function} _coerce_sort_timestamp(value: str | float | None) -> float
+:canonical: archivebox.core.views._coerce_sort_timestamp
+
+```{autodoc2-docstring} archivebox.core.views._coerce_sort_timestamp
+```
+````
+
+````{py:function} _snapshot_sort_key(match_path: str, cache: dict[str, float]) -> tuple[float, str]
+:canonical: archivebox.core.views._snapshot_sort_key
+
+```{autodoc2-docstring} archivebox.core.views._snapshot_sort_key
+```
+````
+
+````{py:function} _snapshot_id_from_replay_path(path: pathlib.Path) -> str | None
+:canonical: archivebox.core.views._snapshot_id_from_replay_path
+
+```{autodoc2-docstring} archivebox.core.views._snapshot_id_from_replay_path
+```
+````
+
+````{py:function} _replay_path_visible(request: django.http.HttpRequest, path: pathlib.Path) -> bool
+:canonical: archivebox.core.views._replay_path_visible
+
+```{autodoc2-docstring} archivebox.core.views._replay_path_visible
+```
+````
+
+````{py:function} _latest_response_match(request: django.http.HttpRequest, domain: str, rel_path: str, *, data_root: pathlib.Path) -> tuple[pathlib.Path, pathlib.Path] | None
 :canonical: archivebox.core.views._latest_response_match
 
 ```{autodoc2-docstring} archivebox.core.views._latest_response_match
 ```
 ````
 
-````{py:function} _latest_responses_root(domain: str) -> pathlib.Path | None
+````{py:function} _latest_responses_root(request: django.http.HttpRequest, domain: str, *, data_root: pathlib.Path) -> pathlib.Path | None
 :canonical: archivebox.core.views._latest_responses_root
 
 ```{autodoc2-docstring} archivebox.core.views._latest_responses_root
+```
+````
+
+````{py:function} _latest_snapshot_for_domain(request: django.http.HttpRequest, domain: str) -> archivebox.core.models.Snapshot | None
+:canonical: archivebox.core.views._latest_snapshot_for_domain
+
+```{autodoc2-docstring} archivebox.core.views._latest_snapshot_for_domain
+```
+````
+
+````{py:function} _original_request_url(domain: str, path: str = '', query_string: str = '') -> str
+:canonical: archivebox.core.views._original_request_url
+
+```{autodoc2-docstring} archivebox.core.views._original_request_url
 ```
 ````
 
@@ -209,6 +453,20 @@ Bases: {py:obj}`django.views.View`
 :canonical: archivebox.core.views._serve_responses_path
 
 ```{autodoc2-docstring} archivebox.core.views._serve_responses_path
+```
+````
+
+````{py:function} _serve_snapshot_replay(request: django.http.HttpRequest, snapshot: archivebox.core.models.Snapshot, path: str = '')
+:canonical: archivebox.core.views._serve_snapshot_replay
+
+```{autodoc2-docstring} archivebox.core.views._serve_snapshot_replay
+```
+````
+
+````{py:function} _serve_original_domain_replay(request: django.http.HttpRequest, domain: str, path: str = '')
+:canonical: archivebox.core.views._serve_original_domain_replay
+
+```{autodoc2-docstring} archivebox.core.views._serve_original_domain_replay
 ```
 ````
 
@@ -236,6 +494,30 @@ Bases: {py:obj}`django.views.View`
 
 `````
 
+`````{py:class} SnapshotReplayView(**kwargs)
+:canonical: archivebox.core.views.SnapshotReplayView
+
+Bases: {py:obj}`django.views.View`
+
+```{autodoc2-docstring} archivebox.core.views.SnapshotReplayView
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} archivebox.core.views.SnapshotReplayView.__init__
+```
+
+````{py:method} get(request, snapshot_id: str, path: str = '')
+:canonical: archivebox.core.views.SnapshotReplayView.get
+
+```{autodoc2-docstring} archivebox.core.views.SnapshotReplayView.get
+```
+
+````
+
+`````
+
 `````{py:class} OriginalDomainHostView(**kwargs)
 :canonical: archivebox.core.views.OriginalDomainHostView
 
@@ -254,6 +536,30 @@ Bases: {py:obj}`django.views.View`
 :canonical: archivebox.core.views.OriginalDomainHostView.get
 
 ```{autodoc2-docstring} archivebox.core.views.OriginalDomainHostView.get
+```
+
+````
+
+`````
+
+`````{py:class} OriginalDomainReplayView(**kwargs)
+:canonical: archivebox.core.views.OriginalDomainReplayView
+
+Bases: {py:obj}`django.views.View`
+
+```{autodoc2-docstring} archivebox.core.views.OriginalDomainReplayView
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} archivebox.core.views.OriginalDomainReplayView.__init__
+```
+
+````{py:method} get(request, domain: str, path: str = '')
+:canonical: archivebox.core.views.OriginalDomainReplayView.get
+
+```{autodoc2-docstring} archivebox.core.views.OriginalDomainReplayView.get
 ```
 
 ````
@@ -285,16 +591,6 @@ Bases: {py:obj}`django.views.generic.list.ListView`
 
 ````
 
-````{py:attribute} paginate_by
-:canonical: archivebox.core.views.PublicIndexView.paginate_by
-:value: >
-   None
-
-```{autodoc2-docstring} archivebox.core.views.PublicIndexView.paginate_by
-```
-
-````
-
 ````{py:attribute} ordering
 :canonical: archivebox.core.views.PublicIndexView.ordering
 :value: >
@@ -305,8 +601,62 @@ Bases: {py:obj}`django.views.generic.list.ListView`
 
 ````
 
+````{py:attribute} paginator_class
+:canonical: archivebox.core.views.PublicIndexView.paginator_class
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.views.PublicIndexView.paginator_class
+```
+
+````
+
+````{py:attribute} public_page_scan_chunk_size
+:canonical: archivebox.core.views.PublicIndexView.public_page_scan_chunk_size
+:value: >
+   50
+
+```{autodoc2-docstring} archivebox.core.views.PublicIndexView.public_page_scan_chunk_size
+```
+
+````
+
+````{py:method} get_paginate_by(queryset)
+:canonical: archivebox.core.views.PublicIndexView.get_paginate_by
+
+````
+
+````{py:method} _base_public_snapshot_fields() -> tuple[str, ...]
+:canonical: archivebox.core.views.PublicIndexView._base_public_snapshot_fields
+
+```{autodoc2-docstring} archivebox.core.views.PublicIndexView._base_public_snapshot_fields
+```
+
+````
+
+````{py:method} _ordered_public_page_from_order_index(*, page_number: int, page_size: int) -> list[archivebox.core.models.Snapshot] | None
+:canonical: archivebox.core.views.PublicIndexView._ordered_public_page_from_order_index
+
+```{autodoc2-docstring} archivebox.core.views.PublicIndexView._ordered_public_page_from_order_index
+```
+
+````
+
+````{py:method} paginate_queryset(queryset, page_size)
+:canonical: archivebox.core.views.PublicIndexView.paginate_queryset
+
+````
+
 ````{py:method} get_context_data(**kwargs)
 :canonical: archivebox.core.views.PublicIndexView.get_context_data
+
+````
+
+````{py:method} get_exact_public_snapshot_count() -> int
+:canonical: archivebox.core.views.PublicIndexView.get_exact_public_snapshot_count
+
+```{autodoc2-docstring} archivebox.core.views.PublicIndexView.get_exact_public_snapshot_count
+```
 
 ````
 
@@ -355,6 +705,11 @@ Bases: {py:obj}`django.contrib.auth.mixins.UserPassesTestMixin`, {py:obj}`django
 
 ```{autodoc2-docstring} archivebox.core.views.AddView.get_initial
 ```
+
+````
+
+````{py:method} get_form_kwargs()
+:canonical: archivebox.core.views.AddView.get_form_kwargs
 
 ````
 
@@ -431,7 +786,7 @@ Bases: {py:obj}`archivebox.core.views.AddView`
 
 ````
 
-````{py:method} get(request, url: str)
+````{py:method} get(request: django.http.HttpRequest, *args: object, **kwargs: object)
 :canonical: archivebox.core.views.WebAddView.get
 
 ````
@@ -461,48 +816,6 @@ Bases: {py:obj}`django.views.View`
 ````
 
 `````
-
-````{py:function} live_progress_view(request)
-:canonical: archivebox.core.views.live_progress_view
-
-```{autodoc2-docstring} archivebox.core.views.live_progress_view
-```
-````
-
-````{py:function} find_config_section(key: str) -> str
-:canonical: archivebox.core.views.find_config_section
-
-```{autodoc2-docstring} archivebox.core.views.find_config_section
-```
-````
-
-````{py:function} find_config_default(key: str) -> str
-:canonical: archivebox.core.views.find_config_default
-
-```{autodoc2-docstring} archivebox.core.views.find_config_default
-```
-````
-
-````{py:function} find_config_type(key: str) -> str
-:canonical: archivebox.core.views.find_config_type
-
-```{autodoc2-docstring} archivebox.core.views.find_config_type
-```
-````
-
-````{py:function} key_is_safe(key: str) -> bool
-:canonical: archivebox.core.views.key_is_safe
-
-```{autodoc2-docstring} archivebox.core.views.key_is_safe
-```
-````
-
-````{py:function} find_config_source(key: str, merged_config: dict) -> str
-:canonical: archivebox.core.views.find_config_source
-
-```{autodoc2-docstring} archivebox.core.views.find_config_source
-```
-````
 
 ````{py:function} live_config_list_view(request: django.http.HttpRequest, **kwargs) -> admin_data_views.typing.TableContext
 :canonical: archivebox.core.views.live_config_list_view

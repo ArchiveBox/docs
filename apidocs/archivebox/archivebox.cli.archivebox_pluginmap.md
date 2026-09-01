@@ -31,63 +31,24 @@
 :class: autosummary longtable
 :align: left
 
-* - {py:obj}`CRAWL_MACHINE_DIAGRAM <archivebox.cli.archivebox_pluginmap.CRAWL_MACHINE_DIAGRAM>`
-  - ```{autodoc2-docstring} archivebox.cli.archivebox_pluginmap.CRAWL_MACHINE_DIAGRAM
-    :summary:
-    ```
-* - {py:obj}`SNAPSHOT_MACHINE_DIAGRAM <archivebox.cli.archivebox_pluginmap.SNAPSHOT_MACHINE_DIAGRAM>`
-  - ```{autodoc2-docstring} archivebox.cli.archivebox_pluginmap.SNAPSHOT_MACHINE_DIAGRAM
-    :summary:
-    ```
-* - {py:obj}`ARCHIVERESULT_MACHINE_DIAGRAM <archivebox.cli.archivebox_pluginmap.ARCHIVERESULT_MACHINE_DIAGRAM>`
-  - ```{autodoc2-docstring} archivebox.cli.archivebox_pluginmap.ARCHIVERESULT_MACHINE_DIAGRAM
-    :summary:
-    ```
-* - {py:obj}`BINARY_MACHINE_DIAGRAM <archivebox.cli.archivebox_pluginmap.BINARY_MACHINE_DIAGRAM>`
-  - ```{autodoc2-docstring} archivebox.cli.archivebox_pluginmap.BINARY_MACHINE_DIAGRAM
+* - {py:obj}`EVENT_FLOW_DIAGRAM <archivebox.cli.archivebox_pluginmap.EVENT_FLOW_DIAGRAM>`
+  - ```{autodoc2-docstring} archivebox.cli.archivebox_pluginmap.EVENT_FLOW_DIAGRAM
     :summary:
     ```
 ````
 
 ### API
 
-````{py:data} CRAWL_MACHINE_DIAGRAM
-:canonical: archivebox.cli.archivebox_pluginmap.CRAWL_MACHINE_DIAGRAM
+````{py:data} EVENT_FLOW_DIAGRAM
+:canonical: archivebox.cli.archivebox_pluginmap.EVENT_FLOW_DIAGRAM
 :value: <Multiline-String>
 
-```{autodoc2-docstring} archivebox.cli.archivebox_pluginmap.CRAWL_MACHINE_DIAGRAM
+```{autodoc2-docstring} archivebox.cli.archivebox_pluginmap.EVENT_FLOW_DIAGRAM
 ```
 
 ````
 
-````{py:data} SNAPSHOT_MACHINE_DIAGRAM
-:canonical: archivebox.cli.archivebox_pluginmap.SNAPSHOT_MACHINE_DIAGRAM
-:value: <Multiline-String>
-
-```{autodoc2-docstring} archivebox.cli.archivebox_pluginmap.SNAPSHOT_MACHINE_DIAGRAM
-```
-
-````
-
-````{py:data} ARCHIVERESULT_MACHINE_DIAGRAM
-:canonical: archivebox.cli.archivebox_pluginmap.ARCHIVERESULT_MACHINE_DIAGRAM
-:value: <Multiline-String>
-
-```{autodoc2-docstring} archivebox.cli.archivebox_pluginmap.ARCHIVERESULT_MACHINE_DIAGRAM
-```
-
-````
-
-````{py:data} BINARY_MACHINE_DIAGRAM
-:canonical: archivebox.cli.archivebox_pluginmap.BINARY_MACHINE_DIAGRAM
-:value: <Multiline-String>
-
-```{autodoc2-docstring} archivebox.cli.archivebox_pluginmap.BINARY_MACHINE_DIAGRAM
-```
-
-````
-
-````{py:function} pluginmap(show_disabled: bool = False, model: typing.Optional[str] = None, quiet: bool = False) -> dict
+````{py:function} pluginmap(show_disabled: bool = False, event: str | None = None, quiet: bool = False) -> dict
 :canonical: archivebox.cli.archivebox_pluginmap.pluginmap
 
 ```{autodoc2-docstring} archivebox.cli.archivebox_pluginmap.pluginmap

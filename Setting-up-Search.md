@@ -4,9 +4,9 @@
 
 You can search your ArchiveBox data in a number of ways:
 
-- using the CLI: `archivebox list --filter-type=search 'text to search'` (`archivebox list --help` for more)
+- using the CLI: `archivebox search 'text to search'` (`archivebox search --help` for more)
 - using the Web UI: both the `/public` index and `/admin/core/snapshot` pages provide a search box
-- using the REST API: `/api/v1/list?filter_type=search` provides the same search interface as the CLI  
+- using the REST API: `/api/v1/core/snapshots?search=text+to+search&search_mode=contents`
 - by searching the archive data folder directly with external tools (e.g. macOS Spotlight, [Cerebro](https://www.cerebroapp.com/), `ag`, [Yacy](https://yacy.net/), etc.)
 
 ![image](https://github.com/ArchiveBox/ArchiveBox/assets/511499/637675ee-bf4a-49f9-b936-c2da1bd64410)
@@ -31,44 +31,39 @@ ArchiveBox search works by doing substring matches in `Snapshot` metadata fields
 ArchiveBox provides a number of "Search Backend Engines" to tune its performance & behavior for different use-cases.
 ```bash
 # this setting controls which search backend ArchiveBox uses
-archivebox config --set SEARCH_BACKEND_ENGINE=[ripgrep]|sonic|sqlite
+archivebox config --set SEARCH_BACKEND_ENGINE=sonic
 
 # to see information about the backend you are currently using, run:
 archivebox version
 archivebox config --get SEARCH_BACKEND_ENGINE
 ```
 
-By default out-of-the-box, the selected engine is a simple but efficient tool similar to `grep -r` called [`ripgrep`](https://github.com/BurntSushi/ripgrep).
-
-Ripgrep is [currently the fastest](https://blog.burntsushi.net/ripgrep/) available *filesystem search* tool that scans over the raw archived files on every search. We chose it as the default so that beginners and 95% of users with small collections can have an experience that "just works", without needing to install and maintain complex additional dependencies or background workers.
-
-However, there are some fundamental limitations of scanning through every file on disk each time a search is done, so ArchiveBox provides a number of additional search backend options for when users outgrow `ripgrep`.
+ArchiveBox installs and enables both [Sonic](https://github.com/valeriansaliou/sonic) and [`ripgrep`](https://github.com/BurntSushi/ripgrep). Sonic is selected by default for fast indexed search, while ripgrep remains available as the filesystem fallback when Sonic is unavailable or explicitly selected.
 
 > [!TIP]
-> **You should consider switching ArchiveBox to use `sonic` or another backend IF:**
+> **You should consider selecting `ripgrep` instead of Sonic if:**
 > 
-> - you have more than 1,000 Snapshots saved in your archive
-> - your archive data is stored on a slower filesystem like a spinning hard drive or remote network mount
-> - you want more advanced search features like stemming, boolean operators, and ability to search PDFs, eBooks, ZIP/tar files, etc.
+> - Sonic is unavailable on your platform
+> - you prefer filesystem scanning without a background daemon
+> - you need ripgrep-compatible regular expressions
 
 <br/>
 
 <a name="ripgrep"></a>
 
-### `ripgrep` *(the default)*
+### `ripgrep` *(fallback)*
 
-If you do not already have `ripgrep` installed, follow the [instructions here](https://github.com/BurntSushi/ripgrep#installation) to get it.
-ArchiveBox will use `ripgrep` by default if it is found, however you can explicitly configure it to be used like so:
+ArchiveBox resolves `ripgrep` through `abxpkg`: a compatible host installation is used first, otherwise a managed copy is installed.
 
 ```bash
+archivebox install ripgrep
 archivebox config --set SEARCH_BACKEND_ENGINE=ripgrep
-archivebox config --set RIPGREP_BINARY=rg
 
-# check that archivebox detects the installed version:
+# check the resolved provider, version, and projected binary:
 archivebox version
 
 # then try it out by searching via the Web UI or CLI:
-archivebox list --filter-type=search 'text to search for'
+archivebox search 'text to search for'
 ```
 
 #### Pros
@@ -80,7 +75,7 @@ archivebox list --filter-type=search 'text to search for'
 
 #### Cons
 - very slow as archive collection size increases (doesn't scale well beyond 500~1,000 Snapshots)
-- very slow if underlying filesytem is slow (e.g. HDDs or network mounts)
+- very slow if underlying filesystem is slow (e.g. HDDs or network mounts)
 - doesn't support stemming, boolean operators, or other advanced full-text search features
 
 <br/>
@@ -89,20 +84,7 @@ archivebox list --filter-type=search 'text to search for'
 
 ### `ripgrep-all` (aka `rga`)
 
-The same as ripgrep except that it supports searching more binary filetypes like PDFs, eBooks, Office documents, zip, tar.gz, etc.
-
-To use it, follow the [install instruction for your OS](https://github.com/phiresky/ripgrep-all#installation), then configure ArchiveBox to use it like so:
-
-```bash
-archivebox config --set SEARCH_BACKEND_ENGINE=ripgrep
-archivebox config --set RIPGREP_BINARY=rga
-
-# check that archivebox detects the installed version:
-archivebox version
-
-# then try it out by searching via the Web UI or CLI:
-archivebox list --filter-type=search 'text to search for'
-```
+`ripgrep-all` supports more binary file types such as PDFs, eBooks, Office documents, zip, and tar files. It is useful as an external companion tool, but it is **not currently a supported drop-in binary for ArchiveBox's `ripgrep` backend**. The backend relies on `rg`'s command and output contract.
 
 <br/>
 
@@ -110,15 +92,11 @@ archivebox list --filter-type=search 'text to search for'
 
 ### `ugrep`
 
-Not tested by the ArchiveBox team but it's very similar to `ripgrep` and may work as a drop-in replacement, with some caveats. (contributions welcome to improve support)
+`ugrep` is another capable external search tool, but it is **not a supported drop-in binary** for ArchiveBox's `ripgrep` backend. Contributions adding a dedicated integration are welcome.
 
 `ugrep` is similar to `ripgrep` and `ripgrep-all` in that it's an indexless disk-search tool, but it provides some more of the full-text search features without the performance overhead of maintaining a separate search backend worker with an independent index.
 
 https://github.com/Genivia/ugrep
-
-```bash
-archivebox config --set RIPGREP_BINARY=ugrep+
-```
 
 #### Pros
 
@@ -144,29 +122,16 @@ Internally it functions as an index store, storing only the original IDs of the 
 
 *ArchiveBox has supported Sonic for years, and it is the most thoroughly tested and recommended backend for ArchiveBox users that need to scale beyond `ripgrep`.*
 
-Using [sonic with ArchiveBox in Docker Compose](https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml) is the easiest way to get started, though you can also use it without Docker by [installing it manually](https://github.com/valeriansaliou/sonic#installation) and then running `pip install archivebox[sonic]`.
+ArchiveBox resolves and starts Sonic through the same `abxpkg` lifecycle on both Docker and bare-metal installations.
 
 ```bash
-# edit docker-compose.yml to uncomment the lines that enable sonic
-nano docker-compose.yml
-
-# make sure ArchiveBox is configured to use the Sonic backend
-docker compose run archivebox config --set SEARCH_BACKEND_ENGINE=sonic
-
-# restart the containers to apply changes and start the Sonic worker
-docker compose down
-docker compose up
-
-# check that the sonic container started without issues
-docker compose logs sonic
-docker compose run archivebox version
-
-# backfill any existing archivebox data into the Sonic index (may take an hour or longer depending on storage speed and collection size)
-docker compose run archivebox update --index-only
-
-# then test it out:
-docker compose run archivebox list --filter-type=search 'some text to search'
+archivebox config --set SEARCH_BACKEND_ENGINE=sonic
+archivebox install sonic
+archivebox update --index-only
+archivebox search 'some text to search'
 ```
+
+Run the same commands as `docker compose run --rm archivebox ...` when using Docker Compose.
 
 *Fore more detailed instructions [see here](https://github.com/ArchiveBox/ArchiveBox/issues/956#issuecomment-1320587158)...*
 
@@ -198,21 +163,22 @@ archivebox config --set SEARCH_BACKEND_ENGINE=sqlite
 archivebox update --index-only
 
 # test it out using the archivebox Web UI or CLI:
-archivebox list --filter-type=search 'some text to search'
+archivebox search 'some text to search'
+```
 
-# or using SQLite3 directly;
+You can also inspect the separate FTS database directly:
+
+```bash
 sqlite3 ./search.sqlite3
 
-> SELECT snapshot_id FROM snapshot_fts
-      INNER JOIN snapshot_id_fts ON snapshot_id_fts.rowid = snapshot_fts.rowid
-      WHERE snapshot_fts MATCH "some text to search";
+> SELECT snapshot_id, url FROM search_index
+      WHERE search_index MATCH 'some text to search';
 ```
 
 ```bash
 # optional advanced tuning:
 archivebox config --set FTS_SEPARATE_DATABASE=True
 archivebox config --set FTS_TOKENIZERS="porter unicode61 remove_diacritics 2"
-archivebox config --set FTS_SQLITE_MAX_LENGTH=1000000000
 ```
 
 - https://www.sqlite.org/fts5.html
@@ -242,7 +208,9 @@ archivebox config --set FTS_SQLITE_MAX_LENGTH=1000000000
 ### Further Reading
 
 - https://github.com/ArchiveBox/ArchiveBox/blob/dev/docker-compose.yml#:~:text=SEARCH_BACKEND_ENGINE
-- https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#ripgrep_binary
+- https://archivebox.github.io/abx-plugins/#search_backend_ripgrep
+- https://archivebox.github.io/abx-plugins/#search_backend_sonic
+- https://archivebox.github.io/abx-plugins/#search_backend_sqlite
 
 * [#22 Original Issue where full-text search functionality was proposed](https://github.com/ArchiveBox/ArchiveBox/issues/22)
 * [#543 + #570 Original PR where full-text search functionality was implemented](https://github.com/ArchiveBox/ArchiveBox/pull/543)

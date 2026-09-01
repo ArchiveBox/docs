@@ -15,6 +15,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`_env_path <archivebox.config.paths._env_path>`
+  - ```{autodoc2-docstring} archivebox.config.paths._env_path
+    :summary:
+    ```
 * - {py:obj}`_get_collection_id <archivebox.config.paths._get_collection_id>`
   - ```{autodoc2-docstring} archivebox.config.paths._get_collection_id
     :summary:
@@ -45,6 +49,10 @@
     ```
 * - {py:obj}`tmp_dir_socket_path_is_short_enough <archivebox.config.paths.tmp_dir_socket_path_is_short_enough>`
   - ```{autodoc2-docstring} archivebox.config.paths.tmp_dir_socket_path_is_short_enough
+    :summary:
+    ```
+* - {py:obj}`tmp_dir_candidates <archivebox.config.paths.tmp_dir_candidates>`
+  - ```{autodoc2-docstring} archivebox.config.paths.tmp_dir_candidates
     :summary:
     ```
 * - {py:obj}`get_or_create_working_tmp_dir <archivebox.config.paths.get_or_create_working_tmp_dir>`
@@ -79,8 +87,20 @@
   - ```{autodoc2-docstring} archivebox.config.paths.DATA_DIR
     :summary:
     ```
+* - {py:obj}`MAX_TMP_SOCKET_URL_LENGTH <archivebox.config.paths.MAX_TMP_SOCKET_URL_LENGTH>`
+  - ```{autodoc2-docstring} archivebox.config.paths.MAX_TMP_SOCKET_URL_LENGTH
+    :summary:
+    ```
+* - {py:obj}`SUPERVISORD_SOCKET_FILENAME <archivebox.config.paths.SUPERVISORD_SOCKET_FILENAME>`
+  - ```{autodoc2-docstring} archivebox.config.paths.SUPERVISORD_SOCKET_FILENAME
+    :summary:
+    ```
 * - {py:obj}`ARCHIVE_DIR <archivebox.config.paths.ARCHIVE_DIR>`
   - ```{autodoc2-docstring} archivebox.config.paths.ARCHIVE_DIR
+    :summary:
+    ```
+* - {py:obj}`USERS_DIR <archivebox.config.paths.USERS_DIR>`
+  - ```{autodoc2-docstring} archivebox.config.paths.USERS_DIR
     :summary:
     ```
 * - {py:obj}`IN_DOCKER <archivebox.config.paths.IN_DOCKER>`
@@ -117,6 +137,33 @@
 
 ````
 
+````{py:data} MAX_TMP_SOCKET_URL_LENGTH
+:canonical: archivebox.config.paths.MAX_TMP_SOCKET_URL_LENGTH
+:value: >
+   90
+
+```{autodoc2-docstring} archivebox.config.paths.MAX_TMP_SOCKET_URL_LENGTH
+```
+
+````
+
+````{py:data} SUPERVISORD_SOCKET_FILENAME
+:canonical: archivebox.config.paths.SUPERVISORD_SOCKET_FILENAME
+:value: >
+   'supervisord.sock'
+
+```{autodoc2-docstring} archivebox.config.paths.SUPERVISORD_SOCKET_FILENAME
+```
+
+````
+
+````{py:function} _env_path(key: str, default: pathlib.Path) -> pathlib.Path
+:canonical: archivebox.config.paths._env_path
+
+```{autodoc2-docstring} archivebox.config.paths._env_path
+```
+````
+
 ````{py:data} ARCHIVE_DIR
 :canonical: archivebox.config.paths.ARCHIVE_DIR
 :type: pathlib.Path
@@ -124,6 +171,17 @@
    None
 
 ```{autodoc2-docstring} archivebox.config.paths.ARCHIVE_DIR
+```
+
+````
+
+````{py:data} USERS_DIR
+:canonical: archivebox.config.paths.USERS_DIR
+:type: pathlib.Path
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.config.paths.USERS_DIR
 ```
 
 ````
@@ -204,28 +262,35 @@
 ```
 ````
 
-````{py:function} get_or_create_working_tmp_dir(autofix=True, quiet=True)
+````{py:function} tmp_dir_candidates(config: archivebox.config.common.ArchiveBoxConfig) -> list[pathlib.Path]
+:canonical: archivebox.config.paths.tmp_dir_candidates
+
+```{autodoc2-docstring} archivebox.config.paths.tmp_dir_candidates
+```
+````
+
+````{py:function} get_or_create_working_tmp_dir(autofix=True, quiet=True, config: ArchiveBoxConfig | None = None, **config_kwargs)
 :canonical: archivebox.config.paths.get_or_create_working_tmp_dir
 
 ```{autodoc2-docstring} archivebox.config.paths.get_or_create_working_tmp_dir
 ```
 ````
 
-````{py:function} get_or_create_working_lib_dir(autofix=True, quiet=False)
+````{py:function} get_or_create_working_lib_dir(autofix=True, quiet=False, config: ArchiveBoxConfig | None = None, **config_kwargs)
 :canonical: archivebox.config.paths.get_or_create_working_lib_dir
 
 ```{autodoc2-docstring} archivebox.config.paths.get_or_create_working_lib_dir
 ```
 ````
 
-````{py:function} get_data_locations()
+````{py:function} get_data_locations(config: ArchiveBoxConfig | None = None, **config_kwargs)
 :canonical: archivebox.config.paths.get_data_locations
 
 ```{autodoc2-docstring} archivebox.config.paths.get_data_locations
 ```
 ````
 
-````{py:function} get_code_locations()
+````{py:function} get_code_locations(config: ArchiveBoxConfig | None = None, **config_kwargs)
 :canonical: archivebox.config.paths.get_code_locations
 
 ```{autodoc2-docstring} archivebox.config.paths.get_code_locations

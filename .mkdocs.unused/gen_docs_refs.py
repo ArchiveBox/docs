@@ -8,18 +8,23 @@ nav = mkdocs_gen_files.Nav()
 mod_symbol = '<code class="doc-symbol doc-symbol-nav doc-symbol-module"></code>'
 
 packages_dir = Path(__file__).parent
-doc_root = packages_dir / 'docs'
+doc_root = packages_dir / "docs"
 
-for path in sorted((packages_dir / 'archivebox').rglob("*.py")):
+for path in sorted((packages_dir / "archivebox").rglob("*.py")):
     module_path = path.relative_to(packages_dir).with_suffix("")
     doc_path = path.relative_to(packages_dir).with_suffix(".md")
-    full_doc_path = doc_root / 'reference' / doc_path
-    
-    if "management" in str(module_path) or "vendor" in str(module_path) or 'machine' in str(module_path) or 'migrations' in str(module_path) or 'plugins' in str(module_path):
+    full_doc_path = doc_root / "reference" / doc_path
+
+    if (
+        "management" in str(module_path)
+        or "vendor" in str(module_path)
+        or "machine" in str(module_path)
+        or "migrations" in str(module_path)
+        or "plugins" in str(module_path)
+    ):
         continue
 
     parts = tuple(module_path.parts)
-    
 
     if parts[-1] == "__init__":
         parts = parts[:-1]
@@ -27,10 +32,8 @@ for path in sorted((packages_dir / 'archivebox').rglob("*.py")):
         full_doc_path = full_doc_path.with_name("index.md")
     elif parts[-1].startswith("_"):
         continue
-    
+
     full_doc_path = full_doc_path.relative_to(packages_dir)
-    
-    # import ipdb; ipdb.set_trace()
 
     nav_parts = [f"{mod_symbol} {part}" for part in parts]
     nav[tuple(nav_parts)] = doc_path.as_posix()

@@ -22,12 +22,9 @@ archivebox.workers.management
 :titlesonly:
 :maxdepth: 1
 
-archivebox.workers.worker
-archivebox.workers.tasks
 archivebox.workers.models
 archivebox.workers.apps
 archivebox.workers.admin
-archivebox.workers.orchestrator
 archivebox.workers.supervisord_util
 ```
 

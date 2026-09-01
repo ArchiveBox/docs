@@ -31,6 +31,14 @@
   - ```{autodoc2-docstring} archivebox.core.settings.IS_GETTING_VERSION_OR_HELP
     :summary:
     ```
+* - {py:obj}`CONFIG <archivebox.core.settings.CONFIG>`
+  - ```{autodoc2-docstring} archivebox.core.settings.CONFIG
+    :summary:
+    ```
+* - {py:obj}`PACKAGE_DIR <archivebox.core.settings.PACKAGE_DIR>`
+  - ```{autodoc2-docstring} archivebox.core.settings.PACKAGE_DIR
+    :summary:
+    ```
 * - {py:obj}`ALL_PLUGINS <archivebox.core.settings.ALL_PLUGINS>`
   - ```{autodoc2-docstring} archivebox.core.settings.ALL_PLUGINS
     :summary:
@@ -75,6 +83,10 @@
   - ```{autodoc2-docstring} archivebox.core.settings.INSTALLED_APPS
     :summary:
     ```
+* - {py:obj}`DJANGO_OBJECT_ACTIONS_DEFAULT_HTTP_METHOD <archivebox.core.settings.DJANGO_OBJECT_ACTIONS_DEFAULT_HTTP_METHOD>`
+  - ```{autodoc2-docstring} archivebox.core.settings.DJANGO_OBJECT_ACTIONS_DEFAULT_HTTP_METHOD
+    :summary:
+    ```
 * - {py:obj}`MIDDLEWARE <archivebox.core.settings.MIDDLEWARE>`
   - ```{autodoc2-docstring} archivebox.core.settings.MIDDLEWARE
     :summary:
@@ -109,6 +121,14 @@
     ```
 * - {py:obj}`DATABASE_NAME <archivebox.core.settings.DATABASE_NAME>`
   - ```{autodoc2-docstring} archivebox.core.settings.DATABASE_NAME
+    :summary:
+    ```
+* - {py:obj}`SQLITE_JOURNAL_MODE <archivebox.core.settings.SQLITE_JOURNAL_MODE>`
+  - ```{autodoc2-docstring} archivebox.core.settings.SQLITE_JOURNAL_MODE
+    :summary:
+    ```
+* - {py:obj}`SQLITE_MMAP_SIZE <archivebox.core.settings.SQLITE_MMAP_SIZE>`
+  - ```{autodoc2-docstring} archivebox.core.settings.SQLITE_MMAP_SIZE
     :summary:
     ```
 * - {py:obj}`SQLITE_CONNECTION_OPTIONS <archivebox.core.settings.SQLITE_CONNECTION_OPTIONS>`
@@ -179,6 +199,10 @@
   - ```{autodoc2-docstring} archivebox.core.settings.SECURE_REFERRER_POLICY
     :summary:
     ```
+* - {py:obj}`BASE_URL_IS_HTTPS <archivebox.core.settings.BASE_URL_IS_HTTPS>`
+  - ```{autodoc2-docstring} archivebox.core.settings.BASE_URL_IS_HTTPS
+    :summary:
+    ```
 * - {py:obj}`CSRF_COOKIE_SECURE <archivebox.core.settings.CSRF_COOKIE_SECURE>`
   - ```{autodoc2-docstring} archivebox.core.settings.CSRF_COOKIE_SECURE
     :summary:
@@ -189,6 +213,14 @@
     ```
 * - {py:obj}`SESSION_COOKIE_HTTPONLY <archivebox.core.settings.SESSION_COOKIE_HTTPONLY>`
   - ```{autodoc2-docstring} archivebox.core.settings.SESSION_COOKIE_HTTPONLY
+    :summary:
+    ```
+* - {py:obj}`SESSION_COOKIE_NAME <archivebox.core.settings.SESSION_COOKIE_NAME>`
+  - ```{autodoc2-docstring} archivebox.core.settings.SESSION_COOKIE_NAME
+    :summary:
+    ```
+* - {py:obj}`CSRF_COOKIE_NAME <archivebox.core.settings.CSRF_COOKIE_NAME>`
+  - ```{autodoc2-docstring} archivebox.core.settings.CSRF_COOKIE_NAME
     :summary:
     ```
 * - {py:obj}`SESSION_COOKIE_DOMAIN <archivebox.core.settings.SESSION_COOKIE_DOMAIN>`
@@ -335,6 +367,26 @@
 
 ````
 
+````{py:data} CONFIG
+:canonical: archivebox.core.settings.CONFIG
+:value: >
+   'get_config(...)'
+
+```{autodoc2-docstring} archivebox.core.settings.CONFIG
+```
+
+````
+
+````{py:data} PACKAGE_DIR
+:canonical: archivebox.core.settings.PACKAGE_DIR
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.settings.PACKAGE_DIR
+```
+
+````
+
 ````{py:data} ALL_PLUGINS
 :canonical: archivebox.core.settings.ALL_PLUGINS
 :value: >
@@ -398,7 +450,7 @@
 ````{py:data} LOGOUT_REDIRECT_URL
 :canonical: archivebox.core.settings.LOGOUT_REDIRECT_URL
 :value: >
-   'get(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.core.settings.LOGOUT_REDIRECT_URL
 ```
@@ -441,6 +493,16 @@
    ['daphne', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django....
 
 ```{autodoc2-docstring} archivebox.core.settings.INSTALLED_APPS
+```
+
+````
+
+````{py:data} DJANGO_OBJECT_ACTIONS_DEFAULT_HTTP_METHOD
+:canonical: archivebox.core.settings.DJANGO_OBJECT_ACTIONS_DEFAULT_HTTP_METHOD
+:value: >
+   'POST'
+
+```{autodoc2-docstring} archivebox.core.settings.DJANGO_OBJECT_ACTIONS_DEFAULT_HTTP_METHOD
 ```
 
 ````
@@ -528,9 +590,29 @@
 ````{py:data} DATABASE_NAME
 :canonical: archivebox.core.settings.DATABASE_NAME
 :value: >
-   'get(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.core.settings.DATABASE_NAME
+```
+
+````
+
+````{py:data} SQLITE_JOURNAL_MODE
+:canonical: archivebox.core.settings.SQLITE_JOURNAL_MODE
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.settings.SQLITE_JOURNAL_MODE
+```
+
+````
+
+````{py:data} SQLITE_MMAP_SIZE
+:canonical: archivebox.core.settings.SQLITE_MMAP_SIZE
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.settings.SQLITE_MMAP_SIZE
 ```
 
 ````
@@ -638,7 +720,7 @@
 ````{py:data} ALLOWED_HOSTS
 :canonical: archivebox.core.settings.ALLOWED_HOSTS
 :value: >
-   'split(...)'
+   None
 
 ```{autodoc2-docstring} archivebox.core.settings.ALLOWED_HOSTS
 ```
@@ -705,10 +787,20 @@
 
 ````
 
+````{py:data} BASE_URL_IS_HTTPS
+:canonical: archivebox.core.settings.BASE_URL_IS_HTTPS
+:value: >
+   'startswith(...)'
+
+```{autodoc2-docstring} archivebox.core.settings.BASE_URL_IS_HTTPS
+```
+
+````
+
 ````{py:data} CSRF_COOKIE_SECURE
 :canonical: archivebox.core.settings.CSRF_COOKIE_SECURE
 :value: >
-   False
+   None
 
 ```{autodoc2-docstring} archivebox.core.settings.CSRF_COOKIE_SECURE
 ```
@@ -718,7 +810,7 @@
 ````{py:data} SESSION_COOKIE_SECURE
 :canonical: archivebox.core.settings.SESSION_COOKIE_SECURE
 :value: >
-   False
+   None
 
 ```{autodoc2-docstring} archivebox.core.settings.SESSION_COOKIE_SECURE
 ```
@@ -731,6 +823,26 @@
    True
 
 ```{autodoc2-docstring} archivebox.core.settings.SESSION_COOKIE_HTTPONLY
+```
+
+````
+
+````{py:data} SESSION_COOKIE_NAME
+:canonical: archivebox.core.settings.SESSION_COOKIE_NAME
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.settings.SESSION_COOKIE_NAME
+```
+
+````
+
+````{py:data} CSRF_COOKIE_NAME
+:canonical: archivebox.core.settings.CSRF_COOKIE_NAME
+:value: >
+   None
+
+```{autodoc2-docstring} archivebox.core.settings.CSRF_COOKIE_NAME
 ```
 
 ````
@@ -947,6 +1059,7 @@
 
 ````{py:data} SIGNAL_WEBHOOKS
 :canonical: archivebox.core.settings.SIGNAL_WEBHOOKS
+:type: dict[str, object]
 :value: >
    None
 

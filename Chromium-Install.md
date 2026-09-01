@@ -1,66 +1,20 @@
 # Chrome / Chromium Setup
 
-By default, ArchiveBox looks for any existing installed version of Chrome/Chromium and uses it if found.  You can optionally install a specific version and set the environment variable `CHROME_BINARY` to force ArchiveBox to use that one, e.g.:  
-
- - `CHROME_BINARY=google-chrome-beta`
- - `CHROME_BINARY=/usr/bin/chromium-browser`
- - `CHROME_BINARY='/Applications/Chromium.app/Contents/MacOS/Chromium'`
- - `CHROME_BINARY='~/Library/Caches/ms-playwright/chromium-857950/chrome-mac/Chromium.app/Contents/MacOS/Chromium'`
-
-If you don't already have Chrome installed, I recommend installing Chromium instead of Google Chrome, as it's the open-source fork of Chrome that doesn't send as much tracking data to Google.
-
-**Check for existing Chrome/Chromium install:**
-
-<img src="https://imgur.zervice.io/FxFoIMH.jpg" width="25%" align="right"/> 
+ArchiveBox resolves Chrome through `abxpkg`, just like every other runtime binary. It checks compatible browsers already installed on the host first. When it finds one, it projects that exact browser into the managed runtime environment; otherwise it installs a compatible managed Chromium build.
 
 ```bash
-google-chrome --version | chromium-browser --version
-Google Chrome 122.0.6261.49 beta     # should be >v111
+archivebox install chrome
+archivebox version
 ```
 
-## Installing Chromium
+The resolved browser is always available through `./lib/env/bin/chromium` inside the collection. `archivebox version` shows whether it came from the host or a managed provider, along with the exact version and path.
 
-### ⭐️ Any OS (recommended)
+If you need to select a specific compatible browser already installed on the host, set `CHROME_BINARY` and let the same installer validate and project it:
 
-[`playwright`](https://playwright.dev/python/docs/browsers) (by the Microsoft team) and [`puppeteer`](https://github.com/puppeteer/puppeteer) (by the Google team) are two options to get stable, repeatable Chromium distributions on many OSs.
 ```bash
-pip install --upgrade --ignore-installed playwright
-playwright install --with-deps chromium
-
-# alternatively use puppeteer to get Chromium instead of playwright:
-npm install puppeteer
-```
-
-### macOS
-
-If you already have a Chrome app installed like `/Applications/Chromium.app`, you don't need to run this.
-```bash
-brew install --cask chromium
-```
-
-### Ubuntu/Debian
-If you already have `chromium-browser` >= v111 installed (run `chromium-browser --version`, you don't need to run this.
-```bash
-sudo apt update
-sudo apt install chromium-browser
-# or on some systems:
-sudo apt install chromium
-```
-
-## Installing Google Chrome
-
-### macOS
-If you already have `/Applications/Google Chrome.app`, you don't need to run this.
-```bash
-brew install --cask google-chrome
-```
-### Ubuntu/Debian
-If you already have `google-chrome` >= v111 installed (run `google-chrome --version`, you don't need to run this.
-```bash
-wget -q -O - 'https://dl-ssl.google.com/linux/linux_signing_key.pub' | sudo apt-key add -
-echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
-sudo apt update
-sudo apt install -y google-chrome
+archivebox config --set CHROME_BINARY=google-chrome
+archivebox install chrome
+archivebox version
 ```
 
 ## Troubleshooting Chromium Install
@@ -73,7 +27,7 @@ If you encounter problems setting up Google Chrome or Chromium, see the [Trouble
 
 You may choose to set up a Chrome/Chromium user profile in order to use your cookies/sessions to log into sites behind authentication/paywall during archiving.
 
-*Note: not all extractors use Chrome (e.g. `wget`, `mercury`, `media`), so [`COOKIES_FILE`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration/#cookies_file) should be set up as well after this.*
+*Note: not all extractors use Chrome (e.g. `wget`, `mercury`, `media`). Importing a dedicated host browser profile into a persona also exports its cookies for those extractors; directly logging in through a new ArchiveBox Chrome profile does not.*
 
 > [!WARNING]
 > **We strongly recommend you use [separate burner credentials dedicated to archiving](https://docs.sweeting.me/s/cookie-dilemma),** e.g. don't provide cookies for your normal daily Facebook/Instagram/Google/etc. accounts as server responses and page content will often contain your name/email/PII, session cookies, private tokens, etc. which then get preserved in your snapshots for eternity.
@@ -98,9 +52,7 @@ services:
         ...
         volumes:
             ...
-            - ./data/personas/Default:/data/personas/Default
         environment:
-            - CHROME_USER_DATA_DIR=/data/personas/Default/chrome_profile
             - DISPLAY=novnc:0.0
             
     novnc:
@@ -121,13 +73,14 @@ docker compose up -d novnc
 
 3. Start ArchiveBox's Chrome inside Docker
 ```bash
-docker compose run archivebox /usr/bin/chromium-browser --user-data-dir=/data/personas/Default/chrome_profile --profile-directory=Default --disable-gpu --disable-features=dbus --disable-dev-shm-usage --start-maximized --no-sandbox --disable-setuid-sandbox --no-zygote --disable-sync --no-first-run
+docker compose run --rm archivebox persona create personal
+docker compose run --rm archivebox /data/lib/env/bin/chromium --user-data-dir=/data/personas/personal/chrome_profile --profile-directory=Default --disable-gpu --disable-features=dbus --disable-dev-shm-usage --start-maximized --no-sandbox --disable-setuid-sandbox --no-zygote --disable-sync --no-first-run
 ```
-<small>(make sure you set `DISPLAY` & `CHROME_USER_DATA_DIR` and added the line to `volumes:` above first!)</small>
+<small>(make sure you set `DISPLAY` and keep the normal persistent `/data` volume from the Compose setup!)</small>
 
 4. Open [`http://localhost:8080/vnc.html`](http://localhost:8080/vnc.html) in your browser. You should see a remote linux desktop shown with Chrome open, allowing you to remote-control ArchiveBox's browser. Use it to log into any sites where you want to save credentials.
 
-5. ✅ Close the browser, stop & remove novnc, and then run archivebox normally. It will use the profile stored in `CHROME_USER_DATA_DIR=/data/personas/Default/chrome_profile` going forward, you should now be able to archive sites as if you were logged in!
+5. ✅ Close the browser, stop & remove novnc, and then select the `personal` persona when archiving. Chrome-based extractors will use the saved profile and should see the sites as logged in.
 
 ```bash
 # stop the archivebox and novnc containers
@@ -136,7 +89,7 @@ docker compose down --remove-orphans
 # edit docker-compose.yml to remove/comment out the novnc: section
 
 # test it all out by archiving something hosted on one of the domains you logged in to
-docker compose run archivebox add 'https://private.example.com/some/site/requiring/login.html'
+docker compose run --rm archivebox add --persona=personal 'https://private.example.com/some/site/requiring/login.html'
 # check the SingleFile, Screenshot, DOM, or PDF snapshot output (only these use the Chrome profile)
 # make sure the content appears as your logged-in user would see it
 ```
@@ -148,51 +101,43 @@ Under the hood this uses [Xvfb](https://www.x.org/releases/X11R7.6/doc/man/man1/
 
 If running ArchiveBox on your local machine without Docker, this process is fairly easy.
 
-First, tell archivebox where you want to store your Chrome profile.
+First, create a persona to hold the dedicated Chrome profile.
 
 ```bash
-# replace /Users/alice/.archivebox_chrome with a path to store your profile in
-archivebox config --set CHROME_USER_DATA_DIR=/Users/alice/.archivebox_chrome
+archivebox persona create personal
 ```
 
-Then run Chrome (with that profile dir) to open a visible browser window where you can log into things, e.g.:
+Then install/resolve Chrome and launch the projected browser with that profile dir:
 
 ```bash
-# find your CHROME_BINARY path by running
-archivebox version | grep -i chrome
-
-# macOS example (using Google Chrome.app)
-/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=~/ArchiveBox/personas/Default/chrome_profile
-
-# Linux example (using Playwright Chromium)
-/root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --user-data-dir=~/archivebox/data/personas/Default/chrome_profile
+archivebox install chrome
+./lib/env/bin/chromium --user-data-dir="$PWD/personas/personal/chrome_profile"
 ```
 
 Once it's open, log in to all the sites you want to be logged in to for archiving, then close/quit Chrome.
 
-✅ All ArchiveBox extractors that use Chrome (e.g. Screenshot, PDF, DOM, Singlefile) should now use that profile.  
-*Don't forget to set up [`COOKIES_FILE`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration/#cookies_file) for the rest!*
+✅ Chrome-based extractors (e.g. Screenshot, PDF, DOM, Singlefile) use that profile whenever you archive with `--persona=personal`.
+
+Directly logging in through this profile does not generate a `cookies.txt` for non-Chrome extractors. If those extractors need the same login state, use the recommended [`archivebox persona create --import=chrome personal`](https://github.com/ArchiveBox/ArchiveBox/wiki/Personas) workflow with a dedicated host browser profile instead; the import copies the Chrome profile and exports its cookies together.
 
 <br/>
 
 ### Non-Docker Setup (Remote Host)
 
-You must set up the profile using the exact same version of chrome that ArchiveBox is running (which can be found with `archivebox version`).
-You can download the latest chromium with `pip install playwright && playwright install --with-deps chromium`, or get older versions of Chrome from https://chromium.cypress.io.
+You must set up the profile using the exact same version of Chrome that ArchiveBox is running. Run `archivebox install chrome` and `archivebox version` on each machine so `abxpkg` selects and validates the browser.
 
 **General steps:**
 
 1. Make sure you are running the same OS and have the same version of Chrome installed as the host running ArchiveBox
-2. Follow the `Non-Docker Setup (Local Host)` setups above to create a Chrome profile locally
-3. Rsync your chrome profile from your local machine to the remote archivebox host  
-   `rsync --archive /path/to/profile remotehost:/path/to/profile/on/remote/host`
-4. Configure ArchiveBox on the remote host to use the `rsync`'ed Chrome profile  
-   `archivebox config --set CHROME_USER_DATA_DIR=/path/to/profile/on/remote/host`
+2. Follow the `Non-Docker Setup (Local Host)` steps above to create the `personal` persona and Chrome profile locally
+3. Create the same persona from the ArchiveBox data directory on the remote host: `archivebox persona create personal`
+4. Rsync the persona's Chrome profile from your local collection into the matching remote persona: `rsync --archive ~/archivebox/data/personas/personal/chrome_profile/ remotehost:~/archivebox/data/personas/personal/chrome_profile/`
 
-You may need to run `chown -R archivebox /path/to/profile/on/remote/host` on the remote host to make the profile editable by the `archivebox` user on that machine.
+You may need to run `chown -R archivebox ~/archivebox/data/personas/personal/chrome_profile` on the remote host to make the profile editable by the `archivebox` user on that machine.
 
-✅ All ArchiveBox extractors that use Chrome (e.g. Screenshot, PDF, DOM, Singlefile) should now use that profile.  
-*Don't forget to set up [`COOKIES_FILE`](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration/#cookies_file) for the rest!*
+✅ Chrome-based extractors (e.g. Screenshot, PDF, DOM, Singlefile) use that profile whenever you archive with `--persona=personal`.
+
+If non-Chrome extractors need the same login state, prefer importing a dedicated host browser profile with `archivebox persona create --import=chrome personal` so the persona receives both the Chrome profile and an exported `cookies.txt`.
 
 ---
 
@@ -202,6 +147,5 @@ You may need to run `chown -R archivebox /path/to/profile/on/remote/host` on the
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#archiving-private-content
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#%EF%B8%8F-things-to-watch-out-for-%EF%B8%8F
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#publishing
-- https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#chrome_user_data_dir
-- https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#chrome_binary
+- https://archivebox.github.io/abx-plugins/#chrome (CHROME_USER_DATA_DIR, CHROME_BINARY, etc.)
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#cookies_file

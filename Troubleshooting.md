@@ -21,11 +21,10 @@ Then make sure `archivebox` is installed available in your `$PATH`.
 ```bash
 apt show archivebox      # show info about the apt-installed version of archivebox
 brew info archivebox     # show info about the brew-installed version of archivebox
-pip show archivebox      # show info about the pip-installed version of archivebox
+uv tool list             # show info about uv-installed tools
 
 echo $PATH               # show the directories your system is searching for binaries
-which -a archivebox      # show all installed archivebox binaries available
-which archivebox         # show which archivebox binary is being called
+type -a archivebox       # show all installed archivebox binaries available
 ```
 **⭐️ Show the full archivebox version info + info about all installed dependencies:**
 ```bash
@@ -34,97 +33,63 @@ archivebox version       # shows lots of useful info about installed dependencie
 (ensure the version shown is the most recent available from [Releases](https://github.com/ArchiveBox/ArchiveBox/releases))
 
 ### macOS
-**✨ ArchiveBox no longer needs to be `brew`-installed:**  
-✅ ArchiveBox still fully supports macOS, don't worry!  
-📦 Just install it using `pip` (or `pipx`) instead now:
+ArchiveBox can be installed with Homebrew or `uv` on macOS:
 ```bash
+brew tap archivebox/archivebox
+brew trust archivebox/archivebox
+brew install archivebox
+
 mkdir -p ~/archivebox/data
 cd ~/archivebox/data     # (for example, can be anywhere)
 
-pip install archivebox   # just use pip to get archivebox
-archivebox install       # then finish installing dependencies
+archivebox init
+archivebox install       # finish installing runtime dependencies
 ```
 More info: https://github.com/ArchiveBox/homebrew-archivebox
 
-### Python
+### Python and uv
 
-Make sure you have at least Python 3.9 installed on your system.
+ArchiveBox's supported bare-metal install uses `uv`, which manages the Python 3.13 environment for the tool:
 
 ```bash
-python3 --version
-pip --version
-pip install --upgrade pip setuptools
+uv --version
+uv tool list
+archivebox version
 ```
 
-If you still need help getting Python installed, [the official Python docs](https://docs.python.org/3.9/using/unix.html) are a good place to start.
+If `archivebox` is missing, repeat the `uv tool install` command from the [[Install]] guide.
 
 ### Chromium/Google Chrome
 
 For more info, see the [[Chromium Install]] page.
 
-ArchiveBox depends on being able to access a `chromium-browser`/`google-chrome` executable.  The executable used
-defaults to `chromium-browser` but can be manually specified with the environment variable `CHROME_BINARY`:
+ArchiveBox resolves Chrome through `abxpkg`, preferring a compatible browser already installed on the host and otherwise installing a managed build:
 
 ```bash
-env CHROME_BINARY=/usr/local/bin/chromium-browser archivebox add ~/Downloads/bookmarks_export.html
+archivebox install chrome
+archivebox version
 ```
 
-1. Test to make sure you have Chrome on your `$PATH` with:
-
-```bash
-which chromium-browser || which google-chrome
-```
-If no executable is displayed, follow the setup instructions to install and link one of them.
-
-2. If a path is displayed, the next step is to check that it's runnable:
-
-```bash
-chromium-browser --version || google-chrome --version
-```
-If no version is displayed, try the setup instructions again, or confirm that you have permission to access chrome.
-
-3. If a version is displayed and it's `<111`, upgrade it:
-
-```bash
-apt upgrade chromium-browser -y
-# OR
-brew cask upgrade chromium-browser
-```
-
-4. If a version is displayed and it's `>=111`, make sure ArchiveBox is running the right one:
-
-```bash
-env CHROME_BINARY=/path/from/step/1/chromium-browser archivebox version   # replace the path with the one you got from step 1
-```
+The version output shows the selected provider, version, and projected path. If it reports an incompatible host browser, update that browser or let ArchiveBox install the managed fallback; do not bypass the resolver with an unrelated path.
 
 
 ### Wget & Curl
 
-If you're missing `wget` or `curl`, simply install them using `apt` or your package manager of choice.
-See the "Manual Setup" instructions for more details.
+Resolve or update both tools through the same installer:
 
-If wget times out or randomly fails to download some sites that you have confirmed are online,
-upgrade wget to the most recent version with `brew upgrade wget` or `apt upgrade wget`.  There is
-a bug in versions `<=1.19.1_1` that caused wget to fail for perfectly valid sites.
+```bash
+archivebox install wget curl
+archivebox version
+```
 
 ### NPM Dependencies
 
-NPM packages like `readability`, `singlefile`, etc. are auto-installed by `archivebox setup` into `data/node_modules`.
-
-Make sure you have installed NodeJS + NPM first, here are their [official install docs](https://nodejs.org/en/download/package-manager/).
+Node.js and JavaScript extractor packages such as `readability` and `singlefile` are resolved through `abxpkg`; they do not require a separate global npm setup.
 
 ```bash
-node --version         # make sure you have node >=19 installed
-npm --version          # make sure you have npm installed
-
 cd ~/archivebox/data   # go into your data directory
-archivebox setup       # auto-installs all JS dependencies into ./node_modules
-# equivalent to:
-# curl -fsSL 'https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/stable/archivebox/package.json' > package.json
-# npm install
-
-# install npm dependencies should then be present in ~/archivebox/data/node_modules/.bin
-archivebox version     # show version full info to make sure they're loaded correctly
+archivebox install node singlefile readability
+archivebox version
 ```
 
 ---
@@ -134,7 +99,7 @@ archivebox version     # show version full info to make sure they're loaded corr
 ### No links parsed from export file
 
 Please open an [issue](https://github.com/ArchiveBox/ArchiveBox/issues) with a description of where you got the export, and
-preferrably your export file attached (you can redact the links).  We'll fix the parser to support your format.
+preferably your export file attached (you can redact the links).  We'll fix the parser to support your format.
 
 ### Lots of skipped sites
 
@@ -142,7 +107,7 @@ If you ran the archiver once, it wont re-download sites subsequent times, it wil
 If you haven't already run it, make sure you have a working internet connection and that the parsed URLs look correct.
 You can check the ArchiveBox stdout logs or the Web UI to see what links it's downloading.
 
-If you're still having issues, try deleting or moving the `./archive` folder (back it up first!) and running `archivebox init` again.
+To intentionally capture an already indexed URL again, use `archivebox add --no-only-new URL`. Do not delete or move the `archive/` tree to work around `ONLY_NEW`; that separates database state from its Snapshot files.
 
 ### Lots of errors
 
@@ -169,23 +134,7 @@ if you have problem with a particular nginx config.
 
 #### Docker Permissions issues
 
-Try Setting `PUID` & `PGID`: https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#puid--pgid
-
-Try using [`bindfs`](https://github.com/clecherbauer/docker-volume-bindfs) to work around issues by remapping permissions, for example to remap `uid:33 gid:33` on the host to `911:911` inside the container:
-`docker-compose.yml`:
-```yaml
-services:
-  archivebox:
-    volumes:
-      - archivebox-data:/data
-
-volumes:
-  archivebox-data:
-    driver: lebokus/bindfs:latest
-    driver_opts:
-      sourcePath: "${EXTERNAL_MOUNT_PARENT}/external-parent/external/archivebox"
-      map: "33/911:@33/@911"
-```
+Make sure the mounted data directory is writable by its intended non-root owner. The current Docker entrypoint detects the first non-root collection owner and runs ArchiveBox with matching numeric UID/GID; a new root-owned collection falls back to the image's `archivebox` user. Check the host directory's numeric ownership and the entrypoint's startup output before changing permissions.
 
 <br/>
 
@@ -200,8 +149,8 @@ Database and filesystem issues are uncommon but do come up from time to time (es
 *ℹ️ Generally, these commands can help you resolve most issues:*
 ```bash
 archivebox init                 # upgrade the archivebox collection
-archivebox init --setup         # upgrade the archivebox collection and all dependencies
-archivebox update --index-only  # force an upgrade of some of the archivebox index/collection files
+archivebox install              # upgrade the archivebox runtime dependencies
+archivebox update --migrate-only  # migrate/reconcile Snapshot files and metadata
 archivebox server --debug       # run the server with more verbose debug log output
 archivebox shell                # access the Python API / Django management shell
 sqlite3 index.sqlite3           # access the SQLite3 SQL database shell
@@ -256,7 +205,7 @@ Migration or upgrade issues happen occasionally with some niche setups or when s
 Always backup your archive before upgrading, but know that migrations are deterministic and atomic using Django's migration system, so a failed migration does not mean your archive is unrecoverable, you just have to downgrade to the previous stable major version then continue upgrading.
 
 ```bash
-archivebox init  # this usually applies any necesary migrations (atomically and indempotently, safe to run multiple times)
+archivebox init  # this usually applies any necessary migrations (atomically and indempotently, safe to run multiple times)
 ```
 
 - [Bug: NOT NULL constraint failed: core_archiveresult.output when upgrading v0.4.24 archive to v0.6 #705](https://github.com/ArchiveBox/ArchiveBox/issues/705)
@@ -281,7 +230,7 @@ A corrupted database file can theoretically only happen if an external process o
 
 Note this is specific to this error, these steps do not apply to other migrations/db errors (see above/below for other issues):
 ```bash
-sqlite3.DatabaseError: database disk image is malformed    
+sqlite3.DatabaseError: database disk image is malformed
 ```
 
 Generally all index issues should be fixable by running `archivebox init`.  

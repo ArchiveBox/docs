@@ -2,8 +2,6 @@
 
 <div align="center" style="text-align: center">
 
-<!--💬 **Join the [`#ArchiveBox` channel](http://webchat.freenode.net?channels=ArchiveBox&uio=d4) via IRC on [FreeNode.net](http://webchat.freenode.net?channels=ArchiveBox&uio=d4) to chat with us!**-->
-
 💬 <i><b>Join us on our new ArchiveBox community chat server: https://Zulip.ArchiveBox.io</b></i>
 
 🔢 **Just getting started and want to learn more about why Web Archiving is important? <br/>** &nbsp; &nbsp;&nbsp; Check out this article: [On the Importance of Web Archiving](https://items.ssrc.org/parameters/on-the-importance-of-web-archiving/).
@@ -426,7 +424,7 @@ Find your local archiving group in the list and see how you can contribute!
 - [Software Preservation Network](https://www.softwarepreservationnetwork.org/about/) (International)
 - [ITHAKA](https://www.ithaka.org/content/our-mission), [Portico](https://www.portico.org/why-portico/), [JSTOR](https://www.jstor.org/), [ARTSTOR](http://www.artstor.org/), [S+R](https://sr.ithaka.org/our-work/collections-and-preservation/) (USA)
 - [Archives and Records Association](https://www2.archivists.org/assoc-orgs/archives-and-records-association-united-kingdom-ireland) (UK & Ireland)
-- [Arkivrådet AAS](http://www.arkivradet.se/) (Sweden)
+- [Arkivrådet](http://www.arkivradet.se/) (Sweden)
 - [Asociación Española de Archiveros, Bibliotecarios, Museologos y Documentalistas (ANABAD)](https://www2.archivists.org/assoc-orgs/asociaci%C3%B3n-espa%C3%B1ola-de-archiveros-bibliotecarios-museologos-y-documentalistas-anabad) (Spain)
 - [Associação dos Arquivistas Brasileiros (AAB)](https://www2.archivists.org/assoc-orgs/associacao-dos-arquivistas-brasileiros-aab) (Brazil)
 - [Associação Portuguesa de Bibliotecários, Archivistas e Documentalistas (BAD)](https://www2.archivists.org/assoc-orgs/associacao-portuguesa-de-bibliotecarios-archivistas-e-documentalistas-bad) (Portugal)
@@ -496,7 +494,7 @@ You can find more organizations and initiatives on these other lists:
 - [Python PyPI](https://pypi.org/project/archivebox/)
 - [Docker Hub](https://hub.docker.com/r/archivebox/archivebox)
 - [ArchLinux AUR](https://aur.archlinux.org/packages/archivebox)
-- [Ubuntu Launchpad PPA](https://launchpad.net/~archivebox/+archive/ubuntu/archivebox)
+- [Ubuntu/Debian apt wrapper](https://github.com/ArchiveBox/debian-archivebox)
 
 ---
 

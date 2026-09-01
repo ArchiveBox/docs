@@ -33,6 +33,8 @@
   - ```{autodoc2-docstring} archivebox.base_models.models.ModelWithConfig
     :summary:
     ```
+* - {py:obj}`ModelWithDeleteAfter <archivebox.base_models.models.ModelWithDeleteAfter>`
+  -
 * - {py:obj}`ModelWithOutputDir <archivebox.base_models.models.ModelWithOutputDir>`
   -
 ````
@@ -43,6 +45,10 @@
 :class: autosummary longtable
 :align: left
 
+* - {py:obj}`normalize_config_json_values <archivebox.base_models.models.normalize_config_json_values>`
+  - ```{autodoc2-docstring} archivebox.base_models.models.normalize_config_json_values
+    :summary:
+    ```
 * - {py:obj}`get_or_create_system_user_pk <archivebox.base_models.models.get_or_create_system_user_pk>`
   - ```{autodoc2-docstring} archivebox.base_models.models.get_or_create_system_user_pk
     :summary:
@@ -50,6 +56,13 @@
 ````
 
 ### API
+
+````{py:function} normalize_config_json_values(config: typing.Any) -> typing.Any
+:canonical: archivebox.base_models.models.normalize_config_json_values
+
+```{autodoc2-docstring} archivebox.base_models.models.normalize_config_json_values
+```
+````
 
 ````{py:function} get_or_create_system_user_pk(username='system')
 :canonical: archivebox.base_models.models.get_or_create_system_user_pk
@@ -87,7 +100,7 @@ Bases: {py:obj}`django.db.models.Model`
 ````{py:attribute} id
 :canonical: archivebox.base_models.models.ModelWithUUID.id
 :value: >
-   'UUIDField(...)'
+   'CompactUUIDField(...)'
 
 ```{autodoc2-docstring} archivebox.base_models.models.ModelWithUUID.id
 ```
@@ -141,7 +154,7 @@ Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 `````
 
-````{py:method} __str__()
+````{py:method} __str__() -> str
 :canonical: archivebox.base_models.models.ModelWithUUID.__str__
 
 ````
@@ -202,8 +215,7 @@ Bases: {py:obj}`django.db.models.Model`
 `````{py:class} Meta
 :canonical: archivebox.base_models.models.ModelWithNotes.Meta
 
-```{autodoc2-docstring} archivebox.base_models.models.ModelWithNotes.Meta
-```
+Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````{py:attribute} abstract
 :canonical: archivebox.base_models.models.ModelWithNotes.Meta.abstract
@@ -256,8 +268,7 @@ Bases: {py:obj}`django.db.models.Model`
 `````{py:class} Meta
 :canonical: archivebox.base_models.models.ModelWithHealthStats.Meta
 
-```{autodoc2-docstring} archivebox.base_models.models.ModelWithHealthStats.Meta
-```
+Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````{py:attribute} abstract
 :canonical: archivebox.base_models.models.ModelWithHealthStats.Meta.abstract
@@ -270,6 +281,15 @@ Bases: {py:obj}`django.db.models.Model`
 ````
 
 `````
+
+````{py:property} admin_change_url
+:canonical: archivebox.base_models.models.ModelWithHealthStats.admin_change_url
+:type: str
+
+```{autodoc2-docstring} archivebox.base_models.models.ModelWithHealthStats.admin_change_url
+```
+
+````
 
 ````{py:property} health
 :canonical: archivebox.base_models.models.ModelWithHealthStats.health
@@ -317,8 +337,7 @@ Bases: {py:obj}`django.db.models.Model`
 `````{py:class} Meta
 :canonical: archivebox.base_models.models.ModelWithConfig.Meta
 
-```{autodoc2-docstring} archivebox.base_models.models.ModelWithConfig.Meta
-```
+Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
 
 ````{py:attribute} abstract
 :canonical: archivebox.base_models.models.ModelWithConfig.Meta.abstract
@@ -332,6 +351,95 @@ Bases: {py:obj}`django.db.models.Model`
 
 `````
 
+````{py:method} save(*args, **kwargs)
+:canonical: archivebox.base_models.models.ModelWithConfig.save
+
+````
+
+``````
+
+``````{py:class} ModelWithDeleteAfter(*args, **kwargs)
+:canonical: archivebox.base_models.models.ModelWithDeleteAfter
+
+Bases: {py:obj}`django.db.models.Model`
+
+````{py:attribute} delete_after_final_statuses
+:canonical: archivebox.base_models.models.ModelWithDeleteAfter.delete_after_final_statuses
+:type: tuple[str, ...]
+:value: >
+   ()
+
+```{autodoc2-docstring} archivebox.base_models.models.ModelWithDeleteAfter.delete_after_final_statuses
+```
+
+````
+
+````{py:attribute} delete_at
+:canonical: archivebox.base_models.models.ModelWithDeleteAfter.delete_at
+:value: >
+   'DateTimeField(...)'
+
+```{autodoc2-docstring} archivebox.base_models.models.ModelWithDeleteAfter.delete_at
+```
+
+````
+
+`````{py:class} Meta
+:canonical: archivebox.base_models.models.ModelWithDeleteAfter.Meta
+
+Bases: {py:obj}`django_stubs_ext.db.models.TypedModelMeta`
+
+````{py:attribute} abstract
+:canonical: archivebox.base_models.models.ModelWithDeleteAfter.Meta.abstract
+:value: >
+   True
+
+```{autodoc2-docstring} archivebox.base_models.models.ModelWithDeleteAfter.Meta.abstract
+```
+
+````
+
+`````
+
+````{py:method} save(*args, **kwargs)
+:canonical: archivebox.base_models.models.ModelWithDeleteAfter.save
+
+````
+
+````{py:method} get_delete_after_config_value()
+:canonical: archivebox.base_models.models.ModelWithDeleteAfter.get_delete_after_config_value
+
+```{autodoc2-docstring} archivebox.base_models.models.ModelWithDeleteAfter.get_delete_after_config_value
+```
+
+````
+
+````{py:method} set_delete_at_from_config(config_value=None) -> bool
+:canonical: archivebox.base_models.models.ModelWithDeleteAfter.set_delete_at_from_config
+
+```{autodoc2-docstring} archivebox.base_models.models.ModelWithDeleteAfter.set_delete_at_from_config
+```
+
+````
+
+````{py:method} missing_delete_at_candidates()
+:canonical: archivebox.base_models.models.ModelWithDeleteAfter.missing_delete_at_candidates
+:classmethod:
+
+```{autodoc2-docstring} archivebox.base_models.models.ModelWithDeleteAfter.missing_delete_at_candidates
+```
+
+````
+
+````{py:method} delete_expired(*, batch_size: int = 100, backfill_missing: bool = True) -> int
+:canonical: archivebox.base_models.models.ModelWithDeleteAfter.delete_expired
+:classmethod:
+
+```{autodoc2-docstring} archivebox.base_models.models.ModelWithDeleteAfter.delete_expired
+```
+
+````
+
 ``````
 
 ``````{py:class} ModelWithOutputDir(*args, **kwargs)
@@ -342,8 +450,7 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithUUID`
 `````{py:class} Meta
 :canonical: archivebox.base_models.models.ModelWithOutputDir.Meta
 
-```{autodoc2-docstring} archivebox.base_models.models.ModelWithOutputDir.Meta
-```
+Bases: {py:obj}`archivebox.base_models.models.ModelWithUUID`
 
 ````{py:attribute} abstract
 :canonical: archivebox.base_models.models.ModelWithOutputDir.Meta.abstract
@@ -356,6 +463,16 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithUUID`
 ````
 
 `````
+
+````{py:attribute} _delete_signal_registered
+:canonical: archivebox.base_models.models.ModelWithOutputDir._delete_signal_registered
+:value: >
+   False
+
+```{autodoc2-docstring} archivebox.base_models.models.ModelWithOutputDir._delete_signal_registered
+```
+
+````
 
 ````{py:method} save(*args, **kwargs)
 :canonical: archivebox.base_models.models.ModelWithOutputDir.save
@@ -395,6 +512,41 @@ Bases: {py:obj}`archivebox.base_models.models.ModelWithUUID`
 :type: pathlib.Path
 
 ```{autodoc2-docstring} archivebox.base_models.models.ModelWithOutputDir.output_dir
+```
+
+````
+
+````{py:method} output_paths_for_delete() -> tuple[pathlib.Path, ...]
+:canonical: archivebox.base_models.models.ModelWithOutputDir.output_paths_for_delete
+
+```{autodoc2-docstring} archivebox.base_models.models.ModelWithOutputDir.output_paths_for_delete
+```
+
+````
+
+````{py:method} validate_output_paths_for_delete(paths) -> tuple[pathlib.Path, ...]
+:canonical: archivebox.base_models.models.ModelWithOutputDir.validate_output_paths_for_delete
+:classmethod:
+
+```{autodoc2-docstring} archivebox.base_models.models.ModelWithOutputDir.validate_output_paths_for_delete
+```
+
+````
+
+````{py:method} delete_output_paths(paths) -> None
+:canonical: archivebox.base_models.models.ModelWithOutputDir.delete_output_paths
+:classmethod:
+
+```{autodoc2-docstring} archivebox.base_models.models.ModelWithOutputDir.delete_output_paths
+```
+
+````
+
+````{py:method} register_delete_signal() -> None
+:canonical: archivebox.base_models.models.ModelWithOutputDir.register_delete_signal
+:classmethod:
+
+```{autodoc2-docstring} archivebox.base_models.models.ModelWithOutputDir.register_delete_signal
 ```
 
 ````
