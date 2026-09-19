@@ -20,7 +20,6 @@ Follow the [README Instructions](https://github.com/ArchiveBox/ArchiveBox#quicks
 
 Follow the links here to find instructions for exporting a list of URLs from each service.
 
- - [Pocket](https://github.com/ArchiveBox/pocket-exporter)
  - [Pinboard](https://pinboard.in/export/)
  - [Instapaper](https://instapaper.zendesk.com/hc/en-us/articles/30080578815245-Import-export-content-from-into-Instapaper)
  - [Reddit Saved Posts](https://github.com/csu/export-saved-reddit)
