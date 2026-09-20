@@ -5,9 +5,10 @@ Use a Slack bot to save links posted in a channel and announce newly added snaps
 📣 collection → Snapshot Create webhook → n8n → #archive-updates
 ```
 
-These are two independent workflows. The second announces additions from the API, web UI, CLI, or other clients that create snapshots through ArchiveBox's normal model-save path.
+See below for intructions to set up two common workflows:
 
-**Version scope:** checked against ArchiveBox's `dev` source on September 20, 2026 ([revision 7a5ad4c](https://github.com/ArchiveBox/ArchiveBox/tree/7a5ad4c99ad796fd90aea7535e983297cb9f28b5)). The API is evolving: check `/api/v1/docs` on your own server before adapting this guide to another version. This is a source-checked configuration recipe, not a claim that an end-to-end Slack deployment has been tested.
+- one to collect URLs for saving
+- one to announce new URLs added to the collection in a channel
 
 ## 1. Prepare ArchiveBox and Slack
 
