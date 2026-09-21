@@ -147,5 +147,5 @@ If non-Chrome extractors need the same login state, prefer importing a dedicated
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#archiving-private-content
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#%EF%B8%8F-things-to-watch-out-for-%EF%B8%8F
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#publishing
-- https://archivebox.github.io/abx-plugins/#chrome (CHROME_USER_DATA_DIR, CHROME_BINARY, etc.)
+- https://plugins.archivebox.io/#chrome (CHROME_USER_DATA_DIR, CHROME_BINARY, etc.)
 - https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#cookies_file
