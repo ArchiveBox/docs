@@ -4,19 +4,20 @@
 # Stop any running ArchiveBox server/workers first (Ctrl+C, or stop the service/process manager that started them)
 
 # Back up the entire collection, including index.sqlite3, ArchiveBox.conf, and all archived outputs
-cd ~/archivebox
+cd ~/archivebox         # or path to your data dir parent
 tar -czf "archivebox-data-$(date +%s).tar.gz" data/
 
 # Update ArchiveBox using the package manager you originally installed it with
-uv tool install --python 3.13 --prerelease explicit --upgrade 'archivebox>=0.9.0rc0,<0.10'
+uv tool install --upgrade 'archivebox>=0.9.0rc0'
 # or: sudo apt update && sudo apt install --only-upgrade archivebox
 # or: brew update && brew upgrade archivebox
 
 cd data
 archivebox init
 archivebox install
-archivebox update --migrate-only
+archivebox update --migrate-only   # optional: start fs migration of snapshot dirs
 archivebox status
+archivebox version
 
 # Docker Compose upgrade
 cd ~/archivebox
