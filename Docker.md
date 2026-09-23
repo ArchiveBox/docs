@@ -188,6 +188,16 @@ Never enable on-demand TLS or request individual certificates for `snap-*` hostn
 
 <br/>
 
+## Easypanel
+
+[Easypanel](https://easypanel.io/) can deploy ArchiveBox with one click using its [official template](https://easypanel.io/templates/archivebox), which runs the Docker image above with a persistent data volume for you.
+
+<br/>
+
+---
+
+<br/>
+
 ## Docker
 
 <br/>
