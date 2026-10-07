@@ -44,16 +44,21 @@ The Persona's Google account needs editing access. This is an agent task you req
 
 ### B. Manual setup: webhooks → n8n → Google Sheets
 
-For ongoing updates, [n8n](https://n8n.io/integrations/webhook/and/google-sheets/) provides a visual workflow:
+<img src="screenshots/google-sheets/07-tagged-snapshots.jpg" alt="The three captured URLs with tags imported from the sheet" width="15%" align="right">
 
-**Webhook → If finished → HTTP Request → Google Sheets: Update Row**
+Import the [n8n workflow](https://raw.githubusercontent.com/ArchiveBox/docs/master/examples/google-sheets-n8n.json) to read URLs **and tags** from your sheet, then fill in the results automatically:
 
-1. In n8n, create a **POST Webhook** with Header Auth. In ArchiveBox's **Admin → Outbound Webhooks**, select model `archivebox.core.models.Snapshot`, signal **Update**, and paste the webhook's production URL and matching authentication header. Publish the n8n workflow.
-2. In the **If** node, require `body.fields.status` to equal `sealed`, and `body.fields.crawl` to equal your sheet's crawl ID. A sealed snapshot has finished processing; individual outputs may still have failed.
-3. Use **HTTP Request** to fetch `/api/v1/core/snapshot/{body.pk}` from your ArchiveBox API origin, with an ArchiveBox API key in `X-ArchiveBox-API-Key`. The response includes `url`, `archive_path`, and `archiveresults` with saved `output_files`.
-4. Connect Google Sheets and choose [**Update Row**](https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/sheet-operations/#update-row). Match your original URL column against `url`; map only your result columns. Build **Snapshot** from your ArchiveBox web origin + `/` + `archive_path`, and **Screenshot** from that link + `#screenshot/screenshot.png` when the screenshot output exists. Other saved outputs use their corresponding file path after `#`.
+**Read sheet → Archive URLs**<br>
+**Completion webhook → Read snapshot → Update matching sheet row**
 
-Use a column containing the literal URL for matching. Updating existing rows also makes repeated webhook deliveries harmless. n8n must be able to reach your ArchiveBox API; readers need access to its saved pages. Screenshot links open the saved image in ArchiveBox.
+1. Add headers **URL**, **Tags**, **Screenshot**, **Title**, **output_size**, **Snapshot**, **Status**. Put one literal URL per row and comma-separated tags beside it.
+2. [Connect Google Sheets to n8n](https://docs.n8n.io/integrations/builtin/credentials/google/oauth-single-service/). Select your spreadsheet and tab in both Google Sheets nodes. In both HTTP Request nodes, set your ArchiveBox API origin and a Header Auth credential: `X-ArchiveBox-API-Key` = your key from **Admin → API Keys**. In **Prepare sheet columns**, set your web origin and screenshot origin.
+3. Give the Webhook node a Header Auth credential with header name `Authorization` and a secret value, such as `Bearer YOUR_RANDOM_SECRET`. In ArchiveBox's **Admin → API Outbound Webhooks**, choose **Snapshots**, signal **Update**, and enter n8n's production webhook URL. Set **Authentication token** to the same full header value; enable **Keep last response**. Save, then publish the n8n workflow.
+4. Choose **Import sheet URLs → Execute workflow**. Rows with an empty **Snapshot** cell are archived using the default plugins. Each `sealed` webhook fetches the final title and database `output_size` in bytes, then updates the row matching **URL**. **Screenshot** uses `IMAGE()` to display the actual saved PNG; missing screenshots stay blank.
+
+<p><img src="screenshots/google-sheets/04-n8n-workflow.jpg" alt="Working n8n flow importing URLs and tags and writing capture results back" width="33%"> <img src="screenshots/google-sheets/05-webhook.jpg" alt="ArchiveBox native webhook configured for snapshot updates" width="33%"> <img src="screenshots/google-sheets/06-sheet-results.jpg" alt="Google Sheet with real screenshots, titles, database output sizes, and snapshot links" width="33%"></p>
+
+Google must be able to fetch the screenshot URLs without logging in; click **Allow access** if Sheets prompts before loading images. For this local example, a temporary HTTPS endpoint serves only the test captures' PNGs. Use a reachable screenshot origin for your deployment; the **Snapshot** links can still lead to your private ArchiveBox. To use different column names, change the mappings in **Update matching URL row**.
 
 ## Other tools
 

@@ -1,0 +1,363 @@
+{
+  "name": "Google Sheets \u2192 ArchiveBox \u2192 Google Sheets",
+  "active": false,
+  "nodes": [
+    {
+      "id": "7cc6672c-f79b-4826-bed7-6eddf90106b8",
+      "name": "Import sheet URLs",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "ab94e6fb-ab27-44f9-8b77-c8a311651932",
+      "name": "Read URLs and tags",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        240,
+        0
+      ],
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_SPREADSHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Archive",
+          "mode": "name"
+        },
+        "operation": "read",
+        "options": {}
+      }
+    },
+    {
+      "id": "d805565b-8538-428f-af36-2c55a3bf3203",
+      "name": "Rows awaiting capture",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        480,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "fa0d380c-0052-4e58-baed-2bd40ce3dad5",
+              "leftValue": "={{ $json.URL }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            },
+            {
+              "id": "92893c4a-4b4d-4b6a-aeae-ee040f3aabaf",
+              "leftValue": "={{ $json.Snapshot }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "c8cad22a-27cc-4b5d-8b38-7854fc3175fc",
+      "name": "Archive URL with row tags",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        720,
+        0
+      ],
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {},
+        "method": "POST",
+        "url": "https://api.archivebox.example/api/v1/cli/add",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {urls: [$json.URL], tag: $json.Tags, depth: 0, only_new: false} }}"
+      }
+    },
+    {
+      "id": "e047a83c-1da8-4066-93ce-23b4eed708ea",
+      "name": "ArchiveBox completion webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        320
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "archivebox-sheet-results",
+        "authentication": "headerAuth",
+        "options": {}
+      },
+      "webhookId": "archivebox-sheet-results"
+    },
+    {
+      "id": "d4d5305f-b58c-4cdb-8950-8fe7dfb3d4af",
+      "name": "Finished snapshots only",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        240,
+        320
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "eebfaed3-e323-4a5c-999b-3f506020f7e5",
+              "leftValue": "={{ $json.body.fields.status }}",
+              "rightValue": "sealed",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "7409d6ec-8532-4442-bb51-018a23009441",
+      "name": "Read title and output_size",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        480,
+        320
+      ],
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {},
+        "url": "=https://api.archivebox.example/api/v1/core/snapshot/{{ $json.body.pk }}"
+      }
+    },
+    {
+      "id": "be481dd6-27d0-4ff8-a8ce-5c813873f0a3",
+      "name": "Prepare sheet columns",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        320
+      ],
+      "parameters": {
+        "jsCode": "return $input.all().map(item => {\n  const snapshot = item.json;\n  const screenshot = snapshot.archiveresults.some(result => result.plugin === 'screenshot' &&\n    Object.keys(result.output_files || {}).some(path => path.endsWith('screenshot.png')));\n  const detail = \"https://web.archivebox.example\" + '/' + snapshot.archive_path;\n  const imageUrl = \"https://web.archivebox.example\" + '/' + snapshot.archive_path + '/screenshot/screenshot.png';\n  return {json: {URL: snapshot.url, Title: snapshot.title || '', Snapshot: detail,\n    Screenshot: screenshot ? '=IMAGE(\"' + imageUrl + '\",1)' : '',\n    output_size: snapshot.output_size, Status: screenshot ? 'Archived' : 'No screenshot'}};\n});"
+      }
+    },
+    {
+      "id": "818c91fe-fd94-488e-849b-7fd5104abd6d",
+      "name": "Update matching URL row",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        960,
+        320
+      ],
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_SPREADSHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Archive",
+          "mode": "name"
+        },
+        "operation": "update",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "URL": "={{ $json.URL }}",
+            "Title": "={{ $json.Title }}",
+            "Snapshot": "={{ $json.Snapshot }}",
+            "Screenshot": "={{ $json.Screenshot }}",
+            "output_size": "={{ $json.output_size }}",
+            "Status": "={{ $json.Status }}"
+          },
+          "matchingColumns": [
+            "URL"
+          ],
+          "schema": [
+            {
+              "id": "URL",
+              "displayName": "URL",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Title",
+              "displayName": "Title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Snapshot",
+              "displayName": "Snapshot",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Screenshot",
+              "displayName": "Screenshot",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "output_size",
+              "displayName": "output_size",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Import sheet URLs": {
+      "main": [
+        [
+          {
+            "node": "Read URLs and tags",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read URLs and tags": {
+      "main": [
+        [
+          {
+            "node": "Rows awaiting capture",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rows awaiting capture": {
+      "main": [
+        [
+          {
+            "node": "Archive URL with row tags",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ArchiveBox completion webhook": {
+      "main": [
+        [
+          {
+            "node": "Finished snapshots only",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Finished snapshots only": {
+      "main": [
+        [
+          {
+            "node": "Read title and output_size",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read title and output_size": {
+      "main": [
+        [
+          {
+            "node": "Prepare sheet columns",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare sheet columns": {
+      "main": [
+        [
+          {
+            "node": "Update matching URL row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {}
+}
