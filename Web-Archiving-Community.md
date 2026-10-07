@@ -68,7 +68,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 ## Web Archiving Projects
 
 <div align="center">
-<img src="https://web.archive.org/web/20201127205833if_/https://avatars3.githubusercontent.com/u/1553831?s=200&v=4" width="50px"/> &nbsp; &nbsp;
+<img src="https://github.com/Pocket.png" width="50px"/> &nbsp; &nbsp;
 <img src="https://assets.ifttt.com/images/channels/23/icons/large.png" width="50px"/> &nbsp; &nbsp;
 <img src="https://avatars1.githubusercontent.com/u/8275533?s=400&v=4" width="50px"/> &nbsp; &nbsp;
 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Logo-wallabag-svg.svg" width="50px"/>
@@ -593,7 +593,7 @@ Original articles, guides, videos and discussions grouped by language. Dated ent
 
 Project directories: [Internet Archive](https://github.com/internetarchive), [Webrecorder](https://github.com/webrecorder), [ODU WS-DL](https://github.com/oduwsdl), [Archives Unleashed](https://github.com/archivesunleashed), and [IIPC](https://github.com/iipc).
 
-<img src="https://wiki.archiveteam.org/images/thumb/e/e6/Archiveteam.jpg/200px-Archiveteam.jpg" width="230px" align="right" style="float: right; margin: 5px"/>
+<img src="https://github.com/ArchiveTeam.png" width="230px" align="right" style="float: right; margin: 5px"/>
 
 - **[The Internet Archive (Archive.org)](https://archive.org/iathreads/forums.php)** (USA)
 - **[International Internet Preservation Consortium (IIPC)](http://netpreserve.org/)** (International)
