@@ -12,7 +12,7 @@
 
 The internet archiving community is surprisingly far-reaching and almost universally friendly! It has some overlap with the scraping and OSINT worlds, but it's also kinda its own thing.
 
-Whether you want to learn which organizations are the big players in the web archiving space, want to find a specific open source tool for your web archiving need, or just want to see where archivists hang out online, this is my attempt at an index of the entire web archiving community. I cant promise that this list is up-to-date, the bulk of it was written in ~2022.
+Whether you want to learn which organizations are the big players in the web archiving space, want to find a specific open source tool for your web archiving need, or just want to see where archivists hang out online, this is my attempt at an index of the entire web archiving community. The alternatives and recent reading list were reviewed in October 2026; older resources are retained for historical context.
 
 <img src="https://imgur.zervice.io/duS8Lm7.png" width="200px" align="right" style="float: right; margin: 5px"/>
 
@@ -72,8 +72,11 @@ Indexes of archiving institutions and software maintained by other people.  If t
 ### Bookmarking Services
 
 - **[Linkwarden](https://github.com/linkwarden/linkwarden)** Modern bookmarking UI with singlefile archiving
-- [Hoarder](https://github.com/hoarder-app/hoarder)
-- **[Gosuki](https://github.com/blob42/gosuki/releases/tag/v1.3.0) A lightweight, open-source, privacy-first bookmark manager that unifies bookmarks across multiple browsers**
+- [Karakeep (formerly Hoarder)](https://github.com/karakeep-app/karakeep) Self-hosted bookmark manager for links, notes, images and PDFs, with saved page content, search and optional AI tagging.
+- [Readeck](https://codeberg.org/readeck/readeck) Self-hosted read-later app preserving readable page content, with highlights, collections, full-text search and EPUB export.
+- [Grimoire](https://github.com/goniszewski/grimoire) Local-first bookmark and content manager with readable content extraction, notes, tags and keyword/semantic search.
+- [Django Link Archive](https://github.com/rumca-js/Django-link-archive) Self-hosted link database and RSS reader with public-archive integration and yt-dlp downloads.
+- **[Gosuki](https://github.com/blob42/gosuki) A lightweight, open-source, privacy-first bookmark manager that unifies bookmarks across multiple browsers**; its [ArchiveBox integration](https://gosuki.net/docs/features/archiving/archive-box/) can automatically archive tagged bookmarks.
 - ~[Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla~
 - **[Pinboard](https://pinboard.in) Bookmarking tool that provides archiving in a paid version, run by a single independent developer**
 - **[Raindrop](https://raindrop.io) Bookmarking tool with archiving in their paid version, run by a company est. 2011**
@@ -98,6 +101,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 - [WarcTools](https://github.com/internetarchive/warctools) utilities for dealing with WARCs
 - [Grab-Site](https://github.com/ArchiveTeam/grab-site) An easy preconfigured web crawler designed for backing up websites
 - [WPull](https://github.com/ArchiveTeam/wpull) A pure python implementation of wget with WARC saving
+- [Zeno](https://github.com/internetarchive/Zeno) Go crawler for broad crawls or individual pages, recording HTTP traffic to WARC.
 - [More on their GitHub...](https://github.com/internetarchive)
 
 ---
@@ -138,6 +142,8 @@ Indexes of archiving institutions and software maintained by other people.  If t
 - [Squidwarc](https://github.com/N0taN3rd/Squidwarc) User-scriptable, archival crawler using Chrome
 - [WAIL (Electron)](https://github.com/n0tan3rd/wail) Electron app version of the original [wail](https://github.com/machawk1/wail) for creating and interacting with web archives
 - **[warcreate](https://github.com/machawk1/warcreate) a Chrome extension for creating WARCs from any webpage**
+- [MemGator](https://github.com/oduwsdl/MemGator) Memento aggregator providing CLI and server access to captures across configured web archives.
+- [Mink](https://github.com/machawk1/Mink) Chrome extension for finding archived versions of live pages and submitting pages to public archives.
 - [More on their GitHub...](https://github.com/oduwsdl)
 
 ---
@@ -170,10 +176,11 @@ Indexes of archiving institutions and software maintained by other people.  If t
 - https://archive.is / https://archive.today
 - https://ghostarchive.org
 - https://perma.cc
-- https://arquivo.pt
+- [Arquivo.pt](https://arquivo.pt) Portuguese web archive with a [services catalog](https://sobre.arquivo.pt/en/about/services-catalog-by-arquivo-pt/) and [open-source tools](https://github.com/arquivo).
 - https://www.pagefreezer.com
 - https://www.smarsh.com
 - https://www.stillio.com
+- [SnapshotArchive](https://snapshotarchive.com/) Hosted scheduled screenshots and visual change monitoring, with PDF/HTML capture and archive retention depending on the plan.
 - https://archive.st
 - https://theoldnet.com/
 - https://timetravel.mementoweb.org/
@@ -189,19 +196,27 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ### Other ArchiveBox Alternatives
 
-> *There are **much more recent** projects listed here: https://github.com/stars/pirate/lists/internet-archiving*
+> *See also [my starred archiving projects](https://github.com/stars/pirate/lists/internet-archiving). This page selects relevant applications and utilities; the stars list also includes supporting infrastructure and experiments.*
 
-- **[Browsertrix](https://webrecorder.net/browsertrix) + [ArchiveWeb.page](https://webrecorder.net/archivewebpage) + [ReplayWeb.page](https://webrecorder.net/replaywebpage) Webrecorder's archiving suite has the highest fidelity, and can flawlessly archive YouTube, X, Facebook, and other complex, JS-heavy SPAs**
+- **[Browsertrix](https://webrecorder.net/browsertrix) + [ArchiveWeb.page](https://webrecorder.net/archivewebpage) + [ReplayWeb.page](https://webrecorder.net/replaywebpage) Webrecorder's suite for browser-based capture and replay of interactive websites in WARC/WACZ; capture fidelity depends on the site and recorded interactions**
 - **[SingleFile](https://github.com/gildas-lormeau/SingleFile/) Web Extension / CLI util for Firefox and Chrome to save a web page as a single HTML file**
 - **[Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a beautiful, user-friendly browser extension that archives all history with full-text search, annotation support, and more**
 - **[Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content**
 - **[Reminiscence](https://github.com/kanishka-linux/reminiscence/) extremely similar to ArchiveBox, uses a Django backend + UI and provides auto-tagging and summary features with NLTK**
 - **[Shaarchiver](https://github.com/nodiscc/shaarchiver) very similar project that archives Firefox, Shaarli, or Delicious bookmarks and all linked media, generating a markdown/HTML index**
 - **[Archivy](https://github.com/archivy/archivy) Python-based self-hosted knowledge base embedded into your filesystem**
-- **[Polarized](https://web.archive.org/web/20221225012011/https://getpolarized.io/) a desktop application for bookmarking, annotating, and archiving articles offline**
 - **[LinkWarden](https://github.com/linkwarden/linkwarden) Link archival and curation web app, very similar to ArchiveBox**
 - **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support**
 - **[Scoop](https://github.com/harvard-lil/scoop)** Create high-fidelity WARC/WACZ captures using a playwright browser, with support for signing, media extraction, PDFs, etc. ([by the Perma.cc team](https://lil.law.harvard.edu/blog/2023/04/13/scoop-witnessing-the-web/))
+
+Additional capture and archival applications:
+
+- [Sosse](https://github.com/biolds/sosse) Self-hosted Selenium crawler and search engine with recurring crawls, authenticated browsing, locally rewritten HTML archives and downloaded assets.
+- [Hoardy-Web](https://github.com/Own-Data-Privateer/hoardy-web) Browser extension and local tools that capture HTTP requests/responses for offline replay, mirroring and indexing, including POST traffic.
+- [WebScrapBook](https://github.com/danny0838/webscrapbook) Browser extension for saving, organizing, annotating and editing page captures locally or with a backend server.
+- [Packrat](https://github.com/operating-function/packrat) Chromium extension for archiving browsing history using ArchiveWeb.page capture and ReplayWeb.page replay.
+- [Auto Archiver](https://github.com/bellingcat/auto-archiver) Bellingcat's archiver for webpages, social posts, images and videos, with CLI/CSV/Google Sheets inputs and local or cloud storage.
+- [kage](https://github.com/tamnd/kage) CLI website mirror using headless Chrome to save static DOM snapshots and assets for offline viewing.
 
 Ones I haven't personally vetted:
 
@@ -211,8 +226,8 @@ Ones I haven't personally vetted:
 - [LinkDing](https://github.com/sissbruecker/linkding) Self-hosted bookmark manager that is designed be to be minimal, fast, and easy to set up using Docker.
 - [LinkWallet](https://github.com/tardisx/linkwallet) A self-hosted bookmark database with full-text page content search and limited archiving features
 - [Espial](https://github.com/jonschoning/espial) Bookmark manager and search tool with limited archiving features
-- [Diskernet](https://github.com/dosyago/DiskerNet) Archiving tool that uses the Chrome debugger protocol to save each page as-loaded in the browser** (aka 22120 by c0fe or i5ik)
-- [Trilium](https://github.com/zadam/trilium) Personal web UI based knowledge-base with web clipping and note-taking
+- [Diskernet](https://github.com/dosyago/DiskerNet) Archiving tool that uses the Chrome debugger protocol to save each page as-loaded in the browser (formerly 22120 by c0fe or i5ik)
+- [Trilium Notes](https://github.com/TriliumNext/Trilium) Personal web UI based knowledge-base with web clipping and note-taking
 - [Herodotus](https://github.com/alaskanpuffin/herodotus-core) Django-based web archiving tool with a focus on collecting text-based content
 - [Buku](https://github.com/jarun/buku) Browser-independent bookmark manager CLI written in Python3 and SQLite3
 - [ReadableWebProxy](https://github.com/fake-name/ReadableWebProxy) A proxying archiver that downloads content from sites and can snapshot multiple versions of sites over time
@@ -235,7 +250,60 @@ Ones I haven't personally vetted:
 
 ### Smaller Utilities
 
-Random helpful utilities for web archiving, WARC creation and replay, and more...
+Tools for capture, content extraction, WARC processing, archive discovery and specialist preservation. These are building blocks and integrations, rather than complete ArchiveBox replacements.
+
+#### Capture, crawling, and content extraction
+
+- [abx-dl](https://github.com/ArchiveBox/abx-dl) Standalone downloader using ArchiveBox plugins for webpage assets, media, PDFs, screenshots and other outputs.
+- [Sliver](https://github.com/anjackson/sliver) Archives small URL collections or copies existing captures using shot-scraper through pywb, preserving WARC/WACZ provenance.
+- [shot-scraper](https://github.com/simonw/shot-scraper) Browser screenshots, video recordings and JavaScript extraction from the command line.
+- [Monolith of Web](https://github.com/rhysd/monolith-of-web) Chrome extension using Monolith compiled to WebAssembly to save a static page as one HTML file.
+- [Frozen Soup](https://github.com/jimwins/frozen-soup) Python library and CLI that inline resources into self-contained HTML pages.
+- [singlepage](https://github.com/arp242/singlepage) Go library and CLI that bundle CSS, JavaScript and images into standalone HTML.
+- [webarchive-to-singlefile](https://github.com/gonejack/webarchive-to-singlefile) Converts Safari .webarchive files into resource-embedded HTML; requires Chrome and is tested on macOS.
+- [scrapy-playwright](https://github.com/scrapy-plugins/scrapy-playwright) Scrapy download handler for JavaScript-rendered pages using Playwright, retaining Scrapy scheduling and item processing.
+- [Crawlee](https://github.com/apify/crawlee) JavaScript/TypeScript toolkit for browser-rendered and HTTP crawling, link discovery, file downloads and storing extracted results.
+- [markdown-crawler](https://github.com/paulpierre/markdown-crawler) Recursively saves website content as Markdown, with depth/domain limits and resumable processing.
+- [ExtractNet](https://github.com/currentslab/extractnet) Dragnet-based machine-learning extractor for article attributes such as author, headline, date and keywords; its README excludes boilerplate content extraction.
+- [Inscriptis](https://github.com/weblyzard/inscriptis) HTML-to-text library, CLI and service preserving text layout, including nested tables and optional annotations.
+- [htmldate](https://github.com/adbar/htmldate) Python library and CLI for identifying original and updated publication dates in webpages.
+- [extruct](https://github.com/scrapinghub/extruct) Extracts embedded metadata including JSON-LD, Microdata, Microformats, Open Graph, RDFa and Dublin Core.
+- [Defuddle](https://github.com/kepano/defuddle) Extracts primary content and metadata as cleaned HTML or Markdown; library/CLI developed for Obsidian Web Clipper, currently a work in progress.
+- [Newspaper4k](https://github.com/AndyTheFactory/newspaper4k) Maintained Newspaper3k fork for article scraping, extraction and curation.
+- [Courlan](https://github.com/adbar/courlan) Python library and CLI for crawl URL normalization, filtering, deduplication and scheduling.
+- [LinkChecker](https://github.com/linkchecker/linkchecker) Recursively checks websites and local HTML for broken links, with filters and reports.
+
+#### WARC and saved-collection tools
+
+- [WarcDB](https://github.com/Florents-Tselai/WarcDB) Converts WARC crawl data into SQLite databases for querying.
+- [warcat-rs](https://github.com/chfoo/warcat-rs) Rust WARC manipulation library and CLI; rewrite of the earlier Python [warcat](https://github.com/chfoo/warcat).
+- [Warchaeology](https://github.com/NationalLibraryOfNorway/warchaeology) Command-line tools to inspect, manipulate and validate WARC files.
+- [Waczerciser](https://github.com/harvard-lil/waczerciser) Experimental tool to inspect, edit, extract and repackage WARC/WACZ files.
+- [WARC-GPT](https://github.com/harvard-lil/warc-gpt) Experimental retrieval-augmented generation pipeline and web UI for exploring WARC collections.
+- [sist2](https://github.com/sist2app/sist2) Indexes saved file collections with text/metadata extraction, thumbnails, OCR and a search web interface; early development.
+
+#### Specialist media and social archives
+
+- [Tube Archivist](https://github.com/tubearchivist/tubearchivist) Self-hosted YouTube archive with downloads, metadata search and playback.
+- [TubeSync](https://github.com/meeb/tubesync) Synchronizes YouTube channels/playlists to local directories and media servers.
+- [ytdl-sub](https://github.com/jmbannon/ytdl-sub) Automates yt-dlp subscription downloads and metadata generation for local media libraries.
+- [gallery-dl](https://github.com/mikf/gallery-dl) Command-line downloader for image galleries and collections, with metadata support.
+- [Slack Dumper](https://github.com/rusq/slackdump) Exports Slack messages, threads, files, channels and users to local storage.
+- [tdl](https://github.com/iyear/tdl) Telegram toolkit with file downloads and JSON export of messages and member/subscriber lists.
+- [forum-dl](https://github.com/mikwielgus/forum-dl) Alpha-stage forum and mailing-list archiver exporting threads/boards to JSONL, mailbox formats or WARC.
+- [TwitchDownloader](https://github.com/lay295/TwitchDownloader) Downloads Twitch VODs, clips and chat, with chat replay rendering.
+- [cobalt](https://github.com/imputnet/cobalt) Self-hostable multi-site media downloader with a web UI and API.
+
+#### ArchiveBox integrations
+
+Third-party clients can target older ArchiveBox interfaces; check compatibility with your server version.
+
+- [ArchiveBox QuickAdd](https://github.com/emschu/archivebox-quick-add) Desktop utility for submitting URLs to an existing ArchiveBox instance.
+- [archivebox-reddit](https://github.com/FracturedCode/archivebox-reddit) Exports Reddit comments, posts, upvotes or saved items to ArchiveBox.
+- [ArchiveboxTelegramBot](https://github.com/Gertje823/ArchiveboxTelegramBot) Telegram bot that submits URLs to ArchiveBox.
+
+#### Other utilities and integrations
+
 
 - https://github.com/TheCakeIsNaOH/xbs-to-archivebox A utility to sync xBrowserSync bookmarks with ArchiveBox
 - https://github.com/karlicoss/promnesia A browser extension that [collects and collates all the URLs you visit](https://beepb00p.xyz/promnesia.html) into a hierarchical/graph structure with metadata
@@ -245,9 +313,8 @@ Random helpful utilities for web archiving, WARC creation and replay, and more..
 - https://github.com/Lifesgood123/prevent-link-rot Replace any broken URLs in some content with Wayback machine URL equivalents
 - https://en.archivarix.com download an archived page or entire site from the Wayback Machine
 - https://proofofexistence.com prove that a certain file existed at a given time using the blockchain
-- https://github.com/chfoo/warcat for merging, extracting, and verifying WARC files
 - https://github.com/mozilla/readability tool for extracting article contents and text
-- https://github.com/mholt/timeliner All your digital life on a single timeline, stored locally
+- [Timelinize](https://github.com/timelinize/timelinize) Collect and browse personal data locally on a timeline; successor to the archived [Timeliner](https://github.com/mholt/timeliner).
 - https://github.com/wkhtmltopdf/wkhtmltopdf Webkit HTML to PDF archiver/saver
 - [Sheetsee-Pocket](http://jlord.us/sheetsee-pocket/) project that provides a pretty auto-updating index of your Pocket links (without archiving them)
 - [Pocket -> IFTTT -> Dropbox](https://christopher.su/2013/saving-pocket-links-file-day-dropbox-ifttt-launchd/) Post by Christopher Su on his Pocket saving IFTTT recipe
@@ -291,6 +358,8 @@ A collection of blog posts and articles about internet archiving, contact me / o
 
 ### Articles We Like About Internet Archiving
 
+- **2025-05-19:** [Building a personal archive of the web](https://alexwlchan.net/2025/personal-archive-of-the-web/) — Alex Chan on manually saving and verifying a personal web archive.
+
 - https://items.ssrc.org/parameters/on-the-importance-of-web-archiving/
 - https://theconversation.com/your-internet-data-is-rotting-115891
 - https://www.bbc.com/future/story/20190401-why-theres-so-little-left-of-the-early-internet
@@ -320,7 +389,48 @@ If any of these links are dead, you can find an archived version on https://arch
 
 ### ArchiveBox-Specific Posts, Tutorials, and Guides
 
-*Beware: many of these may be outdated, as ArchiveBox has frequent updates and continual improvement.*
+*Tutorials describe the version available when written; use the current [installation](Install.md) and [usage](Usage.md) docs for setup. This list favors original articles, practical guides, interviews, and substantial reviews. Syndicated copies and translated editions of the same article are represented by the original source rather than counted separately.*
+
+<!-- Recent coverage is listed once per original work, with publication dates unless marked updated. -->
+
+#### Recent coverage (2022–2026)
+
+- **2026-09-30 (updated) · English:** [How to Install ArchiveBox on Your Synology NAS](https://mariushosting.com/how-to-install-archivebox-on-your-synology-nas/) — Marius Hosting; illustrated Synology, Portainer and reverse-proxy setup.
+- **2026-09-29 · Chinese:** [ArchiveBox：把网页存进自己硬盘的自托管存档工具](https://zendot.org/posts/archivebox-archivebox) — Zendot; overview of formats, deployment, and uses for a personal archive. English edition is the same work.
+- **2026-09-29 · Chinese:** [西班牙對 archive.today 的行政封鎖](https://anoni.net/news/2026/09/spain-blocks-archive-today/) — anoni.net; recommends ArchiveBox for local preservation alongside public archiving services.
+- **2026-09-25 · Spanish:** [Las mejores aplicaciones para crear un archivo web personal en escritorio en 2026](https://es.unstore.io/discover/best-apps-for-personal-web-archive-desktop/) — Unstore; comparison featuring ArchiveBox for permanent, multi-format captures.
+- **2026-09-23 · Chinese:** [科技日報 — 2026-09-23](https://www.charlie27.com/2026/09/%F0%9F%93%A1-%E7%A7%91%E6%8A%80%E6%97%A5%E5%A0%B1-2026-09-23/) — Charlie27; news roundup covering the v0.9 release, apps, plugins, and performance work.
+- **2026-09-23 · Italian:** [ArchiveBox crea la tua Wayback Machine privata: salva siti, login e cronologia](https://www.ilsoftware.it/focus/archivebox-wayback-machine-privata-salvare-pagine-web-login-cronologia/) — IlSoftware.it; v0.9 overview covering plugins, Personas and browser capture.
+- **2026-09-16 · Russian:** [10 полезных open-source проектов, которые стоит попробовать в 2026 году](https://slsrnko.ru/blog/10-poleznyh-open-source-proektov-kotorye-stoit-poprobovat-v-2026-godu/) — slsrnko.ru; includes ArchiveBox as a personal archive and knowledge-base component.
+- **2026-08-13 · Traditional Chinese / Cantonese:** [ArchiveBox：自架網頁存檔系統，永遠捕捉瀏覽記錄與書籤](https://www.techritual.com/2026/08/13/529168/) — Techritual; Hong Kong overview. Original Chinese edition; multilingual editions are the same work.
+- **2026-08-08 · English:** [I built my own Wayback Machine, and now I never lose web pages](https://www.makeuseof.com/i-built-my-own-wayback-machine-and-now-i-never-lose-web-pages/) — MakeUseOf; tests capture and offline access after removing the original page.
+- **2026-07-07 · Japanese:** [ArchiveBox のバックアップ](https://note.com/hitoshiarakawa/n/n398ac71f04a5) — Hitoshi Arakawa; personal backup and synchronization workflow.
+- **2026-06-27 · English:** [Build Your Own Wayback: Self-Hosting ArchiveBox for OSINT Evidence - Why and how](https://blog.osintph.info/build-your-own-wayback-self-hosting-archivebox-for-osint-evidence-why-and-how-2/) — OSINTPH; practitioner deployment and changedetection.io integration.
+- **2026-06-19 · Japanese:** [ArchiveBox を docker-compose でインストールする](https://note.com/hitoshiarakawa/n/ncb30c5a20b0d) — Hitoshi Arakawa; Docker Compose deployment on Proxmox/Ubuntu.
+- **2025-10-07 · Italian:** [ArchiveBox l’archiviazione web open self-hosted](https://www.linuxeasy.org/archivebox-archiviazione-web-self-hosted/) — LinuxEasy; overview and Docker installation.
+- **2025-09-24 (last updated) · English:** [Archiving Facebook, Instagram & LinkedIn](https://www.dpconline.org/blog/archiving-facebook-instagram-linkedin) — Digital Preservation Coalition; experiments importing social-media exports and preserving linked content.
+- **2025-02-08 · English:** [Archiving websites with ArchiveBox and wget](https://www.claudinec.net/posts/2025-02-08-web-archiving/) — Claudine Chionh; personal preservation workflow using ArchiveBox and wget.
+- **2025-02-03 · English:** [Offgrid internet-in-a-box project - Part four](https://blog.ctms.me/posts/2025-02-03-offgrid-build-part-4/) — Dom Corriveau; compares ArchiveBox, SingleFile, zimit and Kiwix for offline use.
+- **2025-01-10 · Russian:** [Как поднять на виртуальном сервере собственную интернет-машину времени с помощью ArchiveBox](https://habr.com/ru/companies/thehosting/articles/872836/) — THE.Hosting; VPS setup and CLI/UI tutorial.
+- **2024-11-30 · German:** [ArchiveBox – digitale Langzeitarchivierung mit Docker und Traefik installieren](https://goneuland.de/archivebox-digitale-langzeitarchivierung-mit-docker-und-traefik-installieren/) — goNeuland; Docker Compose and Traefik deployment.
+- **2024-11-30 · German:** [Video: Dein eigenes Internetarchiv mit ArchiveBox](https://gnulinux.ch/dein-eigenes-internetarchiv-mit-archivebox) — GNU/Linux.ch; video and written guide to setup and URL/RSS archiving.
+- **2024-11-27 · English:** [Let's archive the web](https://changelog.com/podcast/619) — Changelog Interviews #619; interview with Nick Sweeting, with a full transcript, on ArchiveBox and distributed preservation.
+- **2024-10-16 · English:** [Safeguarding Your Digital Heritage: A Guide to Archiving with ArchiveBox](https://dbtechreviews.com/2024/10/16/safeguarding-your-digital-heritage-a-guide-to-archiving-with-archivebox/) — DB Tech; guide and accompanying video walkthrough.
+- **2024-01-25 · French:** [Installer ArchiveBox avec Docker](https://belginux.com/installer-archivebox-avec-docker/) — belginux; illustrated Docker setup and first captures.
+- **2024-01-15 · Italian:** [Salvare pagine Web e archiviarle con ArchiveBox: ecco il vostro Internet Archive](https://www.ilsoftware.it/focus/salvare-pagine-web-e-archiviarle-con-archivebox-ecco-il-vostro-internet-archive/) — IlSoftware.it; installation, capture formats, GUI and search.
+- **2024-01-14 · Japanese:** [ArchiveBoxをNginxリバースプロキシでhttpsにする](https://qiita.com/katori_m/items/1061e5b4a5798d809831) — Qiita; HTTPS setup with an Nginx reverse proxy.
+- **2024-01-13 · English:** [ArchiveBox is Super Cool](https://mtlynch.io/notes/archivebox/) — Michael Lynch; firsthand review with Reddit and YouTube captures.
+- **2023-07-02 · Japanese:** [「ArchiveBox」使ってみたよレビュー](https://gigazine.net/news/20230702-archive-box/) — GIGAZINE; extensive hands-on review of Docker, CLI/UI and bookmark/history imports.
+- **2023-03-18 · English:** [Install ArchiveBox Inside Docker Container in Linux](https://lindevs.com/install-archivebox-inside-docker-container-in-linux) — Lindevs; Docker installation and networking.
+- **2023-01-05 · English:** [How To Self-host Your Own Internet Archive With ArchiveBox In Linux](https://ostechnix.com/self-host-internet-archive-with-archivebox/) — OSTechNix; installation methods and CLI/UI archiving.
+- **2022-11-04 · English:** [How to Create a Web Archive With Archivebox](https://maketecheasier.com/create-web-archive-with-archivebox/) — Make Tech Easier; installation, nginx and capture walkthrough.
+- **2022-06-05 · Chinese:** [ArchiveBox 安装使用](https://networm.me/2022/06/05/archive-box-setup/) — networm; Synology setup experience and practical limitations.
+- **2022-05-13 · Chinese:** [网站存档服务ArchiveBox](https://laosu.tech/2022/05/13/网站存档服务ArchiveBox/) — 老苏的博客; illustrated Synology Docker setup. Same-author CSDN repost counted here.
+- **2022-02-07 · English:** [k3s on a Raspberry Pi 4 at home, Part 6](https://darkstar.github.io/2022/02/07/k3s-on-raspberrypi-at-home-part6.html) — Darkstar; Kubernetes, persistent storage, ingress and full-text search.
+- **2022-02-04 · English:** [ArchiveBox Linux Setup](https://danstechjourney.com/archivebox-linux-setup/) — Daniel Martin; Docker Compose setup and first captures.
+- **2022-01-08 · English:** [Archivebox Helm Chart for the Raspberry Pi](https://mattscodecave.com/posts/archivebox-helm-chart-for-raspberry-pi.html) — Matt’s Codecave; Helm/K3s deployment on Raspberry Pi.
+
+#### Additional articles and ongoing guides
 
 - "Install ArchiveBox on SaltBox.dev" https://docs.saltbox.dev/sandbox/apps/archivebox/#3-setup
 - "ArchiveBox is an open-source self-hosted web archiving system for the web and the desktop" https://medevel.com/archivebox/
@@ -328,7 +438,6 @@ If any of these links are dead, you can find an archived version on https://arch
 - "ArchiveBox, una solución para crear nuestro propio Archive.org en miniatura y personalizado" https://www.genbeta.com/herramientas/archivebox-solucion-para-crear-nuestro-propio-archive-org-miniatura-personalizado
 - "网页存档的开源工具ArchiveBox，可以将网页文字、图片、媒体文件等都保存下来，供日后查看。基于Python的开源项目，可搭建私人的网络存档服务。" https://www.bilibili.com/s/video/BV1ib4y1X7SL
 - "Персональный интернет-архив без боли" https://habr.com/ru/company/vdsina/blog/550180/
-- "ArchiveBox, una solución para crear nuestro propio Archive.org en miniatura y personalizado" https://www.genbeta.com/herramientas/archivebox-solucion-para-crear-nuestro-propio-archive-org-miniatura-personalizado
 - "Preserve the Internet With ArchiveBox" https://www.cyberpunks.com/preserve-the-internet-with-archivebox/
 - "Сам себе архивариус. Изучаем возможности ArchiveBox" https://xakep.ru/2021/02/01/archivebox/
 - "使用存档盒制作自己的Internet存档" http://www.diglog.com/story/1045192.html
@@ -336,7 +445,6 @@ If any of these links are dead, you can find an archived version on https://arch
 - "Mit ArchiveBox Webseiten auf der Festplatte archivieren" https://www.linux-community.de/ausgaben/linuxuser/2020/12/mit-archivebox-webseiten-auf-der-festplatte-archivieren/
 - "ArchiveBox：开源的WEB存档" https://zhen.bushini.de/14738.html / https://www.1fishsauce.com/?p=4206
 - "两个基于爬虫的项目: Kiwix & ArchiveBox" https://blog.csdn.net/JackLang/article/details/108328791
-- "如何创建自己的私人自托管即时阅读应用程序" https://www.pcpc.me/tech/self-hosted-read-later-app
 - "How to install ArchiveBox to preserve websites you care about"
   https://blog.sleeplessbeastie.eu/2019/06/19/how-to-install-archivebox-to-preserve-websites-you-care-about/
 - "How to remotely archive websites using ArchiveBox"
@@ -355,6 +463,9 @@ http://webermartin.net/blog/web-archiv-teil-8-wallabag-und-archivebox/
 ### ArchiveBox Discussions in News & Social Media
 
 <img src="https://cdn.dribbble.com/users/896843/screenshots/2560608/news_media_icons-07.png" width="380px" align="right" style="float: right; margin: 5px"/>
+
+- **2026-09-22:** [ArchiveBox v0.9 released with new native apps and 50 new plugins](https://news.ycombinator.com/item?id=49808008) — Hacker News discussion of the [official release announcement](https://docs.sweeting.me/s/archivebox-v0.9-announcement).
+- **2026-09-09:** [Setting up a private ArchiveBox](https://x.com/edgaramist59014/status/2097593098045976921) — Spanish community post asking which websites to preserve locally.
 
 - **Aggregators:**  
   **[ProductHunt](https://www.producthunt.com/posts/archivebox)**, **[AlternativeTo](https://alternativeto.net/software/archivebox/)**, **[SaaSHub](https://www.saashub.com/archivebox)**, [Logiciels](https://www.logiciels.pro/logiciel-saas/archivebox/), [SteemHunt](https://steemhunt.com/@adnan556644/archivebox-the-open-source-self-hosted-internet-archiving-solution), [Recurse Center: The Joy of Computing](https://joy.recurse.com/posts/224-archivebox), [GitHub Changelog](https://changelog.com/news/archivebox-opensource-selfhosted-web-archive-6D0d), [Dev.To Ultra List](https://dev.to/teamxenox/-ultra-list-one-list-to-rule-them-all-march-19-4p4f), [O'Reilly 4 Short Links](https://www.oreilly.com/ideas/four-short-links-15-april-2019), [JaxEnter](https://jaxenter.com/github-trending-march-2019-157470.html)
