@@ -67,6 +67,13 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 ## Web Archiving Projects
 
+<div align="center">
+<img src="https://web.archive.org/web/20201127205833if_/https://avatars3.githubusercontent.com/u/1553831?s=200&v=4" width="50px"/> &nbsp; &nbsp;
+<img src="https://assets.ifttt.com/images/channels/23/icons/large.png" width="50px"/> &nbsp; &nbsp;
+<img src="https://avatars1.githubusercontent.com/u/8275533?s=400&v=4" width="50px"/> &nbsp; &nbsp;
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Logo-wallabag-svg.svg" width="50px"/>
+</div>
+
 Browse by purpose: [personal archives](#personal-archives-and-bookmarks), [page capture and crawling](#page-capture-and-website-crawling), [public and hosted services](#public-archives-and-hosted-services), [media and social archives](#media-social-and-specialist-archives), or [replay and developer tools](#replay-developer-tools-and-integrations).
 
 Open-source, self-hosted and commercial tools are grouped together by their main use. Each project has one primary entry; capture formats and capabilities vary, so check its documentation before choosing. Inclusion is not a personal endorsement of every tool.
@@ -189,6 +196,8 @@ Tools for capturing individual pages, recording browsing sessions and crawling e
 <a id="other-public-archiving-services"></a>
 
 ### Public archives & hosted services
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Archive.is.jpg/250px-Archive.is.jpg" width="150px" align="right" style="float: right; margin: 5px"/>
 
 Find existing captures, submit pages to public archives, or use managed preservation and monitoring services.
 
@@ -573,9 +582,18 @@ Original articles, guides, videos and discussions grouped by language. Dated ent
 
 ### Most Active Communities
 
+<p>
+<a href="https://github.com/internetarchive"><img src="https://github.com/internetarchive.png" alt="Internet Archive" width="64"/></a> &nbsp;
+<a href="https://github.com/webrecorder"><img src="https://github.com/webrecorder.png" alt="Webrecorder" width="64"/></a> &nbsp;
+<a href="https://github.com/rhizome-conifer"><img src="https://github.com/rhizome-conifer.png" alt="Rhizome Conifer" width="64"/></a> &nbsp;
+<a href="https://github.com/oduwsdl"><img src="https://github.com/oduwsdl.png" alt="ODU Web Science and Digital Libraries" width="64"/></a> &nbsp;
+<a href="https://github.com/archivesunleashed"><img src="https://github.com/archivesunleashed.png" alt="Archives Unleashed" width="64"/></a> &nbsp;
+<a href="https://github.com/iipc"><img src="https://github.com/iipc.png" alt="IIPC" width="64"/></a>
+</p>
+
 Project directories: [Internet Archive](https://github.com/internetarchive), [Webrecorder](https://github.com/webrecorder), [ODU WS-DL](https://github.com/oduwsdl), [Archives Unleashed](https://github.com/archivesunleashed), and [IIPC](https://github.com/iipc).
 
-<img src="https://www.archiveteam.org/images/f/f3/Archive_team.png" width="230px" align="right" style="float: right; margin: 5px"/>
+<img src="https://wiki.archiveteam.org/images/thumb/e/e6/Archiveteam.jpg/200px-Archiveteam.jpg" width="230px" align="right" style="float: right; margin: 5px"/>
 
 - **[The Internet Archive (Archive.org)](https://archive.org/iathreads/forums.php)** (USA)
 - **[International Internet Preservation Consortium (IIPC)](http://netpreserve.org/)** (International)
@@ -592,7 +610,7 @@ Project directories: [Internet Archive](https://github.com/internetarchive), [We
 
 ### Web Archiving Communities
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Noun_project_community_icon_986427_cc.svg/2000px-Noun_project_community_icon_986427_cc.svg.png" width="230px" align="right" style="float: right; margin: 5px"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Noun_project_community_icon_986427_cc.svg" width="230px" align="right" style="float: right; margin: 5px"/>
 
 Follow these technological and organizational archiving hubs for the latest archiving news.
 
