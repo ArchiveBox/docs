@@ -29,6 +29,7 @@
 
  - [[Upgrading]]
  - [[Setting up Storage]] <small>(NFS/SMB/S3/etc)</small>
+ - [Change Detection](Change-Detection) <small>(archive pages when they change)</small>
  - [[Setting up Authentication]] <small>(SSO/LDAP/etc)</small>
  - [[Setting up Search]] <small>(rg/sonic/etc)</small>
  - [[Scheduled Archiving]]

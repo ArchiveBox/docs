@@ -35,6 +35,7 @@ Guides
     :maxdepth: 1
 
     Setting-Up-Storage.md
+    Change-Detection.md
     Setting-up-Authentication.md
     Setting-up-Search.md
     Publishing-Your-Archive.md

@@ -254,6 +254,11 @@ version = 2
 "5036043d7f4b90f4-1" = "transcript"
 "85f531841ec3e169-1" = "run"
 
+# docs/Change-Detection.md
+"f14386b3e247f617-1" = "illustration"
+"5df20030e874c5b0-1" = "illustration"
+"2b0a185cae36f67d-1" = "illustration"
+
 [scenarios]
 "dbbcf99c3829e104-1" = "docker"
 "39bc0d99ed165be2-1" = "system"
