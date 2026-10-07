@@ -29,10 +29,10 @@
 
  - [[Upgrading]]
  - [[Setting up Storage]] <small>(NFS/SMB/S3/etc)</small>
- - [Change Detection](Change-Detection) <small>(archive pages when they change)</small>
  - [[Setting up Authentication]] <small>(SSO/LDAP/etc)</small>
  - [[Setting up Search]] <small>(rg/sonic/etc)</small>
  - [[Scheduled Archiving]]
+ - [[Change Detection]]
  - [[Publishing Your Archive]]
  - [[Chromium Install]]
  - [Cookies & Sessions Setup](https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#setting-up-a-chromium-user-profile)
