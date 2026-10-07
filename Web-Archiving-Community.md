@@ -25,6 +25,7 @@ Whether you want to learn which organizations are the big players in the web arc
   - [Well-Known Open Source Projects](#from-the-archiveorg--archive-it-teams)
   - [Public Archiving Services](#other-public-archiving-services)
   - [ArchiveBox Alternatives](#other-archivebox-alternatives)
+  - [Paid Alternatives](#paid-alternatives)
   - [Smaller Utilities](#smaller-utilities)
 
 - [Reading List](#Reading-List)  
@@ -232,7 +233,6 @@ Ones I haven't personally vetted:
 - [Buku](https://github.com/jarun/buku) Browser-independent bookmark manager CLI written in Python3 and SQLite3
 - [ReadableWebProxy](https://github.com/fake-name/ReadableWebProxy) A proxying archiver that downloads content from sites and can snapshot multiple versions of sites over time
 - [Perkeep](https://perkeep.org/) "Perkeep lets you permanently keep your stuff, for life."
-- [Fossilo](https://www.fossilo.com/) A commercial archiving solution that appears to be very similar to ArchiveBox
 - [NeonLink](https://github.com/AlexSciFier/neonlink) Simple self-hosted bookmark management + [Benotes](https://noted.lol/benotes/) note-taking app with limited archiving features
 - [Archivematica](https://github.com/artefactual/archivematica) web GUI for institutional long-term archiving of web and other content
 - [Headless Chrome Crawler](https://github.com/yujiosaka/headless-chrome-crawler) distributed web crawler built on puppeteer with screenshots
@@ -241,11 +241,18 @@ Ones I haven't personally vetted:
 - [Zotero](https://www.zotero.org/) collect, organize, cite, and share research (mainly for technical/scientific papers & citations)
 - [TiddlyWiki](https://tiddlywiki.com/) Non-linear bookmark and note-taking tool with archiving support
 - [Joplin](https://joplinapp.org/) Desktop + mobile app for knowledge-base-style info collection and notes (w/ optional plugin for archiving)
-- [Hunchly](https://www.hunch.ly/) A paid web archiving / session recording tool design for OSINT
 - [Monolith](https://github.com/Y2Z/monolith) CLI tool for saving complete web pages as a single HTML file
 - [Obelisk](https://github.com/go-shiori/obelisk) Go package and CLI tool for saving web page as single HTML file
 - [Munin Archiver](https://github.com/peterk/munin-indexer) Social media archiver for Facebook, Instagram and VKontakte accounts.
 - **[Wayback](https://github.com/wabarc/wayback) Archiving in style like ArchiveBox, but with a chat.**
+
+#### Paid alternatives
+
+- [Muse](https://www.theodorehq.com/muse/) Paid macOS visual bookmark and media manager with browser clipping, local files, OCR/search and on-device tagging; one-time purchase with a free trial.
+- [StreamStash](https://www.streamstash.live/) Windows app for recording livestreams and collecting social-media content in a local library; free tier and paid one-time licenses. See the vendor’s [StreamStash vs ArchiveBox comparison](https://www.streamstash.live/blog/streamstash-vs-archivebox).
+- [Hunchly](https://www.hunch.ly/) A paid web archiving / session recording tool designed for OSINT
+- [Fossilo](https://www.fossilo.com/) A commercial archiving solution that appears to be very similar to ArchiveBox
+
 ---
 
 ### Smaller Utilities
@@ -358,7 +365,11 @@ A collection of blog posts and articles about internet archiving, contact me / o
 
 ### Articles We Like About Internet Archiving
 
+- **2026-08-18 (updated) · English:** [Data Rescue Activist Tools](https://subjectguides.library.american.edu/data_rescue/tools) — American University Library; government-information preservation resources, including ArchiveBox's local capture use cases.
 - **2025-05-19:** [Building a personal archive of the web](https://alexwlchan.net/2025/personal-archive-of-the-web/) — Alex Chan on manually saving and verifying a personal web archive.
+- **2024-04 · English:** [Sprinter: Speeding Up High-Fidelity Crawling of the Modern Web](https://www.usenix.org/conference/nsdi24/presentation/goel) — USENIX; authors at University of Michigan, Princeton and USC; research on combining browser-based and browserless crawling while preserving fetched resources; compares ArchiveBox, Browsertrix and Brozzler when constructing its baseline.
+- **2024-01-17 · English:** [Web Archiving](https://me.micahrl.com/blog/web-archiving/) — Micah R. Ledbetter; practical WARC/WACZ capture and embedded replay, with ArchiveBox among the alternative capture tools.
+- **2022-07 · English:** [Jawa: Web Archival in the Era of JavaScript](https://www.usenix.org/conference/osdi22/presentation/goel) — USENIX; authors at University of Michigan and Princeton; research on JavaScript replay fidelity and archive storage; uses ArchiveBox as a measured crawling baseline.
 
 - https://items.ssrc.org/parameters/on-the-importance-of-web-archiving/
 - https://theconversation.com/your-internet-data-is-rotting-115891
@@ -389,7 +400,7 @@ If any of these links are dead, you can find an archived version on https://arch
 
 ### ArchiveBox-Specific Posts, Tutorials, and Guides
 
-*Tutorials describe the version available when written; use the current [installation](Install.md) and [usage](Usage.md) docs for setup. This list favors original articles, practical guides, interviews, and substantial reviews. Syndicated copies and translated editions of the same article are represented by the original source rather than counted separately.*
+*Tutorials describe the version available when written; use the current [installation](Install.md) and [usage](Usage.md) docs for setup. This list favors original articles, practical guides, interviews, and substantial reviews with meaningful ArchiveBox coverage. Brief listicle entries and passing mentions are omitted. Syndicated copies and translated editions of the same article are represented by the original source rather than counted separately.*
 
 <!-- Recent coverage is listed once per original work, with publication dates unless marked updated. -->
 
@@ -397,41 +408,72 @@ If any of these links are dead, you can find an archived version on https://arch
 
 - **2026-09-30 (updated) · English:** [How to Install ArchiveBox on Your Synology NAS](https://mariushosting.com/how-to-install-archivebox-on-your-synology-nas/) — Marius Hosting; illustrated Synology, Portainer and reverse-proxy setup.
 - **2026-09-29 · Chinese:** [ArchiveBox：把网页存进自己硬盘的自托管存档工具](https://zendot.org/posts/archivebox-archivebox) — Zendot; overview of formats, deployment, and uses for a personal archive. English edition is the same work.
-- **2026-09-29 · Chinese:** [西班牙對 archive.today 的行政封鎖](https://anoni.net/news/2026/09/spain-blocks-archive-today/) — anoni.net; recommends ArchiveBox for local preservation alongside public archiving services.
-- **2026-09-25 · Spanish:** [Las mejores aplicaciones para crear un archivo web personal en escritorio en 2026](https://es.unstore.io/discover/best-apps-for-personal-web-archive-desktop/) — Unstore; comparison featuring ArchiveBox for permanent, multi-format captures.
-- **2026-09-23 · Chinese:** [科技日報 — 2026-09-23](https://www.charlie27.com/2026/09/%F0%9F%93%A1-%E7%A7%91%E6%8A%80%E6%97%A5%E5%A0%B1-2026-09-23/) — Charlie27; news roundup covering the v0.9 release, apps, plugins, and performance work.
+- **2026-09-25 · Portuguese:** [ArchiveBox 0.9 chega com aplicações nativas e suporte para PostgreSQL](https://tugatech.com.pt/t91690-archivebox-0-9-chega-com-aplicacoes-nativas-e-suporte-para-postgresql) — Pedro Fernandes's dedicated Portuguese v0.9 coverage of native applications, rebuilt engine, PostgreSQL, scheduling, authenticated Personas and plugins.
+- **2026-09-24 · English:** [ArchiveBox 0.9 brings desktop & mobile apps, redesigned viewers, and PostgreSQL support](https://alternativeto.net/news/2026/9/archivebox-0-9-brings-desktop-and-mobile-apps-redesigned-viewers-and-postgresql-support/) — AlternativeTo; dedicated release coverage of native apps, the archiving engine, scheduling, Personas and plugins.
 - **2026-09-23 · Italian:** [ArchiveBox crea la tua Wayback Machine privata: salva siti, login e cronologia](https://www.ilsoftware.it/focus/archivebox-wayback-machine-privata-salvare-pagine-web-login-cronologia/) — IlSoftware.it; v0.9 overview covering plugins, Personas and browser capture.
 - **2026-09-16 · Russian:** [10 полезных open-source проектов, которые стоит попробовать в 2026 году](https://slsrnko.ru/blog/10-poleznyh-open-source-proektov-kotorye-stoit-poprobovat-v-2026-godu/) — slsrnko.ru; includes ArchiveBox as a personal archive and knowledge-base component.
 - **2026-08-13 · Traditional Chinese / Cantonese:** [ArchiveBox：自架網頁存檔系統，永遠捕捉瀏覽記錄與書籤](https://www.techritual.com/2026/08/13/529168/) — Techritual; Hong Kong overview. Original Chinese edition; multilingual editions are the same work.
 - **2026-08-08 · English:** [I built my own Wayback Machine, and now I never lose web pages](https://www.makeuseof.com/i-built-my-own-wayback-machine-and-now-i-never-lose-web-pages/) — MakeUseOf; tests capture and offline access after removing the original page.
+- **2026-08-05 · Japanese:** [AIツールの調査結果をあとから証明できるか？CodexとOSSでつくるリサーチ証拠基盤](https://note.com/gtminami/n/n11b7ec48a970) — Proposed research-evidence architecture using ArchiveBox captures, snapshot metadata, asynchronous jobs and consistent backups.
 - **2026-07-07 · Japanese:** [ArchiveBox のバックアップ](https://note.com/hitoshiarakawa/n/n398ac71f04a5) — Hitoshi Arakawa; personal backup and synchronization workflow.
 - **2026-06-27 · English:** [Build Your Own Wayback: Self-Hosting ArchiveBox for OSINT Evidence - Why and how](https://blog.osintph.info/build-your-own-wayback-self-hosting-archivebox-for-osint-evidence-why-and-how-2/) — OSINTPH; practitioner deployment and changedetection.io integration.
 - **2026-06-19 · Japanese:** [ArchiveBox を docker-compose でインストールする](https://note.com/hitoshiarakawa/n/ncb30c5a20b0d) — Hitoshi Arakawa; Docker Compose deployment on Proxmox/Ubuntu.
+- **2026-04-21 · English:** [Wayback Machine vs SingleFile vs ArchiveBox: Which Preservation Tool Fits Which Job?](https://osint.dev/articles/wayback-machine-vs-singlefile-vs-archivebox) — OSINT.dev; detailed preservation-workflow comparison covering historical lookup, local capture, self-hosted archive management, repeated collection, metadata and custody.
+- **2026-04-21 · English:** [Hunchly vs ArchiveBox: Evidence Packaging vs Archive Ownership](https://osint.dev/articles/hunchly-vs-archivebox-evidence-packaging-vs-archive-ownership) — OSINT.dev; detailed comparison of investigator case evidence and ongoing URL collections, including formats, recurring capture, local custody, backups and worked research scenarios.
+- **2026-03-02 · English:** [The internet is disappearing, so I repurposed an old laptop to save it](https://www.howtogeek.com/the-internet-is-disappearing-so-i-repurposed-an-old-laptop-to-save-it/) — Jordan Gloor / How-To Geek; repurposes a Linux laptop, installs ArchiveBox and demonstrates browser-extension capture.
+- **2026-02-28 · Polish:** [Watcher: System strażniczy nad planowaniem przestrzennym w Łodzi](https://dadalo.pl/posts/watcher-system-strazniczy-planowanie-przestrzenne-lodz/) — Maciej Lesiak; civic monitoring case study using ArchiveBox to preserve planning pages and documents alongside a change-detection and alerting system. Also available in an [English edition](https://dadalo.pl/en/posts/watcher-urban-planning-guard-system-lodz/).
+- **2025-12-13 · Japanese:** [ConoHa で容量無制限のマイ魚拓サービスを作成する](https://qiita.com/CloudRemix/items/0620706e33844d07a139) — Detailed illustrated VPS and S3 object-storage deployment for a personal ArchiveBox service, including API credentials, bucket configuration and storage mounting.
+- **2025-12-02 · English:** [Best Tools to Archive Webpages and Websites in 2026](https://www.oscooshop.com/blogs/blogs/tools-to-archive-webpages-and-websites) — OSCOO; comparison with a dedicated ArchiveBox section on multi-format capture, organization and retrieval.
 - **2025-10-07 · Italian:** [ArchiveBox l’archiviazione web open self-hosted](https://www.linuxeasy.org/archivebox-archiviazione-web-self-hosted/) — LinuxEasy; overview and Docker installation.
 - **2025-09-24 (last updated) · English:** [Archiving Facebook, Instagram & LinkedIn](https://www.dpconline.org/blog/archiving-facebook-instagram-linkedin) — Digital Preservation Coalition; experiments importing social-media exports and preserving linked content.
+- **2025-08-11 · Chinese:** [本地部署开源网页存档工具 ArchiveBox 并实现外部访问](https://help.luyouxia.com/archivebox.html) — Illustrated Ubuntu Docker deployment and administrator setup followed by remote-access configuration using 路由侠.
+- **2025-05-28 · English:** [How to set up your own article archiving service – and why I did (RIP, Pocket)](https://www.zdnet.com/article/how-to-set-up-your-own-article-archiving-service-and-why-i-did-rip-pocket/) — David Gewirtz / ZDNET; hands-on Docker/Portainer setup, browser-extension capture and inspecting the saved files.
+- **2025-04-07 · English:** [Cookies for Capture: Using ArchiveBox’s –cookie Option for Authenticated Web Content in OSINT](https://www.argeliuslabs.com/cookies-for-capture-using-archiveboxs-cookie-option-for-authenticated-web-content-in-osint/) — Argelius Labs; cookie export and authenticated-capture workflows. See current [authentication documentation](Personas.md) for supported configuration.
 - **2025-02-08 · English:** [Archiving websites with ArchiveBox and wget](https://www.claudinec.net/posts/2025-02-08-web-archiving/) — Claudine Chionh; personal preservation workflow using ArchiveBox and wget.
 - **2025-02-03 · English:** [Offgrid internet-in-a-box project - Part four](https://blog.ctms.me/posts/2025-02-03-offgrid-build-part-4/) — Dom Corriveau; compares ArchiveBox, SingleFile, zimit and Kiwix for offline use.
 - **2025-01-10 · Russian:** [Как поднять на виртуальном сервере собственную интернет-машину времени с помощью ArchiveBox](https://habr.com/ru/companies/thehosting/articles/872836/) — THE.Hosting; VPS setup and CLI/UI tutorial.
-- **2024-11-30 · German:** [ArchiveBox – digitale Langzeitarchivierung mit Docker und Traefik installieren](https://goneuland.de/archivebox-digitale-langzeitarchivierung-mit-docker-und-traefik-installieren/) — goNeuland; Docker Compose and Traefik deployment.
 - **2024-11-30 · German:** [Video: Dein eigenes Internetarchiv mit ArchiveBox](https://gnulinux.ch/dein-eigenes-internetarchiv-mit-archivebox) — GNU/Linux.ch; video and written guide to setup and URL/RSS archiving.
+- **2024-11-30 · German:** [ArchiveBox – digitale Langzeitarchivierung mit Docker und Traefik installieren](https://goneuland.de/archivebox-digitale-langzeitarchivierung-mit-docker-und-traefik-installieren/) — goNeuland; Docker Compose and Traefik deployment.
 - **2024-11-27 · English:** [Let's archive the web](https://changelog.com/podcast/619) — Changelog Interviews #619; interview with Nick Sweeting, with a full transcript, on ArchiveBox and distributed preservation.
+- **2024-11-18 · English:** [How I Turned My Raspberry Pi Into a Private Internet Archive](https://maketecheasier.com/turn-raspberry-pi-into-private-internet-archive/) — David Morelo's Raspberry Pi/external-storage Docker walkthrough, initialization, resource settings and UI/CLI archiving.
+- **2024-11-09 · Chinese:** [搭建自己的互联网档案馆：Archivebox](https://post.smzdm.com/p/admo7o5k/) — Illustrated DXP4800Plus NAS deployment with Docker Compose initialization and firsthand capture results for images, video and account-protected pages.
 - **2024-10-16 · English:** [Safeguarding Your Digital Heritage: A Guide to Archiving with ArchiveBox](https://dbtechreviews.com/2024/10/16/safeguarding-your-digital-heritage-a-guide-to-archiving-with-archivebox/) — DB Tech; guide and accompanying video walkthrough.
+- **2024-06-30 · English:** [Archivebox – Your personal wayback machine](https://titor.dev/selfhosted/archivebox-your-personal-wayback-machine/) — Portainer installation and actual capture walkthrough covering privacy, cookies, user agents, URL deny filters and browser extension.
+- **2024-06-13 · English:** [NixOS: Packaging a Python Application](https://valentinpratz.de/posts/2024-06-13-nixos-package-python-archivebox/) — Valentin Pratz's detailed walkthrough packaging ArchiveBox 0.8.1 and its Django 5 dependencies with Nix, including an overlay and complete derivation.
+- **2024-03-02 · English:** [First setup of Archivebox](https://philippeloctaux.com/blog/archivebox-setup/) — Focused container setup note restricting public views, disabling Archive.org submission and creating an admin user.
+- **2024-02-29 · English:** [Archiving Option Chain Data](https://avilpage.com/2024/02/historical-option-chain-india.html) — Anand Reddy Pandikunta's Indian option-chain archival workflow, URL generation, daily captures and multiple-version browsing limitation.
+- **2024-02-26 · Portuguese:** [ArchiveBox: Uma Ferramenta Poderosa para Segurança da Informação e Arquivologia](https://bruteforce.com.br/br/blog/archivebox-uma-ferramenta-poderosa-para-seguranca-da-informacao-e-arquivologia.html) — Dedicated practitioner essay on ArchiveBox's use in information-security evidence and archival institutions.
+- **2024-02-25 · English:** [Grinding the ArchiveBox](https://trainedmonkey.com/2024/02/25/grinding_the_archivebox) — Jim Winstead's firsthand Pinboard RSS/JSON import investigation, feedparser contribution, and timestamp collision limitations.
+- **2024-02-03 · Russian:** [Как архивировать Веб](https://causa-arcana.com/ru/blog/2024/02/03/web-archiving.html) — Firsthand web-preservation comparison with a substantial ArchiveBox evaluation: Docker deployment, static exports, measured archive size and limitations.
+- **2024-01-29 · English:** [Self-hosting an internet archive with ArchiveBox](https://cyb.org.uk/2024/01/29/self-hosted-archive.html) — CYB; firsthand deployment, search, capture formats, storage deduplication and authenticated-capture limitations.
+- **2024-01-27 · German:** [ArchiveBox archiviert das Internet: Super Idee, leider sagen die Cookie-Banner nein...](https://u-labs.de/forum/internet-technik-136/archivebox-archiviert-das-internet-super-idee-leider-sagen-cookie-banner-nein-41320) — Substantial firsthand investigation of cookie-banner capture failures on five German news sites, Chromium extension timing, screenshot commands and Readability/workaround tradeoffs.
 - **2024-01-25 · French:** [Installer ArchiveBox avec Docker](https://belginux.com/installer-archivebox-avec-docker/) — belginux; illustrated Docker setup and first captures.
+- **2024-01-16 · Chinese:** [搭一个网站存档库 ArchiveBox](https://blog.vcvit.me/2024/01/16/archive-box/) — Short dedicated Unraid/NAS installation walkthrough with administrator commands and Chrome Exporter setup.
 - **2024-01-15 · Italian:** [Salvare pagine Web e archiviarle con ArchiveBox: ecco il vostro Internet Archive](https://www.ilsoftware.it/focus/salvare-pagine-web-e-archiviarle-con-archivebox-ecco-il-vostro-internet-archive/) — IlSoftware.it; installation, capture formats, GUI and search.
 - **2024-01-14 · Japanese:** [ArchiveBoxをNginxリバースプロキシでhttpsにする](https://qiita.com/katori_m/items/1061e5b4a5798d809831) — Qiita; HTTPS setup with an Nginx reverse proxy.
 - **2024-01-13 · English:** [ArchiveBox is Super Cool](https://mtlynch.io/notes/archivebox/) — Michael Lynch; firsthand review with Reddit and YouTube captures.
+- **2024-01-01 · Chinese:** [web.archive.org 自建开源替代品 ArchiveBox 试用](https://blog.lzc256.com/posts/archivebox-experience/) — Firsthand review of archive fidelity and disk usage, plus a concrete nginx subdirectory deployment configuration.
+- **2023-08-22 · German:** [ArchiveBox](https://perron.de/archivebox/) — Illustrated firsthand Portainer installation on a Proxmox Ubuntu LXC, including storage mapping and administrator setup.
+- **2023-08-03 · Chinese:** [MiniFlux Starred as Feed](https://wogong.net/blog/miniflux-starred/) — Practical integration exporting starred Miniflux entries as an RSS feed for ArchiveBox, with tested projects, reported issues and Docker Compose configuration.
 - **2023-07-02 · Japanese:** [「ArchiveBox」使ってみたよレビュー](https://gigazine.net/news/20230702-archive-box/) — GIGAZINE; extensive hands-on review of Docker, CLI/UI and bookmark/history imports.
+- **2023-03-24 · Chinese:** [互联网存档系统：ArchiveBox安装使用](https://www.luxiyue.com/server/互联网存档系统：archivebox安装使用/) — Native Ubuntu installation, actual PATH troubleshooting, administrator setup, first capture, nginx reverse proxy and background operation.
 - **2023-03-18 · English:** [Install ArchiveBox Inside Docker Container in Linux](https://lindevs.com/install-archivebox-inside-docker-container-in-linux) — Lindevs; Docker installation and networking.
 - **2023-01-05 · English:** [How To Self-host Your Own Internet Archive With ArchiveBox In Linux](https://ostechnix.com/self-host-internet-archive-with-archivebox/) — OSTechNix; installation methods and CLI/UI archiving.
 - **2022-11-04 · English:** [How to Create a Web Archive With Archivebox](https://maketecheasier.com/create-web-archive-with-archivebox/) — Make Tech Easier; installation, nginx and capture walkthrough.
+- **2022-10-26 · English:** [Building a webarchive with Archivebox](https://jeffmackinnon.com/building-a-personal-webarchive.html) — Firsthand move from a VM to Synology Docker/Portainer, configuring storage, permissions and the admin account.
 - **2022-06-05 · Chinese:** [ArchiveBox 安装使用](https://networm.me/2022/06/05/archive-box-setup/) — networm; Synology setup experience and practical limitations.
 - **2022-05-13 · Chinese:** [网站存档服务ArchiveBox](https://laosu.tech/2022/05/13/网站存档服务ArchiveBox/) — 老苏的博客; illustrated Synology Docker setup. Same-author CSDN repost counted here.
+- **2022-05 · English:** [Create your own VPS internet ArchiveBox](https://pocketmags.com/linux-format-magazine/may-2022/articles/create-your-own-vps-internet-archivebox) — David Rutland's Linux Format VPS/Docker Compose web-archiving tutorial. Magazine preview; full article requires purchase.
+- **2022-02-26 · English:** [How to generate static website for an old ArchiveBox archive](https://sleeplessbeastie.eu/2022/02/26/how-to-generate-static-website-for-an-old-archivebox-archive/) — Recovering a legacy collection as a static site with an older pinned Docker image when its JSON cannot be imported.
 - **2022-02-07 · English:** [k3s on a Raspberry Pi 4 at home, Part 6](https://darkstar.github.io/2022/02/07/k3s-on-raspberrypi-at-home-part6.html) — Darkstar; Kubernetes, persistent storage, ingress and full-text search.
 - **2022-02-04 · English:** [ArchiveBox Linux Setup](https://danstechjourney.com/archivebox-linux-setup/) — Daniel Martin; Docker Compose setup and first captures.
 - **2022-01-08 · English:** [Archivebox Helm Chart for the Raspberry Pi](https://mattscodecave.com/posts/archivebox-helm-chart-for-raspberry-pi.html) — Matt’s Codecave; Helm/K3s deployment on Raspberry Pi.
+- **2022-01-04 · English:** [Bookmarking and Creating a Local Internet Archive](https://www.ecliptik.com/bookmarking-with-raindrop/) — Firsthand Raindrop/Dropbox export integration, converting bookmarks to tagged JSON, validating with jq, importing into ArchiveBox and running hourly cron.
 
 #### Additional articles and ongoing guides
 
+- **English:** [ArchiveBox MCP Setup Guide](https://pragmar.github.io/mcp-server-webcrawl/guides/archivebox.html) — Original integration guide connecting multiple ArchiveBox collections to Claude Desktop through mcp-server-webcrawl, including installation, search and troubleshooting.
+- **English:** [Media & Archives: ArchiveBox](https://cashewmade.com/lab/docker/media-archives/#archivebox) — Cashew Made; a complete Docker Compose stack and configuration tables covering ArchiveBox, Sonic, noVNC and pywb.
 - "Install ArchiveBox on SaltBox.dev" https://docs.saltbox.dev/sandbox/apps/archivebox/#3-setup
 - "ArchiveBox is an open-source self-hosted web archiving system for the web and the desktop" https://medevel.com/archivebox/
 - "Install ArchiveBox on a One-Click Docker Application" https://www.vultr.com/docs/install-archivebox-on-a-oneclick-docker-application/
@@ -461,6 +503,8 @@ http://webermartin.net/blog/web-archiv-teil-8-wallabag-und-archivebox/
 - https://metaxyntax.neocities.org/entries/7.html
 
 ### ArchiveBox Discussions in News & Social Media
+
+- **2024-02-14 · English:** [Web archiving with ArchiveBox](https://sanctum.geek.nz/presentations/web-archiving-with-archivebox.pdf) — Tom Ryder's 30-slide PLUG presentation and demonstration of ArchiveBox for personal daily archiving.
 
 <img src="https://cdn.dribbble.com/users/896843/screenshots/2560608/news_media_icons-07.png" width="380px" align="right" style="float: right; margin: 5px"/>
 
