@@ -27,17 +27,25 @@
 
 # Guides
 
- - [[Upgrading]]
- - [[Setting up Storage]] <small>(NFS/SMB/S3/etc)</small>
- - [[Setting up Authentication]] <small>(SSO/LDAP/etc)</small>
- - [[Setting up Search]] <small>(rg/sonic/etc)</small>
- - [[Scheduled Archiving]]
- - [[Change Detection]]
- - [[Archiving URLs from Google Sheets]]
- - 💬 [Chat Bots](Integrating-with-Slack)
- - [[Publishing Your Archive]]
- - [[Chromium Install]]
- - [Cookies & Sessions Setup](https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#setting-up-a-chromium-user-profile)
+### Initial Setup
+
+ - 💿 [[Setting up Storage]] <small>(NFS/SMB/S3/etc)</small>
+ - 🔐 [[Setting up Authentication]] <small>(SSO/LDAP/etc)</small>
+ - 🔎 [[Setting up Search]] <small>(rg/sonic/etc)</small>
+ - 🌐 [[Publishing Your Archive]]
+ - 🌎 [[Chromium Install]]
+ - 🍪 [Cookies & Sessions Setup](https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#setting-up-a-chromium-user-profile)
+
+### Features & Integrations
+
+ - 📅 [[Scheduled Archiving]]
+ - 👁️ [[Change Detection]]
+ - 🧮 [[Archiving URLs from Google Sheets]]
+ - 💬 [Archiving URLs via Chat Bot](https://github.com/ArchiveBox/archivebox-chat-bot) <small>(Slack/WhatsApp/etc)</small>
+
+### Maintenance
+
+ - ↗️ [[Upgrading]]
  - [[Merging Collections]]
  - [[Troubleshooting]]
 
