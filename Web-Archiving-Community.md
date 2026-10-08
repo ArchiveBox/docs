@@ -16,7 +16,7 @@ Whether you want to learn which organizations are the big players in the web arc
 
 <img src="https://imgur.zervice.io/duS8Lm7.png" width="200px" align="right" style="float: right; margin: 5px"/>
 
-<a id="contents"></a>
+<a name="contents" id="contents"></a>
 
 - [The Master Lists](#the-master-lists)
   *Community-maintained indexes of web archiving tools and groups by IIPC, COPTR, ArchiveTeam, Wikipedia, & the ASA.* 
@@ -24,8 +24,8 @@ Whether you want to learn which organizations are the big players in the web arc
 - [Web Archiving Software](#web-archiving-projects)
   *Applications, services and tools grouped by purpose.*
   - [Personal archives & bookmarks](#personal-archives-and-bookmarks)
-  - [Page capture & website crawling](#page-capture-and-website-crawling)
-  - [Public archives & hosted services](#public-archives-and-hosted-services)
+  - [Research & evidence](#page-capture-and-website-crawling)
+  - [Institutional collections & public archives](#public-archives-and-hosted-services)
   - [Media, social & specialist archives](#media-social-and-specialist-archives)
   - [Replay, developer tools & integrations](#replay-developer-tools-and-integrations)
 
@@ -74,17 +74,17 @@ Indexes of archiving institutions and software maintained by other people.  If t
 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Logo-wallabag-svg.svg" width="50px"/>
 </div>
 
-Browse by purpose: [personal archives](#personal-archives-and-bookmarks), [page capture and crawling](#page-capture-and-website-crawling), [public and hosted services](#public-archives-and-hosted-services), [media and social archives](#media-social-and-specialist-archives), or [replay and developer tools](#replay-developer-tools-and-integrations).
+Browse by purpose: [personal archives](#personal-archives-and-bookmarks), [research and evidence](#page-capture-and-website-crawling), [institutional collections and public archives](#public-archives-and-hosted-services), [media and social archives](#media-social-and-specialist-archives), or [replay and developer tools](#replay-developer-tools-and-integrations).
 
 Open-source, self-hosted and commercial tools are grouped together by their main use. Each project has one primary entry; capture formats and capabilities vary, so check its documentation before choosing. Inclusion is not a personal endorsement of every tool.
 
 > See also [my starred archiving projects](https://github.com/stars/pirate/lists/internet-archiving). This page selects relevant applications and utilities; the stars list also includes supporting infrastructure and experiments.
 
-<a id="paid-alternatives"></a>
+<a name="paid-alternatives" id="paid-alternatives"></a>
 **Paid alternatives:** options include Muse among personal archives, StreamStash among media tools, Hunchly and Fossilo among capture tools, and the managed services below. Pricing notes stay with each project.
 
-<a id="personal-archives-and-bookmarks"></a>
-<a id="bookmarking-services"></a>
+<a name="personal-archives-and-bookmarks" id="personal-archives-and-bookmarks"></a>
+<a name="bookmarking-services" id="bookmarking-services"></a>
 
 ### Personal archives & bookmarks
 
@@ -121,17 +121,24 @@ Applications for saving, organizing, annotating and searching your own collectio
 - [Instapaper](https://www.instapaper.com) Bookmarking alternative to Pocket/Pinboard (with no archiving)
 - [ReadWise](https://readwise.io/) A paid Pocket/Pinboard alternative that includes article snippet and highlight saving
 - [Diigo](https://www.diigo.com/) Another brookmarking/annotation service with archiving as a paid feature
-- **[Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a beautiful, user-friendly browser extension that archives all history with full-text search, annotation support, and more**
-- **[Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content**
 - [Trilium Notes](https://github.com/TriliumNext/Trilium) Personal web UI based knowledge-base with web clipping and note-taking
 - [Perkeep](https://perkeep.org/) "Perkeep lets you permanently keep your stuff, for life."
-- [Zotero](https://www.zotero.org/) collect, organize, cite, and share research (mainly for technical/scientific papers & citations)
 - [TiddlyWiki](https://tiddlywiki.com/) Non-linear bookmark and note-taking tool with archiving support
 - [Joplin](https://joplinapp.org/) Desktop + mobile app for knowledge-base-style info collection and notes (w/ optional plugin for archiving)
 - [Muse](https://www.theodorehq.com/muse/) Paid macOS visual bookmark and media manager with browser clipping, local files, OCR/search and on-device tagging; one-time purchase with a free trial.
 - https://github.com/karlicoss/promnesia A browser extension that [collects and collates all the URLs you visit](https://beepb00p.xyz/promnesia.html) into a hierarchical/graph structure with metadata
 - [Timelinize](https://github.com/timelinize/timelinize) Collect and browse personal data locally on a timeline; successor to the archived [Timeliner](https://github.com/mholt/timeliner).
 - https://github.com/karlicoss/grasp capture webpages from Firefox and Chrome into Org-mode documents
+
+#### Browser capture and page saving
+
+- **[SingleFile](https://github.com/gildas-lormeau/SingleFile/) Web Extension / CLI util for Firefox and Chrome to save a web page as a single HTML file**
+- [Hoardy-Web](https://github.com/Own-Data-Privateer/hoardy-web) Browser extension and local tools that capture HTTP requests/responses for offline replay, mirroring and indexing, including POST traffic.
+- [WebScrapBook](https://github.com/danny0838/webscrapbook) Browser extension for saving, organizing, annotating and editing page captures locally or with a backend server.
+- [Packrat](https://github.com/operating-function/packrat) Chromium extension for archiving browsing history using ArchiveWeb.page capture and ReplayWeb.page replay.
+- [Diskernet](https://github.com/dosyago/DiskerNet) Archiving tool that uses the Chrome debugger protocol to save each page as-loaded in the browser (formerly 22120 by c0fe or i5ik)
+- [Monolith of Web](https://github.com/rhysd/monolith-of-web) Chrome extension using Monolith compiled to WebAssembly to save a static page as one HTML file.
+- https://github.com/vrtdev/save-page-state A Chrome extension for saving the state of a page in multiple formats
 
 **Historical bookmarking resources**
 
@@ -142,60 +149,52 @@ Applications for saving, organizing, annotating and searching your own collectio
 
 ---
 
-<a id="page-capture-and-website-crawling"></a>
-<a id="other-archivebox-alternatives"></a>
-<a id="from-the-archiveorg--archive-it-teams"></a>
-<a id="from-webrecorder"></a>
-<a id="from-rhizomeorg-conifer"></a>
-<a id="from-the-old-dominion-university-web-science-team"></a>
+<a name="page-capture-and-website-crawling" id="page-capture-and-website-crawling"></a>
+<a name="other-archivebox-alternatives" id="other-archivebox-alternatives"></a>
+<a name="from-webrecorder" id="from-webrecorder"></a>
+<a name="from-rhizomeorg-conifer" id="from-rhizomeorg-conifer"></a>
 
-### Page capture & website crawling
+<a name="page-capture--website-crawling" id="page-capture--website-crawling"></a>
+<a name="page-capture-website-crawling" id="page-capture-website-crawling"></a>
+
+### Research & evidence
 
 Tools for capturing individual pages, recording browsing sessions and crawling entire websites.
 
 **Browser capture and page saving**
 
 - **[ArchiveWeb.page](https://webrecorder.net/archivewebpage)** Chrome extension for manual, interactive archiving of websites as you browse the web. Good for capturing high-fidelity complex interactions
-- **[SingleFile](https://github.com/gildas-lormeau/SingleFile/) Web Extension / CLI util for Firefox and Chrome to save a web page as a single HTML file**
-- [Hoardy-Web](https://github.com/Own-Data-Privateer/hoardy-web) Browser extension and local tools that capture HTTP requests/responses for offline replay, mirroring and indexing, including POST traffic.
-- [WebScrapBook](https://github.com/danny0838/webscrapbook) Browser extension for saving, organizing, annotating and editing page captures locally or with a backend server.
-- [Packrat](https://github.com/operating-function/packrat) Chromium extension for archiving browsing history using ArchiveWeb.page capture and ReplayWeb.page replay.
-- [Diskernet](https://github.com/dosyago/DiskerNet) Archiving tool that uses the Chrome debugger protocol to save each page as-loaded in the browser (formerly 22120 by c0fe or i5ik)
 - **[warcreate](https://github.com/machawk1/warcreate) a Chrome extension for creating WARCs from any webpage**
-- [Monolith](https://github.com/Y2Z/monolith) CLI tool for saving complete web pages as a single HTML file
-- [Obelisk](https://github.com/go-shiori/obelisk) Go package and CLI tool for saving web page as single HTML file
-- [Percollate](https://github.com/danburzo/percollate) A command-line tool to turn web pages into beautiful, readable PDF, EPUB, or HTML docs.
-- [Monolith of Web](https://github.com/rhysd/monolith-of-web) Chrome extension using Monolith compiled to WebAssembly to save a static page as one HTML file.
-- https://github.com/vrtdev/save-page-state A Chrome extension for saving the state of a page in multiple formats
-
-**Crawlers and collection platforms**
-
-- **[Browsertrix](https://webrecorder.net/browsertrix)** Fully integrated (self hostable) SaaS web archiving platform
 - **[Conifer by Rhizome.org](https://conifer.rhizome.org/)** **An open-source personal archiving server that uses pywb under the hood.** [Previously affiliated with Webrecorder](https://blog.conifer.rhizome.org/2020/06/11/webrecorder-conifer.html)
-- [WAIL](https://machawk1.github.io/wail/) Web archiver GUI using Heritrix and OpenWayback
-- [WAIL (Electron)](https://github.com/n0tan3rd/wail) Electron app version of the original [wail](https://github.com/machawk1/wail) for creating and interacting with web archives
-- [Sosse](https://github.com/biolds/sosse) Self-hosted Selenium crawler and search engine with recurring crawls, authenticated browsing, locally rewritten HTML archives and downloaded assets.
-- **[Heritrix](https://github.com/internetarchive/heritrix3) The king of internet archiving crawlers, powers the Wayback Machine**
-- **[Brozzler](https://github.com/internetarchive/brozzler) chrome headless crawler + WARC archiver maintained by Archive.org**
-- [Grab-Site](https://github.com/ArchiveTeam/grab-site) An easy preconfigured web crawler designed for backing up websites
-- [Zeno](https://github.com/internetarchive/Zeno) Go crawler for broad crawls or individual pages, recording HTTP traffic to WARC.
-- **[Browsertrix Crawler](https://github.com/webrecorder/browsertrix-crawler)** Command-line crawling application that powers Browsertrix's core crawling features
-- [Squidwarc](https://github.com/N0taN3rd/Squidwarc) User-scriptable, archival crawler using Chrome
-- **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support**
+
+#### Evidence capture
+
 - **[Scoop](https://github.com/harvard-lil/scoop)** Create high-fidelity WARC/WACZ captures using a playwright browser, with support for signing, media extraction, PDFs, etc. ([by the Perma.cc team](https://lil.law.harvard.edu/blog/2023/04/13/scoop-witnessing-the-web/))
-- [kage](https://github.com/tamnd/kage) CLI website mirror using headless Chrome to save static DOM snapshots and assets for offline viewing.
-- [ReadableWebProxy](https://github.com/fake-name/ReadableWebProxy) A proxying archiver that downloads content from sites and can snapshot multiple versions of sites over time
-- [Headless Chrome Crawler](https://github.com/yujiosaka/headless-chrome-crawler) distributed web crawler built on puppeteer with screenshots
-- [WWWofle](http://www.gedanken.org.uk/software/wwwoffle/) old proxying recorder software similar to ArchiveBox
 - [Hunchly](https://www.hunch.ly/) A paid web archiving / session recording tool designed for OSINT
-- [Fossilo](https://www.fossilo.com/) A commercial archiving solution that appears to be very similar to ArchiveBox
+- [Auto Archiver](https://github.com/bellingcat/auto-archiver) Bellingcat's archiver for webpages, social posts, images and videos, with CLI/CSV/Google Sheets inputs and local or cloud storage.
+
+#### Annotation and citations
+
+- **[Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a beautiful, user-friendly browser extension that archives all history with full-text search, annotation support, and more**
+- **[Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content**
+- [Zotero](https://www.zotero.org/) collect, organize, cite, and share research (mainly for technical/scientific papers & citations)
+
+#### Monitoring
+
+- https://www.stillio.com
+- [SnapshotArchive](https://snapshotarchive.com/) Hosted scheduled screenshots and visual change monitoring, with PDF/HTML capture and archive retention depending on the plan.
+- https://github.com/dgtlmoon/changedetection.io Change detection and monitoring of web page content changes
+
 
 ---
 
-<a id="public-archives-and-hosted-services"></a>
-<a id="other-public-archiving-services"></a>
+<a name="public-archives-and-hosted-services" id="public-archives-and-hosted-services"></a>
+<a name="other-public-archiving-services" id="other-public-archiving-services"></a>
 
-### Public archives & hosted services
+<a name="public-archives--hosted-services" id="public-archives--hosted-services"></a>
+<a name="public-archives-hosted-services" id="public-archives-hosted-services"></a>
+
+### Institutional collections & public archives
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Archive.is.jpg/250px-Archive.is.jpg" width="150px" align="right" style="float: right; margin: 5px"/>
 
@@ -222,15 +221,32 @@ Find existing captures, submit pages to public archives, or use managed preserva
 - **[Archive.it](https://archive-it.org) commercial Wayback Machine solution**
 - https://www.pagefreezer.com
 - https://www.smarsh.com
-- https://www.stillio.com
-- [SnapshotArchive](https://snapshotarchive.com/) Hosted scheduled screenshots and visual change monitoring, with PDF/HTML capture and archive retention depending on the plan.
 - https://preservica.com/digital-archive-software-1/active-digital-preservation For-profit company offering a digital preservation software suite
-- https://github.com/dgtlmoon/changedetection.io Change detection and monitoring of web page content changes
+
+<a name="from-the-archiveorg--archive-it-teams" id="from-the-archiveorg--archive-it-teams"></a>
+
+<a name="from-the-old-dominion-university-web-science-team" id="from-the-old-dominion-university-web-science-team"></a>
+
+**Crawlers and collection platforms**
+
+- **[Browsertrix](https://webrecorder.net/browsertrix)** Fully integrated (self hostable) SaaS web archiving platform
+- [WAIL](https://machawk1.github.io/wail/) Web archiver GUI using Heritrix and OpenWayback
+- [WAIL (Electron)](https://github.com/n0tan3rd/wail) Electron app version of the original [wail](https://github.com/machawk1/wail) for creating and interacting with web archives
+- [Sosse](https://github.com/biolds/sosse) Self-hosted Selenium crawler and search engine with recurring crawls, authenticated browsing, locally rewritten HTML archives and downloaded assets.
+- [Archivematica](https://github.com/artefactual/archivematica) web GUI for institutional long-term archiving of web and other content
+- **[Heritrix](https://github.com/internetarchive/heritrix3) The king of internet archiving crawlers, powers the Wayback Machine**
+- **[Brozzler](https://github.com/internetarchive/brozzler) chrome headless crawler + WARC archiver maintained by Archive.org**
+- [Grab-Site](https://github.com/ArchiveTeam/grab-site) An easy preconfigured web crawler designed for backing up websites
+- [Zeno](https://github.com/internetarchive/Zeno) Go crawler for broad crawls or individual pages, recording HTTP traffic to WARC.
+- [kage](https://github.com/tamnd/kage) CLI website mirror using headless Chrome to save static DOM snapshots and assets for offline viewing.
+- [ReadableWebProxy](https://github.com/fake-name/ReadableWebProxy) A proxying archiver that downloads content from sites and can snapshot multiple versions of sites over time
+- [WWWofle](http://www.gedanken.org.uk/software/wwwoffle/) old proxying recorder software similar to ArchiveBox
+- [Fossilo](https://www.fossilo.com/) A commercial archiving solution that appears to be very similar to ArchiveBox
 
 ---
 
-<a id="media-social-and-specialist-archives"></a>
-<a id="specialist-media-and-social-archives"></a>
+<a name="media-social-and-specialist-archives" id="media-social-and-specialist-archives"></a>
+<a name="specialist-media-and-social-archives" id="specialist-media-and-social-archives"></a>
 
 ### Media, social & specialist archives
 
@@ -239,7 +255,6 @@ Tools for preserving videos, images, social accounts and conversations, plus spe
 **Media and social capture**
 
 - [StreamStash](https://www.streamstash.live/) Windows app for recording livestreams and collecting social-media content in a local library; free tier and paid one-time licenses. See the vendor’s [StreamStash vs ArchiveBox comparison](https://www.streamstash.live/blog/streamstash-vs-archivebox).
-- [Auto Archiver](https://github.com/bellingcat/auto-archiver) Bellingcat's archiver for webpages, social posts, images and videos, with CLI/CSV/Google Sheets inputs and local or cloud storage.
 - [Munin Archiver](https://github.com/peterk/munin-indexer) Social media archiver for Facebook, Instagram and VKontakte accounts.
 - [Tube Archivist](https://github.com/tubearchivist/tubearchivist) Self-hosted YouTube archive with downloads, metadata search and playback.
 - [TubeSync](https://github.com/meeb/tubesync) Synchronizes YouTube channels/playlists to local directories and media servers.
@@ -258,18 +273,16 @@ Tools for preserving videos, images, social accounts and conversations, plus spe
 
 ---
 
-<a id="replay-developer-tools-and-integrations"></a>
-<a id="smaller-utilities"></a>
-<a id="from-the-archives-unleashed-team"></a>
-<a id="from-the-iipc-team"></a>
-<a id="capture-crawling-and-content-extraction"></a>
-<a id="warc-and-saved-collection-tools"></a>
-<a id="archivebox-integrations"></a>
-<a id="other-utilities-and-integrations"></a>
+<a name="replay-developer-tools-and-integrations" id="replay-developer-tools-and-integrations"></a>
+<a name="smaller-utilities" id="smaller-utilities"></a>
+<a name="from-the-archives-unleashed-team" id="from-the-archives-unleashed-team"></a>
+<a name="from-the-iipc-team" id="from-the-iipc-team"></a>
 
 ### Replay, developer tools & integrations
 
 Tools for replaying and analyzing archives, building capture workflows, and connecting ArchiveBox to other services.
+
+<a name="warc-and-saved-collection-tools" id="warc-and-saved-collection-tools"></a>
 
 **Replay, search and collection analysis**
 
@@ -282,9 +295,10 @@ Tools for replaying and analyzing archives, building capture workflows, and conn
 - [WarcDB](https://github.com/Florents-Tselai/WarcDB) Converts WARC crawl data into SQLite databases for querying.
 - [WARC-GPT](https://github.com/harvard-lil/warc-gpt) Experimental retrieval-augmented generation pipeline and web UI for exploring WARC collections.
 - [sist2](https://github.com/sist2app/sist2) Indexes saved file collections with text/metadata extraction, thumbnails, OCR and a search web interface; early development.
-- [Archivematica](https://github.com/artefactual/archivematica) web GUI for institutional long-term archiving of web and other content
 
-**Capture, extraction and conversion**
+<a name="capture-crawling-and-content-extraction" id="capture-crawling-and-content-extraction"></a>
+
+**Capture, crawling and conversion**
 
 - [abx-dl](https://github.com/ArchiveBox/abx-dl) Standalone downloader using ArchiveBox plugins for webpage assets, media, PDFs, screenshots and other outputs.
 - [Sliver](https://github.com/anjackson/sliver) Archives small URL collections or copies existing captures using shot-scraper through pywb, preserving WARC/WACZ provenance.
@@ -293,18 +307,29 @@ Tools for replaying and analyzing archives, building capture workflows, and conn
 - [Frozen Soup](https://github.com/jimwins/frozen-soup) Python library and CLI that inline resources into self-contained HTML pages.
 - [singlepage](https://github.com/arp242/singlepage) Go library and CLI that bundle CSS, JavaScript and images into standalone HTML.
 - [webarchive-to-singlefile](https://github.com/gonejack/webarchive-to-singlefile) Converts Safari .webarchive files into resource-embedded HTML; requires Chrome and is tested on macOS.
+- [Monolith](https://github.com/Y2Z/monolith) CLI tool for saving complete web pages as a single HTML file
+- [Obelisk](https://github.com/go-shiori/obelisk) Go package and CLI tool for saving web page as single HTML file
+- [Percollate](https://github.com/danburzo/percollate) A command-line tool to turn web pages into beautiful, readable PDF, EPUB, or HTML docs.
 - [scrapy-playwright](https://github.com/scrapy-plugins/scrapy-playwright) Scrapy download handler for JavaScript-rendered pages using Playwright, retaining Scrapy scheduling and item processing.
 - [Crawlee](https://github.com/apify/crawlee) JavaScript/TypeScript toolkit for browser-rendered and HTTP crawling, link discovery, file downloads and storing extracted results.
+- **[Browsertrix Crawler](https://github.com/webrecorder/browsertrix-crawler)** Command-line crawling application that powers Browsertrix's core crawling features
+- [Squidwarc](https://github.com/N0taN3rd/Squidwarc) User-scriptable, archival crawler using Chrome
+- **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support**
+- [Headless Chrome Crawler](https://github.com/yujiosaka/headless-chrome-crawler) distributed web crawler built on puppeteer with screenshots
 - [markdown-crawler](https://github.com/paulpierre/markdown-crawler) Recursively saves website content as Markdown, with depth/domain limits and resumable processing.
+- [Courlan](https://github.com/adbar/courlan) Python library and CLI for crawl URL normalization, filtering, deduplication and scheduling.
+- https://github.com/wkhtmltopdf/wkhtmltopdf Webkit HTML to PDF archiver/saver
+
+
+**Text and metadata extraction**
+
 - [ExtractNet](https://github.com/currentslab/extractnet) Dragnet-based machine-learning extractor for article attributes such as author, headline, date and keywords; its README excludes boilerplate content extraction.
 - [Inscriptis](https://github.com/weblyzard/inscriptis) HTML-to-text library, CLI and service preserving text layout, including nested tables and optional annotations.
 - [htmldate](https://github.com/adbar/htmldate) Python library and CLI for identifying original and updated publication dates in webpages.
 - [extruct](https://github.com/scrapinghub/extruct) Extracts embedded metadata including JSON-LD, Microdata, Microformats, Open Graph, RDFa and Dublin Core.
 - [Defuddle](https://github.com/kepano/defuddle) Extracts primary content and metadata as cleaned HTML or Markdown; library/CLI developed for Obsidian Web Clipper, currently a work in progress.
 - [Newspaper4k](https://github.com/AndyTheFactory/newspaper4k) Maintained Newspaper3k fork for article scraping, extraction and curation.
-- [Courlan](https://github.com/adbar/courlan) Python library and CLI for crawl URL normalization, filtering, deduplication and scheduling.
 - https://github.com/mozilla/readability tool for extracting article contents and text
-- https://github.com/wkhtmltopdf/wkhtmltopdf Webkit HTML to PDF archiver/saver
 
 **WARC/WACZ processing**
 
@@ -320,6 +345,8 @@ See also the [WACZ file format specification](https://specs.webrecorder.net/wacz
 - [Warchaeology](https://github.com/NationalLibraryOfNorway/warchaeology) Command-line tools to inspect, manipulate and validate WARC files.
 - [Waczerciser](https://github.com/harvard-lil/waczerciser) Experimental tool to inspect, edit, extract and repackage WARC/WACZ files.
 
+<a name="other-utilities-and-integrations" id="other-utilities-and-integrations"></a>
+
 **Discovery, recovery and supporting utilities**
 
 - **[archivenow](https://github.com/oduwsdl/archivenow) tool that pushes urls into all the online archive services like Archive.is and Archive.org**
@@ -334,6 +361,8 @@ See also the [WACZ file format specification](https://specs.webrecorder.net/wacz
 - http://squidman.net/squidman/index.html
 - https://wordpress.org/plugins/broken-link-checker/
 - http://freedup.org/
+
+<a name="archivebox-integrations" id="archivebox-integrations"></a>
 
 **ArchiveBox integrations**
 
@@ -418,6 +447,10 @@ For other languages, see [Articles in Other Languages](#articles-in-other-langua
 
 <!-- Recent coverage is listed once per original work, with publication dates unless marked updated. -->
 
+<a name="recent-coverage-20222026" id="recent-coverage-20222026"></a>
+
+<a name="recent-coverage-2022-2026" id="recent-coverage-2022-2026"></a>
+
 #### Recent English coverage (2022–2026)
 
 - **2026-09-30 (updated) · English:** [How to Install ArchiveBox on Your Synology NAS](https://mariushosting.com/how-to-install-archivebox-on-your-synology-nas/) — Marius Hosting; illustrated Synology, Portainer and reverse-proxy setup.
@@ -454,6 +487,8 @@ For other languages, see [Articles in Other Languages](#articles-in-other-langua
 - **2022-01-08 · English:** [Archivebox Helm Chart for the Raspberry Pi](https://mattscodecave.com/posts/archivebox-helm-chart-for-raspberry-pi.html) — Matt’s Codecave; Helm/K3s deployment on Raspberry Pi.
 - **2022-01-04 · English:** [Bookmarking and Creating a Local Internet Archive](https://www.ecliptik.com/bookmarking-with-raindrop/) — Firsthand Raindrop/Dropbox export integration, converting bookmarks to tagged JSON, validating with jq, importing into ArchiveBox and running hourly cron.
 
+<a name="additional-articles-and-ongoing-guides" id="additional-articles-and-ongoing-guides"></a>
+
 #### Additional English articles and ongoing guides
 
 - **English:** [ArchiveBox MCP Setup Guide](https://pragmar.github.io/mcp-server-webcrawl/guides/archivebox.html) — Original integration guide connecting multiple ArchiveBox collections to Claude Desktop through mcp-server-webcrawl, including installation, search and troubleshooting.
@@ -474,7 +509,7 @@ For other languages, see [Articles in Other Languages](#articles-in-other-langua
   https://manfred.life/archivebox
 - https://metaxyntax.neocities.org/entries/7.html
 
-<a id="archivebox-discussions-in-news--social-media"></a>
+<a name="archivebox-discussions-in-news--social-media" id="archivebox-discussions-in-news--social-media"></a>
 
 ### ArchiveBox Discussions in News & Social Media
 
