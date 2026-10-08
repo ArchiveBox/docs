@@ -77,7 +77,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 | Legend | |
 | --- | --- |
 | Cost | 🆓 free option · 💰 paid option (trials excluded) |
-| Runs | 🏠 local / self-hostable · ☁️ cloud-only |
+| Runs | 🏠 local / self-hostable · ☁️ hosted option; both where available (sync-only labeled) |
 | Capture | 📸 static / no JavaScript · 🚀 browser / JavaScript |
 | Outputs / modes | 📜 article text · 🎥 embedded media · 🇼 WARC / WACZ · 🧩 specialized plugins / content modes |
 | Inputs | 🔖 bookmark import; other input types named in rows |
@@ -97,19 +97,19 @@ Indexes of archiving institutions and software maintained by other people.  If t
 
 | Project | Cost | Runs | Capture | Outputs / modes | Inputs |
 | --- | :---: | :---: | :---: | :---: | --- |
-| **[Linkwarden](https://github.com/linkwarden/linkwarden)** Modern bookmarking UI with singlefile archiving | 🆓 💰 | 🏠 | 🚀 | 📜 | URLs, 🔖 bookmarks, browser, RSS, files |
+| **[Linkwarden](https://github.com/linkwarden/linkwarden)** Modern bookmarking UI with singlefile archiving | 🆓 💰 | 🏠 [☁️](https://linkwarden.app/#pricing) | 🚀 | 📜 | URLs, 🔖 bookmarks, browser, RSS, files |
 | [Karakeep (formerly Hoarder)](https://github.com/karakeep-app/karakeep) Self-hosted bookmark manager for links, notes, images and PDFs, with saved page content, search and optional AI tagging. | 🆓 | 🏠 | 🚀 | 📜 🎥 | URLs, 🔖 bookmarks, RSS, files |
-| [Readeck](https://codeberg.org/readeck/readeck) Self-hosted read-later app preserving readable page content, with highlights, collections, full-text search and EPUB export. | 🆓 | 🏠 | 📸 | 📜 | URLs |
+| [Readeck](https://codeberg.org/readeck/readeck) Self-hosted read-later app preserving readable page content, with highlights, collections, full-text search and EPUB export. | 🆓 | 🏠 | 📸 | 📜 | URLs, 🔖 bookmarks |
 | [Grimoire](https://github.com/goniszewski/grimoire) Local-first bookmark and content manager with readable content extraction, notes, tags and keyword/semantic search. | 🆓 | 🏠 | ? | 📜 🧩 | URLs, 🔖 bookmarks, files |
 | [Django Link Archive](https://github.com/rumca-js/Django-link-archive) Self-hosted link database and RSS reader with public-archive integration and yt-dlp downloads. | 🆓 | 🏠 | 📸 🚀 | 🎥 🧩 | URLs, RSS, files |
-| [Wallabag](https://wallabag.org) / [Wallabag.it](https://wallabag.it) Self-hostable web archiving server that can import via RSS | 🆓 💰 | 🏠 | 📸 | 📜 | URLs, 🔖 bookmarks |
-| [Shaarli](https://github.com/shaarli/Shaarli) Self-hostable bookmark tagging, archiving, and sharing service | 🆓 | 🏠 | — | — | URLs |
+| [Wallabag](https://wallabag.org) / [Wallabag.it](https://wallabag.it) Self-hostable web archiving server that can import via RSS | 🆓 💰 | 🏠 [☁️](https://wallabag.it/en) | 📸 | 📜 | URLs, 🔖 bookmarks |
+| [Shaarli](https://github.com/shaarli/Shaarli) Self-hostable bookmark tagging, archiving, and sharing service | 🆓 | 🏠 | — | — | URLs, 🔖 bookmarks |
 | **[Reminiscence](https://github.com/kanishka-linux/reminiscence/) extremely similar to ArchiveBox, uses a Django backend + UI and provides auto-tagging and summary features with NLTK** | 🆓 | 🏠 | 🚀 | 📜 🎥 | URLs, 🔖 bookmarks, files |
 | **[Shaarchiver](https://github.com/nodiscc/shaarchiver) very similar project that archives Firefox, Shaarli, or Delicious bookmarks and all linked media, generating a markdown/HTML index** | 🆓 | 🏠 | ? | 🎥 | 🔖 bookmarks |
 | **[Archivy](https://github.com/archivy/archivy) Python-based self-hosted knowledge base embedded into your filesystem** | 🆓 | 🏠 | 📸 | 📜 | URLs |
 | [Shiori](https://github.com/go-shiori/shiori) Simple bookmark manager + readability archiver built with Go (like a clone of Pocket) | 🆓 | 🏠 | 📸 | 📜 | URLs, 🔖 bookmarks |
 | [LinkAce](https://www.linkace.org/) A self-hosted bookmark management tool that saves snapshots to archive.org | 🆓 | 🏠 | — | — | URLs, 🔖 bookmarks |
-| [LinkDing](https://github.com/sissbruecker/linkding) Self-hosted bookmark manager that is designed be to be minimal, fast, and easy to set up using Docker. | 🆓 | 🏠 | ? | — | URLs, 🔖 bookmarks |
+| [LinkDing](https://github.com/sissbruecker/linkding) Self-hosted bookmark manager that is designed be to be minimal, fast, and easy to set up using Docker. | 🆓 | 🏠 | 🚀 | — | URLs, 🔖 bookmarks, browser, files |
 | [LinkWallet](https://github.com/tardisx/linkwallet) A self-hosted bookmark database with full-text page content search and limited archiving features | 🆓 | 🏠 | ? | — | URLs, 🔖 bookmarks |
 | [Espial](https://github.com/jonschoning/espial) Bookmark manager and search tool with limited archiving features | 🆓 | 🏠 | — | — | URLs, 🔖 bookmarks |
 | [Herodotus](https://github.com/alaskanpuffin/herodotus-core) Django-based web archiving tool with a focus on collecting text-based content | 🆓 | 🏠 | ? | 📜 | URLs |
@@ -119,26 +119,26 @@ Indexes of archiving institutions and software maintained by other people.  If t
 | **[Wayback](https://github.com/wabarc/wayback) Archiving in style like ArchiveBox, but with a chat.** | 🆓 | 🏠 | ? | 🎥 | URLs |
 | **[Gosuki](https://github.com/blob42/gosuki) A lightweight, open-source, privacy-first bookmark manager that unifies bookmarks across multiple browsers**; its [ArchiveBox integration](https://gosuki.net/docs/features/archiving/archive-box/) can automatically archive tagged bookmarks. | 🆓 | 🏠 | — | — | browser, 🔖 bookmarks |
 | **[Pinboard](https://pinboard.in) Bookmarking tool that provides archiving in a paid version, run by a single independent developer** | 💰 | ☁️ | ? | — | URLs, 🔖 bookmarks |
-| **[Raindrop](https://raindrop.io) Bookmarking tool with archiving in their paid version, run by a company est. 2011** | 🆓 💰 | ☁️ | ? | — | URLs, 🔖 bookmarks, files |
+| **[Raindrop](https://raindrop.io) Bookmarking tool with archiving in their paid version, run by a company est. 2011** | 🆓 💰 | ☁️ | ? | 🧩 | URLs, 🔖 bookmarks, files |
 | [Instapaper](https://www.instapaper.com) Bookmarking alternative to Pocket/Pinboard, with permanent article archives in Premium | 🆓 💰 | ☁️ | ? | 📜 | URLs, files |
 | [ReadWise](https://readwise.io/) A paid Pocket/Pinboard alternative that includes article snippet and highlight saving | 💰 | ☁️ | ? | 📜 | URLs, RSS, files |
-| [Diigo](https://www.diigo.com/) Another brookmarking/annotation service with archiving as a paid feature | ? | ☁️ | ? | — | URLs |
-| [Trilium Notes](https://github.com/TriliumNext/Trilium) Personal web UI based knowledge-base with web clipping and note-taking | 🆓 | 🏠 | ? | — | files, browser |
+| [Diigo](https://www.diigo.com/) Another brookmarking/annotation service with archiving as a paid feature | 🆓 💰 | ☁️ | ? | — | URLs |
+| [Trilium Notes](https://github.com/TriliumNext/Trilium) Personal web UI based knowledge-base with web clipping and note-taking | 🆓 | 🏠 | 🚀 | 📜 | files, browser |
 | [Perkeep](https://perkeep.org/) "Perkeep lets you permanently keep your stuff, for life." | 🆓 | 🏠 | — | — | files, accounts |
 | [TiddlyWiki](https://tiddlywiki.com/) Non-linear bookmark and note-taking tool with archiving support | 🆓 | 🏠 | — | — | files, notes |
-| [Joplin](https://joplinapp.org/) Desktop + mobile app for knowledge-base-style info collection and notes (w/ optional plugin for archiving) | 🆓 💰 | 🏠 | 🚀 | — | browser, files |
+| [Joplin](https://joplinapp.org/) Desktop + mobile app for knowledge-base-style info collection and notes (w/ optional plugin for archiving) | 🆓 💰 | 🏠 [☁️](https://joplinapp.org/plans/) (sync) | 🚀 | 📜 | browser, files |
 | [Muse](https://www.theodorehq.com/muse/) Paid macOS visual bookmark and media manager with browser clipping, local files, OCR/search and on-device tagging; one-time purchase with a free trial. | 💰 | 🏠 | ? | — | browser, 🔖 bookmarks, files |
 | https://github.com/karlicoss/promnesia A browser extension that [collects and collates all the URLs you visit](https://beepb00p.xyz/promnesia.html) into a hierarchical/graph structure with metadata | 🆓 | 🏠 | — | — | browser, accounts, files |
 | [Timelinize](https://github.com/timelinize/timelinize) Collect and browse personal data locally on a timeline; successor to the archived [Timeliner](https://github.com/mholt/timeliner). | 🆓 | 🏠 | — | 🧩 | files, accounts |
 | https://github.com/karlicoss/grasp capture webpages from Firefox and Chrome into Org-mode documents | 🆓 | 🏠 | — | — | browser |
-| **[SingleFile](https://github.com/gildas-lormeau/SingleFile/) Web Extension / CLI util for Firefox and Chrome to save a web page as a single HTML file** | 🆓 | 🏠 | 🚀 | — | browser |
+| **[SingleFile](https://github.com/gildas-lormeau/SingleFile/) Web Extension / CLI util for Firefox and Chrome to save a web page as a single HTML file** | 🆓 | 🏠 | 🚀 | — | URLs, browser |
 | [Hoardy-Web](https://github.com/Own-Data-Privateer/hoardy-web) Browser extension and local tools that capture HTTP requests/responses for offline replay, mirroring and indexing, including POST traffic. | 🆓 | 🏠 | 🚀 | — | browser |
 | [WebScrapBook](https://github.com/danny0838/webscrapbook) Browser extension for saving, organizing, annotating and editing page captures locally or with a backend server. | 🆓 | 🏠 | 🚀 | — | browser |
-| [Packrat](https://github.com/operating-function/packrat) Chromium extension for archiving browsing history using ArchiveWeb.page capture and ReplayWeb.page replay. | ? | 🏠 | 🚀 | — | browser |
+| [Packrat](https://github.com/operating-function/packrat) Chromium extension for archiving browsing history using ArchiveWeb.page capture and ReplayWeb.page replay. | 🆓 | 🏠 | 🚀 | 🇼 | browser |
 | [Diskernet](https://github.com/dosyago/DiskerNet) Archiving tool that uses the Chrome debugger protocol to save each page as-loaded in the browser (formerly 22120 by c0fe or i5ik) | 🆓 💰 | 🏠 | 🚀 | — | browser |
 | [Monolith of Web](https://github.com/rhysd/monolith-of-web) Chrome extension using Monolith compiled to WebAssembly to save a static page as one HTML file. | 🆓 | 🏠 | 🚀 | — | browser |
 | https://github.com/vrtdev/save-page-state A Chrome extension for saving the state of a page in multiple formats | 🆓 | 🏠 | 🚀 | — | browser |
-| [StreamStash](https://www.streamstash.live/) Windows app for recording livestreams and collecting social-media content in a local library; free tier and paid one-time licenses. See the vendor’s [StreamStash vs ArchiveBox comparison](https://www.streamstash.live/blog/streamstash-vs-archivebox). | 🆓 💰 | 🏠 | ? | 🎥 🧩 | URLs, accounts |
+| [StreamStash](https://www.streamstash.live/) Windows app for recording livestreams and collecting social-media content in a local library; free tier and paid one-time licenses. See the vendor’s [StreamStash vs ArchiveBox comparison](https://www.streamstash.live/blog/streamstash-vs-archivebox). | 🆓 💰 | 🏠 [☁️](https://www.streamstash.live/cloud) | ? | 🎥 🧩 | URLs, accounts |
 | [Munin Archiver](https://github.com/peterk/munin-indexer) Social media archiver for Facebook, Instagram and VKontakte accounts. | 🆓 | 🏠 | 🚀 | 🇼 🧩 | accounts |
 | [Tube Archivist](https://github.com/tubearchivist/tubearchivist) Self-hosted YouTube archive with downloads, metadata search and playback. | 🆓 | 🏠 | ? | 🎥 🧩 | URLs, channels, playlists |
 | [TubeSync](https://github.com/meeb/tubesync) Synchronizes YouTube channels/playlists to local directories and media servers. | 🆓 | 🏠 | ? | 🎥 🧩 | channels, playlists |
@@ -148,7 +148,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 | [tdl](https://github.com/iyear/tdl) Telegram toolkit with file downloads and JSON export of messages and member/subscriber lists. | 🆓 | 🏠 | ? | 🧩 | accounts |
 | [forum-dl](https://github.com/mikwielgus/forum-dl) Alpha-stage forum and mailing-list archiver exporting threads/boards to JSONL, mailbox formats or WARC. | 🆓 | 🏠 | ? | 🇼 🧩 | URLs |
 | [TwitchDownloader](https://github.com/lay295/TwitchDownloader) Downloads Twitch VODs, clips and chat, with chat replay rendering. | 🆓 | 🏠 | ? | 🎥 🧩 | URLs, IDs |
-| [cobalt](https://github.com/imputnet/cobalt) Self-hostable multi-site media downloader with a web UI and API. | 🆓 | 🏠 | ? | 🎥 🧩 | URLs |
+| [cobalt](https://github.com/imputnet/cobalt) Self-hostable multi-site media downloader with a web UI and API. | 🆓 | 🏠 [☁️](https://cobalt.tools/) | ? | 🎥 🧩 | URLs |
 | https://archiveofourown.org/ | — | — | — | — | works |
 | https://github.com/HelloZeroNet/ZeroNet (super cool project) | 🆓 | 🏠 | — | — | sites, files |
 | ~[Pocket Premium](https://getpocket.com) Bookmarking tool that provides an archiving service in their paid version, run by Mozilla~ (historical) | — | — | — | — | — |
@@ -188,19 +188,19 @@ Indexes of archiving institutions and software maintained by other people.  If t
 | **[warcreate](https://github.com/machawk1/warcreate) a Chrome extension for creating WARCs from any webpage** | 🆓 | 🏠 | 🚀 | 🇼 | browser |
 | **[Conifer by Rhizome.org](https://conifer.rhizome.org/)** **An open-source personal archiving server that uses pywb under the hood.** [Previously affiliated with Webrecorder](https://blog.conifer.rhizome.org/2020/06/11/webrecorder-conifer.html); legacy self-hosting available, [hosted capture discontinued in June 2026](https://blog.conifer.rhizome.org/2026/05/06/twilight-webinar.html). | 🆓 | 🏠 | 🚀 | 🇼 🧩 | browser, URLs |
 | **[Scoop](https://github.com/harvard-lil/scoop)** Create high-fidelity WARC/WACZ captures using a playwright browser, with support for signing, media extraction, PDFs, etc. ([by the Perma.cc team](https://lil.law.harvard.edu/blog/2023/04/13/scoop-witnessing-the-web/)) | 🆓 | 🏠 | 🚀 | 🎥 🇼 | URLs |
-| [Hunchly](https://www.hunch.ly/) A paid web archiving / session recording tool designed for OSINT | 💰 | 🏠 | 🚀 | — | browser |
-| [Auto Archiver](https://github.com/bellingcat/auto-archiver) Bellingcat's archiver for webpages, social posts, images and videos, with CLI/CSV/Google Sheets inputs and local or cloud storage. | 🆓 | 🏠 | ? | 🎥 | URLs, CSV, Sheets |
-| **[Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a beautiful, user-friendly browser extension that archives all history with full-text search, annotation support, and more** | ? | ? | ? | — | ? |
-| **[Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content** | ? | 🏠 | — | — | web, PDFs, images, video |
-| [Zotero](https://www.zotero.org/) collect, organize, cite, and share research (mainly for technical/scientific papers & citations) | 🆓 💰 | 🏠 | ? | — | browser, files, identifiers |
+| [Hunchly](https://www.hunch.ly/) A paid web archiving / session recording tool designed for OSINT | 💰 | 🏠 [☁️](https://www.hunch.ly/) | 🚀 | — | browser |
+| [Auto Archiver](https://github.com/bellingcat/auto-archiver) Bellingcat's archiver for webpages, social posts, images and videos, with CLI/CSV/Google Sheets inputs and local or cloud storage. | 🆓 | 🏠 | 🚀 | 🎥 🇼 🧩 | URLs, CSV, Sheets |
+| **[Memex by Worldbrain.io](https://github.com/WorldBrain/Memex) a beautiful, user-friendly browser extension that archives all history with full-text search, annotation support, and more** | 🆓 💰 | 🏠 [☁️](https://memex.garden/compare/readwise-reader/) (sync) | ? | 🧩 | browser, 🔖 bookmarks, history, PDFs |
+| **[Hypothes.is](https://web.hypothes.is/) a web/pdf/ebook annotation tool that also archives content** | 🆓 💰 | 🏠 [☁️](https://web.hypothes.is/web-app-start/) | — | — | web, PDFs, images, video |
+| [Zotero](https://www.zotero.org/) collect, organize, cite, and share research (mainly for technical/scientific papers & citations) | 🆓 💰 | 🏠 [☁️](https://www.zotero.org/support/sync) (library/sync) | 🚀 | 🧩 | browser, files, identifiers |
 | https://www.stillio.com | 💰 | ☁️ | ? | — | URLs |
 | [SnapshotArchive](https://snapshotarchive.com/) Hosted scheduled screenshots and visual change monitoring, with PDF/HTML capture and archive retention depending on the plan. | 🆓 💰 | ☁️ | ? | — | URLs |
-| https://github.com/dgtlmoon/changedetection.io Change detection and monitoring of web page content changes | 🆓 💰 | 🏠 | 📸 🚀 | — | URLs, browser |
+| https://github.com/dgtlmoon/changedetection.io Change detection and monitoring of web page content changes | 🆓 💰 | 🏠 [☁️](https://changedetection.io/) | 📸 🚀 | — | URLs, browser |
 | **[Archive.org](https://archive.org) The O.G. Wayback Machine provided publicly by the Internet Archive (Archive.org)** | 🆓 | ☁️ | 🚀 | 🇼 | URLs, browser, RSS |
 | https://archive.is / https://archive.today | ? | ☁️ | ? | — | URLs |
 | https://ghostarchive.org | ? | ☁️ | ? | — | URLs |
-| https://perma.cc | 🆓 💰 | 🏠 | 🚀 | 🇼 | URLs, browser, images, PDFs |
-| [Arquivo.pt](https://arquivo.pt) Portuguese web archive with a [services catalog](https://sobre.arquivo.pt/en/about/services-catalog-by-arquivo-pt/) and [open-source tools](https://github.com/arquivo). | ? | ☁️ | ? | — | URLs |
+| https://perma.cc | 🆓 💰 | 🏠 [☁️](https://perma.cc/docs/accounts) | 🚀 | 🇼 | URLs, browser, images, PDFs |
+| [Arquivo.pt](https://arquivo.pt) Portuguese web archive with a [services catalog](https://sobre.arquivo.pt/en/about/services-catalog-by-arquivo-pt/) and [open-source tools](https://github.com/arquivo). | 🆓 | ☁️ | ? | 🇼 | URLs |
 | https://archive.st | 🆓 💰 | ☁️ | 🚀 | — | URLs |
 | https://theoldnet.com/ | ? | ☁️ | — | — | URLs, dates |
 | https://timetravel.mementoweb.org/ | ? | ? | — | — | ? |
@@ -210,14 +210,14 @@ Indexes of archiving institutions and software maintained by other people.  If t
 | https://www.webarchive.org.uk/ukwa/ | ? | ? | ? | — | ? |
 | Google, Bing, DuckDuckGo, and other [search engine caches](https://www.clickminded.com/google-cache-search/) (historical) | — | — | — | — | URLs |
 | **[Archive.it](https://archive-it.org) commercial Wayback Machine solution** | 💰 | ☁️ | 📸 🚀 | 🎥 🇼 | URLs |
-| https://www.pagefreezer.com | 💰 | 🏠 | 🚀 | 🎥 🧩 | URLs, browser, social accounts |
+| https://www.pagefreezer.com | 💰 | 🏠 [☁️](https://www.pagefreezer.com/) | 🚀 | 🎥 🧩 | URLs, browser, social accounts |
 | https://www.smarsh.com | 💰 | ☁️ | ? | — | communications, websites |
 | https://preservica.com/digital-archive-software-1/active-digital-preservation For-profit company offering a digital preservation software suite | 🆓 💰 | ☁️ | — | — | files, Microsoft 365 |
-| **[Browsertrix](https://webrecorder.net/browsertrix)** Fully integrated (self hostable) SaaS web archiving platform | 🆓 💰 | 🏠 | 🚀 | 🇼 🧩 | URLs, WACZ files |
+| **[Browsertrix](https://webrecorder.net/browsertrix)** Fully integrated (self hostable) SaaS web archiving platform | 🆓 💰 | 🏠 [☁️](https://webrecorder.net/browsertrix/) | 🚀 | 🇼 🧩 | URLs, WACZ files |
 | [WAIL](https://machawk1.github.io/wail/) Web archiver GUI using Heritrix and OpenWayback | 🆓 | 🏠 | 📸 | 🇼 | URLs |
 | [WAIL (Electron)](https://github.com/n0tan3rd/wail) Electron app version of the original [wail](https://github.com/machawk1/wail) for creating and interacting with web archives | 🆓 | 🏠 | 📸 | 🇼 | URLs |
 | [Sosse](https://github.com/biolds/sosse) Self-hosted Selenium crawler and search engine with recurring crawls, authenticated browsing, locally rewritten HTML archives and downloaded assets. | 🆓 | 🏠 | 📸 🚀 | — | URLs |
-| [Archivematica](https://github.com/artefactual/archivematica) web GUI for institutional long-term archiving of web and other content | 🆓 💰 | 🏠 | — | — | files |
+| [Archivematica](https://github.com/artefactual/archivematica) web GUI for institutional long-term archiving of web and other content | 🆓 💰 | 🏠 [☁️](https://www.artefactual.com/archivematica-hosting) | — | — | files |
 | **[Heritrix](https://github.com/internetarchive/heritrix3) The king of internet archiving crawlers, powers the Wayback Machine** | 🆓 | 🏠 | 📸 | 🇼 | URLs |
 | **[Brozzler](https://github.com/internetarchive/brozzler) chrome headless crawler + WARC archiver maintained by Archive.org** | 🆓 | 🏠 | 🚀 | 🎥 🇼 | URLs |
 | [Grab-Site](https://github.com/ArchiveTeam/grab-site) An easy preconfigured web crawler designed for backing up websites | 🆓 | 🏠 | 📸 | 🎥 🇼 | URLs |
@@ -264,7 +264,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 | [Obelisk](https://github.com/go-shiori/obelisk) Go package and CLI tool for saving web page as single HTML file | 🆓 | 🏠 | 📸 | — | URLs |
 | [Percollate](https://github.com/danburzo/percollate) A command-line tool to turn web pages into beautiful, readable PDF, EPUB, or HTML docs. | 🆓 | 🏠 | 📸 | 📜 | URLs, HTML, RSS/Atom |
 | [scrapy-playwright](https://github.com/scrapy-plugins/scrapy-playwright) Scrapy download handler for JavaScript-rendered pages using Playwright, retaining Scrapy scheduling and item processing. | 🆓 | 🏠 | 🚀 | — | URLs |
-| [Crawlee](https://github.com/apify/crawlee) JavaScript/TypeScript toolkit for browser-rendered and HTTP crawling, link discovery, file downloads and storing extracted results. | 🆓 | 🏠 | 📸 🚀 | — | URLs |
+| [Crawlee](https://github.com/apify/crawlee) JavaScript/TypeScript toolkit for browser-rendered and HTTP crawling, link discovery, file downloads and storing extracted results. | 🆓 💰 | 🏠 [☁️](https://crawlee.dev/) | 📸 🚀 | — | URLs |
 | **[Browsertrix Crawler](https://github.com/webrecorder/browsertrix-crawler)** Command-line crawling application that powers Browsertrix's core crawling features | 🆓 | 🏠 | 🚀 | 🇼 🧩 | URLs, browser profiles |
 | [Squidwarc](https://github.com/N0taN3rd/Squidwarc) User-scriptable, archival crawler using Chrome | 🆓 | 🏠 | 🚀 | 🇼 | URLs |
 | **[Photon](https://github.com/s0md3v/Photon) a fast crawler with archiving and asset extraction support** | 🆓 | 🏠 | 📸 | 🧩 | URLs |
@@ -285,7 +285,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 | [warcio](https://github.com/webrecorder/warcio) fast streaming asynchronous WARC reader and writer | 🆓 | 🏠 | 📸 | 🇼 | WARC/ARC files, HTTP requests |
 | [node-warc](https://github.com/N0taN3rd/node-warc) Parse And Create Web ARChive (WARC) files with node.js | 🆓 | 🏠 | — | 🇼 | WARC files, HTTP records |
 | [JWARC](https://github.com/iipc/jwarc) A Java library for reading and writing WARC files. | 🆓 | 🏠 | 📸 🚀 | 🇼 | WARC files, URLs |
-| [warcat-rs](https://github.com/chfoo/warcat-rs) Rust WARC manipulation library and CLI; rewrite of the earlier Python [warcat](https://github.com/chfoo/warcat). | 🆓 | 🏠 | — | ? | WARC files |
+| [warcat-rs](https://github.com/chfoo/warcat-rs) Rust WARC manipulation library and CLI; rewrite of the earlier Python [warcat](https://github.com/chfoo/warcat). | 🆓 | 🏠 | — | 🇼 | WARC files |
 | [Warchaeology](https://github.com/NationalLibraryOfNorway/warchaeology) Command-line tools to inspect, manipulate and validate WARC files. | 🆓 | 🏠 | — | 🇼 | WARC files |
 | [Waczerciser](https://github.com/harvard-lil/waczerciser) Experimental tool to inspect, edit, extract and repackage WARC/WACZ files. | 🆓 | 🏠 | — | 🇼 | WARC/WACZ files |
 | **[archivenow](https://github.com/oduwsdl/archivenow) tool that pushes urls into all the online archive services like Archive.is and Archive.org** | 🆓 | 🏠 | 📸 🚀 | 🇼 | URLs |
@@ -298,7 +298,7 @@ Indexes of archiving institutions and software maintained by other people.  If t
 | https://en.archivarix.com download an archived page or entire site from the Wayback Machine | 💰 | ☁️ | 📸 | 🧩 | domains, URLs |
 | https://proofofexistence.com prove that a certain file existed at a given time using the blockchain | ? | ☁️ | — | — | files |
 | http://squidman.net/squidman/index.html | 🆓 | 🏠 | — | — | proxy traffic |
-| https://wordpress.org/plugins/broken-link-checker/ | 🆓 | 🏠 | — | — | WordPress site |
+| https://wordpress.org/plugins/broken-link-checker/ | 🆓 | 🏠 [☁️](https://wordpress.org/plugins/broken-link-checker/) | — | — | WordPress site |
 | http://freedup.org/ | ? | ? | — | — | files |
 | [ArchiveBox QuickAdd](https://github.com/emschu/archivebox-quick-add) Desktop utility for submitting URLs to an existing ArchiveBox instance. | 🆓 | 🏠 | — | — | URLs |
 | [archivebox-reddit](https://github.com/FracturedCode/archivebox-reddit) Exports Reddit comments, posts, upvotes or saved items to ArchiveBox. | 🆓 | 🏠 | — | 🧩 | Reddit accounts |
