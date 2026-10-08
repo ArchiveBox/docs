@@ -157,7 +157,7 @@ More info:
 
 ## Merge two or more existing archives
 
-See [[Merging Collections]]...
+See [Merging Collections](https://github.com/ArchiveBox/ArchiveBox/wiki/Merging-Collections)...
 
 <br/>
 

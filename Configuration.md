@@ -18,7 +18,7 @@ Configuration resolves in order of lowest to highest precedence:
 
 Most config can be changed on a `Persona` or `Crawl` mid-crawl, and it will apply on the next Snapshot captured. Server and dependency config settings may require restarting the ArchiveBox server to take effect.
 
-For more examples see [Usage: Configuration](Usage#run-archivebox-with-configuration-options).
+For more examples see [Usage: Configuration](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#run-archivebox-with-configuration-options).
 
 <br/>
 

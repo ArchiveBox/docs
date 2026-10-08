@@ -143,7 +143,7 @@ Use port **5797** for new deployments. The Docker container also listens on the 
 
 ### Configuration
 
-ArchiveBox running with `docker compose` accepts all the same config options as other ArchiveBox distributions, see the full list of options available on the [[Configuration]] page.
+ArchiveBox running with `docker compose` accepts all the same config options as other ArchiveBox distributions, see the full list of options available on the [Configuration](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration) page.
 
 The recommended way configure ArchiveBox in Docker Compose is using `archivebox config --set ...` or by editing `ArchiveBox.conf`.
 ```bash
@@ -276,7 +276,7 @@ docker run -it -v $PWD:/data archivebox/archivebox:dev config --set TIMEOUT=120
 TIMEOUT=120
 ```
 
-ArchiveBox in Docker also accepts config as environment variables, see more on the [[Configuration]] page (and the [abx-plugins config reference](https://plugins.archivebox.io/) for per-plugin options).
+ArchiveBox in Docker also accepts config as environment variables, see more on the [Configuration](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration) page (and the [abx-plugins config reference](https://plugins.archivebox.io/) for per-plugin options).
 
 For example, this disables the screenshot extractor for a single run (without persisting for other runs):
 ```bash
