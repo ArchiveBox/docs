@@ -34,6 +34,7 @@
  - [[Scheduled Archiving]]
  - [[Change Detection]]
  - [[Archiving URLs from Google Sheets]]
+ - 💬 [Chat Bots](Integrating-with-Slack)
  - [[Publishing Your Archive]]
  - [[Chromium Install]]
  - [Cookies & Sessions Setup](https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#setting-up-a-chromium-user-profile)

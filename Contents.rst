@@ -40,6 +40,8 @@ Guides
     Setting-up-Search.md
     Publishing-Your-Archive.md
     Scheduled-Archiving.md
+    Archiving-URLs-from-Google-Sheets.md
+    Chat Bots <Integrating-with-Slack.md>
     Chromium-Install.md
     Upgrading.md
     Upgrading-or-Merging-Archives.md
