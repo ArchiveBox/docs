@@ -13,7 +13,7 @@ env TIMEOUT=120 archivebox add ~/Downloads/bookmarks_export.html
 
 Configuration resolves in order of lowest to highest precedence:
 
-> `defaults` → `ArchiveBox.conf` → `env` vars → `Machine.config` → `Persona.config` → `Crawl.config` → `Snapshot.config`
+> `defaults` → `ArchiveBox.conf` → `env` → `Machine.config` → `Persona.config` → `Crawl.config` → `Snapshot.config`
 
 Most config can be changed on a `Persona` or `Crawl` mid-crawl, and it will apply on the next Snapshot captured. Server and dependency config settings may require restarting the ArchiveBox server to take effect.
 
