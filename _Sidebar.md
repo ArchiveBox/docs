@@ -40,6 +40,7 @@
 
  - 📅 [[Scheduled Archiving]]
  - 👁️ [[Change Detection]]
+ - 🔎 [[OSINT Preservation]]
  - 🧮 [[Archiving URLs from Google Sheets]]
  - 💬 [Archiving URLs via Chat Bot](https://github.com/ArchiveBox/archivebox-chat-bot) <small>(Slack/WhatsApp/etc)</small>
 
