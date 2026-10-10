@@ -30,7 +30,7 @@
 ### Initial Setup
 
  - 💿 [[Setting up Storage]] <small>(NFS/SMB/S3/etc)</small>
- - 🔐 [[Setting up Authentication]] <small>(SSO/LDAP/etc)</small>
+ - 🔐 [[Setting up Authentication]] <small>(Admin SSO/LDAP/etc)</small>
  - 🔎 [[Setting up Search]] <small>(rg/sonic/etc)</small>
  - 🌐 [[Publishing Your Archive]]
  - 🌎 [[Chromium Install]]
