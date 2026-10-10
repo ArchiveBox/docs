@@ -29,9 +29,9 @@
 
 ### Initial Setup
 
- - 💿 [[Setting up Storage]] <small>(NFS/SMB/S3/etc)</small>
- - 🔐 [[Setting up Authentication]] <small>(Admin SSO/LDAP/etc)</small>
- - 🔎 [[Setting up Search]] <small>(rg/sonic/etc)</small>
+ - 💿 [[Setting up Storage]] <br/><small>(NFS/SMB/S3/Google Drive/etc)</small>
+ - 🔐 [[Setting up Authentication]] <br/><small>(Web Admin SSO/LDAP/etc)</small>
+ - 🔎 [[Setting up Search]] <br/><small>(rg/sonic/FTS5/etc)</small>
  - 🌐 [[Publishing Your Archive]]
  - 🌎 [[Chromium Install]]
  - 🍪 [Cookies & Sessions Setup](https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#setting-up-a-chromium-user-profile)
