@@ -143,17 +143,8 @@ version = 2
 "a5bb45966ec97884-1" = "run"
 
 # docs/Merging-Collections.md
-"befadadb67c37c7b-1" = "illustration"
-"92e13fe91bc77af9-1" = "illustration"
-"f0ff0e950c4f04bd-1" = "illustration"
-"1343441ed4354bf6-1" = "illustration"
-"3d38133db42791b8-1" = "illustration"
-"25f5a83ce92e6b8d-1" = "transcript"
-"93f3695c9bcebd1e-1" = "illustration"
-"9bbf385bf2eb1160-1" = "run"
-"ef0e524c29534852-1" = "transcript"
-"25f5a83ce92e6b8d-2" = "transcript"
-"3ecf97d15d7e8ae9-1" = "illustration"
+"4ac13f0bf66d1557-1" = "illustration"
+"194c483e452a9e3a-1" = "illustration"
 
 # docs/Publishing-Your-Archive.md
 "714c2beb6eb0d159-1" = "illustration"
@@ -310,7 +301,6 @@ version = 2
 "a8f16f6be4f2b3c0-1" = "collection"
 "2905d7f9dece0b61-1" = "collection"
 "a5bb45966ec97884-1" = "system-data"
-"9bbf385bf2eb1160-1" = "collection"
 "c84835e713d1c625-1" = "collection"
 "302de01a4a1490f0-1" = "docker"
 "2bec913ab03ee911-1" = "collection"
@@ -390,7 +380,6 @@ version = 2
 "a8f16f6be4f2b3c0-1" = "ubuntu"
 "2905d7f9dece0b61-1" = "ubuntu"
 "a5bb45966ec97884-1" = "ubuntu"
-"9bbf385bf2eb1160-1" = "ubuntu"
 "c84835e713d1c625-1" = "ubuntu"
 "302de01a4a1490f0-1" = "docker"
 "2bec913ab03ee911-1" = "ubuntu"
