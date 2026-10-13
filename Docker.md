@@ -373,6 +373,28 @@ and the tunnel JSON file. See the
 for notification headers and tests. Services on the same trusted Docker network
 can call ArchiveBox internally with its API key.
 
+#### Zone settings that must stay off
+
+Cloudflare can rewrite or inject into every HTML response it proxies. On an
+archive that changes the saved pages themselves when they are replayed from
+`snap-…` hostnames, so turn these off for the zone (Dashboard or API):
+
+| Setting | Why it must be off |
+|---|---|
+| Email Address Obfuscation (`email_obfuscation`) | Rewrites email addresses inside archived pages into `/cdn-cgi/l/email-protection` links. |
+| Server-side Excludes (`server_side_exclude`) | Strips marked content from archived HTML. |
+| Automatic HTTPS Rewrites (`automatic_https_rewrites`) | Rewrites `http://` links inside archived HTML. |
+| Replace insecure JavaScript libraries (`replace_insecure_js`) | Rewrites `<script>` URLs inside archived HTML. |
+| Speed Brain (`speed_brain`) | Adds a `Speculation-Rules` header that makes browsers prefetch links from archive and admin pages. |
+| Rocket Loader, Mirage, Polish, Auto Minify | Rewrite scripts, images, or markup. |
+| Web Analytics automatic setup (RUM `auto_install`) | Injects a `cloudflareinsights` beacon script into every page; the snapshot CSP blocks it, so it only adds errors. |
+
+Dynamic pages are latency bound. Argo Smart Routing keeps requests on the
+Cloudflare colo nearest the visitor: without it, Free-plan traffic to this zone
+was served from distant colos (ATL/LHR for a SFO-hosted origin), adding
+~150-250 ms to every uncached request even though the tunnel itself connects to
+the nearest colos.
+
 <br/>
 
 ---
