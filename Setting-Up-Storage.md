@@ -47,6 +47,17 @@ services:
 > *ZFS is a good choice when you already operate OpenZFS and want checksumming, compression, snapshots, replication, and optional encryption or disk redundancy.*
 > On Ubuntu, follow the official [OpenZFS installation guide](https://openzfs.github.io/openzfs-docs/Getting%20Started/Ubuntu/index.html). macOS and BSD installation and property support differ, so use the guide for your OS.
 
+On Linux hosts that run ArchiveBox alongside browser-based capture or other memory-intensive services, leave memory headroom for those applications when tuning the ZFS ARC. A field-tested starting point for a 16 GiB host shared by ArchiveBox, Chrome, and storage tools is these OpenZFS module parameters:
+
+```conf
+# /etc/modprobe.d/zfs.conf
+options zfs zfs_arc_max=4294967296 zfs_arc_min=134217728 zfs_arc_sys_free=1073741824
+```
+
+This sets a 4 GiB ARC ceiling, a 128 MiB floor, and asks the Linux ARC to yield memory sooner when the system has less than 1 GiB free. `zfs_arc_sys_free` is a reclaim threshold, not memory reserved for applications or a hard guarantee of available RAM. Choose values for the host's total memory and concurrent workload, and check memory availability and ZFS ARC statistics during real captures. If the ARC is persistently small, monitor metadata/dnode pruning and CPU use before lowering its ceiling further; an overly small ARC can increase metadata churn. Keep one effective setting for each parameter in the module configuration, then apply changes using the boot/module-loading procedure for your Linux distribution.
+
+See the OpenZFS [module parameter documentation](https://openzfs.github.io/openzfs-docs/Performance%20and%20Tuning/Module%20Parameters.html) for current parameter behavior and platform-specific details. This example uses Linux module configuration; FreeBSD exposes ZFS tunables through `sysctl` and `/boot/loader.conf`, and macOS/BSD configuration differs.
+
 - https://openzfs.github.io/openzfs-docs/
 - https://openzfs.github.io/openzfs-docs/man/v2.2/8/zpool-create.8.html
 - https://openzfs.github.io/openzfs-docs/man/v2.2/8/zfs-create.8.html
