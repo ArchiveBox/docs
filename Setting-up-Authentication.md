@@ -139,7 +139,7 @@ This walkthrough intentionally creates **inactive administrator accounts pending
 
 Back up an existing database before upgrading. With the same configuration/environment as the server, run `archivebox manage migrate --noinput` inside the collection, then restart the server. In Docker Compose, run `docker compose exec archivebox archivebox manage migrate --noinput`, then `docker compose restart archivebox`.
 
-The integration requires django-allauth 65.22.1 or newer, including its provider email-verification security fixes. Existing users and password hashes are preserved. Installing the extra alone changes no routes; `ALLAUTH_ENABLED=True` activates the integration. Disabling it restores the original routes without deleting linked identities.
+The integration requires django-allauth 65.22.1 or newer, including its provider email-verification security fixes. Existing users and password hashes are preserved. Enabling allauth replaces Django's local-password backend, so existing local-password sessions must sign in again; disabling it likewise requires allauth sessions to sign in again. Installing the extra alone changes no routes; `ALLAUTH_ENABLED=True` activates the integration. Disabling it restores the original routes without deleting linked identities.
 
 #### Create an identity-provider realm and user
 
