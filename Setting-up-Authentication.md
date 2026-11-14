@@ -102,7 +102,7 @@ LDAP_EMAIL_ATTR="mail"
 
 ### SAML / OAuth2 / OpenID Authentication
 
-> **Preview:** Native SSO is implemented in [PR #1962](https://github.com/ArchiveBox/ArchiveBox/pull/1962), replacing the unfinished #1827. It is not yet merged or released. Use the PR branch for these instructions; older releases can use the reverse-proxy or LDAP methods above.
+> **Development version:** Native SSO was merged into `dev` in [PR #1962](https://github.com/ArchiveBox/ArchiveBox/pull/1962), replacing the unfinished #1827. Use a development build containing this change for these instructions; older releases can use the reverse-proxy or LDAP methods above.
 
 ArchiveBox can use django-allauth for OpenID Connect (OIDC), OAuth social login, and SAML 2.0. Local password, LDAP, and trusted reverse-proxy authentication remain available. ArchiveBox acts as the service provider/relying party; it is not an identity provider or OAuth authorization server.
 
@@ -110,13 +110,13 @@ The screenshots below were captured from a real, manually configured Keycloak 26
 
 #### Install and enable native SSO
 
-For this preview, install the PR branch with the SAML extra (which also includes OIDC/OAuth):
+Install the development branch with the SAML extra (which also includes OIDC/OAuth):
 
 ```bash
-uv tool install --python 3.13 'archivebox[saml] @ git+https://github.com/ArchiveBox/ArchiveBox.git@codex/oidc-saml-sso'
+uv tool install --python 3.13 'archivebox[saml] @ git+https://github.com/ArchiveBox/ArchiveBox.git@dev'
 ```
 
-After release, install `archivebox[allauth]` for OIDC/OAuth or `archivebox[saml]` for both protocols. Images built from this PR include both extras. On platforms without an xmlsec wheel, SAML requires the system xmlsec/libxml2 development libraries.
+After release, install `archivebox[allauth]` for OIDC/OAuth or `archivebox[saml]` for both protocols. Images built from this revision of `dev` include both extras. On platforms without an xmlsec wheel, SAML requires the system xmlsec/libxml2 development libraries.
 
 Create a collection with `archivebox init --quick` if needed, start the server, and open `/admin/login/` to create the first local administrator. Keep this local login available while configuring the provider.
 
