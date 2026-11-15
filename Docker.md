@@ -231,6 +231,8 @@ services:
     archivebox:
         image: archivebox/archivebox:dev
         restart: unless-stopped
+        ulimits:
+            nofile: 8192  # headroom for concurrent replay files, SQLite connections, and capture hooks
         # Use the image's entrypoint and server --init command.
         # No ports: cloudflared reaches port 5797 on the default Docker network.
         volumes:
