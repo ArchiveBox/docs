@@ -205,7 +205,7 @@ Migration or upgrade issues happen occasionally with some niche setups or when s
 Always backup your archive before upgrading, but know that migrations are deterministic and atomic using Django's migration system, so a failed migration does not mean your archive is unrecoverable, you just have to downgrade to the previous stable major version then continue upgrading.
 
 ```bash
-archivebox init  # this usually applies any necessary migrations (atomically and indempotently, safe to run multiple times)
+archivebox init  # this usually applies any necessary migrations (atomically and idempotently, safe to run multiple times)
 ```
 
 - [Bug: NOT NULL constraint failed: core_archiveresult.output when upgrading v0.4.24 archive to v0.6 #705](https://github.com/ArchiveBox/ArchiveBox/issues/705)
