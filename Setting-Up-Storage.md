@@ -71,7 +71,7 @@ See the OpenZFS [module parameter documentation](https://openzfs.github.io/openz
 # Create a mirrored pool without forcing ZFS's safety checks.
 sudo zpool create \
     -O mountpoint=none \
-    -O compression=lz4 \
+    -O compression=zstd-3 \
     -O dnodesize=auto \
     -O atime=off \
     -O xattr=sa \
@@ -97,6 +97,8 @@ sudo zfs create \
     -o keylocation=prompt \
     archivebox/data
 ```
+
+For an existing ArchiveBox dataset, use its dataset name in `sudo zfs set compression=zstd-3 archivebox/data`. Verify the setting with `zfs get compression archivebox/data`. ZFS applies it as blocks are written or rewritten.
 
 <a name="ntfs"></a><a name="hfs"></a><a name="btrfs"></a>
 
